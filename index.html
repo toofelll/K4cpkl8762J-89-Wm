@@ -1,568 +1,633 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-  <title>Mathematics Handbook | Panduan Lengkap Matematika</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>Mathematics Handbook | Materi Super Lengkap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(rgba(6, 15, 35, 0.88), rgba(6, 15, 35, 0.92)),
-                  url("navyblue.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #eef5ff;
-      line-height: 1.6;
-      padding: 1.5rem;
-      min-height: 100vh;
-      position: relative;
-    }
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(rgba(6, 15, 35, 0.88), rgba(6, 15, 35, 0.94)),
+                url("navyblue.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eef5ff;
+            line-height: 1.6;
+            padding: 1.5rem;
+            min-height: 100vh;
+            position: relative;
+        }
 
-    /* Overlay tambahan untuk kedalaman */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 40%, rgba(20, 50, 100, 0.25) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(20, 50, 100, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    .container {
-      max-width: 1350px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      position: relative;
-      z-index: 2;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
 
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 2.5rem 1rem 1.8rem;
-    }
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 2.5rem 1rem 1.8rem;
+        }
 
-    .hero h1 {
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: 700;
-      letter-spacing: 2px;
-      background: linear-gradient(to right, #d4e6ff, #8bb9ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.8rem;
-      text-shadow: 0 0 20px rgba(70, 140, 255, 0.5);
-    }
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #d4e6ff, #8bb9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 20px rgba(70, 140, 255, 0.5);
+        }
 
-    .hero .subtitle {
-      font-size: 1.3rem;
-      color: #bdd3ff;
-      background: rgba(10, 25, 50, 0.65);
-      backdrop-filter: blur(14px);
-      display: inline-block;
-      padding: 0.7rem 2.2rem;
-      border-radius: 60px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #bdd3ff;
+            background: rgba(10, 25, 50, 0.65);
+            backdrop-filter: blur(14px);
+            display: inline-block;
+            padding: 0.7rem 2.2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
 
-    /* TOOLBAR */
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(10, 25, 55, 0.5);
-      backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 1rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
+        /* TOOLBAR */
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 25, 55, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            gap: 1rem;
+        }
 
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: rgba(0, 10, 30, 0.7);
-      border-radius: 50px;
-      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      flex: 2;
-      min-width: 250px;
-    }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 10, 30, 0.7);
+            border-radius: 50px;
+            padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            flex: 2;
+            min-width: 250px;
+        }
 
-    .search-box input {
-      background: transparent;
-      border: none;
-      padding: 0.7rem 0.5rem;
-      font-size: 1rem;
-      width: 100%;
-      color: white;
-      outline: none;
-    }
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 0.7rem 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+            color: white;
+            outline: none;
+        }
 
-    .search-box input::placeholder {
-      color: #a0bae6;
-    }
+        .search-box input::placeholder {
+            color: #a0bae6;
+        }
 
-    .search-box button {
-      background: #1f4591;
-      border: none;
-      border-radius: 40px;
-      padding: 0.65rem 1.6rem;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.25s;
-      letter-spacing: 0.4px;
-      box-shadow: 0 2px 10px rgba(0, 100, 255, 0.3);
-    }
+        .search-box button {
+            background: #1f4591;
+            border: none;
+            border-radius: 40px;
+            padding: 0.65rem 1.6rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+            letter-spacing: 0.4px;
+            box-shadow: 0 2px 10px rgba(0, 100, 255, 0.3);
+        }
 
-    .search-box button:hover {
-      background: #3366cc;
-    }
+        .search-box button:hover {
+            background: #3366cc;
+        }
 
-    .filter-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-left: 1.8rem;
-    }
+        .filter-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
 
-    .tag {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.5rem 1.3rem;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: 0.25s;
-      color: #cfdefa;
-    }
+        .tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.25s;
+            color: #cfdefa;
+            white-space: nowrap;
+        }
 
-    .tag.active {
-      background: #1d4b9c;
-      border-color: #7aa9ff;
-      font-weight: 600;
-      color: white;
-      box-shadow: 0 0 15px rgba(70, 130, 255, 0.6);
-    }
+        .tag.active {
+            background: #1d4b9c;
+            border-color: #7aa9ff;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 0 15px rgba(70, 130, 255, 0.6);
+        }
 
-    /* SECTIONS */
-    .section {
-      background: rgba(8, 20, 45, 0.45);
-      backdrop-filter: blur(18px);
-      border-radius: 30px;
-      padding: 2.2rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    }
+        /* SECTIONS */
+        .section {
+            background: rgba(8, 20, 45, 0.45);
+            backdrop-filter: blur(18px);
+            border-radius: 30px;
+            padding: 2.2rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      color: #bed9ff;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 0.8rem;
-    }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: #bed9ff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.8rem;
+        }
 
-    .intro-text {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #d6e5ff;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 1.6rem;
-      border-radius: 20px;
-      margin-top: 0.5rem;
-    }
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #d6e5ff;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.6rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.2rem;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
 
-    .card {
-      background: rgba(15, 30, 60, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 22px;
-      padding: 1.6rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-    }
+        .card {
+            background: rgba(15, 30, 60, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 22px;
+            padding: 1.6rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .card:hover {
-      transform: translateY(-8px);
-      background: rgba(35, 65, 125, 0.5);
-      border-color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 20px 30px rgba(0, 140, 255, 0.25);
-    }
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(35, 65, 125, 0.5);
+            border-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 20px 30px rgba(0, 140, 255, 0.25);
+        }
 
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      color: #ffd966;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffd966;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    .card ul {
-      list-style-type: none;
-      padding-left: 0;
-      flex: 1;
-    }
+        .card .item-count {
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-left: auto;
+            color: #c0d4ff;
+        }
 
-    .card li {
-      padding: 0.45rem 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
-      color: #d2e0ff;
-      font-size: 0.98rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+        }
 
-    .card li:last-child {
-      border-bottom: none;
-    }
+        .card li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            color: #d2e0ff;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-    .card .navigate-btn {
-      margin-top: 1.2rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      padding: 0.6rem 1rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-align: center;
-      transition: 0.2s;
-      font-size: 0.9rem;
-      letter-spacing: 0.4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-    }
+        .card .navigate-btn {
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.7rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.2s;
+            font-size: 0.9rem;
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            text-decoration: none;
+        }
 
-    .card .navigate-btn:hover {
-      background: #1f4591;
-      border-color: #9ac2ff;
-    }
+        .card .navigate-btn:hover {
+            background: #1f4591;
+            border-color: #9ac2ff;
+        }
 
-    .feature-box {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
+        .feature-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
 
-    .feature-item {
-      flex: 1 1 200px;
-      background: rgba(0, 15, 45, 0.7);
-      border-radius: 18px;
-      padding: 1.4rem;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
+        .feature-item {
+            flex: 1 1 180px;
+            background: rgba(0, 15, 45, 0.7);
+            border-radius: 18px;
+            padding: 1.4rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      color: #8da4d0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 1rem;
-    }
+        .feature-item span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
 
-    @media (max-width: 750px) {
-      body {
-        padding: 0.8rem;
-      }
-      .toolbar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-      }
-      .filter-tags {
-        margin-left: 0;
-        justify-content: center;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            color: #8da4d0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1f4591;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-top:hover {
+            background: #3366cc;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 750px) {
+            body {
+                padding: 0.8rem;
+            }
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .filter-tags {
+                justify-content: center;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card ul {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        /* Custom scrollbar */
+        .card ul::-webkit-scrollbar {
+            width: 5px;
+        }
+        .card ul::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .card ul::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="hero">
-      <h1>MATHEMATICS HANDBOOK</h1>
-      <div class="subtitle">📐 Belajar Dari dasar, ~Dibuat oleh Thufail Khairul Fatihin(SDN sindang rasa;2017-2023;-SMP Al-Ghazaly;2023-2026;-SMAN 5 Bogor;~~;</div>
-    </div>
-
-    <!-- Search & Filter -->
-    <div class="toolbar">
-      <div class="search-box">
-        <input type="text" placeholder="Cari materi: invers, modulo, turunan, vektor..." id="searchInput">
-        <button id="searchButton">🔍 Cari</button>
-      </div>
-      <div class="filter-tags" id="filterTags">
-        <span class="tag active" data-filter="all">Semua</span>
-        <span class="tag" data-filter="dasar">Dasar</span>
-        <span class="tag" data-filter="aljabar">Aljabar</span>
-        <span class="tag" data-filter="geometri">Geometri</span>
-        <span class="tag" data-filter="kalkulus">Kalkulus</span>
-        <span class="tag" data-filter="statistika">Statistika</span>
-        <span class="tag" data-filter="teori">Teori Bilangan</span>
-        <span class="tag" data-filter="problem">Problem Solving</span>
-      </div>
-    </div>
-
-    <!-- Pendahuluan -->
-    <div class="section">
-      <h2>📖 Mathematics Handbook - Edisi Lengkap</h2>
-      <div class="intro-text">
-        <p><strong>Selamat datang di Mathematics Handbook.</strong> Sumber belajar matematika terstruktur dari fondasi dasar hingga materi Olimpiade. Setiap bab dilengkapi <strong>invers fungsi, modulo lanjutan, teorema sisa, kombinatorik, persamaan Diophantine,</strong> dan masih banyak lagi.</p>
-        <div class="feature-box">
-          <div class="feature-item"><span>🧮</span> Invers & Komposisi</div>
-          <div class="feature-item"><span>🔢</span> Modulo & Kongruensi</div>
-          <div class="feature-item"><span>📉</span> Limit & Turunan</div>
-          <div class="feature-item"><span>🏅</span> Soal OSN + Pembahasan</div>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <h1>MATHEMATICS HANDBOOK</h1>
+            <div class="subtitle">📐 10 Bab · 200+ Topik · Dari Dasar hingga Olimpiade</div>
         </div>
-      </div>
-    </div>
 
-    <!-- Daftar Materi dengan navigasi halaman -->
-    <div class="section">
-      <h2>📚 Daftar Materi (Klik untuk buka halaman lengkap)</h2>
-      <div class="grid" id="materialGrid"></div>
-      <p style="margin-top:1.5rem; color:#b0c7f0; font-style:italic;">✨ Klik tombol "Buka Materi" untuk menuju halaman khusus setiap bab.</p>
-    </div>
-
-    <footer>
-      © Mathematics Handbook · Dibuat untuk memahami matematika secara mendalam. <br>
-      <span style="opacity:0.7;">Update Juni 2026 · Materi invers, modulo, kalkulus, dan lainnya tersedia.</span>
-    </footer>
-  </div>
-
-  <script>
-    (function() {
-      // Data materi sangat lengkap dengan tambahan topik seperti invers, modulo, dll.
-      const materials = [
-        {
-          category: "dasar",
-          title: "Dasar Matematika",
-          icon: "🔢",
-          page: "dasar.html",
-          items: [
-            "Operasi Hitung Campuran",
-            "Bilangan Bulat & Cacah",
-            "Pecahan & Desimal",
-            "Persen, Rasio, Perbandingan",
-            "Pangkat & Akar (Eksponen Dasar)",
-            "Notasi Ilmiah & Angka Penting",
-            "Faktor & Kelipatan",
-            "Urutan Operasi (PEMDAS/BODMAS)"
-          ]
-        },
-        {
-          category: "aljabar",
-          title: "Aljabar",
-          icon: "📐",
-          page: "aljabar.html",
-          items: [
-            "Variabel & Ekspresi Aljabar",
-            "Identitas & Pemfaktoran",
-            "Persamaan Linear & Kuadrat",
-            "Pertidaksamaan & Nilai Mutlak",
-            "Fungsi & Grafik",
-            "Komposisi Fungsi & Invers Fungsi",
-            "Eksponen & Logaritma",
-            "Polinom & Teorema Sisa",
-            "Matriks & Determinan (Pengantar)"
-          ]
-        },
-        {
-          category: "geometri",
-          title: "Geometri & Trigonometri",
-          icon: "📏",
-          page: "geometri.html",
-          items: [
-            "Sudut & Garis Sejajar",
-            "Segitiga & Teorema Pythagoras",
-            "Lingkaran, Busur & Tali Busur",
-            "Bangun Datar (Luas & Keliling)",
-            "Bangun Ruang (Volume & Luas Permukaan)",
-            "Koordinat Kartesius & Jarak",
-            "Transformasi Geometri",
-            "Vektor di Bidang & Ruang",
-            "Trigonometri (sin, cos, tan)",
-            "Aturan Sinus & Cosinus"
-          ]
-        },
-        {
-          category: "kalkulus",
-          title: "Kalkulus",
-          icon: "∫",
-          page: "kalkulus.html",
-          items: [
-            "Limit Fungsi Aljabar & Trigonometri",
-            "Kontinuitas & Teorema Nilai Antara",
-            "Turunan (Definisi & Aturan)",
-            "Aplikasi Turunan (Maks/Min)",
-            "Integral Tak Tentu & Tentu",
-            "Luas Daerah & Volume Benda Putar",
-            "Fungsi Invers Trigonometri (arcsin, dll)",
-            "Limit Tak Hingga & Asimtot"
-          ]
-        },
-        {
-          category: "statistika",
-          title: "Statistika & Peluang",
-          icon: "📊",
-          page: "statistika.html",
-          items: [
-            "Mean, Median, Modus Data Tunggal & Kelompok",
-            "Kuartil, Desil, Persentil",
-            "Variansi & Simpangan Baku",
-            "Peluang & Ruang Sampel",
-            "Kombinasi & Permutasi",
-            "Peluang Bersyarat & Bayes",
-            "Distribusi Binomial & Normal"
-          ]
-        },
-        {
-          category: "teori",
-          title: "Teori Bilangan",
-          icon: "🔣",
-          page: "teori-bilangan.html",
-          items: [
-            "Bilangan Prima & Komposit",
-            "FPB, KPK & Algoritma Euclid",
-            "Modulo & Kongruensi Linear",
-            "Invers Modulo & Teorema Wilson",
-            "Chinese Remainder Theorem (CRT)",
-            "Persamaan Diophantine Linear",
-            "Fungsi Euler & Teorema Euler",
-            "Uji Keterbagian Lanjut"
-          ]
-        },
-      {
-category:"kombinatorika",
-title:"Kombinatorika",
-icon:"🎲",
-page:"kombinatorika.html",
-items:[
-"Aturan Pencacahan",
-"Prinsip Penjumlahan",
-"Prinsip Perkalian",
-"Faktorial",
-"Permutasi",
-"Kombinasi",
-"Koefisien Binomial",
-"Teorema Binomial",
-"Prinsip Dirichlet",
-"Inklusi-Eksklusi",
-"Rekurensi",
-"Generating Function",
-"Double Counting"
-]
-},        {
-          category: "problem",
-          title: "Problem Solving & OSN",
-          icon: "🧩",
-          page: "problem-solving.html",
-          items: [
-            "Pola Berpikir & Heuristik",
-            "Strategi Pembuktian (Induksi, Kontradiksi)",
-            "Analisis Soal Kompleks",
-            "Ketaksamaan (AM-GM, Cauchy)",
-            "Kombinatorik Lanjut",
-            "Tips & Trik OSN Matematika"
-          ]
-        }
-      ];
-
-      const grid = document.getElementById('materialGrid');
-      const filterTags = document.querySelectorAll('.tag');
-      const searchInput = document.getElementById('searchInput');
-      const searchButton = document.getElementById('searchButton');
-      let activeFilter = 'all';
-
-      function renderMaterials(filterKey = 'all', searchTerm = '') {
-        if (!grid) return;
-        
-        const filtered = materials.filter(item => {
-          const matchCategory = (filterKey === 'all') || (item.category === filterKey);
-          if (!matchCategory) return false;
-          if (searchTerm.trim() === '') return true;
-          
-          const term = searchTerm.toLowerCase();
-          const titleMatch = item.title.toLowerCase().includes(term);
-          const itemsMatch = item.items.some(i => i.toLowerCase().includes(term));
-          return titleMatch || itemsMatch;
-        });
-
-        if (filtered.length === 0) {
-          grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2.5rem; color:#b0c8ff; background:rgba(0,0,0,0.3); border-radius:20px;">🔍 Materi tidak ditemukan. Coba kata kunci lain seperti "invers", "modulo", "turunan".</div>`;
-          return;
-        }
-
-        grid.innerHTML = filtered.map(mat => {
-          return `
-            <div class="card" data-category="${mat.category}">
-              <h3>${mat.icon} ${mat.title}</h3>
-              <ul>
-                ${mat.items.map(item => `<li>▸ ${item}</li>`).join('')}
-              </ul>
-              <div class="navigate-btn" onclick="window.location.href='${mat.page}'">
-                📖 Buka Materi Lengkap →
-              </div>
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" placeholder="Cari topik: modulo, invers, turunan, vektor, Cauchy..." id="searchInput">
+                <button id="searchButton">🔍 Cari</button>
             </div>
-          `;
-        }).join('');
-      }
+            <div class="filter-tags" id="filterTags">
+                <span class="tag active" data-filter="all">📚 Semua</span>
+                <span class="tag" data-filter="dasar">🔢 Dasar</span>
+                <span class="tag" data-filter="aljabar">📐 Aljabar</span>
+                <span class="tag" data-filter="geometri">📏 Geometri</span>
+                <span class="tag" data-filter="trigonometri">📐 Trigonometri</span>
+                <span class="tag" data-filter="kalkulus">∫ Kalkulus</span>
+                <span class="tag" data-filter="kombinatorika">🎲 Kombinatorika</span>
+                <span class="tag" data-filter="teori">🔣 Teori Bilangan</span>
+                <span class="tag" data-filter="statistika">📊 Statistika</span>
+                <span class="tag" data-filter="peluang">🎯 Peluang</span>
+                <span class="tag" data-filter="olimpiade">🏆 Olimpiade</span>
+            </div>
+        </div>
 
-      // Filter tags
-      filterTags.forEach(tag => {
-        tag.addEventListener('click', function(e) {
-          filterTags.forEach(t => t.classList.remove('active'));
-          this.classList.add('active');
-          activeFilter = this.getAttribute('data-filter') || 'all';
-          renderMaterials(activeFilter, searchInput.value);
-        });
-      });
+        <!-- Pendahuluan -->
+        <div class="section">
+            <h2>📖 Selamat Datang di Mathematics Handbook</h2>
+            <div class="intro-text">
+                <p><strong>Mathematics Handbook</strong> adalah panduan matematika terlengkap yang mencakup <strong>10 bab utama</strong> dan <strong>200+ topik</strong>. Mulai dari Sistem Bilangan, Aljabar, Geometri, Trigonometri, Kalkulus, Kombinatorika, Teori Bilangan, Statistika, Peluang, hingga materi Olimpiade seperti AM-GM, Cauchy, Vieta Jumping, dan banyak lagi.</p>
+                <div class="feature-box">
+                    <div class="feature-item"><span>🔢</span> Sistem Bilangan</div>
+                    <div class="feature-item"><span>📐</span> Aljabar & Fungsi Invers</div>
+                    <div class="feature-item"><span>∫</span> Kalkulus Lengkap</div>
+                    <div class="feature-item"><span>🔣</span> Modulo & Kongruensi</div>
+                    <div class="feature-item"><span>🏆</span> Ketaksamaan OSN</div>
+                </div>
+            </div>
+        </div>
 
-      function performSearch() {
-        renderMaterials(activeFilter, searchInput.value);
-      }
+        <!-- Daftar Materi -->
+        <div class="section">
+            <h2>📚 Daftar Materi Lengkap</h2>
+            <div class="grid" id="materialGrid"></div>
+            <p style="margin-top:1.5rem; color:#b0c7f0; font-style:italic; text-align:center;">
+                ✨ Klik tombol <strong>"Buka Materi Lengkap →"</strong> untuk menuju halaman khusus setiap bab.
+            </p>
+        </div>
 
-      searchButton.addEventListener('click', performSearch);
-      searchInput.addEventListener('keyup', function(e) {
-        if (e.key === 'Enter') performSearch();
-      });
+        <footer>
+            © Mathematics Handbook · Dibuat untuk memahami matematika secara mendalam.<br>
+            <span style="opacity:0.7;">Update Juni 2026 · 10 Bab · 200+ Topik · Invers · Modulo · Cauchy · Vieta Jumping</span>
+        </footer>
+    </div>
 
-      // Render awal
-      renderMaterials('all', '');
-    })();
-  </script>
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke atas">↑</button>
+
+    <script>
+        (function() {
+            // Data materi SUPER LENGKAP sesuai daftar
+            const materials = [{
+                category: "dasar",
+                title: "Dasar Matematika",
+                icon: "🔢",
+                page: "dasar.html",
+                items: [
+                    "Sistem Bilangan", "Bilangan Asli, Cacah, Bulat", "Bilangan Rasional",
+                    "Bilangan Irasional", "Bilangan Real", "Bilangan Kompleks (pengantar)",
+                    "Operasi Hitung", "Pecahan", "Desimal", "Persen", "Rasio", "Perbandingan",
+                    "Faktor", "Kelipatan", "FPB", "KPK", "Pangkat", "Akar", "Bentuk Akar",
+                    "Notasi Ilmiah", "Angka Penting", "Estimasi", "Pembulatan", "Nilai Mutlak",
+                    "Interval", "Himpunan", "Logika Matematika", "Pembuktian Dasar", "Notasi Sigma (Σ)"
+                ]
+            }, {
+                category: "aljabar",
+                title: "Aljabar",
+                icon: "📐",
+                page: "aljabar.html",
+                items: [
+                    "Bentuk Aljabar", "Operasi Aljabar", "Identitas Aljabar", "Faktorisasi",
+                    "Pecahan Aljabar", "Persamaan Linear", "Persamaan Kuadrat", "Persamaan Kubik",
+                    "Persamaan Rasional", "Persamaan Irasional", "Persamaan Eksponen",
+                    "Persamaan Logaritma", "Pertidaksamaan Linear", "Pertidaksamaan Kuadrat",
+                    "Pertidaksamaan Rasional", "Pertidaksamaan Nilai Mutlak",
+                    "Pertidaksamaan Eksponen", "Pertidaksamaan Logaritma", "Sistem Persamaan",
+                    "Sistem Pertidaksamaan", "Fungsi", "Domain", "Range", "Kodomain",
+                    "Komposisi Fungsi", "Fungsi Invers", "Fungsi Kuadrat", "Fungsi Rasional",
+                    "Fungsi Eksponen", "Fungsi Logaritma", "Fungsi Mutlak", "Grafik Fungsi",
+                    "Polinom", "Teorema Sisa", "Teorema Faktor", "Horner", "Rumus Vieta",
+                    "Barisan", "Deret", "Deret Aritmetika", "Deret Geometri", "Bilangan Kompleks"
+                ]
+            }, {
+                category: "geometri",
+                title: "Geometri",
+                icon: "📏",
+                page: "geometri.html",
+                items: [
+                    "Titik", "Garis", "Sudut", "Segitiga", "Segiempat", "Poligon", "Lingkaran",
+                    "Kesebangunan", "Kekongruenan", "Bangun Datar", "Bangun Ruang", "Luas",
+                    "Keliling", "Volume", "Luas Permukaan", "Koordinat Kartesius", "Geometri Analitik",
+                    "Transformasi", "Translasi", "Rotasi", "Refleksi", "Dilatasi", "Vektor",
+                    "Irisan Kerucut", "Elips", "Parabola", "Hiperbola"
+                ]
+            }, {
+                category: "trigonometri",
+                title: "Trigonometri",
+                icon: "📐",
+                page: "trigonometri.html",
+                items: [
+                    "Sudut", "Radian", "Derajat", "Sin", "Cos", "Tan", "Cosec", "Sec", "Cot",
+                    "Sudut Istimewa", "Identitas Trigonometri", "Persamaan Trigonometri",
+                    "Pertidaksamaan Trigonometri", "Grafik Trigonometri", "Aturan Sinus",
+                    "Aturan Cosinus", "Jumlah Sudut", "Selisih Sudut", "Sudut Rangkap", "Sudut Setengah"
+                ]
+            }, {
+                category: "kalkulus",
+                title: "Kalkulus",
+                icon: "∫",
+                page: "kalkulus.html",
+                items: [
+                    "Fungsi", "Limit", "Limit Sepihak", "Limit Tak Hingga", "Kontinuitas",
+                    "Turunan", "Aturan Turunan", "Turunan Implisit", "Turunan Parametrik",
+                    "Turunan Tingkat Tinggi", "Diferensial", "Gradien", "Nilai Maksimum",
+                    "Nilai Minimum", "Optimasi", "Integral Tak Tentu", "Integral Tentu",
+                    "Substitusi", "Integral Parsial", "Luas Daerah", "Volume Benda Putar",
+                    "Deret Taylor", "Deret Maclaurin"
+                ]
+            }, {
+                category: "kombinatorika",
+                title: "Kombinatorika",
+                icon: "🎲",
+                page: "kombinatorika.html",
+                items: [
+                    "Aturan Pencacahan", "Prinsip Penjumlahan", "Prinsip Perkalian", "Faktorial",
+                    "Permutasi", "Kombinasi", "Koefisien Binomial", "Teorema Binomial",
+                    "Prinsip Dirichlet", "Inklusi-Eksklusi", "Rekurensi", "Generating Function",
+                    "Double Counting"
+                ]
+            }, {
+                category: "teori",
+                title: "Teori Bilangan",
+                icon: "🔣",
+                page: "teori-bilangan.html",
+                items: [
+                    "Bilangan Prima", "Faktorisasi Prima", "Algoritma Euclid", "FPB", "KPK",
+                    "Modulo", "Kongruensi", "Invers Modulo", "CRT", "Fermat", "Euler",
+                    "Fungsi Totien Euler", "Persamaan Diophantine", "Order", "Primitive Root"
+                ]
+            }, {
+                category: "statistika",
+                title: "Statistika",
+                icon: "📊",
+                page: "statistika.html",
+                items: [
+                    "Data", "Mean", "Median", "Modus", "Kuartil", "Desil", "Persentil",
+                    "Variansi", "Standar Deviasi", "Distribusi"
+                ]
+            }, {
+                category: "peluang",
+                title: "Peluang",
+                icon: "🎯",
+                page: "peluang.html",
+                items: [
+                    "Ruang Sampel", "Kejadian", "Peluang", "Peluang Bersyarat", "Bayes",
+                    "Variabel Acak", "Ekspektasi", "Distribusi Binomial", "Distribusi Normal"
+                ]
+            }, {
+                category: "olimpiade",
+                title: "Olimpiade Matematika",
+                icon: "🏆",
+                page: "olimpiade.html",
+                items: [
+                    "AM-GM", "Cauchy", "Jensen", "Chebyshev", "Rearrangement", "Schur",
+                    "Vieta Jumping", "Invariant", "Monovariant", "Extremal Principle",
+                    "Coloring", "Bounding", "Convexity", "Homogenisasi", "Substitusi"
+                ]
+            }];
+
+            const grid = document.getElementById('materialGrid');
+            const filterTags = document.querySelectorAll('.tag');
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            let activeFilter = 'all';
+
+            function renderMaterials(filterKey = 'all', searchTerm = '') {
+                if (!grid) return;
+
+                const filtered = materials.filter(item => {
+                    const matchCategory = (filterKey === 'all') || (item.category === filterKey);
+                    if (!matchCategory) return false;
+                    if (searchTerm.trim() === '') return true;
+
+                    const term = searchTerm.toLowerCase();
+                    const titleMatch = item.title.toLowerCase().includes(term);
+                    const itemsMatch = item.items.some(i => i.toLowerCase().includes(term));
+                    return titleMatch || itemsMatch;
+                });
+
+                if (filtered.length === 0) {
+                    grid.innerHTML =
+                        `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:#b0c8ff; background:rgba(0,0,0,0.3); border-radius:20px;">🔍 Materi tidak ditemukan. Coba kata kunci lain seperti "modulo", "invers", "Cauchy", "turunan".</div>`;
+                    return;
+                }
+
+                grid.innerHTML = filtered.map(mat => {
+                    return `
+                        <div class="card" data-category="${mat.category}">
+                            <h3>
+                                ${mat.icon} ${mat.title}
+                                <span class="item-count">${mat.items.length} topik</span>
+                            </h3>
+                            <ul>
+                                ${mat.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                            <a class="navigate-btn" href="${mat.page}">
+                                📖 Buka Materi Lengkap →
+                            </a>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Filter tags
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    activeFilter = this.getAttribute('data-filter') || 'all';
+                    renderMaterials(activeFilter, searchInput.value);
+                });
+            });
+
+            function performSearch() {
+                renderMaterials(activeFilter, searchInput.value);
+            }
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            // Render awal
+            renderMaterials('all', '');
+
+            // Tampilkan scroll button
+            window.addEventListener('scroll', function() {
+                const btn = document.querySelector('.scroll-top');
+                if (btn) {
+                    btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+                }
+            });
+            document.querySelector('.scroll-top').style.display = 'none';
+        })();
+    </script>
 </body>
-</html>
+                                                                                                              </html>
