@@ -296,15 +296,26 @@ padding:22px;
 }
 
 .navigation{
-
-flex-direction:column;
-
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:40px;
 }
 
 .btn{
+    text-decoration:none;
+    color:white;
+    background:#2f6fed;
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
 
-text-align:center;
-
+.btn:hover{
+    background:#4d84f5;
+    transform:translateY(-2px);
 }
 
 }
