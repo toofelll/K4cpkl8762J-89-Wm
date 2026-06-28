@@ -1,1 +1,1281 @@
 
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 5 | Fungsi: Konsep & Operasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 5 • Fungsi: Konsep & Operasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di bab-bab sebelumnya, kita selalu berurusan dengan persamaan dan pertidaksamaan
+yang mencari nilai x yang memenuhi suatu kondisi. Itu penting, tapi ada pertanyaan
+yang lebih dalam: <b>bagaimana suatu besaran bergantung pada besaran lain?</b>
+
+</p>
+
+<p>
+
+Jawabannya ada pada <b>fungsi</b>—salah satu konsep paling fundamental
+dalam seluruh matematika. Fungsi adalah cara matematis untuk menyatakan
+<b>hubungan ketergantungan</b> antara dua variabel.
+
+</p>
+
+<p>
+
+Setiap kali kamu menekan tombol di kalkulator, kamu menggunakan fungsi.
+Input 9, tekan √, output 3. Input 100, tekan log, output 2.
+Fisika penuh dengan fungsi: jarak sebagai fungsi waktu, gaya sebagai fungsi percepatan.
+Ekonomi juga: harga sebagai fungsi permintaan, pertumbuhan sebagai fungsi waktu.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membangun fondasi fungsi secara mendalam:
+apa definisi tepatnya, apa saja bagian-bagiannya (domain, kodomain, range),
+bagaimana menggabungkan fungsi (komposisi dan invers),
+dan bagaimana menangani fungsi yang didefinisikan secara potongan (piecewise).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi tepat fungsi dan membedakannya dari relasi biasa.</li>
+
+<li>Mampu menentukan domain, kodomain, dan range suatu fungsi dengan berbagai metode.</li>
+
+<li>Memahami dan mampu bekerja dengan fungsi piecewise (fungsi potongan).</li>
+
+<li>Menguasai operasi komposisi fungsi, termasuk menentukan domainnya.</li>
+
+<li>Menguasai konsep invers fungsi: kapan ada, cara mencari, dan verifikasinya.</li>
+
+<li>Memahami hubungan antara fungsi dan inversnya secara grafik.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== DEFINISI FUNGSI ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Fungsi? — Definisi yang Tepat</h2>
+
+<p>
+
+Secara formal, <b>fungsi</b> (atau <b>pemetaan</b>) dari himpunan A ke himpunan B
+adalah <b>aturan</b> yang memasangkan <b>setiap</b> elemen di A
+dengan <b>tepat satu</b> elemen di B.
+
+</p>
+
+<div class="summary">
+
+f : A → B
+
+<br><br>
+
+A disebut <b>domain</b> (daerah asal)<br>
+
+B disebut <b>kodomain</b> (daerah kawan)<br><br>
+
+Untuk setiap x ∈ A, f(x) ∈ B adalah <b>peta</b> atau <b>bayangan</b> dari x.
+
+</div>
+
+<p>
+
+<b>Dua syarat mutlak suatu relasi disebut fungsi:</b>
+
+</p>
+
+<ol>
+
+<li><b>Setiap</b> elemen di domain harus punya pasangan (tidak boleh ada yang "jomblo").</li>
+
+<li>Setiap elemen di domain punya <b>tepat satu</b> pasangan (tidak boleh "cabang").</li>
+
+</ol>
+
+<p>
+
+<b>Mengapa syarat ini penting?</b>
+
+</p>
+
+<p>
+
+Bayangkan fungsi sebagai <b>mesin penjual otomatis</b>.
+Kamu memasukkan kode A1 (input), mesin harus mengeluarkan <b>satu jenis</b> barang (output).
+Kalau mesin kadang mengeluarkan keripik, kadang cokelat untuk kode yang sama,
+mesin itu rusak—tidak bisa diandalkan. Begitu juga fungsi: satu input harus menghasilkan
+satu output yang pasti, agar kita bisa memprediksi hasilnya.
+
+</p>
+
+<hr>
+
+<h3>Notasi Fungsi</h3>
+
+<p>
+
+Notasi f(x) diperkenalkan oleh Leonhard Euler pada abad ke-18.
+
+</p>
+
+<div class="example">
+
+f(x) = x² + 1<br><br>
+
+<b>f</b> : nama fungsi (bisa juga g, h, F, G, φ, dll.)<br>
+
+<b>(x)</b> : variabel input<br>
+
+<b>x² + 1</b> : aturan fungsi ("kuadratkan input, lalu tambah 1")<br><br>
+
+f(3) artinya: masukkan 3 ke aturan → 3² + 1 = 10.<br>
+
+f(-2) = (-2)² + 1 = 5.<br>
+
+f(0) = 0² + 1 = 1.
+
+</div>
+
+<hr>
+
+<h3>Fungsi vs Relasi Biasa: Uji Garis Vertikal</h3>
+
+<p>
+
+Tidak semua relasi adalah fungsi. Cara termudah mengecek dari grafik:
+<b>Uji Garis Vertikal</b>.
+
+</p>
+
+<div class="summary">
+
+Jika ada <b>garis vertikal</b> yang memotong grafik di <b>lebih dari satu titik</b>,
+maka grafik tersebut <b>BUKAN</b> grafik fungsi.
+
+</div>
+
+<p>
+
+<b>Mengapa?</b> Garis vertikal x = a memotong grafik di titik-titik (a, y₁), (a, y₂), ...
+Itu berarti input a menghasilkan lebih dari satu output. Melanggar syarat fungsi.
+
+</p>
+
+<div class="example">
+
+<b>Fungsi:</b> y = x². Garis vertikal x = 2 hanya memotong di (2, 4).<br><br>
+
+<b>Bukan fungsi:</b> x = y² (atau y = ±√x). Garis vertikal x = 4 memotong di (4, 2) dan (4, -2).
+
+</div>
+
+<hr>
+
+<h3>Menghitung Nilai Fungsi</h3>
+
+<p>
+
+Ini adalah keterampilan paling dasar: mengganti variabel dengan nilai yang diberikan.
+
+</p>
+
+<div class="example">
+
+f(x) = 3x² - 2x + 5<br><br>
+
+f(2) = 3(4) - 2(2) + 5 = 12 - 4 + 5 = <b>13</b><br><br>
+
+f(-1) = 3(1) - 2(-1) + 5 = 3 + 2 + 5 = <b>10</b><br><br>
+
+f(0) = 3(0) - 2(0) + 5 = <b>5</b><br><br>
+
+f(a) = <b>3a² - 2a + 5</b> (hanya ganti simbol, aturan tetap)<br><br>
+
+f(x+1) = 3(x+1)² - 2(x+1) + 5<br>
+
+= 3(x² + 2x + 1) - 2x - 2 + 5<br>
+
+= 3x² + 6x + 3 - 2x - 2 + 5<br>
+
+= <b>3x² + 4x + 6</b>
+
+</div>
+
+</div>
+
+<!-- ==================== DOMAIN ==================== -->
+
+<div class="section">
+
+<h2>2. Domain — Semua Input yang Diperbolehkan</h2>
+
+<p>
+
+<b>Domain</b> adalah himpunan semua nilai x yang <b>membuat fungsi terdefinisi</b>
+(menghasilkan output real yang valid).
+
+</p>
+
+<p>
+
+Saat menentukan domain, kita bertanya: <b>"Apa yang bisa salah?"</b>
+Ada tiga "musuh" utama yang membuat fungsi tidak terdefinisi:
+
+</p>
+
+<div class="summary">
+
+<b>1. Pembagian dengan NOL</b> → penyebut ≠ 0<br>
+
+<b>2. Akar genap dari bilangan NEGATIF</b> → radikan ≥ 0<br>
+
+<b>3. Logaritma dari bilangan NEGATIF atau NOL</b> → numerus > 0
+
+</div>
+
+<p>
+
+<b>Mengapa pembagian dengan nol tidak terdefinisi?</b>
+
+</p>
+
+<p>
+
+Bayangkan 6 ÷ 0 = ?. Itu artinya kita mencari bilangan yang kalau dikali 0 menghasilkan 6.
+Tidak ada bilangan seperti itu. Berapapun dikali 0 hasilnya 0, bukan 6.
+Jadi pembagian dengan nol <b>tidak memiliki makna</b> dalam bilangan real.
+
+</p>
+
+<p>
+
+<b>Mengapa akar negatif tidak real?</b>
+
+√(-4) = ? Bilangan real berapapun kalau dikuadratkan hasilnya ≥ 0.
+Tidak ada bilangan real yang kuadratnya -4. Jadi √(-4) bukan bilangan real.
+
+</p>
+
+<hr>
+
+<h3>Cara Sistematis Menentukan Domain</h3>
+
+<ol>
+
+<li>Tuliskan semua syarat yang membuat fungsi terdefinisi.</li>
+
+<li>Selesaikan setiap syarat (biasanya berbentuk pertidaksamaan).</li>
+
+<li>Iriskan semua solusi. Itulah domainnya.</li>
+
+<li>Tulis dalam notasi interval atau notasi himpunan.</li>
+
+</ol>
+
+<h3>Contoh 1: Fungsi Polinomial</h3>
+
+<div class="example">
+
+f(x) = 2x³ - 5x² + 3x - 7<br><br>
+
+Tidak ada pembagian, tidak ada akar, tidak ada logaritma.<br>
+
+<b>Domain: semua bilangan real, (-∞, ∞) atau ℝ</b> ✅
+
+</div>
+
+<p>
+
+<b>Fakta penting:</b> Semua fungsi polinomial terdefinisi untuk semua bilangan real.
+Domainnya selalu ℝ.
+
+</p>
+
+<h3>Contoh 2: Fungsi Rasional (Ada Pecahan)</h3>
+
+<div class="example">
+
+f(x) = 5 / (x - 3)<br><br>
+
+Syarat: penyebut ≠ 0 → x - 3 ≠ 0 → x ≠ 3<br><br>
+
+<b>Domain: {x | x ≠ 3} atau (-∞, 3) ∪ (3, ∞)</b> ✅
+
+</div>
+
+<h3>Contoh 3: Fungsi dengan Akar</h3>
+
+<div class="example">
+
+f(x) = √(2x - 6)<br><br>
+
+Syarat: radikan ≥ 0 → 2x - 6 ≥ 0 → 2x ≥ 6 → x ≥ 3<br><br>
+
+<b>Domain: [3, ∞)</b> ✅
+
+</div>
+
+<h3>Contoh 4: Fungsi dengan Akar di Penyebut</h3>
+
+<div class="example">
+
+f(x) = 1 / √(x - 2)<br><br>
+
+Syarat 1: radikan ≥ 0 → x - 2 ≥ 0 → x ≥ 2<br>
+
+Syarat 2: penyebut ≠ 0 → √(x-2) ≠ 0 → x - 2 ≠ 0 → x ≠ 2<br><br>
+
+Gabungan: x ≥ 2 dan x ≠ 2 → <b>x > 2</b><br><br>
+
+<b>Domain: (2, ∞)</b> ✅
+
+</div>
+
+<p>
+
+Perhatikan: x = 2 membuat penyebut = 0 (karena √0 = 0).
+Jadi harus dikeluarkan, meskipun radikannya 0.
+
+</p>
+
+<h3>Contoh 5: Fungsi dengan Dua Syarat</h3>
+
+<div class="example">
+
+f(x) = √(x+1) / (x-2)<br><br>
+
+Syarat 1: radikan ≥ 0 → x + 1 ≥ 0 → x ≥ -1<br>
+
+Syarat 2: penyebut ≠ 0 → x - 2 ≠ 0 → x ≠ 2<br><br>
+
+Gabungan: x ≥ -1 dan x ≠ 2<br><br>
+
+<b>Domain: [-1, 2) ∪ (2, ∞)</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== KODOMAIN & RANGE ==================== -->
+
+<div class="section">
+
+<h2>3. Kodomain dan Range — Dua Hal yang Sering Tertukar</h2>
+
+<p>
+
+<b>Kodomain</b> dan <b>range</b> sama-sama berkaitan dengan output fungsi,
+tapi keduanya <b>berbeda secara fundamental</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Kodomain:</b> Himpunan <b>tempat output diizinkan berada</b>.
+Ditentukan oleh pembuat fungsi (bagian dari definisi fungsi).<br><br>
+
+<b>Range (Daerah Hasil):</b> Himpunan <b>output aktual</b> yang benar-benar dihasilkan
+ketika semua input dari domain dimasukkan.<br><br>
+
+<b>Range ⊆ Kodomain</b> (range selalu subset dari kodomain).
+
+</div>
+
+<p>
+
+<b>Analogi:</b>
+
+</p>
+
+<p>
+
+Seorang pemanah (fungsi) memanah ke target (kodomain).
+Targetnya adalah seluruh papan panahan.
+Tapi anak panah hanya mengenai satu titik di papan itu.
+Bekas anak panah itulah <b>range</b>.
+
+</p>
+
+<p>
+
+Kodomain = seluruh papan. Range = titik-titik yang benar-benar terkena panah.
+
+</p>
+
+<hr>
+
+<h3>Menentukan Range — Berbagai Metode</h3>
+
+<p>
+
+Menentukan range lebih menantang dibanding domain.
+Berikut beberapa metode:
+
+</p>
+
+<h3>Metode 1: Substitusi dan Observasi (untuk fungsi sederhana)</h3>
+
+<div class="example">
+
+f(x) = x² (domain: ℝ)<br><br>
+
+x² selalu ≥ 0 untuk semua x real.<br>
+
+Saat x = 0, f(0) = 0.<br>
+
+Saat x → ∞, f(x) → ∞.<br><br>
+
+<b>Range: [0, ∞)</b> ✅
+
+</div>
+
+<h3>Metode 2: Mengubah ke Bentuk y = f(x) dan Mencari Syarat x Real</h3>
+
+<p>
+
+Ini metode paling sistematis: nyatakan x dalam y, lalu cari syarat agar x real.
+
+</p>
+
+<div class="example">
+
+f(x) = 1/(x-2)<br><br>
+
+y = 1/(x-2)<br>
+
+x - 2 = 1/y<br>
+
+x = 2 + 1/y<br><br>
+
+Agar x real, 1/y harus real. Satu-satunya masalah: y = 0 → 1/0 tidak terdefinisi.<br><br>
+
+Jadi, <b>y ≠ 0</b>.<br><br>
+
+<b>Range: (-∞, 0) ∪ (0, ∞)</b> ✅
+
+</div>
+
+<h3>Metode 3: Mencari Nilai Maksimum/Minimum (untuk fungsi kuadrat)</h3>
+
+<div class="example">
+
+f(x) = x² + 4x + 1 (domain: ℝ)<br><br>
+
+Ubah ke bentuk kuadrat sempurna:<br>
+
+f(x) = (x² + 4x + 4) - 4 + 1<br>
+
+= (x + 2)² - 3<br><br>
+
+(x + 2)² ≥ 0, jadi nilai minimum terjadi saat (x+2)² = 0 → f(-2) = -3.<br>
+
+Saat x → ±∞, f(x) → ∞.<br><br>
+
+<b>Range: [-3, ∞)</b> ✅
+
+</div>
+
+<h3>Metode 4: Analisis Perilaku Ujung dan Asimtot</h3>
+
+<div class="example">
+
+f(x) = (2x+1)/(x-1), x ≠ 1<br><br>
+
+Bagi pembilang dan penyebut dengan x:<br>
+
+f(x) = (2 + 1/x)/(1 - 1/x)<br><br>
+
+Saat x → ∞: 1/x → 0, f(x) → 2/1 = 2.<br>
+
+Saat x → -∞: f(x) → 2 juga.<br>
+
+Tapi apakah f(x) pernah tepat = 2?<br><br>
+
+y = 2 → (2x+1)/(x-1) = 2 → 2x+1 = 2x-2 → 1 = -2 (kontradiksi).<br>
+
+Jadi y ≠ 2.<br><br>
+
+<b>Range: (-∞, 2) ∪ (2, ∞)</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI PIECEWISE ==================== -->
+
+<div class="section">
+
+<h2>4. Fungsi Potongan (Piecewise Function) — Satu Nama, Banyak Aturan</h2>
+
+<p>
+
+<b>Fungsi piecewise</b> (fungsi potongan, fungsi sepotong-sepotong)
+adalah fungsi yang didefinisikan dengan <b>aturan berbeda</b>
+untuk interval domain yang berbeda.
+
+</p>
+
+<div class="summary">
+
+f(x) = { ekspresi₁, jika syarat₁<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ekspresi₂, jika syarat₂<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ekspresi₃, jika syarat₃
+
+</div>
+
+<p>
+
+<b>Mengapa perlu piecewise?</b>
+
+</p>
+
+<p>
+
+Dunia nyata penuh dengan situasi di mana aturan berubah tergantung kondisi:
+
+</p>
+
+<ul>
+
+<li><b>Tarif ojol:</b> harga berbeda untuk km pertama vs km berikutnya.</li>
+
+<li><b>Pajak progresif:</b> persentase pajak naik untuk penghasilan di atas threshold tertentu.</li>
+
+<li><b>Nilai mutlak:</b> |x| = x untuk x ≥ 0, tapi -x untuk x < 0.</li>
+
+<li><b>Fungsi tangga (step function):</b> biaya parkir per jam.</li>
+
+</ul>
+
+<p>
+
+Piecewise adalah cara matematis untuk menangani "jika-maka" dalam fungsi.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Nilai Mutlak sebagai Piecewise</h3>
+
+<div class="example">
+
+f(x) = |x|<br><br>
+
+Definisi nilai mutlak:<br>
+
+|x| = x, jika x ≥ 0<br>
+
+|x| = -x, jika x < 0<br><br>
+
+Jadi:<br>
+
+f(5) = 5 (karena 5 ≥ 0, pakai aturan x)<br>
+
+f(-3) = -(-3) = 3 (karena -3 < 0, pakai aturan -x)<br>
+
+f(0) = 0 (karena 0 ≥ 0, pakai aturan x)<br><br>
+
+<b>Domain:</b> ℝ (semua bilangan real)<br>
+
+<b>Range:</b> [0, ∞) (nilai mutlak tidak pernah negatif)
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Fungsi Tangga (Tarif Parkir)</h3>
+
+<div class="example">
+
+Biaya parkir:<br>
+
+- 2 jam pertama: Rp5.000<br>
+
+- Setiap jam berikutnya: Rp2.000 per jam<br>
+
+- Maksimal Rp15.000 per hari<br><br>
+
+f(t) = { 5000, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jika 0 < t ≤ 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 5000 + 2000⌈t-2⌉, jika 2 < t ≤ 7<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 15000, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jika t > 7<br><br>
+
+f(1,5) = 5000<br>
+
+f(4) = 5000 + 2000⌈2⌉ = 5000 + 4000 = 9000<br>
+
+f(10) = 15000 (maksimum)
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Menentukan Domain dan Range Piecewise</h3>
+
+<div class="example">
+
+f(x) = { x², &nbsp;&nbsp;jika -2 ≤ x < 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 2x-1, jika 1 ≤ x ≤ 4<br><br>
+
+<b>Domain:</b> [-2, 4] (gabungan dari kedua interval).<br><br>
+
+<b>Range:</b><br><br>
+
+<b>Potongan 1 (x², -2 ≤ x < 1):</b><br>
+
+Saat x = -2: x² = 4<br>
+
+Saat x → 1 (dari kiri): x² → 1<br>
+
+x² pada interval [-2, 1) menghasilkan [0, 4] (karena 0² = 0, dan semua nilai antara 0 dan 4 tercapai).<br><br>
+
+<b>Potongan 2 (2x-1, 1 ≤ x ≤ 4):</b><br>
+
+Saat x = 1: 2(1)-1 = 1<br>
+
+Saat x = 4: 2(4)-1 = 7<br>
+
+2x-1 pada [1, 4] menghasilkan [1, 7].<br><br>
+
+<b>Range total:</b> [0, 4] ∪ [1, 7] = <b>[0, 7]</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 4: Evaluasi Piecewise</h3>
+
+<div class="example">
+
+f(x) = { x+3, jika x < 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ x², &nbsp;&nbsp;jika 0 ≤ x < 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 5, &nbsp;&nbsp;&nbsp;jika x ≥ 2<br><br>
+
+f(-4) = -4 + 3 = <b>-1</b> (x < 0, pakai aturan pertama)<br>
+
+f(0) = 0² = <b>0</b> (0 ≤ x < 2, pakai aturan kedua)<br>
+
+f(1,5) = (1,5)² = <b>2,25</b> (0 ≤ x < 2, pakai aturan kedua)<br>
+
+f(2) = <b>5</b> (x ≥ 2, pakai aturan ketiga)<br>
+
+f(100) = <b>5</b> (x ≥ 2, pakai aturan ketiga)
+
+</div>
+
+<div class="note">
+
+<b>💡 Perhatikan batas interval:</b>
+
+Tanda <b>≤</b> atau <b>≥</b> menentukan di mana batas interval "menempel".
+Di contoh di atas, x = 0 masuk ke aturan kedua (0 ≤ x < 2),
+bukan aturan pertama (x < 0). Pastikan tidak ada x yang masuk ke dua aturan sekaligus.
+
+</div>
+
+</div>
+
+<!-- ==================== KOMPOSISI FUNGSI ==================== -->
+
+<div class="section">
+
+<h2>5. Komposisi Fungsi — Menggabungkan Dua Fungsi</h2>
+
+<p>
+
+<b>Komposisi fungsi</b> adalah operasi yang mengambil output dari satu fungsi
+dan menjadikannya input untuk fungsi lain.
+
+</p>
+
+<div class="summary">
+
+<b>(f ∘ g)(x) = f(g(x))</b>
+
+<br><br>
+
+Dibaca: "f komposisi g" atau "f bundaran g" atau "f setelah g".<br><br>
+
+<b>Urutan pengerjaan:</b> hitung g(x) dulu, lalu masukkan hasilnya ke f.<br><br>
+
+<b>Simbol ∘</b> disebut "bundaran" (circle).
+
+</div>
+
+<p>
+
+<b>Ilustrasi mesin:</b>
+
+</p>
+
+<p>
+
+Bayangkan dua mesin dalam pabrik. Mesin A memotong kayu, mesin B menghaluskan kayu.
+(g ∘ f)(kayu) artinya: masukkan kayu ke mesin f (potong), lalu hasilnya ke mesin g (haluskan).
+(f ∘ g)(kayu) artinya: masukkan ke mesin g dulu (haluskan kayu yang belum dipotong? aneh).
+<b>Urutan sangat penting</b> dan umumnya (f ∘ g) ≠ (g ∘ f).
+
+</p>
+
+<hr>
+
+<h3>Cara Menghitung Komposisi</h3>
+
+<div class="example">
+
+f(x) = 2x + 1<br>
+
+g(x) = x² - 3<br><br>
+
+<b>(f ∘ g)(x) = f(g(x))</b><br>
+
+= f(x² - 3)<br>
+
+= 2(x² - 3) + 1<br>
+
+= 2x² - 6 + 1<br>
+
+= <b>2x² - 5</b><br><br>
+
+<b>(g ∘ f)(x) = g(f(x))</b><br>
+
+= g(2x + 1)<br>
+
+= (2x + 1)² - 3<br>
+
+= 4x² + 4x + 1 - 3<br>
+
+= <b>4x² + 4x - 2</b><br><br>
+
+Jelas: (f ∘ g) ≠ (g ∘ f). Hasilnya berbeda!
+
+</div>
+
+<hr>
+
+<h3>Komposisi dengan Fungsi yang Sama</h3>
+
+<div class="example">
+
+f(x) = 3x - 2<br><br>
+
+(f ∘ f)(x) = f(f(x))<br>
+
+= f(3x - 2)<br>
+
+= 3(3x - 2) - 2<br>
+
+= 9x - 6 - 2<br>
+
+= <b>9x - 8</b><br><br>
+
+(f ∘ f)(4) = 9(4) - 8 = 36 - 8 = <b>28</b><br><br>
+
+Verifikasi manual: f(4) = 10, f(10) = 28. Cocok!
+
+</div>
+
+<hr>
+
+<h3>Domain Komposisi Fungsi</h3>
+
+<p>
+
+Ini adalah bagian yang sering terlewat dan bisa menjadi jebakan.
+
+</p>
+
+<div class="summary">
+
+<b>Domain (f ∘ g) = { x | x ∈ D<sub>g</sub> DAN g(x) ∈ D<sub>f</sub> }</b>
+
+<br><br>
+
+Syarat ganda:<br>
+
+1. x harus di domain g (agar g(x) terdefinisi).<br>
+
+2. g(x) harus di domain f (agar f(g(x)) terdefinisi).
+
+</div>
+
+<p>
+
+<b>Mengapa syarat kedua penting?</b>
+
+</p>
+
+<p>
+
+Meskipun x valid untuk g, hasil g(x) mungkin tidak valid untuk f.
+Contoh klasik: g(x) = x - 5 (domain ℝ), f(x) = √x (domain x ≥ 0).
+(f ∘ g)(x) = √(x - 5). Meskipun g menerima semua x, hasil g(x) harus ≥ 0 agar bisa diakarkan.
+Jadi domain (f ∘ g) = x ≥ 5.
+
+</p>
+
+<div class="example">
+
+f(x) = √x (domain: x ≥ 0)<br>
+
+g(x) = x - 4 (domain: ℝ)<br><br>
+
+(f ∘ g)(x) = √(x - 4)<br><br>
+
+Syarat: x - 4 ≥ 0 → x ≥ 4<br><br>
+
+<b>Domain (f ∘ g): [4, ∞)</b><br><br>
+
+Meskipun g terdefinisi untuk semua x, hanya x ≥ 4 yang membuat g(x) masuk ke domain f.
+
+</div>
+
+<hr>
+
+<h3>Contoh Lebih Kompleks: Domain Komposisi</h3>
+
+<div class="example">
+
+f(x) = 1/x (domain: x ≠ 0)<br>
+
+g(x) = x - 2 (domain: ℝ)<br><br>
+
+(f ∘ g)(x) = f(x-2) = 1/(x-2)<br><br>
+
+Syarat: g(x) ≠ 0 → x - 2 ≠ 0 → x ≠ 2<br><br>
+
+<b>Domain (f ∘ g): (-∞, 2) ∪ (2, ∞)</b>
+
+</div>
+
+<hr>
+
+<h3>Sifat-Sifat Komposisi Fungsi</h3>
+
+<div class="summary">
+
+1. <b>Tidak komutatif:</b> f ∘ g ≠ g ∘ f (umumnya).<br>
+
+2. <b>Asosiatif:</b> (f ∘ g) ∘ h = f ∘ (g ∘ h).<br>
+
+3. <b>Identitas:</b> f ∘ I = I ∘ f = f, di mana I(x) = x.
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI INVERS ==================== -->
+
+<div class="section">
+
+<h2>6. Fungsi Invers — Membalikkan Arah Fungsi</h2>
+
+<p>
+
+<b>Invers fungsi</b> (dilambangkan f⁻¹) adalah fungsi yang <b>membalikkan</b> efek dari f.
+Jika f memetakan a ke b, maka f⁻¹ memetakan b kembali ke a.
+
+</p>
+
+<div class="summary">
+
+f(a) = b &nbsp; ⇔ &nbsp; f⁻¹(b) = a
+
+<br><br>
+
+f⁻¹(f(x)) = x &nbsp; dan &nbsp; f(f⁻¹(x)) = x
+
+</div>
+
+<p>
+
+<b>Catatan penting:</b> f⁻¹(x) <b>BUKAN</b> 1/f(x).
+Notasi pangkat -1 di sini adalah notasi invers, bukan kebalikan (resiprokal).
+Ini adalah sumber kebingungan paling umum.
+
+</p>
+
+<hr>
+
+<h3>Kapan Fungsi Punya Invers?</h3>
+
+<p>
+
+Tidak semua fungsi punya invers. Syaratnya:
+
+</p>
+
+<div class="summary">
+
+Fungsi f memiliki invers jika dan hanya jika f bersifat <b>bijektif</b>
+(satu-satu dan onto).<br><br>
+
+<b>Satu-satu (injektif):</b> Setiap output berasal dari <b>tepat satu</b> input.
+f(a) = f(b) → a = b.<br><br>
+
+<b>Onto (surjektif):</b> Range = Kodomain (setiap elemen kodomain punya pasangan di domain).
+
+</div>
+
+<p>
+
+<b>Uji Garis Horizontal:</b> Jika ada garis horizontal yang memotong grafik
+di <b>lebih dari satu titik</b>, fungsi <b>tidak satu-satu</b> → <b>tidak punya invers</b>
+(kecuali domainnya dibatasi).
+
+</p>
+
+<p>
+
+<b>Contoh klasik:</b> f(x) = x² pada domain ℝ tidak punya invers,
+karena f(2) = 4 dan f(-2) = 4 (tidak satu-satu).
+Tapi jika domain dibatasi menjadi x ≥ 0, maka f(x) = x² punya invers f⁻¹(x) = √x.
+
+</p>
+
+<hr>
+
+<h3>Cara Mencari Invers Fungsi — Langkah Sistematis</h3>
+
+<ol>
+
+<li>Tulis y = f(x).</li>
+
+<li><b>Tukar</b> x dan y: x = f(y).</li>
+
+<li><b>Selesaikan</b> persamaan untuk y (nyatakan y dalam x).</li>
+
+<li>Hasilnya adalah y = f⁻¹(x).</li>
+
+<li><b>Verifikasi:</b> hitung f(f⁻¹(x)), harus = x.</li>
+
+</ol>
+
+<p>
+
+<b>Mengapa langkah "tukar x dan y" bekerja?</b>
+
+</p>
+
+<p>
+
+Invers membalikkan peran input dan output.
+Titik (a, b) di grafik f menjadi titik (b, a) di grafik f⁻¹.
+Menukar x dan y adalah cara aljabar untuk mewujudkan pertukaran ini.
+
+</p>
+
+<h3>Contoh 1: Fungsi Linear</h3>
+
+<div class="example">
+
+f(x) = 3x - 7<br><br>
+
+y = 3x - 7<br>
+
+Tukar: x = 3y - 7<br>
+
+x + 7 = 3y<br>
+
+y = (x + 7)/3<br><br>
+
+<b>f⁻¹(x) = (x + 7)/3</b><br><br>
+
+<b>Verifikasi:</b><br>
+
+f(f⁻¹(x)) = 3((x+7)/3) - 7 = x + 7 - 7 = x ✅<br>
+
+f⁻¹(f(x)) = ((3x-7)+7)/3 = 3x/3 = x ✅
+
+</div>
+
+<h3>Contoh 2: Fungsi Rasional</h3>
+
+<div class="example">
+
+f(x) = (2x+1)/(x-3), x ≠ 3<br><br>
+
+y = (2x+1)/(x-3)<br><br>
+
+Tukar: x = (2y+1)/(y-3)<br><br>
+
+x(y-3) = 2y+1<br>
+
+xy - 3x = 2y + 1<br>
+
+xy - 2y = 3x + 1<br>
+
+y(x-2) = 3x + 1<br>
+
+y = (3x+1)/(x-2), x ≠ 2<br><br>
+
+<b>f⁻¹(x) = (3x+1)/(x-2), x ≠ 2</b><br><br>
+
+<b>Verifikasi:</b><br>
+
+f(f⁻¹(x)) = f((3x+1)/(x-2))<br>
+
+= [2(3x+1)/(x-2) + 1] / [(3x+1)/(x-2) - 3]<br>
+
+= [(6x+2 + x-2)/(x-2)] / [(3x+1 - 3x+6)/(x-2)]<br>
+
+= [7x/(x-2)] / [7/(x-2)]<br>
+
+= 7x/7 = x ✅
+
+</div>
+
+<h3>Contoh 3: Fungsi Kuadrat dengan Domain Dibatasi</h3>
+
+<div class="example">
+
+f(x) = x² + 4x + 3, dengan domain x ≥ -2<br><br>
+
+y = x² + 4x + 3<br>
+
+y = (x² + 4x + 4) - 4 + 3<br>
+
+y = (x+2)² - 1<br><br>
+
+Tukar: x = (y+2)² - 1<br>
+
+x + 1 = (y+2)²<br><br>
+
+Karena domain awal x ≥ -2, maka x+2 ≥ 0, sehingga y+2 juga ≥ 0.<br>
+
+y + 2 = √(x + 1) &nbsp; (ambil akar positif)<br>
+
+y = √(x + 1) - 2<br><br>
+
+<b>f⁻¹(x) = √(x + 1) - 2</b>, dengan domain x ≥ -1 (dari x+1 ≥ 0)<br><br>
+
+<b>Verifikasi:</b><br>
+
+f(f⁻¹(x)) = (√(x+1) - 2)² + 4(√(x+1) - 2) + 3<br>
+
+= (x+1) - 4√(x+1) + 4 + 4√(x+1) - 8 + 3<br>
+
+= x + 1 + 4 - 8 + 3 = x ✅
+
+</div>
+
+<hr>
+
+<h3>Sifat-Sifat Penting Invers Fungsi</h3>
+
+<div class="summary">
+
+1. <b>(f⁻¹)⁻¹ = f</b> (invers dari invers adalah fungsi aslinya).<br>
+
+2. <b>f(f⁻¹(x)) = x</b> dan <b>f⁻¹(f(x)) = x</b> (saling meniadakan).<br>
+
+3. <b>(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</b> (invers komposisi = komposisi invers dengan urutan <b>dibalik</b>).<br>
+
+4. Grafik f⁻¹ adalah <b>pencerminan</b> grafik f terhadap garis <b>y = x</b>. Titik (a,b) pada f → (b,a) pada f⁻¹.
+
+</div>
+
+<p>
+
+<b>Mengapa (f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹?</b>
+
+</p>
+
+<p>
+
+Misalkan kita punya dua operasi: pakai baju dulu (g), baru pakai jaket (f).
+Untuk membalikkannya: lepas jaket dulu (f⁻¹), baru lepas baju (g⁻¹).
+Urutannya dibalik. Secara aljabar:
+
+</p>
+
+<div class="example">
+
+(f ∘ g) ∘ (g⁻¹ ∘ f⁻¹) = f ∘ (g ∘ g⁻¹) ∘ f⁻¹ = f ∘ I ∘ f⁻¹ = f ∘ f⁻¹ = I ✅
+
+</div>
+
+<hr>
+
+<h3>Hubungan Grafik Fungsi dan Inversnya</h3>
+
+<p>
+
+Grafik f dan f⁻¹ selalu <b>simetris</b> terhadap garis y = x.
+
+</p>
+
+<p>
+
+<b>Mengapa?</b> Titik (a, b) pada grafik f berarti f(a) = b.
+Maka f⁻¹(b) = a, sehingga titik (b, a) pada grafik f⁻¹.
+Titik (a, b) dan (b, a) adalah pencerminan satu sama lain terhadap garis y = x
+(karena koordinatnya bertukar).
+
+</p>
+
+<div class="note">
+
+<b>💡 Aplikasi:</b>
+
+Jika kamu tahu grafik f, kamu bisa menggambar grafik f⁻¹
+tanpa menghitung rumusnya: cukup cerminkan terhadap garis y = x.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Fungsi:</b> aturan yang memasangkan setiap input ke tepat satu output.</li>
+
+<li><b>Domain:</b> semua input yang valid (hindari: penyebut 0, akar negatif, log non-positif).</li>
+
+<li><b>Kodomain:</b> himpunan output yang diizinkan (bagian dari definisi fungsi).</li>
+
+<li><b>Range:</b> output aktual yang dihasilkan. Range ⊆ Kodomain.</li>
+
+<li><b>Piecewise:</b> fungsi dengan aturan berbeda untuk interval berbeda.</li>
+
+<li><b>Komposisi (f ∘ g)(x) = f(g(x)):</b> kerjakan g dulu, baru f. Tidak komutatif.</li>
+
+<li><b>Domain komposisi:</b> x ∈ Dg dan g(x) ∈ Df.</li>
+
+<li><b>Invers f⁻¹:</b> membalikkan fungsi. Ada jika f satu-satu.</li>
+
+<li><b>Mencari invers:</b> y = f(x) → tukar x,y → selesaikan untuk y → verifikasi f(f⁻¹(x)) = x.</li>
+
+<li><b>(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</b> (urutan dibalik).</li>
+
+<li><b>Grafik f⁻¹:</b> pencerminan grafik f terhadap y = x.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Uji garis vertikal</b> untuk mengecek apakah suatu grafik adalah fungsi.
+<b>Uji garis horizontal</b> untuk mengecek apakah fungsi punya invers.
+
+</li>
+
+<li>
+
+<b>Menentukan domain:</b> tulis semua syarat (penyebut ≠ 0, radikan ≥ 0, numerus > 0).
+Iriskan semuanya. Jangan ada yang terlewat.
+
+</li>
+
+<li>
+
+<b>Menentukan range:</b> gunakan metode "y = f(x), cari syarat x real".
+Ini metode paling sistematis dan jarang gagal.
+
+</li>
+
+<li>
+
+<b>Komposisi: urutan itu krusial.</b> f ∘ g artinya g dulu, baru f.
+Jangan terbalik membaca (f ∘ g)(x) = f(g(x)), x masuk ke g, hasilnya ke f.
+
+</li>
+
+<li>
+
+<b>Verifikasi invers selalu.</b> Hitung f(f⁻¹(x)). Kalau hasilnya bukan x,
+pasti ada yang salah dalam perhitunganmu.
+
+</li>
+
+<li>
+
+<b>Invers dari fungsi kuadrat perlu pembatasan domain.</b>
+Tanpa pembatasan, fungsi kuadrat tidak satu-satu sehingga tidak punya invers.
+
+</li>
+
+<li>
+
+<b>Piecewise: perhatikan batas.</b> Pastikan setiap x hanya masuk ke satu aturan.
+Cek nilai di titik batas untuk memastikan konsistensi.
+
+</li>
+
+<li>
+
+<b>Grafik adalah teman.</b> Kalau bingung dengan sifat fungsi,
+gambar sketsa grafiknya. Visualisasi sering memberi insight yang tidak terlihat dari rumus.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar4.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar6.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
