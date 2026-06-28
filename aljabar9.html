@@ -1,1 +1,1211 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 9 | Matriks</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 9 • Matriks</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Bayangkan kamu punya sistem persamaan linear dengan 4 variabel dan 4 persamaan.
+Menyelesaikannya dengan eliminasi biasa? Bisa, tapi panjang dan rawan salah.
+
+</p>
+
+<p>
+
+Di sinilah <b>matriks</b> hadir sebagai penyelamat. Matriks adalah cara
+<b>menyusun bilangan dalam bentuk tabel</b> sehingga kita bisa memanipulasi
+sistem persamaan secara lebih rapi, sistematis, dan efisien.
+
+</p>
+
+<p>
+
+Matriks bukan cuma untuk sistem persamaan. Ia dipakai di mana-mana:
+grafika komputer (3D rendering), machine learning (neural network),
+ekonomi (input-output), hingga enkripsi data. Menguasai matriks
+berarti kamu punya alat yang sangat powerful.
+
+</p>
+
+<p>
+
+Ini adalah bab terakhir Aljabar. Kita akan membahas matriks dari nol
+sampai ke topik yang biasanya baru muncul di universitas.
+Semua dijelaskan dengan sabar, langkah demi langkah, dengan banyak contoh.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami apa itu matriks, ordo, elemen, dan notasinya.</li>
+
+<li>Mengenal jenis-jenis matriks khusus.</li>
+
+<li>Menguasai operasi dasar: penjumlahan, pengurangan, perkalian skalar.</li>
+
+<li>Menguasai perkalian dua matriks dan memahami kenapa tidak komutatif.</li>
+
+<li>Memahami transpose dan sifat-sifatnya.</li>
+
+<li>Menguasai determinan matriks 2×2 dan 3×3 dengan berbagai metode.</li>
+
+<li>Memahami sifat-sifat determinan dan pengaruh operasi baris elementer.</li>
+
+<li>Mengenal minor, kofaktor, dan adjoin.</li>
+
+<li>Menguasai invers matriks dengan metode adjoin dan OBE.</li>
+
+<li>Memahami rank matriks dan hubungannya dengan solusi SPL.</li>
+
+<li>Menerapkan matriks ke sistem persamaan linear (SPL).</li>
+
+<li>Mengenal aturan Cramer dan persamaan matriks.</li>
+
+<li>Memahami trace dan sifat-sifatnya.</li>
+
+<li>Mengenal nilai eigen dan vektor eigen sebagai pengantar.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== DEFINISI & NOTASI ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Matriks? — Definisi dan Notasi</h2>
+
+<p>
+
+<b>Matriks</b> adalah susunan bilangan (atau simbol) berbentuk <b>persegi panjang</b>
+yang diatur dalam <b>baris dan kolom</b>.
+
+</p>
+
+<div class="summary">
+
+Matriks A berordo <b>m × n</b> memiliki <b>m baris</b> dan <b>n kolom</b>.<br><br>
+
+Elemen pada baris ke-i, kolom ke-j ditulis <b>aᵢⱼ</b> (atau Aᵢⱼ).
+
+</div>
+
+<div class="example">
+
+A = [ 2  5  7 ]  → matriks 2×3 (2 baris, 3 kolom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ 1  3  4 ]<br><br>
+
+a₁₁ = 2 (baris 1, kolom 1)<br>
+
+a₁₂ = 5 (baris 1, kolom 2)<br>
+
+a₂₃ = 4 (baris 2, kolom 3)
+
+</div>
+
+<p>
+
+<b>Mengapa matriks penting?</b> Karena ia bisa merepresentasikan <b>banyak hal sekaligus</b>:
+sistem persamaan, transformasi geometri, data tabel, graf, dan masih banyak lagi.
+Matriks mengubah masalah besar menjadi operasi tabel yang rapi.
+
+</p>
+
+<hr>
+
+<h3>Ordo Matriks</h3>
+
+<p>
+
+Ordo adalah "ukuran" matriks, ditulis <b>m × n</b> (dibaca "m kali n").
+
+</p>
+
+<div class="example">
+
+Matriks 3×2: 3 baris, 2 kolom.<br>
+
+Matriks 1×4: matriks baris (hanya 1 baris).<br>
+
+Matriks 3×1: matriks kolom (hanya 1 kolom).<br>
+
+Matriks n×n: matriks <b>persegi</b> (square matrix) — jumlah baris = jumlah kolom.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>2. Jenis-Jenis Matriks Khusus</h2>
+
+<div class="summary">
+
+<b>Matriks Persegi:</b> jumlah baris = jumlah kolom (n×n).<br><br>
+
+<b>Matriks Diagonal:</b> matriks persegi yang semua elemen di luar diagonal utama = 0.<br><br>
+
+<b>Matriks Identitas (I):</b> matriks diagonal dengan semua diagonal utama = 1.<br>
+
+I₂ = [1 0; 0 1], I₃ = [1 0 0; 0 1 0; 0 0 1].<br><br>
+
+<b>Matriks Nol (O):</b> semua elemen = 0.<br><br>
+
+<b>Matriks Segitiga Atas:</b> semua elemen di bawah diagonal utama = 0.<br><br>
+
+<b>Matriks Segitiga Bawah:</b> semua elemen di atas diagonal utama = 0.<br><br>
+
+<b>Matriks Simetris:</b> A = Aᵀ (elemen aᵢⱼ = aⱼᵢ).
+
+</div>
+
+<p>
+
+<b>Mengapa matriks identitas istimewa?</b>
+
+</p>
+
+<p>
+
+I dalam matriks seperti angka 1 dalam perkalian biasa:
+<b>A × I = A</b> dan <b>I × A = A</b> untuk setiap matriks A yang ordonya cocok.
+Mengalikan dengan I tidak mengubah matriks.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>3. Operasi Dasar Matriks — Penjumlahan dan Pengurangan</h2>
+
+<p>
+
+Dua matriks bisa dijumlahkan atau dikurangkan <b>hanya jika ordonya sama</b>.
+
+</p>
+
+<div class="summary">
+
+(A ± B)ᵢⱼ = aᵢⱼ ± bᵢⱼ
+
+<br><br>
+
+Jumlahkan/kurangkan elemen yang posisinya sama.
+
+</div>
+
+<div class="example">
+
+A = [3  1] &nbsp; B = [2  4]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[5  2] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1  3]<br><br>
+
+A + B = [3+2 &nbsp; 1+4] = [5 &nbsp; 5]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5+1 &nbsp; 2+3] &nbsp;&nbsp;&nbsp;[6 &nbsp; 5]<br><br>
+
+A - B = [3-2 &nbsp; 1-4] = [1 &nbsp; -3]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5-1 &nbsp; 2-3] &nbsp;&nbsp;&nbsp;[4 &nbsp; -1]
+
+</div>
+
+<p>
+
+<b>Sifat penjumlahan matriks:</b>
+
+</p>
+
+<ul>
+
+<li><b>Komutatif:</b> A + B = B + A</li>
+
+<li><b>Asosiatif:</b> (A + B) + C = A + (B + C)</li>
+
+<li><b>Elemen identitas:</b> A + O = A (O adalah matriks nol)</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>4. Perkalian Skalar — Mengalikan Matriks dengan Angka</h2>
+
+<div class="summary">
+
+(kA)ᵢⱼ = k × aᵢⱼ
+
+<br><br>
+
+Setiap elemen dikalikan dengan k.
+
+</div>
+
+<div class="example">
+
+A = [2  3]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  1]<br><br>
+
+3A = [3×2 &nbsp; 3×3] = [6 &nbsp; 9]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3×4 &nbsp; 3×1] &nbsp;&nbsp;&nbsp;[12 &nbsp; 3]
+
+</div>
+
+<p>
+
+<b>Sifat perkalian skalar:</b>
+
+</p>
+
+<ul>
+
+<li>k(A + B) = kA + kB (distributif)</li>
+
+<li>(k + m)A = kA + mA</li>
+
+<li>k(mA) = (km)A</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>5. Perkalian Dua Matriks — Operasi yang Paling Penting</h2>
+
+<p>
+
+Ini adalah operasi matriks yang paling sering dipakai dan paling sering salah.
+Pahami baik-baik.
+
+</p>
+
+<div class="summary">
+
+<b>Syarat:</b> A (m×n) × B (p×q) bisa dikalikan jika <b>n = p</b>.<br>
+
+Jumlah <b>kolom A</b> harus sama dengan jumlah <b>baris B</b>.<br><br>
+
+Hasilnya: matriks berordo <b>m × q</b>.<br><br>
+
+<b>Cara menghitung:</b><br>
+
+(A × B)ᵢⱼ = jumlah dari (baris ke-i A) × (kolom ke-j B)<br>
+
+= aᵢ₁b₁ⱼ + aᵢ₂b₂ⱼ + ... + aᵢₙbₙⱼ
+
+</div>
+
+<p>
+
+<b>Intuisi:</b> Elemen di posisi (i,j) hasil perkalian adalah
+<b>perkalian titik (dot product)</b> antara baris ke-i dari A
+dan kolom ke-j dari B.
+
+</p>
+
+<h3>Contoh 1: (2×2) × (2×2)</h3>
+
+<div class="example">
+
+A = [1  2] &nbsp; B = [5  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3  4] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7  8]<br><br>
+
+A × B = [1×5+2×7 &nbsp; 1×6+2×8] = [5+14 &nbsp; 6+16] = [19 &nbsp; 22]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3×5+4×7 &nbsp; 3×6+4×8] &nbsp;&nbsp;&nbsp;[15+28 &nbsp; 18+32] &nbsp;&nbsp;&nbsp;[43 &nbsp; 50]
+
+</div>
+
+<h3>Contoh 2: (2×3) × (3×2) → hasil (2×2)</h3>
+
+<div class="example">
+
+A = [1  2  3] &nbsp; B = [1  2]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5  6] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3  4]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5  6]<br><br>
+
+A × B = [1×1+2×3+3×5 &nbsp; 1×2+2×4+3×6] = [1+6+15 &nbsp; 2+8+18] = [22 &nbsp; 28]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4×1+5×3+6×5 &nbsp; 4×2+5×4+6×6] &nbsp;&nbsp;&nbsp;[4+15+30 &nbsp; 8+20+36] &nbsp;&nbsp;&nbsp;[49 &nbsp; 64]
+
+</div>
+
+<hr>
+
+<h3>Mengapa Perkalian Matriks Tidak Komutatif?</h3>
+
+<div class="summary">
+
+<b>A × B ≠ B × A</b> (pada umumnya).<br><br>
+
+Bahkan, bisa jadi A×B terdefinisi tapi B×A tidak terdefinisi!
+
+</div>
+
+<div class="example">
+
+A = [1  2] &nbsp; B = [5  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3  4] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7  8]<br><br>
+
+A × B = [19  22]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[43  50]<br><br>
+
+B × A = [5×1+6×3 &nbsp; 5×2+6×4] = [23 &nbsp; 34]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7×1+8×3 &nbsp; 7×2+8×4] &nbsp;&nbsp;&nbsp;[31 &nbsp; 46]<br><br>
+
+A × B ≠ B × A &nbsp; (hasilnya berbeda!)
+
+</div>
+
+<p>
+
+<b>Kapan perkalian matriks komutatif?</b> Kasus khusus:
+A × I = I × A. Juga untuk matriks diagonal dengan ukuran sama.
+Tapi secara umum, jangan berasumsi komutatif.
+
+</p>
+
+<hr>
+
+<h3>Sifat Perkalian Matriks</h3>
+
+<div class="summary">
+
+1. <b>Asosiatif:</b> (AB)C = A(BC)<br>
+
+2. <b>Distributif:</b> A(B + C) = AB + AC<br>
+
+3. <b>Tidak komutatif:</b> AB ≠ BA (umumnya)<br>
+
+4. <b>Identitas:</b> AI = IA = A
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>6. Transpose Matriks — Tukar Baris dan Kolom</h2>
+
+<div class="summary">
+
+Transpose dari A, ditulis <b>Aᵀ</b> (atau A'), didapat dengan <b>menukar baris dan kolom</b>.<br><br>
+
+(Aᵀ)ᵢⱼ = aⱼᵢ
+
+</div>
+
+<div class="example">
+
+A = [1  2  3]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5  6]<br><br>
+
+Aᵀ = [1  4]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2  5]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3  6]<br><br>
+
+Baris 1 A → kolom 1 Aᵀ. Baris 2 A → kolom 2 Aᵀ.
+
+</div>
+
+<h3>Sifat-Sifat Transpose</h3>
+
+<div class="summary">
+
+1. (Aᵀ)ᵀ = A<br>
+
+2. (A + B)ᵀ = Aᵀ + Bᵀ<br>
+
+3. <b>(AB)ᵀ = BᵀAᵀ</b> — perhatikan urutannya dibalik!<br>
+
+4. (kA)ᵀ = kAᵀ
+
+</div>
+
+<p>
+
+<b>Mengapa (AB)ᵀ = BᵀAᵀ?</b>
+
+</p>
+
+<div class="example">
+
+A = [1  2] &nbsp; B = [3]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3  4] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5]<br><br>
+
+AB = [1×3+2×5] = [13]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3×3+4×5] &nbsp;&nbsp;&nbsp;[29]<br><br>
+
+(AB)ᵀ = [13  29] (matriks 1×2)<br><br>
+
+BᵀAᵀ = [3  5] × [1  3] = [3×1+5×2 &nbsp; 3×3+5×4] = [13  29] ✅<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2  4]
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>7. Determinan Matriks 2×2 dan 3×3</h2>
+
+<p>
+
+<b>Determinan</b> adalah sebuah <b>angka skalar</b> yang dihitung dari matriks persegi.
+Determinan menentukan banyak sifat penting matriks, termasuk apakah matriks punya invers.
+
+</p>
+
+<div class="summary">
+
+Determinan matriks A ditulis <b>det(A)</b> atau <b>|A|</b>.
+
+</div>
+
+<hr>
+
+<h3>Determinan 2×2 — Rumus Sederhana</h3>
+
+<div class="summary">
+
+A = [a  b]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[c  d]<br><br>
+
+<b>det(A) = ad - bc</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ad - bc?</b>
+
+</p>
+
+<p>
+
+Determinan bisa dipahami sebagai <b>faktor skala luas</b>.
+Jika kamu punya persegi satuan (luas 1) lalu ditransformasi oleh matriks A,
+luas hasil transformasi = |det(A)|. Inilah makna geometrisnya.
+
+</p>
+
+<div class="example">
+
+A = [3  2]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1  4]<br><br>
+
+det(A) = 3×4 - 2×1 = 12 - 2 = <b>10</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Determinan 3×3 — Aturan Sarrus</h3>
+
+<div class="summary">
+
+Untuk matriks 3×3, determinan bisa dihitung dengan <b>Aturan Sarrus</b>:<br>
+
+Tulis ulang kolom 1 dan 2 di sebelah kanan, lalu jumlahkan diagonal utama
+dan kurangkan diagonal samping.
+
+</div>
+
+<div class="example">
+
+A = [1  2  3]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[7  8  9]<br><br>
+
+Tulis ulang kolom 1, 2:<br>
+
+1 2 3 | 1 2<br>
+
+4 5 6 | 4 5<br>
+
+7 8 9 | 7 8<br><br>
+
+Diagonal utama (↘): 1×5×9 + 2×6×7 + 3×4×8<br>
+
+= 45 + 84 + 96 = 225<br><br>
+
+Diagonal samping (↙): 3×5×7 + 1×6×8 + 2×4×9<br>
+
+= 105 + 48 + 72 = 225<br><br>
+
+det(A) = 225 - 225 = <b>0</b> ✅
+
+</div>
+
+<p>
+
+Determinan 0 menandakan matriks <b>singular</b> (tidak punya invers).
+
+</p>
+
+<hr>
+
+<h3>Ekspansi Kofaktor (Laplace) — Untuk Determinan Lebih Besar</h3>
+
+<p>
+
+Untuk matriks 3×3 atau lebih besar, kita bisa menggunakan <b>ekspansi kofaktor</b>
+(ekspansi Laplace). Pilih satu baris atau kolom, lalu hitung minor dan kofaktornya.
+
+</p>
+
+<h3>Minor dan Kofaktor</h3>
+
+<div class="summary">
+
+<b>Minor Mᵢⱼ:</b> determinan matriks setelah menghapus baris i dan kolom j.<br><br>
+
+<b>Kofaktor Cᵢⱼ:</b> Cᵢⱼ = (-1)ⁱ⁺ʲ × Mᵢⱼ
+
+</div>
+
+<div class="example">
+
+A = [2  3  1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[7  8  9]<br><br>
+
+<b>Minor M₁₁:</b> hapus baris 1, kolom 1 → [5 6; 8 9] → det = 5×9 - 6×8 = 45-48 = -3.<br>
+
+<b>Kofaktor C₁₁:</b> (-1)¹⁺¹ × (-3) = 1 × (-3) = -3.
+
+</div>
+
+<p>
+
+Determinan = jumlah (elemen baris/kolom × kofaktornya).
+Untuk ekspansi di baris pertama:
+
+</p>
+
+<div class="example">
+
+det(A) = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃<br>
+
+= 2(-3) + 3(-C₁₂) + 1(C₁₃) ... (lanjutkan menghitung C₁₂ dan C₁₃)
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>8. Sifat-Sifat Determinan</h2>
+
+<div class="summary">
+
+1. <b>det(Aᵀ) = det(A)</b> — transpose tidak mengubah determinan.<br>
+
+2. <b>det(AB) = det(A) × det(B)</b> — determinan perkalian = perkalian determinan.<br>
+
+3. <b>det(kA) = kⁿ det(A)</b> — untuk matriks n×n, setiap baris dikali k.<br>
+
+4. <b>det(I) = 1</b> — determinan matriks identitas = 1.<br>
+
+5. <b>det(A⁻¹) = 1/det(A)</b> — determinan invers = kebalikan determinan.<br>
+
+6. <b>Jika ada baris/kolom nol → det = 0.</b><br>
+
+7. <b>Jika ada baris/kolom yang kelipatan → det = 0.</b><br>
+
+8. <b>Menukar dua baris → det berubah tanda.</b><br>
+
+9. <b>Menambah kelipatan satu baris ke baris lain → det TETAP.</b>
+
+</div>
+
+<p>
+
+<b>Sifat 9 sangat penting</b> dalam menghitung determinan dengan OBE:
+kita bisa menyederhanakan matriks menjadi segitiga tanpa mengubah determinan
+(asalkan tidak menukar baris).
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>9. Invers Matriks — "Kebalikan" Matriks</h2>
+
+<p>
+
+<b>Invers matriks</b> (A⁻¹) adalah matriks yang jika dikalikan dengan A
+menghasilkan matriks identitas I.
+
+</p>
+
+<div class="summary">
+
+A × A⁻¹ = A⁻¹ × A = I
+
+<br><br>
+
+<b>Syarat:</b> A harus <b>persegi</b> dan <b>determinannya ≠ 0</b> (non-singular).
+
+</div>
+
+<hr>
+
+<h3>Mencari Invers 2×2 — Rumus Langsung</h3>
+
+<div class="summary">
+
+Untuk A = [a  b]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c  d]<br><br>
+
+A⁻¹ = 1/(ad-bc) × [d &nbsp; -b]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-c &nbsp; a]
+
+</div>
+
+<div class="example">
+
+A = [3  2]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1  4]<br><br>
+
+det(A) = 10<br><br>
+
+A⁻¹ = 1/10 × [4 &nbsp; -2] = [0,4 &nbsp; -0,2]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1 &nbsp; 3] &nbsp;&nbsp;&nbsp;[-0,1 &nbsp; 0,3]<br><br>
+
+<b>Verifikasi:</b> A × A⁻¹ = [3(0,4)+2(-0,1) &nbsp; 3(-0,2)+2(0,3)] = [1  0] = I ✅<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1(0,4)+4(-0,1) &nbsp; 1(-0,2)+4(0,3)] &nbsp;&nbsp;&nbsp;[0  1]
+
+</div>
+
+<hr>
+
+<h3>Mencari Invers 3×3 — Metode Adjoin</h3>
+
+<div class="summary">
+
+<b>Langkah-langkah:</b><br>
+
+1. Hitung det(A). Kalau 0, berhenti (tidak ada invers).<br>
+
+2. Hitung matriks kofaktor (semua Cᵢⱼ).<br>
+
+3. Transpose matriks kofaktor → dapat <b>Adjoin(A)</b>.<br>
+
+4. A⁻¹ = Adjoin(A) / det(A).
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>10. Operasi Baris Elementer (OBE) — Alat Paling Powerful</h2>
+
+<p>
+
+<b>Operasi Baris Elementer (OBE)</b> adalah tiga operasi yang bisa dilakukan
+pada baris matriks tanpa mengubah solusi sistem persamaan.
+
+</p>
+
+<div class="summary">
+
+<b>Tiga jenis OBE:</b><br><br>
+
+1. <b>Menukar dua baris:</b> Rᵢ ↔ Rⱼ<br>
+
+2. <b>Mengalikan satu baris dengan konstanta ≠ 0:</b> kRᵢ → Rᵢ<br>
+
+3. <b>Menambah kelipatan satu baris ke baris lain:</b> Rᵢ + kRⱼ → Rᵢ
+
+</div>
+
+<p>
+
+<b>Mengapa OBE tidak mengubah solusi SPL?</b>
+
+Karena setiap OBE ekuivalen dengan operasi aljabar yang sah pada persamaan:
+menukar urutan persamaan, mengalikan persamaan dengan konstanta,
+atau menjumlahkan dua persamaan.
+
+</p>
+
+<hr>
+
+<h3>Eliminasi Gauss — Membentuk Eselon Baris</h3>
+
+<div class="summary">
+
+<b>Tujuan:</b> mengubah matriks menjadi <b>bentuk eselon baris</b>
+(segitiga atas) menggunakan OBE.<br><br>
+
+Ciri bentuk eselon baris:<br>
+
+- Baris nol (jika ada) di paling bawah.<br>
+
+- Leading entry (angka pertama bukan nol) di baris bawah selalu di kanan leading entry di atasnya.
+
+</div>
+
+<h3>Eliminasi Gauss-Jordan — Membentuk Eselon Baris Tereduksi</h3>
+
+<div class="summary">
+
+<b>Tujuan:</b> mengubah matriks menjadi <b>bentuk eselon baris tereduksi</b>.<br><br>
+
+Ciri tambahan:<br>
+
+- Setiap leading entry = 1.<br>
+
+- Setiap leading entry adalah satu-satunya elemen bukan nol di kolomnya.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>11. Mencari Invers dengan OBE — Metode [A|I]</h2>
+
+<p>
+
+Ini adalah metode paling efisien untuk mencari invers matriks besar.
+
+</p>
+
+<div class="summary">
+
+<b>Langkah:</b><br>
+
+1. Tulis [A | I] (matriks A di kiri, identitas di kanan).<br>
+
+2. Lakukan OBE sampai sisi kiri menjadi I.<br>
+
+3. Sisi kanan sekarang adalah A⁻¹.
+
+</div>
+
+<div class="example">
+
+A = [2  1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[5  3]<br><br>
+
+[A|I] = [2  1 | 1  0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5  3 | 0  1]<br><br>
+
+R₁/2 → R₁: [1  0,5 | 0,5  0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5 &nbsp; 3 &nbsp; | 0 &nbsp;&nbsp;&nbsp;1]<br><br>
+
+R₂ - 5R₁ → R₂: [1  0,5 | 0,5  0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  0,5 | -2,5  1]<br><br>
+
+2R₂ → R₂: [1  0,5 | 0,5 &nbsp; 0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0 &nbsp; 1 &nbsp; | -5 &nbsp;&nbsp; 2]<br><br>
+
+R₁ - 0,5R₂ → R₁: [1  0 | 3 &nbsp; -1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1 | -5 &nbsp; 2]<br><br>
+
+A⁻¹ = [3 &nbsp; -1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-5 &nbsp; 2] ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>12. Rank Matriks — Menentukan Banyaknya Solusi SPL</h2>
+
+<div class="summary">
+
+<b>Rank</b> matriks adalah jumlah maksimum <b>baris tak nol</b>
+dalam bentuk eselon barisnya.<br><br>
+
+Rank menentukan apakah SPL punya solusi tunggal, banyak, atau tidak ada.
+
+</div>
+
+<div class="summary">
+
+Untuk SPL AX = B dengan n variabel:<br><br>
+
+<b>rank(A) = rank([A|B]) = n</b> → solusi <b>tunggal</b>.<br>
+
+<b>rank(A) = rank([A|B]) < n</b> → solusi <b>banyak</b> (tak hingga).<br>
+
+<b>rank(A) < rank([A|B])</b> → <b>tidak ada</b> solusi (inkonsisten).
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>13. Penerapan Matriks ke Sistem Persamaan Linear</h2>
+
+<p>
+
+SPL bisa ditulis sebagai <b>persamaan matriks AX = B</b>.
+
+</p>
+
+<div class="example">
+
+2x + 3y = 8<br>
+
+5x - y = 3<br><br>
+
+Bentuk matriks:<br>
+
+[2  3] [x] = [8]<br>
+
+[5 -1] [y] &nbsp;&nbsp;&nbsp;[3]<br><br>
+
+A = [2  3], X = [x], B = [8]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[5 -1] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[y] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3]
+
+</div>
+
+<h3>Menyelesaikan dengan Invers</h3>
+
+<div class="summary">
+
+Jika det(A) ≠ 0: <b>X = A⁻¹B</b>
+
+</div>
+
+<h3>Aturan Cramer</h3>
+
+<div class="summary">
+
+xᵢ = det(Aᵢ) / det(A)
+
+<br><br>
+
+di mana Aᵢ adalah matriks A dengan kolom ke-i diganti B.
+
+</div>
+
+<div class="example">
+
+Untuk sistem di atas: det(A) = 2(-1) - 3(5) = -2 - 15 = -17.<br><br>
+
+x = det([8 3; 3 -1])/det(A) = (8(-1) - 3(3))/(-17) = (-8-9)/(-17) = 1<br><br>
+
+y = det([2 8; 5 3])/det(A) = (2(3) - 8(5))/(-17) = (6-40)/(-17) = 2<br><br>
+
+<b>Solusi: x = 1, y = 2</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>14. Persamaan Matriks — Mencari X dari AX = B atau XA = B</h2>
+
+<div class="summary">
+
+<b>AX = B</b> → X = A⁻¹B (kalikan A⁻¹ dari kiri).<br><br>
+
+<b>XA = B</b> → X = BA⁻¹ (kalikan A⁻¹ dari kanan).<br><br>
+
+<b>AXB = C</b> → X = A⁻¹CB⁻¹.
+
+</div>
+
+<p>
+
+<b>Hati-hati:</b> Karena perkalian matriks tidak komutatif,
+posisi A⁻¹ sangat penting. Di AX = B, A⁻¹ harus di kiri.
+Di XA = B, A⁻¹ harus di kanan.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>15. Trace Matriks — Jumlah Diagonal Utama</h2>
+
+<div class="summary">
+
+<b>Trace(A) = tr(A)</b> = jumlah semua elemen diagonal utama.<br><br>
+
+Untuk A = [aᵢⱼ]ₙₓₙ: tr(A) = a₁₁ + a₂₂ + ... + aₙₙ
+
+</div>
+
+<div class="example">
+
+A = [2  3  1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[7  8  9]<br><br>
+
+tr(A) = 2 + 5 + 9 = <b>16</b>
+
+</div>
+
+<h3>Sifat-Sifat Trace</h3>
+
+<div class="summary">
+
+1. tr(A + B) = tr(A) + tr(B)<br>
+
+2. tr(kA) = k·tr(A)<br>
+
+3. <b>tr(AB) = tr(BA)</b> — sangat berguna sebagai trik!<br>
+
+4. tr(Aᵀ) = tr(A)
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>16. Determinan Matriks n×n — Ekspansi Kofaktor</h2>
+
+<p>
+
+Untuk matriks 4×4 atau lebih besar, kita menggunakan <b>ekspansi kofaktor</b>.
+Pilih satu baris atau kolom (sebaiknya yang paling banyak nolnya),
+lalu hitung determinan secara rekursif.
+
+</p>
+
+<div class="summary">
+
+det(A) = Σ (-1)ⁱ⁺ʲ aᵢⱼ Mᵢⱼ (jumlah sepanjang satu baris/kolom)
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>17. Nilai Eigen dan Vektor Eigen — Pengantar</h2>
+
+<p>
+
+Ini adalah puncak dari teori matriks, biasanya baru dipelajari di universitas.
+
+</p>
+
+<div class="summary">
+
+Jika <b>Av = λv</b> untuk suatu skalar λ dan vektor tak nol v, maka:<br><br>
+
+λ = <b>nilai eigen</b> (eigenvalue)<br>
+
+v = <b>vektor eigen</b> (eigenvector)
+
+</div>
+
+<p>
+
+<b>Makna:</b> Ketika matriks A mengalikan vektor v, hasilnya adalah
+<b>vektor yang sama</b> (v) hanya saja <b>diperpanjang/diperpendek</b> oleh faktor λ.
+Arahnya tidak berubah!
+
+</p>
+
+<h3>Mencari Nilai Eigen</h3>
+
+<div class="summary">
+
+<b>Persamaan karakteristik:</b> det(A - λI) = 0<br><br>
+
+Selesaikan untuk λ. Ini adalah polinomial dalam λ.
+
+</div>
+
+<div class="example">
+
+A = [2  1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1  2]<br><br>
+
+A - λI = [2-λ &nbsp; 1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1 &nbsp; 2-λ]<br><br>
+
+det(A - λI) = (2-λ)(2-λ) - 1 = λ² - 4λ + 3 = 0<br>
+
+(λ - 1)(λ - 3) = 0<br><br>
+
+<b>Nilai eigen: λ = 1 dan λ = 3</b> ✅
+
+</div>
+
+<p>
+
+Nilai eigen punya banyak aplikasi: analisis getaran, PageRank Google,
+pengenalan wajah (eigenface), mekanika kuantum, dan masih banyak lagi.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Matriks:</b> susunan bilangan dalam baris dan kolom. Ordo m×n.</li>
+
+<li><b>Penjumlahan:</b> syarat ordo sama. Elemen seposisi dijumlahkan.</li>
+
+<li><b>Perkalian matriks:</b> A(m×n) × B(n×p) = C(m×p). Tidak komutatif.</li>
+
+<li><b>Transpose:</b> tukar baris dan kolom. (AB)ᵀ = BᵀAᵀ.</li>
+
+<li><b>Determinan 2×2:</b> ad - bc. Determinan 3×3: Sarrus atau kofaktor.</li>
+
+<li><b>det(AB) = det(A)det(B). det(A⁻¹) = 1/det(A).</b></li>
+
+<li><b>Invers 2×2:</b> 1/det × adjoin. <b>Invers n×n:</b> [A|I] → OBE → [I|A⁻¹].</li>
+
+<li><b>OBE:</b> tukar baris, kali baris dengan k, tambah kelipatan baris lain.</li>
+
+<li><b>Eliminasi Gauss:</b> bentuk eselon baris. <b>Gauss-Jordan:</b> bentuk tereduksi.</li>
+
+<li><b>Rank:</b> jumlah baris tak nol di eselon baris. Menentukan solusi SPL.</li>
+
+<li><b>SPL:</b> AX = B → X = A⁻¹B. <b>Cramer:</b> xᵢ = det(Aᵢ)/det(A).</li>
+
+<li><b>Trace:</b> jumlah diagonal utama. tr(AB) = tr(BA).</li>
+
+<li><b>Nilai eigen λ:</b> det(A - λI) = 0. Vektor eigen v: Av = λv.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Cek ordo sebelum menjumlahkan/mengalikan.</b> Kesalahan paling umum adalah
+mengalikan dua matriks yang ordonya tidak cocok.
+
+</li>
+
+<li>
+
+<b>Perkalian matriks: baris × kolom.</b> Baris dari matriks kiri dikalikan
+dengan kolom dari matriks kanan. Jangan terbalik.
+
+</li>
+
+<li>
+
+<b>(AB)ᵀ = BᵀAᵀ, bukan AᵀBᵀ.</b> Urutannya dibalik. Ini sering jadi jebakan.
+
+</li>
+
+<li>
+
+<b>Determinan 3×3 pakai Sarrus untuk cepat.</b> Tapi untuk 4×4 ke atas,
+pakai ekspansi kofaktor dengan memilih baris/kolom yang paling banyak nol.
+
+</li>
+
+<li>
+
+<b>Kalau det = 0, matriks singular → tidak punya invers.</b>
+Jangan lanjutkan mencari invers, karena memang tidak ada.
+
+</li>
+
+<li>
+
+<b>Untuk invers matriks besar, pakai OBE [A|I].</b> Metode adjoin terlalu
+lambat untuk matriks 4×4 ke atas.
+
+</li>
+
+<li>
+
+<b>Rank menentukan jenis solusi SPL.</b> Rank(A) = rank([A|B]) = n → solusi tunggal.
+Rank lebih kecil → banyak solusi. Rank berbeda → tidak ada solusi.
+
+</li>
+
+<li>
+
+<b>Persamaan matriks: perhatikan posisi A⁻¹.</b> AX = B → X = A⁻¹B (A⁻¹ di kiri).
+XA = B → X = BA⁻¹ (A⁻¹ di kanan).
+
+</li>
+
+<li>
+
+<b>Trace itu sederhana tapi powerful.</b> tr(AB) = tr(BA) sering jadi trik cepat
+untuk membuktikan sesuatu tanpa menghitung penuh.
+
+</li>
+
+<li>
+
+<b>Nilai eigen = akar polinomial karakteristik.</b> det(A - λI) = 0.
+Untuk matriks 2×2, ini persamaan kuadrat. Untuk 3×3, ini persamaan kubik.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar8.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
