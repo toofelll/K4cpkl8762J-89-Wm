@@ -1,1 +1,1318 @@
 
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dasar Matematika Part 5 | Faktor, Kelipatan, FPB & KPK</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>🔢 DASAR MATEMATIKA</h1>
+
+<p>Part 5 • Faktor, Kelipatan, FPB & KPK</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Dasar 3 kita belajar bahwa pecahan harus disederhanakan.
+Di Dasar 4 kita menyederhanakan rasio dengan mencari
+"bilangan terbesar yang bisa membagi keduanya".
+
+</p>
+
+<p>
+
+Nah, di bab ini kita akan mempelajari secara formal:
+<b>apa nama bilangan itu, bagaimana cara mencarinya dengan cepat,
+dan apa hubungannya dengan kelipatan.</b>
+
+</p>
+
+<p>
+
+Konsep-konsep ini tidak hanya dipakai untuk menyederhanakan pecahan.
+Ia juga dipakai untuk menyamakan penyebut, menjadwalkan pertemuan,
+membagi barang secara adil, dan masih banyak lagi.
+
+</p>
+
+<p>
+
+Bahkan, konsep ini akan terus terpakai sampai ke aljabar,
+teori bilangan, dan matematika tingkat lanjut.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami apa itu faktor dan bagaimana mencarinya.</li>
+
+<li>Memahami apa itu kelipatan dan hubungannya dengan perkalian.</li>
+
+<li>Menguasai cara mencari FPB (Faktor Persekutuan Terbesar) dengan beberapa metode.</li>
+
+<li>Menguasai cara mencari KPK (Kelipatan Persekutuan Terkecil) dengan beberapa metode.</li>
+
+<li>Memahami hubungan antara FPB dan KPK.</li>
+
+<li>Mengenal faktorisasi prima sebagai alat utama.</li>
+
+<li>Mengenal pengantar Algoritma Euclid untuk FPB bilangan besar.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 1: FAKTOR ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Faktor? — Definisi dan Intuisi</h2>
+
+<p>
+
+<b>Faktor</b> dari suatu bilangan adalah bilangan-bilangan bulat
+yang <b>dapat membagi habis</b> bilangan tersebut.
+
+</p>
+
+<div class="summary">
+
+Jika a × b = c, maka a dan b adalah <b>faktor</b> dari c.
+
+</div>
+
+<p>
+
+Dengan kata lain: faktor adalah "potongan-potongan perkalian"
+yang menghasilkan bilangan itu.
+
+</p>
+
+<p>
+
+<b>Contoh: Faktor dari 12</b>
+
+</p>
+
+<p>
+
+Bilangan berapa saja yang kalau dikalikan menghasilkan 12?
+
+</p>
+
+<div class="example">
+
+1 × 12 = 12 → 1 dan 12 adalah faktor dari 12<br>
+
+2 × 6 = 12 → 2 dan 6 adalah faktor dari 12<br>
+
+3 × 4 = 12 → 3 dan 4 adalah faktor dari 12
+
+</div>
+
+<p>
+
+Jadi, <b>faktor dari 12 adalah: 1, 2, 3, 4, 6, 12</b>.
+
+</p>
+
+<p>
+
+<b>Mengapa 5 bukan faktor dari 12?</b>
+
+Karena 12 ÷ 5 = 2,4 (tidak bulat). Tidak ada bilangan bulat
+yang kalau dikali 5 menghasilkan tepat 12.
+
+</p>
+
+<hr>
+
+<h3>Cara Mencari Faktor dengan Sistematis</h3>
+
+<p>
+
+Untuk mencari semua faktor dari suatu bilangan,
+kita bisa membaginya dengan bilangan bulat mulai dari 1,
+dan melihat mana yang menghasilkan sisa 0.
+
+</p>
+
+<p>
+
+<b>Contoh: Mencari faktor dari 18</b>
+
+</p>
+
+<div class="example">
+
+18 ÷ 1 = 18 → sisa 0 → 1 dan 18 adalah faktor<br>
+
+18 ÷ 2 = 9 → sisa 0 → 2 dan 9 adalah faktor<br>
+
+18 ÷ 3 = 6 → sisa 0 → 3 dan 6 adalah faktor<br>
+
+18 ÷ 4 = 4,5 → sisa tidak 0 → bukan faktor<br>
+
+18 ÷ 5 = 3,6 → sisa tidak 0 → bukan faktor<br>
+
+18 ÷ 6 = 3 → sisa 0 → 6 dan 3 (sudah dapat)<br>
+
+... dan seterusnya.
+
+</div>
+
+<p>
+
+<b>Faktor dari 18: 1, 2, 3, 6, 9, 18.</b>
+
+</p>
+
+<p>
+
+Perhatikan: saat kita sudah mencapai 6, kita mulai mendapat pasangan
+yang sudah muncul sebelumnya (6 dan 3 sudah muncul sebagai 3 dan 6).
+Ini pertanda kita bisa berhenti.
+
+</p>
+
+<div class="note">
+
+<b>💡 Tips Mencari Faktor:</b>
+
+Kita cukup memeriksa pembagi sampai <b>akar kuadrat</b> dari bilangan tersebut.
+Untuk 18, √18 ≈ 4,24. Jadi kita cukup cek pembagi 1, 2, 3, 4 saja.
+Setelah itu, semua faktor bisa didapat dari pasangan-pasangannya.
+
+</div>
+
+<hr>
+
+<h3>Faktor Prima vs Faktor Biasa</h3>
+
+<p>
+
+Di antara semua faktor, ada yang disebut <b>faktor prima</b>.
+Faktor prima adalah faktor yang berupa <b>bilangan prima</b>.
+
+</p>
+
+<p>
+
+Bilangan prima adalah bilangan yang hanya memiliki <b>tepat dua faktor</b>: 1 dan dirinya sendiri.
+
+Contoh: 2, 3, 5, 7, 11, 13, 17, 19, 23, ...
+
+</p>
+
+<p>
+
+<b>Contoh: Faktor dari 12 adalah 1, 2, 3, 4, 6, 12.</b><br>
+
+Di antaranya, yang merupakan bilangan prima: <b>2 dan 3</b>.<br>
+
+Jadi, <b>faktor prima dari 12 adalah 2 dan 3</b>.
+
+</p>
+
+<div class="note">
+
+<b>⚠️ Perhatikan:</b>
+
+1 <b>bukan</b> bilangan prima karena hanya memiliki 1 faktor (yaitu 1 itu sendiri).
+Bilangan prima harus punya <b>tepat dua</b> faktor: 1 dan dirinya sendiri.
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 2: KELIPATAN ==================== -->
+
+<div class="section">
+
+<h2>2. Apa Itu Kelipatan? — Kebalikan dari Faktor</h2>
+
+<p>
+
+Kalau faktor adalah "pembentuk" suatu bilangan,
+<b>kelipatan</b> adalah "hasil perbanyakan" suatu bilangan.
+
+</p>
+
+<div class="summary">
+
+Kelipatan dari a adalah: a, 2a, 3a, 4a, 5a, ...
+
+Yaitu hasil perkalian a dengan bilangan bulat positif.
+
+</div>
+
+<p>
+
+<b>Contoh: Kelipatan dari 3</b>
+
+</p>
+
+<div class="example">
+
+3 × 1 = 3<br>
+
+3 × 2 = 6<br>
+
+3 × 3 = 9<br>
+
+3 × 4 = 12<br>
+
+3 × 5 = 15<br>
+
+... dan seterusnya.
+
+</div>
+
+<p>
+
+Jadi, <b>kelipatan dari 3 adalah: 3, 6, 9, 12, 15, 18, 21, ...</b>
+
+</p>
+
+<hr>
+
+<h3>Hubungan Faktor dan Kelipatan</h3>
+
+<p>
+
+Faktor dan kelipatan adalah <b>dua sisi dari satu hubungan</b>.
+
+</p>
+
+<div class="summary">
+
+Jika a adalah <b>faktor</b> dari b,<br>
+
+maka b adalah <b>kelipatan</b> dari a.
+
+</div>
+
+<p>
+
+<b>Contoh:</b>
+
+</p>
+
+<ul>
+
+<li>3 adalah <b>faktor</b> dari 12, maka 12 adalah <b>kelipatan</b> dari 3.</li>
+
+<li>5 adalah <b>faktor</b> dari 20, maka 20 adalah <b>kelipatan</b> dari 5.</li>
+
+<li>7 adalah <b>faktor</b> dari 7, maka 7 adalah <b>kelipatan</b> dari 7.</li>
+
+</ul>
+
+<p>
+
+Ini adalah hubungan timbal balik yang sangat penting untuk dipahami.
+
+</p>
+
+<hr>
+
+<h3>Kelipatan Persekutuan</h3>
+
+<p>
+
+<b>Kelipatan persekutuan</b> dari dua bilangan adalah
+bilangan-bilangan yang merupakan kelipatan dari <b>kedua</b> bilangan tersebut.
+
+</p>
+
+<p>
+
+<b>Contoh: Kelipatan persekutuan dari 4 dan 6</b>
+
+</p>
+
+<div class="example">
+
+Kelipatan 4: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, ...<br>
+
+Kelipatan 6: 6, 12, 18, 24, 30, 36, 42, ...<br><br>
+
+Kelipatan yang muncul di kedua daftar: <b>12, 24, 36, ...</b>
+
+</div>
+
+<p>
+
+12, 24, 36, ... adalah <b>kelipatan persekutuan</b> dari 4 dan 6.
+
+Di antara semuanya, yang <b>terkecil</b> adalah 12.
+Ini yang nanti akan kita sebut sebagai <b>KPK</b>.
+
+</p>
+
+</div>
+
+<!-- ==================== BAGIAN 3: FPB ==================== -->
+
+<div class="section">
+
+<h2>3. FPB (Faktor Persekutuan Terbesar) — Definisi Formal</h2>
+
+<p>
+
+<b>FPB</b> adalah singkatan dari <b>Faktor Persekutuan Terbesar</b>.
+
+</p>
+
+<div class="summary">
+
+FPB dari dua bilangan atau lebih adalah <b>faktor terbesar</b>
+yang dimiliki oleh semua bilangan tersebut.
+
+</div>
+
+<p>
+
+Inilah "bilangan terbesar yang bisa membagi keduanya"
+yang kita pakai di Dasar 3 dan Dasar 4 untuk menyederhanakan pecahan.
+
+</p>
+
+<hr>
+
+<h3>Metode 1: Mendaftar Faktor (Untuk Bilangan Kecil)</h3>
+
+<p>
+
+<b>Contoh: Mencari FPB dari 12 dan 18</b>
+
+</p>
+
+<p>
+
+<b>Langkah 1:</b> Daftar semua faktor dari masing-masing bilangan.
+
+</p>
+
+<div class="example">
+
+Faktor dari 12: 1, 2, 3, 4, 6, 12<br>
+
+Faktor dari 18: 1, 2, 3, 6, 9, 18
+
+</div>
+
+<p>
+
+<b>Langkah 2:</b> Cari faktor yang muncul di <b>kedua</b> daftar (faktor persekutuan).
+
+</p>
+
+<div class="example">
+
+Faktor persekutuan: 1, 2, 3, 6
+
+</div>
+
+<p>
+
+<b>Langkah 3:</b> Pilih yang <b>terbesar</b>.
+
+</p>
+
+<div class="example">
+
+FPB dari 12 dan 18 adalah <b>6</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 2: Faktorisasi Prima (Untuk Bilangan Lebih Besar)</h3>
+
+<p>
+
+Untuk bilangan yang lebih besar, mendaftar semua faktor tidak praktis.
+Kita gunakan <b>faktorisasi prima</b>.
+
+</p>
+
+<p>
+
+<b>Apa itu faktorisasi prima?</b>
+
+Faktorisasi prima adalah menguraikan suatu bilangan menjadi
+<b>perkalian bilangan-bilangan prima</b>.
+
+</p>
+
+<p>
+
+<b>Contoh: Faktorisasi prima dari 12</b>
+
+</p>
+
+<div class="example">
+
+12 = 2 × 6<br>
+
+&nbsp;&nbsp;&nbsp;= 2 × 2 × 3<br>
+
+&nbsp;&nbsp;&nbsp;= 2² × 3
+
+</div>
+
+<p>
+
+<b>Contoh: Faktorisasi prima dari 18</b>
+
+</p>
+
+<div class="example">
+
+18 = 2 × 9<br>
+
+&nbsp;&nbsp;&nbsp;= 2 × 3 × 3<br>
+
+&nbsp;&nbsp;&nbsp;= 2 × 3²
+
+</div>
+
+<p>
+
+<b>Cara mencari FPB dengan faktorisasi prima:</b>
+
+</p>
+
+<ol>
+
+<li>Faktorkan semua bilangan ke bentuk prima.</li>
+
+<li>Ambil <b>faktor prima yang muncul di semua bilangan</b> (faktor persekutuan).</li>
+
+<li>Untuk setiap faktor prima tersebut, ambil <b>pangkat terkecil</b>.</li>
+
+<li>Kalikan semuanya.</li>
+
+</ol>
+
+<p>
+
+<b>Contoh: FPB dari 12 dan 18</b>
+
+</p>
+
+<div class="example">
+
+12 = 2² × 3¹<br>
+
+18 = 2¹ × 3²<br><br>
+
+Faktor prima yang sama: <b>2 dan 3</b><br>
+
+Pangkat terkecil dari 2: 2¹ (dari 18)<br>
+
+Pangkat terkecil dari 3: 3¹ (dari 12)<br><br>
+
+FPB = 2¹ × 3¹ = 2 × 3 = 6 ✅
+
+</div>
+
+<p>
+
+<b>Mengapa mengambil pangkat terkecil?</b>
+
+</p>
+
+<p>
+
+Karena FPB harus bisa membagi <b>semua</b> bilangan yang diberikan.
+
+Kalau kita ambil 2² (dari 12), maka 2² = 4.
+Apakah 4 bisa membagi 18? 18 ÷ 4 = 4,5 → tidak bisa.
+
+Tapi kalau kita ambil 2¹ = 2, maka 2 bisa membagi 12 (12÷2=6)
+dan juga bisa membagi 18 (18÷2=9).
+
+Jadi, pangkat terkecil menjamin bahwa FPB bisa membagi semua bilangan.
+
+</p>
+
+<hr>
+
+<h3>Contoh Lain: FPB dari 24 dan 36</h3>
+
+<div class="example">
+
+24 = 2³ × 3¹<br>
+
+36 = 2² × 3²<br><br>
+
+Faktor prima yang sama: 2 dan 3<br>
+
+Pangkat terkecil 2: 2²<br>
+
+Pangkat terkecil 3: 3¹<br><br>
+
+FPB = 2² × 3¹ = 4 × 3 = 12 ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b><br>
+
+24 ÷ 12 = 2 (bulat) ✅<br>
+
+36 ÷ 12 = 3 (bulat) ✅<br>
+
+Apakah ada bilangan lebih besar dari 12 yang bisa membagi 24 dan 36?
+Coba 18: 24 ÷ 18 tidak bulat. Coba 24: 36 ÷ 24 tidak bulat.
+Jadi 12 memang yang terbesar.
+
+</p>
+
+</div>
+
+<!-- ==================== BAGIAN 4: KPK ==================== -->
+
+<div class="section">
+
+<h2>4. KPK (Kelipatan Persekutuan Terkecil) — Definisi Formal</h2>
+
+<p>
+
+<b>KPK</b> adalah singkatan dari <b>Kelipatan Persekutuan Terkecil</b>.
+
+</p>
+
+<div class="summary">
+
+KPK dari dua bilangan atau lebih adalah <b>kelipatan terkecil</b>
+yang dimiliki oleh semua bilangan tersebut.
+
+</div>
+
+<p>
+
+Kalau FPB dipakai untuk menyederhanakan pecahan,
+KPK dipakai untuk <b>menyamakan penyebut</b> pecahan.
+
+</p>
+
+<hr>
+
+<h3>Metode 1: Mendaftar Kelipatan (Untuk Bilangan Kecil)</h3>
+
+<p>
+
+<b>Contoh: Mencari KPK dari 4 dan 6</b>
+
+</p>
+
+<div class="example">
+
+Kelipatan 4: 4, 8, 12, 16, 20, 24, ...<br>
+
+Kelipatan 6: 6, 12, 18, 24, 30, ...<br><br>
+
+Kelipatan persekutuan: 12, 24, 36, ...<br>
+
+Yang terkecil: <b>12</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 2: Faktorisasi Prima (Untuk Bilangan Lebih Besar)</h3>
+
+<p>
+
+<b>Cara mencari KPK dengan faktorisasi prima:</b>
+
+</p>
+
+<ol>
+
+<li>Faktorkan semua bilangan ke bentuk prima.</li>
+
+<li>Ambil <b>semua faktor prima</b> yang muncul (dari bilangan manapun).</li>
+
+<li>Untuk setiap faktor prima tersebut, ambil <b>pangkat terbesar</b>.</li>
+
+<li>Kalikan semuanya.</li>
+
+</ol>
+
+<p>
+
+<b>Contoh: KPK dari 12 dan 18</b>
+
+</p>
+
+<div class="example">
+
+12 = 2² × 3¹<br>
+
+18 = 2¹ × 3²<br><br>
+
+Semua faktor prima yang muncul: <b>2 dan 3</b><br>
+
+Pangkat terbesar dari 2: 2² (dari 12)<br>
+
+Pangkat terbesar dari 3: 3² (dari 18)<br><br>
+
+KPK = 2² × 3² = 4 × 9 = 36 ✅
+
+</div>
+
+<p>
+
+<b>Mengapa mengambil pangkat terbesar?</b>
+
+</p>
+
+<p>
+
+Karena KPK harus bisa <b>dibagi oleh semua</b> bilangan yang diberikan.
+
+Kalau kita ambil 2¹ saja, maka KPK-nya mengandung 2¹.
+Apakah bilangan yang mengandung 2¹ bisa dibagi oleh 12 (yang mengandung 2²)?
+Tidak, karena 12 butuh faktor 2².
+
+Jadi, pangkat terbesar menjamin bahwa KPK bisa dibagi oleh semua bilangan.
+
+</p>
+
+<hr>
+
+<h3>Mengapa FPB Ambil Pangkat Terkecil, KPK Ambil Pangkat Terbesar?</h3>
+
+<p>
+
+Ini pertanyaan yang sangat bagus. Jawabannya ada pada <b>logika</b>:
+
+</p>
+
+<ul>
+
+<li>
+
+<b>FPB</b> harus <b>membagi</b> semua bilangan.
+Jadi FPB tidak boleh mengandung faktor yang lebih besar
+dari yang dimiliki bilangan manapun.
+→ Ambil pangkat <b>terkecil</b> (yang pasti dimiliki semua).
+
+</li>
+
+<li>
+
+<b>KPK</b> harus <b>dibagi oleh</b> semua bilangan.
+Jadi KPK harus mengandung faktor yang cukup
+untuk memenuhi kebutuhan bilangan yang paling "banyak".
+→ Ambil pangkat <b>terbesar</b> (supaya semua kebagian).
+
+</li>
+
+</ul>
+
+<div class="summary">
+
+FPB → <b>terkecil</b> → <b>membagi</b> semua<br>
+
+KPK → <b>terbesar</b> → <b>dibagi</b> semua
+
+</div>
+
+<hr>
+
+<h3>Contoh Lengkap: FPB dan KPK dari 24, 36, dan 60</h3>
+
+<p>
+
+<b>Faktorisasi prima:</b>
+
+</p>
+
+<div class="example">
+
+24 = 2³ × 3¹<br>
+
+36 = 2² × 3²<br>
+
+60 = 2² × 3¹ × 5¹
+
+</div>
+
+<p>
+
+<b>Mencari FPB:</b></p>
+
+<div class="example">
+
+Faktor prima yang muncul di <b>semua</b> bilangan: 2 dan 3<br>
+
+(5 tidak muncul di 24 dan 36, jadi bukan faktor persekutuan)<br><br>
+
+Pangkat terkecil 2: 2²<br>
+
+Pangkat terkecil 3: 3¹<br><br>
+
+FPB = 2² × 3¹ = 4 × 3 = 12 ✅
+
+</div>
+
+<p>
+
+<b>Mencari KPK:</b>
+
+</p>
+
+<div class="example">
+
+Semua faktor prima: 2, 3, 5<br><br>
+
+Pangkat terbesar 2: 2³ (dari 24)<br>
+
+Pangkat terbesar 3: 3² (dari 36)<br>
+
+Pangkat terbesar 5: 5¹ (dari 60)<br><br>
+
+KPK = 2³ × 3² × 5¹ = 8 × 9 × 5 = 360 ✅
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 5: HUBUNGAN FPB DAN KPK ==================== -->
+
+<div class="section">
+
+<h2>5. Hubungan Antara FPB dan KPK — Rumus Penting</h2>
+
+<p>
+
+Ada hubungan matematis yang sangat elegan antara FPB dan KPK
+dari dua bilangan.
+
+</p>
+
+<div class="summary">
+
+Untuk dua bilangan a dan b:
+
+<b>FPB(a,b) × KPK(a,b) = a × b</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian dengan contoh:</b>
+
+</p>
+
+<div class="example">
+
+a = 12, b = 18<br><br>
+
+FPB(12,18) = 6<br>
+
+KPK(12,18) = 36<br><br>
+
+FPB × KPK = 6 × 36 = 216<br>
+
+a × b = 12 × 18 = 216<br><br>
+
+Terbukti: 6 × 36 = 12 × 18 ✅
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar?</b>
+
+</p>
+
+<p>
+
+Saat kita memfaktorkan, FPB mengambil pangkat terkecil,
+KPK mengambil pangkat terbesar.
+
+Ketika FPB dan KPK dikalikan, setiap faktor prima akan muncul
+dengan pangkat (terkecil + terbesar) = (pangkat di a + pangkat di b).
+
+Hasilnya persis sama dengan a × b.
+
+</p>
+
+<p>
+
+<b>Contoh dengan faktorisasi:</b>
+
+</p>
+
+<div class="example">
+
+12 = 2² × 3¹<br>
+
+18 = 2¹ × 3²<br><br>
+
+FPB = 2¹ × 3¹ &nbsp; (terkecil)<br>
+
+KPK = 2² × 3² &nbsp; (terbesar)<br><br>
+
+FPB × KPK = (2¹×3¹) × (2²×3²) = 2³ × 3³<br>
+
+a × b = (2²×3¹) × (2¹×3²) = 2³ × 3³<br><br>
+
+Sama! ✅
+
+</div>
+
+<p>
+
+<b>Kegunaan rumus ini:</b>
+
+Jika kita sudah tahu FPB (atau KPK) dari dua bilangan,
+kita bisa mencari yang satunya tanpa harus memfaktorkan ulang.
+
+</p>
+
+<div class="example">
+
+Soal: FPB dari 24 dan 36 adalah 12. Berapa KPK-nya?<br><br>
+
+FPB × KPK = a × b<br>
+
+12 × KPK = 24 × 36<br>
+
+12 × KPK = 864<br>
+
+KPK = 864 ÷ 12 = 72 ✅
+
+</div>
+
+<div class="note">
+
+<b>⚠️ Catatan:</b>
+
+Rumus ini hanya berlaku untuk <b>dua bilangan</b>.
+Untuk tiga bilangan atau lebih, rumusnya berbeda dan lebih kompleks.
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 6: ALGORITMA EUCLID ==================== -->
+
+<div class="section">
+
+<h2>6. Algoritma Euclid — Cara Cepat Mencari FPB Bilangan Besar</h2>
+
+<p>
+
+Untuk bilangan besar seperti 198 dan 72,
+mendaftar faktor atau memfaktorkan prima bisa sangat lama.
+
+Untungnya, ada <b>Algoritma Euclid</b> (ditemukan oleh Euclid sekitar 300 SM)
+yang bisa mencari FPB dengan sangat cepat, hanya dengan operasi pembagian.
+
+</p>
+
+<h3>Ide Dasar Algoritma Euclid</h3>
+
+<div class="summary">
+
+FPB(a, b) = FPB(b, a mod b)
+
+di mana "a mod b" adalah <b>sisa</b> pembagian a oleh b.
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar?</b>
+
+</p>
+
+<p>
+
+Misalkan a = b × q + r (q adalah hasil bagi, r adalah sisa).
+
+Setiap bilangan yang bisa membagi a dan b, pasti juga bisa membagi r.
+
+Sebaliknya, setiap bilangan yang bisa membagi b dan r, pasti juga bisa membagi a.
+
+Jadi, himpunan faktor persekutuan dari (a, b) dan (b, r) adalah <b>sama</b>.
+Akibatnya, FPB-nya juga sama.
+
+</p>
+
+<hr>
+
+<h3>Contoh Langkah demi Langkah: FPB(198, 72)</h3>
+
+<div class="example">
+
+<b>Langkah 1:</b><br>
+
+198 ÷ 72 = 2, sisa 54 &nbsp; (karena 2 × 72 = 144, 198 - 144 = 54)<br>
+
+FPB(198, 72) = FPB(72, 54)<br><br>
+
+<b>Langkah 2:</b><br>
+
+72 ÷ 54 = 1, sisa 18 &nbsp; (karena 1 × 54 = 54, 72 - 54 = 18)<br>
+
+FPB(72, 54) = FPB(54, 18)<br><br>
+
+<b>Langkah 3:</b><br>
+
+54 ÷ 18 = 3, sisa 0 &nbsp; (karena 3 × 18 = 54, tepat habis)<br>
+
+FPB(54, 18) = 18<br><br>
+
+<b>Hasil: FPB(198, 72) = 18</b> ✅
+
+</div>
+
+<p>
+
+<b>Aturannya:</b>
+
+</p>
+
+<ol>
+
+<li>Bagi bilangan yang lebih besar dengan yang lebih kecil.</li>
+
+<li>Ambil sisa pembagian.</li>
+
+<li>Ulangi: bagi pembagi sebelumnya dengan sisa tadi.</li>
+
+<li>Berhenti saat sisa = 0. FPB adalah <b>pembagi terakhir</b>.</li>
+
+</ol>
+
+<p>
+
+<b>Verifikasi dengan faktorisasi prima:</b>
+
+</p>
+
+<div class="example">
+
+198 = 2 × 3² × 11<br>
+
+72 = 2³ × 3²<br><br>
+
+FPB = 2¹ × 3² = 2 × 9 = 18 ✅
+
+</div>
+
+<p>
+
+Hasilnya sama! Tapi Algoritma Euclid jauh lebih cepat
+untuk bilangan besar karena tidak perlu memfaktorkan.
+
+</p>
+
+<hr>
+
+<h3>Contoh Lain: FPB(240, 150)</h3>
+
+<div class="example">
+
+240 ÷ 150 = 1, sisa 90<br>
+
+150 ÷ 90 = 1, sisa 60<br>
+
+90 ÷ 60 = 1, sisa 30<br>
+
+60 ÷ 30 = 2, sisa 0 → berhenti<br><br>
+
+<b>FPB(240, 150) = 30</b> ✅
+
+</div>
+
+<div class="note">
+
+<b>💡 Tips:</b>
+
+Algoritma Euclid sangat berguna saat kedua bilangan besar
+dan sulit difaktorkan secara manual.
+Cukup dengan pembagian berulang, kamu bisa menemukan FPB-nya.
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 7: APLIKASI ==================== -->
+
+<div class="section">
+
+<h2>7. Aplikasi FPB dan KPK dalam Kehidupan</h2>
+
+<h3>📦 Soal FPB: Membagi Barang Secara Adil</h3>
+
+<p>
+
+<b>Soal:</b> Ada 24 apel dan 36 jeruk.
+Buah-buahan itu akan dimasukkan ke dalam beberapa kantong
+dengan jumlah yang sama di setiap kantong.
+Berapa jumlah kantong maksimum yang bisa dibuat?
+
+</p>
+
+<p>
+
+<b>Penyelesaian:</b>
+
+</p>
+
+<div class="example">
+
+Setiap kantong harus berisi apel dan jeruk yang sama banyak.<br>
+
+Jumlah kantong harus bisa membagi 24 dan 36.<br>
+
+Jumlah kantong maksimum = FPB(24, 36).<br><br>
+
+24 = 2³ × 3<br>
+
+36 = 2² × 3²<br>
+
+FPB = 2² × 3 = 12<br><br>
+
+Jadi, maksimum <b>12 kantong</b>.<br>
+
+Setiap kantong: 24÷12 = 2 apel, 36÷12 = 3 jeruk ✅
+
+</div>
+
+<hr>
+
+<h3>⏰ Soal KPK: Menjadwalkan Pertemuan</h3>
+
+<p>
+
+<b>Soal:</b> Andi berenang setiap 4 hari sekali.
+Budi berenang setiap 6 hari sekali.
+Jika mereka berenang bersama hari ini,
+berapa hari lagi mereka akan berenang bersama lagi?
+
+</p>
+
+<p>
+
+<b>Penyelesaian:</b>
+
+</p>
+
+<div class="example">
+
+Mereka akan bertemu lagi pada hari yang merupakan
+kelipatan persekutuan dari 4 dan 6.<br>
+
+Pertemuan berikutnya = KPK(4, 6).<br><br>
+
+4 = 2²<br>
+
+6 = 2 × 3<br>
+
+KPK = 2² × 3 = 12<br><br>
+
+Jadi, mereka akan bertemu lagi <b>12 hari</b> kemudian ✅
+
+</div>
+
+<hr>
+
+<h3>🧮 Soal Aplikasi: Menyederhanakan Pecahan</h3>
+
+<p>
+
+<b>Soal:</b> Sederhanakan pecahan 84/126.
+
+</p>
+
+<div class="example">
+
+Cari FPB(84, 126) dulu.<br><br>
+
+<b>Metode faktorisasi prima:</b><br>
+
+84 = 2² × 3 × 7<br>
+
+126 = 2 × 3² × 7<br>
+
+FPB = 2 × 3 × 7 = 42<br><br>
+
+Bagi pembilang dan penyebut dengan 42:<br>
+
+84 ÷ 42 = 2<br>
+
+126 ÷ 42 = 3<br><br>
+
+Jadi, 84/126 = 2/3 ✅
+
+</div>
+
+<hr>
+
+<h3>🧮 Soal Aplikasi: Menyamakan Penyebut</h3>
+
+<p>
+
+<b>Soal:</b> Hitunglah 5/12 + 7/18.
+
+</p>
+
+<div class="example">
+
+Samakan penyebut dengan KPK(12, 18).<br><br>
+
+12 = 2² × 3<br>
+
+18 = 2 × 3²<br>
+
+KPK = 2² × 3² = 36<br><br>
+
+5/12 = (5×3)/(12×3) = 15/36<br>
+
+7/18 = (7×2)/(18×2) = 14/36<br><br>
+
+15/36 + 14/36 = 29/36 ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Faktor</b>: bilangan yang bisa membagi habis.</li>
+
+<li><b>Kelipatan</b>: hasil perkalian dengan bilangan bulat.</li>
+
+<li><b>FPB</b>: faktor terbesar yang sama dari dua bilangan atau lebih.</li>
+
+<li><b>KPK</b>: kelipatan terkecil yang sama dari dua bilangan atau lebih.</li>
+
+<li><b>Faktorisasi prima</b>: mengurai bilangan menjadi perkalian prima.</li>
+
+<li><b>FPB</b> → ambil faktor prima yang sama, pangkat <b>terkecil</b>.</li>
+
+<li><b>KPK</b> → ambil semua faktor prima, pangkat <b>terbesar</b>.</li>
+
+<li><b>FPB × KPK = a × b</b> (untuk dua bilangan).</li>
+
+<li><b>Algoritma Euclid</b>: FPB(a,b) = FPB(b, a mod b).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Untuk bilangan kecil</b>, mendaftar faktor atau kelipatan masih praktis.
+Tapi untuk bilangan besar (>100), gunakan faktorisasi prima.
+
+</li>
+
+<li>
+
+<b>Saat memfaktorkan</b>, mulailah dengan membagi bilangan prima terkecil:
+2, lalu 3, lalu 5, 7, 11, dan seterusnya.
+
+</li>
+
+<li>
+
+<b>FPB tidak pernah lebih besar</b> dari bilangan terkecil di antara yang dicari.
+
+</li>
+
+<li>
+
+<b>KPK tidak pernah lebih kecil</b> dari bilangan terbesar di antara yang dicari.
+
+</li>
+
+<li>
+
+<b>Gunakan rumus FPB × KPK = a × b</b> untuk mengecek jawabanmu.
+Kalau tidak cocok, pasti ada yang salah.
+
+</li>
+
+<li>
+
+<b>Untuk pecahan</b>: FPB untuk menyederhanakan, KPK untuk menyamakan penyebut.
+
+</li>
+
+<li>
+
+<b>Algoritma Euclid</b> adalah cara tercepat untuk mencari FPB bilangan besar.
+Kuasai teknik ini, kamu akan jauh lebih efisien.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="dasar4.html" class="btn">⬅ Kembali</a>
+
+<a href="dasar.html" class="btn">📚 Daftar Dasar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="dasar6.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
