@@ -1,1 +1,1399 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 1 | Ekspresi & Identitas Aljabar</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 1 • Ekspresi & Identitas Aljabar</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Selamat datang di Bab 1 Aljabar!
+
+</p>
+
+<p>
+
+Di Dasar Matematika, kita selalu berurusan dengan <b>angka konkret</b>: 2 + 3, 7 × 8, √25.
+Sekarang kita naik level. Kita akan belajar bekerja dengan <b>variabel</b>—simbol
+yang mewakili bilangan yang belum diketahui.
+
+</p>
+
+<p>
+
+Kenapa ini penting? Karena di dunia nyata, kita sering tidak tahu semua angkanya.
+Kita tahu "harga 3 buku dan 2 pensil adalah Rp50.000", tapi tidak tahu harga per bukunya.
+Dengan aljabar, kita bisa <b>menyatakannya dalam simbol</b>, lalu mencari nilainya secara sistematis.
+
+</p>
+
+<p>
+
+Bab pertama ini adalah fondasi. Kita akan belajar:
+</p>
+
+<ul>
+
+<li>Apa itu bentuk aljabar dan bagian-bagiannya.</li>
+
+<li>Bagaimana melakukan operasi pada ekspresi aljabar.</li>
+
+<li>Apa saja identitas aljabar yang penting dan dari mana asalnya.</li>
+
+<li>Bagaimana memfaktorkan ekspresi aljabar.</li>
+
+<li>Bagaimana menyederhanakan pecahan yang mengandung variabel.</li>
+
+</ul>
+
+<p>
+
+Kalau kamu kuat di sini, seluruh perjalanan aljabar selanjutnya akan jauh lebih mudah.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami istilah: variabel, koefisien, konstanta, suku.</li>
+
+<li>Mampu menjumlahkan, mengurangkan, mengalikan, dan membagi bentuk aljabar.</li>
+
+<li>Menguasai identitas aljabar penting dan memahami buktinya.</li>
+
+<li>Mampu memfaktorkan berbagai jenis ekspresi aljabar.</li>
+
+<li>Mampu menyederhanakan pecahan aljabar.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== BENTUK ALJABAR ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Bentuk Aljabar?</h2>
+
+<p>
+
+<b>Bentuk aljabar</b> (atau <b>ekspresi aljabar</b>) adalah kombinasi dari
+<b>variabel</b>, <b>angka</b>, dan <b>operasi matematika</b>
+(+, -, ×, ÷, pangkat, akar) yang ditulis menjadi satu kesatuan.
+
+</p>
+
+<div class="example">
+
+3x + 2y - 7
+
+4a² - 2ab + b²
+
+2x³ + 5x² - x + 8
+
+(x + 3)(x - 2)
+
+</div>
+
+<p>
+
+<b>Bagian-Bagian Bentuk Aljabar:</b>
+
+</p>
+
+<div class="summary">
+
+<b>Variabel</b> = simbol yang mewakili bilangan (biasanya huruf: x, y, a, b, n, t).<br>
+
+<b>Koefisien</b> = angka yang menempel pada variabel (pengali variabel).<br>
+
+<b>Konstanta</b> = angka yang berdiri sendiri, tidak menempel pada variabel.<br>
+
+<b>Suku</b> = bagian dari ekspresi yang dipisahkan oleh tanda + atau -.
+
+</div>
+
+<p>
+
+<b>Contoh: Membedah 5x² - 3x + 7</b>
+
+</p>
+
+<div class="example">
+
+5x² → suku pertama. Variabel: x, pangkat: 2, koefisien: 5.<br>
+
+-3x → suku kedua. Variabel: x, pangkat: 1, koefisien: -3.<br>
+
++7 → suku ketiga. Konstanta: 7 (tidak punya variabel).<br><br>
+
+Ekspresi ini punya <b>3 suku</b> → disebut <b>trinomial</b>.
+
+</div>
+
+<hr>
+
+<h3>Jenis-Jenis Ekspresi Berdasarkan Jumlah Suku</h3>
+
+<div class="summary">
+
+<b>Monomial</b> = 1 suku. Contoh: 3x, -5a², 7.<br>
+
+<b>Binomial</b> = 2 suku. Contoh: x + 5, 2a - 3b, x² - 4.<br>
+
+<b>Trinomial</b> = 3 suku. Contoh: x² + 2x + 1, a² - 2ab + b².<br>
+
+<b>Polinomial</b> = banyak suku (umumnya lebih dari 1).
+
+</div>
+
+<hr>
+
+<h3>Suku Sejenis dan Tidak Sejenis</h3>
+
+<p>
+
+<b>Suku sejenis</b> adalah suku-suku yang memiliki <b>variabel dan pangkat yang sama persis</b>.
+Hanya koefisiennya yang boleh berbeda.
+
+</p>
+
+<div class="example">
+
+<b>Sejenis:</b> 3x dan 7x (variabel x, pangkat 1). 5a² dan -2a² (variabel a, pangkat 2).<br>
+
+<b>Tidak sejenis:</b> 3x dan 3y (variabel beda). 4x dan 4x² (pangkat beda). 2ab dan 2a²b (pangkat beda).
+
+</div>
+
+<p>
+
+Kenapa ini penting? Karena <b>hanya suku sejenis yang bisa dijumlahkan atau dikurangkan</b>.
+
+</p>
+
+</div>
+
+<!-- ==================== OPERASI ALJABAR ==================== -->
+
+<div class="section">
+
+<h2>2. Operasi Aljabar — Penjumlahan dan Pengurangan</h2>
+
+<p>
+
+Aturan utamanya sederhana:
+
+</p>
+
+<div class="summary">
+
+Hanya <b>suku sejenis</b> yang bisa dijumlahkan atau dikurangkan.<br>
+
+Caranya: jumlahkan atau kurangkan <b>koefisiennya</b>, variabelnya tetap.
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<p>
+
+Bayangkan 3x + 5x. x adalah suatu bilangan (entah berapa).
+3x artinya 3 kali x. 5x artinya 5 kali x.
+Totalnya: 3 kali x + 5 kali x = (3+5) kali x = 8x.
+
+Ini sama seperti: 3 apel + 5 apel = 8 apel.
+
+</p>
+
+<h3>Contoh Penjumlahan</h3>
+
+<div class="example">
+
+3x + 5x = (3+5)x = <b>8x</b><br><br>
+
+4a² + 7a² = (4+7)a² = <b>11a²</b><br><br>
+
+2xy + 6xy - 3xy = (2+6-3)xy = <b>5xy</b><br><br>
+
+(3x + 2y) + (5x - y) = 3x + 2y + 5x - y = (3+5)x + (2-1)y = <b>8x + y</b>
+
+</div>
+
+<h3>Contoh Pengurangan</h3>
+
+<div class="example">
+
+7x - 2x = (7-2)x = <b>5x</b><br><br>
+
+(5a + 3b) - (2a + b) = 5a + 3b - 2a - b = (5-2)a + (3-1)b = <b>3a + 2b</b><br><br>
+
+(4x² - 3x + 1) - (x² + 2x - 5) = 4x² - 3x + 1 - x² - 2x + 5 = <b>3x² - 5x + 6</b>
+
+</div>
+
+<p>
+
+<b>Perhatikan tanda kurung!</b> Saat mengurangkan ekspresi dalam kurung,
+tanda di dalamnya berubah: -(a + b) = -a - b.
+
+</p>
+
+<div class="note">
+
+<b>💡 Tips:</b>
+
+Saat mengurangkan bentuk aljabar, buka kurung dulu, baru gabungkan suku sejenis.
+Kesalahan paling umum adalah lupa mengubah tanda setelah tanda minus.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>3. Operasi Aljabar — Perkalian</h2>
+
+<p>
+
+Perkalian dalam aljabar mengikuti <b>sifat distributif</b>:
+setiap suku di faktor pertama dikalikan dengan setiap suku di faktor kedua.
+
+</p>
+
+<h3>Perkalian Monomial dengan Monomial</h3>
+
+<div class="summary">
+
+Kalikan koefisien dengan koefisien, variabel dengan variabel.<br>
+
+Gunakan sifat pangkat: xᵃ × xᵇ = xᵃ⁺ᵇ
+
+</div>
+
+<div class="example">
+
+3x × 5x = (3×5) × (x×x) = 15x²<br><br>
+
+2a² × 4a³ = (2×4) × a²⁺³ = 8a⁵<br><br>
+
+(-3xy)(2x²y) = -6x³y²
+
+</div>
+
+<hr>
+
+<h3>Perkalian Monomial dengan Binomial/Polinomial</h3>
+
+<p>
+
+Gunakan sifat distributif: a(b + c) = ab + ac
+
+</p>
+
+<div class="example">
+
+2x(3x + 5) = 2x·3x + 2x·5 = <b>6x² + 10x</b><br><br>
+
+-3a(2a² - a + 4) = -6a³ + 3a² - 12a
+
+</div>
+
+<hr>
+
+<h3>Perkalian Binomial dengan Binomial — Metode FOIL</h3>
+
+<p>
+
+<b>FOIL</b> adalah singkatan dari <b>F</b>irst, <b>O</b>uter, <b>I</b>nner, <b>L</b>ast.
+Ini adalah cara sistematis mengalikan dua binomial.
+
+</p>
+
+<div class="summary">
+
+(a + b)(c + d) = <b>F</b>irst + <b>O</b>uter + <b>I</b>nner + <b>L</b>ast<br>
+
+= a·c + a·d + b·c + b·d
+
+</div>
+
+<p>
+
+<b>Contoh: (x + 3)(x + 2)</b>
+
+</p>
+
+<div class="example">
+
+<b>F</b>irst: x × x = x²<br>
+
+<b>O</b>uter: x × 2 = 2x<br>
+
+<b>I</b>nner: 3 × x = 3x<br>
+
+<b>L</b>ast: 3 × 2 = 6<br><br>
+
+(x + 3)(x + 2) = x² + 2x + 3x + 6 = <b>x² + 5x + 6</b> ✅
+
+</div>
+
+<p>
+
+<b>Mengapa FOIL bekerja?</b>
+
+FOIL adalah penerapan sifat distributif dua kali:
+
+</p>
+
+<div class="example">
+
+(x + 3)(x + 2) = (x + 3)·x + (x + 3)·2<br>
+
+= x·x + 3·x + x·2 + 3·2<br>
+
+= x² + 3x + 2x + 6<br>
+
+= x² + 5x + 6
+
+</div>
+
+<p>
+
+Jadi FOIL bukan sihir, cuma cara cepat dari distributif biasa.
+
+</p>
+
+<hr>
+
+<h3>Contoh Lain Perkalian Binomial</h3>
+
+<div class="example">
+
+(2x - 1)(x + 4) = 2x·x + 2x·4 + (-1)·x + (-1)·4<br>
+
+= 2x² + 8x - x - 4<br>
+
+= <b>2x² + 7x - 4</b><br><br>
+
+(a + b)(a - b) = a·a + a·(-b) + b·a + b·(-b)<br>
+
+= a² - ab + ab - b²<br>
+
+= <b>a² - b²</b> ✅ (Ini adalah identitas selisih kuadrat!)
+
+</div>
+
+<hr>
+
+<h3>Perkalian Polinomial dengan Polinomial</h3>
+
+<p>
+
+Prinsipnya sama: <b>setiap suku di polinomial pertama
+dikalikan dengan setiap suku di polinomial kedua</b>, lalu gabungkan suku sejenis.
+
+</p>
+
+<div class="example">
+
+(x² + 2x + 1)(x + 3)<br><br>
+
+= x²(x+3) + 2x(x+3) + 1(x+3)<br>
+
+= x³ + 3x² + 2x² + 6x + x + 3<br>
+
+= <b>x³ + 5x² + 7x + 3</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>4. Operasi Aljabar — Pembagian</h2>
+
+<p>
+
+Pembagian aljabar pada dasarnya adalah <b>membagi koefisien</b>
+dan <b>mengurangkan pangkat</b> variabel yang sama.
+
+</p>
+
+<div class="summary">
+
+xᵃ ÷ xᵇ = xᵃ⁻ᵇ (x ≠ 0)
+
+</div>
+
+<h3>Pembagian Monomial oleh Monomial</h3>
+
+<div class="example">
+
+12x⁵ ÷ 3x² = (12÷3) × x⁵⁻² = <b>4x³</b><br><br>
+
+20a³b² ÷ 5ab = (20÷5) × a³⁻¹ × b²⁻¹ = <b>4a²b</b><br><br>
+
+-18x⁴ ÷ 6x = <b>-3x³</b>
+
+</div>
+
+<h3>Pembagian Polinomial oleh Monomial</h3>
+
+<p>
+
+Bagi <b>setiap suku</b> di polinomial dengan monomialnya.
+
+</p>
+
+<div class="example">
+
+(6x³ + 9x² - 3x) ÷ 3x<br>
+
+= 6x³÷3x + 9x²÷3x - 3x÷3x<br>
+
+= <b>2x² + 3x - 1</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> 3x(2x² + 3x - 1) = 6x³ + 9x² - 3x. Cocok!
+
+</p>
+
+<h3>Pembagian Polinomial oleh Polinomial (Pembagian Panjang)</h3>
+
+<p>
+
+Untuk pembagian yang lebih kompleks, kita gunakan <b>pembagian panjang</b>,
+mirip seperti pembagian bilangan biasa.
+
+</p>
+
+<p>
+
+<b>Contoh: (x² + 5x + 6) ÷ (x + 2)</b>
+
+</p>
+
+<div class="example">
+
+<b>Langkah 1:</b> x² ÷ x = x. Tulis x di hasil.<br>
+
+<b>Langkah 2:</b> x(x + 2) = x² + 2x. Kurangkan.<br>
+
+(x² + 5x + 6) - (x² + 2x) = 3x + 6<br><br>
+
+<b>Langkah 3:</b> 3x ÷ x = 3. Tulis 3 di hasil.<br>
+
+<b>Langkah 4:</b> 3(x + 2) = 3x + 6. Kurangkan.<br>
+
+(3x + 6) - (3x + 6) = 0<br><br>
+
+<b>Hasil: x + 3</b> ✅ (sisa 0)
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> (x + 2)(x + 3) = x² + 5x + 6. Cocok!
+
+</p>
+
+<div class="note">
+
+<b>💡 Tips:</b>
+
+Saat melakukan pembagian panjang aljabar:
+<ol>
+
+<li>Urutkan polinomial dari pangkat tertinggi ke terendah.</li>
+
+<li>Kalau ada pangkat yang loncat (misal x³ + 1, tanpa x² dan x), isi dengan 0x² + 0x.</li>
+
+<li>Selalu verifikasi dengan mengalikan hasil × pembagi + sisa.</li>
+
+</ol>
+
+</div>
+
+<!-- ==================== IDENTITAS ALJABAR ==================== -->
+
+<div class="section">
+
+<h2>5. Identitas Aljabar — Pola yang Selalu Benar</h2>
+
+<p>
+
+<b>Identitas aljabar</b> adalah persamaan yang selalu benar,
+tidak peduli berapa pun nilai variabelnya.
+
+Berbeda dengan persamaan biasa yang hanya benar untuk nilai tertentu
+(misal 2x = 6 hanya benar untuk x = 3),
+identitas aljabar benar untuk <b>semua</b> nilai variabel.
+
+</p>
+
+<p>
+
+<b>Mengapa identitas penting?</b>
+
+</p>
+
+<p>
+
+Identitas adalah "pola pintas" yang menyederhanakan perhitungan.
+Daripada mengalikan (x+3)(x+3) secara manual setiap kali,
+kita bisa langsung pakai identitas (a+b)² = a² + 2ab + b².
+
+</p>
+
+<hr>
+
+<h3>Identitas 1: Kuadrat Binomial — (a + b)²</h3>
+
+<div class="summary">
+
+<b>(a + b)² = a² + 2ab + b²</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+(a + b)² = (a + b)(a + b)<br>
+
+= a·a + a·b + b·a + b·b &nbsp; (FOIL)<br>
+
+= a² + ab + ab + b²<br>
+
+= <b>a² + 2ab + b²</b> ✅
+
+</div>
+
+<p>
+
+<b>Jangan salah umum:</b> (a + b)² <b>bukan</b> a² + b²!
+Suku tengah 2ab sering dilupakan.
+
+</p>
+
+<div class="example">
+
+(x + 5)² = x² + 2·x·5 + 5² = <b>x² + 10x + 25</b><br><br>
+
+(2a + 3)² = (2a)² + 2·(2a)·3 + 3² = <b>4a² + 12a + 9</b><br><br>
+
+(3x + 4y)² = (3x)² + 2·(3x)(4y) + (4y)² = <b>9x² + 24xy + 16y²</b>
+
+</div>
+
+<hr>
+
+<h3>Identitas 2: Kuadrat Binomial — (a - b)²</h3>
+
+<div class="summary">
+
+<b>(a - b)² = a² - 2ab + b²</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+(a - b)² = (a - b)(a - b)<br>
+
+= a·a + a·(-b) + (-b)·a + (-b)(-b)<br>
+
+= a² - ab - ab + b²<br>
+
+= <b>a² - 2ab + b²</b> ✅
+
+</div>
+
+<p>
+
+<b>Atau bisa juga:</b> (a - b)² = (a + (-b))² = a² + 2a(-b) + (-b)² = a² - 2ab + b².
+
+</p>
+
+<div class="example">
+
+(x - 7)² = x² - 2·x·7 + 7² = <b>x² - 14x + 49</b><br><br>
+
+(3x - 2)² = (3x)² - 2·(3x)·2 + 2² = <b>9x² - 12x + 4</b>
+
+</div>
+
+<hr>
+
+<h3>Identitas 3: Selisih Kuadrat — (a + b)(a - b)</h3>
+
+<div class="summary">
+
+<b>(a + b)(a - b) = a² - b²</b>
+
+</div>
+
+<p>
+
+Ini adalah <b>identitas paling penting</b> karena sangat sering dipakai,
+terutama dalam faktorisasi.
+
+</p>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+(a + b)(a - b) = a·a + a·(-b) + b·a + b·(-b)<br>
+
+= a² - ab + ab - b²<br>
+
+= <b>a² - b²</b> ✅
+
+</div>
+
+<p>
+
+Suku tengah (-ab + ab) saling menghilangkan. Inilah kenapa hasilnya a² - b².
+
+</p>
+
+<div class="example">
+
+(x + 3)(x - 3) = x² - 3² = <b>x² - 9</b><br><br>
+
+(2x + 5)(2x - 5) = (2x)² - 5² = <b>4x² - 25</b><br><br>
+
+(3a + 4b)(3a - 4b) = (3a)² - (4b)² = <b>9a² - 16b²</b>
+
+</div>
+
+<hr>
+
+<h3>Identitas 4: (a + b)(a + c) — Suku Depan Sama</h3>
+
+<div class="summary">
+
+<b>(x + a)(x + b) = x² + (a + b)x + ab</b>
+
+</div>
+
+<p>
+
+Ini generalisasi dari FOIL ketika suku pertama kedua binomial sama (sama-sama x).
+
+</p>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+(x + a)(x + b) = x·x + x·b + a·x + a·b<br>
+
+= x² + bx + ax + ab<br>
+
+= <b>x² + (a + b)x + ab</b> ✅
+
+</div>
+
+<p>
+
+<b>Pola cepatnya:</b> suku tengah = jumlah a dan b, suku terakhir = hasil kali a dan b.
+
+</p>
+
+<div class="example">
+
+(x + 2)(x + 5) = x² + (2+5)x + (2×5) = <b>x² + 7x + 10</b><br><br>
+
+(x + 3)(x + 8) = x² + (3+8)x + (3×8) = <b>x² + 11x + 24</b><br><br>
+
+(x - 2)(x + 7) = x² + (-2+7)x + (-2×7) = <b>x² + 5x - 14</b><br><br>
+
+(x - 4)(x - 3) = x² + (-4-3)x + (-4)(-3) = <b>x² - 7x + 12</b>
+
+</div>
+
+<hr>
+
+<h3>Identitas 5: Kubus Binomial — (a + b)³ dan (a - b)³</h3>
+
+<div class="summary">
+
+<b>(a + b)³ = a³ + 3a²b + 3ab² + b³</b><br><br>
+
+<b>(a - b)³ = a³ - 3a²b + 3ab² - b³</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian (a + b)³:</b>
+
+</p>
+
+<div class="example">
+
+(a + b)³ = (a + b)(a + b)²<br>
+
+= (a + b)(a² + 2ab + b²)<br>
+
+= a(a² + 2ab + b²) + b(a² + 2ab + b²)<br>
+
+= a³ + 2a²b + ab² + a²b + 2ab² + b³<br>
+
+= <b>a³ + 3a²b + 3ab² + b³</b> ✅
+
+</div>
+
+<div class="example">
+
+(x + 2)³ = x³ + 3·x²·2 + 3·x·2² + 2³ = <b>x³ + 6x² + 12x + 8</b><br><br>
+
+(y - 3)³ = y³ - 3·y²·3 + 3·y·3² - 3³ = <b>y³ - 9y² + 27y - 27</b>
+
+</div>
+
+<hr>
+
+<h3>Identitas 6: Jumlah dan Selisih Kubus</h3>
+
+<div class="summary">
+
+<b>a³ + b³ = (a + b)(a² - ab + b²)</b><br><br>
+
+<b>a³ - b³ = (a - b)(a² + ab + b²)</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian a³ + b³:</b>
+
+</p>
+
+<div class="example">
+
+(a + b)(a² - ab + b²)<br>
+
+= a(a² - ab + b²) + b(a² - ab + b²)<br>
+
+= a³ - a²b + ab² + a²b - ab² + b³<br>
+
+= a³ + (-a²b + a²b) + (ab² - ab²) + b³<br>
+
+= <b>a³ + b³</b> ✅
+
+</div>
+
+<p>
+
+Semua suku tengah saling menghilangkan!
+
+</p>
+
+<div class="example">
+
+x³ + 8 = x³ + 2³ = (x + 2)(x² - 2x + 4)<br><br>
+
+27a³ - 1 = (3a)³ - 1³ = (3a - 1)(9a² + 3a + 1)
+
+</div>
+
+</div>
+
+<!-- ==================== FAKTORISASI ==================== -->
+
+<div class="section">
+
+<h2>6. Faktorisasi — Mengembalikan ke Bentuk Perkalian</h2>
+
+<p>
+
+<b>Faktorisasi</b> adalah proses mengubah suatu ekspresi aljabar
+menjadi <b>perkalian faktor-faktor</b> yang lebih sederhana.
+
+</p>
+
+<p>
+
+Ini adalah kebalikan dari perkalian. Kalau (x+2)(x+3) dikalikan menjadi x²+5x+6,
+maka memfaktorkan x²+5x+6 menghasilkan (x+2)(x+3).
+
+</p>
+
+<p>
+
+<b>Mengapa faktorisasi penting?</b>
+
+</p>
+
+<ul>
+
+<li>Menyederhanakan pecahan aljabar.</li>
+
+<li>Menyelesaikan persamaan kuadrat.</li>
+
+<li>Mencari akar polinomial.</li>
+
+<li>Menyederhanakan perhitungan.</li>
+
+</ul>
+
+<hr>
+
+<h3>Metode 1: Faktor Persekutuan Terbesar</h3>
+
+<p>
+
+Cari faktor yang sama di semua suku, keluarkan.
+
+</p>
+
+<div class="example">
+
+6x² + 9x = 3x(2x + 3) &nbsp; (FPB dari 6x² dan 9x adalah 3x)<br><br>
+
+4a³ - 8a² + 12a = 4a(a² - 2a + 3)<br><br>
+
+5x²y + 10xy² = 5xy(x + 2y)
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> kalikan kembali dengan distributif, harus kembali ke bentuk awal.
+
+</p>
+
+<hr>
+
+<h3>Metode 2: Selisih Kuadrat — a² - b² = (a+b)(a-b)</h3>
+
+<p>
+
+Ini adalah kebalikan dari identitas selisih kuadrat.
+
+</p>
+
+<div class="example">
+
+x² - 25 = x² - 5² = <b>(x + 5)(x - 5)</b><br><br>
+
+4x² - 9 = (2x)² - 3² = <b>(2x + 3)(2x - 3)</b><br><br>
+
+49a² - 16b² = (7a)² - (4b)² = <b>(7a + 4b)(7a - 4b)</b><br><br>
+
+x⁴ - 16 = (x²)² - 4² = (x² + 4)(x² - 4) = <b>(x² + 4)(x + 2)(x - 2)</b>
+
+</div>
+
+<p>
+
+Perhatikan contoh terakhir: setelah memfaktorkan sekali,
+x² - 4 masih bisa difaktorkan lagi! Selalu cek apakah hasilnya masih bisa difaktorkan.
+
+</p>
+
+<hr>
+
+<h3>Metode 3: Trinomial Bentuk x² + bx + c</h3>
+
+<p>
+
+Cari dua bilangan yang:
+
+</p>
+
+<div class="summary">
+
+<b>Jumlahnya = b</b> (koefisien x)<br>
+
+<b>Hasil kalinya = c</b> (konstanta)
+
+</div>
+
+<p>
+
+<b>Contoh: Faktorkan x² + 7x + 12</b>
+
+</p>
+
+<div class="example">
+
+Cari dua bilangan yang jumlahnya 7 dan hasil kalinya 12.<br><br>
+
+Pasangan faktor 12: (1,12), (2,6), (3,4).<br>
+
+Yang jumlahnya 7: <b>3 dan 4</b>.<br><br>
+
+Jadi, x² + 7x + 12 = <b>(x + 3)(x + 4)</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> (x+3)(x+4) = x² + 4x + 3x + 12 = x² + 7x + 12. Cocok!
+
+</p>
+
+<p>
+
+<b>Contoh lain:</b>
+
+</p>
+
+<div class="example">
+
+x² + 5x + 6 → cari jumlah 5, kali 6 → <b>(x+2)(x+3)</b><br><br>
+
+x² - 5x + 6 → cari jumlah -5, kali 6 → <b>(x-2)(x-3)</b><br><br>
+
+x² + x - 6 → cari jumlah 1, kali -6 → <b>(x+3)(x-2)</b><br><br>
+
+x² - x - 6 → cari jumlah -1, kali -6 → <b>(x-3)(x+2)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ini bekerja?</b>
+
+Dari identitas (x+p)(x+q) = x² + (p+q)x + pq.
+Jadi b = p+q dan c = pq. Kita tinggal mencari p dan q.
+
+</p>
+
+<hr>
+
+<h3>Metode 4: Trinomial Bentuk ax² + bx + c (a ≠ 1)</h3>
+
+<p>
+
+Untuk trinomial dengan koefisien x² bukan 1,
+kita perlu modifikasi sedikit.
+
+</p>
+
+<p>
+
+<b>Metode AC:</b>
+
+</p>
+
+<ol>
+
+<li>Hitung a × c.</li>
+
+<li>Cari dua bilangan yang jumlahnya = b dan hasil kalinya = a × c.</li>
+
+<li>Pecah suku tengah bx menggunakan dua bilangan itu.</li>
+
+<li>Faktorkan dengan pengelompokan.</li>
+
+</ol>
+
+<p>
+
+<b>Contoh: Faktorkan 2x² + 7x + 3</b>
+
+</p>
+
+<div class="example">
+
+a = 2, b = 7, c = 3<br>
+
+a × c = 6<br><br>
+
+Cari dua bilangan: jumlah = 7, hasil kali = 6<br>
+
+→ <b>6 dan 1</b><br><br>
+
+Pecah 7x menjadi 6x + x:<br>
+
+2x² + 7x + 3 = 2x² + 6x + x + 3<br><br>
+
+Kelompokkan:<br>
+
+= (2x² + 6x) + (x + 3)<br>
+
+= 2x(x + 3) + 1(x + 3)<br>
+
+= <b>(2x + 1)(x + 3)</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> (2x+1)(x+3) = 2x² + 6x + x + 3 = 2x² + 7x + 3. Cocok!
+
+</p>
+
+<p>
+
+<b>Contoh lain:</b>
+
+</p>
+
+<div class="example">
+
+3x² + 11x + 6 → a×c=18, jumlah 11 → 9 dan 2<br>
+
+= 3x² + 9x + 2x + 6 = 3x(x+3) + 2(x+3) = <b>(3x+2)(x+3)</b><br><br>
+
+6x² + x - 12 → a×c=-72, jumlah 1 → 9 dan -8<br>
+
+= 6x² + 9x - 8x - 12 = 3x(2x+3) - 4(2x+3) = <b>(3x-4)(2x+3)</b>
+
+</div>
+
+<hr>
+
+<h3>Metode 5: Kuadrat Sempurna</h3>
+
+<p>
+
+Kenali pola a² ± 2ab + b².
+
+</p>
+
+<div class="example">
+
+x² + 6x + 9 = x² + 2·x·3 + 3² = <b>(x + 3)²</b><br><br>
+
+x² - 10x + 25 = x² - 2·x·5 + 5² = <b>(x - 5)²</b><br><br>
+
+4x² + 12x + 9 = (2x)² + 2·(2x)·3 + 3² = <b>(2x + 3)²</b>
+
+</div>
+
+<hr>
+
+<h3>Metode 6: Jumlah/Selisih Kubus</h3>
+
+<div class="example">
+
+x³ + 27 = x³ + 3³ = <b>(x + 3)(x² - 3x + 9)</b><br><br>
+
+8a³ - 125 = (2a)³ - 5³ = <b>(2a - 5)(4a² + 10a + 25)</b>
+
+</div>
+
+</div>
+
+<!-- ==================== PECAHAN ALJABAR ==================== -->
+
+<div class="section">
+
+<h2>7. Pecahan Aljabar — Pecahan yang Mengandung Variabel</h2>
+
+<p>
+
+<b>Pecahan aljabar</b> adalah pecahan yang pembilang atau penyebutnya
+mengandung variabel.
+
+</p>
+
+<div class="example">
+
+3/x &nbsp;&nbsp; (x+2)/(x-1) &nbsp;&nbsp; (x²-4)/(x+2)
+
+</div>
+
+<p>
+
+Aturan mainnya <b>sama persis</b> seperti pecahan biasa di Dasar 3.
+Bedanya, sekarang pembilang dan penyebutnya adalah ekspresi aljabar.
+
+</p>
+
+<hr>
+
+<h3>Menyederhanakan Pecahan Aljabar</h3>
+
+<p>
+
+<b>Langkah-langkah:</b>
+
+</p>
+
+<ol>
+
+<li>Faktorkan pembilang dan penyebut.</li>
+
+<li>Coret faktor yang sama (asalkan ≠ 0).</li>
+
+</ol>
+
+<div class="example">
+
+Sederhanakan: (x² - 4) / (x + 2)<br><br>
+
+Pembilang: x² - 4 = (x+2)(x-2)<br>
+
+Penyebut: x + 2<br><br>
+
+= (x+2)(x-2) / (x+2)<br>
+
+= <b>x - 2</b> &nbsp; (untuk x ≠ -2) ✅
+
+</div>
+
+<p>
+
+<b>Kenapa harus x ≠ -2?</b>
+
+Karena kalau x = -2, penyebut aslinya nol (tidak terdefinisi).
+Meskipun bentuk sederhananya jadi x-2, domain awalnya tetap tidak boleh x = -2.
+
+</p>
+
+<div class="example">
+
+(x² + 5x + 6) / (x² + 3x + 2)<br><br>
+
+Pembilang: (x+2)(x+3)<br>
+
+Penyebut: (x+2)(x+1)<br><br>
+
+= (x+2)(x+3) / (x+2)(x+1)<br>
+
+= <b>(x+3) / (x+1)</b> &nbsp; (untuk x ≠ -2, x ≠ -1) ✅
+
+</div>
+
+<hr>
+
+<h3>Penjumlahan dan Pengurangan Pecahan Aljabar</h3>
+
+<p>
+
+Prinsipnya sama seperti pecahan biasa: <b>samakan penyebut dulu</b>.
+
+</p>
+
+<div class="example">
+
+2/x + 3/x = (2+3)/x = <b>5/x</b><br><br>
+
+1/(x+1) + 1/(x-1)<br>
+
+= (x-1)/(x+1)(x-1) + (x+1)/(x+1)(x-1)<br>
+
+= (x-1 + x+1) / (x²-1)<br>
+
+= <b>2x / (x² - 1)</b> ✅
+
+</div>
+
+<p>
+
+<b>Contoh dengan penyebut berbeda:</b>
+
+</p>
+
+<div class="example">
+
+3/(x+2) - 1/(x-1)<br><br>
+
+KPK penyebut: (x+2)(x-1)<br><br>
+
+= 3(x-1)/(x+2)(x-1) - 1(x+2)/(x+2)(x-1)<br>
+
+= [3(x-1) - (x+2)] / (x+2)(x-1)<br>
+
+= (3x - 3 - x - 2) / (x+2)(x-1)<br>
+
+= <b>(2x - 5) / (x+2)(x-1)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Perkalian Pecahan Aljabar</h3>
+
+<div class="summary">
+
+(a/b) × (c/d) = (a × c) / (b × d)
+
+</div>
+
+<div class="example">
+
+(x/x+1) × (x+1/x²) = x(x+1) / (x+1)x² = <b>1/x</b> &nbsp; (x ≠ 0, x ≠ -1)<br><br>
+
+(x²-1)/(x+2) × (x+2)/(x-1) = (x²-1)/(x-1) = (x+1)(x-1)/(x-1) = <b>x+1</b>
+
+</div>
+
+<hr>
+
+<h3>Pembagian Pecahan Aljabar</h3>
+
+<div class="summary">
+
+(a/b) ÷ (c/d) = (a/b) × (d/c) = (a × d) / (b × c)
+
+</div>
+
+<div class="example">
+
+(x/x-2) ÷ (x²/x²-4)<br>
+
+= (x/x-2) × (x²-4/x²)<br>
+
+= x(x²-4) / (x-2)x²<br>
+
+= x(x+2)(x-2) / (x-2)x²<br>
+
+= <b>(x+2) / x</b> &nbsp; (x ≠ 0, x ≠ 2, x ≠ -2) ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Bentuk aljabar:</b> kombinasi variabel, koefisien, konstanta, operasi.</li>
+
+<li><b>Suku sejenis:</b> variabel dan pangkat sama → bisa dijumlah/kurangi.</li>
+
+<li><b>Perkalian:</b> distributif, FOIL untuk binomial.</li>
+
+<li><b>Pembagian:</b> kurangkan pangkat variabel yang sama.</li>
+
+<li><b>(a+b)² = a² + 2ab + b²</b> — jangan lupa 2ab!</li>
+
+<li><b>(a+b)(a-b) = a² - b²</b> — identitas paling sering dipakai.</li>
+
+<li><b>Faktorisasi:</b> FPB, selisih kuadrat, trinomial, kuadrat sempurna.</li>
+
+<li><b>Pecahan aljabar:</b> faktorkan → coret → sederhanakan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Selalu cek tanda.</b> Kesalahan paling umum adalah salah tanda negatif,
+terutama saat mengurangkan bentuk aljabar.
+
+</li>
+
+<li>
+
+<b>Hafalkan identitas dasar.</b> (a+b)², (a-b)², dan (a+b)(a-b).
+Tiga ini akan terus muncul di semua materi aljabar selanjutnya.
+
+</li>
+
+<li>
+
+<b>Verifikasi faktorisasi.</b> Setelah memfaktorkan, kalikan kembali.
+Kalau hasilnya kembali ke bentuk awal, pemfaktoranmu benar.
+
+</li>
+
+<li>
+
+<b>Jangan lupa domain.</b> Saat menyederhanakan pecahan aljabar,
+catat nilai x yang membuat penyebut asli = 0.
+
+</li>
+
+<li>
+
+<b>Latih mata melihat pola.</b> Semakin sering latihan,
+kamu akan semakin cepat mengenali selisih kuadrat,
+kuadrat sempurna, atau trinomial yang bisa difaktorkan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar2.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
