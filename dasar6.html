@@ -1,1 +1,864 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dasar Matematika Part 6 | Pangkat, Akar & Bentuk Akar</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 DASAR MATEMATIKA</h1>
+
+<p>Part 6 • Pangkat, Akar & Bentuk Akar</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di bab-bab sebelumnya, kita sudah belajar operasi hitung dasar:
+penjumlahan, pengurangan, perkalian, dan pembagian.
+
+</p>
+
+<p>
+
+Sekarang kita akan naik satu level: <b>pangkat dan akar</b>.
+
+</p>
+
+<p>
+
+<b>Pangkat</b> adalah cara singkat menulis perkalian berulang.
+Alih-alih menulis 2 × 2 × 2 × 2 × 2,
+kita cukup menulis 2⁵. Jauh lebih ringkas.
+
+</p>
+
+<p>
+
+<b>Akar</b> adalah kebalikan dari pangkat.
+Kalau 3² = 9, maka √9 = 3.
+Akar menjawab pertanyaan: "Bilangan apa yang kalau dipangkatkan menghasilkan ini?"
+
+</p>
+
+<p>
+
+Bab ini akan menjadi salah satu bab terbesar karena
+konsep pangkat dan akar dipakai di mana-mana:
+aljabar, geometri, fisika, hingga statistika.
+Menguasainya dengan kuat akan membuatmu percaya diri
+menghadapi materi-materi lanjutan.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi pangkat dan sifat-sifat operasinya.</li>
+
+<li>Mengerti kenapa a⁰ = 1 dan kenapa a⁻ⁿ = 1/aⁿ.</li>
+
+<li>Memahami pangkat pecahan dan hubungannya dengan akar.</li>
+
+<li>Menguasai cara menyederhanakan bentuk akar.</li>
+
+<li>Mampu melakukan operasi pada bentuk akar.</li>
+
+<li>Mampu merasionalkan penyebut yang mengandung akar.</li>
+
+<li>Mengenal metode menaksir nilai akar dengan cepat (Newton-Raphson sederhana).</li>
+
+<li>Menguasai trik-trik hitung cepat pangkat dan akar.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 1: PANGKAT ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Pangkat? — Definisi Dasar</h2>
+
+<p>
+
+<b>Pangkat</b> (atau <b>eksponen</b>) adalah cara singkat
+menulis <b>perkalian berulang</b> dari bilangan yang sama.
+
+</p>
+
+<div class="summary">
+
+aⁿ = a × a × a × ... × a &nbsp; (sebanyak n kali)
+
+<br>
+
+a disebut <b>basis</b> (bilangan pokok)<br>
+
+n disebut <b>eksponen</b> (pangkat)
+
+</div>
+
+<p>
+
+<b>Contoh:</b>
+
+</p>
+
+<div class="example">
+
+2⁵ = 2 × 2 × 2 × 2 × 2 = 32<br>
+
+3⁴ = 3 × 3 × 3 × 3 = 81<br>
+
+5³ = 5 × 5 × 5 = 125<br>
+
+10² = 10 × 10 = 100
+
+</div>
+
+<p>
+
+<b>Cara membaca:</b></p>
+
+<ul>
+
+<li>2⁵ dibaca "dua pangkat lima".</li>
+
+<li>3⁴ dibaca "tiga pangkat empat".</li>
+
+<li>5² bisa dibaca "lima pangkat dua" atau "lima kuadrat".</li>
+
+<li>5³ bisa dibaca "lima pangkat tiga" atau "lima kubik".</li>
+
+</ul>
+
+<p>
+
+<b>Mengapa pangkat diciptakan?</b>
+
+</p>
+
+<p>
+
+Bayangkan kamu harus menulis:
+2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 untuk "2 dikali 10 kali".
+Itu tidak praktis dan rawan salah tulis.
+
+Dengan pangkat, cukup tulis 2¹⁰. Ringkas, jelas, dan tidak membingungkan.
+
+</p>
+
+<hr>
+
+<h3>Pangkat Satu dan Pangkat Nol — Kasus Khusus</h3>
+
+<p>
+
+<b>Pangkat 1:</b>
+
+</p>
+
+<div class="example">
+
+a¹ = a
+
+</div>
+
+<p>
+
+Alasan: a¹ berarti "a dikalikan sebanyak 1 kali", yaitu a itu sendiri.
+Tidak ada perkalian berulang yang terjadi.
+
+</p>
+
+<p>
+
+<b>Pangkat 0:</b>
+
+</p>
+
+<div class="example">
+
+a⁰ = 1 &nbsp; (untuk a ≠ 0)
+
+</div>
+
+<p>
+
+<b>Kenapa a⁰ = 1?</b>
+
+</p>
+
+<p>
+
+Ini bukan sekadar aturan yang dihafalkan. Ada logika di baliknya.
+
+Kita lihat <b>pola penurunan pangkat</b>:
+
+</p>
+
+<div class="example">
+
+2⁴ = 16<br>
+
+2³ = 8 &nbsp; (= 16 ÷ 2)<br>
+
+2² = 4 &nbsp; (= 8 ÷ 2)<br>
+
+2¹ = 2 &nbsp; (= 4 ÷ 2)<br>
+
+2⁰ = ? &nbsp; (= 2 ÷ 2) = 1
+
+</div>
+
+<p>
+
+Setiap kali pangkat turun satu, nilainya <b>dibagi dengan basis</b>.
+Dari 2¹ ke 2⁰, nilainya dibagi 2: 2 ÷ 2 = 1.
+
+</p>
+
+<p>
+
+<b>Pembuktian dengan sifat pangkat:</b>
+
+</p>
+
+<div class="example">
+
+Kita tahu: aᵐ ÷ aⁿ = aᵐ⁻ⁿ<br><br>
+
+Ambil m = n:<br>
+
+aⁿ ÷ aⁿ = aⁿ⁻ⁿ = a⁰<br><br>
+
+Tapi aⁿ ÷ aⁿ = 1 (karena bilangan dibagi dirinya sendiri = 1)<br><br>
+
+Jadi, a⁰ = 1 ✅
+
+</div>
+
+<p>
+
+Ini adalah bukti kenapa a⁰ harus 1 agar konsisten dengan sifat pembagian pangkat.
+Satu-satunya pengecualian: 0⁰ tidak terdefinisi (karena 0 ÷ 0 tidak terdefinisi).
+
+</p>
+
+</div>
+
+<!-- ==================== BAGIAN 2: SIFAT-SIFAT PANGKAT ==================== -->
+
+<div class="section">
+
+<h2>2. Sifat-Sifat Operasi Pangkat — Aturan Main</h2>
+
+<p>
+
+Pangkat memiliki aturan-aturan yang membuat perhitungan menjadi jauh lebih mudah.
+Inilah "aturan main" yang wajib dikuasai.
+
+</p>
+
+<h3>Sifat 1: Perkalian Pangkat dengan Basis Sama</h3>
+
+<div class="summary">
+
+aᵐ × aⁿ = aᵐ⁺ⁿ
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+aᵐ × aⁿ = (a × a × ... m kali) × (a × a × ... n kali)<br>
+
+= a × a × ... (m + n kali)<br>
+
+= aᵐ⁺ⁿ
+
+</div>
+
+<p>
+
+<b>Contoh:</b> 2³ × 2⁴ = 2³⁺⁴ = 2⁷ = 128.
+
+Cek manual: 8 × 16 = 128. Sama!
+
+</p>
+
+<hr>
+
+<h3>Sifat 2: Pembagian Pangkat dengan Basis Sama</h3>
+
+<div class="summary">
+
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ &nbsp; (untuk a ≠ 0)
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+aᵐ ÷ aⁿ = (a × a × ... m kali) / (a × a × ... n kali)<br>
+
+n buah a di penyebut bisa dicoret dengan n buah a di pembilang.<br>
+
+Sisa (m - n) buah a di pembilang = aᵐ⁻ⁿ
+
+</div>
+
+<p>
+
+<b>Contoh:</b> 5⁶ ÷ 5² = 5⁶⁻² = 5⁴ = 625.
+
+Cek manual: 15.625 ÷ 25 = 625. Sama!
+
+</p>
+
+<hr>
+
+<h3>Sifat 3: Pangkat dari Pangkat</h3>
+
+<div class="summary">
+
+(aᵐ)ⁿ = aᵐˣⁿ
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+(aᵐ)ⁿ = aᵐ × aᵐ × ... × aᵐ &nbsp; (sebanyak n kali)<br>
+
+= a^(m + m + ... + m) &nbsp; (sebanyak n kali)<br>
+
+= a^(m × n) = aᵐˣⁿ
+
+</div>
+
+<p>
+
+<b>Contoh:</b> (2³)² = 2³ˣ² = 2⁶ = 64.
+
+Cek manual: (2³)² = 8² = 64. Sama!
+
+</p>
+
+<hr>
+
+<h3>Sifat 4: Pangkat dari Perkalian</h3>
+
+<div class="summary">
+
+(a × b)ⁿ = aⁿ × bⁿ
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+(a × b)ⁿ = (a × b) × (a × b) × ... × (a × b) &nbsp; (n kali)<br>
+
+= (a × a × ... × a) × (b × b × ... × b) &nbsp; (susun ulang)<br>
+
+= aⁿ × bⁿ
+
+</div>
+
+<p>
+
+<b>Contoh:</b> (2 × 3)² = 2² × 3² = 4 × 9 = 36.
+
+Cek manual: 6² = 36. Sama!
+
+</p>
+
+<hr>
+
+<h3>Sifat 5: Pangkat dari Pembagian</h3>
+
+<div class="summary">
+
+(a / b)ⁿ = aⁿ / bⁿ &nbsp; (untuk b ≠ 0)
+
+</div>
+
+<p>
+
+<b>Mengapa?</b> Logika yang sama dengan sifat 4, hanya saja ini pembagian.
+
+</p>
+
+<p>
+
+<b>Contoh:</b> (4/2)³ = 4³ / 2³ = 64 / 8 = 8.
+
+Cek manual: 2³ = 8. Sama!
+
+</p>
+
+<hr>
+
+<h3>Rangkuman Semua Sifat</h3>
+
+<div class="summary">
+
+1. aᵐ × aⁿ = aᵐ⁺ⁿ<br>
+
+2. aᵐ ÷ aⁿ = aᵐ⁻ⁿ &nbsp; (a ≠ 0)<br>
+
+3. (aᵐ)ⁿ = aᵐˣⁿ<br>
+
+4. (a × b)ⁿ = aⁿ × bⁿ<br>
+
+5. (a / b)ⁿ = aⁿ / bⁿ &nbsp; (b ≠ 0)<br>
+
+6. a⁰ = 1 &nbsp; (a ≠ 0)
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 3: PANGKAT NEGATIF ==================== -->
+
+<div class="section">
+
+<h2>3. Pangkat Negatif — Makna dan Logika</h2>
+
+<p>
+
+Apa artinya 2⁻³? Apakah mungkin mengalikan 2 sebanyak -3 kali?
+Tentu tidak. Jadi, kita perlu definisi yang konsisten.
+
+</p>
+
+<h3>Definisi Pangkat Negatif</h3>
+
+<div class="summary">
+
+a⁻ⁿ = 1 / aⁿ &nbsp; (untuk a ≠ 0)
+
+</div>
+
+<p>
+
+<b>Kenapa definisinya seperti ini?</b>
+
+</p>
+
+<p>
+
+Kita gunakan <b>pola penurunan pangkat</b> lagi:
+
+</p>
+
+<div class="example">
+
+2³ = 8<br>
+
+2² = 4 &nbsp; (= 8 ÷ 2)<br>
+
+2¹ = 2 &nbsp; (= 4 ÷ 2)<br>
+
+2⁰ = 1 &nbsp; (= 2 ÷ 2)<br>
+
+2⁻¹ = ? &nbsp; (= 1 ÷ 2) = 1/2<br>
+
+2⁻² = ? &nbsp; (= (1/2) ÷ 2) = 1/4<br>
+
+2⁻³ = ? &nbsp; (= (1/4) ÷ 2) = 1/8
+
+</div>
+
+<p>
+
+Setiap kali pangkat turun satu, nilainya <b>dibagi dengan basis</b>.
+Ini terus berlanjut bahkan ke bilangan negatif.
+
+Jadi, 2⁻³ = 1 / 2³ = 1/8.
+
+</p>
+
+<p>
+
+<b>Pembuktian dengan sifat pembagian:</b>
+
+</p>
+
+<div class="example">
+
+Kita tahu: aᵐ ÷ aⁿ = aᵐ⁻ⁿ<br><br>
+
+Ambil m = 0 dan n = 3:<br>
+
+a⁰ ÷ a³ = a⁰⁻³ = a⁻³<br><br>
+
+Tapi a⁰ ÷ a³ = 1 ÷ a³<br><br>
+
+Jadi, a⁻³ = 1 / a³ ✅
+
+</div>
+
+<p>
+
+Ini bukti bahwa definisi pangkat negatif <b>harus</b> seperti ini
+agar konsisten dengan sifat-sifat pangkat yang sudah kita miliki.
+
+</p>
+
+<hr>
+
+<h3>Intuisi: Pangkat Negatif = "Satu Per"</h3>
+
+<div class="example">
+
+5⁻¹ = 1/5<br>
+
+5⁻² = 1/5² = 1/25<br>
+
+10⁻³ = 1/10³ = 1/1000 = 0,001<br>
+
+(1/2)⁻¹ = 1 / (1/2) = 2
+
+</div>
+
+<p>
+
+<b>Pola penting:</b> a⁻ⁿ adalah <b>kebalikan</b> dari aⁿ.
+Jadi, kalau aⁿ membuat bilangan membesar,
+a⁻ⁿ membuatnya mengecil (menjadi pecahan).
+
+</p>
+
+<hr>
+
+<h3>Contoh Penerapan</h3>
+
+<div class="example">
+
+2⁻³ × 2⁵ = 2⁻³⁺⁵ = 2² = 4<br><br>
+
+(3⁻²)² = 3⁻⁴ = 1/3⁴ = 1/81<br><br>
+
+(2/3)⁻² = (3/2)² = 9/4 &nbsp; (kebalikkan pecahannya, lalu pangkatkan)
+
+</div>
+
+</div>
+
+<!-- ==================== BAGIAN 4: PANGKAT PECAHAN ==================== -->
+
+<div class="section">
+
+<h2>4. Pangkat Pecahan dan Desimal — Jembatan ke Akar</h2>
+
+<p>
+
+Sejauh ini pangkat kita selalu bilangan bulat.
+Tapi bagaimana kalau pangkatnya pecahan? Misalnya 9^(1/2) atau 8^(2/3)?
+
+</p>
+
+<h3>Definisi Pangkat Pecahan</h3>
+
+<div class="summary">
+
+a^(1/n) = ⁿ√a &nbsp; (akar pangkat n dari a)
+
+<br><br>
+
+a^(m/n) = ⁿ√(aᵐ) = (ⁿ√a)ᵐ
+
+</div>
+
+<p>
+
+<b>Kenapa a^(1/2) = √a?</b>
+
+</p>
+
+<p>
+
+Kita ingin sifat (aᵐ)ⁿ = aᵐⁿ tetap berlaku.
+
+Coba: (a^(1/2))² harusnya = a^(1/2 × 2) = a¹ = a.
+
+Jadi, a^(1/2) adalah bilangan yang kalau dikuadratkan menghasilkan a.
+Bilangan apakah itu? Itu adalah <b>√a</b>!
+
+</p>
+
+<div class="example">
+
+9^(1/2) = √9 = 3 &nbsp; (karena 3² = 9)<br>
+
+16^(1/2) = √16 = 4 &nbsp; (karena 4² = 16)<br>
+
+27^(1/3) = ∛27 = 3 &nbsp; (karena 3³ = 27)<br>
+
+32^(1/5) = ⁵√32 = 2 &nbsp; (karena 2⁵ = 32)
+
+</div>
+
+<hr>
+
+<h3>Pangkat Pecahan dengan Pembilang Bukan 1</h3>
+
+<div class="example">
+
+8^(2/3) = (8^(1/3))² = (∛8)² = 2² = 4<br><br>
+
+Atau: 8^(2/3) = (8²)^(1/3) = 64^(1/3) = ∛64 = 4<br><br>
+
+Keduanya menghasilkan jawaban yang sama.
+
+</div>
+
+<hr>
+
+<h3>Pangkat Desimal</h3>
+
+<p>
+
+Pangkat desimal sebenarnya adalah pangkat pecahan yang ditulis dalam bentuk desimal.
+
+</p>
+
+<div class="example">
+
+4^(0,5) = 4^(1/2) = √4 = 2<br>
+
+16^(0,25) = 16^(1/4) = ⁴√16 = 2<br>
+
+100^(0,5) = √100 = 10<br>
+
+81^(0,75) = 81^(3/4) = (81^(1/4))³ = (⁴√81)³ = 3³ = 27
+
+</div>
+
+<div class="note">
+
+<b>💡 Trik:</b>
+
+Ubah desimal ke pecahan dulu, lalu hitung sebagai pangkat pecahan.
+
+0,5 = 1/2<br>
+
+0,25 = 1/4<br>
+
+0,75 = 3/4<br>
+
+0,2 = 1/5<br>
+
+0,333... = 1/3
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal Kompleks</h3>
+
+<div class="example">
+
+Hitung: 16^(-3/4)<br><br>
+
+16^(-3/4) = 1 / 16^(3/4)<br>
+
+= 1 / (16^(1/4))³<br>
+
+= 1 / (⁴√16)³<br>
+
+= 1 / 2³<br>
+
+= 1/8 ✅
+
+</div>
+
+<p>
+
+Lihat bagaimana sifat pangkat negatif dan pangkat pecahan
+bekerja sama dengan mulus. Semua konsisten.
+
+</p>
+
+</div>
+
+<!-- ==================== BAGIAN 5: TRIK HITUNG CEPAT PANGKAT ==================== -->
+
+<div class="section">
+
+<h2>5. Trik Hitung Cepat Pangkat</h2>
+
+<h3>Trik 1: Pangkat 2 Bilangan Berakhiran 5</h3>
+
+<div class="example">
+
+25² = ?<br>
+
+Pisahkan 2 dan 5.<br>
+
+Ambil angka di depan 5: yaitu 2.<br>
+
+Kalikan dengan angka setelahnya (3): 2 × 3 = 6.<br>
+
+Tulis 25 di belakangnya.<br><br>
+
+Jadi, 25² = <b>625</b> ✅
+
+</div>
+
+<p>
+
+<b>Mengapa bisa begitu?</b>
+
+</p>
+
+<div class="example">
+
+(10a + 5)² = 100a² + 100a + 25 = 100 × a × (a+1) + 25<br><br>
+
+Contoh: 25² → a=2 → 100 × 2 × 3 + 25 = 600 + 25 = 625
+</div>
+
+<p>
+
+<b>Contoh lain:</b>
+
+</p>
+
+<div class="example">
+
+35² → 3 × 4 = 12 → 1225<br>
+
+45² → 4 × 5 = 20 → 2025<br>
+
+55² → 5 × 6 = 30 → 3025<br>
+
+65² → 6 × 7 = 42 → 4225<br>
+
+85² → 8 × 9 = 72 → 7225<br>
+
+105² → 10 × 11 = 110 → 11025
+
+</div>
+
+<hr>
+
+<h3>Trik 2: Pangkat 2 Bilangan Dekat 50</h3>
+
+<div class="example">
+
+48² = ?<br><br>
+
+48 ke 50 kurang 2. Simpan selisih = -2.<br>
+
+Kurangi 25 dengan 2: 25 - 2 = 23 → dua digit pertama.<br>
+
+Kuadratkan selisih: (-2)² = 4 → tulis sebagai 04 (dua digit).<br><br>
+
+Jadi, 48² = <b>2304</b> ✅
+
+</div>
+
+<p>
+
+<b>Contoh lain:</b>
+
+</p>
+
+<div class="example">
+
+52² → selisih +2 → 25 + 2 = 27 → 2² = 04 → <b>2704</b><br>
+
+47² → selisih -3 → 25 - 3 = 22 → 3² = 09 → <b>2209</b><br>
+
+53² → selisih +3 → 25 + 3 = 28 → 3² = 09 → <b>2809</b><br>
+
+46² → selisih -4 → 25 - 4 = 21 → 4² = 16 → <b>2116</b>
+
+</div>
+
+<p>
+
+<b>Mengapa trik ini benar?</b>
+
+</p>
+
+<div class="example">
+
+(50 + d)² = 2500 + 100d + d² = 100(25 + d) + d²<br><br>
+
+Contoh: 48² → d = -2 → 100(25-2) + 4 = 2300 + 4 = 2304
+</div>
+
+<hr>
+
+<h3>Trik 3: Pangkat 3 Bilangan Kecil dengan Cepat</h3>
+
+<div class="example">
+
+13³ = ?<br><br>
+
+Pecah: 13 = 10 + 3<br>
+
+(10+3)³ = 10³ + 3(10²)(3) + 3(10)(3²) + 3³<br>
+
+= 1000 + 3(100)(3) + 3(10)(9) + 27<br>
+
+= 1000 + 900 + 270 + 27<br>
+
+= <b>2197</b> ✅
+
+</div>
+
+<p>
+
+Untuk bilangan kecil (<20), menghitung manual dengan pemecahan seperti ini
+seringkali lebih cepat daripada menghitung langsung.
+
+</p>
+
+</div>
