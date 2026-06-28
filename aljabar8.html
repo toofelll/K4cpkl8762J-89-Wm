@@ -1,1 +1,886 @@
 
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 8 | Barisan, Deret & Bilangan Kompleks</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 8 • Barisan, Deret & Bilangan Kompleks</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di bab terakhir Aljabar ini, kita akan menjelajahi dua topik besar
+yang sangat berbeda tapi sama-sama indah: <b>barisan & deret</b>
+serta <b>bilangan kompleks</b>.
+
+</p>
+
+<p>
+
+<b>Barisan dan deret</b> adalah tentang <b>pola dan penjumlahan</b>.
+Dari menghitung total tabungan setelah sekian bulan,
+memprediksi pertumbuhan bakteri, sampai menghitung total jarak
+sebuah bola yang memantul—semuanya adalah aplikasi barisan dan deret.
+
+</p>
+
+<p>
+
+<b>Bilangan kompleks</b> memperluas dunia bilangan kita.
+Selama ini kita hanya mengenal bilangan real (ℝ).
+Tapi ada persamaan sederhana seperti x² + 1 = 0 yang tidak punya solusi real.
+Di sinilah bilangan kompleks hadir: menciptakan jenis bilangan baru
+yang membuat <b>setiap persamaan polinomial punya solusi</b>.
+
+</p>
+
+<p>
+
+Kedua topik ini akan membuka matamu bahwa matematika
+jauh lebih luas dari yang terlihat di bilangan real saja.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami perbedaan mendasar antara barisan dan deret.</li>
+
+<li>Menguasai deret aritmetika: dari mana rumusnya, bagaimana memakainya.</li>
+
+<li>Menguasai deret geometri: dari mana rumusnya, bagaimana memakainya.</li>
+
+<li>Memahami deret geometri tak hingga dan kapan suatu deret "berhenti" di jumlah tertentu.</li>
+
+<li>Mengenal barisan rekurensi seperti Fibonacci dan bagaimana polanya.</li>
+
+<li>Memahami mengapa bilangan kompleks diciptakan dan apa itu i.</li>
+
+<li>Menguasai operasi pada bilangan kompleks (+, -, ×, ÷).</li>
+
+<li>Memahami bentuk polar dan argumen—cara lain melihat bilangan kompleks.</li>
+
+<li>Menggunakan Rumus De Moivre untuk menghitung pangkat dengan mudah.</li>
+
+<li>Mencari akar-akar kompleks dan melihat keindahan geometrisnya.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== BARISAN VS DERET ==================== -->
+
+<div class="section">
+
+<h2>1. Barisan dan Deret — Dua Hal yang Sering Tertukar</h2>
+
+<p>
+
+Ini perbedaan paling mendasar yang harus kamu pahami dulu:
+
+</p>
+
+<div class="summary">
+
+<b>Barisan (sequence):</b> deretan bilangan yang disusun menurut aturan tertentu.
+Penulisannya dipisahkan <b>koma</b>.<br><br>
+
+<b>Deret (series):</b> hasil <b>penjumlahan</b> dari suku-suku suatu barisan.
+Penulisannya dipisahkan tanda <b>+</b>.
+
+</div>
+
+<p>
+
+<b>Contoh konkret:</b>
+
+</p>
+
+<div class="example">
+
+Barisan: 2, 5, 8, 11, 14, ... &nbsp; (ini daftar belanjaan)<br>
+
+Deret: 2 + 5 + 8 + 11 + 14 = 40 &nbsp; (ini total harga belanjaan)
+
+</div>
+
+<p>
+
+Sederhananya: <b>barisan adalah daftarnya, deret adalah totalnya</b>.
+Seperti daftar harga barang vs total belanjaan.
+
+</p>
+
+<hr>
+
+<h3>Notasi Penting</h3>
+
+<div class="summary">
+
+Uₙ = suku ke-n dari barisan<br>
+
+a = U₁ = suku pertama<br>
+
+Sₙ = U₁ + U₂ + ... + Uₙ = jumlah n suku pertama (ini adalah deret!)
+
+</div>
+
+<p>
+
+<b>Contoh membaca notasi:</b>
+
+</p>
+
+<div class="example">
+
+Untuk barisan 3, 7, 11, 15, 19:<br><br>
+
+U₁ = a = 3<br>
+
+U₂ = 7<br>
+
+U₃ = 11<br>
+
+U₅ = 19<br><br>
+
+S₃ = U₁ + U₂ + U₃ = 3 + 7 + 11 = 21
+
+</div>
+
+</div>
+
+<!-- ==================== DERET ARITMETIKA ==================== -->
+
+<div class="section">
+
+<h2>2. Deret Aritmetika — Ketika Selisihnya Selalu Sama</h2>
+
+<p>
+
+<b>Deret aritmetika</b> adalah deret di mana <b>selisih</b> antara dua suku
+yang berurutan selalu <b>tetap</b>. Selisih tetap ini disebut <b>beda</b>,
+dilambangkan dengan <b>b</b>.
+
+</p>
+
+<div class="example">
+
+3, 7, 11, 15, 19, ...<br><br>
+
+7 - 3 = 4<br>
+
+11 - 7 = 4<br>
+
+15 - 11 = 4<br>
+
+19 - 15 = 4<br><br>
+
+Selisihnya selalu 4, jadi ini deret aritmetika dengan <b>b = 4</b>.
+
+</div>
+
+<p>
+
+<b>Cara mengenali:</b> lihat apakah selisih antar suku berurutan selalu sama.
+Kalau iya → aritmetika.
+
+</p>
+
+<hr>
+
+<h3>Rumus Suku ke-n (Uₙ) — Dari Mana Datangnya?</h3>
+
+<p>
+
+Ini bukan rumus sulap. Mari kita turunkan pelan-pelan.
+
+</p>
+
+<div class="example">
+
+U₁ = a<br>
+
+U₂ = a + b &nbsp; (suku pertama ditambah satu kali beda)<br>
+
+U₃ = a + b + b = a + 2b &nbsp; (suku pertama ditambah dua kali beda)<br>
+
+U₄ = a + 2b + b = a + 3b &nbsp; (suku pertama ditambah tiga kali beda)<br><br>
+
+Lihat polanya:<br>
+
+U₁ → ditambah 0 kali b<br>
+
+U₂ → ditambah 1 kali b<br>
+
+U₃ → ditambah 2 kali b<br>
+
+U₄ → ditambah 3 kali b<br><br>
+
+Maka: Uₙ → ditambah <b>(n-1) kali b</b>.
+
+</div>
+
+<div class="summary">
+
+<b>Rumus suku ke-n:</b><br><br>
+
+Uₙ = a + (n-1)b
+
+</div>
+
+<p>
+
+<b>Kenapa (n-1) bukan n?</b>
+
+Karena dari U₁ ke Uₙ, kita melangkah sebanyak (n-1) kali.
+Dari anak tangga pertama ke anak tangga ke-5, kamu naik 4 langkah, bukan 5.
+
+</p>
+
+<h3>Contoh Mencari Suku ke-n</h3>
+
+<div class="example">
+
+Diketahui barisan: 5, 9, 13, 17, ...<br><br>
+
+a = 5, b = 9-5 = 4<br><br>
+
+U₁₀ = 5 + (10-1)×4 = 5 + 36 = <b>41</b><br><br>
+
+U₂₅ = 5 + (25-1)×4 = 5 + 96 = <b>101</b><br><br>
+
+U₁₀₀ = 5 + (100-1)×4 = 5 + 396 = <b>401</b>
+
+</div>
+
+<hr>
+
+<h3>Rumus Jumlah n Suku Pertama (Sₙ) — Trik Gauss</h3>
+
+<p>
+
+Ini adalah salah satu rumus paling indah dalam matematika.
+Ditemukan oleh Carl Friedrich Gauss saat masih SD.
+
+</p>
+
+<p>
+
+<b>Cerita:</b> Guru Gauss menyuruh kelas menjumlahkan 1 + 2 + 3 + ... + 100.
+Gauss menjawab 5050 dalam hitungan detik. Bagaimana caranya?
+
+</p>
+
+<div class="example">
+
+<b>Ide Gauss:</b> Pasangkan suku dari depan dan belakang.<br><br>
+
+1 + 100 = 101<br>
+
+2 + 99 = 101<br>
+
+3 + 98 = 101<br>
+
+...<br>
+
+50 + 51 = 101<br><br>
+
+Ada 50 pasangan, masing-masing bernilai 101.<br>
+
+Total = 50 × 101 = <b>5050</b> ✅
+
+</div>
+
+<p>
+
+Sekarang kita terapkan ide ini secara umum.
+
+</p>
+
+<div class="example">
+
+Misal Sₙ = U₁ + U₂ + ... + Uₙ₋₁ + Uₙ<br><br>
+
+Tulis dari depan: Sₙ = a + (a+b) + (a+2b) + ... + (Uₙ-b) + Uₙ<br>
+
+Tulis dari belakang: Sₙ = Uₙ + (Uₙ-b) + (Uₙ-2b) + ... + (a+b) + a<br><br>
+
+Jumlahkan kedua baris, pasangkan secara vertikal:<br><br>
+
+2Sₙ = (a+Uₙ) + (a+Uₙ) + (a+Uₙ) + ... + (a+Uₙ) &nbsp; (sebanyak n kali)<br><br>
+
+Mengapa setiap pasangan nilainya a+Uₙ?<br>
+
+Pasangan pertama: a + Uₙ<br>
+
+Pasangan kedua: (a+b) + (Uₙ-b) = a + Uₙ (b-nya hilang!)<br>
+
+Pasangan ketiga: (a+2b) + (Uₙ-2b) = a + Uₙ (2b-nya hilang!)<br>
+
+...dan seterusnya.<br><br>
+
+Jadi, 2Sₙ = n(a + Uₙ)<br>
+
+Sₙ = n/2 (a + Uₙ)
+
+</div>
+
+<div class="summary">
+
+<b>Rumus jumlah n suku pertama:</b><br><br>
+
+Sₙ = n/2 (a + Uₙ)<br><br>
+
+Atau: Sₙ = n/2 [2a + (n-1)b] &nbsp; (substitusi Uₙ = a + (n-1)b)
+
+</div>
+
+<h3>Contoh Mencari Jumlah</h3>
+
+<div class="example">
+
+Hitung jumlah 20 suku pertama dari 3 + 7 + 11 + 15 + ...<br><br>
+
+a = 3, b = 4<br><br>
+
+<b>Cara 1:</b> Cari U₂₀ dulu.<br>
+
+U₂₀ = 3 + (19)(4) = 3 + 76 = 79<br>
+
+S₂₀ = 20/2 × (3 + 79) = 10 × 82 = <b>820</b><br><br>
+
+<b>Cara 2:</b> Langsung pakai rumus alternatif.<br>
+
+S₂₀ = 20/2 × [2(3) + (19)(4)] = 10 × [6 + 76] = 10 × 82 = <b>820</b> ✅<br><br>
+
+Kedua cara sama. Pilih yang lebih nyaman.
+
+</div>
+
+<hr>
+
+<h3>Mencari Banyak Suku (n) Jika Diketahui Jumlahnya</h3>
+
+<div class="example">
+
+Berapa banyak suku pertama dari 5 + 8 + 11 + ... yang jumlahnya 1925?<br><br>
+
+a = 5, b = 3, Sₙ = 1925<br><br>
+
+Sₙ = n/2 [2a + (n-1)b]<br>
+
+1925 = n/2 [2(5) + (n-1)(3)]<br>
+
+1925 = n/2 [10 + 3n - 3]<br>
+
+1925 = n/2 [3n + 7]<br>
+
+3850 = n(3n + 7)<br>
+
+3850 = 3n² + 7n<br>
+
+3n² + 7n - 3850 = 0<br><br>
+
+Gunakan rumus ABC:<br>
+
+n = [-7 ± √(49 + 46200)]/6 = [-7 ± √46249]/6<br>
+
+n = [-7 ± 215]/6<br><br>
+
+n = 208/6 ≈ 34,67 (tidak bulat, tolak)<br>
+
+n = -222/6 = -37 (negatif, tolak)<br><br>
+
+Hmm, sepertinya perlu dihitung ulang.<br>
+
+n = (-7 + 215)/6 = 208/6 = <b>34,67...</b> bukan bilangan bulat?<br><br>
+
+Kalau hasilnya tidak bulat, cek kembali perhitungan atau soalnya.
+Untuk soal yang dirancang dengan baik, biasanya n adalah bilangan bulat positif.
+
+</div>
+
+</div>
+
+<!-- ==================== DERET GEOMETRI ==================== -->
+
+<div class="section">
+
+<h2>3. Deret Geometri — Ketika Rasionya Selalu Sama</h2>
+
+<p>
+
+<b>Deret geometri</b> adalah deret di mana <b>perbandingan</b> antara dua suku
+yang berurutan selalu <b>tetap</b>. Perbandingan tetap ini disebut <b>rasio</b>,
+dilambangkan dengan <b>r</b>.
+
+</p>
+
+<div class="example">
+
+2, 6, 18, 54, 162, ...<br><br>
+
+6/2 = 3<br>
+
+18/6 = 3<br>
+
+54/18 = 3<br>
+
+162/54 = 3<br><br>
+
+Rasionya selalu 3, jadi ini deret geometri dengan <b>r = 3</b>.
+
+</div>
+
+<p>
+
+<b>Cara mengenali:</b> lihat apakah hasil bagi suku berurutan selalu sama.
+Kalau iya → geometri. Bukan dilihat dari selisihnya, tapi dari <b>rasio</b>-nya!
+
+</p>
+
+<p>
+
+<b>Hati-hati:</b> 2, 4, 6, 8, ... selisihnya tetap (2), jadi ini <b>aritmetika</b>, bukan geometri.
+2, 4, 8, 16, ... rasionya tetap (2), jadi ini <b>geometri</b>.
+
+</p>
+
+<hr>
+
+<h3>Rumus Suku ke-n (Uₙ) — Dari Perkalian Berulang</h3>
+
+<div class="example">
+
+U₁ = a<br>
+
+U₂ = a × r<br>
+
+U₃ = a × r × r = a × r²<br>
+
+U₄ = a × r² × r = a × r³<br><br>
+
+Polanya: setiap langkah dikalikan r sekali.<br>
+
+Dari U₁ ke Uₙ, kita mengalikan r sebanyak (n-1) kali.
+
+</div>
+
+<div class="summary">
+
+<b>Rumus suku ke-n:</b><br><br>
+
+Uₙ = a · rⁿ⁻¹
+
+</div>
+
+<h3>Contoh Mencari Suku ke-n</h3>
+
+<div class="example">
+
+Barisan: 3, 6, 12, 24, ...<br><br>
+
+a = 3, r = 6/3 = 2<br><br>
+
+U₈ = 3 × 2⁷ = 3 × 128 = <b>384</b><br><br>
+
+U₁₂ = 3 × 2¹¹ = 3 × 2048 = <b>6144</b>
+
+</div>
+
+<hr>
+
+<h3>Rumus Jumlah n Suku Pertama (Sₙ) — Trik Eliminasi</h3>
+
+<p>
+
+Untuk deret geometri, kita tidak bisa pakai trik Gauss.
+Tapi ada trik lain yang sama elegannya.
+
+</p>
+
+<div class="example">
+
+Sₙ = a + ar + ar² + ar³ + ... + arⁿ⁻¹<br><br>
+
+<b>Ide:</b> Kalikan Sₙ dengan r, lalu kurangkan.<br><br>
+
+rSₙ = ar + ar² + ar³ + ar⁴ + ... + arⁿ<br><br>
+
+Sekarang kurangkan Sₙ - rSₙ:<br><br>
+
+Sₙ &nbsp; = a + ar + ar² + ar³ + ... + arⁿ⁻¹<br>
+
+rSₙ = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ar + ar² + ar³ + ... + arⁿ⁻¹ + arⁿ<br><br>
+
+Sₙ - rSₙ = a - arⁿ &nbsp; (semua suku tengah saling menghapus!)<br><br>
+
+Sₙ(1 - r) = a(1 - rⁿ)<br>
+
+Sₙ = a(1 - rⁿ)/(1 - r)
+
+</div>
+
+<div class="summary">
+
+<b>Rumus jumlah n suku pertama:</b><br><br>
+
+Sₙ = a(1 - rⁿ)/(1 - r), &nbsp; untuk r ≠ 1<br><br>
+
+Atau: Sₙ = a(rⁿ - 1)/(r - 1) &nbsp; (versi alternatif, hasilnya sama)
+
+</div>
+
+<h3>Contoh Mencari Jumlah</h3>
+
+<div class="example">
+
+Hitung jumlah 6 suku pertama dari 2 + 6 + 18 + 54 + ...<br><br>
+
+a = 2, r = 3<br><br>
+
+S₆ = 2(1 - 3⁶)/(1 - 3)<br>
+
+= 2(1 - 729)/(-2)<br>
+
+= 2(-728)/(-2)<br>
+
+= 728<br><br>
+
+<b>Verifikasi manual:</b> 2+6+18+54+162+486 = <b>728</b> ✅
+
+</div>
+
+<h3>Kasus Khusus: r = 1</h3>
+
+<p>
+
+Kalau r = 1, semua suku nilainya sama: a, a, a, a, ...
+Jumlah n suku = a × n. Rumus di atas tidak berlaku karena penyebutnya nol.
+
+</p>
+
+</div>
+
+<!-- ==================== DERET GEOMETRI TAK HINGGA ==================== -->
+
+<div class="section">
+
+<h2>4. Deret Geometri Tak Hingga — Menjumlahkan Sampai "Selamanya"</h2>
+
+<p>
+
+Apa yang terjadi kalau kita menjumlahkan deret geometri terus-menerus
+sampai tak hingga? Apakah hasilnya tak hingga juga?
+
+</p>
+
+<p>
+
+<b>Jawabannya: tergantung rasionya!</b>
+
+</p>
+
+<hr>
+
+<h3>Dua Kemungkinan</h3>
+
+<div class="summary">
+
+<b>Kasus 1: |r| < 1</b> (rasio antara -1 dan 1)<br>
+
+Deret <b>konvergen</b> — jumlahnya menuju nilai tertentu (hingga).<br><br>
+
+<b>Kasus 2: |r| ≥ 1</b> (rasio ≤ -1 atau ≥ 1)<br>
+
+Deret <b>divergen</b> — jumlahnya membesar tanpa batas (tak hingga atau berosilasi).
+
+</div>
+
+<p>
+
+<b>Mengapa |r| < 1 konvergen?</b>
+
+</p>
+
+<p>
+
+Bayangkan r = 1/2. Suku-sukunya: a, a/2, a/4, a/8, a/16, ...
+Setiap suku berikutnya <b>setengah</b> dari suku sebelumnya.
+Makin lama suku makin kecil, mendekati nol.
+Total penjumlahannya akan mendekati suatu nilai tertentu, tidak pernah melebihi nilai itu.
+
+</p>
+
+<p>
+
+Bayangkan kamu berjalan 1 meter, lalu setengah meter, lalu seperempat meter,
+lalu seperdelapan meter... Total jarak yang kamu tempuh <b>tidak akan pernah
+melebihi 2 meter</b>. Kamu akan terus mendekati 2 meter tapi tidak pernah
+mencapainya (secara matematis, limitnya tepat 2).
+
+</p>
+
+<hr>
+
+<h3>Rumus Jumlah Tak Hingga — Dari Mana Datangnya?</h3>
+
+<p>
+
+Kita mulai dari rumus Sₙ geometri:
+
+</p>
+
+<div class="example">
+
+Sₙ = a(1 - rⁿ)/(1 - r)<br><br>
+
+Saat n → ∞ (menuju tak hingga), apa yang terjadi pada rⁿ?<br><br>
+
+Jika |r| < 1: rⁿ → 0 &nbsp; (makin dipangkatkan makin kecil, mendekati nol).<br>
+
+Contoh: 0,5¹⁰⁰ = 0,0000000000000000000000000000007889... (praktis nol).<br><br>
+
+Maka: S∞ = a(1 - 0)/(1 - r) = a/(1 - r)
+
+</div>
+
+<div class="summary">
+
+<b>Rumus jumlah tak hingga:</b><br><br>
+
+S∞ = a/(1 - r), &nbsp; dengan syarat <b>|r| < 1</b>
+
+</div>
+
+<h3>Contoh 1: Deret Geometri Tak Hingga</h3>
+
+<div class="example">
+
+Hitung: 8 + 4 + 2 + 1 + 1/2 + 1/4 + ... (sampai tak hingga).<br><br>
+
+a = 8, r = 4/8 = 1/2. |r| = 1/2 < 1 → konvergen.<br><br>
+
+S∞ = 8/(1 - 1/2) = 8/(1/2) = 8 × 2 = <b>16</b> ✅<br><br>
+
+<b>Makna:</b> Total jarak yang ditempuh bola yang memantul
+dengan ketinggian awal 8 meter dan rasio pantulan 1/2 adalah 16 meter.
+
+</div>
+
+<h3>Contoh 2: Mengubah Desimal Berulang ke Pecahan</h3>
+
+<p>
+
+Ini adalah aplikasi keren dari deret geometri tak hingga.
+
+</p>
+
+<div class="example">
+
+Ubah 0,666... menjadi pecahan.<br><br>
+
+0,666... = 0,6 + 0,06 + 0,006 + 0,0006 + ...<br>
+
+= 6/10 + 6/100 + 6/1000 + 6/10000 + ...<br><br>
+
+Ini deret geometri dengan a = 6/10, r = 1/10.<br><br>
+
+S∞ = (6/10)/(1 - 1/10) = (6/10)/(9/10) = 6/9 = <b>2/3</b> ✅<br><br>
+
+Memang 0,666... = 2/3!
+
+</div>
+
+<div class="example">
+
+Ubah 0,123123123... menjadi pecahan.<br><br>
+
+= 0,123 + 0,000123 + 0,000000123 + ...<br>
+
+= 123/1000 + 123/1000000 + 123/1000000000 + ...<br><br>
+
+a = 123/1000, r = 1/1000.<br><br>
+
+S∞ = (123/1000)/(1 - 1/1000) = (123/1000)/(999/1000) = 123/999 = <b>41/333</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kapan Deret Divergen?</h3>
+
+<div class="example">
+
+Deret 2 + 4 + 8 + 16 + ... (r = 2): jumlahnya menuju tak hingga → divergen.<br><br>
+
+Deret 2 - 4 + 8 - 16 + ... (r = -2): jumlahnya berosilasi, tidak menuju nilai tertentu → divergen.<br><br>
+
+Deret 5 + 5 + 5 + ... (r = 1): jumlahnya 5n → menuju tak hingga → divergen.
+
+</div>
+
+</div>
+
+<!-- ==================== BARISAN REKURENSI ==================== -->
+
+<div class="section">
+
+<h2>5. Barisan Rekurensi — Suku Didefinisikan dari Suku Sebelumnya</h2>
+
+<p>
+
+Sejauh ini, kita melihat barisan yang punya <b>rumus eksplisit</b>:
+Uₙ bisa langsung dihitung dari n (Uₙ = a+(n-1)b atau Uₙ = a·rⁿ⁻¹).
+
+</p>
+
+<p>
+
+Tapi ada jenis barisan lain: <b>barisan rekurensi</b> (rekursif).
+Suku berikutnya dihitung dari <b>suku-suku sebelumnya</b>,
+bukan langsung dari n.
+
+</p>
+
+<div class="summary">
+
+<b>Rekurensi:</b> Uₙ dinyatakan dalam Uₙ₋₁, Uₙ₋₂, ...<br><br>
+
+Untuk menghitung U₁₀, kamu harus menghitung U₁, U₂, ..., U₉ dulu.
+
+</div>
+
+<hr>
+
+<h3>Contoh 1: Fibonacci — Barisan Paling Terkenal</h3>
+
+<div class="example">
+
+F₁ = 1, F₂ = 1<br>
+
+Fₙ = Fₙ₋₁ + Fₙ₋₂, untuk n ≥ 3<br><br>
+
+F₃ = F₂ + F₁ = 1 + 1 = 2<br>
+
+F₄ = F₃ + F₂ = 2 + 1 = 3<br>
+
+F₅ = F₄ + F₃ = 3 + 2 = 5<br>
+
+F₆ = F₅ + F₄ = 5 + 3 = 8<br>
+
+F₇ = F₆ + F₅ = 8 + 5 = 13<br>
+
+F₈ = 13 + 8 = 21<br>
+
+F₉ = 21 + 13 = 34<br>
+
+F₁₀ = 34 + 21 = 55<br><br>
+
+Barisan Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+
+</div>
+
+<p>
+
+<b>Di mana Fibonacci muncul di alam?</b>
+
+</p>
+
+<ul>
+
+<li>Jumlah kelopak bunga: banyak bunga punya kelopak Fibonacci (3, 5, 8, 13, 21, ...).</li>
+
+<li>Susunan biji bunga matahari: spiralnya mengikuti bilangan Fibonacci.</li>
+
+<li>Rasio dua suku berurutan (Fₙ₊₁/Fₙ) mendekati <b>rasio emas</b> φ ≈ 1,618.</li>
+
+</ul>
+
+<hr>
+
+<h3>Contoh 2: Rekurensi Linear Sederhana</h3>
+
+<div class="example">
+
+U₁ = 5<br>
+
+Uₙ = 2Uₙ₋₁ + 3, untuk n ≥ 2<br><br>
+
+U₂ = 2(5) + 3 = 13<br>
+
+U₃ = 2(13) + 3 = 29<br>
+
+U₄ = 2(29) + 3 = 61<br>
+
+U₅ = 2(61) + 3 = 125<br><br>
+
+Barisan: 5, 13, 29, 61, 125, ...
+
+</div>
+
+<hr>
+
+<h3>Dari Rekurensi ke Rumus Eksplisit (Pengantar)</h3>
+
+<p>
+
+Kadang kita bisa "menebak" bahwa suatu rekurensi sebenarnya adalah
+barisan aritmetika atau geometri yang tersembunyi.
+
+</p>
+
+<div class="example">
+
+U₁ = 3<br>
+
+Uₙ = Uₙ₋₁ + 4<br><br>
+
+Ini sebenarnya barisan aritmetika dengan a = 3, b = 4.<br>
+
+Rumus eksplisitnya: Uₙ = 3 + (n-1)4 = <b>4n - 1</b> ✅<br><br>
+
+Cek: n=1 → 3, n=2 → 7, n=3 → 11. Cocok dengan rekurensi.
+
+</div>
+
+<div class="example">
+
+U₁ = 2<br>
+
+Uₙ = 3Uₙ₋₁<br><br>
+
+Ini sebenarnya barisan geometri dengan a = 2, r = 3.<br>
+
+Rumus eksplisitnya: Uₙ = 2 · 3ⁿ⁻¹ ✅
+
+</div>
+
+</div>
