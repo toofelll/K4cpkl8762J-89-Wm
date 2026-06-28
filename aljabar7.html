@@ -1,1 +1,986 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 7 | Polinom Lanjut</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 7 • Polinom Lanjut</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Aljabar 2, kita sudah bertemu polinomial dalam bentuk persamaan linear,
+kuadrat, dan kubik. Di Aljabar 5, kita melihat polinomial sebagai fungsi.
+Sekarang, kita akan menyelami <b>polinomial secara lebih dalam dan sistematis</b>.
+
+</p>
+
+<p>
+
+Polinomial (atau <b>suku banyak</b>) adalah salah satu objek paling fundamental
+dalam matematika. Hampir semua fungsi bisa diaproksimasi oleh polinomial.
+Dari menghitung lintasan roket sampai mengenkripsi data digital,
+polinomial ada di mana-mana.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan belajar:
+bagaimana membagi polinomial dengan berbagai metode,
+bagaimana mencari akar-akar rasional secara sistematis,
+apa artinya sebuah akar muncul lebih dari sekali (multiplisitas),
+dan hubungan-hubungan elegan antara akar-akar dengan koefisien (Rumus Vieta).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi dan terminologi polinomial (derajat, koefisien, leading coefficient).</li>
+
+<li>Menguasai pembagian polinomial: pembagian panjang dan metode Horner (sintetik).</li>
+
+<li>Memahami dan menggunakan Teorema Sisa.</li>
+
+<li>Memahami dan menggunakan Teorema Faktor.</li>
+
+<li>Menggunakan Teorema Akar Rasional untuk mencari akar-akar polinomial.</li>
+
+<li>Memahami multiplisitas akar dan pengaruhnya pada grafik.</li>
+
+<li>Menguasai Rumus Vieta untuk polinomial derajat berapapun.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== DEFINISI POLINOM ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Polinomial? — Definisi Formal</h2>
+
+<p>
+
+<b>Polinomial</b> (atau suku banyak) dalam variabel x adalah ekspresi berbentuk:
+
+</p>
+
+<div class="summary">
+
+P(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₂x² + a₁x + a₀
+
+<br><br>
+
+dengan:<br>
+
+n = <b>derajat</b> polinomial (bilangan bulat non-negatif)<br>
+
+aₙ, aₙ₋₁, ..., a₀ = <b>koefisien</b> (bilangan real atau kompleks)<br>
+
+aₙ ≠ 0 = <b>leading coefficient</b> (koefisien utama)<br>
+
+a₀ = <b>konstanta</b>
+
+</div>
+
+<p>
+
+<b>Contoh:</b>
+
+</p>
+
+<div class="example">
+
+P(x) = 3x⁴ - 2x³ + 5x² - 7x + 1<br><br>
+
+Derajat: 4<br>
+
+Koefisien utama: 3<br>
+
+Konstanta: 1<br>
+
+Koefisien x²: 5
+
+</div>
+
+<hr>
+
+<h3>Bukan Polinomial</h3>
+
+<div class="example">
+
+x⁻² + 3x &nbsp; → pangkat negatif, bukan polinomial.<br>
+
+2ˣ + 5 &nbsp; → variabel di pangkat, bukan polinomial.<br>
+
+√x + 1 &nbsp; → pangkat pecahan, bukan polinomial.<br>
+
+1/x &nbsp; → sama dengan x⁻¹, bukan polinomial.
+
+</div>
+
+<p>
+
+<b>Syarat polinomial:</b> pangkat variabel harus <b>bilangan bulat non-negatif</b> (0, 1, 2, 3, ...).
+
+</p>
+
+<hr>
+
+<h3>Operasi Polinomial</h3>
+
+<p>
+
+Penjumlahan, pengurangan, dan perkalian polinomial sudah kita bahas di Aljabar 1.
+Sekarang kita fokus pada <b>pembagian polinomial</b>—operasi yang lebih kompleks
+tapi sangat penting untuk mencari akar dan memfaktorkan.
+
+</p>
+
+</div>
+
+<!-- ==================== PEMBAGIAN POLINOM ==================== -->
+
+<div class="section">
+
+<h2>2. Pembagian Polinomial — Dua Metode Utama</h2>
+
+<p>
+
+Seperti bilangan bulat, polinomial juga bisa dibagi.
+Jika P(x) dibagi oleh D(x), hasilnya adalah <b>hasil bagi</b> Q(x) dan <b>sisa</b> R(x).
+
+</p>
+
+<div class="summary">
+
+P(x) = D(x) · Q(x) + R(x)
+
+<br><br>
+
+Derajat R(x) < derajat D(x).
+
+</div>
+
+<p>
+
+Kita akan membahas <b>dua metode</b>: pembagian panjang dan metode Horner (sintetik).
+
+</p>
+
+<hr>
+
+<h3>Metode 1: Pembagian Panjang</h3>
+
+<p>
+
+Mirip pembagian bilangan biasa. Cocok untuk pembagi dengan derajat berapapun.
+
+</p>
+
+<div class="example">
+
+Bagi P(x) = 2x³ + 3x² - 5x + 6 oleh D(x) = x - 2.<br><br>
+
+<b>Langkah 1:</b> 2x³ ÷ x = 2x². Tulis di hasil.<br>
+
+2x²(x - 2) = 2x³ - 4x². Kurangkan:<br>
+
+(2x³ + 3x² - 5x + 6) - (2x³ - 4x²) = 7x² - 5x + 6<br><br>
+
+<b>Langkah 2:</b> 7x² ÷ x = 7x. Tulis di hasil.<br>
+
+7x(x - 2) = 7x² - 14x. Kurangkan:<br>
+
+(7x² - 5x + 6) - (7x² - 14x) = 9x + 6<br><br>
+
+<b>Langkah 3:</b> 9x ÷ x = 9. Tulis di hasil.<br>
+
+9(x - 2) = 9x - 18. Kurangkan:<br>
+
+(9x + 6) - (9x - 18) = 24<br><br>
+
+<b>Hasil bagi:</b> Q(x) = 2x² + 7x + 9<br>
+
+<b>Sisa:</b> R(x) = 24<br><br>
+
+<b>Verifikasi:</b> (x-2)(2x²+7x+9) + 24<br>
+
+= 2x³+7x²+9x - 4x²-14x-18 + 24<br>
+
+= 2x³ + 3x² - 5x + 6 ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 2: Horner (Pembagian Sintetik)</h3>
+
+<p>
+
+Metode Horner (atau <b>pembagian sintetik</b>) adalah cara ringkas untuk membagi
+polinomial dengan pembagi berbentuk <b>x - k</b>. Jauh lebih cepat daripada
+pembagian panjang.
+
+</p>
+
+<p>
+
+<b>Langkah-langkah Horner:</b>
+
+</p>
+
+<ol>
+
+<li>Tulis koefisien polinomial dari pangkat tertinggi ke terendah.
+Kalau ada pangkat yang kosong, isi 0.</li>
+
+<li>Tulis k (dari x - k) di sebelah kiri.</li>
+
+<li>Turunkan koefisien pertama.</li>
+
+<li>Kalikan dengan k, tulis di bawah koefisien berikutnya, jumlahkan.</li>
+
+<li>Ulangi sampai habis.</li>
+
+<li>Bilangan terakhir adalah <b>sisa</b>. Bilangan sebelumnya adalah <b>koefisien hasil bagi</b>
+(dari pangkat tertinggi ke terendah).</li>
+
+</ol>
+
+<div class="example">
+
+Bagi P(x) = 2x³ + 3x² - 5x + 6 oleh x - 2.<br><br>
+
+k = 2 (karena x - 2 = 0 → x = 2).<br><br>
+
+Koefisien: 2, 3, -5, 6<br><br>
+
+<pre>
+    |  2   3   -5   6
+ 2  |     4   14   18
+    +----------------
+      2   7    9  | 24
+</pre>
+
+<br>
+
+<b>Langkah:</b><br>
+
+- Turunkan 2.<br>
+
+- 2 × 2 = 4. 3 + 4 = 7.<br>
+
+- 2 × 7 = 14. -5 + 14 = 9.<br>
+
+- 2 × 9 = 18. 6 + 18 = 24 (sisa).<br><br>
+
+<b>Hasil bagi:</b> 2x² + 7x + 9<br>
+
+<b>Sisa:</b> 24<br><br>
+
+Hasilnya <b>sama persis</b> dengan pembagian panjang! Tapi jauh lebih cepat.
+
+</div>
+
+<hr>
+
+<h3>Mengapa Horner Bisa Berfungsi?</h3>
+
+<p>
+
+Metode Horner sebenarnya adalah cara ringkas menulis pembagian panjang.
+Setiap langkah "kalikan dengan k, jumlahkan" berkorespondensi dengan
+satu langkah eliminasi di pembagian panjang. Prosesnya identik secara matematis,
+hanya penulisannya yang dipadatkan.
+
+</p>
+
+<div class="note">
+
+<b>⚠️ Batasan Horner:</b>
+
+Metode Horner hanya bekerja untuk pembagi berbentuk <b>x - k</b> (linear dengan koefisien x = 1).
+Untuk pembagi seperti 2x - 3 atau x² + 1, gunakan pembagian panjang.
+
+</div>
+
+</div>
+
+<!-- ==================== TEOREMA SISA ==================== -->
+
+<div class="section">
+
+<h2>3. Teorema Sisa — Jalan Pintas Mencari Sisa</h2>
+
+<div class="summary">
+
+<b>Teorema Sisa:</b> Jika polinomial P(x) dibagi oleh <b>x - k</b>,
+maka sisanya adalah <b>P(k)</b>.
+
+</div>
+
+<p>
+
+Ini adalah teorema yang sangat powerful. Kamu tidak perlu melakukan pembagian
+panjang atau Horner untuk mengetahui sisa—cukup substitusi x = k ke P(x).
+
+</p>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+Dari algoritma pembagian:<br>
+
+P(x) = (x - k) · Q(x) + R<br><br>
+
+di mana R adalah sisa (konstanta, karena derajat sisa < derajat pembagi = 1).<br><br>
+
+Substitusi x = k:<br>
+
+P(k) = (k - k) · Q(k) + R<br>
+
+P(k) = 0 · Q(k) + R<br>
+
+P(k) = R<br><br>
+
+Jadi, R = P(k). Terbukti! ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh Penggunaan Teorema Sisa</h3>
+
+<div class="example">
+
+<b>Soal:</b> Tentukan sisa pembagian P(x) = x⁴ - 3x³ + 2x² - 5 oleh x + 1.<br><br>
+
+Pembagi: x + 1 → k = -1.<br><br>
+
+P(-1) = (-1)⁴ - 3(-1)³ + 2(-1)² - 5<br>
+
+= 1 - 3(-1) + 2(1) - 5<br>
+
+= 1 + 3 + 2 - 5<br>
+
+= 1<br><br>
+
+<b>Sisa = 1</b> ✅<br><br>
+
+(Tanpa teorema sisa, kamu harus melakukan pembagian panjang 4 langkah!)
+
+</div>
+
+<hr>
+
+<h3>Aplikasi Teorema Sisa</h3>
+
+<div class="example">
+
+<b>Soal:</b> P(x) = x³ + ax² + 4x - 6. Jika P(1) = 0, tentukan a.<br><br>
+
+P(1) = 1³ + a(1)² + 4(1) - 6<br>
+
+0 = 1 + a + 4 - 6<br>
+
+0 = a - 1<br>
+
+a = 1 ✅
+
+</div>
+
+</div>
+
+<!-- ==================== TEOREMA FAKTOR ==================== -->
+
+<div class="section">
+
+<h2>4. Teorema Faktor — Kapan (x - k) adalah Faktor?</h2>
+
+<div class="summary">
+
+<b>Teorema Faktor:</b> (x - k) adalah <b>faktor</b> dari P(x)
+jika dan hanya jika <b>P(k) = 0</b>.
+
+</div>
+
+<p>
+
+Ini adalah konsekuensi langsung dari Teorema Sisa.
+Jika sisa = 0, maka P(x) = (x - k) · Q(x), artinya (x - k) adalah faktor.
+
+</p>
+
+<p>
+
+<b>Mengapa ini penting?</b>
+
+Teorema Faktor menghubungkan <b>akar</b> dengan <b>faktor</b>:
+mencari akar = mencari faktor linear. Begitu kita tahu satu akar,
+kita bisa memfaktorkan polinomial dan menyelesaikan sisanya.
+
+</p>
+
+<hr>
+
+<h3>Contoh Penggunaan Teorema Faktor</h3>
+
+<div class="example">
+
+<b>Soal:</b> Buktikan bahwa (x - 3) adalah faktor dari P(x) = x³ - 4x² + x + 6.<br><br>
+
+P(3) = 27 - 4(9) + 3 + 6 = 27 - 36 + 3 + 6 = 0.<br><br>
+
+Karena P(3) = 0, maka (x - 3) adalah faktor.<br><br>
+
+<b>Cari faktor lainnya dengan Horner:</b><br><br>
+
+<pre>
+    |  1  -4   1    6
+ 3  |     3  -3   -6
+    +-----------------
+      1  -1  -2  |  0
+</pre>
+
+<br>
+
+Hasil bagi: x² - x - 2 = (x - 2)(x + 1)<br><br>
+
+Jadi, P(x) = <b>(x - 3)(x - 2)(x + 1)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Teorema Faktor untuk Membentuk Polinomial</h3>
+
+<div class="example">
+
+<b>Soal:</b> Buat polinomial berderajat 3 yang akar-akarnya 2, -1, dan 4.<br><br>
+
+Karena akarnya 2, -1, 4, maka faktornya (x-2), (x+1), (x-4).<br><br>
+
+P(x) = (x - 2)(x + 1)(x - 4)<br>
+
+= (x² - x - 2)(x - 4)<br>
+
+= x³ - 4x² - x² + 4x - 2x + 8<br>
+
+= <b>x³ - 5x² + 2x + 8</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== TEOREMA AKAR RASIONAL ==================== -->
+
+<div class="section">
+
+<h2>5. Teorema Akar Rasional — Mencari Akar Secara Sistematis</h2>
+
+<p>
+
+Saat mencari akar polinomial, kita tidak bisa menebak selamanya.
+<b>Teorema Akar Rasional</b> memberi kita daftar kandidat yang terbatas.
+
+</p>
+
+<div class="summary">
+
+<b>Teorema Akar Rasional (Rational Root Theorem):</b><br><br>
+
+Jika polinomial P(x) = aₙxⁿ + ... + a₀ memiliki akar rasional p/q
+(dalam bentuk paling sederhana), maka:<br><br>
+
+<b>p</b> adalah faktor dari konstanta a₀<br>
+
+<b>q</b> adalah faktor dari koefisien utama aₙ
+
+</div>
+
+<p>
+
+<b>Pembuktian (sketsa):</b>
+
+</p>
+
+<div class="example">
+
+Misalkan P(p/q) = 0.<br><br>
+
+aₙ(p/q)ⁿ + ... + a₁(p/q) + a₀ = 0<br><br>
+
+Kalikan dengan qⁿ:<br>
+
+aₙpⁿ + aₙ₋₁pⁿ⁻¹q + ... + a₁pqⁿ⁻¹ + a₀qⁿ = 0<br><br>
+
+Semua suku kecuali yang terakhir mengandung faktor q.<br>
+
+Jadi a₀qⁿ = -(aₙpⁿ + ... + a₁pqⁿ⁻¹) habis dibagi p.<br>
+
+Karena p dan q relatif prima, maka p harus membagi a₀.<br>
+
+Dengan argumen serupa, q harus membagi aₙ.
+
+</div>
+
+<hr>
+
+<h3>Contoh Penggunaan</h3>
+
+<div class="example">
+
+<b>Soal:</b> Cari semua akar rasional dari P(x) = 2x³ + 3x² - 8x + 3.<br><br>
+
+aₙ = 2, faktornya: ±1, ±2<br>
+
+a₀ = 3, faktornya: ±1, ±3<br><br>
+
+Kandidat akar rasional p/q: ±1, ±3, ±1/2, ±3/2<br><br>
+
+<b>Uji satu per satu:</b><br>
+
+P(1) = 2 + 3 - 8 + 3 = 0 ✅ → akar x = 1<br><br>
+
+Gunakan Horner dengan k = 1:<br>
+
+<pre>
+    |  2   3  -8   3
+ 1  |     2   5  -3
+    +----------------
+      2   5  -3 | 0
+</pre>
+
+<br>
+
+Hasil bagi: 2x² + 5x - 3<br>
+
+Faktorkan: (2x - 1)(x + 3)<br><br>
+
+<b>Akar-akar: x = 1, x = 1/2, x = -3</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Tips Mencari Akar Rasional</h3>
+
+<ul>
+
+<li>Mulai dari kandidat yang paling sederhana: ±1 dulu.</li>
+
+<li>Kalau jumlah koefisien = 0 → x = 1 pasti akar.</li>
+
+<li>Kalau jumlah koefisien pangkat genap = jumlah pangkat ganjil → x = -1 pasti akar.</li>
+
+<li>Setelah dapat satu akar, langsung gunakan Horner untuk menurunkan derajat.</li>
+
+</ul>
+
+</div>
+
+<!-- ==================== MULTIPLISITAS AKAR ==================== -->
+
+<div class="section">
+
+<h2>6. Multiplisitas Akar — Akar yang Berulang</h2>
+
+<p>
+
+Kadang-kadang, sebuah akar muncul <b>lebih dari sekali</b>.
+Ini disebut <b>multiplisitas</b> atau <b>kegandaan</b> akar.
+
+</p>
+
+<div class="summary">
+
+Jika (x - k)ᵐ adalah faktor dari P(x) tapi (x - k)ᵐ⁺¹ bukan faktor,
+maka k adalah akar dengan <b>multiplisitas m</b>.
+
+<br><br>
+
+m = 1: akar tunggal (simple root)<br>
+
+m = 2: akar ganda (double root)<br>
+
+m = 3: akar tripel, dan seterusnya.
+
+</div>
+
+<p>
+
+<b>Mengapa multiplisitas penting?</b>
+
+</p>
+
+<p>
+
+Multiplisitas mempengaruhi <b>perilaku grafik</b> di sekitar akar:
+
+</p>
+
+<div class="summary">
+
+<b>m ganjil (1, 3, 5, ...):</b> Grafik <b>memotong</b> sumbu X.<br>
+
+<b>m genap (2, 4, 6, ...):</b> Grafik <b>menyinggung</b> sumbu X dan memantul.
+
+</div>
+
+<p>
+
+<b>Contoh visual:</b>
+
+</p>
+
+<ul>
+
+<li>f(x) = (x - 2) → memotong di x = 2 (lurus).</li>
+
+<li>f(x) = (x - 2)² → menyinggung di x = 2 (seperti parabola menyentuh).</li>
+
+<li>f(x) = (x - 2)³ → memotong di x = 2 (seperti gelombang S).</li>
+
+</ul>
+
+<hr>
+
+<h3>Contoh</h3>
+
+<div class="example">
+
+P(x) = (x - 1)²(x + 2)³(x - 4)<br><br>
+
+<b>Akar-akar dan multiplisitasnya:</b><br>
+
+x = 1, multiplisitas 2 (genap → menyinggung).<br>
+
+x = -2, multiplisitas 3 (ganjil → memotong).<br>
+
+x = 4, multiplisitas 1 (ganjil → memotong).<br><br>
+
+<b>Derajat polinomial:</b> 2 + 3 + 1 = 6.
+
+</div>
+
+<hr>
+
+<h3>Multiplisitas dan Turunan (Pengantar)</h3>
+
+<p>
+
+Satu cara mendeteksi multiplisitas: jika k adalah akar dengan multiplisitas m,
+maka P(k) = P'(k) = P''(k) = ... = P⁽ᵐ⁻¹⁾(k) = 0, tapi P⁽ᵐ⁾(k) ≠ 0.
+
+</p>
+
+<p>
+
+Artinya: jika sebuah akar punya multiplisitas > 1, maka akar itu juga merupakan
+akar dari turunannya. Ini akan dipelajari lebih dalam di kalkulus.
+
+</p>
+
+</div>
+
+<!-- ==================== RUMUS VIETA ==================== -->
+
+<div class="section">
+
+<h2>7. Rumus Vieta — Hubungan Elegan Akar dan Koefisien</h2>
+
+<p>
+
+<b>Rumus Vieta</b> (dinamai dari François Viète, matematikawan Prancis abad ke-16)
+menghubungkan <b>jumlah dan hasil kali akar-akar</b> dengan <b>koefisien</b> polinomial.
+
+</p>
+
+<p>
+
+Di Aljabar 2, kita sudah melihat versi sederhananya untuk persamaan kuadrat:
+x₁ + x₂ = -b/a dan x₁x₂ = c/a. Sekarang kita generalisasi ke derajat berapapun.
+
+</p>
+
+<hr>
+
+<h3>Rumus Vieta untuk Derajat 2 (Review)</h3>
+
+<div class="example">
+
+Untuk ax² + bx + c = a(x - x₁)(x - x₂):<br><br>
+
+x₁ + x₂ = -b/a<br>
+
+x₁x₂ = c/a
+
+</div>
+
+<h3>Rumus Vieta untuk Derajat 3</h3>
+
+<div class="example">
+
+Untuk ax³ + bx² + cx + d = a(x - x₁)(x - x₂)(x - x₃):<br><br>
+
+x₁ + x₂ + x₃ = -b/a<br>
+
+x₁x₂ + x₁x₃ + x₂x₃ = c/a<br>
+
+x₁x₂x₃ = -d/a
+
+</div>
+
+<h3>Rumus Vieta untuk Derajat 4</h3>
+
+<div class="example">
+
+Untuk ax⁴ + bx³ + cx² + dx + e = a(x - x₁)(x - x₂)(x - x₃)(x - x₄):<br><br>
+
+x₁ + x₂ + x₃ + x₄ = -b/a<br>
+
+x₁x₂ + x₁x₃ + x₁x₄ + x₂x₃ + x₂x₄ + x₃x₄ = c/a<br>
+
+x₁x₂x₃ + x₁x₂x₄ + x₁x₃x₄ + x₂x₃x₄ = -d/a<br>
+
+x₁x₂x₃x₄ = e/a
+
+</div>
+
+<hr>
+
+<h3>Pola Umum Rumus Vieta</h3>
+
+<div class="summary">
+
+Untuk polinomial aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₀ = aₙ(x - x₁)...(x - xₙ):<br><br>
+
+<b>Jumlah 1 akar:</b> Σxᵢ = -aₙ₋₁/aₙ<br>
+
+<b>Jumlah perkalian 2 akar:</b> Σxᵢxⱼ = aₙ₋₂/aₙ<br>
+
+<b>Jumlah perkalian 3 akar:</b> Σxᵢxⱼxₖ = -aₙ₋₃/aₙ<br>
+
+...<br>
+
+<b>Perkalian semua akar:</b> x₁x₂...xₙ = (-1)ⁿa₀/aₙ
+
+</div>
+
+<p>
+
+<b>Tanda bergantian:</b> positif, negatif, positif, negatif, ...
+dimulai dari -aₙ₋₁/aₙ.
+
+</p>
+
+<hr>
+
+<h3>Mengapa Rumus Vieta Benar?</h3>
+
+<p>
+
+Ini berasal dari mengalikan faktor-faktor (x - x₁)(x - x₂)...(x - xₙ)
+dan membandingkan koefisiennya dengan bentuk standar.
+
+</p>
+
+<div class="example">
+
+Untuk kuadrat: (x - x₁)(x - x₂) = x² - (x₁+x₂)x + x₁x₂<br><br>
+
+Bandingkan dengan x² + (b/a)x + c/a:<br>
+
+Koefisien x: -(x₁+x₂) = b/a → x₁+x₂ = -b/a ✅<br>
+
+Konstanta: x₁x₂ = c/a ✅
+
+</div>
+
+<hr>
+
+<h3>Aplikasi Rumus Vieta</h3>
+
+<div class="example">
+
+<b>Soal:</b> Jika x₁ dan x₂ adalah akar-akar dari x² + 5x + 6 = 0,
+hitung x₁² + x₂² tanpa mencari x₁ dan x₂ satu per satu.<br><br>
+
+Dari Vieta: x₁ + x₂ = -5, x₁x₂ = 6.<br><br>
+
+x₁² + x₂² = (x₁ + x₂)² - 2x₁x₂<br>
+
+= (-5)² - 2(6)<br>
+
+= 25 - 12 = <b>13</b> ✅<br><br>
+
+(Tanpa perlu tahu x₁ = -2 dan x₂ = -3.)
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Jika akar-akar dari x³ + 2x² - 5x - 6 = 0 adalah a, b, dan c,
+hitung 1/a + 1/b + 1/c.<br><br>
+
+Dari Vieta: a+b+c = -2, ab+bc+ca = -5, abc = 6.<br><br>
+
+1/a + 1/b + 1/c = (bc + ac + ab)/abc<br>
+
+= (-5)/6 = <b>-5/6</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Rumus Vieta untuk Mengecek Jawaban</h3>
+
+<p>
+
+Salah satu kegunaan paling praktis: setelah mencari akar-akar,
+kamu bisa cek apakah jumlah dan hasil kalinya sesuai dengan Vieta.
+Kalau tidak cocok, pasti ada yang salah.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Polinomial:</b> P(x) = aₙxⁿ + ... + a₀, pangkat bulat non-negatif.</li>
+
+<li><b>Pembagian panjang:</b> metode umum, untuk semua pembagi.</li>
+
+<li><b>Horner (sintetik):</b> metode cepat untuk pembagi x - k.</li>
+
+<li><b>Teorema Sisa:</b> P(x) ÷ (x-k) → sisa = P(k).</li>
+
+<li><b>Teorema Faktor:</b> (x-k) adalah faktor ⇔ P(k) = 0.</li>
+
+<li><b>Teorema Akar Rasional:</b> akar p/q → p faktor a₀, q faktor aₙ.</li>
+
+<li><b>Multiplisitas m:</b> m ganjil → memotong, m genap → menyinggung.</li>
+
+<li><b>Vieta:</b> Σxᵢ = -aₙ₋₁/aₙ, Πxᵢ = (-1)ⁿa₀/aₙ.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Horner adalah senjata utama.</b> Untuk pembagi x - k, Horner jauh lebih cepat.
+Kuasai metode ini, kamu akan menghemat banyak waktu.
+
+</li>
+
+<li>
+
+<b>Teorema Sisa = cek instan.</b> Mau tahu sisa tanpa membagi? Substitusi aja.
+Ini juga cara tercepat mengecek apakah suatu bilangan adalah akar.
+
+</li>
+
+<li>
+
+<b>Daftar kandidat akar rasional jangan sampai terlewat.</b>
+Tulis semua kemungkinan p/q. Mulai dari yang terkecil (±1, ±2, ...).
+
+</li>
+
+<li>
+
+<b>Cek ±1 dulu selalu.</b> Kalau jumlah koefisien = 0 → x=1 akar.
+Kalau jumlah genap = jumlah ganjil → x=-1 akar.
+
+</li>
+
+<li>
+
+<b>Vieta untuk verifikasi.</b> Setelah dapat akar-akar, cek jumlah dan hasil kalinya.
+Cocokkan dengan -b/a dan (-1)ⁿa₀/aₙ.
+
+</li>
+
+<li>
+
+<b>Multiplisitas mempengaruhi grafik.</b> Kalau kamu menggambar grafik polinomial,
+akar dengan multiplisitas genap tidak memotong sumbu X, hanya menyinggung.
+
+</li>
+
+<li>
+
+<b>Gunakan Horner bertingkat.</b> Setelah dapat satu akar, turunkan derajat dengan Horner,
+lalu cari akar dari hasil baginya. Lebih efisien daripada mencari semua akar dari polinomial awal.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar6.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar8.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
