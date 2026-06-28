@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dasar Matematika Part 8 | Nilai Mutlak, Interval, Himpunan, Logika & Pembuktian</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>🧠 DASAR MATEMATIKA</h1>
+
+<p>Part 8 • Nilai Mutlak, Interval, Himpunan, Logika & Pembuktian</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Ini adalah bab terakhir dari seri Dasar Matematika.
+Di sini kita akan belajar konsep-konsep yang menjadi <b>jembatan</b>
+antara matematika dasar dan matematika lanjut.
+
+</p>
+
+<p>
+
+<b>Nilai mutlak</b> mengajarkan kita tentang "jarak" dalam matematika.
+<b>Interval dan himpunan</b> adalah bahasa untuk menyatakan kumpulan bilangan.
+<b>Logika matematika</b> adalah fondasi berpikir benar-salah.
+<b>Pembuktian dasar</b> mengajarkan bagaimana meyakinkan orang lain
+bahwa suatu pernyataan matematika itu benar.
+Dan <b>notasi sigma (Σ)</b> adalah cara ringkas menulis penjumlahan panjang.
+
+</p>
+
+<p>
+
+Bab ini mungkin terasa lebih abstrak dari bab-bab sebelumnya,
+tapi justru di sinilah "keindahan" matematika mulai terlihat.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi nilai mutlak dan sifat-sifatnya.</li>
+
+<li>Mampu menulis dan membaca interval pada garis bilangan.</li>
+
+<li>Memahami konsep himpunan dan operasi-operasi dasarnya.</li>
+
+<li>Mengenal logika matematika: pernyataan, implikasi, konvers, kontrapositif.</li>
+
+<li>Mengenal teknik pembuktian dasar: langsung, kontrapositif, kontradiksi.</li>
+
+<li>Memahami dan menggunakan notasi sigma (Σ).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== NILAI MUTLAK ==================== -->
+
+<div class="section">
+
+<h2>1. Nilai Mutlak — Jarak dari Nol</h2>
+
+<p>
+
+<b>Nilai mutlak</b> dari suatu bilangan adalah <b>jarak</b> bilangan itu dari nol
+pada garis bilangan. Jarak selalu bernilai positif atau nol.
+
+</p>
+
+<div class="summary">
+
+|x| = x, jika x ≥ 0<br>
+
+|x| = -x, jika x < 0
+
+</div>
+
+<p>
+
+<b>Intuisi:</b> Nilai mutlak "menghilangkan" tanda negatif.
+|5| = 5, |-5| = 5. Keduanya berjarak 5 satuan dari nol.
+
+</p>
+
+<div class="example">
+
+|7| = 7<br>
+
+|-7| = 7<br>
+
+|0| = 0<br>
+
+|-3,5| = 3,5<br>
+
+|2 - 5| = |-3| = 3 (jarak antara 2 dan 5 adalah 3)
+
+</div>
+
+<p>
+
+<b>Interpretasi geometris:</b> |a - b| adalah <b>jarak</b> antara a dan b
+pada garis bilangan.
+
+</p>
+
+<div class="example">
+
+|8 - 3| = 5 → jarak antara 8 dan 3 adalah 5.<br>
+
+|3 - 8| = |-5| = 5 → sama, jarak tidak bergantung urutan.<br>
+
+|x - 4| = 3 → x adalah bilangan yang berjarak 3 dari 4, yaitu x = 1 atau x = 7.
+
+</div>
+
+<hr>
+
+<h3>Sifat-Sifat Nilai Mutlak</h3>
+
+<div class="summary">
+
+1. |x| ≥ 0 (selalu non-negatif)<br>
+
+2. |x| = 0 jika dan hanya jika x = 0<br>
+
+3. |x × y| = |x| × |y|<br>
+
+4. |x / y| = |x| / |y| (y ≠ 0)<br>
+
+5. |x + y| ≤ |x| + |y| (ketaksamaan segitiga)
+
+</div>
+
+<p>
+
+<b>Mengapa |x + y| ≤ |x| + |y|?</b>
+
+</p>
+
+<p>
+
+Bayangkan x = 5 dan y = -2. Maka:
+|x + y| = |5 - 2| = |3| = 3.
+|x| + |y| = 5 + 2 = 7.
+Memang 3 ≤ 7.
+
+Ketaksamaan ini disebut <b>ketaksamaan segitiga</b>
+karena analog dengan: panjang satu sisi segitiga
+selalu kurang dari atau sama dengan jumlah panjang dua sisi lainnya.
+
+</p>
+
+<hr>
+
+<h3>Persamaan dan Pertidaksamaan Nilai Mutlak</h3>
+
+<div class="summary">
+
+<b>Persamaan:</b><br>
+
+|x| = a (a ≥ 0) → x = a atau x = -a<br><br>
+
+<b>Pertidaksamaan:</b><br>
+
+|x| < a → -a < x < a (x di antara -a dan a)<br>
+
+|x| > a → x < -a atau x > a (x di luar interval [-a, a])
+
+</div>
+
+<div class="example">
+
+|x - 2| = 5 → x - 2 = 5 atau x - 2 = -5 → x = 7 atau x = -3<br><br>
+
+|x + 1| < 4 → -4 < x + 1 < 4 → -5 < x < 3
+
+</div>
+
+</div>
+
+<!-- ==================== INTERVAL ==================== -->
+
+<div class="section">
+
+<h2>2. Interval — Menyatakan Rentang Bilangan</h2>
+
+<p>
+
+<b>Interval</b> adalah cara menyatakan suatu rentang bilangan
+pada garis bilangan.
+
+</p>
+
+<h3>Jenis-Jenis Interval</h3>
+
+<div class="summary">
+
+<b>Interval tertutup [a, b]:</b> semua x di mana a ≤ x ≤ b (termasuk ujung).<br>
+
+<b>Interval terbuka (a, b):</b> semua x di mana a < x < b (tidak termasuk ujung).<br>
+
+<b>Interval setengah terbuka:</b> [a, b) atau (a, b].<br>
+
+<b>Interval tak hingga:</b> [a, ∞), (-∞, b], (-∞, ∞) = semua bilangan real.
+
+</div>
+
+<p>
+
+<b>Simbol:</b>
+
+</p>
+
+<ul>
+
+<li>[ atau ] → termasuk batas (tertutup).</li>
+
+<li>( atau ) → tidak termasuk batas (terbuka).</li>
+
+<li>∞ → tak hingga (selalu pakai kurung biasa, karena tak hingga bukan bilangan).</li>
+
+</ul>
+
+<div class="example">
+
+[2, 5] = {x | 2 ≤ x ≤ 5} = {2, 2,1, 3, 4, 5, ...} termasuk 2 dan 5.<br><br>
+
+(2, 5) = {x | 2 < x < 5} = {2,1, 3, 4, 4,9, ...} tidak termasuk 2 dan 5.<br><br>
+
+[0, ∞) = {x | x ≥ 0} = semua bilangan non-negatif.<br><br>
+
+(-∞, 3) = {x | x < 3} = semua bilangan kurang dari 3.
+
+</div>
+
+<hr>
+
+<h3>Operasi pada Interval: Irisan dan Gabungan</h3>
+
+<div class="example">
+
+<b>Irisan:</b> [1, 4] ∩ [3, 6] = [3, 4] (bagian yang tumpang tindih).<br><br>
+
+<b>Gabungan:</b> [1, 3] ∪ [5, 7] = {x | 1 ≤ x ≤ 3 atau 5 ≤ x ≤ 7}.
+
+</div>
+
+</div>
+
+<!-- ==================== HIMPUNAN ==================== -->
+
+<div class="section">
+
+<h2>3. Himpunan — Koleksi Objek yang Terdefinisi Jelas</h2>
+
+<p>
+
+<b>Himpunan</b> adalah kumpulan objek-objek yang didefinisikan dengan jelas.
+Objek dalam himpunan disebut <b>anggota</b> atau <b>elemen</b>.
+
+</p>
+
+<h3>Cara Menyatakan Himpunan</h3>
+
+<p>
+
+<b>1. Cara enumerasi (mendaftar):</b>
+
+</p>
+
+<div class="example">
+
+A = {1, 2, 3, 4, 5}<br>
+
+B = {merah, kuning, hijau}<br>
+
+C = {2, 4, 6, 8, ...} (dengan pola)
+
+</div>
+
+<p>
+
+<b>2. Cara notasi pembentuk himpunan:</b>
+
+</p>
+
+<div class="example">
+
+A = {x | x adalah bilangan bulat positif kurang dari 6}<br>
+
+B = {x | x > 0 dan x < 10}
+
+</div>
+
+<p>
+
+Simbol "|" dibaca "<b>di mana</b>" atau "<b>sedemikian sehingga</b>".
+
+</p>
+
+<hr>
+
+<h3>Keanggotaan Himpunan</h3>
+
+<div class="summary">
+
+<b>∈</b> = anggota (elemen)<br>
+
+<b>∉</b> = bukan anggota
+
+</div>
+
+<div class="example">
+
+Misal A = {1, 2, 3}<br><br>
+
+2 ∈ A (2 adalah anggota A).<br>
+
+5 ∉ A (5 bukan anggota A).
+
+</div>
+
+<hr>
+
+<h3>Operasi Dasar Himpunan</h3>
+
+<div class="summary">
+
+<b>Irisan (∩):</b> A ∩ B = {x | x ∈ A <b>dan</b> x ∈ B}.<br>
+
+<b>Gabungan (∪):</b> A ∪ B = {x | x ∈ A <b>atau</b> x ∈ B}.<br>
+
+<b>Selisih (-):</b> A - B = {x | x ∈ A <b>dan</b> x ∉ B}.<br>
+
+<b>Komplemen (Aᶜ):</b> semua elemen yang bukan anggota A (dalam semesta tertentu).
+
+</div>
+
+<div class="example">
+
+A = {1, 2, 3, 4}<br>
+
+B = {3, 4, 5, 6}<br><br>
+
+A ∩ B = {3, 4}<br>
+
+A ∪ B = {1, 2, 3, 4, 5, 6}<br>
+
+A - B = {1, 2}<br>
+
+B - A = {5, 6}
+
+</div>
+
+<hr>
+
+<h3>Himpunan Bagian (Subset)</h3>
+
+<div class="summary">
+
+A ⊆ B artinya setiap anggota A juga anggota B.<br>
+
+A ⊂ B artinya A ⊆ B tapi A ≠ B (subset sejati).
+
+</div>
+
+<div class="example">
+
+{1, 2} ⊆ {1, 2, 3} → benar, semua anggota {1,2} ada di {1,2,3}.<br>
+
+{1, 2, 3} ⊆ {1, 2, 3} → benar, setiap himpunan subset dari dirinya sendiri.<br>
+
+{1, 4} ⊆ {1, 2, 3} → salah, 4 tidak ada di {1,2,3}.
+
+</div>
+
+</div>
+
+<!-- ==================== LOGIKA MATEMATIKA ==================== -->
+
+<div class="section">
+
+<h2>4. Logika Matematika — Berpikir Benar-Salah</h2>
+
+<p>
+
+Logika matematika adalah fondasi dari semua penalaran matematika.
+Ia mempelajari aturan-aturan berpikir yang sah (valid).
+
+</p>
+
+<h3>Pernyataan (Proposisi)</h3>
+
+<p>
+
+<b>Pernyataan</b> adalah kalimat yang memiliki nilai kebenaran:
+<b>benar (B)</b> atau <b>salah (S)</b>, tidak keduanya.
+
+</p>
+
+<div class="example">
+
+"2 + 2 = 4" → pernyataan, nilainya <b>benar</b>.<br>
+
+"7 adalah bilangan genap" → pernyataan, nilainya <b>salah</b>.<br>
+
+"x + 3 = 7" → bukan pernyataan (nilainya tergantung x).<br>
+
+"Halo, apa kabar?" → bukan pernyataan (kalimat tanya).
+
+</div>
+
+<hr>
+
+<h3>Negasi (Ingkaran)</h3>
+
+<div class="summary">
+
+Jika p adalah suatu pernyataan, maka <b>negasi p</b> (ditulis <b>¬p</b> atau <b>~p</b>)
+bernilai kebalikan dari p.
+
+</div>
+
+<div class="example">
+
+p: "Hari ini hujan."<br>
+
+¬p: "Hari ini <b>tidak</b> hujan."<br><br>
+
+p: "Semua bilangan prima ganjil." (salah, karena 2 prima tapi genap)<br>
+
+¬p: "Ada bilangan prima yang tidak ganjil." (benar)
+
+</div>
+
+<hr>
+
+<h3>Konjungsi (DAN), Disjungsi (ATAU)</h3>
+
+<div class="summary">
+
+<b>p ∧ q</b> (p DAN q): benar hanya jika <b>keduanya benar</b>.<br>
+
+<b>p ∨ q</b> (p ATAU q): benar jika <b>salah satu atau keduanya benar</b>.
+
+</div>
+
+<div class="example">
+
+p: "2 adalah prima" (B)<br>
+
+q: "3 adalah genap" (S)<br><br>
+
+p ∧ q: "2 prima DAN 3 genap" → <b>Salah</b><br>
+
+p ∨ q: "2 prima ATAU 3 genap" → <b>Benar</b>
+
+</div>
+
+<hr>
+
+<h3>Implikasi (Jika-Maka)</h3>
+
+<div class="summary">
+
+<b>p → q</b> (jika p maka q).
+
+<br><br>
+
+Implikasi hanya <b>salah</b> jika <b>p benar tapi q salah</b>.
+Selain itu semua benar.
+
+</div>
+
+<p>
+
+<b>Tabel kebenaran p → q:</b>
+
+</p>
+
+<div class="example">
+
+p = B, q = B → p → q = <b>B</b><br>
+
+p = B, q = S → p → q = <b>S</b><br>
+
+p = S, q = B → p → q = <b>B</b><br>
+
+p = S, q = S → p → q = <b>B</b>
+
+</div>
+
+<p>
+
+Dua baris terakhir mungkin mengejutkan: dari premis yang salah,
+implikasi dianggap benar (disebut "vacuous truth").
+
+</p>
+
+<p>
+
+<b>Contoh:</b>
+"Jika hari hujan, maka jalan basah."
+
+</p>
+
+<ul>
+
+<li>Hujan dan jalan basah → benar.</li>
+
+<li>Hujan tapi jalan tidak basah → salah (melanggar).</li>
+
+<li>Tidak hujan dan jalan basah (mungkin disiram) → tidak melanggar pernyataan → dianggap benar.</li>
+
+<li>Tidak hujan dan jalan tidak basah → juga benar.</li>
+
+</ul>
+
+<hr>
+
+<h3>Konvers, Invers, Kontrapositif</h3>
+
+<p>
+
+Dari implikasi p → q, kita bisa membentuk:
+
+</p>
+
+<div class="summary">
+
+<b>Konvers:</b> q → p<br>
+
+<b>Invers:</b> ¬p → ¬q<br>
+
+<b>Kontrapositif:</b> ¬q → ¬p &nbsp; <b>(ekuivalen dengan p → q!)</b>
+
+</div>
+
+<div class="example">
+
+p: "Hari hujan."<br>
+
+q: "Jalan basah."<br><br>
+
+<b>Implikasi:</b> Jika hujan, maka jalan basah. (p → q)<br>
+
+<b>Konvers:</b> Jika jalan basah, maka hujan. (q → p) ← belum tentu benar!<br>
+
+<b>Invers:</b> Jika tidak hujan, maka jalan tidak basah. (¬p → ¬q) ← juga belum tentu benar!<br>
+
+<b>Kontrapositif:</b> Jika jalan tidak basah, maka tidak hujan. (¬q → ¬p) ← <b>pasti benar!</b>
+
+</div>
+
+<div class="note">
+
+<b>💡 Kunci:</b>
+
+Suatu implikasi <b>selalu ekuivalen</b> dengan <b>kontrapositif</b>-nya.
+Ini adalah senjata penting dalam pembuktian matematika.
+
+</div>
+
+</div>
+
+<!-- ==================== PEMBUKTIAN DASAR ==================== -->
+
+<div class="section">
+
+<h2>5. Pembuktian Dasar — Meyakinkan Bahwa Sesuatu Itu Benar</h2>
+
+<p>
+
+Dalam matematika, <b>pembuktian</b> adalah argumen logis
+yang menunjukkan bahwa suatu pernyataan pasti benar,
+tanpa perlu mencoba semua kemungkinan.
+
+</p>
+
+<h3>Metode 1: Pembuktian Langsung</h3>
+
+<p>
+
+Mulai dari premis (yang diketahui), lalu dengan langkah-langkah logis
+sampai ke kesimpulan.
+
+</p>
+
+<div class="example">
+
+<b>Buktikan:</b> Jika n bilangan genap, maka n² juga genap.<br><br>
+
+<b>Bukti:</b><br>
+
+Misalkan n genap, maka n = 2k untuk suatu bilangan bulat k.<br>
+
+n² = (2k)² = 4k² = 2(2k²)<br>
+
+Karena 2k² adalah bilangan bulat, maka n² adalah kelipatan 2 → genap. ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 2: Pembuktian dengan Kontrapositif</h3>
+
+<p>
+
+Untuk membuktikan p → q, kita bisa membuktikan kontrapositifnya:
+¬q → ¬p.
+
+</p>
+
+<div class="example">
+
+<b>Buktikan:</b> Jika n² ganjil, maka n ganjil.<br><br>
+
+<b>Bukti dengan kontrapositif:</b><br>
+
+Kontrapositif: Jika n tidak ganjil (genap), maka n² tidak ganjil (genap).<br>
+
+Ini sudah kita buktikan di atas: n genap → n² genap. ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 3: Pembuktian dengan Kontradiksi</h3>
+
+<p>
+
+Asumsikan yang mau dibuktikan itu <b>salah</b>,
+lalu tunjukkan bahwa asumsi itu menghasilkan kontradiksi (hal yang mustahil).
+Karena menghasilkan kontradiksi, maka asumsi pasti salah,
+artinya pernyataan aslinya benar.
+
+</p>
+
+<div class="example">
+
+<b>Buktikan:</b> √2 adalah bilangan irasional.<br><br>
+
+<b>Bukti dengan kontradiksi:</b><br>
+
+Asumsikan √2 rasional, maka √2 = p/q dengan p dan q bilangan bulat yang sudah disederhanakan (FPB p,q = 1).<br><br>
+
+√2 = p/q<br>
+
+2 = p²/q²<br>
+
+p² = 2q² → p² genap → p genap → p = 2k<br><br>
+
+(2k)² = 2q²<br>
+
+4k² = 2q²<br>
+
+2k² = q² → q² genap → q genap.<br><br>
+
+p dan q keduanya genap → FPB(p,q) ≠ 1.<br>
+
+Ini <b>kontradiksi</b> dengan asumsi bahwa p/q sudah disederhanakan.<br>
+
+Jadi, asumsi √2 rasional salah. √2 adalah irasional. ✅
+
+</div>
+
+<p>
+
+Ini adalah bukti klasik yang terkenal dari zaman Yunani kuno!
+
+</p>
+
+</div>
+
+<!-- ==================== NOTASI SIGMA ==================== -->
+
+<div class="section">
+
+<h2>6. Notasi Sigma (Σ) — Menulis Penjumlahan Panjang dengan Ringkas</h2>
+
+<p>
+
+Bayangkan kamu harus menulis:
+1 + 2 + 3 + 4 + ... + 100.
+Itu panjang dan tidak praktis.
+
+</p>
+
+<p>
+
+Dengan <b>notasi sigma</b>, cukup tulis:
+
+</p>
+
+<div class="summary">
+
+Σ (dari i=1 sampai n) dari aᵢ = a₁ + a₂ + a₃ + ... + aₙ
+
+</div>
+
+<p>
+
+Dibaca: "<b>Jumlah dari aᵢ untuk i dari 1 sampai n</b>".
+
+</p>
+
+<p>
+
+<b>Komponen notasi sigma:</b>
+
+</p>
+
+<ul>
+
+<li><b>Σ</b> (huruf Yunani sigma kapital) = simbol penjumlahan.</li>
+
+<li><b>i</b> = indeks (bisa pakai huruf apa saja: i, j, k, n).</li>
+
+<li><b>Batas bawah</b> (i = 1) = nilai awal indeks.</li>
+
+<li><b>Batas atas</b> (n) = nilai akhir indeks.</li>
+
+<li><b>aᵢ</b> = suku yang dijumlahkan (bisa berupa rumus dalam i).</li>
+
+</ul>
+
+<hr>
+
+<h3>Contoh-Contoh Notasi Sigma</h3>
+
+<div class="example">
+
+<b>Contoh 1:</b><br>
+
+Σ(i dari 1 sampai 5) i = 1 + 2 + 3 + 4 + 5 = <b>15</b><br><br>
+
+<b>Contoh 2:</b><br>
+
+Σ(i dari 1 sampai 4) i² = 1² + 2² + 3² + 4² = 1 + 4 + 9 + 16 = <b>30</b><br><br>
+
+<b>Contoh 3:</b><br>
+
+Σ(i dari 1 sampai 3) (2i + 1) = (2·1+1) + (2·2+1) + (2·3+1) = 3 + 5 + 7 = <b>15</b><br><br>
+
+<b>Contoh 4:</b><br>
+
+Σ(k dari 1 sampai 100) k = 1 + 2 + ... + 100 = <b>5050</b>
+
+</div>
+
+<hr>
+
+<h3>Sifat-Sifat Notasi Sigma</h3>
+
+<div class="summary">
+
+1. Σ c = c × n (c konstanta, dijumlahkan n kali)<br>
+
+2. Σ c·aᵢ = c · Σ aᵢ<br>
+
+3. Σ (aᵢ + bᵢ) = Σ aᵢ + Σ bᵢ
+
+</div>
+
+<div class="example">
+
+Σ(i=1 sampai 5) 3 = 3 + 3 + 3 + 3 + 3 = 15 = 3 × 5 ✅<br><br>
+
+Σ(i=1 sampai 4) 2i = 2 × Σ i = 2 × (1+2+3+4) = 2 × 10 = 20 ✅
+
+</div>
+
+<hr>
+
+<h3>Rumus-Rumus Penting Terkait Sigma</h3>
+
+<div class="summary">
+
+Σ(i=1 sampai n) i = n(n+1)/2<br>
+
+Σ(i=1 sampai n) i² = n(n+1)(2n+1)/6<br>
+
+Σ(i=1 sampai n) i³ = [n(n+1)/2]²
+
+</div>
+
+<div class="example">
+
+Σ(i=1 sampai 100) i = 100×101/2 = 5050<br><br>
+
+Σ(i=1 sampai 10) i² = 10×11×21/6 = 385
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Nilai mutlak:</b> jarak dari nol. |x| = x jika x≥0, -x jika x<0.</li>
+
+<li><b>Interval:</b> [a,b] tertutup, (a,b) terbuka, [a,∞) tak hingga.</li>
+
+<li><b>Himpunan:</b> ∩ irisan, ∪ gabungan, ⊆ subset, ∈ anggota.</li>
+
+<li><b>Logika:</b> ∧ (DAN), ∨ (ATAU), → (implikasi), ¬ (negasi).</li>
+
+<li><b>Kontrapositif p→q</b> adalah ¬q→¬p (ekuivalen).</li>
+
+<li><b>Pembuktian:</b> langsung, kontrapositif, kontradiksi.</li>
+
+<li><b>Σ aᵢ:</b> jumlah aᵢ dari i=1 sampai n.</li>
+
+<li><b>Σ i = n(n+1)/2.</b></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Nilai mutlak:</b> selalu pikirkan sebagai "jarak". |x - a| = jarak x ke a.
+
+</li>
+
+<li>
+
+<b>Interval:</b> biasakan menggambar garis bilangan. Ini mencegah kesalahan.
+
+</li>
+
+<li>
+
+<b>Himpunan:</b> simbol ∩ mirip "dan" (n dari irisan, n dari and).
+Simbol ∪ mirip "atau" (u dari union, u dari atau versi inggris? tidak juga sih, tapi bisa jadi jembatan keledai).
+
+</li>
+
+<li>
+
+<b>Implikasi vs Konvers:</b> Jangan tertukar.
+"Jika hujan maka basah" tidak sama dengan "jika basah maka hujan".
+
+</li>
+
+<li>
+
+<b>Kontrapositif:</b> senjata ampuh saat pembuktian langsung sulit.
+
+</li>
+
+<li>
+
+<b>Notasi sigma:</b> latih mengubah dari bentuk sigma ke penjumlahan biasa dan sebaliknya.
+Ini akan sangat terpakai di statistika dan kalkulus.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="dasar7.html" class="btn">⬅ Kembali</a>
+
+<a href="dasar.html" class="btn">📚 Daftar Dasar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="lanjutan.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+                   </html>
