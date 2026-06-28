@@ -1,1 +1,1022 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 3 | Persamaan Lanjut & Sistem</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 3 • Persamaan Lanjut & Sistem</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Bab 2, kita sudah menyelesaikan persamaan linear, kuadrat, dan kubik.
+Itu semua adalah <b>persamaan polinomial</b>—variabelnya muncul sebagai pangkat bulat.
+
+</p>
+
+<p>
+
+Sekarang kita masuk ke jenis-jenis persamaan yang lebih "liar":
+
+</p>
+
+<ul>
+
+<li><b>Persamaan rasional</b> — variabel muncul di penyebut pecahan.</li>
+
+<li><b>Persamaan irasional</b> — variabel muncul di dalam tanda akar.</li>
+
+<li><b>Persamaan eksponen</b> — variabel muncul sebagai pangkat (eksponen).</li>
+
+<li><b>Persamaan logaritma</b> — variabel muncul di dalam logaritma.</li>
+
+</ul>
+
+<p>
+
+Setelah itu, kita akan bahas <b>sistem persamaan</b> secara lebih luas:
+tidak hanya linear-linear, tapi juga campuran seperti linear-kuadrat
+dan kuadrat-kuadrat.
+
+</p>
+
+<p>
+
+Setiap jenis persamaan punya "jebakan" masing-masing.
+Tapi tenang, kita akan bahas semuanya dengan contoh dan strategi yang jelas.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Mampu menyelesaikan persamaan rasional dengan memperhatikan domain.</li>
+
+<li>Mampu menyelesaikan persamaan irasional dan mengecek solusi palsu.</li>
+
+<li>Memahami sifat-sifat eksponen untuk menyelesaikan persamaan eksponen.</li>
+
+<li>Memahami sifat-sifat logaritma untuk menyelesaikan persamaan logaritma.</li>
+
+<li>Mampu menyelesaikan sistem persamaan campuran (linear-kuadrat, kuadrat-kuadrat).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== PERSAMAAN RASIONAL ==================== -->
+
+<div class="section">
+
+<h2>1. Persamaan Rasional — Variabel di Penyebut</h2>
+
+<p>
+
+<b>Persamaan rasional</b> adalah persamaan yang mengandung <b>pecahan dengan variabel di penyebut</b>.
+
+</p>
+
+<div class="example">
+
+3/(x+1) = 2<br>
+
+(x+2)/(x-3) = 4<br>
+
+1/x + 1/(x+1) = 5/6
+
+</div>
+
+<p>
+
+<b>Masalah utama:</b> penyebut tidak boleh nol.
+Jadi, sebelum menyelesaikan, kita harus menentukan <b>domain</b> (syarat x).
+
+</p>
+
+<hr>
+
+<h3>Strategi Umum</h3>
+
+<ol>
+
+<li>Tentukan <b>syarat</b>: penyebut ≠ 0.</li>
+
+<li>Kalikan kedua ruas dengan <b>KPK penyebut</b> untuk menghilangkan pecahan.</li>
+
+<li>Selesaikan persamaan yang dihasilkan (biasanya jadi linear atau kuadrat).</li>
+
+<li><b>Cek solusi</b> ke syarat domain. Buang yang melanggar.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+Selesaikan: 3/(x+1) = 2<br><br>
+
+<b>Syarat:</b> x + 1 ≠ 0 → x ≠ -1<br><br>
+
+Kalikan kedua ruas dengan (x+1):<br>
+
+3 = 2(x+1)<br>
+
+3 = 2x + 2<br>
+
+1 = 2x<br>
+
+x = 1/2<br><br>
+
+<b>Cek:</b> x = 1/2 ≠ -1 (memenuhi syarat).<br><br>
+
+<b>Verifikasi:</b> 3/(1/2+1) = 3/(3/2) = 2. Cocok!<br><br>
+
+<b>Solusi: x = 1/2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Dua Pecahan</h3>
+
+<div class="example">
+
+Selesaikan: 1/x + 1/(x+1) = 5/6<br><br>
+
+<b>Syarat:</b> x ≠ 0 dan x ≠ -1<br><br>
+
+KPK penyebut: 6x(x+1). Kalikan semua suku:<br>
+
+6x(x+1)·(1/x) + 6x(x+1)·(1/(x+1)) = 6x(x+1)·(5/6)<br>
+
+6(x+1) + 6x = 5x(x+1)<br>
+
+6x + 6 + 6x = 5x² + 5x<br>
+
+12x + 6 = 5x² + 5x<br>
+
+0 = 5x² - 7x - 6<br>
+
+5x² - 7x - 6 = 0<br><br>
+
+Faktorkan:<br>
+
+(5x + 3)(x - 2) = 0<br>
+
+x = -3/5 atau x = 2<br><br>
+
+<b>Cek syarat:</b> x = -3/5 ≠ 0, -1 ✅. x = 2 ≠ 0, -1 ✅.<br><br>
+
+<b>Verifikasi:</b><br>
+
+Untuk x = 2: 1/2 + 1/3 = 3/6 + 2/6 = 5/6 ✅<br>
+
+Untuk x = -3/5: -5/3 + 5/2 = -10/6 + 15/6 = 5/6 ✅<br><br>
+
+<b>Solusi: x = 2 atau x = -3/5</b>
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Solusi yang Ditolak</h3>
+
+<div class="example">
+
+Selesaikan: (x+2)/(x-3) = (x-1)/(x-3)<br><br>
+
+<b>Syarat:</b> x ≠ 3<br><br>
+
+Karena penyebutnya sama, kita bisa langsung menyamakan pembilang:<br>
+
+x + 2 = x - 1<br>
+
+2 = -1 (kontradiksi!)<br><br>
+
+Tidak ada solusi. Persamaan ini <b>tidak memiliki solusi</b>.<br><br>
+
+<b>Kenapa?</b> Karena satu-satunya kemungkinan adalah x = 3 (penyebut 0),
+tapi itu justru dilarang.
+
+</div>
+
+</div>
+
+<!-- ==================== PERSAMAAN IRASIONAL ==================== -->
+
+<div class="section">
+
+<h2>2. Persamaan Irasional — Variabel di Dalam Akar</h2>
+
+<p>
+
+<b>Persamaan irasional</b> adalah persamaan yang mengandung <b>variabel di dalam tanda akar</b>.
+
+</p>
+
+<div class="example">
+
+√(x+3) = 5<br>
+
+√(2x-1) = x - 2<br>
+
+√(x+5) + √(x-3) = 4
+
+</div>
+
+<p>
+
+<b>Masalah utama:</b>
+
+</p>
+
+<ul>
+
+<li>Radikan (isi akar) tidak boleh negatif untuk akar genap → <b>syarat domain</b>.</li>
+
+<li><b>Pengkuadratan bisa menghasilkan solusi palsu!</b> Ini jebakan paling umum.</li>
+
+</ul>
+
+<hr>
+
+<h3>Mengapa Pengkuadratan Bisa Menghasilkan Solusi Palsu?</h3>
+
+<p>
+
+Saat kita mengkuadratkan kedua ruas, kita kehilangan informasi tanda.
+
+</p>
+
+<div class="example">
+
+Misal: x = 5<br>
+
+Kuadratkan: x² = 25<br>
+
+Solusi: x = 5 atau x = -5<br><br>
+
+Padahal persamaan aslinya hanya x = 5.
+x = -5 adalah <b>solusi palsu</b> yang muncul karena pengkuadratan.
+
+</div>
+
+<p>
+
+<b>Intinya:</b> Jika A = B, maka A² = B² (pernyataan benar).
+Tapi jika A² = B², belum tentu A = B (bisa jadi A = -B).
+
+</p>
+
+<div class="summary">
+
+Karena itu, setiap kali mengkuadratkan dalam persamaan irasional,
+<b>selalu substitusi balik</b> solusi ke persamaan awal untuk verifikasi.
+
+</div>
+
+<hr>
+
+<h3>Contoh 1: Satu Akar</h3>
+
+<div class="example">
+
+Selesaikan: √(x+3) = 5<br><br>
+
+<b>Syarat:</b> x + 3 ≥ 0 → x ≥ -3<br><br>
+
+Kuadratkan kedua ruas:<br>
+
+(√(x+3))² = 5²<br>
+
+x + 3 = 25<br>
+
+x = 22<br><br>
+
+<b>Cek syarat:</b> 22 ≥ -3 ✅<br>
+
+<b>Verifikasi:</b> √(22+3) = √25 = 5 ✅<br><br>
+
+<b>Solusi: x = 22</b>
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Menghasilkan Solusi Palsu</h3>
+
+<div class="example">
+
+Selesaikan: √(2x-1) = x - 2<br><br>
+
+<b>Syarat:</b><br>
+
+Radikan: 2x - 1 ≥ 0 → x ≥ 1/2<br>
+
+Ruas kanan tidak negatif (karena hasil akar ≥ 0): x - 2 ≥ 0 → x ≥ 2<br>
+
+Gabungan: <b>x ≥ 2</b><br><br>
+
+Kuadratkan:<br>
+
+2x - 1 = (x - 2)²<br>
+
+2x - 1 = x² - 4x + 4<br>
+
+0 = x² - 6x + 5<br>
+
+0 = (x - 1)(x - 5)<br>
+
+x = 1 atau x = 5<br><br>
+
+<b>Cek syarat:</b> x = 1 tidak memenuhi x ≥ 2 ❌<br>
+
+x = 5 memenuhi x ≥ 2 ✅<br><br>
+
+<b>Verifikasi x = 5:</b> √(10-1) = √9 = 3. 5 - 2 = 3. Cocok! ✅<br><br>
+
+<b>Solusi: x = 5</b> (x = 1 adalah solusi palsu yang muncul dari pengkuadratan)
+
+</div>
+
+<p>
+
+<b>Perhatikan:</b> x = 1 muncul dari faktorisasi, tapi tidak memenuhi syarat awal.
+Kalau kita tidak mengecek, kita akan mengira ada dua solusi.
+
+</p>
+
+<hr>
+
+<h3>Contoh 3: Dua Akar</h3>
+
+<div class="example">
+
+Selesaikan: √(x+5) + √(x-3) = 4<br><br>
+
+<b>Syarat:</b><br>
+
+x + 5 ≥ 0 → x ≥ -5<br>
+
+x - 3 ≥ 0 → x ≥ 3<br>
+
+Gabungan: <b>x ≥ 3</b><br><br>
+
+Pisahkan salah satu akar:<br>
+
+√(x+5) = 4 - √(x-3)<br><br>
+
+Kuadratkan:<br>
+
+x + 5 = 16 - 8√(x-3) + (x-3)<br>
+
+x + 5 = 16 + x - 3 - 8√(x-3)<br>
+
+x + 5 = x + 13 - 8√(x-3)<br>
+
+5 = 13 - 8√(x-3)<br>
+
+-8 = -8√(x-3)<br>
+
+1 = √(x-3)<br><br>
+
+Kuadratkan lagi:<br>
+
+1 = x - 3<br>
+
+x = 4<br><br>
+
+<b>Cek syarat:</b> 4 ≥ 3 ✅<br>
+
+<b>Verifikasi:</b> √(4+5) + √(4-3) = √9 + √1 = 3 + 1 = 4 ✅<br><br>
+
+<b>Solusi: x = 4</b>
+
+</div>
+
+</div>
+
+<!-- ==================== PERSAMAAN EKSPONEN ==================== -->
+
+<div class="section">
+
+<h2>3. Persamaan Eksponen — Variabel di Pangkat</h2>
+
+<p>
+
+<b>Persamaan eksponen</b> adalah persamaan yang variabelnya muncul sebagai <b>pangkat (eksponen)</b>.
+
+</p>
+
+<div class="example">
+
+2ˣ = 8<br>
+
+3²ˣ⁺¹ = 27<br>
+
+5ˣ = 7ˣ⁻¹<br>
+
+2²ˣ - 5·2ˣ + 4 = 0
+
+</div>
+
+<p>
+
+<b>Strategi kunci:</b> gunakan sifat-sifat eksponen untuk menyamakan basis
+atau melakukan substitusi.
+
+</p>
+
+<hr>
+
+<h3>Sifat-Sifat Eksponen yang Dipakai</h3>
+
+<div class="summary">
+
+aᵐ × aⁿ = aᵐ⁺ⁿ<br>
+
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ<br>
+
+(aᵐ)ⁿ = aᵐⁿ<br>
+
+a⁰ = 1 (a ≠ 0)<br>
+
+a⁻ⁿ = 1/aⁿ<br>
+
+<b>Jika aᵐ = aⁿ dan a > 0, a ≠ 1, maka m = n</b>
+
+</div>
+
+<p>
+
+<b>Sifat terakhir adalah kunci utama persamaan eksponen.</b>
+
+</p>
+
+<hr>
+
+<h3>Kasus 1: Basis Sama → Samakan Pangkat</h3>
+
+<div class="example">
+
+Selesaikan: 2ˣ = 8<br><br>
+
+Ubah ke basis yang sama: 8 = 2³<br>
+
+2ˣ = 2³ → <b>x = 3</b> ✅<br><br><br>
+
+Selesaikan: 3²ˣ⁺¹ = 27<br><br>
+
+27 = 3³<br>
+
+3²ˣ⁺¹ = 3³<br>
+
+2x + 1 = 3<br>
+
+2x = 2<br>
+
+<b>x = 1</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 2: Basis Berbeda, Pangkat Sama → Selesaikan</h3>
+
+<div class="example">
+
+Selesaikan: 5ˣ = 7ˣ⁻¹<br><br>
+
+Ini tidak bisa disamakan basisnya. Strategi: ubah bentuk.<br><br>
+
+5ˣ = 7ˣ / 7<br>
+
+7·5ˣ = 7ˣ<br>
+
+7 = 7ˣ / 5ˣ<br>
+
+7 = (7/5)ˣ<br><br>
+
+Sekarang basisnya (7/5):<br>
+
+(7/5)ˣ = 7<br>
+
+x = log_(7/5)(7)<br><br>
+
+Atau dengan logaritma natural:<br>
+
+x ln(7/5) = ln 7<br>
+
+x = ln 7 / ln(7/5)<br><br>
+
+<b>Ini sudah solusi eksaknya.</b> Untuk nilai numerik: x ≈ 5,78.
+
+</div>
+
+<hr>
+
+<h3>Kasus 3: Substitusi (Bentuk Kuadrat dalam Eksponen)</h3>
+
+<div class="example">
+
+Selesaikan: 2²ˣ - 5·2ˣ + 4 = 0<br><br>
+
+Misalkan <b>p = 2ˣ</b>, maka 2²ˣ = (2ˣ)² = p².<br><br>
+
+p² - 5p + 4 = 0<br>
+
+(p - 1)(p - 4) = 0<br>
+
+p = 1 atau p = 4<br><br>
+
+Kembalikan ke 2ˣ:<br>
+
+2ˣ = 1 → 2ˣ = 2⁰ → <b>x = 0</b><br>
+
+2ˣ = 4 → 2ˣ = 2² → <b>x = 2</b><br><br>
+
+<b>Solusi: x = 0 atau x = 2</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b><br>
+
+x = 0: 2⁰ - 5·2⁰ + 4 = 1 - 5 + 4 = 0 ✅<br>
+
+x = 2: 2⁴ - 5·2² + 4 = 16 - 20 + 4 = 0 ✅
+
+</p>
+
+<hr>
+
+<h3>Kasus 4: Basis Berbeda, Pangkat Berbeda → Logaritma</h3>
+
+<div class="example">
+
+Selesaikan: 3ˣ = 5ˣ⁺²<br><br>
+
+Tidak bisa disamakan basis. Ambil logaritma kedua ruas:<br>
+
+ln(3ˣ) = ln(5ˣ⁺²)<br>
+
+x·ln 3 = (x+2)·ln 5<br>
+
+x·ln 3 = x·ln 5 + 2·ln 5<br>
+
+x·ln 3 - x·ln 5 = 2·ln 5<br>
+
+x(ln 3 - ln 5) = 2·ln 5<br>
+
+x = 2·ln 5 / (ln 3 - ln 5)<br><br>
+
+<b>Ini adalah solusi eksaknya.</b> Bisa ditulis juga sebagai x = 2 / (log₃5 - 1).
+
+</div>
+
+</div>
+
+<!-- ==================== PERSAMAAN LOGARITMA ==================== -->
+
+<div class="section">
+
+<h2>4. Persamaan Logaritma — Variabel di Dalam Log</h2>
+
+<p>
+
+<b>Logaritma</b> adalah operasi kebalikan dari eksponen.
+
+</p>
+
+<div class="summary">
+
+Jika aᶜ = b, maka ᵃlog b = c
+
+<br><br>
+
+a disebut <b>basis</b>, b disebut <b>numerus</b>, c adalah <b>hasil logaritma</b>.
+
+<br><br>
+
+<b>Syarat:</b> a > 0, a ≠ 1, dan b > 0.
+
+</div>
+
+<p>
+
+<b>Persamaan logaritma</b> mengandung variabel di dalam operasi logaritma.
+
+</p>
+
+<hr>
+
+<h3>Sifat-Sifat Logaritma yang Penting</h3>
+
+<div class="summary">
+
+1. ᵃlog 1 = 0 (karena a⁰ = 1)<br>
+
+2. ᵃlog a = 1 (karena a¹ = a)<br>
+
+3. ᵃlog(b·c) = ᵃlog b + ᵃlog c<br>
+
+4. ᵃlog(b/c) = ᵃlog b - ᵃlog c<br>
+
+5. ᵃlog bⁿ = n·ᵃlog b<br>
+
+6. ᵃlog b = (ᶜlog b) / (ᶜlog a) &nbsp; (perubahan basis)<br>
+
+7. a^(ᵃlog b) = b &nbsp; (invers)<br>
+
+8. <b>Jika ᵃlog f(x) = ᵃlog g(x), maka f(x) = g(x)</b> (dengan syarat f(x), g(x) > 0)
+
+</div>
+
+<hr>
+
+<h3>Kasus 1: Log Tunggal → Definisi</h3>
+
+<div class="example">
+
+Selesaikan: ²log(x+1) = 3<br><br>
+
+Gunakan definisi: ²log(x+1) = 3 artinya 2³ = x+1<br>
+
+8 = x + 1<br>
+
+x = 7<br><br>
+
+<b>Syarat:</b> x + 1 > 0 → 8 > 0 ✅<br><br>
+
+<b>Solusi: x = 7</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 2: Log Sama → Numerus Sama</h3>
+
+<div class="example">
+
+Selesaikan: ³log(2x-1) = ³log(x+3)<br><br>
+
+Karena basis sama: 2x - 1 = x + 3<br>
+
+x = 4<br><br>
+
+<b>Syarat numerus > 0:</b><br>
+
+2(4)-1 = 7 > 0 ✅<br>
+
+4+3 = 7 > 0 ✅<br><br>
+
+<b>Solusi: x = 4</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 3: Gabungan Sifat Logaritma</h3>
+
+<div class="example">
+
+Selesaikan: ²log(x+2) + ²log(x-2) = 3<br><br>
+
+Gunakan sifat 3: ²log((x+2)(x-2)) = 3<br>
+
+²log(x² - 4) = 3<br><br>
+
+Definisi: 2³ = x² - 4<br>
+
+8 = x² - 4<br>
+
+x² = 12<br>
+
+x = ±√12 = ±2√3<br><br>
+
+<b>Syarat numerus:</b><br>
+
+Untuk x = 2√3 ≈ 3,46: x+2 > 0 dan x-2 > 0 ✅<br>
+
+Untuk x = -2√3 ≈ -3,46: x+2 < 0 ❌<br><br>
+
+<b>Solusi: x = 2√3</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 4: Substitusi</h3>
+
+<div class="example">
+
+Selesaikan: (²log x)² - 3·²log x + 2 = 0<br><br>
+
+Misalkan <b>p = ²log x</b>:<br>
+
+p² - 3p + 2 = 0<br>
+
+(p - 1)(p - 2) = 0<br>
+
+p = 1 atau p = 2<br><br>
+
+Kembalikan:<br>
+
+²log x = 1 → x = 2¹ = 2<br>
+
+²log x = 2 → x = 2² = 4<br><br>
+
+<b>Syarat:</b> x > 0 → 2 > 0 ✅, 4 > 0 ✅<br><br>
+
+<b>Solusi: x = 2 atau x = 4</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== SISTEM PERSAMAAN ==================== -->
+
+<div class="section">
+
+<h2>5. Sistem Persamaan Campuran</h2>
+
+<p>
+
+Di Bab 2, kita sudah membahas sistem persamaan <b>linear-linear</b>.
+Sekarang kita bahas sistem <b>campuran</b>: linear-kuadrat dan kuadrat-kuadrat.
+
+</p>
+
+<hr>
+
+<h3>Sistem Linear-Kuadrat</h3>
+
+<p>
+
+<b>Bentuk:</b> Satu persamaan linear + satu persamaan kuadrat.
+
+</p>
+
+<p>
+
+<b>Strategi:</b> Substitusi dari persamaan linear ke persamaan kuadrat.
+
+</p>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+y = x + 1 ...(1)<br>
+
+x² + y² = 25 ...(2)<br><br>
+
+Substitusi (1) ke (2):<br>
+
+x² + (x+1)² = 25<br>
+
+x² + x² + 2x + 1 = 25<br>
+
+2x² + 2x - 24 = 0<br>
+
+x² + x - 12 = 0<br>
+
+(x + 4)(x - 3) = 0<br>
+
+x = -4 atau x = 3<br><br>
+
+Untuk x = -4: y = -3<br>
+
+Untuk x = 3: y = 4<br><br>
+
+<b>Solusi: (-4, -3) dan (3, 4)</b> ✅
+
+</div>
+
+<p>
+
+<b>Interpretasi geometris:</b> Ini adalah perpotongan garis lurus dengan lingkaran.
+Bisa ada 0, 1, atau 2 titik potong.
+
+</p>
+
+<hr>
+
+<h3>Sistem Kuadrat-Kuadrat</h3>
+
+<p>
+
+<b>Bentuk:</b> Dua persamaan kuadrat.
+
+</p>
+
+<p>
+
+<b>Strategi:</b> Eliminasi salah satu variabel (biasanya dengan pengurangan),
+lalu selesaikan.
+
+</p>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+x² + y² = 25 ...(1)<br>
+
+x² - y² = 7 ...(2)<br><br>
+
+Jumlahkan (1) dan (2):<br>
+
+2x² = 32<br>
+
+x² = 16<br>
+
+x = ±4<br><br>
+
+Kurangkan (1) - (2):<br>
+
+2y² = 18<br>
+
+y² = 9<br>
+
+y = ±3<br><br>
+
+Kombinasikan semua kemungkinan:<br>
+
+(4, 3), (4, -3), (-4, 3), (-4, -3)<br><br>
+
+<b>Verifikasi:</b> Semua memenuhi x²+y²=25 dan x²-y²=7 ✅<br><br>
+
+<b>Solusi: 4 pasangan</b>
+
+</div>
+
+<hr>
+
+<h3>Sistem Tiga Variabel dengan Campuran</h3>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+x + y = 3 ...(1)<br>
+
+y + z = 5 ...(2)<br>
+
+x² + z² = 10 ...(3)<br><br>
+
+Dari (1): y = 3 - x<br>
+
+Dari (2): z = 5 - y = 5 - (3-x) = 2 + x<br><br>
+
+Substitusi ke (3):<br>
+
+x² + (x+2)² = 10<br>
+
+x² + x² + 4x + 4 = 10<br>
+
+2x² + 4x - 6 = 0<br>
+
+x² + 2x - 3 = 0<br>
+
+(x + 3)(x - 1) = 0<br>
+
+x = -3 atau x = 1<br><br>
+
+Untuk x = -3: y = 6, z = -1<br>
+
+Untuk x = 1: y = 2, z = 3<br><br>
+
+<b>Verifikasi semua:</b><br>
+
+(-3,6,-1): x+y=3 ✅, y+z=5 ✅, x²+z²=9+1=10 ✅<br>
+
+(1,2,3): x+y=3 ✅, y+z=5 ✅, x²+z²=1+9=10 ✅<br><br>
+
+<b>Solusi: (-3, 6, -1) dan (1, 2, 3)</b>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Rasional:</b> Kalikan KPK penyebut, cek domain (penyebut ≠ 0).</li>
+
+<li><b>Irasional:</b> Kuadratkan, tapi <b>wajib verifikasi</b> karena bisa muncul solusi palsu.</li>
+
+<li><b>Eksponen:</b> Samakan basis, atau substitusi, atau gunakan logaritma.</li>
+
+<li><b>Logaritma:</b> Gunakan sifat log, samakan numerus, selalu cek syarat (numerus > 0).</li>
+
+<li><b>Sistem campuran:</b> Substitusi atau eliminasi, hasilnya bisa lebih dari satu solusi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Persamaan rasional:</b> Jangan lupa tulis syarat domain di awal.
+Ini menyelamatkanmu dari solusi yang tidak valid.
+
+</li>
+
+<li>
+
+<b>Persamaan irasional:</b> Setelah mengkuadratkan, <b>selalu substitusi balik</b>.
+Jangan skip langkah ini. Solusi palsu adalah jebakan klasik.
+
+</li>
+
+<li>
+
+<b>Persamaan eksponen:</b> Kalau bingung, ubah semua ke bentuk aᵐ = aⁿ.
+Kalau basis tidak bisa disamakan, logaritma adalah penyelamat.
+
+</li>
+
+<li>
+
+<b>Persamaan logaritma:</b> Selalu tulis syarat numerus > 0 dan basis > 0, ≠ 1.
+Banyak solusi ditolak karena melanggar syarat ini.
+
+</li>
+
+<li>
+
+<b>Sistem persamaan:</b> Untuk sistem campuran, gambar sketsa (kalau bisa)
+untuk memperkirakan jumlah solusi. Lingkaran + garis bisa 0, 1, atau 2 titik potong.
+
+</li>
+
+<li>
+
+<b>Verifikasi adalah kebiasaan emas.</b> Di semua jenis persamaan ini,
+verifikasi bisa membedakan jawaban benar dan solusi palsu.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar2.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar4.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
