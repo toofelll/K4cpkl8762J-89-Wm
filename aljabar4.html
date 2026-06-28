@@ -1,1 +1,1233 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 4 | Pertidaksamaan</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 4 • Pertidaksamaan</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di bab-bab sebelumnya, kita selalu berurusan dengan tanda <b>=</b> (sama dengan).
+Sekarang kita masuk ke dunia <b>pertidaksamaan</b>:
+mencari nilai-nilai yang membuat suatu ekspresi
+<b>lebih besar</b>, <b>lebih kecil</b>, atau kombinasinya dari ekspresi lain.
+
+</p>
+
+<p>
+
+Simbol-simbol pertidaksamaan:
+
+</p>
+
+<div class="summary">
+
+<b><</b> : kurang dari<br>
+<b>></b> : lebih dari<br>
+<b>≤</b> : kurang dari atau sama dengan<br>
+<b>≥</b> : lebih dari atau sama dengan
+
+</div>
+
+<p>
+
+Perbedaan mendasar dengan persamaan:
+
+</p>
+
+<ul>
+
+<li>Persamaan biasanya punya <b>beberapa solusi titik</b> (x = 2, x = -3).</li>
+
+<li>Pertidaksamaan biasanya punya <b>interval solusi</b> (x > 5, -2 ≤ x < 3).</li>
+
+<li><b>Mengali atau membagi dengan bilangan negatif membalik tanda.</b> Ini jebakan paling umum!</li>
+
+</ul>
+
+<p>
+
+Kita akan membahas pertidaksamaan secara bertahap:
+linear, kuadrat, rasional, nilai mutlak, eksponen, logaritma, dan sistem.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami prinsip dasar pertidaksamaan dan kapan tanda dibalik.</li>
+
+<li>Mampu menyelesaikan pertidaksamaan linear dan kuadrat.</li>
+
+<li>Menguasai metode garis bilangan dan uji titik.</li>
+
+<li>Mampu menyelesaikan pertidaksamaan rasional.</li>
+
+<li>Memahami pertidaksamaan nilai mutlak.</li>
+
+<li>Mengenal pertidaksamaan eksponen dan logaritma.</li>
+
+<li>Mampu menyelesaikan sistem pertidaksamaan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== PRINSIP DASAR ==================== -->
+
+<div class="section">
+
+<h2>1. Prinsip Dasar Pertidaksamaan</h2>
+
+<p>
+
+Aturan mainnya <b>hampir sama</b> dengan persamaan, tapi ada satu aturan tambahan yang krusial:
+
+</p>
+
+<div class="summary">
+
+<b>Menambah atau mengurangi</b> bilangan yang sama di kedua ruas → <b>tanda TETAP</b>.<br><br>
+
+<b>Mengali atau membagi</b> dengan bilangan <b>positif</b> → <b>tanda TETAP</b>.<br><br>
+
+<b>Mengali atau membagi</b> dengan bilangan <b>negatif</b> → <b>tanda DIBALIK</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa tanda harus dibalik saat dikali/dibagi negatif?</b>
+
+</p>
+
+<p>
+
+Bayangkan garis bilangan. Ambil contoh sederhana:
+
+</p>
+
+<div class="example">
+
+2 < 5 &nbsp; (pernyataan benar)<br><br>
+
+Kalikan kedua ruas dengan -1:<br>
+
+-2 ... -5 &nbsp; mana yang lebih besar?<br><br>
+
+Di garis bilangan, -2 ada di <b>kanan</b> -5.<br>
+
+Jadi: <b>-2 > -5</b><br><br>
+
+Tanda berubah dari < menjadi >.<br>
+
+Kalau tidak dibalik: -2 < -5 (salah!).
+
+</div>
+
+<p>
+
+Inilah kenapa aturan ini ada. Ia menjaga <b>kebenaran</b> pertidaksamaan
+setelah operasi perkalian/pembagian dengan bilangan negatif.
+
+</p>
+
+<hr>
+
+<h3>Prinsip Tambahan: Jangan Kali Silang Sembarangan</h3>
+
+<p>
+
+Di persamaan, kita bebas kali silang. Di pertidaksamaan, <b>hati-hati</b>!
+Kali silang sama dengan mengali dengan penyebut.
+Kalau penyebutnya bisa bernilai negatif, tanda bisa salah.
+
+</p>
+
+<div class="summary">
+
+<b>Aturan aman:</b> Jangan kali silang di pertidaksamaan.
+Pindahkan semua ke satu ruas, samakan penyebut, lalu gunakan garis bilangan.
+
+</div>
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN LINEAR ==================== -->
+
+<div class="section">
+
+<h2>2. Pertidaksamaan Linear</h2>
+
+<p>
+
+<b>Bentuk umum:</b> ax + b < c (atau >, ≤, ≥), dengan a ≠ 0.
+
+</p>
+
+<p>
+
+Caranya persis seperti persamaan linear, tapi <b>perhatikan tanda saat membagi dengan bilangan negatif</b>.
+
+</p>
+
+<h3>Contoh 1: Sederhana</h3>
+
+<div class="example">
+
+Selesaikan: 3x + 5 > 14<br><br>
+
+3x > 14 - 5<br>
+
+3x > 9<br>
+
+x > 3<br><br>
+
+<b>Solusi: x > 3</b> atau dalam interval: <b>(3, ∞)</b> ✅
+
+</div>
+
+<h3>Contoh 2: Tanda Dibalik</h3>
+
+<div class="example">
+
+Selesaikan: -2x + 7 ≤ 1<br><br>
+
+-2x ≤ 1 - 7<br>
+
+-2x ≤ -6<br><br>
+
+Bagi dengan <b>-2</b> (negatif!) → <b>tanda dibalik:</b><br>
+
+x ≥ 3<br><br>
+
+<b>Solusi: x ≥ 3</b> atau dalam interval: <b>[3, ∞)</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> Coba x = 4: -2(4)+7 = -8+7 = -1 ≤ 1. Benar!<br>
+Coba x = 2: -2(2)+7 = -4+7 = 3. 3 ≤ 1? Salah. Jadi memang x ≥ 3.
+
+</p>
+
+<h3>Contoh 3: Variabel di Kedua Ruas</h3>
+
+<div class="example">
+
+Selesaikan: 5x - 2 < 3x + 8<br><br>
+
+5x - 3x < 8 + 2<br>
+
+2x < 10<br>
+
+x < 5<br><br>
+
+<b>Solusi: x < 5</b> atau <b>(-∞, 5)</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN KUADRAT ==================== -->
+
+<div class="section">
+
+<h2>3. Pertidaksamaan Kuadrat</h2>
+
+<p>
+
+<b>Bentuk umum:</b> ax² + bx + c < 0 (atau >, ≤, ≥), dengan a ≠ 0.
+
+</p>
+
+<p>
+
+Berbeda dengan persamaan kuadrat yang solusinya berupa titik,
+pertidaksamaan kuadrat solusinya berupa <b>interval</b>.
+
+</p>
+
+<h3>Metode Garis Bilangan + Uji Titik</h3>
+
+<ol>
+
+<li>Pindahkan semua ke satu ruas (ruas kanan = 0).</li>
+
+<li>Cari <b>titik kritis</b>: nilai x yang membuat ekspresi = 0 (akar-akar persamaan kuadratnya).</li>
+
+<li>Letakkan titik kritis pada garis bilangan. Garis terbagi menjadi beberapa interval.</li>
+
+<li>Uji satu titik dari setiap interval ke pertidaksamaan awal.</li>
+
+<li>Tentukan interval mana yang memenuhi.</li>
+
+</ol>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+Selesaikan: x² - 5x + 6 < 0<br><br>
+
+<b>Langkah 1:</b> Cari titik kritis.<br>
+
+x² - 5x + 6 = 0<br>
+
+(x - 2)(x - 3) = 0<br>
+
+x = 2 atau x = 3<br><br>
+
+<b>Langkah 2:</b> Garis bilangan terbagi 3 interval:<br>
+
+Interval 1: x < 2<br>
+
+Interval 2: 2 < x < 3<br>
+
+Interval 3: x > 3<br><br>
+
+<b>Langkah 3:</b> Uji titik.<br>
+
+x = 0 (interval 1): 0 - 0 + 6 = 6. 6 < 0? <b>Salah</b> ❌<br>
+
+x = 2,5 (interval 2): 6,25 - 12,5 + 6 = -0,25. -0,25 < 0? <b>Benar</b> ✅<br>
+
+x = 4 (interval 3): 16 - 20 + 6 = 2. 2 < 0? <b>Salah</b> ❌<br><br>
+
+<b>Solusi: 2 < x < 3</b> atau <b>(2, 3)</b> ✅
+
+</div>
+
+<p>
+
+<b>Mengapa uji titik bekerja?</b>
+
+Fungsi kuadrat kontinu (tidak putus). Satu-satunya tempat
+di mana nilai fungsi bisa berubah tanda adalah di titik kritis (tempat fungsi = 0).
+Jadi, di dalam satu interval, semua titik punya tanda yang sama.
+Cukup uji satu titik per interval.
+
+</p>
+
+<hr>
+
+<h3>Contoh 2: Dengan Tanda ≥ (Titik Kritis Termasuk)</h3>
+
+<div class="example">
+
+Selesaikan: x² - 4 ≥ 0<br><br>
+
+<b>Titik kritis:</b> x² - 4 = 0 → (x+2)(x-2) = 0 → x = -2, x = 2<br><br>
+
+<b>Interval:</b> x < -2, -2 < x < 2, x > 2<br><br>
+
+<b>Uji:</b><br>
+
+x = -3: 9-4 = 5 ≥ 0 ✅<br>
+
+x = 0: 0-4 = -4 ≥ 0 ❌<br>
+
+x = 3: 9-4 = 5 ≥ 0 ✅<br><br>
+
+Titik kritis: x = -2 dan x = 2 → hasil = 0 ≥ 0 (memenuhi).<br><br>
+
+<b>Solusi: x ≤ -2 atau x ≥ 2</b> atau <b>(-∞, -2] ∪ [2, ∞)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: a Negatif</h3>
+
+<div class="example">
+
+Selesaikan: -x² + 3x + 4 > 0<br><br>
+
+<b>Langkah 1:</b> Kalikan dengan -1 (tanda dibalik):<br>
+
+x² - 3x - 4 < 0<br><br>
+
+<b>Titik kritis:</b> (x-4)(x+1) = 0 → x = 4, x = -1<br><br>
+
+<b>Interval:</b> x < -1, -1 < x < 4, x > 4<br><br>
+
+<b>Uji:</b><br>
+
+x = -2: 4+6-4=6 < 0? ❌<br>
+
+x = 0: 0-0-4=-4 < 0? ✅<br>
+
+x = 5: 25-15-4=6 < 0? ❌<br><br>
+
+<b>Solusi: -1 < x < 4</b> atau <b>(-1, 4)</b> ✅
+
+</div>
+
+<div class="note">
+
+<b>💡 Trik Cepat:</b>
+
+Untuk ax² + bx + c dengan a > 0 (parabola terbuka ke atas):<br>
+
+ax² + bx + c < 0 → solusinya <b>di antara</b> akar-akar.<br>
+
+ax² + bx + c > 0 → solusinya <b>di luar</b> akar-akar.<br><br>
+
+Untuk a < 0, kalikan dulu dengan -1 (balik tanda), baru pakai trik di atas.
+
+</div>
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN RASIONAL ==================== -->
+
+<div class="section">
+
+<h2>4. Pertidaksamaan Rasional — Variabel di Penyebut</h2>
+
+<p>
+
+<b>Bentuk:</b> P(x)/Q(x) < 0 (atau >, ≤, ≥), di mana P dan Q adalah polinomial.
+
+</p>
+
+<p>
+
+<b>Strategi:</b>
+
+</p>
+
+<ol>
+
+<li>Pindahkan semua ke satu ruas (ruas kanan = 0).</li>
+
+<li>Samakan penyebut.</li>
+
+<li>Cari <b>titik kritis</b>: nilai x yang membuat <b>pembilang = 0</b> (titik nol) dan <b>penyebut = 0</b> (titik singular/ tidak terdefinisi).</li>
+
+<li>Letakkan di garis bilangan. Uji tiap interval.</li>
+
+<li><b>Penting:</b> Titik dari penyebut = 0 <b>tidak pernah termasuk</b> (karena tidak terdefinisi).</li>
+
+</ol>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+Selesaikan: (x+1)/(x-2) > 0<br><br>
+
+<b>Titik kritis:</b><br>
+
+Pembilang = 0: x + 1 = 0 → x = -1<br>
+
+Penyebut = 0: x - 2 = 0 → x = 2 (tidak termasuk!)<br><br>
+
+<b>Interval:</b> x < -1, -1 < x < 2, x > 2<br><br>
+
+<b>Uji:</b><br>
+
+x = -2: (-1)/(-4) = 0,25 > 0 ✅<br>
+
+x = 0: 1/(-2) = -0,5 > 0 ❌<br>
+
+x = 3: 4/1 = 4 > 0 ✅<br><br>
+
+x = -1: 0/(-3) = 0. 0 > 0? <b>Salah</b> (karena >, bukan ≥). Jadi -1 tidak termasuk.<br>
+
+x = 2: tidak terdefinisi, otomatis tidak termasuk.<br><br>
+
+<b>Solusi: x < -1 atau x > 2</b> atau <b>(-∞, -1) ∪ (2, ∞)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Dengan Tanda ≤</h3>
+
+<div class="example">
+
+Selesaikan: (x-3)/(x+1) ≤ 0<br><br>
+
+<b>Titik kritis:</b><br>
+
+Pembilang = 0: x = 3 (termasuk karena ≤ memperbolehkan = 0)<br>
+
+Penyebut = 0: x = -1 (tidak termasuk)<br><br>
+
+<b>Interval:</b> x < -1, -1 < x < 3, x > 3<br><br>
+
+<b>Uji:</b><br>
+
+x = -2: (-5)/(-1) = 5 ≤ 0 ❌<br>
+
+x = 0: (-3)/1 = -3 ≤ 0 ✅<br>
+
+x = 4: 1/5 = 0,2 ≤ 0 ❌<br><br>
+
+<b>Solusi: -1 < x ≤ 3</b> atau <b>(-1, 3]</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Perlu Disamakan Penyebut Dulu</h3>
+
+<div class="example">
+
+Selesaikan: 1/(x-1) ≥ 2/(x+2)<br><br>
+
+<b>Langkah 1:</b> Pindahkan ke satu ruas.<br>
+
+1/(x-1) - 2/(x+2) ≥ 0<br><br>
+
+<b>Langkah 2:</b> Samakan penyebut.<br>
+
+(x+2)/[(x-1)(x+2)] - 2(x-1)/[(x-1)(x+2)] ≥ 0<br>
+
+[x+2 - 2x + 2] / [(x-1)(x+2)] ≥ 0<br>
+
+(-x + 4) / [(x-1)(x+2)] ≥ 0<br>
+
+(4 - x) / [(x-1)(x+2)] ≥ 0<br><br>
+
+<b>Titik kritis:</b><br>
+
+Pembilang = 0: x = 4<br>
+
+Penyebut = 0: x = 1, x = -2<br><br>
+
+<b>Interval:</b> x < -2, -2 < x < 1, 1 < x < 4, x > 4<br><br>
+
+<b>Uji:</b><br>
+
+x = -3: (7)/((-4)(-1)) = 7/4 > 0 ✅<br>
+
+x = 0: 4/((-1)(2)) = -2 < 0 ❌<br>
+
+x = 2: 2/((1)(4)) = 0,5 > 0 ✅<br>
+
+x = 5: (-1)/((4)(7)) = -1/28 < 0 ❌<br><br>
+
+Titik x = 4: pembilang = 0 → ekspresi = 0 ≥ 0 (memenuhi, termasuk).<br><br>
+
+<b>Solusi: x < -2 atau 1 < x ≤ 4</b> atau <b>(-∞, -2) ∪ (1, 4]</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN NILAI MUTLAK ==================== -->
+
+<div class="section">
+
+<h2>5. Pertidaksamaan Nilai Mutlak</h2>
+
+<p>
+
+Ingat definisi nilai mutlak: |x| adalah <b>jarak</b> x dari nol.
+
+</p>
+
+<div class="summary">
+
+<b>|x| < a</b> (a > 0) → <b>-a < x < a</b> &nbsp; (x berada dalam interval [-a, a])<br><br>
+
+<b>|x| > a</b> (a > 0) → <b>x < -a atau x > a</b> &nbsp; (x berada di luar interval [-a, a])
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<p>
+
+|x| < 5 berarti jarak x dari 0 kurang dari 5.
+Semua bilangan dari -5 sampai 5 (tidak termasuk ujung) memenuhi itu.
+
+|x| > 5 berarti jarak x dari 0 lebih dari 5.
+Semua bilangan di kiri -5 atau di kanan 5 memenuhi itu.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Sederhana</h3>
+
+<div class="example">
+
+Selesaikan: |x - 3| < 5<br><br>
+
+Ini berarti jarak x dari 3 kurang dari 5.<br><br>
+
+-5 < x - 3 < 5<br>
+
+-5 + 3 < x < 5 + 3<br>
+
+-2 < x < 8<br><br>
+
+<b>Solusi: (-2, 8)</b> ✅
+
+</div>
+
+<h3>Contoh 2: Lebih Besar</h3>
+
+<div class="example">
+
+Selesaikan: |2x + 1| ≥ 7<br><br>
+
+2x + 1 ≤ -7 &nbsp; atau &nbsp; 2x + 1 ≥ 7<br><br>
+
+Untuk 2x + 1 ≤ -7:<br>
+
+2x ≤ -8 → x ≤ -4<br><br>
+
+Untuk 2x + 1 ≥ 7:<br>
+
+2x ≥ 6 → x ≥ 3<br><br>
+
+<b>Solusi: x ≤ -4 atau x ≥ 3</b> atau <b>(-∞, -4] ∪ [3, ∞)</b> ✅
+
+</div>
+
+<h3>Contoh 3: Dengan Ekspresi Kuadrat</h3>
+
+<div class="example">
+
+Selesaikan: |x² - 4| < 3<br><br>
+
+-3 < x² - 4 < 3<br><br>
+
+<b>Kiri:</b> -3 < x² - 4 → x² > 1 → x < -1 atau x > 1<br><br>
+
+<b>Kanan:</b> x² - 4 < 3 → x² < 7 → -√7 < x < √7<br><br>
+
+Irisan kedua solusi:<br>
+
+(-√7 < x < -1) ∪ (1 < x < √7)<br><br>
+
+<b>Solusi: (-√7, -1) ∪ (1, √7)</b> ✅
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN EKSPONEN ==================== -->
+
+<div class="section">
+
+<h2>6. Pertidaksamaan Eksponen — Variabel di Pangkat</h2>
+
+<p>
+
+<b>Pertidaksamaan eksponen</b> adalah pertidaksamaan yang variabelnya muncul sebagai <b>pangkat (eksponen)</b>.
+
+</p>
+
+<div class="example">
+
+2ˣ > 8<br>
+
+3²ˣ⁺¹ ≤ 27<br>
+
+5ˣ < 7ˣ⁻¹
+
+</div>
+
+<p>
+
+<b>Strategi kunci:</b> samakan basis, lalu perhatikan <b>apakah basis > 1 atau 0 < basis < 1</b>.
+Ini menentukan apakah tanda tetap atau dibalik.
+
+</p>
+
+<hr>
+
+<h3>Aturan Penting: Basis Menentukan Arah Tanda</h3>
+
+<div class="summary">
+
+<b>Jika basis > 1:</b> aᵐ > aⁿ → m > n &nbsp; (tanda <b>tetap</b>, fungsi naik)<br><br>
+
+<b>Jika 0 < basis < 1:</b> aᵐ > aⁿ → m < n &nbsp; (tanda <b>dibalik</b>, fungsi turun)
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<p>
+
+Untuk basis > 1 (misal 2): semakin besar pangkat, semakin besar nilainya.
+2¹ = 2, 2² = 4, 2³ = 8. Nilai naik seiring pangkat naik.
+
+</p>
+
+<p>
+
+Untuk basis antara 0 dan 1 (misal 1/2): semakin besar pangkat, semakin kecil nilainya.
+(1/2)¹ = 0,5, (1/2)² = 0,25, (1/2)³ = 0,125. Nilai turun seiring pangkat naik.
+Inilah kenapa tandanya harus dibalik.
+
+</p>
+
+<hr>
+
+<h3>Kasus 1: Basis > 1 (Tanda Tetap)</h3>
+
+<div class="example">
+
+Selesaikan: 2ˣ > 8<br><br>
+
+Samakan basis: 8 = 2³<br>
+
+2ˣ > 2³<br>
+
+Basis 2 > 1 → tanda tetap: x > 3<br><br>
+
+<b>Solusi: x > 3</b> atau <b>(3, ∞)</b> ✅
+
+</div>
+
+<div class="example">
+
+Selesaikan: 3²ˣ⁺¹ ≤ 27<br><br>
+
+27 = 3³<br>
+
+3²ˣ⁺¹ ≤ 3³<br>
+
+Basis 3 > 1 → tanda tetap:<br>
+
+2x + 1 ≤ 3<br>
+
+2x ≤ 2<br>
+
+x ≤ 1<br><br>
+
+<b>Solusi: x ≤ 1</b> atau <b>(-∞, 1]</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 2: 0 < Basis < 1 (Tanda Dibalik)</h3>
+
+<div class="example">
+
+Selesaikan: (1/2)ˣ < 1/8<br><br>
+
+1/8 = (1/2)³<br>
+
+(1/2)ˣ < (1/2)³<br>
+
+Basis 1/2 (antara 0 dan 1) → <b>tanda dibalik:</b><br>
+
+x > 3<br><br>
+
+<b>Verifikasi:</b><br>
+
+x = 4: (1/2)⁴ = 1/16. 1/16 < 1/8? Ya (1/16 = 0,0625, 1/8 = 0,125). ✅<br>
+
+x = 2: (1/2)² = 1/4. 1/4 < 1/8? Tidak (0,25 > 0,125). ❌<br><br>
+
+<b>Solusi: x > 3</b> atau <b>(3, ∞)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 3: Substitusi (Bentuk Kuadrat dalam Eksponen)</h3>
+
+<div class="example">
+
+Selesaikan: 2²ˣ - 6·2ˣ + 8 < 0<br><br>
+
+Misalkan p = 2ˣ (p > 0 karena 2ˣ selalu positif):<br><br>
+
+p² - 6p + 8 < 0<br>
+
+(p - 2)(p - 4) < 0<br><br>
+
+Untuk p² - 6p + 8 < 0 (a > 0, parabola terbuka atas):<br>
+
+2 < p < 4<br><br>
+
+Kembalikan ke 2ˣ:<br>
+
+2 < 2ˣ < 4<br>
+
+2¹ < 2ˣ < 2²<br><br>
+
+Basis 2 > 1 → tanda tetap:<br>
+
+1 < x < 2<br><br>
+
+<b>Solusi: 1 < x < 2</b> atau <b>(1, 2)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 4: Basis Berbeda</h3>
+
+<div class="example">
+
+Selesaikan: 5ˣ < 7ˣ⁻¹<br><br>
+
+Basis berbeda, tidak bisa disamakan. Gunakan logaritma.<br><br>
+
+Ambil ln kedua ruas (ln adalah fungsi naik, tanda tetap):<br>
+
+ln(5ˣ) < ln(7ˣ⁻¹)<br>
+
+x·ln 5 < (x-1)·ln 7<br>
+
+x·ln 5 < x·ln 7 - ln 7<br>
+
+x·ln 5 - x·ln 7 < -ln 7<br>
+
+x(ln 5 - ln 7) < -ln 7<br><br>
+
+Karena ln 5 - ln 7 < 0 (negatif), bagi dengan bilangan negatif → <b>tanda dibalik:</b><br>
+
+x > -ln 7 / (ln 5 - ln 7)<br>
+
+x > ln 7 / (ln 7 - ln 5)<br>
+
+x > ln 7 / ln(7/5)<br><br>
+
+<b>Solusi: x > ln 7 / ln(7/5)</b> (sekitar x > 5,78)
+
+</div>
+
+</div>
+
+<!-- ==================== PERTIDAKSAMAAN LOGARITMA ==================== -->
+
+<div class="section">
+
+<h2>7. Pertidaksamaan Logaritma — Variabel di Dalam Log</h2>
+
+<p>
+
+<b>Pertidaksamaan logaritma</b> mengandung variabel di dalam operasi logaritma.
+
+</p>
+
+<p>
+
+<b>Strategi:</b>
+
+</p>
+
+<ol>
+
+<li>Tentukan <b>syarat numerus</b> (numerus > 0).</li>
+
+<li>Samakan bentuk logaritma di kedua ruas (jika memungkinkan).</li>
+
+<li>Perhatikan <b>basis</b>: basis > 1 → tanda tetap; 0 < basis < 1 → tanda dibalik.</li>
+
+<li>Selesaikan pertidaksamaannya.</li>
+
+<li>Iriskan dengan syarat numerus.</li>
+
+</ol>
+
+<hr>
+
+<h3>Aturan Penting: Basis Menentukan Arah Tanda</h3>
+
+<div class="summary">
+
+<b>Jika basis > 1:</b> ᵃlog f(x) > ᵃlog g(x) → f(x) > g(x) &nbsp; (tanda <b>tetap</b>)<br><br>
+
+<b>Jika 0 < basis < 1:</b> ᵃlog f(x) > ᵃlog g(x) → f(x) < g(x) &nbsp; (tanda <b>dibalik</b>)
+
+</div>
+
+<p>
+
+<b>Mengapa?</b> Karena fungsi logaritma dengan basis > 1 adalah <b>fungsi naik</b>
+(semakin besar numerus, semakin besar hasil log).
+Sedangkan fungsi logaritma dengan basis antara 0 dan 1 adalah <b>fungsi turun</b>
+(semakin besar numerus, semakin kecil hasil log).
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Basis > 1</h3>
+
+<div class="example">
+
+Selesaikan: ²log(x+1) < 3<br><br>
+
+<b>Syarat numerus:</b> x + 1 > 0 → x > -1<br><br>
+
+Ubah 3 ke bentuk logaritma basis 2:<br>
+
+3 = ²log 8 (karena 2³ = 8)<br><br>
+
+²log(x+1) < ²log 8<br>
+
+Basis 2 > 1 → tanda tetap:<br>
+
+x + 1 < 8<br>
+
+x < 7<br><br>
+
+Iriskan dengan syarat: x > -1 dan x < 7<br><br>
+
+<b>Solusi: -1 < x < 7</b> atau <b>(-1, 7)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Basis Antara 0 dan 1 (Tanda Dibalik)</h3>
+
+<div class="example">
+
+Selesaikan: ½log(x+2) > ½log(2x-1)<br><br>
+
+<b>Syarat numerus:</b><br>
+
+x + 2 > 0 → x > -2<br>
+
+2x - 1 > 0 → x > 1/2<br>
+
+Gabungan: x > 1/2<br><br>
+
+Basis 1/2 (antara 0 dan 1) → <b>tanda dibalik:</b><br>
+
+x + 2 < 2x - 1<br>
+
+2 + 1 < 2x - x<br>
+
+3 < x<br>
+
+x > 3<br><br>
+
+Iriskan dengan syarat: x > 3 dan x > 1/2 → x > 3<br><br>
+
+<b>Solusi: x > 3</b> atau <b>(3, ∞)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Bentuk Gabungan</h3>
+
+<div class="example">
+
+Selesaikan: ³log(x² - 4) ≤ ³log 5<br><br>
+
+<b>Syarat numerus:</b> x² - 4 > 0 → (x+2)(x-2) > 0<br>
+
+→ x < -2 atau x > 2<br><br>
+
+Basis 3 > 1 → tanda tetap:<br>
+
+x² - 4 ≤ 5<br>
+
+x² ≤ 9<br>
+
+-3 ≤ x ≤ 3<br><br>
+
+Iriskan dengan syarat:<br>
+
+(-3 ≤ x ≤ 3) ∩ (x < -2 atau x > 2)<br><br>
+
+= [-3, -2) ∪ (2, 3]<br><br>
+
+<b>Solusi: -3 ≤ x < -2 atau 2 < x ≤ 3</b> ✅
+
+</div>
+
+<div class="note">
+
+<b>💡 Tips:</b>
+
+Untuk pertidaksamaan logaritma, <b>jangan pernah lupa syarat numerus > 0</b>.
+Banyak solusi yang kelihatannya benar tapi melanggar syarat ini.
+Selalu tulis syarat di awal, dan iriskan di akhir.
+
+</div>
+
+</div>
+
+<!-- ==================== SISTEM PERTIDAKSAMAAN ==================== -->
+
+<div class="section">
+
+<h2>8. Sistem Pertidaksamaan — Mencari Irisan</h2>
+
+<p>
+
+<b>Sistem pertidaksamaan</b> adalah kumpulan dua atau lebih pertidaksamaan
+yang harus dipenuhi <b>secara bersamaan</b>.
+Solusinya adalah <b>irisan</b> dari semua solusi masing-masing pertidaksamaan.
+
+</p>
+
+<h3>Strategi Umum</h3>
+
+<ol>
+
+<li>Selesaikan setiap pertidaksamaan secara terpisah.</li>
+
+<li>Gambarkan solusi masing-masing pada <b>garis bilangan yang sama</b>.</li>
+
+<li>Cari <b>irisan</b> (daerah yang terkena semua arsiran).</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh 1: Sistem Linear</h3>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+2x + 1 > 5 ...(1)<br>
+
+x - 3 ≤ 2 ...(2)<br><br>
+
+<b>Dari (1):</b> 2x > 4 → x > 2<br><br>
+
+<b>Dari (2):</b> x ≤ 5<br><br>
+
+Irisan: x > 2 dan x ≤ 5<br><br>
+
+<b>Solusi: 2 < x ≤ 5</b> atau <b>(2, 5]</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Sistem Linear-Kuadrat</h3>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+x² - 4 < 0 ...(1)<br>
+
+x + 1 > 0 ...(2)<br><br>
+
+<b>Dari (1):</b> (x+2)(x-2) < 0 → -2 < x < 2<br><br>
+
+<b>Dari (2):</b> x > -1<br><br>
+
+Irisan: (-2 < x < 2) ∩ (x > -1)<br><br>
+
+= <b>-1 < x < 2</b> atau <b>(-1, 2)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Sistem dengan Rasional</h3>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+(x-1)/(x+2) < 0 ...(1)<br>
+
+x ≥ 0 ...(2)<br><br>
+
+<b>Dari (1):</b><br>
+
+Titik kritis: x = 1 (pembilang), x = -2 (penyebut, tidak termasuk).<br>
+
+Interval: x < -2, -2 < x < 1, x > 1<br>
+
+Uji: x=-3 → (+)/(-)=(-) < 0 ✅. x=0 → (-)/(+)=(-) < 0 ✅. x=2 → (+)/(+)=(+) < 0 ❌.<br>
+
+Solusi (1): x < -2 atau -2 < x < 1<br><br>
+
+<b>Dari (2):</b> x ≥ 0<br><br>
+
+Irisan: [(x < -2) ∪ (-2 < x < 1)] ∩ [x ≥ 0]<br>
+
+= <b>0 ≤ x < 1</b> atau <b>[0, 1)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 4: Tiga Pertidaksamaan</h3>
+
+<div class="example">
+
+Selesaikan sistem:<br>
+
+x + 2 > 0 ...(1)<br>
+
+x² - 9 ≤ 0 ...(2)<br>
+
+x ≠ 1 ...(3)<br><br>
+
+<b>Dari (1):</b> x > -2<br><br>
+
+<b>Dari (2):</b> (x+3)(x-3) ≤ 0 → -3 ≤ x ≤ 3<br><br>
+
+<b>Dari (3):</b> x ≠ 1<br><br>
+
+Irisan (1) dan (2): (-2, ∞) ∩ [-3, 3] = (-2, 3]<br><br>
+
+Kemudian dengan (3): (-2, 3] kecuali x = 1<br><br>
+
+<b>Solusi: -2 < x < 1 atau 1 < x ≤ 3</b> atau <b>(-2, 1) ∪ (1, 3]</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Prinsip dasar:</b> Kali/bagi dengan bilangan negatif → <b>balik tanda</b>.</li>
+
+<li><b>Linear:</b> Isolasi variabel, perhatikan tanda negatif.</li>
+
+<li><b>Kuadrat:</b> Cari titik kritis → garis bilangan → uji interval.</li>
+
+<li><b>Rasional:</b> Titik kritis dari pembilang dan penyebut. Penyebut = 0 → tidak termasuk.</li>
+
+<li><b>Nilai mutlak:</b> |x| < a → -a < x < a. |x| > a → x < -a atau x > a.</li>
+
+<li><b>Eksponen:</b> Basis > 1 → tanda tetap. 0 < basis < 1 → tanda dibalik.</li>
+
+<li><b>Logaritma:</b> Basis > 1 → tanda tetap. 0 < basis < 1 → tanda dibalik. Jangan lupa syarat numerus > 0.</li>
+
+<li><b>Sistem:</b> Selesaikan masing-masing → cari irisan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Garis bilangan adalah sahabatmu.</b> Untuk pertidaksamaan kuadrat, rasional, dan sistem,
+menggambar garis bilangan membuat solusi terlihat jelas dan mengurangi kesalahan.
+
+</li>
+
+<li>
+
+<b>Uji titik itu wajib, bukan opsional.</b> Jangan langsung menebak interval.
+Selalu uji satu titik dari setiap interval untuk memastikan tanda.
+
+</li>
+
+<li>
+
+<b>Hati-hati dengan titik dari penyebut.</b> Di pertidaksamaan rasional,
+titik yang membuat penyebut = 0 <b>tidak pernah termasuk</b> solusi,
+meskipun tandanya ≤ atau ≥.
+
+</li>
+
+<li>
+
+<b>Jangan kali silang sembarangan.</b> Di pertidaksamaan, kali silang berbahaya
+karena penyebut bisa negatif dan membalik tanda.
+Selalu pindahkan semua ke satu ruas dan samakan penyebut.
+
+</li>
+
+<li>
+
+<b>Untuk eksponen dan logaritma, cek basis dulu.</b>
+Sebelum menyelesaikan, tentukan apakah basis > 1 atau 0 < basis < 1.
+Ini menentukan apakah tanda dibalik atau tidak.
+
+</li>
+
+<li>
+
+<b>Logaritma: syarat numerus adalah yang pertama.</b>
+Tulis syarat numerus > 0 di awal, jangan di akhir.
+Banyak yang lupa dan dapat solusi yang salah.
+
+</li>
+
+<li>
+
+<b>Untuk sistem, gambar semua solusi di satu garis bilangan.</b>
+Ini membantu visualisasi irisan dan mencegah kesalahan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar3.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar5.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
 
