@@ -1,1 +1,1024 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 6 | Jenis Fungsi, Grafik & Transformasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 6 • Jenis Fungsi, Grafik & Transformasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Bab 5, kita sudah mempelajari konsep dasar fungsi: definisi, domain, range,
+piecewise, komposisi, dan invers. Sekarang kita akan menjelajahi
+<b>jenis-jenis fungsi</b> yang paling penting dalam matematika.
+
+</p>
+
+<p>
+
+Setiap jenis fungsi punya "kepribadian" unik: bentuk grafik yang khas,
+sifat-sifat khusus, dan cara penanganan yang berbeda. Menguasai mereka
+berarti kamu bisa mengenali pola, memprediksi perilaku, dan menyelesaikan
+masalah dengan lebih cepat.
+
+</p>
+
+<p>
+
+Kita akan membahas enam jenis fungsi:
+<b>kuadrat, rasional, eksponen, logaritma, nilai mutlak,</b> dan <b>grafiknya</b>.
+Setelah itu, kita akan mempelajari <b>transformasi grafik</b>:
+bagaimana menggeser, meregangkan, dan memantulkan grafik fungsi.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami karakteristik fungsi kuadrat dan grafik parabolanya.</li>
+
+<li>Menguasai fungsi rasional dan asimtotnya.</li>
+
+<li>Memahami fungsi eksponen, pertumbuhan, dan peluruhan.</li>
+
+<li>Memahami fungsi logaritma sebagai invers eksponen.</li>
+
+<li>Menguasai fungsi nilai mutlak dan grafiknya yang berbentuk V.</li>
+
+<li>Mampu menggambar grafik fungsi dengan transformasi (translasi, refleksi, dilatasi).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI KUADRAT ==================== -->
+
+<div class="section">
+
+<h2>1. Fungsi Kuadrat — Si Parabola</h2>
+
+<p>
+
+<b>Fungsi kuadrat</b> adalah fungsi dengan bentuk umum:
+
+</p>
+
+<div class="summary">
+
+f(x) = ax² + bx + c, &nbsp; a ≠ 0
+
+<br><br>
+
+Grafiknya berbentuk <b>parabola</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa disebut parabola?</b> Dari bahasa Yunani "parabole" yang berarti
+"melempar berdampingan". Lintasan benda yang dilempar ke atas
+(mengabaikan hambatan udara) berbentuk parabola. Matematika dan fisika bertemu di sini.
+
+</p>
+
+<hr>
+
+<h3>Karakteristik Penting Parabola</h3>
+
+<div class="summary">
+
+<b>1. Arah bukaan:</b> a > 0 → terbuka <b>ke atas</b> (minimum). a < 0 → terbuka <b>ke bawah</b> (maksimum).<br><br>
+
+<b>2. Titik puncak (vertex):</b> (-b/2a, f(-b/2a))<br><br>
+
+<b>3. Sumbu simetri:</b> x = -b/2a (garis vertikal yang membagi parabola menjadi dua sama persis).<br><br>
+
+<b>4. Titik potong sumbu Y:</b> (0, c)<br><br>
+
+<b>5. Titik potong sumbu X:</b> akar-akar dari ax² + bx + c = 0 (jika D ≥ 0).
+
+</div>
+
+<hr>
+
+<h3>Mencari Titik Puncak — Pembuktian</h3>
+
+<p>
+
+<b>Mengapa x = -b/2a adalah sumbu simetri?</b>
+
+</p>
+
+<p>
+
+Fungsi kuadrat bisa ditulis dalam bentuk kuadrat sempurna:
+
+</p>
+
+<div class="example">
+
+f(x) = ax² + bx + c<br>
+
+= a(x² + (b/a)x) + c<br>
+
+= a(x² + (b/a)x + (b/2a)² - (b/2a)²) + c<br>
+
+= a((x + b/2a)² - b²/4a²) + c<br>
+
+= a(x + b/2a)² - b²/4a + c<br>
+
+= a(x + b/2a)² + (4ac - b²)/4a<br><br>
+
+Suku a(x + b/2a)² menentukan pergeseran horizontal.<br>
+
+Karena (x + b/2a)² ≥ 0, nilai minimum/maksimum terjadi saat<br>
+
+x + b/2a = 0 → <b>x = -b/2a</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 1: Analisis Lengkap</h3>
+
+<div class="example">
+
+f(x) = 2x² - 8x + 5<br><br>
+
+<b>a = 2 > 0 → parabola terbuka ke atas (punya minimum).</b><br><br>
+
+<b>Sumbu simetri:</b> x = -(-8)/(2·2) = 8/4 = <b>2</b><br><br>
+
+<b>Titik puncak:</b> f(2) = 2(4) - 8(2) + 5 = 8 - 16 + 5 = <b>-3</b><br>
+
+Puncak: <b>(2, -3)</b><br><br>
+
+<b>Titik potong Y:</b> (0, 5)<br><br>
+
+<b>Titik potong X:</b> 2x² - 8x + 5 = 0<br>
+
+D = 64 - 40 = 24 > 0 → dua akar real.<br>
+
+x = (8 ± √24)/4 = (8 ± 2√6)/4 = 2 ± √6/2<br>
+
+x₁ ≈ 3,22 &nbsp; x₂ ≈ 0,78<br><br>
+
+<b>Range:</b> [-3, ∞) (karena minimum -3)
+
+</div>
+
+<hr>
+
+<h3>Bentuk Umum vs Bentuk Puncak</h3>
+
+<div class="summary">
+
+<b>Bentuk umum:</b> f(x) = ax² + bx + c (baik untuk mencari titik potong sumbu Y dan akar).<br><br>
+
+<b>Bentuk puncak:</b> f(x) = a(x - h)² + k, di mana (h, k) adalah titik puncak.<br>
+
+(Baik untuk menggambar grafik dan melihat pergeseran.)
+
+</div>
+
+<p>
+
+<b>Mengubah bentuk umum ke bentuk puncak:</b> gunakan teknik melengkapkan kuadrat
+yang sudah kita pelajari di Aljabar 2.
+
+</p>
+
+<div class="example">
+
+f(x) = 2x² - 8x + 5<br><br>
+
+= 2(x² - 4x) + 5<br>
+
+= 2(x² - 4x + 4 - 4) + 5<br>
+
+= 2((x - 2)² - 4) + 5<br>
+
+= 2(x - 2)² - 8 + 5<br>
+
+= 2(x - 2)² - 3<br><br>
+
+<b>Puncak: (2, -3)</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI RASIONAL ==================== -->
+
+<div class="section">
+
+<h2>2. Fungsi Rasional — Si Asimtot</h2>
+
+<p>
+
+<b>Fungsi rasional</b> adalah fungsi berbentuk:
+
+</p>
+
+<div class="summary">
+
+f(x) = P(x)/Q(x)
+
+<br><br>
+
+di mana P(x) dan Q(x) adalah polinomial, dan Q(x) ≠ 0.
+
+</div>
+
+<p>
+
+Yang membuat fungsi rasional istimewa adalah adanya <b>asimtot</b> —
+garis-garis yang didekati grafik tapi tidak pernah disentuh (atau disentuh di tak hingga).
+
+</p>
+
+<hr>
+
+<h3>Jenis-Jenis Asimtot</h3>
+
+<div class="summary">
+
+<b>1. Asimtot Vertikal:</b> terjadi di x = a jika penyebut = 0 di x = a.<br>
+
+Grafik meluncur ke ∞ atau -∞ saat mendekati x = a.<br><br>
+
+<b>2. Asimtot Horizontal:</b> terjadi jika x → ±∞.<br>
+
+Dilihat dari perbandingan derajat pembilang dan penyebut.<br><br>
+
+<b>3. Asimtot Miring:</b> terjadi jika derajat pembilang = derajat penyebut + 1.
+
+</div>
+
+<hr>
+
+<h3>Aturan Mencari Asimtot Horizontal</h3>
+
+<div class="summary">
+
+Misal f(x) = (axᵐ + ...)/(bxⁿ + ...), dengan a, b ≠ 0.<br><br>
+
+<b>m < n:</b> asimtot horizontal y = 0 (sumbu X).<br>
+
+<b>m = n:</b> asimtot horizontal y = a/b.<br>
+
+<b>m > n:</b> tidak ada asimtot horizontal (mungkin ada asimtot miring).
+
+</div>
+
+<p>
+
+<b>Mengapa aturan ini berlaku?</b>
+
+</p>
+
+<p>
+
+Untuk x yang sangat besar, suku dengan pangkat tertinggi mendominasi.
+Suku-suku lain bisa diabaikan. Jadi f(x) ≈ (axᵐ)/(bxⁿ) = (a/b)xᵐ⁻ⁿ.
+Kalau m < n, pangkatnya negatif → mendekati 0. Kalau m = n, mendekati a/b.
+Kalau m > n, nilainya membesar/mengecil tanpa batas.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Asimtot Vertikal dan Horizontal</h3>
+
+<div class="example">
+
+f(x) = (2x+1)/(x-3)<br><br>
+
+<b>Domain:</b> x ≠ 3<br><br>
+
+<b>Asimtot vertikal:</b> x = 3 (penyebut = 0).<br><br>
+
+<b>Asimtot horizontal:</b> derajat pembilang = derajat penyebut = 1.<br>
+
+y = 2/1 = <b>2</b><br><br>
+
+<b>Range:</b> y ≠ 2 (semua bilangan real kecuali 2, karena tidak ada x yang menghasilkan tepat 2).<br><br>
+
+<b>Grafik:</b> Dua cabang hiperbola, satu di kuadran kanan-atas, satu di kiri-bawah.
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Asimtot Miring</h3>
+
+<div class="example">
+
+f(x) = (x² + 1)/(x - 1)<br><br>
+
+Derajat pembilang (2) = derajat penyebut (1) + 1 → <b>ada asimtot miring</b>.<br><br>
+
+<b>Asimtot vertikal:</b> x = 1<br><br>
+
+Lakukan pembagian polinomial:<br>
+
+x² + 1 dibagi x - 1 → hasil bagi = x + 1, sisa = 2.<br><br>
+
+f(x) = x + 1 + 2/(x-1)<br><br>
+
+Untuk x → ±∞, 2/(x-1) → 0, sehingga f(x) ≈ x + 1.<br><br>
+
+<b>Asimtot miring: y = x + 1</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: Grafik Rasional dengan Dua Asimtot Vertikal</h3>
+
+<div class="example">
+
+f(x) = 1/(x² - 4) = 1/[(x+2)(x-2)]<br><br>
+
+<b>Asimtot vertikal:</b> x = -2 dan x = 2<br>
+
+<b>Asimtot horizontal:</b> derajat pembilang (0) < derajat penyebut (2) → y = 0<br><br>
+
+Grafik memiliki tiga cabang: kiri x=-2, antara -2 dan 2, kanan x=2.
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI EKSPONEN ==================== -->
+
+<div class="section">
+
+<h2>3. Fungsi Eksponen — Pertumbuhan dan Peluruhan</h2>
+
+<p>
+
+<b>Fungsi eksponen</b> adalah fungsi dengan variabel di posisi <b>pangkat</b>.
+
+</p>
+
+<div class="summary">
+
+f(x) = a·bˣ
+
+<br><br>
+
+a = nilai awal (saat x = 0, f(0) = a).<br>
+
+b = basis (b > 0, b ≠ 1).
+
+</div>
+
+<p>
+
+<b>Dua jenis utama:</b>
+
+</p>
+
+<div class="summary">
+
+<b>b > 1:</b> <b>Pertumbuhan eksponensial</b>. Grafik naik dari kiri ke kanan.<br>
+
+Contoh: populasi bakteri, bunga majemuk, pertumbuhan investasi.<br><br>
+
+<b>0 < b < 1:</b> <b>Peluruhan eksponensial</b>. Grafik turun dari kiri ke kanan.<br>
+
+Contoh: peluruhan radioaktif, penurunan suhu, depresiasi aset.
+
+</div>
+
+<hr>
+
+<h3>Karakteristik Fungsi Eksponen f(x) = a·bˣ</h3>
+
+<div class="summary">
+
+<b>Domain:</b> ℝ (semua bilangan real).<br>
+
+<b>Range:</b> (0, ∞) jika a > 0; (-∞, 0) jika a < 0.<br>
+
+<b>Asimtot horizontal:</b> y = 0 (sumbu X). Grafik tidak pernah menyentuh sumbu X.<br>
+
+<b>Titik potong Y:</b> (0, a).<br>
+
+<b>Tidak ada titik potong X</b> (kecuali jika digeser).
+
+</div>
+
+<p>
+
+<b>Mengapa range hanya bilangan positif (untuk a > 0)?</b>
+
+</p>
+
+<p>
+
+Bilangan positif dipangkatkan berapapun (positif, nol, negatif) hasilnya selalu positif.
+2³ = 8, 2⁰ = 1, 2⁻³ = 1/8. Tidak mungkin menghasilkan 0 atau negatif.
+Itulah kenapa asimtotnya y = 0 — grafik mendekati nol tapi tidak pernah menyentuhnya.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Pertumbuhan Eksponensial</h3>
+
+<div class="example">
+
+f(x) = 2ˣ<br><br>
+
+f(0) = 1, f(1) = 2, f(2) = 4, f(3) = 8, f(4) = 16, ...<br><br>
+
+<b>Ciri khas:</b> setiap x bertambah 1, nilai fungsi <b>dilipatgandakan</b> (dikali b).<br><br>
+
+<b>Domain:</b> ℝ<br>
+
+<b>Range:</b> (0, ∞)<br>
+
+<b>Asimtot:</b> y = 0
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Peluruhan Eksponensial</h3>
+
+<div class="example">
+
+f(x) = 100·(1/2)ˣ<br><br>
+
+f(0) = 100, f(1) = 50, f(2) = 25, f(3) = 12,5, ...<br><br>
+
+<b>Ciri khas:</b> setiap x bertambah 1, nilai fungsi <b>dibagi dua</b> (dikali 1/b).<br><br>
+
+Ini disebut <b>waktu paruh</b> (half-life) dalam peluruhan radioaktif.
+
+</div>
+
+<hr>
+
+<h3>Bilangan e — Basis Istimewa</h3>
+
+<p>
+
+Ada satu basis yang sangat istimewa dalam matematika: <b>e ≈ 2,71828...</b>.
+Fungsi f(x) = eˣ disebut <b>fungsi eksponensial natural</b>.
+Keistimewaannya: <b>laju pertumbuhannya sama dengan nilainya sendiri</b>.
+Ini akan dipelajari lebih dalam di kalkulus.
+
+</p>
+
+</div>
+
+<!-- ==================== FUNGSI LOGARITMA ==================== -->
+
+<div class="section">
+
+<h2>4. Fungsi Logaritma — Invers dari Eksponen</h2>
+
+<p>
+
+<b>Fungsi logaritma</b> adalah <b>invers</b> dari fungsi eksponen.
+
+</p>
+
+<div class="summary">
+
+y = ᵃlog x &nbsp; ⇔ &nbsp; aʸ = x
+
+<br><br>
+
+a = basis (a > 0, a ≠ 1).<br>
+
+x = numerus (x > 0).
+
+</div>
+
+<p>
+
+Kalau fungsi eksponen bertanya "berapa hasil dari a dipangkatkan x?",
+fungsi logaritma bertanya "<b>x harus dipangkatkan berapa agar hasilnya a?</b>"
+
+</p>
+
+<hr>
+
+<h3>Karakteristik Fungsi Logaritma f(x) = ᵃlog x</h3>
+
+<div class="summary">
+
+<b>Domain:</b> (0, ∞) — numerus harus positif.<br>
+
+<b>Range:</b> ℝ (semua bilangan real).<br>
+
+<b>Asimtot vertikal:</b> x = 0 (sumbu Y). Grafik tidak pernah menyentuh sumbu Y.<br>
+
+<b>Titik potong X:</b> (1, 0) — karena ᵃlog 1 = 0 untuk semua basis a.<br>
+
+<b>Tidak ada titik potong Y</b> (karena domain x > 0).
+
+</div>
+
+<p>
+
+<b>Mengapa ᵃlog 1 selalu = 0?</b>
+
+Karena a⁰ = 1 untuk semua a ≠ 0. Logaritma menjawab: "a dipangkatkan berapa agar jadi 1?"
+Jawabannya selalu 0.
+
+</p>
+
+<hr>
+
+<h3>Dua Jenis Grafik Logaritma</h3>
+
+<div class="summary">
+
+<b>a > 1:</b> Grafik <b>naik</b> dari kiri ke kanan. Fungsi <b>monoton naik</b>.<br>
+
+<b>0 < a < 1:</b> Grafik <b>turun</b> dari kiri ke kanan. Fungsi <b>monoton turun</b>.
+
+</div>
+
+<h3>Contoh</h3>
+
+<div class="example">
+
+f(x) = ²log x<br><br>
+
+f(1) = 0, f(2) = 1, f(4) = 2, f(8) = 3, f(1/2) = -1.<br><br>
+
+<b>Domain:</b> (0, ∞)<br>
+
+<b>Range:</b> ℝ<br>
+
+<b>Asimtot:</b> x = 0
+
+</div>
+
+<hr>
+
+<h3>Hubungan Grafik Eksponen dan Logaritma</h3>
+
+<p>
+
+Karena logaritma adalah invers eksponen, grafik <b>y = ᵃlog x</b> adalah
+<b>pencerminan</b> grafik <b>y = aˣ</b> terhadap garis <b>y = x</b>.
+
+</p>
+
+<div class="example">
+
+Titik (0, 1) pada y = 2ˣ → titik (1, 0) pada y = ²log x.<br>
+
+Titik (1, 2) pada y = 2ˣ → titik (2, 1) pada y = ²log x.<br>
+
+Titik (2, 4) pada y = 2ˣ → titik (4, 2) pada y = ²log x.
+
+</div>
+
+</div>
+
+<!-- ==================== FUNGSI NILAI MUTLAK ==================== -->
+
+<div class="section">
+
+<h2>5. Fungsi Nilai Mutlak — Si Grafik V</h2>
+
+<p>
+
+<b>Fungsi nilai mutlak</b> adalah:
+
+</p>
+
+<div class="summary">
+
+f(x) = |x| = { x, &nbsp; jika x ≥ 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ -x, jika x < 0
+
+</div>
+
+<p>
+
+Grafiknya berbentuk <b>V</b> dengan titik sudut di (0,0).
+
+</p>
+
+<hr>
+
+<h3>Karakteristik f(x) = |x|</h3>
+
+<div class="summary">
+
+<b>Domain:</b> ℝ<br>
+
+<b>Range:</b> [0, ∞)<br>
+
+<b>Titik sudut:</b> (0, 0) — titik di mana aturan berubah.<br>
+
+<b>Simetri:</b> fungsi genap (f(-x) = f(x)), grafik simetris terhadap sumbu Y.
+
+</div>
+
+<hr>
+
+<h3>Bentuk Umum: f(x) = a|x - h| + k</h3>
+
+<div class="summary">
+
+<b>(h, k)</b> = titik sudut.<br>
+
+<b>a > 0:</b> V terbuka ke atas. a < 0: V terbuka ke bawah.<br>
+
+<b>|a| > 1:</b> V lebih sempit (curam). 0 < |a| < 1: V lebih lebar (landai).
+
+</div>
+
+<h3>Contoh</h3>
+
+<div class="example">
+
+f(x) = 2|x - 3| + 1<br><br>
+
+<b>Titik sudut:</b> (3, 1)<br>
+
+<b>a = 2 > 0:</b> V terbuka ke atas, lebih curam dari |x|.<br><br>
+
+f(3) = 1 (titik sudut)<br>
+
+f(4) = 2|1| + 1 = 3<br>
+
+f(5) = 2|2| + 1 = 5<br>
+
+f(2) = 2|-1| + 1 = 3<br><br>
+
+<b>Range:</b> [1, ∞)
+
+</div>
+
+</div>
+
+<!-- ==================== TRANSFORMASI GRAFIK ==================== -->
+
+<div class="section">
+
+<h2>6. Transformasi Grafik — Menggeser, Meregangkan, Memantulkan</h2>
+
+<p>
+
+<b>Transformasi grafik</b> adalah teknik mengubah grafik fungsi dasar
+menjadi grafik fungsi yang lebih kompleks. Dengan transformasi,
+kita bisa menggambar grafik tanpa harus menghitung banyak titik.
+
+</p>
+
+<p>
+
+Ada <b>tiga jenis</b> transformasi dasar:
+
+</p>
+
+<div class="summary">
+
+<b>1. Translasi (pergeseran)</b> — grafik digeser tanpa berubah bentuk.<br>
+
+<b>2. Refleksi (pencerminan)</b> — grafik dicerminkan terhadap sumbu.<br>
+
+<b>3. Dilatasi (peregangan/penyempitan)</b> — grafik diregangkan atau dimampatkan.
+
+</div>
+
+<hr>
+
+<h3>1. Translasi (Pergeseran)</h3>
+
+<div class="summary">
+
+<b>Vertikal:</b> f(x) + k<br>
+
+k > 0 → geser <b>ke atas</b> sejauh k.<br>
+
+k < 0 → geser <b>ke bawah</b> sejauh |k|.<br><br>
+
+<b>Horizontal:</b> f(x - h)<br>
+
+h > 0 → geser <b>ke kanan</b> sejauh h.<br>
+
+h < 0 → geser <b>ke kiri</b> sejauh |h|.
+
+</div>
+
+<p>
+
+<b>Mengapa f(x - h) bergeser ke kanan saat h positif?</b>
+
+</p>
+
+<p>
+
+Ini sering membingungkan. Logikanya: untuk mendapatkan nilai yang sama,
+input harus lebih besar. Misal f(x) = x² punya nilai 0 di x = 0.
+Untuk f(x - 3) = (x-3)², nilai 0 terjadi saat x - 3 = 0 → x = 3.
+Jadi grafik "terlambat" 3 satuan — efeknya bergeser ke kanan.
+
+</p>
+
+<div class="example">
+
+f(x) = x²<br><br>
+
+f(x) + 3 = x² + 3 → parabola naik 3 satuan.<br>
+
+f(x - 2) = (x-2)² → parabola geser kanan 2 satuan.<br>
+
+f(x + 1) - 4 = (x+1)² - 4 → parabola geser kiri 1, bawah 4.
+
+</div>
+
+<hr>
+
+<h3>2. Refleksi (Pencerminan)</h3>
+
+<div class="summary">
+
+<b>Terhadap sumbu X:</b> -f(x)<br>
+
+Setiap y berubah tanda → grafik dicerminkan terhadap sumbu X.<br><br>
+
+<b>Terhadap sumbu Y:</b> f(-x)<br>
+
+Setiap x berubah tanda → grafik dicerminkan terhadap sumbu Y.
+
+</div>
+
+<div class="example">
+
+f(x) = √x (hanya di x ≥ 0)<br><br>
+
+-f(x) = -√x → grafik akar dicerminkan ke bawah.<br>
+
+f(-x) = √(-x) → grafik akar dicerminkan ke kiri (domain jadi x ≤ 0).
+
+</div>
+
+<hr>
+
+<h3>3. Dilatasi (Peregangan/Penyempitan)</h3>
+
+<div class="summary">
+
+<b>Vertikal:</b> a·f(x)<br>
+
+|a| > 1 → grafik <b>diregangkan</b> vertikal (lebih curam).<br>
+
+0 < |a| < 1 → grafik <b>dimampatkan</b> vertikal (lebih landai).<br>
+
+a < 0 → ditambah refleksi terhadap sumbu X.<br><br>
+
+<b>Horizontal:</b> f(bx)<br>
+
+|b| > 1 → grafik <b>dimampatkan</b> horizontal (lebih sempit).<br>
+
+0 < |b| < 1 → grafik <b>diregangkan</b> horizontal (lebih lebar).<br>
+
+b < 0 → ditambah refleksi terhadap sumbu Y.
+
+</div>
+
+<p>
+
+<b>Perhatikan:</b> efek horizontal "berlawanan" dengan intuisi.
+b > 1 membuat grafik lebih sempit, bukan lebih lebar.
+Karena input "dipercepat" — mencapai nilai yang sama dengan x yang lebih kecil.
+
+</p>
+
+<div class="example">
+
+f(x) = x²<br><br>
+
+2f(x) = 2x² → parabola lebih sempit/curam.<br>
+
+(1/2)f(x) = (1/2)x² → parabola lebih lebar/landai.<br>
+
+f(2x) = 4x² → parabola lebih sempit (input "dipercepat").<br>
+
+f(x/2) = x²/4 → parabola lebih lebar (input "diperlambat").
+
+</div>
+
+<hr>
+
+<h3>Menggambar Grafik dengan Transformasi — Urutan Operasi</h3>
+
+<p>
+
+Saat fungsi memiliki beberapa transformasi sekaligus,
+gunakan urutan ini:
+
+</p>
+
+<div class="summary">
+
+<b>Urutan standar:</b><br>
+
+1. Translasi horizontal (dalam kurung)<br>
+
+2. Dilatasi & Refleksi horizontal<br>
+
+3. Dilatasi & Refleksi vertikal<br>
+
+4. Translasi vertikal
+
+</div>
+
+<p>
+
+<b>Atau lebih praktis:</b> ikuti aturan <b>PEMDAS terbalik</b>.
+Operasi yang paling "dekat" dengan x dikerjakan lebih dulu.
+
+</p>
+
+<h3>Contoh Lengkap</h3>
+
+<div class="example">
+
+Gambarkan g(x) = -2(x + 3)² + 5 dari f(x) = x².<br><br>
+
+<b>Langkah 1:</b> f(x + 3) = (x+3)² → geser <b>kiri</b> 3.<br>
+
+<b>Langkah 2:</b> 2(x+3)² → regangkan vertikal 2 kali.<br>
+
+<b>Langkah 3:</b> -2(x+3)² → cerminkan terhadap sumbu X.<br>
+
+<b>Langkah 4:</b> -2(x+3)² + 5 → geser <b>atas</b> 5.<br><br>
+
+<b>Hasil akhir:</b> Parabola terbalik (∩), puncak di (-3, 5), lebih curam.
+
+</div>
+
+<hr>
+
+<h3>Transformasi pada Berbagai Jenis Fungsi</h3>
+
+<div class="example">
+
+<b>Fungsi Nilai Mutlak:</b><br>
+
+f(x) = |x| → titik sudut (0,0).<br>
+
+g(x) = |x - 2| + 3 → titik sudut (2, 3).<br><br>
+
+<b>Fungsi Eksponen:</b><br>
+
+f(x) = 2ˣ → asimtot y = 0.<br>
+
+g(x) = 2ˣ⁺¹ - 3 → asimtot y = -3, geser kiri 1.<br><br>
+
+<b>Fungsi Logaritma:</b><br>
+
+f(x) = ²log x → asimtot x = 0.<br>
+
+g(x) = ²log(x - 1) + 2 → asimtot x = 1, geser atas 2.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Fungsi Kuadrat:</b> parabola. a > 0 → ∪. a < 0 → ∩. Puncak di x = -b/2a.</li>
+
+<li><b>Fungsi Rasional:</b> asimtot vertikal (penyebut = 0), asimtot horizontal (bandingkan derajat).</li>
+
+<li><b>Fungsi Eksponen:</b> domain ℝ, range (0,∞), asimtot y = 0. b > 1 naik, 0 < b < 1 turun.</li>
+
+<li><b>Fungsi Logaritma:</b> domain (0,∞), range ℝ, asimtot x = 0. Invers dari eksponen.</li>
+
+<li><b>Fungsi Nilai Mutlak:</b> grafik V. f(x) = a|x-h|+k, titik sudut (h,k).</li>
+
+<li><b>Translasi:</b> f(x)+k (vertikal), f(x-h) (horizontal, h>0 → kanan).</li>
+
+<li><b>Refleksi:</b> -f(x) (terhadap X), f(-x) (terhadap Y).</li>
+
+<li><b>Dilatasi:</b> a·f(x) (vertikal), f(bx) (horizontal, |b|>1 → sempit).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Kenali bentuk dasar.</b> Sebelum menganalisis fungsi kompleks, kenali dulu
+fungsi dasarnya: x², 1/x, aˣ, log x, |x|. Transformasi hanyalah modifikasi dari bentuk dasar.
+
+</li>
+
+<li>
+
+<b>Untuk parabola, cari puncak dulu.</b> Dari puncak, grafik bisa digambar
+dengan cepat karena simetris.
+
+</li>
+
+<li>
+
+<b>Untuk fungsi rasional, cari asimtot dulu.</b> Asimtot adalah "kerangka" grafik.
+Setelah asimtot ditemukan, tinggal tentukan di kuadran mana grafik berada.
+
+</li>
+
+<li>
+
+<b>Eksponen dan logaritma adalah pasangan invers.</b> Grafik keduanya simetris
+terhadap y = x. Ini membantu mengecek apakah gambar grafikmu benar.
+
+</li>
+
+<li>
+
+<b>Transformasi horizontal terasa "terbalik".</b> f(x+3) geser ke kiri.
+f(2x) malah menyempit. Jangan mengandalkan intuisi, pahami logikanya.
+
+</li>
+
+<li>
+
+<b>Gambar grafik dengan urutan yang benar.</b> Translasi horizontal dulu,
+baru dilatasi/refleksi, terakhir translasi vertikal.
+
+</li>
+
+<li>
+
+<b>Verifikasi dengan satu titik.</b> Setelah menggambar grafik hasil transformasi,
+uji satu titik untuk memastikan tidak ada kesalahan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar5.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar7.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
