@@ -882,4 +882,963 @@ Ini sebenarnya barisan geometri dengan a = 2, r = 3.<br>
 Rumus eksplisitnya: Uₙ = 2 · 3ⁿ⁻¹ ✅
 
 </div>
+<!-- ==================== BILANGAN KOMPLEKS ==================== -->
 
+<div class="section">
+
+<h2>6. Bilangan Kompleks — Melampaui Bilangan Real</h2>
+
+<p>
+
+Selama ini kita hidup di dunia <b>bilangan real</b> (ℝ).
+Semua bilangan yang kita pakai sehari-hari—1, -3, 2/5, √2, π—adalah bilangan real.
+
+</p>
+
+<p>
+
+Tapi ada masalah. Coba selesaikan persamaan ini:
+
+</p>
+
+<div class="example">
+
+x² + 1 = 0<br>
+
+x² = -1<br>
+
+x = ?<br><br>
+
+Tidak ada bilangan real yang kuadratnya -1.<br>
+
+2² = 4 (positif)<br>
+
+(-2)² = 4 (positif juga!)<br>
+
+0² = 0<br><br>
+
+Semua bilangan real kalau dikuadratkan hasilnya ≥ 0. Tidak mungkin negatif.
+
+</div>
+
+<p>
+
+Jadi, apakah x² + 1 = 0 tidak punya solusi? Secara teknis, di bilangan real, iya.
+Tapi matematikawan tidak suka ada persamaan yang "tidak punya solusi".
+Mereka lalu <b>menciptakan jenis bilangan baru</b>: bilangan imajiner.
+
+</p>
+
+<div class="summary">
+
+<b>Bilangan imajiner i (atau j dalam teknik):</b><br><br>
+
+i² = -1 &nbsp; atau &nbsp; i = √(-1)
+
+</div>
+
+<p>
+
+Dengan adanya i, persamaan x² + 1 = 0 kini punya solusi: x = ±i.
+
+</p>
+
+<p>
+
+<b>Bilangan kompleks</b> adalah gabungan bilangan real dan bilangan imajiner:
+
+</p>
+
+<div class="summary">
+
+<b>Bentuk kartesius:</b> z = a + bi<br><br>
+
+a = bagian real, ditulis Re(z)<br>
+
+b = bagian imajiner, ditulis Im(z)<br>
+
+a dan b adalah bilangan real.
+
+</div>
+
+<p>
+
+<b>Mengapa disebut "kompleks"?</b> Bukan karena "rumit", tapi karena
+bilangan ini adalah <b>gabungan (complex)</b> dari dua komponen: real dan imajiner.
+Seperti alamat rumah: nomor + nama jalan.
+
+</p>
+
+<hr>
+
+<h3>Memvisualisasikan Bilangan Kompleks: Bidang Kompleks</h3>
+
+<p>
+
+Bilangan real bisa digambarkan pada <b>garis bilangan</b> (1 dimensi).
+Bilangan kompleks digambarkan pada <b>bidang</b> (2 dimensi),
+yang disebut <b>bidang kompleks</b> atau <b>diagram Argand</b>.
+
+</p>
+
+<div class="summary">
+
+Sumbu horizontal = sumbu <b>real</b> (Re).<br>
+
+Sumbu vertikal = sumbu <b>imajiner</b> (Im).<br><br>
+
+Bilangan z = a + bi digambarkan sebagai <b>titik (a, b)</b> pada bidang ini.
+
+</div>
+
+<p>
+
+<b>Contoh:</b>
+
+</p>
+
+<div class="example">
+
+z = 3 + 4i → titik (3, 4) di bidang kompleks.<br>
+
+z = -2 + i → titik (-2, 1).<br>
+
+z = -3i → titik (0, -3) — imajiner murni, di sumbu vertikal.<br>
+
+z = 5 → titik (5, 0) — real murni, di sumbu horizontal.
+
+</div>
+
+<p>
+
+<b>Penting:</b> Semua bilangan real adalah bilangan kompleks juga (dengan b = 0).
+ℝ ⊂ ℂ. Bilangan real adalah subset dari bilangan kompleks.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>7. Operasi pada Bilangan Kompleks</h2>
+
+<p>
+
+Operasi pada bilangan kompleks sangat mirip dengan aljabar biasa,
+hanya perlu ingat satu aturan: <b>i² = -1</b>.
+
+</p>
+
+<hr>
+
+<h3>Penjumlahan dan Pengurangan</h3>
+
+<div class="summary">
+
+Jumlahkan/kurangkan <b>bagian real dengan real</b> dan <b>bagian imajiner dengan imajiner</b>.
+
+</div>
+
+<div class="example">
+
+(3 + 2i) + (4 + 5i) = (3+4) + (2+5)i = <b>7 + 7i</b><br><br>
+
+(6 - 3i) - (2 + i) = (6-2) + (-3-1)i = <b>4 - 4i</b><br><br>
+
+(5 + i) + (3 - 2i) - (1 + 4i) = (5+3-1) + (1-2-4)i = <b>7 - 5i</b>
+
+</div>
+
+<p>
+
+Persis seperti menjumlahkan vektor dua dimensi.
+(Bagian real adalah koordinat x, bagian imajiner adalah koordinat y.)
+
+</p>
+
+<hr>
+
+<h3>Perkalian — Hati-hati dengan i²</h3>
+
+<div class="summary">
+
+Gunakan FOIL seperti biasa, lalu ganti i² dengan -1.
+
+</div>
+
+<div class="example">
+
+(3 + 2i)(1 + 4i)<br><br>
+
+= 3·1 + 3·4i + 2i·1 + 2i·4i<br>
+
+= 3 + 12i + 2i + 8i²<br>
+
+= 3 + 14i + 8(-1) &nbsp; (karena i² = -1)<br>
+
+= 3 + 14i - 8<br>
+
+= <b>-5 + 14i</b> ✅
+
+</div>
+
+<div class="example">
+
+(2 - i)(2 + i) = 4 + 2i - 2i - i² = 4 - (-1) = <b>5</b> (real!)<br><br>
+
+(1 + i)² = (1+i)(1+i) = 1 + 2i + i² = 1 + 2i - 1 = <b>2i</b> (imajiner murni!)
+
+</div>
+
+<hr>
+
+<h3>Konjugat Kompleks — Pasangan dengan Tanda Berlawanan</h3>
+
+<div class="summary">
+
+Konjugat dari z = a + bi adalah <b>z̄ = a - bi</b>.<br><br>
+
+Cara mendapatkannya: <b>balik tanda bagian imajiner</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa konjugat penting?</b>
+
+</p>
+
+<div class="example">
+
+z = 3 + 4i → z̄ = 3 - 4i<br><br>
+
+z · z̄ = (3+4i)(3-4i) = 9 - 16i² = 9 + 16 = <b>25</b><br><br>
+
+Hasilnya selalu <b>real</b> dan <b>≥ 0</b>!<br><br>
+
+Ini karena z·z̄ = a² + b² (i² berubah jadi +b²).
+
+</div>
+
+<div class="summary">
+
+<b>Sifat penting:</b> z · z̄ = a² + b² = |z|² (selalu real dan non-negatif).
+
+</div>
+
+<hr>
+
+<h3>Pembagian — Mengapa Harus Pakai Konjugat?</h3>
+
+<p>
+
+Membagi bilangan kompleks tidak bisa langsung.
+Kita harus <b>menghilangkan i dari penyebut</b>.
+Caranya: kalikan pembilang dan penyebut dengan <b>konjugat penyebut</b>.
+
+</p>
+
+<div class="example">
+
+(3 + 2i) / (1 - i)<br><br>
+
+Konjugat penyebut (1 - i) adalah (1 + i).<br><br>
+
+Kalikan pembilang dan penyebut dengan (1 + i):<br><br>
+
+= (3+2i)(1+i) / (1-i)(1+i)<br><br>
+
+<b>Pembilang:</b> (3+2i)(1+i) = 3 + 3i + 2i + 2i² = 3 + 5i - 2 = 1 + 5i<br><br>
+
+<b>Penyebut:</b> (1-i)(1+i) = 1 - i² = 1 + 1 = 2 &nbsp; (selalu real!)<br><br>
+
+= (1 + 5i)/2<br>
+
+= <b>1/2 + (5/2)i</b> ✅
+
+</div>
+
+<p>
+
+<b>Mengapa ini berhasil?</b> Karena (a+bi)(a-bi) = a² + b², yang selalu real.
+Ini "membunuh" bagian imajiner di penyebut.
+
+</p>
+
+<div class="note">
+
+<b>💡 Intinya:</b><br>
+
+Untuk membagi bilangan kompleks, kalikan dengan konjugat penyebut.<br>
+
+Ini akan membuat penyebut menjadi bilangan real (a² + b²).<br>
+
+Lalu tinggal bagi seperti biasa.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>8. Modulus — "Panjang" dari Bilangan Kompleks</h2>
+
+<p>
+
+Di bilangan real, |x| berarti "jarak x dari 0".
+Di bilangan kompleks, <b>modulus</b> (dilambangkan |z|) juga berarti
+<b>jarak titik z dari titik asal (0,0) pada bidang kompleks</b>.
+
+</p>
+
+<div class="summary">
+
+Untuk z = a + bi:<br><br>
+
+<b>|z| = √(a² + b²)</b>
+
+<br><br>
+
+Ini adalah rumus Pythagoras! (jarak titik (a,b) dari (0,0))
+
+</div>
+
+<p>
+
+<b>Mengapa |z| = √(a² + b²)?</b>
+
+</p>
+
+<div class="example">
+
+z = 3 + 4i digambarkan sebagai titik (3, 4).<br><br>
+
+Jarak dari (0,0) ke (3,4) = √(3² + 4²) = √25 = <b>5</b>.<br><br>
+
+Jadi, |3 + 4i| = 5.
+
+</div>
+
+<div class="example">
+
+|1 + i| = √(1 + 1) = <b>√2</b><br><br>
+
+|-3 + 4i| = √(9 + 16) = <b>5</b><br><br>
+
+|5| = √(25 + 0) = <b>5</b> (modulus bilangan real = nilai mutlaknya)<br><br>
+
+|2i| = √(0 + 4) = <b>2</b> (modulus imajiner murni = |koefisien|)
+
+</div>
+
+<hr>
+
+<h3>Sifat-Sifat Modulus</h3>
+
+<div class="summary">
+
+1. |z| ≥ 0, dan |z| = 0 hanya jika z = 0.<br>
+
+2. |z₁ · z₂| = |z₁| · |z₂| &nbsp; (modulus perkalian = perkalian modulus)<br>
+
+3. |z₁ / z₂| = |z₁| / |z₂| &nbsp; (z₂ ≠ 0)<br>
+
+4. |z̄| = |z| &nbsp; (konjugat punya modulus yang sama)<br>
+
+5. z · z̄ = |z|²
+
+</div>
+
+<p>
+
+<b>Verifikasi sifat 5:</b>
+
+</p>
+
+<div class="example">
+
+z = 3 + 4i<br>
+
+z̄ = 3 - 4i<br>
+
+z · z̄ = 9 + 16 = 25<br>
+
+|z|² = 5² = 25 ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>9. Bentuk Polar — Menyatakan dengan Jarak dan Sudut</h2>
+
+<p>
+
+Selain bentuk kartesius a + bi, bilangan kompleks juga bisa dinyatakan
+dalam <b>bentuk polar</b> menggunakan <b>modulus (r)</b> dan <b>sudut (θ)</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Bentuk polar:</b> z = r(cos θ + i sin θ)
+
+<br><br>
+
+r = |z| = modulus (jarak dari titik asal)<br>
+
+θ = arg(z) = argumen (sudut dari sumbu real positif)
+
+</div>
+
+<p>
+
+<b>Mengapa bentuk polar berguna?</b> Karena perkalian, pembagian,
+dan pemangkatan bilangan kompleks jauh lebih mudah dalam bentuk polar.
+
+</p>
+
+<hr>
+
+<h3>Mengubah Kartesius ke Polar</h3>
+
+<div class="summary">
+
+Dari z = a + bi:<br><br>
+
+r = √(a² + b²)<br>
+
+θ = arctan(b/a), dengan penyesuaian kuadran
+
+</div>
+
+<p>
+
+<b>Menentukan kuadran:</b>
+
+</p>
+
+<div class="example">
+
+<b>Kuadran I (a>0, b>0):</b> θ = arctan(b/a)<br>
+
+Contoh: 1 + i → r = √2, θ = arctan(1) = 45° = π/4.<br><br>
+
+<b>Kuadran II (a<0, b>0):</b> θ = 180° + arctan(b/a) atau θ = π + arctan(b/a)<br>
+
+Contoh: -1 + i → r = √2, θ = 180° - 45° = 135° = 3π/4.<br><br>
+
+<b>Kuadran III (a<0, b<0):</b> θ = 180° + arctan(b/a) atau θ = π + arctan(b/a)<br>
+
+Contoh: -1 - i → r = √2, θ = 180° + 45° = 225° = 5π/4.<br><br>
+
+<b>Kuadran IV (a>0, b<0):</b> θ = 360° + arctan(b/a) atau θ = 2π + arctan(b/a)<br>
+
+Contoh: 1 - i → r = √2, θ = 360° - 45° = 315° = 7π/4.
+
+</div>
+
+<div class="note">
+
+<b>💡 Tips menentukan kuadran:</b><br>
+
+Gambar dulu titik (a,b) di bidang. Lihat di kuadran mana dia berada.<br>
+
+Jangan langsung pakai arctan tanpa memikirkan kuadran!<br>
+
+Kalkulator arctan hanya memberikan sudut antara -90° dan 90° (kuadran I dan IV).
+
+</div>
+
+<hr>
+
+<h3>Mengubah Polar ke Kartesius</h3>
+
+<div class="summary">
+
+a = r cos θ<br>
+
+b = r sin θ
+
+</div>
+
+<div class="example">
+
+z = 2(cos 60° + i sin 60°) = 2(1/2 + i√3/2) = <b>1 + i√3</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Perkalian dalam Bentuk Polar — Keindahan Mulai Terlihat</h3>
+
+<div class="summary">
+
+Jika z₁ = r₁(cos θ₁ + i sin θ₁) dan z₂ = r₂(cos θ₂ + i sin θ₂), maka:<br><br>
+
+<b>z₁ · z₂ = r₁r₂ [cos(θ₁ + θ₂) + i sin(θ₁ + θ₂)]</b>
+
+<br><br>
+
+Modulus <b>dikalikan</b>. Argumen <b>dijumlahkan</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar?</b>
+
+</p>
+
+<div class="example">
+
+z₁z₂ = r₁(cos θ₁ + i sin θ₁) × r₂(cos θ₂ + i sin θ₂)<br>
+
+= r₁r₂ [cos θ₁ cos θ₂ + i cos θ₁ sin θ₂ + i sin θ₁ cos θ₂ + i² sin θ₁ sin θ₂]<br>
+
+= r₁r₂ [(cos θ₁ cos θ₂ - sin θ₁ sin θ₂) + i(cos θ₁ sin θ₂ + sin θ₁ cos θ₂)]<br><br>
+
+Gunakan identitas trigonometri:<br>
+
+cos(A+B) = cos A cos B - sin A sin B<br>
+
+sin(A+B) = sin A cos B + cos A sin B<br><br>
+
+= r₁r₂ [cos(θ₁ + θ₂) + i sin(θ₁ + θ₂)] ✅
+
+</div>
+
+<p>
+
+Ini sangat elegan! Perkalian bilangan kompleks = <b>rotasi</b> (argumen dijumlahkan)
+dan <b>dilatasi</b> (modulus dikalikan).
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>10. Rumus De Moivre — Pangkat Jadi Sangat Mudah</h2>
+
+<p>
+
+Dari sifat perkalian di bentuk polar, kita bisa langsung menurunkan
+<b>Rumus De Moivre</b> untuk menghitung pangkat bilangan kompleks.
+
+</p>
+
+<div class="summary">
+
+<b>Rumus De Moivre:</b><br><br>
+
+[r(cos θ + i sin θ)]ⁿ = <b>rⁿ (cos nθ + i sin nθ)</b>
+
+<br><br>
+
+Modulus dipangkatkan n. Argumen dikali n.
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar?</b>
+
+Ini adalah generalisasi dari sifat perkalian. Mengalikan z dengan dirinya sendiri
+n kali: modulusnya dikali n kali → rⁿ, argumennya dijumlah n kali → nθ.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Pangkat Sederhana</h3>
+
+<div class="example">
+
+Hitung (1 + i)⁴.<br><br>
+
+<b>Langkah 1:</b> Ubah ke bentuk polar.<br>
+
+1 + i → r = √(1+1) = √2, θ = arctan(1) = 45° = π/4.<br><br>
+
+<b>Langkah 2:</b> Terapkan De Moivre.<br>
+
+(1 + i)⁴ = (√2)⁴ [cos(4·π/4) + i sin(4·π/4)]<br>
+
+= 4 [cos π + i sin π]<br><br>
+
+<b>Langkah 3:</b> Evaluasi.<br>
+
+cos π = -1, sin π = 0<br>
+
+= 4(-1 + 0) = <b>-4</b> ✅<br><br>
+
+<b>Verifikasi manual:</b><br>
+
+(1+i)² = 1 + 2i + i² = 2i<br>
+
+(1+i)⁴ = (2i)² = 4i² = -4 ✅ Cocok!
+
+</div>
+
+<hr>
+
+<h3>Contoh 2: Pangkat Tinggi yang Sulit Dihitung Manual</h3>
+
+<div class="example">
+
+Hitung (√3 + i)¹⁰.<br><br>
+
+<b>Langkah 1:</b> Ubah ke bentuk polar.<br>
+
+√3 + i → r = √(3+1) = 2, θ = arctan(1/√3) = 30° = π/6.<br><br>
+
+<b>Langkah 2:</b> De Moivre.<br>
+
+(√3 + i)¹⁰ = 2¹⁰ [cos(10·π/6) + i sin(10·π/6)]<br>
+
+= 1024 [cos(5π/3) + i sin(5π/3)]<br><br>
+
+<b>Langkah 3:</b> Evaluasi.<br>
+
+5π/3 = 300°. cos 300° = 1/2, sin 300° = -√3/2.<br><br>
+
+= 1024(1/2 - i√3/2)<br>
+
+= <b>512 - 512i√3</b> ✅<br><br>
+
+Coba hitung manual (√3 + i)¹⁰ dengan mengalikan 10 kali. Tidak praktis, kan?
+
+</div>
+
+<hr>
+
+<h3>Contoh 3: De Moivre untuk Sudut Negatif</h3>
+
+<div class="example">
+
+Hitung (1 - i)⁻³.<br><br>
+
+<b>Langkah 1:</b> 1 - i → r = √2, θ = -45° = -π/4 (kuadran IV).<br><br>
+
+<b>Langkah 2:</b> De Moivre untuk pangkat negatif.<br>
+
+(1 - i)⁻³ = (√2)⁻³ [cos(-3·π/4) + i sin(-3·π/4)]<br>
+
+= (1/(2√2)) [cos(-3π/4) + i sin(-3π/4)]<br><br>
+
+cos(-3π/4) = -√2/2, sin(-3π/4) = -√2/2.<br><br>
+
+= (1/(2√2))(-√2/2 - i√2/2)<br>
+
+= (1/(2√2)) · (-√2/2)(1 + i)<br>
+
+= (-1/4)(1 + i)<br>
+
+= <b>-1/4 - i/4</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>11. Akar-Akar Kompleks — Mencari ⁿ√z</h2>
+
+<p>
+
+Di bilangan real, √4 = 2 (satu jawaban positif).
+Tapi di bilangan kompleks, setiap bilangan (kecuali 0) punya <b>n akar ke-n yang berbeda</b>.
+
+</p>
+
+<p>
+
+<b>Mengapa?</b> Karena persamaan zⁿ = w adalah persamaan polinomial derajat n.
+Menurut Teorema Dasar Aljabar, persamaan derajat n punya tepat n solusi di bilangan kompleks.
+
+</p>
+
+<div class="summary">
+
+Untuk mencari ⁿ√z (akar pangkat n dari z = r(cos θ + i sin θ)):<br><br>
+
+zₖ = r^(1/n) [cos((θ + 2πk)/n) + i sin((θ + 2πk)/n)]
+
+<br><br>
+
+untuk <b>k = 0, 1, 2, ..., n-1</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu?</b>
+
+</p>
+
+<p>
+
+Kita mencari w sedemikian sehingga wⁿ = z.
+Misalkan w = s(cos φ + i sin φ).
+Dengan De Moivre: wⁿ = sⁿ(cos nφ + i sin nφ).
+Ini harus sama dengan z = r(cos θ + i sin θ).
+
+</p>
+
+<p>
+
+Maka: sⁿ = r → s = r^(1/n) (modulus diakarkan seperti biasa).<br>
+
+nφ = θ + 2πk → φ = (θ + 2πk)/n (sudut dibagi, ditambah rotasi penuh).
+
+</p>
+
+<p>
+
+Kenapa ada +2πk? Karena cos dan sin periodik dengan periode 2π.
+Menambahkan 2πk tidak mengubah nilai cos dan sin, tapi saat dibagi n,
+menghasilkan sudut yang berbeda-beda. Inilah yang menghasilkan n akar berbeda.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1: Akar Pangkat 3 dari 8 (∛8)</h3>
+
+<div class="example">
+
+Cari semua akar pangkat tiga dari 8.<br><br>
+
+z = 8 = 8 + 0i → r = 8, θ = 0.<br><br>
+
+r^(1/3) = 8^(1/3) = 2.<br><br>
+
+zₖ = 2 [cos((0 + 2πk)/3) + i sin((0 + 2πk)/3)]<br>
+
+= 2 [cos(2πk/3) + i sin(2πk/3)]<br><br>
+
+<b>k = 0:</b> 2(cos 0 + i sin 0) = 2(1 + 0) = <b>2</b> (akar real yang kita kenal)<br><br>
+
+<b>k = 1:</b> 2(cos 2π/3 + i sin 2π/3) = 2(-1/2 + i√3/2) = <b>-1 + i√3</b><br><br>
+
+<b>k = 2:</b> 2(cos 4π/3 + i sin 4π/3) = 2(-1/2 - i√3/2) = <b>-1 - i√3</b><br><br>
+
+Ketiga akar ini terletak pada lingkaran berjari-jari 2,
+terpisah 120° satu sama lain. Membentuk segitiga sama sisi!
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> (-1 + i√3)³ = ?<br>
+
+Dengan De Moivre: r=2, θ=120°. (2(cos 120°+i sin 120°))³ = 8(cos 360°+i sin 360°) = 8(1+0) = 8. ✅
+
+</p>
+
+<hr>
+
+<h3>Contoh 2: Akar Pangkat 4 dari -16</h3>
+
+<div class="example">
+
+Cari semua akar pangkat empat dari -16.<br><br>
+
+z = -16 = -16 + 0i. Dalam bentuk polar:<br>
+
+r = 16, θ = 180° = π (karena -16 terletak di sumbu real negatif).<br><br>
+
+r^(1/4) = 16^(1/4) = 2.<br><br>
+
+zₖ = 2 [cos((π + 2πk)/4) + i sin((π + 2πk)/4)]<br>
+
+= 2 [cos(π/4 + πk/2) + i sin(π/4 + πk/2)]<br><br>
+
+<b>k = 0:</b> 2(cos π/4 + i sin π/4) = 2(√2/2 + i√2/2) = <b>√2 + i√2</b><br><br>
+
+<b>k = 1:</b> 2(cos 3π/4 + i sin 3π/4) = 2(-√2/2 + i√2/2) = <b>-√2 + i√2</b><br><br>
+
+<b>k = 2:</b> 2(cos 5π/4 + i sin 5π/4) = 2(-√2/2 - i√2/2) = <b>-√2 - i√2</b><br><br>
+
+<b>k = 3:</b> 2(cos 7π/4 + i sin 7π/4) = 2(√2/2 - i√2/2) = <b>√2 - i√2</b><br><br>
+
+Keempat akar membentuk <b>persegi</b> pada bidang kompleks!
+
+</div>
+
+<hr>
+
+<h3>Pola Geometris yang Indah</h3>
+
+<div class="summary">
+
+Akar-akar pangkat n dari suatu bilangan kompleks selalu membentuk
+<b>poligon beraturan (n-gon)</b> pada bidang kompleks.<br><br>
+
+n=2: dua titik berseberangan (garis).<br>
+
+n=3: segitiga sama sisi.<br>
+
+n=4: persegi.<br>
+
+n=5: pentagon beraturan.<br>
+
+n=6: heksagon beraturan.<br>
+
+...dan seterusnya.
+
+</div>
+
+<p>
+
+Semua akar terletak pada <b>lingkaran</b> dengan jari-jari r^(1/n),
+terpisah dengan sudut yang sama (360°/n atau 2π/n radian).
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Barisan:</b> daftar bilangan. <b>Deret:</b> jumlah suku-suku barisan.</li>
+
+<li><b>Aritmetika:</b> selisih tetap b. Uₙ = a+(n-1)b. Sₙ = n/2(a+Uₙ).</li>
+
+<li><b>Geometri:</b> rasio tetap r. Uₙ = a·rⁿ⁻¹. Sₙ = a(1-rⁿ)/(1-r).</li>
+
+<li><b>Tak hingga:</b> S∞ = a/(1-r), syarat |r| < 1.</li>
+
+<li><b>Rekurensi:</b> Uₙ ditentukan dari suku sebelumnya (Fibonacci: Fₙ = Fₙ₋₁+Fₙ₋₂).</li>
+
+<li><b>i² = -1.</b> Bilangan kompleks: z = a + bi. Konjugat: z̄ = a - bi.</li>
+
+<li><b>Modulus:</b> |z| = √(a²+b²). <b>Pembagian:</b> kali konjugat penyebut.</li>
+
+<li><b>Bentuk polar:</b> z = r(cos θ + i sin θ). r = |z|, θ = arg(z).</li>
+
+<li><b>De Moivre:</b> [r(cos θ+i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ).</li>
+
+<li><b>Akar kompleks:</b> zₖ = r^(1/n)[cos((θ+2πk)/n) + i sin((θ+2πk)/n)], k=0,...,n-1.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Kenali jenis deret dari perubahan antar suku.</b><br>
+
+Selisih sama → aritmetika. Rasio sama → geometri. Jangan tertukar!
+
+</li>
+
+<li>
+
+<b>Rumus jumlah aritmetika: ingat trik Gauss.</b><br>
+
+Pasangkan suku pertama dan terakhir. Kalau lupa rumus, kamu bisa turunkan lagi.
+
+</li>
+
+<li>
+
+<b>Rumus jumlah geometri: ingat trik eliminasi.</b><br>
+
+Kalikan Sₙ dengan r, lalu kurangkan. Suku tengah saling menghapus.
+
+</li>
+
+<li>
+
+<b>Untuk deret tak hingga, selalu cek |r| dulu.</b><br>
+
+Kalau |r| ≥ 1, jangan pakai rumus S∞—deretnya divergen.
+
+</li>
+
+<li>
+
+<b>Desimal berulang = deret geometri tak hingga.</b><br>
+
+0,444... = 4/9. 0,123123... = 123/999. Ini cara cepat mengubahnya.
+
+</li>
+
+<li>
+
+<b>i² = -1 adalah satu-satunya aturan baru.</b><br>
+
+Selebihnya, operasi bilangan kompleks sama persis seperti aljabar biasa.
+
+</li>
+
+<li>
+
+<b>Pembagian kompleks: konjugat adalah kunci.</b><br>
+
+(a+bi)/(c+di) → kalikan pembilang dan penyebut dengan (c-di).
+
+</li>
+
+<li>
+
+<b>Bentuk polar untuk perkalian dan pangkat.</b><br>
+
+Perkalian: modulus dikali, argumen dijumlah.<br>
+
+De Moivre: modulus dipangkat, argumen dikali n.
+
+</li>
+
+<li>
+
+<b>Akar pangkat n: ingat +2πk.</b><br>
+
+Ini sumber dari banyak akar. Tanpa +2πk, kamu hanya dapat satu akar.
+
+</li>
+
+<li>
+
+<b>Akar-akar kompleks selalu simetris.</b><br>
+
+Mereka membentuk poligon beraturan. Gunakan ini untuk mengecek jawabanmu.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar7.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar9.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
