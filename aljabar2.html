@@ -1,1 +1,1586 @@
 
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aljabar Part 2 | Persamaan Linear, Kuadrat & Kubik</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>📐 ALJABAR</h1>
+
+<p>Part 2 • Persamaan Linear, Kuadrat & Kubik</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Bab 1, kita sudah belajar memanipulasi ekspresi aljabar:
+menjumlahkan, mengalikan, memfaktorkan, dan menyederhanakan.
+
+</p>
+
+<p>
+
+Sekarang kita masuk ke <b>persamaan</b>—inti dari aljabar.
+Persamaan adalah kalimat matematika yang menyatakan bahwa
+<b>dua ekspresi bernilai sama</b>, ditandai dengan tanda <b>=</b>.
+
+</p>
+
+<p>
+
+Tujuan utama kita: <b>mencari semua nilai variabel yang membuat persamaan itu benar</b>.
+Nilai itu disebut <b>solusi</b> atau <b>akar</b> persamaan.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membahas tiga jenis persamaan polinomial
+secara bertahap: <b>linear</b> (pangkat 1), <b>kuadrat</b> (pangkat 2), dan <b>kubik</b> (pangkat 3).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami konsep persamaan, solusi, dan himpunan penyelesaian.</li>
+
+<li>Mampu menyelesaikan persamaan linear: 1 variabel, 2 variabel, dan 3 variabel atau lebih.</li>
+
+<li>Menguasai tiga metode menyelesaikan persamaan kuadrat: faktorisasi, rumus ABC, dan melengkapkan kuadrat.</li>
+
+<li>Memahami makna diskriminan dan hubungannya dengan jenis akar.</li>
+
+<li>Memahami hubungan jumlah dan hasil kali akar dengan koefisien.</li>
+
+<li>Mengenal persamaan kubik dan metode dasar menyelesaikannya.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== KONSEP DASAR PERSAMAAN ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Persamaan? — Konsep Paling Mendasar</h2>
+
+<p>
+
+<b>Persamaan</b> adalah kalimat matematika yang mengandung tanda <b>=</b>
+dan menyatakan bahwa <b>ruas kiri sama nilainya dengan ruas kanan</b>.
+
+</p>
+
+<div class="example">
+
+2x + 3 = 7<br>
+
+x² - 5x + 6 = 0<br>
+
+3y - 1 = 2y + 5
+
+</div>
+
+<p>
+
+<b>Solusi</b> atau <b>akar</b> adalah nilai variabel yang membuat persamaan menjadi
+<b>pernyataan yang benar</b>.
+
+</p>
+
+<p>
+
+<b>Contoh:</b> Untuk 2x + 3 = 7, coba x = 2:<br>
+2(2) + 3 = 4 + 3 = 7. Ruas kiri = ruas kanan → <b>benar</b>. Jadi x = 2 adalah solusi.
+
+</p>
+
+<p>
+
+Coba x = 3: 2(3) + 3 = 9. Ruas kiri ≠ ruas kanan → <b>bukan solusi</b>.
+
+</p>
+
+<hr>
+
+<h3>Prinsip Dasar Menyelesaikan Persamaan</h3>
+
+<div class="summary">
+
+<b>Apa pun yang kamu lakukan pada satu ruas,
+lakukan hal yang sama pada ruas lainnya.</b>
+
+<br><br>
+
+Tujuannya: <b>mengisolasi variabel</b> (membuat variabel sendirian di satu ruas).
+
+</div>
+
+<p>
+
+<b>Mengapa prinsip ini benar?</b>
+
+</p>
+
+<p>
+
+Bayangkan sebuah timbangan yang seimbang.
+Jika kamu menambah beban 5 kg di sisi kiri,
+kamu harus menambah beban 5 kg juga di sisi kanan agar tetap seimbang.
+
+Begitu juga dengan persamaan: jika dua hal sama,
+lalu kita melakukan operasi yang <b>sama</b> pada keduanya,
+hasilnya tetap sama.
+
+</p>
+
+<p>
+
+<b>Operasi yang diperbolehkan:</b>
+
+</p>
+
+<ul>
+
+<li>Menambah atau mengurangi bilangan yang sama di kedua ruas.</li>
+
+<li>Mengalikan atau membagi dengan bilangan yang sama (≠ 0) di kedua ruas.</li>
+
+<li>Mengkuadratkan atau mengakarkan kedua ruas (dengan hati-hati).</li>
+
+</ul>
+
+</div>
+
+<!-- ==================== PERSAMAAN LINEAR SATU VARIABEL ==================== -->
+
+<div class="section">
+
+<h2>2. Persamaan Linear Satu Variabel</h2>
+
+<p>
+
+<b>Persamaan linear</b> adalah persamaan yang variabelnya berpangkat <b>1</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Bentuk umum:</b> ax + b = c
+
+<br>
+
+dengan a, b, c adalah konstanta dan <b>a ≠ 0</b>.
+
+</div>
+
+<p>
+
+Persamaan linear satu variabel selalu punya <b>tepat satu solusi</b>.
+
+</p>
+
+<h3>Strategi: Isolasi Variabel</h3>
+
+<p>
+
+Gunakan operasi balikan (invers) secara berurutan
+sampai variabel sendirian di satu ruas.
+
+</p>
+
+<div class="example">
+
+Selesaikan: 3x - 7 = 14<br><br>
+
+<b>Langkah 1:</b> -7 "menempel" pada 3x. Balikan dari -7 adalah +7.<br>
+
+Tambahkan 7 ke kedua ruas:<br>
+
+3x - 7 + 7 = 14 + 7<br>
+
+3x = 21<br><br>
+
+<b>Langkah 2:</b> 3 "menempel" sebagai perkalian pada x. Balikan dari ×3 adalah ÷3.<br>
+
+Bagi kedua ruas dengan 3:<br>
+
+3x ÷ 3 = 21 ÷ 3<br>
+
+<b>x = 7</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> 3(7) - 7 = 21 - 7 = 14. Cocok!
+
+</p>
+
+<hr>
+
+<h3>Kasus: Variabel di Kedua Ruas</h3>
+
+<p>
+
+Strategi: kumpulkan semua suku bervariabel ke satu ruas,
+semua konstanta ke ruas lainnya.
+
+</p>
+
+<div class="example">
+
+5x + 2 = 3x + 10<br><br>
+
+<b>Langkah 1:</b> Kurangi 3x dari kedua ruas.<br>
+
+5x - 3x + 2 = 3x - 3x + 10<br>
+
+2x + 2 = 10<br><br>
+
+<b>Langkah 2:</b> Kurangi 2 dari kedua ruas.<br>
+
+2x = 8<br><br>
+
+<b>Langkah 3:</b> Bagi 2.<br>
+
+<b>x = 4</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b> 5(4) + 2 = 22. 3(4) + 10 = 22. Sama!
+
+</p>
+
+<hr>
+
+<h3>Kasus: Persamaan dengan Pecahan</h3>
+
+<p>
+
+Strategi: kalikan kedua ruas dengan <b>KPK dari semua penyebut</b>
+untuk menghilangkan pecahan.
+
+</p>
+
+<div class="example">
+
+x/3 + 1/2 = 5/6<br><br>
+
+KPK dari 3, 2, dan 6 adalah <b>6</b>.<br><br>
+
+Kalikan setiap suku dengan 6:<br>
+
+6·(x/3) + 6·(1/2) = 6·(5/6)<br>
+
+2x + 3 = 5<br><br>
+
+2x = 2<br>
+
+<b>x = 1</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus: Persamaan dengan Kurung</h3>
+
+<p>
+
+Strategi: buka kurung dulu dengan sifat distributif, lalu selesaikan.
+
+</p>
+
+<div class="example">
+
+2(3x - 1) = 4(x + 2)<br><br>
+
+6x - 2 = 4x + 8<br>
+
+6x - 4x = 8 + 2<br>
+
+2x = 10<br>
+
+<b>x = 5</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== PERSAMAAN LINEAR DUA VARIABEL ==================== -->
+
+<div class="section">
+
+<h2>3. Persamaan Linear Dua Variabel</h2>
+
+<p>
+
+Bentuk umum:
+
+</p>
+
+<div class="summary">
+
+ax + by = c
+
+<br>
+
+dengan a, b, c konstanta, a dan b tidak keduanya nol.
+
+</div>
+
+<p>
+
+<b>Satu persamaan</b> dengan dua variabel memiliki <b>tak hingga banyak solusi</b>.
+Contoh: x + y = 5. Solusinya: (0,5), (1,4), (2,3), (2.5, 2.5), (10,-5), ... tak terhitung.
+
+</p>
+
+<p>
+
+Untuk mendapatkan <b>solusi tunggal</b>, kita butuh <b>dua persamaan</b>
+yang saling independen. Ini disebut <b>Sistem Persamaan Linear Dua Variabel (SPLDV)</b>.
+
+</p>
+
+<div class="summary">
+
+Sistem: ax + by = c dan dx + ey = f<br>
+
+Solusi adalah pasangan (x,y) yang memenuhi <b>kedua</b> persamaan sekaligus.
+
+</div>
+
+<hr>
+
+<h3>Metode 1: Substitusi</h3>
+
+<p>
+
+<b>Ide:</b> Nyatakan satu variabel dalam bentuk variabel lain dari satu persamaan,
+lalu masukkan ke persamaan satunya.
+
+</p>
+
+<div class="example">
+
+x + y = 7 ...(1)<br>
+
+2x - y = 5 ...(2)<br><br>
+
+Dari (1): <b>y = 7 - x</b><br><br>
+
+Substitusi ke (2):<br>
+
+2x - (7 - x) = 5<br>
+
+2x - 7 + x = 5<br>
+
+3x = 12<br>
+
+<b>x = 4</b><br><br>
+
+Substitusi balik: y = 7 - 4 = <b>3</b><br><br>
+
+<b>Solusi: (4, 3)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 2: Eliminasi</h3>
+
+<p>
+
+<b>Ide:</b> Samakan koefisien salah satu variabel,
+lalu jumlahkan atau kurangkan kedua persamaan
+untuk <b>menghilangkan</b> variabel itu.
+
+</p>
+
+<div class="example">
+
+x + y = 7 ...(1)<br>
+
+2x - y = 5 ...(2)<br><br>
+
+Koefisien y di (1) adalah +1, di (2) adalah -1.<br>
+
+Jumlahkan (1) dan (2):<br>
+
+(x + y) + (2x - y) = 7 + 5<br>
+
+3x = 12<br>
+
+<b>x = 4</b><br><br>
+
+Substitusi ke (1):<br>
+
+4 + y = 7 → <b>y = 3</b><br><br>
+
+<b>Solusi: (4, 3)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Metode 3: Eliminasi dengan Koefisien Berbeda</h3>
+
+<p>
+
+Kalau koefisiennya tidak bisa langsung dieliminasi,
+samakan dulu dengan mengalikan persamaan dengan bilangan yang sesuai.
+
+</p>
+
+<div class="example">
+
+3x + 2y = 16 ...(1)<br>
+
+2x - y = 3 &nbsp;...(2)<br><br>
+
+<b>Eliminasi y:</b><br>
+
+(1): 3x + 2y = 16<br>
+
+(2)×2: 4x - 2y = 6<br><br>
+
+Jumlahkan: 7x = 22 → x = 22/7<br><br>
+
+Ini kurang praktis. Coba eliminasi x dulu:<br>
+
+(1)×2: 6x + 4y = 32<br>
+
+(2)×3: 6x - 3y = 9<br><br>
+
+Kurangkan: (6x+4y) - (6x-3y) = 32 - 9<br>
+
+7y = 23 → y = 23/7<br><br>
+
+Substitusi balik: x = 16/7<br><br>
+
+<b>Solusi: (16/7, 23/7)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kapan Pakai Substitusi vs Eliminasi?</h3>
+
+<ul>
+
+<li>
+
+<b>Substitusi</b> lebih praktis jika <b>salah satu variabel sudah terisolasi</b>
+atau koefisiennya 1 (misal: y = 2x + 3).
+
+</li>
+
+<li>
+
+<b>Eliminasi</b> lebih praktis jika <b>koefisien kedua variabel bisa disamakan
+dengan mudah</b>.
+
+</li>
+
+<li>
+
+Keduanya selalu menghasilkan jawaban yang sama.
+Pilih yang lebih nyaman untuk soal yang dihadapi.
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- ==================== PERSAMAAN LINEAR TIGA VARIABEL ==================== -->
+
+<div class="section">
+
+<h2>4. Persamaan Linear Tiga Variabel (atau Lebih)</h2>
+
+<p>
+
+Di dunia nyata, banyak masalah yang melibatkan <b>3 variabel atau lebih</b>.
+
+</p>
+
+<p>
+
+<b>Contoh kasus:</b>
+Sebuah toko menjual tiga jenis paket alat tulis:
+
+</p>
+
+<ul>
+
+<li>Paket A: 2 buku, 1 pena, 1 pensil → Rp25.000</li>
+
+<li>Paket B: 1 buku, 3 pena, 2 pensil → Rp30.000</li>
+
+<li>Paket C: 3 buku, 2 pena, 1 pensil → Rp35.000</li>
+
+</ul>
+
+<p>
+
+Berapa harga satuan masing-masing barang?
+
+</p>
+
+<p>
+
+<b>Aturan main:</b> Untuk n variabel yang tidak diketahui,
+kita butuh <b>minimal n persamaan</b> yang saling independen.
+Untuk 3 variabel → butuh 3 persamaan. Untuk 4 variabel → butuh 4, dan seterusnya.
+
+</p>
+
+<h3>Metode Eliminasi-Substitusi Bertahap</h3>
+
+<p>
+
+Strateginya: <b>kurangi jumlah variabel secara bertahap</b>.
+
+</p>
+
+<p>
+
+Dari 3 persamaan dengan 3 variabel → eliminasi satu variabel
+→ dapat 2 persamaan dengan 2 variabel → selesaikan dengan metode biasa
+→ substitusi balik untuk dapat variabel yang tersisa.
+
+</p>
+
+<div class="example">
+
+Selesaikan sistem:<br><br>
+
+x + y + z = 6 &nbsp;...(1)<br>
+
+2x - y + z = 3 &nbsp;...(2)<br>
+
+x + 2y - z = 2 &nbsp;...(3)<br><br>
+
+<b>Tahap 1: Eliminasi z dari (1) dan (2).</b><br>
+
+(1) - (2): (x+y+z) - (2x-y+z) = 6 - 3<br>
+
+x + y + z - 2x + y - z = 3<br>
+
+-x + 2y = 3<br>
+
+<b>x - 2y = -3</b> ...(4) &nbsp; (kali -1)<br><br>
+
+<b>Tahap 2: Eliminasi z dari (1) dan (3).</b><br>
+
+(1) + (3): (x+y+z) + (x+2y-z) = 6 + 2<br>
+
+2x + 3y = 8 ...(5)<br><br>
+
+<b>Tahap 3: Sekarang kita punya 2 persamaan 2 variabel.</b><br>
+
+x - 2y = -3 ...(4)<br>
+
+2x + 3y = 8 ...(5)<br><br>
+
+Dari (4): <b>x = 2y - 3</b><br><br>
+
+Substitusi ke (5):<br>
+
+2(2y - 3) + 3y = 8<br>
+
+4y - 6 + 3y = 8<br>
+
+7y = 14<br>
+
+<b>y = 2</b><br><br>
+
+<b>Tahap 4: Substitusi balik.</b><br>
+
+x = 2(2) - 3 = 4 - 3 = <b>1</b><br><br>
+
+Dari (1): 1 + 2 + z = 6 → <b>z = 3</b><br><br>
+
+<b>Solusi: x = 1, y = 2, z = 3</b> ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi:</b><br>
+
+(1): 1 + 2 + 3 = 6 ✅<br>
+
+(2): 2(1) - 2 + 3 = 2 - 2 + 3 = 3 ✅<br>
+
+(3): 1 + 2(2) - 3 = 1 + 4 - 3 = 2 ✅
+
+</p>
+
+<hr>
+
+<h3>Untuk 4 Variabel atau Lebih</h3>
+
+<p>
+
+Prinsipnya sama: eliminasi bertahap. Tapi semakin banyak variabel,
+semakin panjang dan rawan kesalahan.
+
+</p>
+
+<p>
+
+Untuk sistem besar (4 variabel atau lebih),
+ada metode yang jauh lebih efisien:
+
+</p>
+
+<div class="note">
+
+<b>💡 Metode Matriks:</b>
+
+Dengan matriks, kita bisa menyelesaikan sistem puluhan variabel
+secara sistematis menggunakan:
+
+<ul>
+
+<li><b>Eliminasi Gauss / Gauss-Jordan</b></li>
+
+<li><b>Aturan Cramer</b> (menggunakan determinan)</li>
+
+<li><b>Invers matriks</b></li>
+
+</ul>
+
+Ini akan dibahas tuntas di <b>Aljabar 9: Matriks</b>.
+
+</div>
+
+<p>
+
+Untuk 2-3 variabel, eliminasi manual masih sangat praktis.
+Untuk 4+, matriks adalah penyelamat.
+
+</p>
+
+</div>
+
+<!-- ==================== PERSAMAAN KUADRAT ==================== -->
+
+<div class="section">
+
+<h2>5. Persamaan Kuadrat — Definisi dan Bentuk Umum</h2>
+
+<p>
+
+<b>Persamaan kuadrat</b> adalah persamaan yang variabel tertingginya berpangkat <b>2</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Bentuk umum:</b> ax² + bx + c = 0
+
+<br>
+
+dengan a, b, c adalah konstanta dan <b>a ≠ 0</b>.
+
+</div>
+
+<p>
+
+<b>Kenapa a tidak boleh 0?</b>
+
+Kalau a = 0, suku ax² hilang dan persamaannya jadi bx + c = 0,
+yang merupakan persamaan linear, bukan kuadrat.
+
+</p>
+
+<p>
+
+Berbeda dengan persamaan linear yang selalu punya tepat 1 solusi,
+persamaan kuadrat bisa memiliki <b>0, 1, atau 2 solusi real</b>.
+
+</p>
+
+<p>
+
+Kita akan membahas <b>tiga metode</b> menyelesaikan persamaan kuadrat.
+Ketiganya menghasilkan jawaban yang sama. Pilih yang paling nyaman.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>6. Metode 1: Faktorisasi</h2>
+
+<p>
+
+<b>Ide:</b> Ubah ax² + bx + c = 0 menjadi (px + q)(rx + s) = 0,
+lalu gunakan sifat fundamental:
+
+</p>
+
+<div class="summary">
+
+<b>Jika A × B = 0, maka A = 0 atau B = 0</b>
+
+</div>
+
+<p>
+
+<b>Mengapa sifat ini benar?</b>
+
+Satu-satunya cara perkalian dua bilangan real menghasilkan nol
+adalah jika <b>minimal salah satunya nol</b>.
+Tidak mungkin dua bilangan bukan nol dikalikan menghasilkan nol.
+
+</p>
+
+<h3>Kasus 1: a = 1 (x² + bx + c = 0)</h3>
+
+<p>
+
+Cari dua bilangan yang:<br>
+<b>Jumlahnya = b</b> (koefisien x)<br>
+<b>Hasil kalinya = c</b> (konstanta)
+
+</p>
+
+<div class="example">
+
+Selesaikan: x² + 5x + 6 = 0<br><br>
+
+Cari dua bilangan: jumlah = 5, hasil kali = 6<br>
+
+→ <b>2 dan 3</b><br><br>
+
+Faktorkan: (x + 2)(x + 3) = 0<br><br>
+
+x + 2 = 0 → <b>x = -2</b><br>
+
+x + 3 = 0 → <b>x = -3</b><br><br>
+
+<b>Solusi: x = -2 atau x = -3</b> ✅
+
+</div>
+
+<h3>Kasus 2: a ≠ 1 (Metode AC)</h3>
+
+<p>
+
+Gunakan metode AC yang sudah dipelajari di Bab 1.
+
+</p>
+
+<div class="example">
+
+Selesaikan: 2x² + 7x + 3 = 0<br><br>
+
+a = 2, c = 3 → a×c = 6<br>
+
+Cari dua bilangan: jumlah = 7, hasil kali = 6 → <b>6 dan 1</b><br><br>
+
+Pecah 7x menjadi 6x + x:<br>
+
+2x² + 6x + x + 3 = 0<br>
+
+2x(x + 3) + 1(x + 3) = 0<br>
+
+(2x + 1)(x + 3) = 0<br><br>
+
+2x + 1 = 0 → x = <b>-1/2</b><br>
+
+x + 3 = 0 → x = <b>-3</b><br><br>
+
+<b>Solusi: x = -3 atau x = -1/2</b> ✅
+
+</div>
+
+<h3>Kasus 3: Selisih Kuadrat</h3>
+
+<div class="example">
+
+x² - 25 = 0<br>
+
+(x + 5)(x - 5) = 0<br>
+
+<b>x = -5 atau x = 5</b> ✅<br><br>
+
+4x² - 9 = 0<br>
+
+(2x + 3)(2x - 3) = 0<br>
+
+<b>x = -3/2 atau x = 3/2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kelebihan dan Kekurangan Faktorisasi</h3>
+
+<p>
+
+<b>✅ Cepat</b> kalau faktornya sederhana dan mudah ditebak.<br>
+
+<b>❌ Tidak semua</b> persamaan kuadrat bisa difaktorkan dengan bilangan bulat.
+Untuk itu, kita perlu metode lain.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>7. Metode 2: Rumus ABC (Rumus Kuadrat)</h2>
+
+<p>
+
+Ini adalah <b>metode universal</b> yang selalu berhasil
+untuk persamaan kuadrat apapun, bahkan yang tidak bisa difaktorkan.
+
+</p>
+
+<div class="summary">
+
+<b>Rumus ABC:</b><br><br>
+
+x = [-b ± √(b² - 4ac)] / 2a
+
+</div>
+
+<p>
+
+<b>Dari mana rumus ini?</b>
+
+Rumus ABC berasal dari metode melengkapkan kuadrat (dibahas setelah ini).
+Untuk sekarang, kita fokus memakainya dulu. Pembuktiannya ada di bagian 8.
+
+</p>
+
+<p>
+
+<b>Cara menggunakan:</b>
+
+</p>
+
+<ol>
+
+<li>Identifikasi a, b, c dari bentuk ax² + bx + c = 0.</li>
+
+<li>Hitung <b>diskriminan D = b² - 4ac</b>.</li>
+
+<li>Masukkan ke rumus x = [-b ± √D] / 2a.</li>
+
+</ol>
+
+<h3>Contoh 1: Akar Bulat</h3>
+
+<div class="example">
+
+x² + 5x + 6 = 0<br>
+
+a = 1, b = 5, c = 6<br><br>
+
+D = 25 - 24 = 1<br><br>
+
+x = [-5 ± √1] / 2<br>
+
+x = [-5 ± 1] / 2<br><br>
+
+x₁ = (-5+1)/2 = -2<br>
+
+x₂ = (-5-1)/2 = -3<br><br>
+
+<b>Hasil sama dengan metode faktorisasi!</b>
+
+</div>
+
+<h3>Contoh 2: Akar Irasional</h3>
+
+<div class="example">
+
+2x² - 3x - 4 = 0<br>
+
+a = 2, b = -3, c = -4<br><br>
+
+D = (-3)² - 4(2)(-4) = 9 + 32 = 41<br><br>
+
+x = [3 ± √41] / 4<br><br>
+
+x₁ = <b>(3 + √41)/4</b><br>
+
+x₂ = <b>(3 - √41)/4</b><br><br>
+
+Persamaan ini tidak bisa difaktorkan dengan bilangan bulat,
+tapi rumus ABC tetap berhasil.
+
+</div>
+
+<h3>Contoh 3: Akar Kembar (D = 0)</h3>
+
+<div class="example">
+
+x² - 6x + 9 = 0<br>
+
+a = 1, b = -6, c = 9<br><br>
+
+D = 36 - 36 = 0<br><br>
+
+x = [6 ± 0] / 2 = <b>3</b> (akar kembar)
+
+</div>
+
+<h3>Contoh 4: Tidak Ada Akar Real (D < 0)</h3>
+
+<div class="example">
+
+x² + x + 1 = 0<br>
+
+a = 1, b = 1, c = 1<br><br>
+
+D = 1 - 4 = -3 < 0<br><br>
+
+Karena √(-3) bukan bilangan real,
+persamaan ini <b>tidak memiliki akar real</b>.
+Akarnya adalah bilangan kompleks.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>8. Metode 3: Melengkapkan Kuadrat Sempurna</h2>
+
+<p>
+
+Ini adalah metode yang menjadi <b>asal-usul rumus ABC</b>.
+Ide dasarnya: ubah ax² + bx + c = 0 menjadi bentuk <b>(x + p)² = q</b>,
+lalu akarkan kedua ruas.
+
+</p>
+
+<h3>Langkah-Langkah</h3>
+
+<ol>
+
+<li>Pastikan koefisien x² adalah <b>1</b> (kalau bukan, bagi dulu dengan a).</li>
+
+<li>Pindahkan konstanta ke ruas kanan.</li>
+
+<li>Tambahkan <b>(b/2)²</b> ke kedua ruas (setengah dari koefisien x, dikuadratkan).</li>
+
+<li>Ruas kiri sekarang adalah <b>kuadrat sempurna (x + b/2)²</b>.</li>
+
+<li>Akarkan kedua ruas, lalu selesaikan untuk x.</li>
+
+</ol>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+Selesaikan: x² + 6x + 5 = 0<br><br>
+
+<b>Langkah 1:</b> Koefisien x² sudah 1.<br><br>
+
+<b>Langkah 2:</b> Pindahkan 5:<br>
+
+x² + 6x = -5<br><br>
+
+<b>Langkah 3:</b> b = 6, (b/2)² = 3² = 9. Tambahkan ke kedua ruas:<br>
+
+x² + 6x + 9 = -5 + 9<br>
+
+x² + 6x + 9 = 4<br><br>
+
+<b>Langkah 4:</b> Ruas kiri = (x + 3)²:<br>
+
+(x + 3)² = 4<br><br>
+
+<b>Langkah 5:</b> Akarkan:<br>
+
+x + 3 = ±√4<br>
+
+x + 3 = ±2<br><br>
+
+x = -3 ± 2<br>
+
+x₁ = -1 &nbsp; x₂ = -5 ✅
+
+</div>
+
+<h3>Contoh 2: a ≠ 1</h3>
+
+<div class="example">
+
+Selesaikan: 2x² + 8x + 6 = 0<br><br>
+
+<b>Langkah 1:</b> Bagi dengan 2:<br>
+
+x² + 4x + 3 = 0<br><br>
+
+<b>Langkah 2:</b> Pindahkan 3:<br>
+
+x² + 4x = -3<br><br>
+
+<b>Langkah 3:</b> (4/2)² = 4. Tambahkan:<br>
+
+x² + 4x + 4 = 1<br>
+
+(x + 2)² = 1<br><br>
+
+<b>Langkah 4:</b> Akarkan:<br>
+
+x + 2 = ±1<br>
+
+x = -2 ± 1<br>
+
+x₁ = -1 &nbsp; x₂ = -3 ✅
+
+</div>
+
+<hr>
+
+<h3>Pembuktian: Dari Melengkapkan Kuadrat ke Rumus ABC</h3>
+
+<p>
+
+Ini adalah bukti bahwa rumus ABC bukan sihir.
+Ia berasal dari logika melengkapkan kuadrat yang diterapkan ke bentuk umum.
+
+</p>
+
+<div class="example">
+
+Mulai dari bentuk umum: ax² + bx + c = 0<br><br>
+
+<b>Langkah 1:</b> Bagi dengan a (a ≠ 0):<br>
+
+x² + (b/a)x + c/a = 0<br><br>
+
+<b>Langkah 2:</b> Pindahkan c/a:<br>
+
+x² + (b/a)x = -c/a<br><br>
+
+<b>Langkah 3:</b> Tambahkan (b/2a)² ke kedua ruas:<br>
+
+x² + (b/a)x + (b/2a)² = -c/a + b²/4a²<br><br>
+
+<b>Langkah 4:</b> Ruas kiri = (x + b/2a)²:<br>
+
+(x + b/2a)² = b²/4a² - c/a<br>
+
+(x + b/2a)² = (b² - 4ac) / 4a²<br><br>
+
+<b>Langkah 5:</b> Akarkan kedua ruas:<br>
+
+x + b/2a = ±√(b² - 4ac) / 2a<br><br>
+
+<b>Langkah 6:</b> Kurangi b/2a:<br>
+
+x = -b/2a ± √(b² - 4ac) / 2a<br>
+
+<b>x = [-b ± √(b² - 4ac)] / 2a</b> ✅
+
+</div>
+
+<p>
+
+Ini bukti bahwa rumus ABC selalu benar untuk persamaan kuadrat apapun.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>9. Diskriminan — "Pembeda" Jenis Akar</h2>
+
+<p>
+
+<b>Diskriminan</b> adalah nilai di dalam tanda akar pada rumus ABC:
+
+</p>
+
+<div class="summary">
+
+D = b² - 4ac
+
+</div>
+
+<p>
+
+Nama "diskriminan" berasal dari kata "discriminate" yang artinya <b>membedakan</b>.
+Nilai D membedakan jenis akar persamaan kuadrat <b>tanpa perlu menyelesaikan persamaannya</b>.
+
+</p>
+
+<h3>Arti Nilai Diskriminan</h3>
+
+<div class="summary">
+
+<b>D > 0:</b> Dua akar real <b>berbeda</b>.<br>
+
+<b>D = 0:</b> Satu akar real <b>kembar</b> (dua akar yang sama).<br>
+
+<b>D < 0:</b> <b>Tidak ada</b> akar real (akarnya imajiner/kompleks).
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<ul>
+
+<li>
+
+<b>D > 0:</b> √D adalah bilangan real positif, sehingga +√D dan -√D menghasilkan dua nilai berbeda.
+
+</li>
+
+<li>
+
+<b>D = 0:</b> √D = 0, sehingga +0 dan -0 sama. Hanya satu nilai.
+
+</li>
+
+<li>
+
+<b>D < 0:</b> √D adalah akar dari bilangan negatif, yang bukan bilangan real.
+Dalam sistem bilangan real, ini berarti tidak ada solusi.
+
+</li>
+
+</ul>
+
+<h3>Selain Jenis Akar, D Juga Menentukan "Kepribadian" Akar</h3>
+
+<div class="summary">
+
+<b>D = kuadrat sempurna</b> (0, 1, 4, 9, 16, 25, ...) → akar-akarnya <b>rasional</b>.<br>
+
+<b>D > 0 tapi bukan kuadrat sempurna</b> → akar-akarnya <b>irasional</b>.
+
+</div>
+
+<div class="example">
+
+x² - 5x + 6 = 0 → D = 25-24 = 1 = 1² → akar rasional: 2 dan 3.<br>
+
+x² - 3x + 1 = 0 → D = 9-4 = 5 (bukan kuadrat) → akar irasional: (3±√5)/2.<br>
+
+x² - 2x + 1 = 0 → D = 4-4 = 0 = 0² → akar kembar rasional: 1.<br>
+
+x² + x + 1 = 0 → D = 1-4 = -3 < 0 → tidak ada akar real.
+
+</div>
+
+<hr>
+
+<h3>Hubungan Jumlah dan Hasil Kali Akar dengan Koefisien</h3>
+
+<p>
+
+Untuk ax² + bx + c = 0 dengan akar-akar x₁ dan x₂:
+
+</p>
+
+<div class="summary">
+
+<b>Jumlah akar:</b> x₁ + x₂ = <b>-b/a</b><br>
+
+<b>Hasil kali akar:</b> x₁ × x₂ = <b>c/a</b>
+
+</div>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+x₁ = [-b + √D] / 2a<br>
+
+x₂ = [-b - √D] / 2a<br><br>
+
+x₁ + x₂ = (-b + √D - b - √D) / 2a = -2b / 2a = <b>-b/a</b><br><br>
+
+x₁ × x₂ = [(-b)² - (√D)²] / 4a²<br>
+
+= (b² - D) / 4a²<br>
+
+= (b² - (b² - 4ac)) / 4a²<br>
+
+= 4ac / 4a² = <b>c/a</b> ✅
+
+</div>
+
+<p>
+
+<b>Kegunaan hubungan ini:</b>
+
+</p>
+
+<ul>
+
+<li>Mengecek jawaban tanpa menyelesaikan ulang.</li>
+
+<li>Mencari akar yang satu jika akar lainnya sudah diketahui.</li>
+
+<li>Membentuk persamaan kuadrat dari akar-akarnya.</li>
+
+</ul>
+
+<p>
+
+Nanti di <b>Aljabar 7: Polinom Lanjut</b>,
+hubungan ini akan diperluas menjadi <b>Rumus Vieta</b>
+untuk polinomial berderajat berapapun.
+
+</p>
+
+</div>
+
+<!-- ==================== PERSAMAAN KUBIK ==================== -->
+
+<div class="section">
+
+<h2>10. Persamaan Kubik — Pengantar</h2>
+
+<p>
+
+<b>Persamaan kubik</b> adalah persamaan yang variabel tertingginya berpangkat <b>3</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Bentuk umum:</b> ax³ + bx² + cx + d = 0
+
+<br>
+
+dengan a, b, c, d adalah konstanta dan <b>a ≠ 0</b>.
+
+</div>
+
+<p>
+
+Berbeda dengan persamaan kuadrat yang punya rumus ABC sederhana,
+persamaan kubik <b>tidak punya rumus singkat yang praktis</b>.
+(Ada rumus Cardano, tapi sangat panjang dan jarang dipakai.)
+
+</p>
+
+<p>
+
+Karena itu, strategi utama untuk persamaan kubik di tingkat dasar adalah:
+
+</p>
+
+<ol>
+
+<li><b>Tebak satu akar</b> menggunakan Teorema Akar Rasional.</li>
+
+<li><b>Faktorkan</b> dengan (x - akar), sisanya menjadi persamaan kuadrat.</li>
+
+<li><b>Selesaikan persamaan kuadratnya</b> dengan metode yang sudah dikuasai.</li>
+
+</ol>
+
+<p>
+
+Persamaan kubik selalu punya <b>minimal 1 akar real</b>.
+(Bisa 1, 2, atau 3 akar real.)
+
+</p>
+
+<hr>
+
+<h3>Teorema Akar Rasional</h3>
+
+<div class="summary">
+
+Jika polinomial aₙxⁿ + ... + a₁x + a₀ = 0 memiliki akar rasional p/q
+(dalam bentuk paling sederhana), maka:
+
+<br><br>
+
+<b>p</b> adalah faktor dari konstanta a₀<br>
+
+<b>q</b> adalah faktor dari koefisien utama aₙ
+
+</div>
+
+<p>
+
+Untuk kasus sederhana di mana a = 1,
+akar rasionalnya adalah <b>faktor dari konstanta d</b>.
+
+</p>
+
+<h3>Contoh 1: Tiga Akar Real Bulat</h3>
+
+<div class="example">
+
+Selesaikan: x³ - 6x² + 11x - 6 = 0<br><br>
+
+a = 1, d = -6. Faktor dari -6: ±1, ±2, ±3, ±6.<br><br>
+
+<b>Coba x = 1:</b><br>
+
+1 - 6 + 11 - 6 = 0. ✅ (x - 1) adalah faktor.<br><br>
+
+<b>Bagi polinomial dengan (x - 1):</b><br>
+
+Hasil bagi: x² - 5x + 6<br><br>
+
+x³ - 6x² + 11x - 6 = (x - 1)(x² - 5x + 6)<br>
+
+= (x - 1)(x - 2)(x - 3)<br><br>
+
+<b>Akar: x = 1, x = 2, x = 3</b> ✅
+
+</div>
+
+<h3>Contoh 2: Satu Akar Real, Dua Imajiner</h3>
+
+<div class="example">
+
+Selesaikan: x³ + x - 2 = 0<br><br>
+
+Faktor dari -2: ±1, ±2.<br><br>
+
+Coba x = 1: 1 + 1 - 2 = 0. ✅<br><br>
+
+Bagi dengan (x - 1), hasil: x² + x + 2<br><br>
+
+x³ + x - 2 = (x - 1)(x² + x + 2)<br><br>
+
+Untuk x² + x + 2 = 0: D = 1 - 8 = -7 < 0 → tidak ada akar real.<br><br>
+
+<b>Satu-satunya akar real: x = 1</b> ✅
+
+</div>
+
+<h3>Contoh 3: Akar Tidak Bulat</h3>
+
+<div class="example">
+
+Selesaikan: 2x³ - 3x² - 3x + 2 = 0<br><br>
+
+a = 2, d = 2. Faktor d: ±1, ±2. Faktor a: ±1, ±2.<br>
+
+Kandidat akar rasional: ±1, ±2, ±1/2.<br><br>
+
+Coba x = 1: 2 - 3 - 3 + 2 = -2. Bukan akar.<br>
+
+Coba x = -1: -2 - 3 + 3 + 2 = 0. ✅<br><br>
+
+Bagi dengan (x + 1), hasil: 2x² - 5x + 2<br><br>
+
+2x³ - 3x² - 3x + 2 = (x + 1)(2x² - 5x + 2)<br>
+
+= (x + 1)(2x - 1)(x - 2)<br><br>
+
+<b>Akar: x = -1, x = 1/2, x = 2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Tips Menebak Akar Kubik</h3>
+
+<ul>
+
+<li>
+
+<b>Mulai dari yang terkecil:</b> ±1, ±2, ±3, ...
+
+</li>
+
+<li>
+
+<b>Gunakan trik jumlah koefisien:</b> Jika jumlah semua koefisien = 0,
+maka <b>x = 1</b> adalah akar. (Contoh: x³ - 6x² + 11x - 6 → 1-6+11-6 = 0).
+
+</li>
+
+<li>
+
+<b>Untuk jumlah koefisien pangkat genap = jumlah koefisien pangkat ganjil:</b>
+maka <b>x = -1</b> adalah akar.
+
+</li>
+
+<li>
+
+<b>Jika a ≠ 1, jangan lupa pecahan.</b>
+Cek kandidat p/q di mana p faktor d dan q faktor a.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Persamaan:</b> dua ekspresi dihubungkan tanda =. Solusi = nilai yang membuatnya benar.</li>
+
+<li><b>Prinsip dasar:</b> lakukan operasi yang sama di kedua ruas.</li>
+
+<li><b>Linear 1 variabel:</b> ax + b = c → isolasi x. Tepat 1 solusi.</li>
+
+<li><b>Linear 2 variabel:</b> butuh 2 persamaan → substitusi atau eliminasi.</li>
+
+<li><b>Linear 3+ variabel:</b> eliminasi bertahap. Untuk 4+ pakai matriks (Aljabar 9).</li>
+
+<li><b>Kuadrat:</b> ax² + bx + c = 0 → faktorisasi, rumus ABC, atau lengkapkan kuadrat.</li>
+
+<li><b>Diskriminan D = b² - 4ac:</b> D>0 (2 akar), D=0 (1 akar kembar), D<0 (tidak ada akar real).</li>
+
+<li><b>Jumlah akar = -b/a, hasil kali akar = c/a.</b></li>
+
+<li><b>Kubik:</b> tebak akar dari faktor d/a → bagi → selesaikan kuadratnya.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Cek dulu apakah bisa difaktorkan.</b> Untuk kuadrat dengan koefisien kecil,
+faktorisasi seringkali lebih cepat daripada rumus ABC.
+
+</li>
+
+<li>
+
+<b>Gunakan diskriminan untuk cek dulu.</b> Hitung D sebelum menyelesaikan.
+Kalau D < 0, kamu tahu tidak ada akar real tanpa perlu menghitung lebih lanjut.
+Kalau D kuadrat sempurna, kamu tahu akarnya rasional.
+
+</li>
+
+<li>
+
+<b>Untuk sistem 3+ variabel, tulis ulang setiap langkah.</b>
+Jangan bekerja di kepala. Satu kesalahan tanda bisa merambat ke mana-mana.
+Tulis rapi dan sistematis.
+
+</li>
+
+<li>
+
+<b>Verifikasi selalu.</b> Substitusi balik solusi ke persamaan awal.
+Ini kebiasaan yang akan menyelamatkanmu dari kesalahan.
+Butuh 10 detik, tapi bisa mencegah nilai jelek.
+
+</li>
+
+<li>
+
+<b>Untuk 4 variabel atau lebih, pelajari matriks.</b>
+Metode eliminasi manual masih bisa, tapi sangat rawan kesalahan.
+Matriks (eliminasi Gauss, aturan Cramer) memberikan cara yang jauh lebih rapi.
+Lihat <b>Aljabar 9: Matriks</b>.
+
+</li>
+
+<li>
+
+<b>Untuk persamaan dengan tanda akar (irasional):</b>
+Kuadratkan kedua ruas untuk menghilangkan akar.
+Tapi <b>hati-hati:</b> pengkuadratan bisa memunculkan <b>solusi palsu</b>
+yang tidak memenuhi persamaan awal. Selalu substitusi balik untuk verifikasi!
+(Bahas lengkap di Aljabar 3).
+
+</li>
+
+<li>
+
+<b>Tebak akar kubik dengan cerdas:</b>
+Cek ±1 dulu. Kalau jumlah koefisien = 0, pasti x=1 adalah akar.
+Kalau jumlah koefisien pangkat genap = jumlah pangkat ganjil, x=-1 adalah akar.
+
+</li>
+
+<li>
+
+<b>Gunakan hubungan jumlah dan hasil kali akar</b>
+untuk mengecek jawaban kuadrat tanpa menyelesaikan ulang.
+Kalau x₁+x₂ ≠ -b/a, pasti ada yang salah.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="aljabar1.html" class="btn">⬅ Kembali</a>
+
+<a href="aljabar.html" class="btn">📚 Daftar Aljabar</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="aljabar3.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
