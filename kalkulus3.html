@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 3 | Turunan Lanjut & Aplikasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 3 • Turunan Lanjut & Aplikasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Turunan Bukan Cuma Rumus</h2>
+
+<p>
+
+Di Kalkulus 2, kita sudah menguasai cara menghitung turunan.
+Sekarang kita akan menggunakan turunan untuk <b>memahami dunia</b>:
+mencari kemiringan garis singgung, menentukan persamaan garis normal,
+mengukur seberapa cepat sesuatu berubah, dan membuat aproksimasi
+yang akurat tanpa kalkulator.
+
+</p>
+
+<p>
+
+Ini adalah jembatan antara kalkulus "murni" dan aplikasi nyata.
+Setiap konsep di bab ini akan langsung terpakai di fisika, teknik,
+ekonomi, dan ilmu data.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Menggunakan turunan untuk mencari gradien garis singgung dan persamaannya.</li>
+
+<li>Mencari persamaan garis normal (tegak lurus garis singgung).</li>
+
+<li>Memahami dan menghitung laju perubahan terkait (related rates).</li>
+
+<li>Menggunakan diferensial untuk aproksimasi linear.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: GRADIEN & GARIS SINGGUNG ==================== -->
+
+<div class="section">
+
+<h2>1. Gradien dan Garis Singgung — Menyentuh Kurva di Satu Titik</h2>
+
+<div class="summary">
+
+<b>Gradien (kemiringan) garis singgung</b> pada kurva y = f(x) di titik x = a
+adalah <b>f'(a)</b> — nilai turunan di titik tersebut.<br><br>
+
+<b>Persamaan garis singgung</b> di titik (a, f(a)):<br><br>
+
+<b>y - f(a) = f'(a)(x - a)</b><br><br>
+
+Ini adalah bentuk gradien-titik dari persamaan garis: y - y₁ = m(x - x₁).
+
+</div>
+
+<p>
+
+<b>Mengapa gradien garis singgung = turunan?</b>
+
+</p>
+
+<div class="example">
+
+Turunan f'(a) didefinisikan sebagai limit dari kemiringan garis potong
+saat dua titik pada kurva semakin mendekat. Saat jaraknya → 0,
+garis potong berubah menjadi garis singgung, dan kemiringannya
+menjadi f'(a).<br><br>
+
+Jadi, turunan adalah <b>kemiringan garis singgung</b> secara definisi.
+Ini adalah interpretasi geometris paling fundamental dari turunan.
+
+</div>
+
+<hr>
+
+<h3>1.1 Contoh: Mencari Persamaan Garis Singgung</h3>
+
+<div class="example">
+
+<b>Soal:</b> Cari persamaan garis singgung pada kurva y = x² di titik (3, 9).<br><br>
+
+f(x) = x². f'(x) = 2x.<br>
+
+Gradien di x = 3: f'(3) = 2(3) = <b>6</b>.<br><br>
+
+Persamaan garis singgung:<br>
+
+y - 9 = 6(x - 3)<br>
+
+y - 9 = 6x - 18<br>
+
+y = <b>6x - 9</b> ✅<br><br>
+
+<b>Verifikasi:</b> Di x = 3, y = 6(3) - 9 = 9. Titik (3,9) ada di garis. ✅
+
+</div>
+
+<hr>
+
+<h3>1.2 Garis Singgung Horizontal — Titik Stasioner</h3>
+
+<div class="summary">
+
+Garis singgung <b>horizontal</b> (mendatar) terjadi ketika <b>f'(x) = 0</b>.<br><br>
+
+Di titik ini, gradien = 0, jadi garis singgung sejajar sumbu X.<br><br>
+
+Titik-titik ini disebut <b>titik stasioner</b> — kandidat untuk maksimum atau minimum lokal.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Cari titik pada kurva y = x³ - 3x di mana garis singgungnya horizontal.<br><br>
+
+f'(x) = 3x² - 3 = 0<br>
+
+3(x² - 1) = 0 → x = ±1.<br><br>
+
+Di x = 1: y = 1 - 3 = -2. Titik: <b>(1, -2)</b>.<br>
+
+Di x = -1: y = -1 + 3 = <b>2</b>. Titik: <b>(-1, 2)</b>.<br><br>
+
+Kedua titik ini memiliki garis singgung horizontal.
+
+</div>
+
+<hr>
+
+<h3>1.3 Garis Singgung dengan Gradien Tertentu</h3>
+
+<div class="example">
+
+<b>Soal:</b> Cari titik pada kurva y = x² di mana garis singgungnya memiliki gradien 10.<br><br>
+
+f'(x) = 2x = 10 → x = <b>5</b>.<br>
+
+y = 5² = 25.<br><br>
+
+Titik: <b>(5, 25)</b>. Garis singgung: y - 25 = 10(x - 5) → y = 10x - 25. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: GARIS NORMAL ==================== -->
+
+<div class="section">
+
+<h2>2. Garis Normal — Tegak Lurus Garis Singgung</h2>
+
+<div class="summary">
+
+<b>Garis normal</b> adalah garis yang <b>tegak lurus</b> terhadap garis singgung
+di titik singgung yang sama.<br><br>
+
+Jika gradien garis singgung = m = f'(a), maka gradien garis normal = <b>-1/m</b>
+(karena m₁ × m₂ = -1 untuk dua garis tegak lurus).<br><br>
+
+<b>Persamaan garis normal</b> di titik (a, f(a)):<br><br>
+
+<b>y - f(a) = (-1/f'(a))(x - a)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa garis normal penting?</b> Dalam optik, sinar cahaya dipantulkan
+terhadap <b>garis normal</b> permukaan. Dalam mekanika, gaya normal
+selalu tegak lurus permukaan. Garis normal muncul di mana-mana
+dalam fisika dan teknik.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Cari persamaan garis normal pada kurva y = x² di titik (2, 4).<br><br>
+
+f'(x) = 2x. f'(2) = 4 (gradien garis singgung).<br>
+
+Gradien garis normal = -1/4.<br><br>
+
+Persamaan garis normal:<br>
+
+y - 4 = (-1/4)(x - 2)<br>
+
+y - 4 = -x/4 + 1/2<br>
+
+y = <b>-x/4 + 9/2</b> ✅<br><br>
+
+<b>Verifikasi:</b> Gradien singgung = 4, gradien normal = -1/4. 4 × (-1/4) = -1. Tegak lurus! ✅
+
+</div>
+
+<hr>
+
+<h3>2.1 Garis Normal Vertikal</h3>
+
+<div class="example">
+
+Jika f'(a) = 0 (garis singgung horizontal), maka garis normalnya <b>vertikal</b>
+dengan persamaan <b>x = a</b> (karena gradien -1/0 tidak terdefinisi).<br><br>
+
+Di titik puncak parabola y = x² di (0,0), f'(0) = 0.<br>
+
+Garis singgung: y = 0 (horizontal). Garis normal: <b>x = 0</b> (vertikal, sumbu Y).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: LAJU PERUBAHAN ==================== -->
+
+<div class="section">
+
+<h2>3. Laju Perubahan — Seberapa Cepat Sesuatu Berubah</h2>
+
+<div class="summary">
+
+<b>Laju perubahan sesaat</b> dari besaran y terhadap x di titik x = a
+adalah <b>f'(a)</b> — turunan di titik tersebut.<br><br>
+
+<b>Satuan:</b> satuan y dibagi satuan x. Contoh: meter/detik, rupiah/hari, populasi/tahun.
+
+</div>
+
+<p>
+
+<b>Laju perubahan rata-rata vs sesaat:</b>
+
+</p>
+
+<div class="example">
+
+Posisi mobil: s(t) = t² meter (t dalam detik).<br><br>
+
+<b>Kecepatan rata-rata</b> dari t=1 ke t=3:<br>
+
+Δs/Δt = (9-1)/(3-1) = 8/2 = 4 m/s.<br><br>
+
+<b>Kecepatan sesaat</b> di t=2:<br>
+
+s'(t) = 2t → s'(2) = <b>4 m/s</b>.<br><br>
+
+Kebetulan sama, karena s(t) = t² adalah fungsi yang "mulus".
+
+</div>
+
+<hr>
+
+<h3>3.1 Laju Perubahan Terkait (Related Rates)</h3>
+
+<div class="summary">
+
+<b>Related rates</b> adalah teknik untuk mencari laju perubahan satu besaran
+berdasarkan laju perubahan besaran lain yang saling terkait.<br><br>
+
+<b>Strategi:</b><br>
+
+1. Tulis persamaan yang menghubungkan kedua besaran.<br>
+
+2. Turunkan <b>kedua ruas terhadap waktu t</b> (gunakan aturan rantai).<br>
+
+3. Substitusi nilai yang diketahui.<br>
+
+4. Selesaikan untuk laju perubahan yang ditanyakan.
+
+</div>
+
+<p>
+
+<b>Mengapa harus diturunkan terhadap t?</b> Karena "laju" selalu berarti
+turunan terhadap <b>waktu</b>. Setiap variabel yang berubah terhadap waktu
+harus diturunkan dengan aturan rantai.
+
+</p>
+
+<div class="example">
+
+<b>Soal Klasik:</b> Sebuah tangga sepanjang 5 m bersandar ke dinding.
+Kaki tangga didorong menjauhi dinding dengan kecepatan 2 m/s.
+Seberapa cepat ujung atas tangga turun saat kaki tangga berjarak 3 m dari dinding?<br><br>
+
+Misalkan x = jarak kaki ke dinding, y = tinggi ujung atas.<br>
+
+Hubungan Pythagoras: x² + y² = 25.<br><br>
+
+Turunkan terhadap t: 2x(dx/dt) + 2y(dy/dt) = 0.<br>
+
+x(dx/dt) + y(dy/dt) = 0.<br><br>
+
+Saat x = 3: y = √(25-9) = 4. dx/dt = 2 (dijauhi → positif).<br><br>
+
+3(2) + 4(dy/dt) = 0<br>
+
+6 + 4(dy/dt) = 0<br>
+
+dy/dt = <b>-1,5 m/s</b> (negatif artinya turun). ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Balon bulat diisi udara dengan laju 100 cm³/s.
+Seberapa cepat jari-jarinya bertambah saat r = 5 cm?<br><br>
+
+Volume bola: V = ⁴/₃πr³.<br><br>
+
+Turunkan terhadap t: dV/dt = 4πr²(dr/dt).<br><br>
+
+100 = 4π(25)(dr/dt)<br>
+
+dr/dt = 100/(100π) = <b>1/π ≈ 0,32 cm/s</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: LINEAR APPROXIMATION ==================== -->
+
+<div class="section">
+
+<h2>4. Aproksimasi Linear — "Hampiran" yang Akurat</h2>
+
+<div class="summary">
+
+<b>Aproksimasi linear</b> (linear approximation) adalah teknik menaksir
+nilai fungsi di dekat titik yang diketahui menggunakan <b>garis singgung</b>.<br><br>
+
+<b>Rumus:</b> f(x) ≈ f(a) + f'(a)(x - a)<br><br>
+
+Ruas kanan adalah persamaan garis singgung di x = a. Untuk x yang dekat ke a,
+garis singgung "nyaris berimpit" dengan kurva, sehingga nilai y di garis singgung
+sangat dekat dengan nilai f(x) sebenarnya.
+
+</div>
+
+<p>
+
+<b>Mengapa ini berhasil?</b> Karena garis singgung adalah <b>aproksimasi linear terbaik</b>
+dari fungsi di sekitar titik singgung. Secara visual, jika kamu "zoom in" cukup dekat
+ke kurva yang mulus, kurvanya akan terlihat seperti garis lurus—itulah garis singgung.
+
+</p>
+
+<hr>
+
+<h3>4.1 Contoh: Menaksir √4,1 Tanpa Kalkulator</h3>
+
+<div class="example">
+
+f(x) = √x. Kita tahu f(4) = √4 = 2.<br><br>
+
+f'(x) = 1/(2√x). f'(4) = 1/(2×2) = 1/4 = 0,25.<br><br>
+
+Aproksimasi linear di sekitar a = 4:<br>
+
+√x ≈ √4 + f'(4)(x - 4) = 2 + 0,25(x - 4).<br><br>
+
+Untuk x = 4,1:<br>
+
+√4,1 ≈ 2 + 0,25(0,1) = 2 + 0,025 = <b>2,025</b>.<br><br>
+
+Nilai sebenarnya: √4,1 ≈ 2,0248... Selisih hanya 0,0002! Sangat akurat! ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Contoh: Menaksir sin 31°</h3>
+
+<div class="example">
+
+f(x) = sin x. Gunakan radian: 30° = π/6 ≈ 0,5236 rad.<br>
+
+f(π/6) = sin(π/6) = 0,5.<br><br>
+
+f'(x) = cos x. f'(π/6) = cos(π/6) = √3/2 ≈ 0,8660.<br><br>
+
+31° = 31π/180 ≈ 0,5411 rad. Δx = 0,5411 - 0,5236 = 0,0175 rad.<br><br>
+
+sin 31° ≈ 0,5 + 0,8660(0,0175) ≈ 0,5 + 0,0152 = <b>0,5152</b>.<br><br>
+
+Nilai sebenarnya: sin 31° ≈ 0,5150. Selisih hanya 0,0002! ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Aproksimasi Linear vs Diferensial</h3>
+
+<div class="summary">
+
+Aproksimasi linear dan diferensial adalah <b>konsep yang sama</b> dalam dua bahasa:<br><br>
+
+<b>Diferensial:</b> dy = f'(x) dx → Δy ≈ dy = f'(x) dx.<br><br>
+
+<b>Aproksimasi linear:</b> f(x+Δx) ≈ f(x) + f'(x)Δx.<br><br>
+
+Keduanya menggunakan ide yang sama: garis singgung sebagai aproksimasi.
+
+</div>
+
+<div class="note">
+
+<b>💡 Kapan aproksimasi linear akurat?</b><br><br>
+
+✅ Δx kecil (dekat ke titik a).<br>
+
+✅ Fungsi "mulus" (tidak ada tikungan tajam).<br>
+
+❌ Δx besar → aproksimasi buruk (garis singgung "melenceng" dari kurva).<br>
+
+❌ Fungsi tidak terdiferensialkan di a (misal ada "patahan").
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 3</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Garis singgung:</b> y - f(a) = f'(a)(x - a). Gradien = f'(a).</li>
+
+<li><b>Garis normal:</b> y - f(a) = (-1/f'(a))(x - a). Tegak lurus garis singgung.</li>
+
+<li><b>Titik stasioner:</b> f'(x) = 0 → garis singgung horizontal → kandidat ekstrem.</li>
+
+<li><b>Laju perubahan:</b> f'(a) = laju sesaat. Satuan: [y]/[x].</li>
+
+<li><b>Related rates:</b> Turunkan persamaan terhadap t, substitusi, selesaikan.</li>
+
+<li><b>Aproksimasi linear:</b> f(x) ≈ f(a) + f'(a)(x - a). Garis singgung sebagai hampiran.</li>
+
+<li><b>Diferensial:</b> dy = f'(x)dx. Δy ≈ dy untuk Δx kecil.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Garis singgung: y - y₁ = m(x - x₁).</b> Jangan lupa bentuk ini.
+m = f'(a), (x₁, y₁) = (a, f(a)).
+
+</li>
+
+<li>
+
+<b>Garis normal: gradien = -1/m.</b> Jangan lupa tanda minus.
+Kalau m = 0, garis normal vertikal: x = a.
+
+</li>
+
+<li>
+
+<b>Related rates: tulis dulu hubungannya, baru turunkan.</b>
+Persamaan Pythagoras, volume, luas—tulis dulu baru turunkan terhadap t.
+
+</li>
+
+<li>
+
+<b>Aproksimasi linear: pilih a yang dekat dan mudah dihitung.</b>
+Untuk √4,1 → a = 4 (kuadrat sempurna). Untuk sin 31° → a = 30° (sudut istimewa).
+
+</li>
+
+<li>
+
+<b>Δx harus kecil agar aproksimasi akurat.</b>
+√5 dengan a=4 (Δx=1) → aproksimasi = 2,25, nilai asli = 2,236. Masih ok.
+√10 dengan a=9 (Δx=1) → aproksimasi = 3,1667, nilai asli = 3,1623. Lebih akurat.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus2.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus4.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
