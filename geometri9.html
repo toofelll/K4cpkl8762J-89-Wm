@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 9 | Irisan Kerucut</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📐 GEOMETRI</h1>
+
+<p>Part 9 • Irisan Kerucut: Parabola, Elips & Hiperbola</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Memotong Kerucut</h2>
+
+<p>
+
+Bayangkan sebuah kerucut ganda (dua kerucut bertemu di puncak).
+Sekarang bayangkan sebuah bidang datar yang memotong kerucut itu.
+Tergantung <b>sudut pemotongan</b>, kamu akan mendapatkan salah satu
+dari <b>tiga kurva legendaris</b>:
+
+</p>
+
+<div class="summary">
+
+<b>1. Parabola:</b> bidang sejajar dengan salah satu garis pelukis kerucut.<br>
+
+<b>2. Elips:</b> bidang memotong kerucut dengan sudut lebih kecil dari garis pelukis (tidak sejajar alas).<br>
+
+<b>3. Hiperbola:</b> bidang memotong kedua kerucut (atas dan bawah).<br><br>
+
+Ditambah kasus degenerasi: <b>titik</b> (bidang di puncak), <b>garis</b> (bidang menyinggung), dan <b>lingkaran</b> (bidang sejajar alas).
+
+</div>
+
+<p>
+
+<b>Mengapa ini penting?</b> Karena alam semesta "berbicara" dalam irisan kerucut.
+Orbit planet = elips. Lintasan peluru = parabola (hampir). Lintasan komet
+yang tidak kembali = hiperbola. Pantulan cahaya pada teleskop = parabola.
+Mempelajari irisan kerucut berarti mempelajari bahasa gerak alam semesta.
+
+</p>
+
+<p>
+
+Studi sistematis irisan kerucut pertama kali dilakukan oleh <b>Apollonius dari Perga</b>
+(sekitar 200 SM) dalam karyanya <i>Conics</i>. Ia memberi nama parabola, elips, dan hiperbola—
+istilah yang kita pakai sampai sekarang. Karyanya begitu lengkap sehingga hampir 2000 tahun
+tidak ada yang bisa menambahinya.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi geometris masing-masing irisan kerucut.</li>
+
+<li>Menguasai persamaan standar parabola, elips, dan hiperbola.</li>
+
+<li>Memahami elemen-elemen kunci: fokus, direktris, puncak, eksentrisitas.</li>
+
+<li>Mampu menggambar sketsa irisan kerucut dari persamaannya.</li>
+
+<li>Memahami hubungan eksentrisitas dengan bentuk kurva.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: PARABOLA ==================== -->
+
+<div class="section">
+
+<h2>1. Parabola — Kurva dengan Satu Fokus</h2>
+
+<div class="summary">
+
+<b>Definisi geometris:</b> Parabola adalah himpunan semua titik yang
+<b>berjarak sama</b> dari suatu titik tetap <b>F (fokus)</b> dan
+suatu garis tetap <b>d (direktris)</b>.<br><br>
+
+|PF| = jarak P ke direktris<br><br>
+
+<b>Eksentrisitas:</b> e = 1 (selalu).
+
+</div>
+
+<p>
+
+<b>Mengapa e = 1?</b> Karena definisinya: jarak ke fokus = jarak ke direktris.
+Rasionya selalu 1. Inilah yang membedakan parabola dari elips (e < 1)
+dan hiperbola (e > 1).
+
+</p>
+
+<hr>
+
+<h3>1.1 Persamaan Standar Parabola</h3>
+
+<div class="summary">
+
+<b>Puncak di (0,0), fokus di (0, p):</b><br><br>
+
+<b>x² = 4py</b> &nbsp; (terbuka ke atas jika p > 0, ke bawah jika p < 0)<br><br>
+
+<b>Puncak di (0,0), fokus di (p, 0):</b><br><br>
+
+<b>y² = 4px</b> &nbsp; (terbuka ke kanan jika p > 0, ke kiri jika p < 0)<br><br>
+
+p = jarak dari puncak ke fokus = jarak dari puncak ke direktris.
+
+</div>
+
+<p>
+
+<b>Mengapa 4p? — Penurunan dari Definisi</b>
+
+</p>
+
+<div class="example">
+
+Ambil fokus F(0, p) dan direktris y = -p (garis horizontal di bawah sumbu X).<br><br>
+
+Titik P(x, y) pada parabola harus memenuhi:<br>
+
+Jarak P ke F = Jarak P ke direktris<br><br>
+
+√[(x - 0)² + (y - p)²] = |y - (-p)| = |y + p|<br><br>
+
+Kuadratkan:<br>
+
+x² + (y - p)² = (y + p)²<br>
+
+x² + y² - 2py + p² = y² + 2py + p²<br>
+
+x² = 4py<br><br>
+
+Ternyata x² = 4py! ✅<br><br>
+
+Angka 4p muncul dari pengkuadratan: (y+p)² - (y-p)² = 4py.
+
+</div>
+
+<hr>
+
+<h3>1.2 Elemen-Elemen Parabola</h3>
+
+<div class="summary">
+
+<b>Puncak (vertex):</b> titik terendah/tertinggi/terkiri/terkanan parabola.<br>
+
+<b>Fokus (F):</b> titik tetap yang menentukan bentuk parabola.<br>
+
+<b>Direktris:</b> garis tetap yang menjadi acuan jarak.<br>
+
+<b>Sumbu simetri:</b> garis yang melalui fokus dan puncak, membagi parabola menjadi dua sama persis.<br>
+
+<b>Latus rectum:</b> tali busur melalui fokus yang tegak lurus sumbu simetri. Panjangnya = |4p|.
+
+</div>
+
+<div class="example">
+
+Parabola x² = 8y.<br><br>
+
+4p = 8 → p = <b>2</b>.<br><br>
+
+Puncak: (0, 0).<br>
+
+Fokus: (0, 2).<br>
+
+Direktris: y = -2.<br>
+
+Terbuka ke <b>atas</b> (karena p > 0 dan x yang dikuadratkan).<br>
+
+Panjang latus rectum = 8.
+
+</div>
+
+<hr>
+
+<h3>1.3 Parabola dengan Puncak di (h, k)</h3>
+
+<div class="summary">
+
+<b>(x - h)² = 4p(y - k)</b> &nbsp; (terbuka vertikal)<br>
+
+<b>(y - k)² = 4p(x - h)</b> &nbsp; (terbuka horizontal)<br><br>
+
+Puncak: (h, k). Fokus: (h, k+p) atau (h+p, k).
+
+</div>
+
+<div class="example">
+
+(y - 3)² = 12(x - 1)<br><br>
+
+4p = 12 → p = 3. Puncak: (1, 3).<br>
+
+Fokus: (1+3, 3) = (4, 3). Terbuka ke <b>kanan</b>.<br>
+
+Direktris: x = 1 - 3 = -2.
+
+</div>
+
+<hr>
+
+<h3>1.4 Sifat Reflektif Parabola — Kenapa Antena Parabola?</h3>
+
+<div class="example">
+
+Sinar yang datang <b>sejajar sumbu simetri</b> akan dipantulkan
+<b>melewati fokus</b>. Sebaliknya, sinar dari fokus akan dipantulkan
+<b>sejajar sumbu simetri</b>.<br><br>
+
+Inilah kenapa antena parabola dan teleskop berbentuk parabola:
+mengumpulkan sinyal ke satu titik (fokus) untuk penguatan maksimal.
+Juga kenapa lampu senter menggunakan reflektor parabola:
+cahaya dari bohlam di fokus dipantulkan menjadi berkas paralel.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: ELIPS ==================== -->
+
+<div class="section">
+
+<h2>2. Elips — Kurva dengan Dua Fokus</h2>
+
+<div class="summary">
+
+<b>Definisi geometris:</b> Elips adalah himpunan semua titik yang
+<b>jumlah jaraknya</b> ke dua titik tetap <b>F₁ dan F₂ (fokus)</b>
+adalah <b>konstan</b> (= 2a).<br><br>
+
+|PF₁| + |PF₂| = 2a<br><br>
+
+<b>Eksentrisitas:</b> e = c/a, dengan 0 ≤ e < 1.
+
+</div>
+
+<p>
+
+<b>Mengapa e < 1?</b> Karena c < a (fokus selalu di dalam elips).
+Semakin kecil e, elips semakin "bulat" (e = 0 adalah lingkaran).
+Semakin besar e, elips semakin "pipih".
+
+</p>
+
+<hr>
+
+<h3>2.1 Persamaan Standar Elips</h3>
+
+<div class="summary">
+
+<b>Pusat di (0,0), sumbu mayor horizontal (a > b):</b><br><br>
+
+<b>x²/a² + y²/b² = 1</b><br><br>
+
+a = setengah sumbu mayor (terpanjang).<br>
+
+b = setengah sumbu minor (terpendek).<br>
+
+c = √(a² - b²) = jarak dari pusat ke fokus.<br>
+
+Fokus: (±c, 0). Puncak: (±a, 0) dan (0, ±b).<br><br>
+
+<b>Pusat di (0,0), sumbu mayor vertikal (b > a):</b><br><br>
+
+<b>x²/a² + y²/b² = 1</b> (dengan b > a)<br>
+
+Fokus: (0, ±c) dengan c = √(b² - a²).
+
+</div>
+
+<p>
+
+<b>Mengapa c² = a² - b²? — Penurunan dari Definisi</b>
+
+</p>
+
+<div class="example">
+
+Ambil titik puncak di (a, 0).<br><br>
+
+|PF₁| + |PF₂| = 2a<br>
+
+√((a+c)² + 0) + √((a-c)² + 0) = 2a<br>
+
+(a+c) + (a-c) = 2a → 2a = 2a (terpenuhi otomatis).<br><br>
+
+Ambil titik di (0, b):<br>
+
+√(0² + (b)² + c²) + √(0² + (b)² + c²) = 2√(b² + c²) = 2a<br>
+
+√(b² + c²) = a → b² + c² = a² → c² = a² - b². ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Elemen-Elemen Elips</h3>
+
+<div class="summary">
+
+<b>Pusat:</b> titik tengah elips, (0,0) atau (h,k).<br>
+
+<b>Sumbu mayor:</b> sumbu terpanjang, panjang = 2a.<br>
+
+<b>Sumbu minor:</b> sumbu terpendek, panjang = 2b.<br>
+
+<b>Fokus:</b> dua titik tetap (±c, 0), c = √(a² - b²).<br>
+
+<b>Puncak:</b> ujung-ujung sumbu mayor (±a, 0) dan minor (0, ±b).<br>
+
+<b>Eksentrisitas:</b> e = c/a.<br>
+
+<b>Latus rectum:</b> panjang = 2b²/a.
+
+</div>
+
+<div class="example">
+
+Elips: x²/25 + y²/9 = 1.<br><br>
+
+a² = 25 → a = 5. b² = 9 → b = 3.<br>
+
+c = √(25 - 9) = √16 = <b>4</b>.<br><br>
+
+Pusat: (0,0). Fokus: (±4, 0).<br>
+
+Puncak mayor: (±5, 0). Puncak minor: (0, ±3).<br>
+
+Eksentrisitas: e = 4/5 = <b>0,8</b>. Latus rectum = 2(9)/5 = <b>3,6</b>.
+
+</div>
+
+<hr>
+
+<h3>2.3 Elips dengan Pusat di (h, k)</h3>
+
+<div class="summary">
+
+<b>(x - h)²/a² + (y - k)²/b² = 1</b><br><br>
+
+Pusat: (h, k). Fokus: (h ± c, k) atau (h, k ± c).<br>
+
+Puncak: (h ± a, k) dan (h, k ± b).
+
+</div>
+
+<hr>
+
+<h3>2.4 Lingkaran — Elips dengan Eksentrisitas Nol</h3>
+
+<div class="summary">
+
+Jika a = b = r dan c = 0, elips menjadi <b>lingkaran</b>:<br><br>
+
+x² + y² = r²<br><br>
+
+Eksentrisitas e = 0. Fokus berimpit di pusat.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: HIPERBOLA ==================== -->
+
+<div class="section">
+
+<h2>3. Hiperbola — Kurva dengan Dua Cabang</h2>
+
+<div class="summary">
+
+<b>Definisi geometris:</b> Hiperbola adalah himpunan semua titik yang
+<b>selisih jaraknya</b> ke dua titik tetap <b>F₁ dan F₂ (fokus)</b>
+adalah <b>konstan</b> (= 2a).<br><br>
+
+||PF₁| - |PF₂|| = 2a<br><br>
+
+<b>Eksentrisitas:</b> e = c/a, dengan e > 1.
+
+</div>
+
+<p>
+
+<b>Mengapa e > 1?</b> Karena c > a (fokus di luar "cabang" hiperbola).
+Semakin besar e, semakin "terbuka" hiperbolanya.
+
+</p>
+
+<hr>
+
+<h3>3.1 Persamaan Standar Hiperbola</h3>
+
+<div class="summary">
+
+<b>Pusat di (0,0), sumbu transversal horizontal:</b><br><br>
+
+<b>x²/a² - y²/b² = 1</b><br><br>
+
+a = setengah sumbu transversal (nyata).<br>
+
+b = setengah sumbu konjugat (imajiner).<br>
+
+c = √(a² + b²) = jarak dari pusat ke fokus.<br>
+
+Fokus: (±c, 0). Puncak: (±a, 0).<br>
+
+<b>Asimtot:</b> y = ±(b/a)x<br><br>
+
+<b>Pusat di (0,0), sumbu transversal vertikal:</b><br><br>
+
+<b>y²/a² - x²/b² = 1</b><br>
+
+Fokus: (0, ±c). Asimtot: y = ±(a/b)x.
+
+</div>
+
+<p>
+
+<b>Mengapa c² = a² + b²? — Perbedaan Krusial dengan Elips!</b>
+
+</p>
+
+<div class="example">
+
+Di elips: c² = a² - b² (karena a > c).<br>
+
+Di hiperbola: c² = a² + b² (karena c > a).<br><br>
+
+Ini berasal dari definisi selisih jarak = 2a.
+Penurunannya mirip dengan elips, tapi dengan tanda minus
+yang mengubah b² - c² = -a² menjadi c² = a² + b².
+
+</div>
+
+<hr>
+
+<h3>3.2 Asimtot Hiperbola — Garis yang Didekati Tapi Tak Disentuh</h3>
+
+<div class="summary">
+
+Hiperbola memiliki <b>dua asimtot</b>: garis lurus yang didekati
+oleh cabang-cabang hiperbola saat x → ±∞, tapi tidak pernah disentuh.<br><br>
+
+Untuk x²/a² - y²/b² = 1: <b>y = ±(b/a)x</b><br>
+
+Untuk y²/a² - x²/b² = 1: <b>y = ±(a/b)x</b>
+
+</div>
+
+<p>
+
+<b>Mengapa asimtotnya seperti itu?</b>
+
+</p>
+
+<div class="example">
+
+Dari persamaan x²/a² - y²/b² = 1, untuk x yang sangat besar:<br><br>
+
+x²/a² mendominasi, sehingga y²/b² ≈ x²/a²<br>
+
+y ≈ ±(b/a)x.<br><br>
+
+Saat x → ∞, hiperbola "menempel" ke garis y = ±(b/a)x. ✅
+
+</div>
+
+<hr>
+
+<h3>3.3 Elemen-Elemen Hiperbola</h3>
+
+<div class="summary">
+
+<b>Pusat:</b> (0,0) atau (h,k).<br>
+
+<b>Sumbu transversal:</b> sumbu yang menghubungkan kedua puncak, panjang = 2a.<br>
+
+<b>Sumbu konjugat:</b> sumbu tegak lurus transversal, panjang = 2b.<br>
+
+<b>Fokus:</b> (±c, 0), c = √(a² + b²).<br>
+
+<b>Puncak:</b> (±a, 0).<br>
+
+<b>Eksentrisitas:</b> e = c/a > 1.<br>
+
+<b>Latus rectum:</b> panjang = 2b²/a.
+
+</div>
+
+<div class="example">
+
+Hiperbola: x²/16 - y²/9 = 1.<br><br>
+
+a² = 16 → a = 4. b² = 9 → b = 3.<br>
+
+c = √(16 + 9) = √25 = <b>5</b>.<br><br>
+
+Pusat: (0,0). Fokus: (±5, 0). Puncak: (±4, 0).<br>
+
+Eksentrisitas: e = 5/4 = <b>1,25</b>.<br>
+
+Asimtot: y = ±(3/4)x. Latus rectum = 2(9)/4 = <b>4,5</b>.
+
+</div>
+
+<hr>
+
+<h3>3.4 Hiperbola dengan Pusat di (h, k)</h3>
+
+<div class="summary">
+
+<b>(x - h)²/a² - (y - k)²/b² = 1</b> &nbsp; (transversal horizontal)<br>
+
+<b>(y - k)²/a² - (x - h)²/b² = 1</b> &nbsp; (transversal vertikal)<br><br>
+
+Asimtot disesuaikan dengan pusat (h, k).
+
+</div>
+
+</div>
+
+<!-- ==================== RINGKASAN & PERBANDINGAN ==================== -->
+
+<div class="section">
+
+<h2>4. Perbandingan Tiga Irisan Kerucut — Tabel Lengkap</h2>
+
+<div class="summary">
+
+| Properti | Parabola | Elips | Hiperbola |
+|---|---|---|---|
+| **Definisi** | |PF| = jarak ke direktris | |PF₁| + |PF₂| = 2a | \|\|PF₁\| - \|PF₂\|\| = 2a |
+| **Eksentrisitas** | e = 1 | 0 ≤ e < 1 | e > 1 |
+| **Fokus** | 1 | 2 | 2 |
+| **Direktris** | 1 | 2 | 2 |
+| **Asimtot** | Tidak ada | Tidak ada | 2 asimtot |
+| **Persamaan standar** | y² = 4px | x²/a² + y²/b² = 1 | x²/a² - y²/b² = 1 |
+| **Hubungan a,b,c** | p = jarak fokus-puncak | c² = a² - b² (a>b) | c² = a² + b² |
+| **Pusat** | Tidak ada (puncak) | (0,0) atau (h,k) | (0,0) atau (h,k) |
+| **Bentuk** | Satu kurva terbuka | Kurva tertutup (oval) | Dua cabang terbuka |
+
+</div>
+
+<hr>
+
+<h3>Hubungan Eksentrisitas dengan Bentuk</h3>
+
+<div class="summary">
+
+<b>e = 0:</b> Lingkaran (kasus khusus elips).<br>
+
+<b>0 < e < 1:</b> Elips. Semakin dekat ke 1, semakin pipih.<br>
+
+<b>e = 1:</b> Parabola (transisi antara elips dan hiperbola).<br>
+
+<b>e > 1:</b> Hiperbola. Semakin besar, semakin "terbuka".<br><br>
+
+Eksentrisitas adalah "ukuran penyimpangan dari lingkaran".
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 9</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Parabola:</b> |PF| = jarak ke direktris. e = 1. y² = 4px atau x² = 4py.</li>
+
+<li><b>Elips:</b> |PF₁| + |PF₂| = 2a. e = c/a < 1. x²/a² + y²/b² = 1. c² = a² - b².</li>
+
+<li><b>Hiperbola:</b> ||PF₁| - |PF₂|| = 2a. e = c/a > 1. x²/a² - y²/b² = 1. c² = a² + b². Asimtot y = ±(b/a)x.</li>
+
+<li><b>Lingkaran:</b> elips dengan e = 0, a = b = r, c = 0.</li>
+
+<li><b>Eksentrisitas:</b> mengukur "kebulatan". 0 = lingkaran, 0<e<1 = elips, e=1 = parabola, e>1 = hiperbola.</li>
+
+<li><b>Latus rectum:</b> parabola = 4p, elips & hiperbola = 2b²/a.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Identifikasi jenis dari persamaan.</b> x² dan y² bertanda <b>sama</b> → elips (atau lingkaran). <b>Berbeda tanda</b> → hiperbola. <b>Salah satu tidak kuadrat</b> → parabola.
+
+</li>
+
+<li>
+
+<b>Elips: c² = a² - b². Hiperbola: c² = a² + b².</b> Jangan tertukar! Elips mengurangi, hiperbola menambah.
+
+</li>
+
+<li>
+
+<b>Parabola: koefisien 4p.</b> Dari y² = 4px, fokus di (p,0). Dari x² = 4py, fokus di (0,p). Tanda p menentukan arah bukaan.
+
+</li>
+
+<li>
+
+<b>Asimtot hiperbola: y = ±(b/a)x untuk sumbu transversal horizontal.</b> Gradiennya ±b/a. Gambar asimtot dulu sebelum menggambar hiperbolanya.
+
+</li>
+
+<li>
+
+<b>Latus rectum = 2b²/a untuk elips dan hiperbola.</b> Ini adalah tali busur melalui fokus yang tegak lurus sumbu mayor/transversal.
+
+</li>
+
+<li>
+
+<b>Geser pusat dengan mengganti x→(x-h), y→(y-k).</b> Pola yang sama seperti lingkaran dan transformasi grafik.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri8.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri10.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
