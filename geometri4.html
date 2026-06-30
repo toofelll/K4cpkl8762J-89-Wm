@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 4 | Lingkaran</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>⭕ GEOMETRI</h1>
+
+<p>Part 4 • Lingkaran</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Lingkaran adalah salah satu bentuk paling sempurna dalam geometri.
+Tidak ada sudut, tidak ada sisi lurus—hanya satu kurva mulus yang
+setiap titiknya berjarak sama dari pusat.
+
+</p>
+
+<p>
+
+Keindahan lingkaran terletak pada <b>simetri sempurnanya</b>.
+Lingkaran terlihat sama dari segala arah. Inilah kenapa lingkaran
+muncul di mana-mana: roda, planet, riak air, pelangi, cincin, matahari.
+Alam menyukai lingkaran karena ia adalah bentuk paling efisien—
+lingkaran memiliki luas terbesar untuk keliling tertentu dibanding bentuk apapun.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membahas lingkaran dari dasar sampai teorema-teorema
+lanjut yang sering muncul di kompetisi: <b>Power of a Point</b> dan <b>Teorema Ptolemy</b>.
+Kita juga akan mempelajari <b>lingkaran dalam dan lingkaran luar segitiga</b>—
+dua lingkaran istimewa yang "menyentuh" segitiga dengan cara yang elegan.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi dan unsur-unsur lingkaran (jari-jari, diameter, busur, tali busur, juring, tembereng, apotema).</li>
+
+<li>Menguasai hubungan sudut pusat dan sudut keliling.</li>
+
+<li>Memahami sifat-sifat tali busur dan garis singgung lingkaran.</li>
+
+<li>Menguasai teorema Power of a Point (titik kuasa).</li>
+
+<li>Memahami lingkaran dalam dan lingkaran luar segitiga, serta rumus jari-jarinya.</li>
+
+<li>Mengenal Teorema Ptolemy untuk segiempat tali busur.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DEFINISI & UNSUR LINGKARAN ==================== -->
+
+<div class="section">
+
+<h2>1. Definisi dan Unsur-Unsur Lingkaran</h2>
+
+<div class="summary">
+
+<b>Lingkaran</b> adalah himpunan semua titik pada bidang yang berjarak <b>sama</b>
+dari suatu titik tetap yang disebut <b>pusat lingkaran</b>.<br><br>
+
+Jarak tetap itu disebut <b>jari-jari (r)</b>.<br>
+
+<b>Diameter (d)</b> = 2r, garis lurus yang melalui pusat dan menghubungkan dua titik pada lingkaran.
+
+</div>
+
+<p>
+
+<b>Mengapa lingkaran disebut "tempat kedudukan"?</b>
+
+</p>
+
+<p>
+
+Dalam bahasa geometri, lingkaran adalah <b>locus</b> (tempat kedudukan)
+titik-titik yang memenuhi syarat tertentu—yaitu berjarak tetap dari pusat.
+Ini berbeda dengan "lingkaran" dalam percakapan sehari-hari
+yang sering mencampuradukkan dengan "cakram" (daerah di dalam lingkaran).
+Dalam geometri, lingkaran hanyalah <b>kurvanya</b> (kelilingnya),
+sedangkan daerah di dalamnya disebut <b>cakram</b>.
+
+</p>
+
+<hr>
+
+<h3>Unsur-Unsur Lingkaran — "Kosakata" yang Harus Dikuasai</h3>
+
+<div class="summary">
+
+<b>Jari-jari (r):</b> jarak dari pusat ke titik mana pun pada lingkaran.<br><br>
+
+<b>Diameter (d):</b> tali busur terpanjang yang melalui pusat. d = 2r.<br><br>
+
+<b>Busur (arc):</b> bagian dari keliling lingkaran. Busur kecil (minor arc) dan busur besar (major arc).<br><br>
+
+<b>Tali busur (chord):</b> ruas garis yang menghubungkan dua titik pada lingkaran.<br><br>
+
+<b>Juring (sector):</b> daerah yang dibatasi dua jari-jari dan satu busur (seperti potongan pizza).<br><br>
+
+<b>Tembereng (segment):</b> daerah yang dibatasi tali busur dan busurnya.<br><br>
+
+<b>Apotema:</b> jarak terpendek dari pusat ke tali busur (selalu tegak lurus tali busur).<br><br>
+
+<b>Sudut pusat:</b> sudut yang dibentuk dua jari-jari di pusat lingkaran.<br><br>
+
+<b>Sudut keliling:</b> sudut yang dibentuk dua tali busur yang bertemu di satu titik pada keliling.
+
+</div>
+
+<hr>
+
+<h3>Keliling dan Luas Lingkaran</h3>
+
+<div class="summary">
+
+<b>Keliling:</b> K = 2πr = πd<br><br>
+
+<b>Luas:</b> L = πr²
+
+</div>
+
+<p>
+
+<b>Mengapa π muncul?</b>
+
+</p>
+
+<p>
+
+π (pi) adalah <b>rasio keliling terhadap diameter</b> untuk <b>setiap</b> lingkaran.
+Tidak peduli seberapa besar atau kecil lingkarannya, K/d selalu sama: sekitar 3,14159...
+Ini adalah salah satu konstanta paling misterius dalam matematika—
+π adalah bilangan irasional (tidak bisa ditulis sebagai pecahan) dan transendental
+(bukan akar dari polinomial berkoefisien bulat).
+
+</p>
+
+<div class="example">
+
+Lingkaran dengan jari-jari 7 cm.<br><br>
+
+K = 2 × 3,14 × 7 = <b>43,96 cm</b><br>
+
+L = 3,14 × 49 = <b>153,86 cm²</b><br><br>
+
+Lingkaran dengan diameter 10 cm (r = 5 cm).<br><br>
+
+K = 3,14 × 10 = <b>31,4 cm</b><br>
+
+L = 3,14 × 25 = <b>78,5 cm²</b>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: SUDUT PUSAT & SUDUT KELILING ==================== -->
+
+<div class="section">
+
+<h2>2. Sudut Pusat dan Sudut Keliling — Hubungan yang Paling Penting</h2>
+
+<div class="summary">
+
+<b>Sudut pusat:</b> sudut yang titik sudutnya di <b>pusat</b> lingkaran.
+Dibentuk oleh dua jari-jari.<br><br>
+
+<b>Sudut keliling:</b> sudut yang titik sudutnya di <b>keliling</b> lingkaran.
+Dibentuk oleh dua tali busur yang bertemu di satu titik pada lingkaran.
+
+</div>
+
+<hr>
+
+<h3>Teorema Sudut Pusat dan Sudut Keliling</h3>
+
+<div class="summary">
+
+<b>Sudut pusat = 2 × sudut keliling</b> (jika keduanya menghadap busur yang sama).<br><br>
+
+∠AOB (pusat) = 2 × ∠ACB (keliling), di mana O adalah pusat.
+
+</div>
+
+<p>
+
+<b>Mengapa sudut pusat = 2 × sudut keliling?</b>
+
+</p>
+
+<div class="example">
+
+<b>Pembuktian (kasus paling sederhana):</b><br><br>
+
+Misalkan A, B, C pada lingkaran dengan pusat O.<br>
+
+Tarik jari-jari OA, OB, OC.<br><br>
+
+△OAC adalah segitiga sama kaki (OA = OC = r).<br>
+
+∠OAC = ∠OCA = α.<br>
+
+∠AOC = 180° - 2α (jumlah sudut segitiga).<br><br>
+
+△OBC juga sama kaki (OB = OC = r).<br>
+
+∠OBC = ∠OCB = β.<br>
+
+∠BOC = 180° - 2β.<br><br>
+
+∠AOB (sudut pusat) = 360° - (180°-2α) - (180°-2β) = 2α + 2β = 2(α+β).<br><br>
+
+∠ACB (sudut keliling) = ∠ACO + ∠OCB = α + β.<br><br>
+
+Jadi, ∠AOB = 2 × ∠ACB. ✅
+
+</div>
+
+<hr>
+
+<h3>Akibat Penting dari Teorema Ini</h3>
+
+<div class="summary">
+
+<b>1. Sudut keliling yang menghadap diameter = 90°.</b><br>
+
+(Karena sudut pusatnya 180°).<br><br>
+
+<b>2. Sudut-sudut keliling yang menghadap busur yang sama → sama besar.</b><br><br>
+
+<b>3. Sudut keliling yang menghadap busur setengah lingkaran = 90°.</b>
+
+</div>
+
+<p>
+
+<b>Ini adalah fakta paling penting tentang lingkaran:</b>
+Setiap sudut keliling yang menghadap diameter adalah <b>sudut siku-siku</b>.
+Teorema ini ditemukan oleh Thales dari Miletus (sekitar 600 SM)
+dan merupakan salah satu teorema tertua dalam geometri.
+
+</p>
+
+<div class="example">
+
+AB adalah diameter lingkaran. C adalah titik mana pun pada lingkaran (selain A dan B).<br><br>
+
+Maka ∠ACB = <b>90°</b> (selalu, tidak peduli di mana C berada).<br><br>
+
+Ini adalah <b>Teorema Thales</b>.
+
+</div>
+
+<hr>
+
+<h3>Segiempat Tali Busur (Cyclic Quadrilateral)</h3>
+
+<div class="summary">
+
+<b>Segiempat tali busur</b> adalah segiempat yang keempat titik sudutnya
+terletak pada satu lingkaran.<br><br>
+
+<b>Sifat utama:</b> Jumlah sudut yang berhadapan = <b>180°</b>.<br><br>
+
+∠A + ∠C = 180° dan ∠B + ∠D = 180°.
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+∠A adalah sudut keliling yang menghadap busur BCD.<br>
+
+∠C adalah sudut keliling yang menghadap busur BAD.<br><br>
+
+Sudut pusat untuk BCD + sudut pusat untuk BAD = 360° (satu lingkaran penuh).<br>
+
+Maka ∠A + ∠C = ½(360°) = 180°. ✅
+
+</div>
+
+<p>
+
+<b>Kebalikannya juga benar:</b> Jika dalam segiempat, jumlah sudut berhadapan = 180°,
+maka segiempat tersebut adalah segiempat tali busur (bisa dibuat lingkaran yang
+melewati keempat titiknya).
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 3: TALI BUSUR & GARIS SINGGUNG ==================== -->
+
+<div class="section">
+
+<h2>3. Tali Busur dan Garis Singgung</h2>
+
+<h3>3.1 Tali Busur — Ruas Garis Penghubung Dua Titik pada Lingkaran</h3>
+
+<div class="summary">
+
+<b>Sifat penting tali busur:</b><br><br>
+
+1. Tali busur terpanjang = <b>diameter</b>.<br>
+
+2. Apotema (jarak pusat ke tali busur) selalu <b>tegak lurus</b> tali busur.<br>
+
+3. Apotema membagi dua tali busur (menjadi dua sama panjang).<br>
+
+4. Tali busur yang sama panjang → jaraknya dari pusat sama. Sebaliknya juga berlaku.
+
+</div>
+
+<p>
+
+<b>Mengapa apotema membagi dua tali busur?</b>
+
+</p>
+
+<div class="example">
+
+Karena segitiga yang dibentuk oleh pusat dan kedua ujung tali busur
+adalah segitiga sama kaki (dua sisi = r).<br><br>
+
+Dalam segitiga sama kaki, garis tinggi dari puncak ke alas
+sekaligus membagi dua alas. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Garis Singgung Lingkaran — Menyentuh di Satu Titik</h3>
+
+<div class="summary">
+
+<b>Garis singgung</b> adalah garis yang menyentuh lingkaran tepat di <b>satu titik</b>
+(yang disebut <b>titik singgung</b>).<br><br>
+
+<b>Sifat paling penting:</b> Garis singgung selalu <b>tegak lurus</b> terhadap jari-jari
+di titik singgungnya.
+
+</div>
+
+<p>
+
+<b>Mengapa tegak lurus?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan jari-jari sebagai "tongkat" dari pusat ke titik di lingkaran.
+Kalau garis singgung tidak tegak lurus, maka garis itu akan "memotong"
+masuk ke dalam lingkaran (karena jarak terpendek dari pusat ke garis
+adalah garis tegak lurus). Agar garis hanya menyentuh di satu titik,
+ia harus tepat di "ujung" jari-jari dengan sudut 90°. ✅
+
+</div>
+
+<div class="example">
+
+Dari titik P di luar lingkaran dengan pusat O, ditarik dua garis singgung
+ke lingkaran, menyentuh di A dan B.<br><br>
+
+<b>Sifat:</b><br>
+
+- PA = PB (dua garis singgung dari satu titik luar selalu sama panjang).<br>
+
+- PO membagi dua ∠APB (simetris).<br>
+
+- OA ⟂ PA dan OB ⟂ PB.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: POWER OF A POINT ==================== -->
+
+<div class="section">
+
+<h2>4. Power of a Point — Teorema Titik Kuasa</h2>
+
+<p>
+
+<b>Power of a Point</b> (Teorema Titik Kuasa) adalah salah satu teorema
+paling powerful dalam geometri lingkaran. Teorema ini menghubungkan
+jarak dari suatu titik ke lingkaran melalui perpotongan garis.
+
+</p>
+
+<hr>
+
+<h3>Kasus 1: Titik di Dalam Lingkaran (Dua Tali Busur Berpotongan)</h3>
+
+<div class="summary">
+
+Jika dua tali busur AB dan CD berpotongan di titik P di <b>dalam</b> lingkaran, maka:<br><br>
+
+<b>PA × PB = PC × PD</b>
+
+</div>
+
+<p>
+
+<b>Mengapa?</b>
+
+</p>
+
+<div class="example">
+
+Tarik AD dan CB. △PAD ∼ △PCB (karena ∠PAD = ∠PCB menghadap busur BD,
+dan ∠APD = ∠CPB bertolak belakang).<br><br>
+
+Dari kesebangunan: PA/PC = PD/PB → <b>PA × PB = PC × PD</b>. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Tali busur AB dan CD berpotongan di P. PA = 4, PB = 6, PC = 3. Cari PD.<br><br>
+
+4 × 6 = 3 × PD<br>
+
+24 = 3PD<br>
+
+PD = <b>8</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 2: Titik di Luar Lingkaran (Dua Garis Potong/Secant)</h3>
+
+<div class="summary">
+
+Jika dari titik P di <b>luar</b> lingkaran ditarik dua garis yang memotong lingkaran
+masing-masing di A,B dan C,D (dengan urutan P-A-B dan P-C-D), maka:<br><br>
+
+<b>PA × PB = PC × PD</b>
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Dari titik P di luar lingkaran, garis PAB memotong lingkaran di A dan B
+(PA = 4, AB = 8, jadi PB = 12). Garis lain PCD memotong di C dan D (PC = 6). Cari PD.<br><br>
+
+4 × 12 = 6 × PD<br>
+
+48 = 6PD<br>
+
+PD = <b>8</b><br>
+
+Maka CD = PD - PC = 8 - 6 = 2. ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus 3: Titik di Luar Lingkaran (Garis Singgung + Garis Potong)</h3>
+
+<div class="summary">
+
+Jika dari titik P di luar lingkaran ditarik satu garis singgung (titik singgung T)
+dan satu garis potong (memotong di A dan B dengan urutan P-A-B), maka:<br><br>
+
+<b>PT² = PA × PB</b>
+
+</div>
+
+<p>
+
+<b>Ini adalah kasus khusus Kasus 2:</b> bayangkan garis potong kedua "menyempit"
+sampai kedua titik potongnya berimpit di T. Maka C = D = T, sehingga PC × PD = PT × PT = PT².
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Dari titik P di luar lingkaran, ditarik garis singgung PT = 6 cm,
+dan garis potong yang memotong lingkaran di A dan B. PA = 4 cm. Cari PB.<br><br>
+
+PT² = PA × PB<br>
+
+36 = 4 × PB<br>
+
+PB = <b>9 cm</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: LINGKARAN DALAM & LUAR SEGITIGA ==================== -->
+
+<div class="section">
+
+<h2>5. Lingkaran Dalam dan Lingkaran Luar Segitiga</h2>
+
+<p>
+
+Setiap segitiga memiliki <b>dua lingkaran istimewa</b> yang menemaninya:
+satu di dalam (lingkaran dalam) dan satu di luar (lingkaran luar).
+
+</p>
+
+<hr>
+
+<h3>5.1 Lingkaran Dalam Segitiga (Incircle)</h3>
+
+<div class="summary">
+
+<b>Lingkaran dalam</b> adalah lingkaran yang menyinggung <b>ketiga sisi</b> segitiga dari dalam.<br><br>
+
+Pusatnya = <b>titik bagi (incenter I)</b> — perpotongan ketiga garis bagi sudut.<br><br>
+
+Jari-jari lingkaran dalam = <b>r</b>.
+
+</div>
+
+<div class="summary">
+
+<b>Rumus jari-jari lingkaran dalam:</b><br><br>
+
+<b>r = L / s</b><br><br>
+
+L = luas segitiga.<br>
+
+s = semiperimeter = (a+b+c)/2.
+
+</div>
+
+<p>
+
+<b>Mengapa r = L/s?</b>
+
+</p>
+
+<div class="example">
+
+Hubungkan incenter I ke ketiga titik sudut. Segitiga terbagi menjadi
+3 segitiga kecil: △IBC, △ICA, △IAB.<br><br>
+
+Luas △IBC = ½ × a × r.<br>
+
+Luas △ICA = ½ × b × r.<br>
+
+Luas △IAB = ½ × c × r.<br><br>
+
+Luas total = ½r(a + b + c) = r × s.<br><br>
+
+Maka r = L / s. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Segitiga dengan sisi 13, 14, 15. Cari jari-jari lingkaran dalamnya.<br><br>
+
+L = 84 (dari Heron, sudah dihitung di Geometri 2).<br>
+
+s = (13+14+15)/2 = 21.<br><br>
+
+r = 84/21 = <b>4</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Lingkaran Luar Segitiga (Circumcircle)</h3>
+
+<div class="summary">
+
+<b>Lingkaran luar</b> adalah lingkaran yang melewati <b>ketiga titik sudut</b> segitiga.<br><br>
+
+Pusatnya = <b>titik sumbu (circumcenter O)</b> — perpotongan ketiga garis sumbu.<br><br>
+
+Jari-jari lingkaran luar = <b>R</b>.
+
+</div>
+
+<div class="summary">
+
+<b>Rumus jari-jari lingkaran luar:</b><br><br>
+
+<b>R = abc / (4L)</b><br><br>
+
+a, b, c = panjang sisi-sisi segitiga.<br>
+
+L = luas segitiga.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Segitiga dengan sisi 13, 14, 15. Cari jari-jari lingkaran luarnya.<br><br>
+
+L = 84, abc = 13 × 14 × 15 = 2730.<br><br>
+
+R = 2730 / (4 × 84) = 2730 / 336 = <b>8,125</b> ✅
+
+</div>
+
+<div class="note">
+
+<b>💡 Hubungan r dan R:</b><br><br>
+
+Untuk segitiga apapun: <b>R ≥ 2r</b> (Ketaksamaan Euler).<br>
+
+R = 2r hanya untuk segitiga sama sisi.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: TEOREMA PTOLEMY ==================== -->
+
+<div class="section">
+
+<h2>6. Teorema Ptolemy — Keajaiban Segiempat Tali Busur</h2>
+
+<p>
+
+<b>Teorema Ptolemy</b> (dinamai dari Claudius Ptolemy, astronom Yunani abad ke-2 M)
+adalah teorema yang menghubungkan sisi dan diagonal segiempat tali busur.
+
+</p>
+
+<div class="summary">
+
+Untuk segiempat tali busur ABCD (semua titik sudut pada satu lingkaran):<br><br>
+
+<b>AC × BD = AB × CD + AD × BC</b><br><br>
+
+Diagonal 1 × Diagonal 2 = (sisi depan₁ × sisi depan₂) + (sisi depan₃ × sisi depan₄).
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar?</b>
+
+</p>
+
+<div class="example">
+
+<b>Sketsa pembuktian:</b><br><br>
+
+Ambil titik E pada diagonal AC sedemikian sehingga ∠ABE = ∠DBC.<br><br>
+
+Karena ABCD adalah segiempat tali busur, ∠BAC = ∠BDC (menghadap busur BC).<br><br>
+
+Maka △ABE ∼ △DBC → AB/DB = AE/DC = BE/BC.<br><br>
+
+Dengan cara yang sama, △CBE ∼ △DBA.<br><br>
+
+Dari kedua kesebangunan ini, bisa diturunkan:<br>
+
+AC = AE + EC = (AB×CD)/BD + (AD×BC)/BD.<br><br>
+
+Kalikan dengan BD: AC × BD = AB × CD + AD × BC. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Segiempat tali busur ABCD dengan AB = 5, BC = 6, CD = 7, DA = 8.
+Cari panjang diagonal AC jika BD = 9.<br><br>
+
+AC × 9 = 5 × 7 + 8 × 6<br>
+
+9AC = 35 + 48<br>
+
+9AC = 83<br>
+
+AC = <b>83/9 ≈ 9,22</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Penerapan Keren: Teorema Pythagoras dari Ptolemy!</h3>
+
+<div class="example">
+
+Terapkan Ptolemy pada <b>persegi panjang</b> (yang selalu merupakan segiempat tali busur
+karena semua sudut 90° → sudut berhadapan = 180°).<br><br>
+
+Persegi panjang: AB = CD = p, BC = DA = l. Diagonal AC = BD = d.<br><br>
+
+Ptolemy: d × d = p × p + l × l<br>
+
+d² = p² + l²<br><br>
+
+Ini adalah <b>Teorema Pythagoras</b>! Ptolemy bisa menurunkannya! ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 4</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Lingkaran:</b> tempat kedudukan titik berjarak sama dari pusat. K = 2πr, L = πr².</li>
+
+<li><b>Sudut pusat = 2 × sudut keliling</b> (menghadap busur sama).</li>
+
+<li><b>Thales:</b> Sudut keliling menghadap diameter = 90°.</li>
+
+<li><b>Segiempat tali busur:</b> jumlah sudut berhadapan = 180°.</li>
+
+<li><b>Garis singgung ⟂ jari-jari</b> di titik singgung. Dua garis singgung dari satu titik luar sama panjang.</li>
+
+<li><b>Power of a Point (dalam):</b> PA×PB = PC×PD (tali busur berpotongan).</li>
+
+<li><b>Power of a Point (luar):</b> PA×PB = PC×PD (dua garis potong). PT² = PA×PB (garis singgung+potong).</li>
+
+<li><b>Lingkaran dalam:</b> pusat I (incenter), r = L/s.</li>
+
+<li><b>Lingkaran luar:</b> pusat O (circumcenter), R = abc/(4L). R ≥ 2r.</li>
+
+<li><b>Teorema Ptolemy:</b> AC×BD = AB×CD + AD×BC (segiempat tali busur).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Lihat sudut keliling, langsung cek sudut pusat.</b>
+Ini adalah refleks pertama setiap kali kamu melihat sudut pada lingkaran.
+Sudut pusat selalu 2× sudut keliling yang menghadap busur sama.
+
+</li>
+
+<li>
+
+<b>Diameter → sudut 90°.</b> Begitu ada diameter di soal, cari sudut keliling
+yang menghadapnya. Itu pasti 90°. Ini sering jadi kunci pembuktian.
+
+</li>
+
+<li>
+
+<b>Power of a Point adalah senjata andalan.</b>
+Begitu ada dua garis berpotongan di dalam atau luar lingkaran,
+langsung pakai Power of a Point. Tulis PA×PB = PC×PD.
+
+</li>
+
+<li>
+
+<b>Garis singgung: kuadratkan!</b> Kalau ada garis singgung dan garis potong
+dari satu titik, ingat PT² = PA×PB. Jangan lupa kuadrat di PT.
+
+</li>
+
+<li>
+
+<b>Segiempat tali busur: cek sudut berhadapan.</b>
+Kalau ∠A+∠C = 180° (atau ∠B+∠D = 180°), itu segiempat tali busur.
+Langsung bisa pakai Ptolemy!
+
+</li>
+
+<li>
+
+<b>r = L/s, R = abc/4L.</b> Dua rumus ini wajib dihafal.
+Sering muncul di soal yang menghubungkan segitiga dengan lingkarannya.
+
+</li>
+
+<li>
+
+<b>Ptolemy bisa "turunkan" Pythagoras.</b> Ini bukti bahwa teorema-teorema
+dalam geometri saling terhubung. Ptolemy adalah generalisasi dari Pythagoras
+untuk segiempat tali busur.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri3.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri5.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
