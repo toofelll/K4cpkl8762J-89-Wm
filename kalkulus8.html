@@ -1,1 +1,719 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 8 | Deret & Barisan</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 8 • Deret & Barisan</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Dari Polinomial ke "Polinomial Tak Hingga"</h2>
+
+<p>
+
+Bayangkan kamu ingin menghitung sin(0,1) tanpa kalkulator. Nilai ini tidak
+bisa dihitung secara eksak seperti 2+2=4. Tapi bagaimana kalau ada cara
+untuk menulis sin(x) sebagai <b>polinomial</b>? Polinomial mudah dihitung—
+cuma butuh perkalian dan penjumlahan. Masalahnya: sin(x) bukan polinomial.
+
+</p>
+
+<p>
+
+Tapi bagaimana kalau kita menggunakan <b>polinomial dengan tak hingga suku</b>?
+Inilah ide revolusioner di balik <b>deret Taylor</b>: menyatakan fungsi rumit
+(trigonometri, eksponen, logaritma) sebagai <b>jumlahan tak hingga suku-suku polinomial</b>.
+Dengan mengambil beberapa suku pertama, kita dapat <b>aproksimasi</b> yang sangat akurat.
+
+</p>
+
+<p>
+
+Inilah yang dilakukan kalkulator dan komputer setiap kali kamu menekan tombol
+sin, cos, eˣ, atau ln. Mereka tidak "menghitung" fungsi itu secara ajaib—
+mereka menghitung beberapa suku deret Taylor-nya. Deret Taylor adalah
+<b>jembatan antara fungsi transendental dan operasi aritmetika dasar</b>.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami deret Taylor sebagai generalisasi dari aproksimasi linear.</li>
+
+<li>Menguasai cara menurunkan deret Taylor dari turunan berulang.</li>
+
+<li>Memahami mengapa koefisien deret Taylor adalah f⁽ⁿ⁾(a)/n!.</li>
+
+<li>Mampu menurunkan deret Maclaurin untuk eˣ, sin x, cos x, ln(1+x).</li>
+
+<li>Memahami radius dan interval konvergensi.</li>
+
+<li>Menguasai metode Newton-Raphson sebagai aplikasi deret Taylor orde 1.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DARI APROKSIMASI LINEAR KE DERET ==================== -->
+
+<div class="section">
+
+<h2>1. Dari Aproksimasi Linear ke Deret Taylor — Perjalanan Logis</h2>
+
+<p>
+
+Di Kalkulus 3, kita belajar <b>aproksimasi linear</b>:
+f(x) ≈ f(a) + f'(a)(x-a). Ini adalah "deret Taylor orde 1"—
+kita hanya mengambil suku konstanta dan suku linear.
+
+</p>
+
+<p>
+
+Tapi aproksimasi linear punya masalah: ia hanya akurat untuk x yang
+<b>sangat dekat</b> ke a. Begitu x menjauh, garis singgung "melenceng"
+dari kurva. Bagaimana cara memperbaikinya?
+
+</p>
+
+<p>
+
+<b>Ide kuncinya:</b> Tambahkan suku kuadrat (x-a)² untuk mengoreksi
+"kecekungan", suku kubik (x-a)³ untuk mengoreksi "kecekungan dari kecekungan",
+dan seterusnya. Setiap suku baru memberi koreksi yang lebih halus.
+Dengan tak hingga suku, koreksinya sempurna—deretnya <b>sama persis</b> dengan fungsi aslinya.
+
+</p>
+
+<hr>
+
+<h3>1.1 Membangun Deret Taylor Langkah demi Langkah</h3>
+
+<p>
+
+Misalkan kita ingin menulis f(x) sebagai deret pangkat di sekitar x = a:
+
+</p>
+
+<div class="example">
+
+f(x) = c₀ + c₁(x-a) + c₂(x-a)² + c₃(x-a)³ + c₄(x-a)⁴ + ...<br><br>
+
+Pertanyaannya: <b>berapa nilai c₀, c₁, c₂, c₃, ...?</b><br><br>
+
+Mari kita cari satu per satu dengan menurunkan!
+
+</div>
+
+<p>
+
+<b>Langkah 0 — Mencari c₀:</b> Substitusi x = a.
+
+</p>
+
+<div class="example">
+
+f(a) = c₀ + c₁(0) + c₂(0)² + c₃(0)³ + ... = <b>c₀</b>.<br><br>
+
+Jadi c₀ = f(a). ✅
+
+</div>
+
+<p>
+
+<b>Langkah 1 — Mencari c₁:</b> Turunkan f(x) sekali, lalu substitusi x = a.
+
+</p>
+
+<div class="example">
+
+f'(x) = c₁ + 2c₂(x-a) + 3c₃(x-a)² + 4c₄(x-a)³ + ...<br><br>
+
+f'(a) = c₁ + 0 + 0 + 0 + ... = <b>c₁</b>.<br><br>
+
+Jadi c₁ = f'(a). ✅
+
+</div>
+
+<p>
+
+<b>Langkah 2 — Mencari c₂:</b> Turunkan f'(x) untuk mendapat f''(x), lalu substitusi x = a.
+
+</p>
+
+<div class="example">
+
+f''(x) = 2c₂ + 6c₃(x-a) + 12c₄(x-a)² + ...<br><br>
+
+f''(a) = 2c₂ + 0 + 0 + ... = <b>2c₂</b>.<br><br>
+
+Jadi c₂ = f''(a)/2 = <b>f''(a)/2!</b>. ✅
+
+</div>
+
+<p>
+
+<b>Langkah 3 — Mencari c₃:</b> Turunkan lagi.
+
+</p>
+
+<div class="example">
+
+f'''(x) = 6c₃ + 24c₄(x-a) + ...<br><br>
+
+f'''(a) = 6c₃ = <b>3! c₃</b>.<br><br>
+
+Jadi c₃ = f'''(a)/6 = <b>f'''(a)/3!</b>. ✅
+
+</div>
+
+<p>
+
+<b>Polanya jelas:</b> cₙ = <b>f⁽ⁿ⁾(a)/n!</b>. Setiap koefisien adalah
+turunan ke-n di titik a, dibagi n faktorial.
+
+</p>
+
+<div class="summary">
+
+<b>Deret Taylor dari f(x) di sekitar x = a:</b><br><br>
+
+f(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + f'''(a)(x-a)³/3! + f⁽⁴⁾(a)(x-a)⁴/4! + ...<br><br>
+
+Atau dalam notasi sigma: <b>f(x) = Σ[n=0..∞] [f⁽ⁿ⁾(a)/n!] (x-a)ⁿ</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ada n! di penyebut?</b> Karena setiap kali kita menurunkan (x-a)ⁿ,
+pangkatnya turun dan mengalikan koefisien: turunan dari (x-a)ⁿ adalah n(x-a)ⁿ⁻¹.
+Saat kita turunkan n kali berturut-turut, kita dapat n×(n-1)×...×1 = n!.
+Untuk "membatalkan" efek perkalian ini, kita harus membagi dengan n!.
+
+</p>
+
+<hr>
+
+<h3>1.2 Deret Maclaurin — Kasus Khusus di x = 0</h3>
+
+<div class="summary">
+
+<b>Deret Maclaurin</b> adalah deret Taylor dengan pusat a = 0:<br><br>
+
+f(x) = f(0) + f'(0)x + f''(0)x²/2! + f'''(0)x³/3! + ...<br><br>
+
+= Σ[n=0..∞] [f⁽ⁿ⁾(0)/n!] xⁿ
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: MENURUNKAN DERET MACLAURIN ==================== -->
+
+<div class="section">
+
+<h2>2. Menurunkan Deret Maclaurin untuk Fungsi-Fungsi Penting</h2>
+
+<p>
+
+Sekarang kita akan <b>menurunkan sendiri</b> deret Maclaurin untuk fungsi-fungsi
+paling penting. Kita tidak akan menerima rumusnya begitu saja—
+kita akan menghitung turunan demi turunan dan melihat polanya.
+
+</p>
+
+<hr>
+
+<h3>2.1 Deret Maclaurin untuk eˣ — Fungsi yang Turunannya Tetap</h3>
+
+<div class="example">
+
+f(x) = eˣ. f(0) = e⁰ = <b>1</b>.<br><br>
+
+f'(x) = eˣ → f'(0) = <b>1</b>.<br>
+
+f''(x) = eˣ → f''(0) = <b>1</b>.<br>
+
+f'''(x) = eˣ → f'''(0) = <b>1</b>.<br>
+
+...semua turunan di 0 bernilai 1!<br><br>
+
+Maka deret Maclaurin untuk eˣ:<br><br>
+
+eˣ = 1 + 1·x + 1·x²/2! + 1·x³/3! + 1·x⁴/4! + ...<br>
+
+= <b>1 + x + x²/2! + x³/3! + x⁴/4! + ...</b><br><br>
+
+= Σ[n=0..∞] xⁿ/n! ✅<br><br>
+
+<b>Verifikasi:</b> Untuk x = 1, e¹ ≈ 1+1+1/2+1/6+1/24 = 2,7083... Nilai sebenarnya e ≈ 2,71828.
+Dengan 5 suku sudah akurat! Untuk x = 0, e⁰ = 1 (semua suku kecuali pertama = 0). ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Deret Maclaurin untuk sin x — Pola Berulang Setiap 4 Turunan</h3>
+
+<div class="example">
+
+f(x) = sin x. f(0) = <b>0</b>.<br>
+
+f'(x) = cos x → f'(0) = <b>1</b>.<br>
+
+f''(x) = -sin x → f''(0) = <b>0</b>.<br>
+
+f'''(x) = -cos x → f'''(0) = <b>-1</b>.<br>
+
+f⁽⁴⁾(x) = sin x → f⁽⁴⁾(0) = <b>0</b>.<br>
+
+f⁽⁵⁾(x) = cos x → f⁽⁵⁾(0) = <b>1</b>.<br><br>
+
+Polanya: 0, 1, 0, -1, 0, 1, 0, -1, ... (berulang setiap 4).<br><br>
+
+Suku-suku dengan koefisien 0 menghilang. Yang tersisa hanya suku ganjil
+dengan tanda bergantian:<br><br>
+
+sin x = 0 + 1·x + 0·x²/2! + (-1)·x³/3! + 0·x⁴/4! + 1·x⁵/5! + ...<br>
+
+= <b>x - x³/3! + x⁵/5! - x⁷/7! + x⁹/9! - ...</b><br><br>
+
+= Σ[n=0..∞] (-1)ⁿ x²ⁿ⁺¹/(2n+1)! ✅<br><br>
+
+<b>Mengapa hanya suku ganjil?</b> Karena sin x adalah fungsi ganjil: sin(-x) = -sin x.
+Deret pangkat untuk fungsi ganjil hanya mengandung pangkat ganjil.
+
+</div>
+
+<hr>
+
+<h3>2.3 Deret Maclaurin untuk cos x — Pasangan sin x</h3>
+
+<div class="example">
+
+f(x) = cos x. f(0) = <b>1</b>.<br>
+
+f'(x) = -sin x → f'(0) = <b>0</b>.<br>
+
+f''(x) = -cos x → f''(0) = <b>-1</b>.<br>
+
+f'''(x) = sin x → f'''(0) = <b>0</b>.<br>
+
+f⁽⁴⁾(x) = cos x → f⁽⁴⁾(0) = <b>1</b>.<br><br>
+
+Pola turunan di 0: 1, 0, -1, 0, 1, 0, -1, 0, ...<br><br>
+
+Yang tersisa hanya suku genap dengan tanda bergantian:<br><br>
+
+cos x = <b>1 - x²/2! + x⁴/4! - x⁶/6! + x⁸/8! - ...</b><br><br>
+
+= Σ[n=0..∞] (-1)ⁿ x²ⁿ/(2n)! ✅<br><br>
+
+<b>Hubungan sin dan cos:</b> Perhatikan bahwa turunan sin x = cos x.
+Coba turunkan deret sin x suku demi suku: d/dx(x - x³/3! + x⁵/5! - ...)
+= 1 - 3x²/3! + 5x⁴/5! - ... = 1 - x²/2! + x⁴/4! - ... = cos x! ✅
+
+</div>
+
+<hr>
+
+<h3>2.4 Deret Maclaurin untuk ln(1+x) — Dari Integral Deret Geometri</h3>
+
+<div class="example">
+
+<b>Cara 1: Turunan berulang</b><br><br>
+
+f(x) = ln(1+x). f(0) = ln(1) = <b>0</b>.<br>
+
+f'(x) = 1/(1+x) → f'(0) = <b>1</b>.<br>
+
+f''(x) = -1/(1+x)² → f''(0) = <b>-1</b>.<br>
+
+f'''(x) = 2/(1+x)³ → f'''(0) = <b>2</b>.<br>
+
+f⁽⁴⁾(x) = -6/(1+x)⁴ → f⁽⁴⁾(0) = <b>-6</b>.<br><br>
+
+Pola: f⁽ⁿ⁾(0) = (-1)ⁿ⁻¹ (n-1)! untuk n ≥ 1.<br><br>
+
+Maka: ln(1+x) = 0 + 1·x + (-1)·x²/2! + 2·x³/3! + (-6)·x⁴/4! + ...<br>
+
+= x - x²/2 + 2x³/6 - 6x⁴/24 + ...<br>
+
+= <b>x - x²/2 + x³/3 - x⁴/4 + x⁵/5 - ...</b> ✅<br><br>
+
+<b>Cara 2 (Lebih mudah!):</b> Kita tahu 1/(1+x) = 1 - x + x² - x³ + x⁴ - ... untuk |x|<1.<br>
+
+ln(1+x) = ∫₀ˣ dt/(1+t) = ∫₀ˣ (1 - t + t² - t³ + ...) dt<br>
+
+= [t - t²/2 + t³/3 - t⁴/4 + ...]₀ˣ<br>
+
+= <b>x - x²/2 + x³/3 - x⁴/4 + ...</b>. Jauh lebih cepat! ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: DERET GEOMETRI & KONVERGENSI ==================== -->
+
+<div class="section">
+
+<h2>3. Deret Geometri Tak Hingga — Fondasi Semua Deret Pangkat</h2>
+
+<div class="summary">
+
+<b>Deret geometri:</b> a + ar + ar² + ar³ + ... = Σ[n=0..∞] arⁿ<br><br>
+
+<b>Konvergen</b> jika |r| < 1, dengan jumlah S = <b>a/(1-r)</b>.<br>
+
+<b>Divergen</b> jika |r| ≥ 1.
+
+</div>
+
+<p>
+
+<b>Mengapa S = a/(1-r)? — Pembuktian dengan Eliminasi</b>
+
+</p>
+
+<div class="example">
+
+Misalkan S = a + ar + ar² + ar³ + ...<br><br>
+
+Kalikan dengan r: rS = ar + ar² + ar³ + ar⁴ + ...<br><br>
+
+Kurangkan: S - rS = a (semua suku tengah saling menghapus!)<br>
+
+S(1-r) = a → S = a/(1-r). ✅<br><br>
+
+<b>Syarat |r| < 1:</b> Jika |r| ≥ 1, suku-suku tidak mengecil dan
+jumlahnya menuju tak hingga (divergen).
+
+</div>
+
+<hr>
+
+<h3>3.1 Deret Geometri sebagai Deret Pangkat Paling Dasar</h3>
+
+<div class="summary">
+
+Untuk |x| < 1:<br><br>
+
+<b>1/(1-x) = 1 + x + x² + x³ + x⁴ + ... = Σ[n=0..∞] xⁿ</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ini fundamental?</b> Karena dengan mensubstitusi, menurunkan,
+atau mengintegralkan deret ini, kita bisa mendapatkan deret untuk
+banyak fungsi lain!
+
+</p>
+
+<div class="example">
+
+1/(1+x) = 1/(1-(-x)) = 1 - x + x² - x³ + x⁴ - ... &nbsp; (|x|<1).<br><br>
+
+1/(1+x²) = 1 - x² + x⁴ - x⁶ + ... &nbsp; (|x|<1).<br><br>
+
+ln(1+x) = ∫ 1/(1+x) dx = x - x²/2 + x³/3 - x⁴/4 + ... &nbsp; (|x|<1).<br><br>
+
+arctan x = ∫ 1/(1+x²) dx = x - x³/3 + x⁵/5 - x⁷/7 + ... &nbsp; (|x|<1).
+
+</div>
+
+<hr>
+
+<h3>3.2 Radius dan Interval Konvergensi — Uji Rasio</h3>
+
+<div class="summary">
+
+<b>Uji Rasio (Ratio Test):</b><br><br>
+
+Untuk deret Σ aₙ, hitung L = lim[n→∞] |aₙ₊₁/aₙ|.<br><br>
+
+L < 1 → konvergen mutlak. L > 1 → divergen. L = 1 → tidak dapat disimpulkan.<br><br>
+
+<b>Untuk deret pangkat Σ cₙ(x-a)ⁿ:</b><br>
+
+Radius konvergensi R = 1 / lim[n→∞] |cₙ₊₁/cₙ|.<br>
+
+Deret konvergen untuk |x-a| < R, divergen untuk |x-a| > R.
+
+</div>
+
+<div class="example">
+
+Cari radius dan interval konvergensi dari Σ[n=1..∞] xⁿ/n.<br><br>
+
+cₙ = 1/n. |cₙ₊₁/cₙ| = (1/(n+1))/(1/n) = n/(n+1) → 1.<br>
+
+R = 1/1 = <b>1</b>.<br><br>
+
+Cek ujung:<br>
+
+x = 1: Σ 1/n → deret harmonik, <b>divergen</b>.<br>
+
+x = -1: Σ (-1)ⁿ/n → deret harmonik alternating, <b>konvergen</b>.<br><br>
+
+Interval konvergensi: <b>[-1, 1)</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: APLIKASI DERET TAYLOR ==================== -->
+
+<div class="section">
+
+<h2>4. Aplikasi Deret Taylor — Dari Kalkulator sampai Fisika</h2>
+
+<h3>4.1 Menghitung Nilai Fungsi — Cara Kalkulator Bekerja</h3>
+
+<div class="example">
+
+Hitung e⁰·³ menggunakan 5 suku pertama deret Maclaurin.<br><br>
+
+eˣ ≈ 1 + x + x²/2! + x³/3! + x⁴/4!<br>
+
+= 1 + 0,3 + 0,09/2 + 0,027/6 + 0,0081/24<br>
+
+= 1 + 0,3 + 0,045 + 0,0045 + 0,0003375<br>
+
+= <b>1,3498375</b>.<br><br>
+
+Nilai sebenarnya: e⁰·³ ≈ 1,3498588. Error ≈ 0,00002. Sangat akurat! ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Deret Taylor Orde 2 = Aproksimasi Kuadratik</h3>
+
+<div class="example">
+
+f(x) ≈ f(a) + f'(a)(x-a) + f''(a)(x-a)²/2!<br><br>
+
+Ini adalah <b>parabola</b> yang menyinggung kurva di x = a dengan
+kecekungan yang sama. Jauh lebih akurat daripada aproksimasi linear!<br><br>
+
+Contoh: f(x) = √x di sekitar a = 4.<br>
+
+f(4) = 2. f'(4) = 1/(2√4) = 1/4. f''(4) = -1/(4·4^(3/2)) = -1/32.<br><br>
+
+Aproksimasi orde 2: √x ≈ 2 + (x-4)/4 - (x-4)²/64.<br><br>
+
+Untuk x = 4,2: √4,2 ≈ 2 + 0,2/4 - 0,04/64 = 2 + 0,05 - 0,000625 = <b>2,049375</b>.<br>
+
+Nilai sebenarnya: √4,2 ≈ 2,049390. Error ≈ 0,000015! Jauh lebih akurat
+dibanding aproksimasi linear (error ≈ 0,0002). ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Deret Taylor dalam Fisika — Pendekatan Sudut Kecil</h3>
+
+<div class="example">
+
+Dalam fisika, untuk sudut kecil (θ ≈ 0):<br><br>
+
+sin θ ≈ θ (aproksimasi orde 1).<br>
+
+cos θ ≈ 1 - θ²/2 (aproksimasi orde 2).<br><br>
+
+Ini membuat persamaan gerak pendulum menjadi linear dan mudah diselesaikan!
+Rumus periode pendulum T = 2π√(L/g) berasal dari aproksimasi sin θ ≈ θ.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: NEWTON-RAPHSON ==================== -->
+
+<div class="section">
+
+<h2>5. Metode Newton-Raphson — Deret Taylor Orde 1 untuk Mencari Akar</h2>
+
+<div class="summary">
+
+<b>Metode Newton-Raphson</b> menggunakan aproksimasi Taylor orde 1
+untuk mencari akar persamaan f(x) = 0 secara iteratif.<br><br>
+
+<b>Rumus:</b> xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)<br><br>
+
+<b>Ide:</b> Aproksimasi f(x) dengan garis singgung di xₙ.
+Cari titik potong garis singgung dengan sumbu X. Itu adalah xₙ₊₁.
+
+</div>
+
+<p>
+
+<b>Penurunan dari Deret Taylor Orde 1:</b>
+
+</p>
+
+<div class="example">
+
+Ekspansi Taylor orde 1 di sekitar xₙ:<br>
+
+f(x) ≈ f(xₙ) + f'(xₙ)(x - xₙ).<br><br>
+
+Kita ingin f(x) = 0 (mencari akar). Maka:<br>
+
+0 ≈ f(xₙ) + f'(xₙ)(x - xₙ)<br>
+
+-f(xₙ) ≈ f'(xₙ)(x - xₙ)<br>
+
+x - xₙ ≈ -f(xₙ)/f'(xₙ)<br>
+
+x ≈ xₙ - f(xₙ)/f'(xₙ) = <b>xₙ₊₁</b>. ✅
+
+</div>
+
+<div class="example">
+
+Cari √5 menggunakan Newton-Raphson. f(x) = x² - 5 = 0. f'(x) = 2x.<br><br>
+
+Tebakan awal: x₀ = 2 (karena 2² = 4, dekat ke 5).<br><br>
+
+x₁ = 2 - (4-5)/4 = 2 + 0,25 = <b>2,25</b>.<br>
+
+x₂ = 2,25 - (5,0625-5)/4,5 = 2,25 - 0,0139 = <b>2,2361</b>.<br>
+
+x₃ = 2,2361 - (5,0001-5)/4,4722 = 2,2361 - 0,00002 = <b>2,23607</b>.<br><br>
+
+Nilai √5 sebenarnya: 2,2360679... Dalam 3 iterasi sudah konvergen ke 5 desimal! ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 8</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Deret Taylor:</b> f(x) = Σ f⁽ⁿ⁾(a)(x-a)ⁿ/n!. Generalisasi aproksimasi linear ke orde tak hingga.</li>
+
+<li><b>Koefisien cₙ = f⁽ⁿ⁾(a)/n!:</b> Diperoleh dari menurunkan deret pangkat n kali dan substitusi x=a.</li>
+
+<li><b>n! di penyebut:</b> Mengkompensasi faktor n! yang muncul dari menurunkan (x-a)ⁿ sebanyak n kali.</li>
+
+<li><b>Deret Maclaurin (a=0):</b> eˣ=Σxⁿ/n!, sin x=Σ(-1)ⁿx²ⁿ⁺¹/(2n+1)!, cos x=Σ(-1)ⁿx²ⁿ/(2n)!.</li>
+
+<li><b>ln(1+x):</b> Bisa dari turunan berulang ATAU integral deret 1/(1+x).</li>
+
+<li><b>Deret geometri:</b> 1/(1-x)=Σxⁿ, |x|<1. Dasar semua deret pangkat.</li>
+
+<li><b>Radius konvergensi:</b> R = 1/lim|cₙ₊₁/cₙ|. Uji rasio.</li>
+
+<li><b>Newton-Raphson:</b> xₙ₊₁=xₙ-f(xₙ)/f'(xₙ). Dari deret Taylor orde 1.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Jangan hafal deret—turunkan sendiri!</b> Kalau lupa deret Maclaurin untuk sin x,
+turunkan sin x beberapa kali di x=0: 0,1,0,-1,0,1,... dan susun deretnya.
+
+</li>
+
+<li>
+
+<b>Gunakan deret geometri sebagai batu loncatan.</b> Banyak deret (ln, arctan, dll)
+bisa didapat dari integrasi 1/(1±x) atau 1/(1+x²).
+
+</li>
+
+<li>
+
+<b>Radius konvergensi: cek ujung interval!</b> Uji rasio hanya memberi |x-a|<R.
+Untuk x = a±R, harus dicek manual—bisa konvergen atau divergen.
+
+</li>
+
+<li>
+
+<b>sin x = suku ganjil, cos x = suku genap.</b> Ini konsisten dengan sifat
+sin(-x)=-sin x (ganjil) dan cos(-x)=cos x (genap).
+
+</li>
+
+<li>
+
+<b>eˣ konvergen untuk semua x karena n! tumbuh lebih cepat dari xⁿ.</b>
+Inilah kenapa deret eˣ bisa dipakai untuk menghitung e¹⁰⁰ sekalipun.
+
+</li>
+
+<li>
+
+<b>Newton-Raphson = "follow the tangent".</b> Visualisasikan sebagai meluncur
+di sepanjang garis singgung menuju akar. Tebakan awal yang baik → konvergensi super cepat.</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus7.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus9.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
