@@ -66,6 +66,8 @@ ekonomi, dan ilmu data.
 
 <li>Menggunakan diferensial untuk aproksimasi linear.</li>
 
+<li>Memahami error bound (batas kesalahan) pada aproksimasi linear.</li>
+
 </ul>
 
 </div>
@@ -133,6 +135,18 @@ y = <b>6x - 9</b> ✅<br><br>
 
 </div>
 
+<div class="example">
+
+<b>Soal:</b> Cari persamaan garis singgung pada kurva y = ln x di titik (1, 0).<br><br>
+
+f(x) = ln x. f'(x) = 1/x. f'(1) = <b>1</b>.<br><br>
+
+Garis singgung: y - 0 = 1(x - 1) → <b>y = x - 1</b> ✅<br><br>
+
+<b>Verifikasi:</b> Di x = 1, y = 0. Garis y = x-1 menyinggung y = ln x di (1,0).
+
+</div>
+
 <hr>
 
 <h3>1.2 Garis Singgung Horizontal — Titik Stasioner</h3>
@@ -169,13 +183,13 @@ Kedua titik ini memiliki garis singgung horizontal.
 
 <div class="example">
 
-<b>Soal:</b> Cari titik pada kurva y = x² di mana garis singgungnya memiliki gradien 10.<br><br>
+<b>Soal:</b> Cari titik pada kurva y = eˣ di mana garis singgungnya memiliki gradien 5.<br><br>
 
-f'(x) = 2x = 10 → x = <b>5</b>.<br>
+f'(x) = eˣ = 5 → x = ln 5 ≈ <b>1,609</b>.<br>
 
-y = 5² = 25.<br><br>
+y = e^(ln 5) = <b>5</b>.<br><br>
 
-Titik: <b>(5, 25)</b>. Garis singgung: y - 25 = 10(x - 5) → y = 10x - 25. ✅
+Titik: <b>(ln 5, 5)</b>. Garis singgung: y - 5 = 5(x - ln 5). ✅
 
 </div>
 
@@ -354,7 +368,7 @@ dr/dt = 100/(100π) = <b>1/π ≈ 0,32 cm/s</b> ✅
 
 </div>
 
-<!-- ==================== MATERI 4: LINEAR APPROXIMATION ==================== -->
+<!-- ==================== MATERI 4: APROKSIMASI LINEAR ==================== -->
 
 <div class="section">
 
@@ -405,51 +419,203 @@ Nilai sebenarnya: √4,1 ≈ 2,0248... Selisih hanya 0,0002! Sangat akurat! ✅
 
 <hr>
 
-<h3>4.2 Contoh: Menaksir sin 31°</h3>
+<h3>4.2 Contoh: Menaksir ln(1,05)</h3>
 
 <div class="example">
 
-f(x) = sin x. Gunakan radian: 30° = π/6 ≈ 0,5236 rad.<br>
+f(x) = ln x. f(1) = ln 1 = 0.<br><br>
 
-f(π/6) = sin(π/6) = 0,5.<br><br>
+f'(x) = 1/x. f'(1) = 1.<br><br>
 
-f'(x) = cos x. f'(π/6) = cos(π/6) = √3/2 ≈ 0,8660.<br><br>
+Aproksimasi linear di sekitar a = 1:<br>
 
-31° = 31π/180 ≈ 0,5411 rad. Δx = 0,5411 - 0,5236 = 0,0175 rad.<br><br>
+ln x ≈ ln 1 + f'(1)(x - 1) = 0 + 1(x - 1) = x - 1.<br><br>
 
-sin 31° ≈ 0,5 + 0,8660(0,0175) ≈ 0,5 + 0,0152 = <b>0,5152</b>.<br><br>
+Untuk x = 1,05:<br>
 
-Nilai sebenarnya: sin 31° ≈ 0,5150. Selisih hanya 0,0002! ✅
+ln(1,05) ≈ 1,05 - 1 = <b>0,05</b>.<br><br>
+
+Nilai sebenarnya: ln(1,05) ≈ 0,04879... Selisih sekitar 0,0012. Cukup akurat! ✅
 
 </div>
 
 <hr>
 
-<h3>4.3 Aproksimasi Linear vs Diferensial</h3>
+<h3>4.3 Contoh: Menaksir e⁰·¹</h3>
 
-<div class="summary">
+<div class="example">
 
-Aproksimasi linear dan diferensial adalah <b>konsep yang sama</b> dalam dua bahasa:<br><br>
+f(x) = eˣ. f(0) = e⁰ = 1.<br><br>
 
-<b>Diferensial:</b> dy = f'(x) dx → Δy ≈ dy = f'(x) dx.<br><br>
+f'(x) = eˣ. f'(0) = 1.<br><br>
 
-<b>Aproksimasi linear:</b> f(x+Δx) ≈ f(x) + f'(x)Δx.<br><br>
+Aproksimasi linear di sekitar a = 0:<br>
 
-Keduanya menggunakan ide yang sama: garis singgung sebagai aproksimasi.
+eˣ ≈ e⁰ + f'(0)(x - 0) = 1 + 1(x) = 1 + x.<br><br>
+
+Untuk x = 0,1:<br>
+
+e⁰·¹ ≈ 1 + 0,1 = <b>1,1</b>.<br><br>
+
+Nilai sebenarnya: e⁰·¹ ≈ 1,10517... Selisih sekitar 0,005. Akurat! ✅
 
 </div>
 
-<div class="note">
+<hr>
 
-<b>💡 Kapan aproksimasi linear akurat?</b><br><br>
+<h3>4.4 Contoh: Menaksir ∛8,5 (Akar Pangkat Tiga)</h3>
 
-✅ Δx kecil (dekat ke titik a).<br>
+<div class="example">
 
-✅ Fungsi "mulus" (tidak ada tikungan tajam).<br>
+f(x) = ∛x = x^(1/3). f(8) = ∛8 = 2.<br><br>
 
-❌ Δx besar → aproksimasi buruk (garis singgung "melenceng" dari kurva).<br>
+f'(x) = (1/3)x^(-2/3) = 1/(3·x^(2/3)).<br>
 
-❌ Fungsi tidak terdiferensialkan di a (misal ada "patahan").
+f'(8) = 1/(3·8^(2/3)) = 1/(3·4) = 1/12 ≈ 0,08333.<br><br>
+
+Aproksimasi linear di sekitar a = 8:<br>
+
+∛x ≈ 2 + (1/12)(x - 8).<br><br>
+
+Untuk x = 8,5:<br>
+
+∛8,5 ≈ 2 + (1/12)(0,5) = 2 + 0,5/12 = 2 + 0,04167 = <b>2,04167</b>.<br><br>
+
+Nilai sebenarnya: ∛8,5 ≈ 2,0408... Selisih sekitar 0,0009. Sangat akurat! ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: ERROR BOUND ==================== -->
+
+<div class="section">
+
+<h2>5. Error Bound — Seberapa Besar Kesalahan Aproksimasi?</h2>
+
+<p>
+
+Aproksimasi linear tidak pernah <b>sempurna</b> (kecuali fungsinya memang linear).
+Selalu ada <b>error</b> (kesalahan) antara nilai aproksimasi dan nilai sebenarnya.
+Pertanyaannya: <b>seberapa besar errornya?</b>
+
+</p>
+
+<div class="summary">
+
+<b>Error</b> = |nilai sebenarnya - nilai aproksimasi| = |f(x) - L(x)|<br><br>
+
+di mana L(x) = f(a) + f'(a)(x - a) adalah aproksimasi linear.<br><br>
+
+<b>Error Bound (Batas Kesalahan) dari Teorema Taylor:</b><br><br>
+
+|f(x) - L(x)| ≤ (M/2) × (x - a)²<br><br>
+
+di mana M adalah <b>nilai maksimum |f''(t)|</b> untuk t di antara a dan x.
+
+</div>
+
+<p>
+
+<b>Mengapa melibatkan f''(t)?</b>
+
+</p>
+
+<div class="example">
+
+f''(t) mengukur <b>kecekungan</b> fungsi—seberapa "melengkung" kurvanya.
+Semakin melengkung (|f''| besar), semakin besar errornya karena
+garis singgung (yang lurus) tidak bisa mengikuti lengkungan kurva dengan baik.<br><br>
+
+Rumus eksaknya berasal dari <b>Teorema Taylor dengan suku sisa Lagrange</b>:
+f(x) = f(a) + f'(a)(x-a) + (f''(c)/2!)(x-a)².<br><br>
+
+Suku (f''(c)/2)(x-a)² adalah <b>error</b>-nya. Karena kita tidak tahu c persisnya,
+kita ambil nilai maksimum |f''| di interval tersebut sebagai batas atas error.
+
+</div>
+
+<hr>
+
+<h3>5.1 Contoh: Error Bound untuk √4,1</h3>
+
+<div class="example">
+
+f(x) = √x, a = 4, x = 4,1.<br><br>
+
+f'(x) = 1/(2√x). f''(x) = -1/(4x^(3/2)).<br><br>
+
+|f''(t)| = 1/(4t^(3/2)).<br><br>
+
+Untuk t di [4; 4,1], |f''(t)| maksimum di t = 4 (karena penyebut terkecil):<br>
+
+M = |f''(4)| = 1/(4 × 8) = 1/32 = <b>0,03125</b>.<br><br>
+
+Error bound:<br>
+
+|error| ≤ (M/2)(x-a)² = (0,03125/2)(0,1)² = 0,015625 × 0,01 = <b>0,00015625</b>.<br><br>
+
+Artinya: error-nya <b>paling besar 0,000156</b>. Nilai sebenarnya √4,1 ≈ 2,024845...
+Aproksimasi kita 2,025. Error aktual = |2,024845 - 2,025| = 0,000155. <b>Di bawah bound!</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Contoh: Error Bound untuk e⁰·¹</h3>
+
+<div class="example">
+
+f(x) = eˣ, a = 0, x = 0,1.<br><br>
+
+f''(x) = eˣ. Untuk t di [0; 0,1], eᵗ maksimum di t = 0,1:<br>
+
+M = e⁰·¹ ≈ 1,1052.<br><br>
+
+Error bound:<br>
+
+|error| ≤ (1,1052/2)(0,1)² = 0,5526 × 0,01 = <b>0,005526</b>.<br><br>
+
+Error aktual = |1,10517 - 1,1| = 0,00517. <b>Di bawah bound!</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Contoh: Error Bound untuk ln(1,05)</h3>
+
+<div class="example">
+
+f(x) = ln x, a = 1, x = 1,05.<br><br>
+
+f'(x) = 1/x. f''(x) = -1/x². |f''(t)| = 1/t².<br><br>
+
+Untuk t di [1; 1,05], 1/t² maksimum di t = 1:<br>
+
+M = |f''(1)| = 1/1 = <b>1</b>.<br><br>
+
+Error bound:<br>
+
+|error| ≤ (1/2)(0,05)² = 0,5 × 0,0025 = <b>0,00125</b>.<br><br>
+
+Error aktual = |0,04879 - 0,05| = 0,00121. <b>Di bawah bound!</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.4 Kapan Error Bound Berguna?</h3>
+
+<div class="summary">
+
+<b>1. Menjamin akurasi:</b> Kamu bisa tahu berapa angka di belakang koma yang bisa dipercaya.<br><br>
+
+<b>2. Memilih a yang tepat:</b> Kalau bound-nya terlalu besar, pilih a yang lebih dekat ke x.<br><br>
+
+<b>3. Dasar metode numerik:</b> Error bound adalah fondasi untuk memahami
+konvergensi metode numerik seperti Newton-Raphson.<br><br>
+
+<b>4. Verifikasi hasil:</b> Kalau error aktual > error bound, pasti ada yang salah dalam perhitungan!
 
 </div>
 
@@ -475,7 +641,7 @@ Keduanya menggunakan ide yang sama: garis singgung sebagai aproksimasi.
 
 <li><b>Aproksimasi linear:</b> f(x) ≈ f(a) + f'(a)(x - a). Garis singgung sebagai hampiran.</li>
 
-<li><b>Diferensial:</b> dy = f'(x)dx. Δy ≈ dy untuk Δx kecil.</li>
+<li><b>Error bound:</b> |error| ≤ (M/2)(x-a)², di mana M = max |f''(t)| di interval [a,x].</li>
 
 </ul>
 
@@ -513,15 +679,21 @@ Persamaan Pythagoras, volume, luas—tulis dulu baru turunkan terhadap t.
 <li>
 
 <b>Aproksimasi linear: pilih a yang dekat dan mudah dihitung.</b>
-Untuk √4,1 → a = 4 (kuadrat sempurna). Untuk sin 31° → a = 30° (sudut istimewa).
+Untuk √4,1 → a = 4 (kuadrat sempurna). Untuk e⁰·¹ → a = 0. Untuk ln(1,05) → a = 1.
 
 </li>
 
 <li>
 
-<b>Δx harus kecil agar aproksimasi akurat.</b>
-√5 dengan a=4 (Δx=1) → aproksimasi = 2,25, nilai asli = 2,236. Masih ok.
-√10 dengan a=9 (Δx=1) → aproksimasi = 3,1667, nilai asli = 3,1623. Lebih akurat.
+<b>Error bound: cari M = max |f''| di interval [a, x].</b>
+Biasanya maksimum terjadi di salah satu ujung interval (cek f''(a) dan f''(x)).
+
+</li>
+
+<li>
+
+<b>Δx kecil → error kecil.</b> Error bound sebanding dengan (Δx)².
+Kalau Δx setengahnya, error menjadi seperempatnya!
 
 </li>
 
