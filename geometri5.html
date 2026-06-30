@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 5 | Bangun Ruang</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📦 GEOMETRI</h1>
+
+<p>Part 5 • Bangun Ruang: Dari Fondasi sampai Aplikasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Dari 2D ke 3D</h2>
+
+<p>
+
+Selama empat bab, kita hidup di dunia dua dimensi: panjang dan lebar.
+Sekarang kita memasuki <b>dunia tiga dimensi</b>—dunia yang kita tinggali.
+Setiap benda di sekitar kita memiliki <b>panjang, lebar, dan tinggi</b>.
+Ini adalah lompatan konseptual yang besar.
+
+</p>
+
+<p>
+
+Tapi jangan khawatir. Semua yang kita pelajari di bangun datar
+<b>tetap berlaku dan menjadi fondasi</b> untuk bangun ruang.
+Luas persegi menjadi dasar volume kubus. Luas segitiga menjadi dasar volume limas.
+Luas lingkaran menjadi dasar volume tabung dan kerucut.
+Bahkan Teorema Pythagoras menjadi alat utama untuk menghitung diagonal ruang.
+
+</p>
+
+<p>
+
+Di bab ini, kita tidak hanya akan belajar rumus-rumus volume dan luas permukaan.
+Kita akan menggali <b>dari mana rumus itu berasal</b>, <b>kenapa bentuknya seperti itu</b>,
+dan <b>bagaimana semua rumus saling terhubung</b> dalam satu kerangka berpikir yang utuh.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami bahwa bangun ruang dibangun dari bangun datar—semua rumus volume dan luas permukaan berasal dari sini.</li>
+
+<li>Menguasai kubus dan balok: dari definisi sampai diagonal ruang, dengan pembuktian lengkap.</li>
+
+<li>Memahami prinsip Cavalieri: mengapa volume prisma = luas alas × tinggi.</li>
+
+<li>Memahami mengapa volume limas dan kerucut = <b>⅓</b> × luas alas × tinggi, dengan dua pembuktian independen.</li>
+
+<li>Menguasai tabung, kerucut, dan bola: volume, luas permukaan, dan hubungan di antaranya.</li>
+
+<li>Memahami jaring-jaring sebagai "jembatan" antara 2D dan 3D.</li>
+
+<li>Mampu menyelesaikan soal aplikasi dengan pemahaman, bukan hafalan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== FONDASI: DARI 2D KE 3D ==================== -->
+
+<div class="section">
+
+<h2>1. Fondasi — Bagaimana Bangun Ruang Dibangun dari Bangun Datar</h2>
+
+<p>
+
+Ini adalah konsep paling fundamental yang sering terlewat:
+<b>setiap bangun ruang tersusun dari bangun datar</b>.
+Memahami ini membuat semua rumus volume dan luas permukaan menjadi masuk akal,
+bukan sekadar hafalan.
+
+</p>
+
+<h3>1.1 Volume = "Tumpukan" Bangun Datar</h3>
+
+<div class="summary">
+
+<b>Volume = Luas Alas × Tinggi</b> (untuk bangun dengan penampang seragam).<br><br>
+
+Bayangkan setumpuk kertas. Satu lembar kertas adalah bangun datar (luas = L).
+Jika kamu menumpuk t lembar, total volumenya = L × t.<br><br>
+
+Ini adalah <b>prinsip dasar</b> yang melahirkan rumus volume kubus, balok, prisma, dan tabung.
+
+</div>
+
+<p>
+
+<b>Mengapa ini penting?</b> Karena ia memberitahu kita bahwa
+<b>volume selalu bisa ditelusuri kembali ke luas alas</b>.
+Kalau kamu tahu luas alasnya, kamu sudah setengah jalan menuju volumenya.
+
+</p>
+
+<hr>
+
+<h3>1.2 Luas Permukaan = "Buka Bungkus, Ratakan"</h3>
+
+<div class="summary">
+
+<b>Luas permukaan = jumlah luas semua sisi luar</b>.<br><br>
+
+Bayangkan kamu membuka bungkus kardus dan meratakannya di lantai.
+Bentuk rata itu adalah <b>jaring-jaring</b>. Total luas jaring-jaring = luas permukaan.<br><br>
+
+Jadi, luas permukaan selalu kembali ke <b>luas bangun datar</b>—persegi, persegi panjang, segitiga, lingkaran.
+
+</div>
+
+<hr>
+
+<h3>1.3 Hubungan Jumlah Sisi, Rusuk, dan Titik Sudut — Rumus Euler</h3>
+
+<div class="summary">
+
+Untuk setiap <b>polihedron</b> (bangun ruang yang dibatasi oleh bidang datar):<br><br>
+
+<b>V - E + F = 2</b><br><br>
+
+V = jumlah titik sudut (vertices)<br>
+
+E = jumlah rusuk (edges)<br>
+
+F = jumlah sisi (faces)
+
+</div>
+
+<p>
+
+<b>Mengapa ini benar? — Intuisi</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu punya bola tanah liat. Tekan satu sisi hingga rata—sekarang kamu punya 1 sisi (F=1), 0 rusuk, 1 titik sudut? Belum.<br><br>
+
+Rumus Euler awalnya untuk polihedron (bangun dengan sisi datar). Bola bukan polihedron.
+Tapi untuk setiap polihedron yang "seperti bola" (tidak berlubang), rumus ini selalu berlaku.<br><br>
+
+<b>Cek untuk kubus:</b> V=8, E=12, F=6. 8-12+6 = 2. ✅<br>
+
+<b>Cek untuk limas segiempat:</b> V=5, E=8, F=5. 5-8+5 = 2. ✅<br>
+
+<b>Cek untuk prisma segitiga:</b> V=6, E=9, F=5. 6-9+5 = 2. ✅
+
+</div>
+
+<p>
+
+Rumus Euler adalah <b>jembatan antara geometri dan topologi</b>.
+Ia memberitahu kita bahwa apapun bentuk polihedronnya,
+asal "seperti bola" (tidak ada lubang tembus),
+kombinasi V - E + F selalu 2. Ini adalah salah satu teorema paling elegan
+dalam matematika.
+
+</p>
+
+<hr>
+
+<h3>1.4 Jumlah Sudut pada Bangun Ruang — Perluasan dari (n-2)×180°</h3>
+
+<p>
+
+Kamu menyinggung rumus <b>(n-2) × 180°</b> untuk jumlah sudut dalam poligon.
+Sekarang pertanyaannya: <b>apakah ada rumus serupa untuk bangun ruang?</b>
+
+</p>
+
+<div class="summary">
+
+<b>Untuk polihedron:</b><br><br>
+
+Jumlah semua sudut bidang = <b>(V - 2) × 360°</b><br><br>
+
+di mana V = jumlah titik sudut.
+
+</div>
+
+<p>
+
+<b>Mengapa (V-2) × 360°?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu "membuka" polihedron dan meratakannya.
+Ini tidak bisa dilakukan dengan sempurna (akan ada sobekan),
+tapi secara konseptual, jumlah sudut di sekitar setiap titik sudut,
+dikurangi "defisit sudut", menghasilkan rumus ini.<br><br>
+
+<b>Pembuktian dengan Rumus Euler:</b><br><br>
+
+Misalkan setiap sisi adalah poligon dengan nᵢ sisi.
+Jumlah sudut satu sisi = (nᵢ - 2) × 180°.<br><br>
+
+Total jumlah sudut semua sisi = Σ (nᵢ - 2) × 180°.<br><br>
+
+Σ nᵢ = 2E (setiap rusuk dihitung 2 kali: satu untuk setiap sisi yang bertemu di rusuk itu).<br><br>
+
+Total = (2E - 2F) × 180° = (E - F) × 360°.<br><br>
+
+Dari Euler: V - E + F = 2 → E - F = V - 2.<br><br>
+
+Total = (V - 2) × 360°. ✅
+
+</div>
+
+<div class="example">
+
+<b>Cek untuk kubus (V=8):</b><br>
+
+Jumlah sudut = (8-2) × 360° = 6 × 360° = 2160°.<br><br>
+
+Secara manual: 6 persegi, masing-masing jumlah sudut 360°.
+Total = 6 × 360° = 2160°. Cocok! ✅<br><br>
+
+<b>Cek untuk limas segiempat (V=5):</b><br>
+
+Jumlah sudut = (5-2) × 360° = 3 × 360° = 1080°.<br><br>
+
+Manual: 1 persegi (360°) + 4 segitiga (4 × 180° = 720°). Total = 1080°. Cocok! ✅
+
+</div>
+
+<p>
+
+<b>Hubungan dengan (n-2)×180°:</b> Rumus (V-2)×360° adalah <b>versi 3D</b>
+dari rumus (n-2)×180° di 2D. Di 2D, kita mengurangi 2 dari jumlah sisi.
+Di 3D, kita mengurangi 2 dari jumlah titik sudut. Pola yang sama,
+hanya dimensinya yang berbeda. Inilah keindahan matematika—pola yang konsisten
+di setiap dimensi.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 2: KUBUS ==================== -->
+
+<div class="section">
+
+<h2>2. Kubus — Bangun Ruang Paling Sempurna</h2>
+
+<p>
+
+Kubus adalah "persegi dalam 3D". Seperti persegi yang semua sisinya sama,
+kubus memiliki semua rusuk yang sama panjang. Kubus adalah <b>Platonic solid</b>
+—bangun ruang dengan semua sisi berupa poligon beraturan yang identik.
+
+</p>
+
+<div class="summary">
+
+<b>Kubus:</b><br>
+
+- 6 sisi: semuanya <b>persegi identik</b> dengan sisi s.<br>
+
+- 12 rusuk: semua sama panjang = s.<br>
+
+- 8 titik sudut.<br><br>
+
+<b>Volume:</b> V = s³<br>
+
+<b>Luas Permukaan:</b> LP = 6s²<br>
+
+<b>Diagonal Sisi:</b> d_sisi = s√2<br>
+
+<b>Diagonal Ruang:</b> d_ruang = s√3
+
+</div>
+
+<hr>
+
+<h3>2.1 Mengapa V = s³? — Tiga Cara Memahami</h3>
+
+<p>
+
+<b>Cara 1: Tumpukan Persegi (Intuitif)</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan setumpuk kertas persegi dengan sisi s.
+Satu lembar luasnya s². Jika ditumpuk sebanyak s lembar,
+total volume = s² × s = s³. ✅
+
+</div>
+
+<p>
+
+<b>Cara 2: Dari Balok (Deduksi)</b>
+
+</p>
+
+<div class="example">
+
+Kubus adalah balok dengan p = l = t = s.<br>
+
+Volume balok = p × l × t.<br>
+
+Volume kubus = s × s × s = s³. ✅
+
+</div>
+
+<p>
+
+<b>Cara 3: Integral (Kalkulus)</b>
+
+</p>
+
+<div class="example">
+
+Volume = ∫₀ˢ s² dx = s² × s = s³. (Untuk yang sudah belajar kalkulus.)
+
+</div>
+
+<hr>
+
+<h3>2.2 Mengapa Diagonal Sisi = s√2?</h3>
+
+<div class="example">
+
+Diagonal sisi adalah diagonal persegi pada salah satu sisi kubus.<br><br>
+
+Gunakan Pythagoras pada persegi dengan sisi s:<br>
+
+d² = s² + s² = 2s²<br>
+
+d = s√2 ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Mengapa Diagonal Ruang = s√3? — Dua Langkah Pythagoras</h3>
+
+<div class="example">
+
+Diagonal ruang menghubungkan dua titik sudut yang berseberangan
+(melewati "dalam" kubus).<br><br>
+
+<b>Langkah 1:</b> Hitung diagonal sisi alas = s√2.<br><br>
+
+<b>Langkah 2:</b> Diagonal ruang adalah hipotenusa dari segitiga siku-siku
+dengan kaki: diagonal sisi alas (s√2) dan tinggi kubus (s).<br><br>
+
+d_ruang² = (s√2)² + s² = 2s² + s² = 3s²<br>
+
+d_ruang = s√3 ✅
+
+</div>
+
+<p>
+
+<b>Verifikasi dengan tripel Pythagoras di balok:</b>
+Diagonal ruang balok = √(p² + l² + t²). Untuk kubus, p = l = t = s.
+Jadi d_ruang = √(s² + s² + s²) = √(3s²) = s√3. ✅
+
+</p>
+
+<hr>
+
+<h3>2.4 Mengapa LP = 6s²? — Setiap Sisi adalah Persegi</h3>
+
+<div class="example">
+
+Kubus memiliki 6 sisi. Setiap sisi adalah persegi dengan luas s².
+Tidak ada yang istimewa—hanya 6 persegi identik.<br><br>
+
+LP = s² + s² + s² + s² + s² + s² = 6s². ✅
+
+</div>
+
+<hr>
+
+<h3>2.5 Kubus dalam Kehidupan — Mengapa Dadu Berbentuk Kubus?</h3>
+
+<p>
+
+Dadu dibuat kubus karena setiap sisi memiliki <b>peluang yang sama</b>
+untuk muncul (1/6). Kalau dadu berbentuk balok, sisi yang lebih luas
+akan lebih sering muncul—tidak adil. Kubus menjamin keadilan karena
+semua sisinya identik.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 3: BALOK ==================== -->
+
+<div class="section">
+
+<h2>3. Balok — Generalisasi dari Kubus</h2>
+
+<p>
+
+Balok adalah kubus yang "diregangkan". Ketiga dimensinya (panjang, lebar, tinggi)
+boleh berbeda, tapi sisi-sisi yang berhadapan tetap identik.
+
+</p>
+
+<div class="summary">
+
+<b>Balok:</b><br>
+
+- 6 sisi: 3 pasang persegi panjang identik (p×l, p×t, l×t).<br>
+
+- 12 rusuk: 4 rusuk panjang p, 4 rusuk lebar l, 4 rusuk tinggi t.<br>
+
+- 8 titik sudut.<br><br>
+
+<b>Volume:</b> V = p × l × t<br>
+
+<b>Luas Permukaan:</b> LP = 2(pl + pt + lt)<br>
+
+<b>Diagonal Ruang:</b> d = √(p² + l² + t²)
+
+</div>
+
+<hr>
+
+<h3>3.1 Mengapa V = p × l × t? — Fondasi Semua Volume</h3>
+
+<div class="example">
+
+Bayangkan balok sebagai tumpukan "lembaran" persegi panjang berukuran p × l.
+Satu lembar luasnya = p × l.<br><br>
+
+Ditumpuk setinggi t. Total volume = (p × l) × t = p × l × t. ✅
+
+</div>
+
+<p>
+
+<b>Ini adalah rumus volume paling fundamental.</b> Dari sinilah lahir:
+V kubus = s³ (kasus khusus p=l=t=s), V prisma = Luas Alas × t (generalissasi),
+dan bahkan V tabung = πr²t (alas lingkaran).
+
+</p>
+
+<hr>
+
+<h3>3.2 Mengapa LP = 2(pl + pt + lt)? — Tiga Pasang Sisi</h3>
+
+<div class="example">
+
+Balok memiliki 3 pasang sisi yang identik:<br><br>
+
+- 2 sisi ukuran p × l → total luas = 2pl.<br>
+
+- 2 sisi ukuran p × t → total luas = 2pt.<br>
+
+- 2 sisi ukuran l × t → total luas = 2lt.<br><br>
+
+Total LP = 2pl + 2pt + 2lt = <b>2(pl + pt + lt)</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>3.3 Mengapa Diagonal Ruang = √(p² + l² + t²)? — Teorema Pythagoras 3D</h3>
+
+<div class="example">
+
+Ini adalah <b>Teorema Pythagoras tiga dimensi</b>.<br><br>
+
+<b>Langkah 1:</b> Diagonal sisi alas = √(p² + l²).<br><br>
+
+<b>Langkah 2:</b> Diagonal ruang adalah hipotenusa segitiga siku-siku
+dengan kaki: diagonal alas (√(p²+l²)) dan tinggi (t).<br><br>
+
+d² = (√(p²+l²))² + t² = p² + l² + t²<br>
+
+d = √(p² + l² + t²). ✅<br><br>
+
+<b>Alternatif:</b> Diagonal ruang adalah jarak antara dua titik (0,0,0) dan (p,l,t)
+dalam koordinat 3D. Dengan rumus jarak: d = √(p² + l² + t²). ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Balok 8 × 6 × 24. Diagonal ruang = √(64+36+576) = √676 = <b>26</b>.<br><br>
+
+Perhatikan: 8, 6, 24 → diagonal 26. Ini adalah <b>tripel Pythagoras 3D</b>!
+8² + 6² = 10², lalu 10² + 24² = 26².
+
+</div>
+<!-- ==================== MATERI 4: PRISMA ==================== -->
+
+<div class="section">
+
+<h2>4. Prisma — Generalisasi Balok untuk Alas Apapun</h2>
+
+<p>
+
+Kalau balok adalah "ekstrusi" persegi panjang, maka <b>prisma</b> adalah
+"ekstrusi" bangun datar apapun. Kata "prisma" berasal dari bahasa Yunani
+yang berarti "sesuatu yang digergaji"—karena penampangnya seragam
+seperti kayu yang digergaji.
+
+</p>
+
+<div class="summary">
+
+<b>Prisma</b> adalah bangun ruang yang memiliki:<br><br>
+
+- <b>Dua alas identik dan sejajar</b> berbentuk segi-n.<br>
+
+- <b>Sisi-sisi tegak</b> berbentuk persegi panjang yang menghubungkan kedua alas.<br><br>
+
+<b>Volume:</b> V = Luas Alas × Tinggi<br>
+
+<b>Luas Permukaan:</b> LP = 2 × Luas Alas + Keliling Alas × Tinggi
+
+</div>
+
+<hr>
+
+<h3>4.1 Mengapa V = Luas Alas × Tinggi? — Prinsip Cavalieri</h3>
+
+<p>
+
+Ini adalah pertanyaan yang sangat mendalam. Jawabannya melibatkan
+<b>Prinsip Cavalieri</b>, ditemukan oleh Bonaventura Cavalieri (1598-1647),
+matematikawan Italia.
+
+</p>
+
+<div class="summary">
+
+<b>Prinsip Cavalieri:</b><br><br>
+
+Jika dua bangun ruang memiliki <b>luas penampang yang sama</b>
+di <b>setiap ketinggian</b>, maka <b>volumenya sama</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa ini masuk akal?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan setumpuk koin. Jika kamu menyusun koin-koin itu lurus ke atas,
+kamu dapat tabung. Jika kamu menggeser koin-koin itu sehingga miring,
+kamu dapat "tabung miring" (silinder miring).<br><br>
+
+Jumlah koinnya sama. Luas setiap koin sama. Volumenya sama!<br><br>
+
+Ini adalah inti Prinsip Cavalieri: volume hanya bergantung pada
+luas penampang di setiap ketinggian, bukan pada "kemiringan" bangunnya.
+
+</div>
+
+<p>
+
+<b>Penerapan ke prisma:</b> Setiap "irisan horizontal" prisma menghasilkan
+bangun datar yang sama persis dengan alasnya. Karena luas setiap irisan = Luas Alas,
+dan ada "t" irisan (dari ketinggian 0 sampai t), maka volume total = Luas Alas × t.
+
+</p>
+
+<p>
+
+<b>Ini juga menjelaskan kenapa volume tabung = πr²t:</b> tabung adalah "prisma"
+dengan alas lingkaran. Setiap irisan horizontalnya adalah lingkaran dengan luas πr².
+Maka volumenya = πr² × t.
+
+</p>
+
+<hr>
+
+<h3>4.2 Mengapa LP = 2 × Luas Alas + Keliling Alas × Tinggi?</h3>
+
+<div class="example">
+
+Bayangkan kamu membuka selimut prisma dan meratakannya.<br><br>
+
+Kamu akan mendapat:<br>
+
+- <b>2 alas</b> (atas dan bawah) → luas = 2 × Luas Alas.<br>
+
+- <b>Selimut</b> berbentuk <b>persegi panjang raksasa</b> dengan:<br>
+
+  • Lebar = Keliling Alas (jumlah semua sisi alas).<br>
+
+  • Tinggi = tinggi prisma (t).<br><br>
+
+Luas selimut = Keliling Alas × t.<br><br>
+
+Total LP = 2 × Luas Alas + Keliling Alas × t. ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Contoh: Prisma Segitiga</h3>
+
+<div class="example">
+
+Prisma dengan alas segitiga siku-siku (a=3, b=4, c=5), tinggi prisma = 10.<br><br>
+
+<b>Luas Alas:</b> L = ½ × 3 × 4 = 6.<br><br>
+
+<b>Volume:</b> V = 6 × 10 = <b>60</b> ✅<br><br>
+
+<b>Keliling Alas:</b> K = 3 + 4 + 5 = 12.<br><br>
+
+<b>LP:</b> 2 × 6 + 12 × 10 = 12 + 120 = <b>132</b> ✅
+
+</div>
+
+<hr>
+
+<h3>4.4 Prisma Segienam Beraturan — Aplikasi Trigonometri</h3>
+
+<div class="example">
+
+Prisma dengan alas segienam beraturan sisi s = 4, tinggi t = 15.<br><br>
+
+<b>Luas Alas (heksagon):</b><br>
+
+Segienam = 6 segitiga sama sisi. Satu segitiga: L₁ = (s²√3)/4 = (16√3)/4 = 4√3.<br>
+
+Total luas alas = 6 × 4√3 = 24√3.<br><br>
+
+<b>Volume:</b> V = 24√3 × 15 = 360√3 ≈ <b>623,5</b> ✅<br><br>
+
+<b>Keliling:</b> K = 6 × 4 = 24.<br><br>
+
+<b>LP:</b> 2 × 24√3 + 24 × 15 = 48√3 + 360 ≈ <b>443,1</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: LIMAS ==================== -->
+
+<div class="section">
+
+<h2>5. Limas — Mengerucut ke Satu Titik</h2>
+
+<p>
+
+<b>Limas</b> adalah kebalikan dari prisma. Kalau prisma punya dua alas,
+limas hanya punya <b>satu alas</b> dan semua sisi tegaknya bertemu di
+<b>satu titik puncak</b>. Kata "limas" berasal dari bahasa Yunani "pyramis"
+(yang juga melahirkan kata "pyramid").
+
+</p>
+
+<div class="summary">
+
+<b>Limas</b> memiliki:<br><br>
+
+- <b>Satu alas</b> berbentuk segi-n.<br>
+
+- <b>Satu titik puncak</b> (apex).<br>
+
+- <b>n sisi tegak</b> berbentuk segitiga.<br><br>
+
+<b>Volume:</b> V = <b>⅓</b> × Luas Alas × Tinggi<br>
+
+<b>Luas Permukaan:</b> LP = Luas Alas + Jumlah Luas Semua Segitiga Tegak
+
+</div>
+
+<hr>
+
+<h3>5.1 Mengapa Volume Limas = ⅓ × Luas Alas × Tinggi? — Tiga Pembuktian</h3>
+
+<p>
+
+Ini adalah salah satu fakta paling misterius dalam geometri dasar.
+<b>Kenapa ada faktor ⅓?</b> Kebanyakan buku hanya memberitahu "volumenya sepertiga",
+tanpa menjelaskan dari mana asalnya. Kita akan membahas <b>tiga pembuktian berbeda</b>.
+
+</p>
+
+<hr>
+
+<h3>Pembuktian 1: Membagi Kubus Menjadi Tiga Limas (Cara Paling Intuitif)</h3>
+
+<div class="example">
+
+Ambil kubus dengan sisi s.<br><br>
+
+Tarik diagonal ruang dari satu titik sudut ke titik sudut yang berseberangan.
+Kubus terbagi menjadi <b>3 limas</b> yang identik (kongruen).<br><br>
+
+Masing-masing limas memiliki:<br>
+
+- Alas = salah satu sisi kubus (persegi, luas = s²).<br>
+
+- Tinggi = s (jarak dari alas ke titik sudut yang berseberangan).<br><br>
+
+Volume 1 limas = Volume kubus / 3 = s³/3.<br><br>
+
+Bandingkan dengan rumus V = ⅓ × Luas Alas × Tinggi:<br>
+
+⅓ × s² × s = s³/3. <b>Cocok!</b> ✅
+
+</div>
+
+<p>
+
+<b>Tapi tunggu—apakah ini berlaku untuk limas dengan alas selain persegi?</b>
+Ya! Dengan prinsip Cavalieri, jika dua limas memiliki luas alas yang sama
+dan tinggi yang sama, volumenya sama—tidak peduli bentuk alasnya.
+
+</p>
+
+<hr>
+
+<h3>Pembuktian 2: Prisma Dibagi Menjadi Tiga Limas (Cara Euclid)</h3>
+
+<div class="example">
+
+Ambil prisma segitiga ABC-DEF (alas segitiga, tinggi t).<br><br>
+
+Prisma ini bisa dibagi menjadi <b>3 limas segitiga</b>:<br><br>
+
+Limas 1: A-DEF (alas DEF, puncak A).<br>
+
+Limas 2: A-BEF (alas BEF, puncak A).<br>
+
+Limas 3: A-BCF (alas BCF, puncak A).<br><br>
+
+Ketiga limas memiliki volume yang <b>sama</b> (bisa dibuktikan dengan
+kesamaan luas alas dan tinggi).<br><br>
+
+Volume 1 limas = Volume prisma / 3.<br><br>
+
+Volume prisma = Luas Alas × t.<br>
+
+Volume limas = ⅓ × Luas Alas × t. ✅
+
+</div>
+
+<p>
+
+<b>Pembuktian ini sangat penting secara historis.</b>
+Euclid menggunakannya dalam <i>Elements</i> Book XII,
+sekitar 300 SM. Ini adalah salah satu puncak geometri Yunani kuno.
+
+</p>
+
+<hr>
+
+<h3>Pembuktian 3: Kalkulus (Integral) — Untuk yang Sudah Belajar</h3>
+
+<div class="example">
+
+Bayangkan limas sebagai tumpukan "irisan" persegi yang semakin mengecil
+dari alas ke puncak.<br><br>
+
+Pada ketinggian x dari puncak, sisi persegi = (x/t) × s (sebanding).<br>
+
+Luas irisan pada ketinggian x = ((x/t) × s)² = (s²/t²) × x².<br><br>
+
+Volume = ∫₀ᵗ (s²/t²) × x² dx = (s²/t²) × [x³/3]₀ᵗ = (s²/t²) × t³/3 = s² × t/3.<br><br>
+
+V = ⅓ × s² × t = ⅓ × Luas Alas × Tinggi. ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Luas Permukaan Limas — Hati-Hati dengan "Tinggi Segitiga Tegak"</h3>
+
+<div class="summary">
+
+<b>LP = Luas Alas + Jumlah Luas Segitiga Tegak</b><br><br>
+
+<b>Perhatikan:</b> Tinggi segitiga tegak (tinggi miring) <b>BUKAN</b> tinggi limas.<br>
+
+Tinggi segitiga tegak = garis dari puncak ke tengah sisi alas (apotema limas).
+
+</div>
+
+<div class="example">
+
+Limas persegi dengan sisi alas 6, tinggi limas 4.<br><br>
+
+<b>Tinggi segitiga tegak:</b><br>
+
+Setengah sisi alas = 3. Tinggi limas = 4.<br>
+
+Tinggi miring = √(3² + 4²) = 5. (Pythagoras!)<br><br>
+
+<b>Luas satu segitiga tegak:</b> ½ × 6 × 5 = 15.<br><br>
+
+<b>LP:</b> 36 + 4 × 15 = 36 + 60 = <b>96</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Limas Istimewa: Bidang Empat Beraturan (Tetrahedron)</h3>
+
+<div class="summary">
+
+<b>Tetrahedron beraturan:</b> 4 segitiga sama sisi identik. Semua rusuk = s.<br><br>
+
+<b>Volume:</b> V = (s³√2)/12<br><br>
+
+<b>Luas Permukaan:</b> LP = s²√3<br><br>
+
+<b>Tinggi:</b> t = (s√6)/3
+
+</div>
+
+<p>
+
+<b>Dari mana rumus-rumus ini?</b>
+
+</p>
+
+<div class="example">
+
+Tetrahedron beraturan dengan rusuk s.<br><br>
+
+<b>Luas satu segitiga sama sisi:</b> (s²√3)/4.<br>
+
+<b>LP:</b> 4 × (s²√3)/4 = <b>s²√3</b>. ✅<br><br>
+
+<b>Tinggi (t):</b><br>
+
+Dari puncak ke pusat alas. Pusat segitiga sama sisi berjarak (s√3)/3 dari titik sudut.
+(Garis berat segitiga sama sisi = s√3/2. Pusat = ⅔ dari titik sudut ke sisi = s√3/3).<br><br>
+
+Dengan Pythagoras: t² = s² - (s√3/3)² = s² - s²/3 = 2s²/3 → t = <b>s√(2/3) = (s√6)/3</b>. ✅<br><br>
+
+<b>Volume:</b> V = ⅓ × (s²√3)/4 × (s√6)/3 = (s³√18)/(36) = (s³ × 3√2)/36 = <b>(s³√2)/12</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: KERUCUT ==================== -->
+
+<div class="section">
+
+<h2>6. Kerucut — Limas dengan Alas Lingkaran</h2>
+
+<p>
+
+<b>Kerucut</b> adalah "limas" yang alasnya berbentuk <b>lingkaran</b>.
+Semua yang berlaku untuk limas juga berlaku untuk kerucut—termasuk faktor ⅓.
+
+</p>
+
+<div class="summary">
+
+<b>Kerucut:</b><br><br>
+
+- r = jari-jari alas.<br>
+
+- t = tinggi kerucut (jarak tegak lurus dari puncak ke alas).<br>
+
+- s = <b>garis pelukis</b> (jarak dari puncak ke titik mana pun pada keliling alas).<br><br>
+
+<b>Hubungan Pythagoras:</b> s² = r² + t² → s = √(r² + t²)<br><br>
+
+<b>Volume:</b> V = ⅓πr²t<br>
+
+<b>Luas Selimut:</b> πrs<br>
+
+<b>Luas Permukaan:</b> LP = πr² + πrs = πr(r + s)
+
+</div>
+
+<hr>
+
+<h3>6.1 Mengapa V = ⅓πr²t?</h3>
+
+<div class="example">
+
+Sama seperti limas: V = ⅓ × Luas Alas × Tinggi.<br><br>
+
+Luas alas = πr². Maka V = ⅓πr²t. ✅<br><br>
+
+<b>Atau dengan kalkulus:</b> Setiap irisan horizontal pada ketinggian x dari puncak
+adalah lingkaran dengan jari-jari (x/t)×r. Volume = ∫₀ᵗ π((x/t)r)² dx = ⅓πr²t.
+
+</div>
+
+<hr>
+
+<h3>6.2 Mengapa Luas Selimut = πrs? — Juring Lingkaran</h3>
+
+<p>
+
+Ini adalah salah satu rumus yang paling sering dipakai tapi jarang dijelaskan asalnya.
+
+</p>
+
+<div class="example">
+
+Buka selimut kerucut dan ratakan. Kamu akan mendapat <b>juring lingkaran</b>
+dengan:<br><br>
+
+- <b>Jari-jari = s</b> (garis pelukis).<br>
+
+- <b>Panjang busur = 2πr</b> (keliling alas kerucut).<br><br>
+
+<b>Luas juring</b> = ½ × jari-jari × panjang busur<br>
+
+= ½ × s × 2πr<br>
+
+= <b>πrs</b>. ✅<br><br>
+
+<b>Mengapa luas juring = ½ × jari-jari × panjang busur?</b><br>
+
+Karena juring adalah "pecahan" dari lingkaran penuh.<br>
+
+Luas lingkaran penuh = πs².<br>
+
+Panjang busur penuh = 2πs.<br>
+
+Perbandingan: (panjang busur juring)/(2πs) = (luas juring)/(πs²).<br><br>
+
+Luas juring = (panjang busur/2πs) × πs² = ½ × s × panjang busur. ✅
+
+</div>
+<!-- ==================== MATERI 7: TABUNG ==================== -->
+
+<div class="section">
+
+<h2>7. Tabung (Silinder) — Prisma dengan Alas Lingkaran</h2>
+
+<p>
+
+<b>Tabung</b> adalah "prisma" yang alasnya berbentuk <b>lingkaran</b>.
+Semua yang berlaku untuk prisma berlaku juga untuk tabung.
+Inilah keindahan matematika: sekali kamu memahami prisma,
+kamu otomatis memahami tabung.
+
+</p>
+
+<div class="summary">
+
+<b>Tabung:</b><br><br>
+
+- r = jari-jari alas.<br>
+
+- t = tinggi tabung.<br><br>
+
+<b>Volume:</b> V = πr²t<br>
+
+<b>Luas Selimut:</b> 2πrt<br>
+
+<b>Luas Permukaan:</b> LP = 2πr² + 2πrt = 2πr(r + t)
+
+</div>
+
+<hr>
+
+<h3>7.1 Mengapa V = πr²t? — Prinsip Cavalieri Lagi</h3>
+
+<div class="example">
+
+Setiap irisan horizontal tabung pada ketinggian berapapun
+menghasilkan <b>lingkaran yang identik</b> dengan jari-jari r.<br><br>
+
+Luas setiap irisan = πr².<br>
+
+Tinggi total = t.<br><br>
+
+Volume = πr² × t = <b>πr²t</b>. ✅<br><br>
+
+<b>Atau dengan kalkulus:</b> V = ∫₀ᵗ πr² dx = πr²t.
+
+</div>
+
+<hr>
+
+<h3>7.2 Mengapa Luas Selimut = 2πrt? — Persegi Panjang yang Melingkar</h3>
+
+<div class="example">
+
+Buka selimut tabung dan ratakan. Kamu akan mendapat <b>persegi panjang</b> dengan:<br><br>
+
+- <b>Lebar</b> = keliling alas = 2πr.<br>
+
+- <b>Tinggi</b> = t.<br><br>
+
+Luas selimut = 2πr × t = <b>2πrt</b>. ✅<br><br>
+
+<b>Mengapa lebarnya 2πr?</b> Karena selimut "melingkari" alas.
+Saat diratakan, panjang lintasan melingkar itu menjadi lebar persegi panjang.
+Panjang satu putaran penuh = keliling lingkaran = 2πr.
+
+</div>
+
+<hr>
+
+<h3>7.3 Hubungan Menarik: Tabung dan Prisma Segi-n</h3>
+
+<div class="example">
+
+Bayangkan prisma segi-n beraturan dengan n yang semakin besar.<br><br>
+
+n = 4 → prisma persegi (balok).<br>
+
+n = 6 → prisma segienam.<br>
+
+n = 8 → prisma segidelapan.<br>
+
+n = 100 → hampir seperti tabung!<br>
+
+n → ∞ → <b>tabung</b>.<br><br>
+
+Ini adalah <b>konsep limit</b>: tabung adalah "prisma segi-tak-hingga".
+Keliling segi-n → 2πr. Luas alas segi-n → πr².<br><br>
+
+Jadi, rumus tabung adalah <b>limit</b> dari rumus prisma saat n → ∞. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 8: BOLA ==================== -->
+
+<div class="section">
+
+<h2>8. Bola — Kesempurnaan Tiga Dimensi</h2>
+
+<p>
+
+<b>Bola</b> adalah himpunan semua titik dalam ruang yang berjarak ≤ r
+dari suatu titik pusat O. Bola adalah "lingkaran dalam 3D"—
+simetri sempurna dari segala arah. Tidak ada bangun ruang lain
+yang lebih simetris dari bola.
+
+</p>
+
+<div class="summary">
+
+<b>Bola dengan jari-jari r:</b><br><br>
+
+<b>Volume:</b> V = ⁴/₃ πr³<br><br>
+
+<b>Luas Permukaan:</b> LP = 4πr²
+
+</div>
+
+<hr>
+
+<h3>8.1 Mengapa LP = 4πr²? — Warisan Archimedes</h3>
+
+<p>
+
+Ini adalah salah satu penemuan terbesar Archimedes (287-212 SM).
+Ia menemukan bahwa <b>luas permukaan bola = luas selimut tabung terkecil
+yang memuat bola tersebut</b>.
+
+</p>
+
+<div class="example">
+
+<b>Tabung yang memuat bola:</b><br>
+
+- Jari-jari tabung = r (sama dengan bola).<br>
+
+- Tinggi tabung = 2r (diameter bola).<br><br>
+
+Luas selimut tabung = 2πr × 2r = <b>4πr²</b>.<br><br>
+
+Luas permukaan bola = <b>4πr²</b>. <b>IDENTIK!</b> ✅
+
+</div>
+
+<p>
+
+<b>Mengapa bisa sama?</b> Archimedes membuktikan bahwa setiap "irisan tipis"
+pada bola memiliki luas yang sama dengan irisan pada selimut tabung
+pada ketinggian yang sama. Ini adalah aplikasi brilian dari
+<b>prinsip Cavalieri dalam 3D untuk luas permukaan</b>.
+
+</p>
+
+<p>
+
+Archimedes sangat bangga dengan penemuan ini. Atas permintaannya,
+di batu nisannya diukir sebuah bola di dalam tabung—
+simbol penemuan terbesarnya.
+
+</p>
+
+<hr>
+
+<h3>8.2 Mengapa V = ⁴/₃πr³? — Tiga Cara Memahami</h3>
+
+<p>
+
+<b>Cara 1: Hubungan dengan Luas Permukaan (Archimedes)</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan bola sebagai tumpukan "kulit-kulit" bola yang sangat tipis
+(dari jari-jari 0 sampai r).<br><br>
+
+Setiap kulit memiliki luas permukaan 4πx² (untuk jari-jari x)
+dan ketebalan dx.<br><br>
+
+Volume = ∫₀ʳ 4πx² dx = 4π [x³/3]₀ʳ = <b>⁴/₃πr³</b>. ✅
+
+</div>
+
+<p>
+
+<b>Cara 2: Hubungan dengan Tabung (Archimedes lagi)</b>
+
+</p>
+
+<div class="example">
+
+Archimedes juga menemukan bahwa <b>volume bola = ⅔ volume tabung
+terkecil yang memuatnya</b>.<br><br>
+
+Volume tabung = πr² × 2r = 2πr³.<br><br>
+
+Volume bola = ⅔ × 2πr³ = <b>⁴/₃πr³</b>. ✅<br><br>
+
+Gabungan dengan LP: LP bola = LP selimut tabung. V bola = ⅔ V tabung.
+Dua hubungan elegan yang membuat Archimedes legendaris.
+
+</div>
+
+<p>
+
+<b>Cara 3: Integral Volume Benda Putar (Kalkulus)</b>
+
+</p>
+
+<div class="example">
+
+Bola adalah hasil rotasi setengah lingkaran y = √(r² - x²)
+mengelilingi sumbu X dari -r sampai r.<br><br>
+
+V = π ∫₋ᵣʳ (√(r² - x²))² dx = π ∫₋ᵣʳ (r² - x²) dx<br>
+
+= π [r²x - x³/3]₋ᵣʳ = π [(r³ - r³/3) - (-r³ + r³/3)]<br>
+
+= π [2r³/3 + 2r³/3] = π × 4r³/3 = <b>⁴/₃πr³</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>8.3 Bola dalam Kehidupan — Mengapa Alam Menyukai Bola?</h3>
+
+<p>
+
+Bola adalah bentuk dengan <b>luas permukaan terkecil untuk volume tertentu</b>.
+Ini adalah fakta matematis yang memiliki konsekuensi mendalam di alam:
+
+</p>
+
+<div class="example">
+
+<b>Gelembung sabun:</b> Berbentuk bola karena tegangan permukaan
+mencari konfigurasi dengan luas permukaan minimum.<br><br>
+
+<b>Tetesan air di ruang tanpa gravitasi:</b> Berbentuk bola sempurna.<br><br>
+
+<b>Planet dan bintang:</b> Gravitasi menarik materi secara seragam
+ke segala arah, menghasilkan bentuk bola (atau hampir bola).<br><br>
+
+<b>Semangka dan jeruk:</b> Tumbuhan "tahu" bahwa bentuk bola
+memaksimalkan volume daging buah dengan kulit seminimal mungkin.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 9: JARING-JARING ==================== -->
+
+<div class="section">
+
+<h2>9. Jaring-Jaring Bangun Ruang — Jembatan 2D dan 3D</h2>
+
+<p>
+
+<b>Jaring-jaring</b> adalah bentuk dua dimensi yang jika dilipat
+akan membentuk bangun ruang tiga dimensi. Jaring-jaring adalah
+<b>representasi 2D dari permukaan 3D</b>—seperti peta dunia
+yang merepresentasikan permukaan bumi pada kertas datar.
+
+</p>
+
+<div class="summary">
+
+<b>Jaring-jaring</b> = bangun datar yang merupakan "bukaan" seluruh permukaan bangun ruang.<br><br>
+
+Satu bangun ruang bisa memiliki <b>banyak</b> jaring-jaring berbeda.
+
+</div>
+
+<hr>
+
+<h3>9.1 Jaring-Jaring Kubus — Ada 11 Pola</h3>
+
+<div class="example">
+
+Kubus memiliki <b>11 jaring-jaring yang berbeda</b> (tidak termasuk
+rotasi dan refleksi yang menghasilkan pola yang sama).<br><br>
+
+Semua jaring-jaring kubus adalah susunan <b>6 persegi</b> yang terhubung
+sedemikian rupa sehingga bisa dilipat menjadi kubus.<br><br>
+
+<b>Kenapa 11?</b> Ini adalah hasil enumerasi matematis. Tidak semua susunan
+6 persegi bisa menjadi jaring-jaring kubus. Syaratnya:<br>
+
+- Harus tepat 6 persegi.<br>
+
+- Harus bisa dilipat tanpa tumpang tindih.<br>
+
+- Setiap persegi harus terhubung minimal di satu sisi.<br><br>
+
+Dari 35 kemungkinan susunan 6 persegi (hexomino), hanya <b>11</b>
+yang bisa dilipat menjadi kubus.
+
+</div>
+
+<hr>
+
+<h3>9.2 Jaring-Jaring Balok — Lebih Banyak Variasi</h3>
+
+<div class="example">
+
+Balok memiliki <b>54 jaring-jaring berbeda</b>.<br><br>
+
+Jaring-jaring balok terdiri dari 3 pasang persegi panjang
+(p×l, p×t, l×t) yang masing-masing muncul dua kali.<br><br>
+
+Karena ukurannya tidak seragam (berbeda dengan kubus yang semua sisinya persegi),
+variasi susunannya jauh lebih banyak.
+
+</div>
+
+<hr>
+
+<h3>9.3 Jaring-Jaring Tabung — Paling Mudah Dibayangkan</h3>
+
+<div class="example">
+
+Jaring-jaring tabung terdiri dari:<br><br>
+
+- <b>2 lingkaran identik</b> (alas dan tutup) dengan jari-jari r.<br>
+
+- <b>1 persegi panjang</b> (selimut) dengan:<br>
+
+  • Lebar = 2πr (keliling alas).<br>
+
+  • Tinggi = t (tinggi tabung).<br><br>
+
+Ini adalah jaring-jaring yang paling mudah divisualisasikan
+karena komponennya sederhana dan familiar.
+
+</div>
+
+<hr>
+
+<h3>9.4 Jaring-Jaring Kerucut — Lingkaran + Juring</h3>
+
+<div class="example">
+
+Jaring-jaring kerucut terdiri dari:<br><br>
+
+- <b>1 lingkaran</b> (alas) dengan jari-jari r.<br>
+
+- <b>1 juring lingkaran</b> (selimut) dengan:<br>
+
+  • Jari-jari = s (garis pelukis).<br>
+
+  • Panjang busur = 2πr (keliling alas).<br><br>
+
+<b>Sudut juring (θ):</b><br>
+
+θ/360° = panjang busur / keliling lingkaran penuh<br>
+
+θ/360° = 2πr / 2πs = r/s<br>
+
+θ = (r/s) × 360°<br><br>
+
+Contoh: r = 3, s = 5 → θ = (3/5) × 360° = <b>216°</b>.
+
+</div>
+
+<hr>
+
+<h3>9.5 Jaring-Jaring Limas — Satu Alas + n Segitiga</h3>
+
+<div class="example">
+
+Jaring-jaring limas segi-n terdiri dari:<br><br>
+
+- <b>1 alas</b> berbentuk segi-n.<br>
+
+- <b>n segitiga</b> sebagai sisi tegak.<br><br>
+
+Untuk limas persegi: 1 persegi (alas) + 4 segitiga (sisi tegak).<br><br>
+
+<b>Tinggi segitiga pada jaring-jaring = tinggi miring (apotema limas),
+BUKAN tinggi limas!</b> Ini adalah kesalahan paling umum.
+
+</div>
+
+</div>
+
+<!-- ==================== APLIKASI & CONTOH SOAL ==================== -->
+
+<div class="section">
+
+<h2>10. Aplikasi dan Contoh Soal — Menyatukan Semua Konsep</h2>
+
+<hr>
+
+<h3>Soal 1: Volume dari Jaring-Jaring</h3>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah jaring-jaring tabung memiliki persegi panjang
+dengan ukuran 44 cm × 20 cm, dan dua lingkaran yang menempel
+di sisi panjangnya. Tentukan volume tabung.<br><br>
+
+<b>Penyelesaian:</b><br>
+
+Lebar persegi panjang = keliling alas = 2πr = 44.<br>
+
+r = 44/(2π) = 44/(2×3,14) ≈ 7 cm.<br><br>
+
+Tinggi persegi panjang = tinggi tabung = 20 cm.<br><br>
+
+V = πr²t = 3,14 × 49 × 20 = <b>3077,2 cm³</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Soal 2: Kubus dalam Bola</h3>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah kubus dengan rusuk 6 cm dimasukkan ke dalam bola
+sehingga semua titik sudut kubus menyentuh permukaan bola.
+Tentukan volume bola.<br><br>
+
+<b>Penyelesaian:</b><br>
+
+Diagonal ruang kubus = diameter bola.<br><br>
+
+Diagonal ruang = s√3 = 6√3 cm.<br><br>
+
+Jari-jari bola = (6√3)/2 = 3√3 cm.<br><br>
+
+V bola = ⁴/₃πr³ = ⁴/₃ × 3,14 × (3√3)³<br>
+
+= ⁴/₃ × 3,14 × 81√3<br>
+
+≈ ⁴/₃ × 3,14 × 140,3<br>
+
+≈ <b>587,7 cm³</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Soal 3: Gabungan Bangun Ruang</h3>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah benda terdiri dari tabung dengan jari-jari 7 cm dan tinggi 10 cm,
+di atasnya diletakkan kerucut dengan jari-jari dan tinggi yang sama.
+Tentukan volume total benda.<br><br>
+
+<b>Penyelesaian:</b><br>
+
+V tabung = πr²t = 3,14 × 49 × 10 = 1538,6 cm³.<br>
+
+V kerucut = ⅓πr²t = ⅓ × 3,14 × 49 × 10 = 512,87 cm³.<br><br>
+
+V total = 1538,6 + 512,87 = <b>2051,47 cm³</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 5</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Fondasi:</b> Volume = luas alas × tinggi (prinsip Cavalieri). LP = jumlah luas semua sisi.</li>
+
+<li><b>Rumus Euler:</b> V - E + F = 2. Jumlah sudut bangun ruang = (V-2) × 360°.</li>
+
+<li><b>Kubus:</b> V = s³. LP = 6s². Diagonal sisi = s√2. Diagonal ruang = s√3.</li>
+
+<li><b>Balok:</b> V = plt. LP = 2(pl+pt+lt). Diagonal ruang = √(p²+l²+t²).</li>
+
+<li><b>Prisma:</b> V = Luas Alas × t. LP = 2×Luas Alas + Keliling Alas × t.</li>
+
+<li><b>Limas & Kerucut:</b> V = <b>⅓</b> × Luas Alas × t. Dibuktikan dengan membagi kubus/prisma.</li>
+
+<li><b>Tabung:</b> V = πr²t. LP = 2πr(r+t). Selimut = 2πrt.</li>
+
+<li><b>Kerucut:</b> V = ⅓πr²t. LP = πr(r+s). Selimut = πrs. s = √(r²+t²).</li>
+
+<li><b>Bola:</b> V = ⁴/₃πr³. LP = 4πr². LP bola = LP selimut tabung pemuatnya.</li>
+
+<li><b>Jaring-jaring:</b> Representasi 2D dari permukaan 3D. Kubus punya 11 jaring-jaring.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Ingat ⅓ untuk limas dan kerucut.</b> Ini adalah kesalahan paling umum.
+Kalau kamu ragu, ingat: limas + limas + limas = prisma (dengan alas dan tinggi sama).
+
+</li>
+
+<li>
+
+<b>Jangan tertukar tinggi limas dan tinggi segitiga tegak.</b>
+Tinggi limas = jarak tegak lurus dari puncak ke alas.
+Tinggi segitiga tegak = jarak miring dari puncak ke sisi alas.
+Keduanya berbeda! Gunakan Pythagoras untuk mencari salah satunya.
+
+</li>
+
+<li>
+
+<b>Diagonal ruang kubus = s√3. Jangan lupa akar 3.</b>
+Ini sering muncul di soal. Diagonal sisi = s√2, diagonal ruang = s√3.
+
+</li>
+
+<li>
+
+<b>Bola: LP = 4πr², V = ⁴/₃πr³.</b>
+Angka 4 dan ⁴/₃ sering tertukar. Ingat: V punya ⁴/₃ (ada pecahan), LP tidak.
+
+</li>
+
+<li>
+
+<b>Prinsip Cavalieri adalah kunci.</b>
+Jika kamu paham bahwa volume = jumlah luas irisan,
+kamu bisa menurunkan hampir semua rumus volume sendiri.
+
+</li>
+
+<li>
+
+<b>Jaring-jaring: bayangkan "melipatnya".</b>
+Pilih satu sisi sebagai alas dalam pikiranmu, lalu "angkat" sisi-sisi lainnya.
+Ini skill yang perlu dilatih, tapi sangat berguna.
+
+</li>
+
+<li>
+
+<b>Verifikasi dengan satuan.</b> Volume selalu dalam satuan kubik (cm³, m³).
+Luas permukaan selalu dalam satuan persegi (cm², m²).
+Kalau satuannya salah, pasti ada yang keliru.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri4.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri6.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
