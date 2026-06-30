@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 7 | Transformasi Geometri</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔄 GEOMETRI</h1>
+
+<p>Part 7 • Transformasi Geometri</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Memindahkan, Memutar, Mencerminkan, Memperbesar</h2>
+
+<p>
+
+Di dunia nyata, objek tidak diam. Mereka bergerak, berputar, dipantulkan
+cermin, diperbesar, atau diperkecil. <b>Transformasi geometri</b> adalah
+studi matematis tentang bagaimana bentuk dan posisi objek berubah
+akibat operasi-operasi tersebut.
+
+</p>
+
+<p>
+
+Yang menakjubkan: dalam transformasi geometri, <b>bentuk dan ukuran
+objek bisa tetap</b> (isometri) atau <b>berubah secara proporsional</b> (dilatasi).
+Transformasi adalah jembatan antara geometri, aljabar (melalui matriks),
+dan grafik komputer—setiap kali kamu memperbesar foto di ponsel,
+kamu sedang melakukan dilatasi.
+
+</p>
+
+<div class="summary">
+
+Empat jenis transformasi yang akan kita bahas:<br><br>
+
+<b>1. Translasi (pergeseran):</b> memindahkan objek tanpa mengubah orientasi.<br>
+
+<b>2. Refleksi (pencerminan):</b> membalik objek terhadap suatu garis.<br>
+
+<b>3. Rotasi (perputaran):</b> memutar objek terhadap suatu titik pusat.<br>
+
+<b>4. Dilatasi (penskalaan):</b> memperbesar atau memperkecil objek terhadap pusat tertentu.
+
+</div>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami konsep transformasi sebagai fungsi yang memetakan titik ke titik lain.</li>
+
+<li>Menguasai translasi dengan vektor pergeseran.</li>
+
+<li>Menguasai refleksi terhadap berbagai sumbu dan garis.</li>
+
+<li>Menguasai rotasi dengan pusat O(0,0) dan pusat sembarang.</li>
+
+<li>Menguasai dilatasi dan faktor skala.</li>
+
+<li>Memahami komposisi transformasi (dua transformasi berturut-turut).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: TRANSLASI ==================== -->
+
+<div class="section">
+
+<h2>1. Translasi (Pergeseran) — Geser Tanpa Berubah Bentuk</h2>
+
+<div class="summary">
+
+<b>Translasi</b> adalah transformasi yang memindahkan setiap titik
+sejauh jarak yang sama dalam arah yang sama.<br><br>
+
+Jika titik P(x, y) ditranslasi oleh vektor T = (a, b), maka bayangannya:<br><br>
+
+<b>P'(x', y') = (x + a, y + b)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa sesederhana itu?</b>
+
+</p>
+
+<div class="example">
+
+Translasi adalah operasi "menambah": kamu mengambil koordinat asli,
+lalu menambahkan komponen horizontal (a) dan komponen vertikal (b).<br><br>
+
+Tidak ada yang berubah selain posisi. Bentuk, ukuran, dan orientasi
+tetap persis sama. Translasi adalah <b>isometri</b> (mempertahankan jarak).
+
+</div>
+
+<div class="example">
+
+Titik A(2, 3) ditranslasi oleh T = (4, -1).<br><br>
+
+A' = (2+4, 3-1) = <b>(6, 2)</b> ✅<br><br>
+
+Segitiga ABC dengan A(1,1), B(3,1), C(2,4) ditranslasi T = (2, 3):<br>
+
+A'(3,4), B'(5,4), C'(4,7).<br><br>
+
+Segitiga bayangan <b>identik</b> dengan aslinya, hanya bergeser.
+
+</div>
+
+<hr>
+
+<h3>Translasi pada Persamaan Kurva</h3>
+
+<div class="summary">
+
+Jika kurva y = f(x) ditranslasi oleh T = (h, k), maka persamaan bayangannya:<br><br>
+
+<b>y - k = f(x - h)</b><br><br>
+
+Atau: substitusi x → (x - h) dan y → (y - k) pada persamaan asli.
+
+</div>
+
+<p>
+
+<b>Mengapa x diganti (x - h) bukan (x + h)?</b>
+
+</p>
+
+<div class="example">
+
+Ini sering membingungkan. Logikanya:<br><br>
+
+Titik pada kurva asli: (x, y) memenuhi y = f(x).<br>
+
+Setelah translasi T(h, k), titik tersebut pindah ke (x+h, y+k).<br>
+
+Misalkan titik bayangan adalah (X, Y) = (x+h, y+k).<br><br>
+
+Maka x = X - h dan y = Y - k.<br>
+
+Substitusi ke y = f(x): Y - k = f(X - h).<br><br>
+
+Jadi persamaan bayangan: <b>y - k = f(x - h)</b>. ✅<br><br>
+
+<b>Cara mudah:</b> untuk menggeser kurva sejauh h ke kanan,
+ganti x dengan (x - h). Ini "melawan" intuisi, tapi benar.
+
+</div>
+
+<div class="example">
+
+Parabola y = x² ditranslasi T = (3, 2).<br><br>
+
+Persamaan bayangan: y - 2 = (x - 3)²<br>
+
+y = (x - 3)² + 2<br><br>
+
+Titik puncak asli (0,0) → puncak bayangan (3,2). ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: REFLEKSI ==================== -->
+
+<div class="section">
+
+<h2>2. Refleksi (Pencerminan) — Membalik terhadap Cermin</h2>
+
+<div class="summary">
+
+<b>Refleksi</b> adalah transformasi yang memetakan setiap titik
+ke "bayangannya" terhadap suatu garis cermin.<br><br>
+
+Jarak titik ke cermin = jarak bayangan ke cermin.<br>
+
+Garis penghubung titik dan bayangannya <b>tegak lurus</b> cermin.
+
+</div>
+
+<p>
+
+<b>Mengapa harus tegak lurus?</b> Karena cermin datar menghasilkan bayangan
+yang tegak lurus terhadap permukaannya. Ini adalah hukum pemantulan cahaya:
+sudut datang = sudut pantul, yang menghasilkan geometri tegak lurus.
+
+</p>
+
+<hr>
+
+<h3>2.1 Refleksi terhadap Sumbu X</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(x, -y)</b><br><br>
+
+x tetap, y berubah tanda.
+
+</div>
+
+<div class="example">
+
+A(3, 5) direfleksikan terhadap sumbu X → A'(3, -5). ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Refleksi terhadap Sumbu Y</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(-x, y)</b><br><br>
+
+y tetap, x berubah tanda.
+
+</div>
+
+<div class="example">
+
+A(3, 5) direfleksikan terhadap sumbu Y → A'(-3, 5). ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Refleksi terhadap Garis y = x</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(y, x)</b><br><br>
+
+Koordinat x dan y <b>bertukar tempat</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa bertukar?</b> Garis y = x adalah garis diagonal yang membentuk
+sudut 45° terhadap sumbu X. Mencerminkan terhadap garis ini sama dengan
+"menukar peran" x dan y. Setiap titik (a, b) akan menjadi (b, a).
+
+</p>
+
+<div class="example">
+
+A(3, 5) direfleksikan terhadap y = x → A'(5, 3). ✅<br><br>
+
+Ini juga cara mencari <b>fungsi invers</b> secara grafik: grafik f⁻¹
+adalah pencerminan grafik f terhadap garis y = x!
+
+</div>
+
+<hr>
+
+<h3>2.4 Refleksi terhadap Garis y = -x</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(-y, -x)</b>
+
+</div>
+
+<hr>
+
+<h3>2.5 Refleksi terhadap Garis x = h (Vertikal)</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(2h - x, y)</b><br><br>
+
+x berubah, y tetap. Rumus: x' = 2h - x.
+
+</div>
+
+<p>
+
+<b>Mengapa 2h - x?</b> Bayangan harus berjarak sama dari garis x = h.
+Jarak titik asli ke garis = |x - h|. Bayangan harus di sisi seberang
+dengan jarak yang sama: x' = h + (h - x) = 2h - x.
+
+</p>
+
+<div class="example">
+
+A(1, 3) direfleksikan terhadap x = 4.<br><br>
+
+x' = 2(4) - 1 = 7. A'(7, 3).<br><br>
+
+Jarak A ke x=4: |1-4| = 3. Jarak A' ke x=4: |7-4| = 3. ✅
+
+</div>
+
+<hr>
+
+<h3>2.6 Refleksi terhadap Garis y = k (Horizontal)</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(x, 2k - y)</b>
+
+</div>
+
+<hr>
+
+<h3>2.7 Refleksi terhadap Titik Asal O(0,0)</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(-x, -y)</b><br><br>
+
+Ini sama dengan <b>rotasi 180°</b> terhadap titik asal.
+
+</div>
+
+<hr>
+
+<h3>2.8 Refleksi pada Persamaan Kurva</h3>
+
+<div class="example">
+
+<b>Refleksi terhadap sumbu X:</b> ganti y dengan -y.<br>
+
+y = x² → -y = x² → y = -x² (parabola terbalik).<br><br>
+
+<b>Refleksi terhadap sumbu Y:</b> ganti x dengan -x.<br>
+
+y = x³ → y = (-x)³ → y = -x³.<br><br>
+
+<b>Refleksi terhadap y = x:</b> tukar x dan y.<br>
+
+y = x² → x = y² (parabola menyamping).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: ROTASI ==================== -->
+
+<div class="section">
+
+<h2>3. Rotasi (Perputaran) — Memutar terhadap Pusat</h2>
+
+<div class="summary">
+
+<b>Rotasi</b> adalah transformasi yang memutar setiap titik
+terhadap <b>pusat rotasi</b> sejauh <b>sudut θ</b>.<br><br>
+
+Arah positif = <b>berlawanan arah jarum jam</b> (counterclockwise).<br>
+
+Arah negatif = searah jarum jam.
+
+</div>
+
+<hr>
+
+<h3>3.1 Rotasi terhadap O(0,0) sejauh θ</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(x cos θ - y sin θ, x sin θ + y cos θ)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Penurunan dari Trigonometri</b>
+
+</p>
+
+<div class="example">
+
+Titik P(x, y) dalam koordinat polar: x = r cos α, y = r sin α.<br><br>
+
+Setelah rotasi sejauh θ, sudut menjadi α + θ.<br><br>
+
+x' = r cos(α + θ) = r(cos α cos θ - sin α sin θ)<br>
+
+= (r cos α)cos θ - (r sin α)sin θ<br>
+
+= <b>x cos θ - y sin θ</b> ✅<br><br>
+
+y' = r sin(α + θ) = r(sin α cos θ + cos α sin θ)<br>
+
+= (r sin α)cos θ + (r cos α)sin θ<br>
+
+= <b>y cos θ + x sin θ</b> = <b>x sin θ + y cos θ</b> ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Sudut-Sudut Istimewa — Hafalkan!</h3>
+
+<div class="summary">
+
+<b>Rotasi 90° CCW:</b> (x, y) → <b>(-y, x)</b><br>
+
+<b>Rotasi 180°:</b> (x, y) → <b>(-x, -y)</b><br>
+
+<b>Rotasi 270° CCW (atau 90° CW):</b> (x, y) → <b>(y, -x)</b>
+
+</div>
+
+<div class="example">
+
+A(3, 4) dirotasi 90° CCW terhadap O → A'(-4, 3). ✅<br>
+
+A'(-4, 3) dirotasi 90° CCW lagi → A''(-3, -4).<br>
+
+A''(-3, -4) dirotasi 90° CCW lagi → A'''(4, -3).<br>
+
+A'''(4, -3) dirotasi 90° CCW lagi → A''''(3, 4) = A (kembali!). ✅
+
+</div>
+
+<hr>
+
+<h3>3.3 Rotasi terhadap Pusat P(a, b) sejauh θ</h3>
+
+<div class="summary">
+
+<b>Langkah-langkah:</b><br>
+
+1. Translasi pusat ke O: (x-a, y-b).<br>
+
+2. Rotasi terhadap O sejauh θ.<br>
+
+3. Translasi balik: + (a, b).<br><br>
+
+<b>Rumus jadi:</b><br>
+
+x' = a + (x-a)cos θ - (y-b)sin θ<br>
+
+y' = b + (x-a)sin θ + (y-b)cos θ
+
+</div>
+
+<div class="example">
+
+Titik A(5, 2) dirotasi 90° CCW terhadap P(3, 1).<br><br>
+
+x' = 3 + (5-3)(0) - (2-1)(1) = 3 + 0 - 1 = <b>2</b><br>
+
+y' = 1 + (5-3)(1) + (2-1)(0) = 1 + 2 + 0 = <b>3</b><br><br>
+
+A'(2, 3). ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: DILATASI ==================== -->
+
+<div class="section">
+
+<h2>4. Dilatasi (Penskalaan) — Memperbesar atau Memperkecil</h2>
+
+<div class="summary">
+
+<b>Dilatasi</b> adalah transformasi yang mengubah <b>ukuran</b> objek
+tanpa mengubah bentuknya, terhadap suatu <b>pusat dilatasi</b>
+dengan <b>faktor skala k</b>.<br><br>
+
+Jika k > 1: <b>diperbesar</b>.<br>
+
+Jika 0 < k < 1: <b>diperkecil</b>.<br>
+
+Jika k < 0: ditambah <b>pencerminan</b> terhadap pusat.
+
+</div>
+
+<hr>
+
+<h3>4.1 Dilatasi terhadap O(0,0) dengan Faktor Skala k</h3>
+
+<div class="summary">
+
+<b>P(x, y) → P'(kx, ky)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa sesederhana itu?</b> Karena setiap koordinat dikalikan
+dengan k. Ini memperbesar/memperkecil jarak dari pusat sebesar k kali.
+
+</p>
+
+<div class="example">
+
+A(2, 3) didilatasi [O, k=2] → A'(4, 6).<br>
+
+B(-1, 4) didilatasi [O, k=3] → B'(-3, 12).<br><br>
+
+Segitiga ABC dengan A(1,0), B(0,2), C(-1,0) didilatasi [O, k=2]
+menghasilkan A'(2,0), B'(0,4), C'(-2,0).<br><br>
+
+Luas segitiga bayangan = k² × luas asli = 4 kali lipat! ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Dilatasi terhadap Pusat P(a, b) dengan Faktor Skala k</h3>
+
+<div class="summary">
+
+<b>Langkah-langkah:</b><br>
+
+1. Translasi pusat ke O: (x-a, y-b).<br>
+
+2. Dilatasi [O, k]: (k(x-a), k(y-b)).<br>
+
+3. Translasi balik: + (a, b).<br><br>
+
+<b>Rumus jadi:</b><br>
+
+<b>x' = a + k(x - a)<br>
+
+y' = b + k(y - b)</b>
+
+</div>
+
+<div class="example">
+
+Titik A(4, 5) didilatasi [P(1, 2), k=3].<br><br>
+
+x' = 1 + 3(4-1) = 1 + 9 = <b>10</b><br>
+
+y' = 2 + 3(5-2) = 2 + 9 = <b>11</b><br><br>
+
+A'(10, 11). ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Pengaruh Dilatasi pada Luas dan Volume</h3>
+
+<div class="summary">
+
+Jika suatu bangun 2D didilatasi dengan faktor skala k:<br><br>
+
+<b>Luas bayangan = k² × Luas asli</b><br><br>
+
+Jika bangun 3D:<br>
+
+<b>Volume bayangan = k³ × Volume asli</b>
+
+</div>
+
+<p>
+
+<b>Mengapa k² untuk luas?</b> Karena luas melibatkan dua dimensi
+(panjang × lebar). Masing-masing dikali k, jadi totalnya k × k = k².
+Untuk volume, tiga dimensi: k × k × k = k³.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 7</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Translasi T(a,b):</b> (x,y) → (x+a, y+b). Kurva: ganti x→(x-a), y→(y-b).</li>
+
+<li><b>Refleksi:</b> Sumbu X: (x,-y). Sumbu Y: (-x,y). y=x: (y,x). y=-x: (-y,-x). x=h: (2h-x,y). y=k: (x,2k-y). O(0,0): (-x,-y).</li>
+
+<li><b>Rotasi O(0,0):</b> (x cos θ - y sin θ, x sin θ + y cos θ). 90°: (-y,x). 180°: (-x,-y). 270°: (y,-x).</li>
+
+<li><b>Dilatasi [O,k]:</b> (kx, ky). [P(a,b), k]: (a+k(x-a), b+k(y-b)).</li>
+
+<li><b>Luas setelah dilatasi:</b> ×k². <b>Volume:</b> ×k³.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Rotasi 90° CCW = (-y, x). 90° CW = (y, -x).</b> Jangan tertukar!
+CCW: x jadi -y, y jadi x. CW: x jadi y, y jadi -x.
+
+</li>
+
+<li>
+
+<b>Refleksi terhadap y = x menukar koordinat.</b> Ini adalah kunci
+mencari fungsi invers secara grafik.
+
+</li>
+
+<li>
+
+<b>Translasi kurva: ganti x dengan (x - h), bukan (x + h).</b>
+Ini "berlawanan" dengan intuisi. Selalu ingat: untuk menggeser
+ke kanan sejauh h, ganti x dengan (x - h).
+
+</li>
+
+<li>
+
+<b>Dua refleksi berturut-turut = rotasi.</b>
+Refleksi terhadap dua garis yang berpotongan menghasilkan rotasi
+sebesar 2 kali sudut antara kedua garis.
+
+</li>
+
+<li>
+
+<b>Rotasi terhadap pusat sembarang = translasi + rotasi + translasi balik.</b>
+Ini pola umum: untuk transformasi dengan pusat bukan O(0,0),
+pindahkan dulu ke O, lakukan transformasi, kembalikan.
+
+</li>
+
+<li>
+
+<b>Visualisasikan selalu.</b> Gambar titik asli dan bayangannya.
+Untuk rotasi, bayangkan "memutar" titik di atas kertas.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri6.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri8.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
