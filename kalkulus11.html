@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 11 | Persamaan Diferensial & Transformasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 11 • Persamaan Diferensial & Transformasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Matematika Perubahan</h2>
+
+<p>
+
+Seluruh kalkulus yang kita pelajari—dari limit sampai integral lipat tiga—
+bermuara di sini: <b>persamaan diferensial</b>. Persamaan diferensial adalah
+persamaan yang melibatkan <b>fungsi yang tidak diketahui</b> dan <b>turunan-turunannya</b>.
+Ini adalah bahasa alam semesta untuk mendeskripsikan perubahan.
+
+</p>
+
+<p>
+
+Hukum Newton (F = ma) adalah persamaan diferensial. Persamaan gelombang,
+persamaan panas, persamaan Schrödinger dalam mekanika kuantum—semuanya
+persamaan diferensial. Setiap kali kamu melihat sesuatu berubah terhadap waktu
+dan perubahan itu bergantung pada keadaan saat ini, di situ ada persamaan diferensial.
+
+</p>
+
+<p>
+
+Di bab terakhir ini, kita akan mempelajari <b>persamaan diferensial orde satu</b>
+(misalnya: dy/dx = ky untuk pertumbuhan eksponensial), <b>persamaan diferensial
+orde dua</b> (misalnya: d²y/dt² + ω²y = 0 untuk osilasi harmonik), dan dua
+alat transformasi paling powerful: <b>Transformasi Laplace</b> (mengubah PD
+menjadi persamaan aljabar) dan <b>Deret Fourier</b> (menguraikan fungsi periodik
+menjadi gelombang sinus dan cosinus). Kita juga akan mengupas <b>differential forms</b>
+sebagai pengantar ke geometri diferensial modern.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami apa itu persamaan diferensial dan mengapa ia fundamental.</li>
+
+<li>Mampu menyelesaikan PD orde satu: separable, linear, dan eksak.</li>
+
+<li>Menguasai PD orde dua linear homogen dengan koefisien konstan.</li>
+
+<li>Memahami metode koefisien tak tentu dan variasi parameter.</li>
+
+<li>Mengenal Transformasi Laplace dan penggunaannya untuk menyelesaikan PD.</li>
+
+<li>Memahami Deret Fourier sebagai cara menguraikan sinyal periodik.</li>
+
+<li>Mengenal differential forms sebagai bahasa geometri diferensial.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: PENGANTAR PD ==================== -->
+
+<div class="section">
+
+<h2>1. Persamaan Diferensial — Bahasa Perubahan</h2>
+
+<div class="summary">
+
+<b>Persamaan diferensial (PD)</b> adalah persamaan yang mengandung <b>turunan</b>
+dari fungsi yang tidak diketahui.<br><br>
+
+<b>Orde PD:</b> orde turunan tertinggi yang muncul.<br><br>
+
+<b>PD Biasa (ODE):</b> fungsi satu variabel. Contoh: dy/dx = ky.<br><br>
+
+<b>PD Parsial (PDE):</b> fungsi multivariabel. Contoh: ∂u/∂t = ∂²u/∂x² (persamaan panas).<br><br>
+
+<b>Solusi PD:</b> fungsi yang memenuhi persamaan tersebut. Solusi umum mengandung
+konstanta sembarang. Solusi khusus memenuhi syarat awal/batas.
+
+</div>
+
+<p>
+
+<b>Mengapa PD penting?</b> Karena hukum alam dinyatakan dalam bentuk PD.
+Newton: F = ma → m(d²x/dt²) = F(x). Pertumbuhan populasi: dP/dt = kP.
+Pendinginan Newton: dT/dt = -k(T - T_lingkungan). Rangkaian listrik:
+L(d²q/dt²) + R(dq/dt) + q/C = V(t). Semuanya PD!
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 2: PD ORDE SATU ==================== -->
+
+<div class="section">
+
+<h2>2. Persamaan Diferensial Orde Satu — Fondasi</h2>
+
+<h3>2.1 PD Separable — Variabel Bisa Dipisahkan</h3>
+
+<div class="summary">
+
+<b>Bentuk:</b> dy/dx = g(x)·h(y)<br><br>
+
+<b>Metode:</b> Pisahkan variabel: (1/h(y)) dy = g(x) dx. Integralkan kedua ruas.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Selesaikan dy/dx = ky (pertumbuhan eksponensial).<br><br>
+
+(1/y) dy = k dx<br>
+
+∫ (1/y) dy = ∫ k dx<br>
+
+ln |y| = kx + C<br>
+
+y = e^(kx+C) = e^C · e^(kx) = <b>Ae^(kx)</b> ✅<br><br>
+
+Ini adalah model pertumbuhan populasi, peluruhan radioaktif, bunga majemuk kontinu!
+
+</div>
+
+<hr>
+
+<h3>2.2 PD Linear Orde Satu — Faktor Integrasi</h3>
+
+<div class="summary">
+
+<b>Bentuk standar:</b> dy/dx + P(x)y = Q(x)<br><br>
+
+<b>Faktor integrasi:</b> μ(x) = e^(∫P(x)dx)<br><br>
+
+<b>Solusi:</b> y = (1/μ(x)) ∫ μ(x)Q(x) dx
+
+</div>
+
+<p>
+
+<b>Mengapa faktor integrasi bekerja? — Trik Jenius Leibniz</b>
+
+</p>
+
+<div class="example">
+
+Kalikan kedua ruas PD dengan μ(x): μ(dy/dx) + μPy = μQ.<br><br>
+
+Perhatikan bahwa d(μy)/dx = μ(dy/dx) + (dμ/dx)y.<br><br>
+
+Jika dμ/dx = μP, maka ruas kiri menjadi d(μy)/dx, dan PD menjadi:<br>
+
+d(μy)/dx = μQ → μy = ∫ μQ dx → y = (1/μ)∫ μQ dx.<br><br>
+
+Dari dμ/dx = μP → dμ/μ = P dx → ln μ = ∫P dx → μ = e^(∫P dx). ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Selesaikan dy/dx + 2xy = x.<br><br>
+
+P(x) = 2x. μ(x) = e^(∫2x dx) = e^(x²).<br><br>
+
+d(e^(x²)y)/dx = x·e^(x²)<br>
+
+e^(x²)y = ∫ x·e^(x²) dx = (1/2)e^(x²) + C<br>
+
+y = <b>1/2 + Ce^(-x²)</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: PD ORDE DUA ==================== -->
+
+<div class="section">
+
+<h2>3. Persamaan Diferensial Orde Dua — Osilasi dan Gelombang</h2>
+
+<div class="summary">
+
+<b>Bentuk umum:</b> ay'' + by' + cy = f(x) &nbsp; (a, b, c konstanta, a ≠ 0).<br><br>
+
+<b>Homogen:</b> f(x) = 0. <b>Non-homogen:</b> f(x) ≠ 0.<br><br>
+
+<b>Solusi umum = solusi homogen + solusi partikular:</b> y = yₕ + yₚ
+
+</div>
+
+<hr>
+
+<h3>3.1 PD Orde Dua Homogen — Persamaan Karakteristik</h3>
+
+<div class="summary">
+
+<b>Persamaan karakteristik:</b> ar² + br + c = 0<br><br>
+
+<b>Kasus 1 (D > 0, dua akar real berbeda r₁, r₂):</b><br>
+
+yₕ = C₁e^(r₁x) + C₂e^(r₂x)<br><br>
+
+<b>Kasus 2 (D = 0, akar kembar r):</b><br>
+
+yₕ = C₁e^(rx) + C₂xe^(rx)<br><br>
+
+<b>Kasus 3 (D < 0, akar kompleks α ± βi):</b><br>
+
+yₕ = e^(αx)(C₁ cos βx + C₂ sin βx)
+
+</div>
+
+<p>
+
+<b>Mengapa mencoba y = e^(rx)? — Kejeniusan Euler</b>
+
+</p>
+
+<div class="example">
+
+Untuk PD ay'' + by' + cy = 0, coba solusi y = e^(rx).<br><br>
+
+y' = re^(rx), y'' = r²e^(rx).<br><br>
+
+Substitusi: a(r²e^(rx)) + b(re^(rx)) + c(e^(rx)) = 0<br>
+
+e^(rx)(ar² + br + c) = 0.<br><br>
+
+Karena e^(rx) ≠ 0, maka ar² + br + c = 0 (persamaan karakteristik). ✅<br><br>
+
+Inilah kenapa persamaan diferensial linear punya solusi eksponensial:
+karena turunan e^(rx) adalah kelipatan dari e^(rx) itu sendiri.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Selesaikan y'' - 5y' + 6y = 0.<br><br>
+
+Persamaan karakteristik: r² - 5r + 6 = 0 → (r-2)(r-3) = 0 → r = 2, 3.<br><br>
+
+y = <b>C₁e^(2x) + C₂e^(3x)</b>. ✅<br><br><br>
+
+<b>Soal (osilasi):</b> Selesaikan y'' + 4y = 0 (gerak harmonik sederhana).<br><br>
+
+r² + 4 = 0 → r = ±2i. α = 0, β = 2.<br><br>
+
+y = e⁰(C₁ cos 2x + C₂ sin 2x) = <b>C₁ cos 2x + C₂ sin 2x</b>. ✅<br><br>
+
+Ini adalah gerak osilasi dengan frekuensi sudut ω = 2!
+
+</div>
+
+<hr>
+
+<h3>3.2 PD Orde Dua Non-Homogen — Mencari Solusi Partikular</h3>
+
+<div class="summary">
+
+<b>Metode Koefisien Tak Tentu:</b> Tebak bentuk yₚ berdasarkan f(x):<br><br>
+
+• f(x) = polinomial → yₚ = polinomial dengan derajat sama.<br>
+
+• f(x) = e^(kx) → yₚ = Ae^(kx).<br>
+
+• f(x) = sin ωx atau cos ωx → yₚ = A cos ωx + B sin ωx.<br>
+
+• f(x) = e^(kx) sin ωx → yₚ = e^(kx)(A cos ωx + B sin ωx).<br><br>
+
+Substitusi yₚ ke PD, samakan koefisien, cari A, B, C, ...
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> y'' - 5y' + 6y = e^(4x).<br><br>
+
+Solusi homogen: yₕ = C₁e^(2x) + C₂e^(3x).<br><br>
+
+Tebak yₚ = Ae^(4x). yₚ' = 4Ae^(4x). yₚ'' = 16Ae^(4x).<br><br>
+
+Substitusi: 16Ae^(4x) - 20Ae^(4x) + 6Ae^(4x) = e^(4x)<br>
+
+2Ae^(4x) = e^(4x) → A = 1/2.<br><br>
+
+yₚ = (1/2)e^(4x).<br><br>
+
+Solusi umum: y = <b>C₁e^(2x) + C₂e^(3x) + (1/2)e^(4x)</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: TRANSFORMASI LAPLACE ==================== -->
+
+<div class="section">
+
+<h2>4. Transformasi Laplace — Dari Kalkulus ke Aljabar</h2>
+
+<div class="summary">
+
+<b>Transformasi Laplace</b> mengubah fungsi waktu f(t) menjadi fungsi
+frekuensi kompleks F(s):<br><br>
+
+<b>ℒ{f(t)} = F(s) = ∫₀^∞ f(t) e^(-st) dt</b><br><br>
+
+<b>Keajaibannya:</b> Transformasi Laplace mengubah <b>persamaan diferensial</b>
+menjadi <b>persamaan aljabar</b>! Jauh lebih mudah diselesaikan.
+
+</div>
+
+<p>
+
+<b>Mengapa ini bekerja?</b> Transformasi Laplace "memakan" turunan
+dan mengeluarkan perkalian dengan s:
+
+</p>
+
+<div class="summary">
+
+ℒ{f'(t)} = sF(s) - f(0)<br>
+
+ℒ{f''(t)} = s²F(s) - sf(0) - f'(0)<br>
+
+ℒ{f⁽ⁿ⁾(t)} = sⁿF(s) - sⁿ⁻¹f(0) - ... - f⁽ⁿ⁻¹⁾(0)
+
+</div>
+
+<p>
+
+<b>Bukti untuk turunan pertama:</b>
+
+</p>
+
+<div class="example">
+
+ℒ{f'(t)} = ∫₀^∞ f'(t)e^(-st) dt.<br><br>
+
+Integral parsial: u = e^(-st), dv = f'(t)dt.<br>
+
+du = -se^(-st)dt, v = f(t).<br><br>
+
+= [f(t)e^(-st)]₀^∞ + s∫₀^∞ f(t)e^(-st) dt<br>
+
+= (0 - f(0)) + sF(s) = <b>sF(s) - f(0)</b>. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Selesaikan y'' + 4y = 0, y(0) = 1, y'(0) = 0 dengan Transformasi Laplace.<br><br>
+
+ℒ{y''} + 4ℒ{y} = 0<br>
+
+(s²Y - s·1 - 0) + 4Y = 0<br>
+
+Y(s² + 4) = s<br>
+
+Y = s/(s² + 4).<br><br>
+
+Transformasi invers: ℒ⁻¹{s/(s²+4)} = <b>cos 2t</b>. ✅<br><br>
+
+Solusi: y(t) = cos 2t. Bandingkan dengan metode karakteristik—hasilnya sama!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: DERET FOURIER ==================== -->
+
+<div class="section">
+
+<h2>5. Deret Fourier — Menguraikan Sinyal Menjadi Gelombang</h2>
+
+<div class="summary">
+
+<b>Deret Fourier</b> menyatakan fungsi periodik f(x) dengan periode 2L
+sebagai jumlah tak hingga sinus dan cosinus:<br><br>
+
+f(x) = a₀/2 + Σ[n=1..∞] (aₙ cos(nπx/L) + bₙ sin(nπx/L))<br><br>
+
+aₙ = (1/L) ∫₋ᴸᴸ f(x) cos(nπx/L) dx<br>
+
+bₙ = (1/L) ∫₋ᴸᴸ f(x) sin(nπx/L) dx
+
+</div>
+
+<p>
+
+<b>Mengapa ini revolusioner?</b> Joseph Fourier (1807) mengklaim bahwa
+<b>fungsi periodik APAPUN</b>—bahkan yang tidak mulus—bisa dinyatakan
+sebagai jumlah gelombang sinus dan cosinus. Ini mengubah cara kita
+memahami suara, cahaya, panas, dan sinyal.
+
+</p>
+
+<p>
+
+<b>Intuisi:</b> Setiap bunyi musik adalah gabungan dari nada-nada murni
+(sinus dan cosinus). Deret Fourier adalah "resep" untuk menguraikan
+bunyi kompleks menjadi komponen-komponen frekuensinya.
+Inilah dasar dari MP3, JPEG, dan semua kompresi digital.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Cari deret Fourier untuk fungsi gelombang persegi f(x) dengan periode 2π:<br>
+
+f(x) = 1 untuk 0 < x < π, f(x) = -1 untuk -π < x < 0.<br><br>
+
+f ganjil → aₙ = 0 untuk semua n (termasuk a₀ = 0).<br><br>
+
+bₙ = (1/π)∫₋ᵖⁱᵖⁱ f(x) sin(nx) dx = (2/π)∫₀ᵖⁱ sin(nx) dx<br>
+
+= (2/π)[-cos(nx)/n]₀ᵖⁱ = (2/π)(-cos(nπ)/n + 1/n) = (2/(nπ))(1 - cos(nπ)).<br><br>
+
+cos(nπ) = (-1)ⁿ. Untuk n genap: 1 - 1 = 0. Untuk n ganjil: 1 - (-1) = 2.<br><br>
+
+bₙ = 4/(nπ) untuk n ganjil.<br><br>
+
+f(x) = <b>(4/π)[sin x + (1/3)sin 3x + (1/5)sin 5x + (1/7)sin 7x + ...]</b>. ✅<br><br>
+
+Gelombang persegi = jumlah gelombang sinus ganjil dengan amplitudo menurun!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: DIFFERENTIAL FORMS ==================== -->
+
+<div class="section">
+
+<h2>6. Differential Forms — Pengantar Geometri Diferensial</h2>
+
+<div class="summary">
+
+<b>Differential forms</b> adalah generalisasi dari konsep dx, dy, ds, dA, dV
+ke dimensi berapapun. Mereka adalah "objek yang siap diintegralkan" pada
+manifold (ruang melengkung).<br><br>
+
+<b>0-form:</b> fungsi skalar f(x, y, z).<br>
+
+<b>1-form:</b> ω = P dx + Q dy + R dz (integral garis).<br>
+
+<b>2-form:</b> ω = P dy∧dz + Q dz∧dx + R dx∧dy (integral permukaan).<br>
+
+<b>3-form:</b> ω = f dx∧dy∧dz (integral volume).<br><br>
+
+<b>∧ (wedge product):</b> perkalian anti-komutatif: dx∧dy = -dy∧dx, dx∧dx = 0.
+
+</div>
+
+<p>
+
+<b>Mengapa ini penting?</b> Differential forms menyatukan semua teorema integral
+(Green, Stokes, Gauss) menjadi satu teorema: <b>Generalized Stokes' Theorem</b>.
+
+</p>
+
+<div class="summary">
+
+<b>∫_M dω = ∫_{∂M} ω</b><br><br>
+
+d = operator turunan luar (exterior derivative).<br>
+
+M = manifold (ruang berdimensi k). ∂M = batas M (berdimensi k-1).<br><br>
+
+• FTC: M = [a,b] (1D), ω = f (0-form), dω = f'(x)dx, ∂M = {a,b}.<br>
+
+• Green: M = D (2D), ω = Pdx+Qdy (1-form), dω = (∂Q/∂x-∂P/∂y)dx∧dy.<br>
+
+• Stokes: M = S (permukaan 2D), ω = F⃗·dr⃗ (1-form), dω = curl F⃗·dS⃗.<br>
+
+• Gauss: M = E (benda 3D), ω = F⃗·dS⃗ (2-form), dω = div F⃗ dV.<br><br>
+
+<b>Semua teorema integral adalah satu teorema yang sama!</b>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 11</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>PD Orde Satu Separable:</b> Pisahkan variabel, integralkan. dy/dx = g(x)h(y).</li>
+
+<li><b>PD Linear Orde Satu:</b> Faktor integrasi μ = e^(∫Pdx). d(μy)/dx = μQ.</li>
+
+<li><b>PD Orde Dua Homogen:</b> Persamaan karakteristik ar²+br+c=0. 3 kasus (real, kembar, kompleks).</li>
+
+<li><b>PD Orde Dua Non-Homogen:</b> y = yₕ + yₚ. Tebak yₚ berdasarkan f(x). Koefisien tak tentu.</li>
+
+<li><b>Transformasi Laplace:</b> ℒ{f(t)} = ∫₀^∞ f(t)e^(-st)dt. Mengubah PD → aljabar. ℒ{f'} = sF - f(0).</li>
+
+<li><b>Deret Fourier:</b> f(x) = a₀/2 + Σ(aₙ cos nx + bₙ sin nx). Menguraikan sinyal periodik.</li>
+
+<li><b>Differential Forms:</b> Generalized Stokes' Theorem ∫_M dω = ∫_{∂M} ω. Menyatukan Green, Stokes, Gauss.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>PD Separable: kunci adalah memisahkan.</b> Kalau kamu bisa menulis semua y di satu sisi
+dan semua x di sisi lain, kamu bisa menyelesaikannya. Ini adalah jenis PD paling dasar.
+
+</li>
+
+<li>
+
+<b>Faktor integrasi selalu e^(∫Pdx).</b> Jangan lupa: P(x) adalah koefisien y
+setelah PD ditulis dalam bentuk standar dy/dx + Py = Q.
+
+</li>
+
+<li>
+
+<b>PD Orde Dua: cek diskriminan dulu.</b> D = b² - 4ac menentukan jenis solusi:
+D>0 (real), D=0 (kembar), D<0 (kompleks = osilasi).
+
+</li>
+
+<li>
+
+<b>Laplace: turunan jadi perkalian dengan s.</b> Ini adalah "trik sulap" terbesar.
+PD yang rumit berubah jadi persamaan aljabar yang sederhana.
+
+</li>
+
+<li>
+
+<b>Fourier: fungsi ganjil → hanya sinus. Fungsi genap → hanya cosinus.</b>
+Ini menghemat setengah perhitungan! Cek simetri fungsi sebelum menghitung koefisien.
+
+</li>
+
+<li>
+
+<b>Differential forms: dx∧dy = -dy∧dx.</b> Sifat anti-komutatif ini adalah kunci.
+Ini yang membuat dx∧dx = 0 dan menghasilkan determinan Jacobian.
+
+</li>
+
+<li>
+
+<b>Semua teorema integral = Generalized Stokes.</b> Kalau kamu belajar differential forms,
+kamu tidak perlu menghafal Green, Stokes, Gauss secara terpisah. Satu rumus untuk semua!
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus10.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
