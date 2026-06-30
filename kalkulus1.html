@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 1 | Fungsi & Limit</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 1 • Fungsi & Limit</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Dua Pilar Kalkulus</h2>
+
+<p>
+
+Kalkulus adalah cabang matematika yang mempelajari <b>perubahan</b>.
+Ia dibangun di atas dua pilar raksasa: <b>turunan (differential calculus)</b>
+yang mempelajari laju perubahan sesaat, dan <b>integral (integral calculus)</b>
+yang mempelajari akumulasi kuantitas.
+
+</p>
+
+<p>
+
+Tapi sebelum kita masuk ke turunan dan integral, kita harus memahami
+satu konsep yang menjadi fondasi seluruh kalkulus: <b>limit</b>.
+Limit menjawab pertanyaan: "Nilai apa yang didekati oleh suatu fungsi
+ketika inputnya mendekati suatu nilai tertentu?" Tanpa limit,
+turunan (yang melibatkan pembagian dengan selisih yang menuju nol)
+dan integral (yang melibatkan penjumlahan tak hingga) tidak bisa didefinisikan secara rigor.
+
+</p>
+
+<p>
+
+Kalkulus modern dikembangkan secara independen oleh <b>Isaac Newton</b>
+di Inggris dan <b>Gottfried Wilhelm Leibniz</b> di Jerman pada akhir abad ke-17.
+Newton menggunakannya untuk menjelaskan gerak planet dan gravitasi.
+Leibniz mengembangkan notasi yang kita pakai sampai sekarang (dy/dx, ∫).
+Persaingan sengit antara keduanya adalah salah satu drama terbesar
+dalam sejarah sains.
+
+</p>
+
+<p>
+
+Namun, definisi limit yang benar-benar rigor (epsilon-delta)
+baru dirumuskan oleh <b>Augustin-Louis Cauchy</b> dan <b>Karl Weierstrass</b>
+pada abad ke-19—hampir 200 tahun setelah Newton dan Leibniz.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami konsep fungsi sebagai mesin input-output dan berbagai jenisnya.</li>
+
+<li>Memahami konsep limit secara intuitif: "nilai yang didekati".</li>
+
+<li>Menguasai cara menghitung limit fungsi aljabar sederhana.</li>
+
+<li>Memahami limit sepihak (kiri dan kanan).</li>
+
+<li>Memahami limit tak hingga dan limit di tak hingga.</li>
+
+<li>Memahami konsep kontinuitas dan Teorema Nilai Antara.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: FUNGSI ==================== -->
+
+<div class="section">
+
+<h2>1. Fungsi — Fondasi yang Harus Kuat</h2>
+
+<p>
+
+Sebelum masuk ke limit, kita perlu memastikan pemahaman tentang fungsi
+benar-benar solid. Fungsi adalah <b>jantung</b> dari kalkulus.
+Setiap konsep dalam kalkulus—limit, turunan, integral—adalah operasi
+yang diterapkan pada fungsi.
+
+</p>
+
+<div class="summary">
+
+<b>Fungsi f</b> adalah aturan yang memasangkan setiap input x (dari domain)
+dengan <b>tepat satu</b> output y = f(x) (di range).<br><br>
+
+<b>Notasi:</b> f : A → B, di mana A = domain, B = kodomain.<br><br>
+
+<b>Domain:</b> himpunan semua input yang valid (tidak menyebabkan pembagian nol, akar negatif, log non-positif).<br><br>
+
+<b>Range:</b> himpunan semua output aktual yang dihasilkan.
+
+</div>
+
+<p>
+
+<b>Mengapa "tepat satu"?</b> Karena fungsi harus <b>deterministik</b>:
+input yang sama harus selalu menghasilkan output yang sama.
+Ini adalah sifat fundamental yang membedakan fungsi dari relasi biasa.
+
+</p>
+
+<hr>
+
+<h3>1.1 Jenis-Jenis Fungsi yang Penting di Kalkulus</h3>
+
+<div class="summary">
+
+<b>1. Fungsi Polinomial:</b> f(x) = aₙxⁿ + ... + a₁x + a₀. Domain: ℝ. Mulus, tidak putus.<br><br>
+
+<b>2. Fungsi Rasional:</b> f(x) = P(x)/Q(x). Domain: Q(x) ≠ 0. Bisa punya asimtot vertikal.<br><br>
+
+<b>3. Fungsi Eksponen:</b> f(x) = aˣ, a > 0. Domain: ℝ. Range: (0, ∞). Tumbuh/peluruhan eksponensial.<br><br>
+
+<b>4. Fungsi Logaritma:</b> f(x) = ᵃlog x. Domain: (0, ∞). Range: ℝ. Invers dari eksponen.<br><br>
+
+<b>5. Fungsi Trigonometri:</b> sin x, cos x, tan x, dll. Periodik. Penting untuk gelombang dan osilasi.<br><br>
+
+<b>6. Fungsi Nilai Mutlak:</b> f(x) = |x|. Grafik V. Tidak mulus di x = 0.<br><br>
+
+<b>7. Fungsi Piecewise:</b> Didefinisikan dengan aturan berbeda pada interval berbeda.
+
+</div>
+
+<hr>
+
+<h3>1.2 Representasi Fungsi — Empat Cara</h3>
+
+<div class="example">
+
+<b>1. Verbal:</b> "Fungsi kuadrat dari x adalah x dikuadratkan lalu ditambah 1."<br><br>
+
+<b>2. Aljabar (Rumus):</b> f(x) = x² + 1.<br><br>
+
+<b>3. Tabel:</b> x=0→1, x=1→2, x=2→5, x=3→10.<br><br>
+
+<b>4. Grafik:</b> Kurva parabola pada bidang Kartesius.<br><br>
+
+Keempat cara ini mendeskripsikan <b>fungsi yang sama</b>. Pilih yang paling sesuai dengan konteks.
+
+</div>
+
+<hr>
+
+<h3>1.3 Operasi pada Fungsi</h3>
+
+<div class="summary">
+
+<b>(f + g)(x) = f(x) + g(x)</b> — penjumlahan.<br>
+
+<b>(f - g)(x) = f(x) - g(x)</b> — pengurangan.<br>
+
+<b>(f · g)(x) = f(x) · g(x)</b> — perkalian.<br>
+
+<b>(f / g)(x) = f(x) / g(x)</b> — pembagian, g(x) ≠ 0.<br><br>
+
+<b>(f ∘ g)(x) = f(g(x))</b> — komposisi. Kerjakan g dulu, hasilnya masukkan ke f.<br><br>
+
+<b>f⁻¹(x)</b> — fungsi invers. Membalikkan f: jika f(a) = b, maka f⁻¹(b) = a.
+
+</div>
+
+<hr>
+
+<h3>1.4 Simetri Fungsi — Ganjil dan Genap</h3>
+
+<div class="summary">
+
+<b>Fungsi Genap:</b> f(-x) = f(x). Grafik simetris terhadap sumbu Y. Contoh: f(x) = x², cos x, |x|.<br><br>
+
+<b>Fungsi Ganjil:</b> f(-x) = -f(x). Grafik simetris terhadap titik asal. Contoh: f(x) = x³, sin x, x|x|.<br><br>
+
+<b>Bukan keduanya:</b> Kebanyakan fungsi tidak ganjil maupun genap. Contoh: f(x) = eˣ, x² + x.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: KONSEP LIMIT ==================== -->
+
+<div class="section">
+
+<h2>2. Limit — Inti dari Kalkulus</h2>
+
+<p>
+
+<b>Limit</b> adalah pertanyaan: "Ke mana nilai f(x) <b>mendekati</b>
+ketika x <b>mendekati</b> suatu nilai c, tapi tidak harus tepat di c?"
+
+</p>
+
+<div class="summary">
+
+<b>Notasi:</b> lim[x→c] f(x) = L<br><br>
+
+Dibaca: "Limit dari f(x) ketika x mendekati c adalah L."<br><br>
+
+Artinya: Ketika x semakin dekat ke c (dari kiri maupun kanan),
+nilai f(x) semakin dekat ke L.
+
+</div>
+
+<p>
+
+<b>Mengapa kita peduli limit?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan fungsi f(x) = (x² - 1)/(x - 1).<br><br>
+
+Coba hitung f(1): (1 - 1)/(1 - 1) = 0/0 → <b>tidak terdefinisi!</b><br><br>
+
+Tapi coba hitung untuk nilai yang dekat ke 1:<br>
+
+x = 0,9 → f(0,9) = (0,81-1)/(-0,1) = (-0,19)/(-0,1) = 1,9<br>
+
+x = 0,99 → f(0,99) = (0,9801-1)/(-0,01) = 1,99<br>
+
+x = 0,999 → f(0,999) = 1,999<br>
+
+x = 1,001 → f(1,001) = 2,001<br>
+
+x = 1,01 → f(1,01) = 2,01<br><br>
+
+Jelas: <b>f(x) mendekati 2 saat x mendekati 1</b>, meskipun f(1) tidak terdefinisi!<br><br>
+
+Jadi, lim[x→1] (x²-1)/(x-1) = <b>2</b>.
+
+</div>
+
+<p>
+
+<b>Inilah kekuatan limit:</b> limit tidak peduli dengan nilai fungsi <b>di titik itu</b>.
+Limit hanya peduli dengan <b>perilaku fungsi di sekitar titik itu</b>.
+Ini memungkinkan kita menangani kasus 0/0, ∞/∞, dan bentuk tak tentu lainnya.
+
+</p>
+
+<hr>
+
+<h3>2.1 Menghitung Limit — Metode Substitusi Langsung</h3>
+
+<div class="summary">
+
+<b>Langkah pertama selalu:</b> substitusi langsung x = c ke f(x).<br><br>
+
+Jika hasilnya <b>terdefinisi dan bukan bentuk tak tentu</b> → itu adalah limitnya.<br><br>
+
+Jika hasilnya <b>0/0, ∞/∞, 0×∞, ∞-∞, 1^∞, 0⁰, ∞⁰</b> → perlu manipulasi aljabar.
+
+</div>
+
+<div class="example">
+
+lim[x→2] (x² + 3x) = 4 + 6 = <b>10</b> ✅ (substitusi langsung berhasil)<br><br>
+
+lim[x→3] 1/(x-3) → 1/0 → <b>tidak ada</b> (bukan bentuk tak tentu, limit menuju ±∞)<br><br>
+
+lim[x→1] (x²-1)/(x-1) → 0/0 → <b>bentuk tak tentu</b>, perlu manipulasi.
+
+</div>
+
+<hr>
+
+<h3>2.2 Menghitung Limit — Metode Pemfaktoran</h3>
+
+<div class="example">
+
+lim[x→1] (x² - 1)/(x - 1)<br><br>
+
+Faktorkan: x² - 1 = (x - 1)(x + 1).<br><br>
+
+= lim[x→1] (x-1)(x+1)/(x-1)<br>
+
+= lim[x→1] (x + 1) &nbsp; (coret (x-1), untuk x ≠ 1)<br>
+
+= <b>2</b> ✅
+
+</div>
+
+<div class="example">
+
+lim[x→3] (x² - 9)/(x - 3)<br><br>
+
+= lim[x→3] (x-3)(x+3)/(x-3)<br>
+
+= lim[x→3] (x + 3)<br>
+
+= <b>6</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Menghitung Limit — Metode Mengalikan Sekawan</h3>
+
+<p>
+
+Untuk limit yang melibatkan akar, kalikan pembilang dan penyebut dengan <b>sekawan</b>-nya.
+
+</p>
+
+<div class="example">
+
+lim[x→0] (√(x+1) - 1)/x<br><br>
+
+Substitusi langsung: (1-1)/0 = 0/0 → bentuk tak tentu.<br><br>
+
+Kalikan dengan sekawan (√(x+1) + 1):<br><br>
+
+= lim[x→0] [(√(x+1)-1)(√(x+1)+1)] / [x(√(x+1)+1)]<br>
+
+= lim[x→0] [(x+1) - 1] / [x(√(x+1)+1)]<br>
+
+= lim[x→0] x / [x(√(x+1)+1)]<br>
+
+= lim[x→0] 1/(√(x+1)+1)<br>
+
+= 1/(√1 + 1) = <b>1/2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.4 Menghitung Limit — Metode Pembagian dengan Pangkat Tertinggi</h3>
+
+<p>
+
+Untuk limit di tak hingga dari fungsi rasional, bagi pembilang dan penyebut
+dengan <b>pangkat tertinggi x</b> di penyebut.
+
+</p>
+
+<div class="example">
+
+lim[x→∞] (3x² + 2x)/(x² + 5)<br><br>
+
+Bagi pembilang dan penyebut dengan x² (pangkat tertinggi):<br><br>
+
+= lim[x→∞] (3 + 2/x)/(1 + 5/x²)<br><br>
+
+Saat x → ∞: 2/x → 0, 5/x² → 0.<br><br>
+
+= (3 + 0)/(1 + 0) = <b>3</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.5 Limit yang Tidak Ada (DNE — Does Not Exist)</h3>
+
+<div class="summary">
+
+Limit <b>tidak ada</b> jika:<br><br>
+
+1. Limit kiri ≠ limit kanan (fungsi "melompat").<br>
+
+2. Nilai fungsi menuju ±∞ (asimtot vertikal).<br>
+
+3. Fungsi berosilasi tak menentu (contoh: sin(1/x) saat x→0).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: LIMIT SEPIHAK ==================== -->
+
+<div class="section">
+
+<h2>3. Limit Sepihak — Dari Kiri dan Dari Kanan</h2>
+
+<div class="summary">
+
+<b>Limit kiri:</b> lim[x→c⁻] f(x) = L — x mendekati c dari <b>kiri</b> (nilai x < c).<br><br>
+
+<b>Limit kanan:</b> lim[x→c⁺] f(x) = L — x mendekati c dari <b>kanan</b> (nilai x > c).<br><br>
+
+<b>Limit dua sisi ada</b> jika dan hanya jika <b>limit kiri = limit kanan</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa limit sepihak penting?</b> Karena banyak fungsi yang "berbeda"
+di kiri dan kanan suatu titik—terutama fungsi piecewise dan fungsi
+dengan nilai mutlak.
+
+</p>
+
+<div class="example">
+
+f(x) = { x², jika x < 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 2x, jika x ≥ 1<br><br>
+
+lim[x→1⁻] f(x) = 1² = <b>1</b> (dari kiri, pakai x²).<br>
+
+lim[x→1⁺] f(x) = 2(1) = <b>2</b> (dari kanan, pakai 2x).<br><br>
+
+Karena 1 ≠ 2, maka lim[x→1] f(x) <b>tidak ada</b>. ❌
+
+</div>
+
+<div class="example">
+
+lim[x→0⁺] |x|/x<br><br>
+
+Untuk x > 0: |x| = x → |x|/x = 1.<br>
+
+Untuk x < 0: |x| = -x → |x|/x = -1.<br><br>
+
+lim[x→0⁺] |x|/x = <b>1</b> (limit kanan).<br>
+
+lim[x→0⁻] |x|/x = <b>-1</b> (limit kiri).<br><br>
+
+Karena 1 ≠ -1, maka lim[x→0] |x|/x <b>tidak ada</b>. ❌
+
+</div>
+
