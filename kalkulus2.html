@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 2 | Turunan: Konsep & Aturan Dasar</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 2 • Turunan: Konsep & Aturan Dasar</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Mengukur Perubahan</h2>
+
+<p>
+
+Di Kalkulus 1, kita belajar bahwa limit adalah fondasi untuk memahami
+"nilai yang didekati". Sekarang kita akan menggunakan limit untuk
+menjawab salah satu pertanyaan paling fundamental dalam sains dan teknik:
+<b>seberapa cepat sesuatu berubah?</b>
+
+</p>
+
+<p>
+
+<b>Turunan (derivative)</b> adalah alat matematika untuk mengukur
+<b>laju perubahan sesaat</b>—kecepatan pada satu titik waktu,
+bukan kecepatan rata-rata dalam interval. Kalau kamu mengendarai mobil,
+speedometer menunjukkan kecepatan sesaat (turunan dari posisi terhadap waktu).
+Kalau kamu melihat grafik penjualan, kemiringan kurva di satu titik
+menunjukkan laju pertumbuhan saat itu (turunan dari penjualan terhadap waktu).
+
+</p>
+
+<p>
+
+Secara geometris, turunan adalah <b>kemiringan garis singgung</b>
+pada kurva di suatu titik. Secara fisis, turunan adalah <b>laju perubahan</b>.
+Secara matematis, turunan adalah <b>limit dari selisih pembagian</b>.
+Ketiga perspektif ini saling melengkapi dan memberi kita pemahaman yang utuh.
+
+</p>
+
+<p>
+
+Konsep turunan dikembangkan secara independen oleh Newton (untuk fisika)
+dan Leibniz (untuk geometri) pada akhir abad ke-17. Notasi Leibniz (dy/dx)
+yang kita pakai sekarang terbukti lebih fleksibel dan menjadi standar
+dalam kalkulus modern.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi turunan sebagai limit dari hasil bagi selisih.</li>
+
+<li>Menguasai interpretasi geometris (kemiringan garis singgung) dan fisis (laju perubahan).</li>
+
+<li>Menguasai aturan-aturan turunan dasar: konstanta, pangkat, perkalian, pembagian, rantai.</li>
+
+<li>Mampu menghitung turunan fungsi aljabar, trigonometri, eksponen, dan logaritma.</li>
+
+<li>Memahami turunan fungsi invers.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DEFINISI TURUNAN ==================== -->
+
+<div class="section">
+
+<h2>1. Definisi Turunan — Dari Mana Rumusnya Berasal?</h2>
+
+<p>
+
+Turunan didefinisikan sebagai <b>limit dari hasil bagi selisih</b>
+(difference quotient). Mari kita pahami dari mana definisi ini berasal.
+
+</p>
+
+<p>
+
+<b>Motivasi:</b> Kita ingin mencari <b>kemiringan garis singgung</b>
+pada kurva y = f(x) di titik x = a. Garis singgung berbeda dengan
+garis potong (secant). Garis potong memotong kurva di dua titik.
+Garis singgung hanya menyentuh di satu titik.
+
+</p>
+
+<p>
+
+<b>Strategi:</b> Ambil dua titik pada kurva: P(a, f(a)) dan Q(a+h, f(a+h)).
+Hitung kemiringan garis potong PQ. Lalu <b>dekatkan Q ke P</b> dengan membuat h → 0.
+Garis potong akan berubah menjadi garis singgung.
+
+</p>
+
+<div class="summary">
+
+<b>Kemiringan garis potong PQ:</b><br><br>
+
+m_PQ = [f(a+h) - f(a)] / h<br><br>
+
+<b>Kemiringan garis singgung di x = a (turunan):</b><br><br>
+
+<b>f'(a) = lim[h→0] [f(a+h) - f(a)] / h</b><br><br>
+
+Ini adalah <b>definisi turunan</b>!
+
+</div>
+
+<p>
+
+<b>Mengapa h → 0? Mengapa tidak h = 0?</b>
+
+</p>
+
+<div class="example">
+
+Kalau h = 0, maka P dan Q adalah titik yang sama.
+Rumusnya menjadi 0/0—tidak terdefinisi.<br><br>
+
+Tapi kita bisa membuat h <b>sangat kecil</b> (mendekati nol tapi tidak nol).
+Semakin kecil h, garis potong semakin mendekati garis singgung.
+<b>Limit</b> saat h → 0 memberikan kemiringan garis singgung yang eksak.<br><br>
+
+Inilah kejeniusan kalkulus: menggunakan limit untuk "menjebak" nilai
+yang tidak bisa dihitung secara langsung.
+
+</div>
+
+<hr>
+
+<h3>1.1 Contoh Menghitung Turunan dari Definisi</h3>
+
+<div class="example">
+
+<b>Soal:</b> Cari turunan dari f(x) = x² di x = 3 menggunakan definisi limit.<br><br>
+
+f'(3) = lim[h→0] [f(3+h) - f(3)] / h<br>
+
+= lim[h→0] [(3+h)² - 9] / h<br>
+
+= lim[h→0] [9 + 6h + h² - 9] / h<br>
+
+= lim[h→0] [6h + h²] / h<br>
+
+= lim[h→0] (6 + h)<br>
+
+= <b>6</b> ✅<br><br>
+
+Artinya: kemiringan garis singgung pada kurva y = x² di titik (3, 9) adalah 6.
+
+</div>
+
+<hr>
+
+<h3>1.2 Notasi Turunan — Banyak Cara Menulis</h3>
+
+<div class="summary">
+
+<b>Notasi Lagrange:</b> f'(x), f''(x), f'''(x), f⁽ⁿ⁾(x). Paling ringkas.<br><br>
+
+<b>Notasi Leibniz:</b> dy/dx, d²y/dx². Menunjukkan variabel dengan jelas.<br><br>
+
+<b>Notasi Newton:</b> ẏ, ÿ (titik di atas). Dipakai di fisika untuk turunan terhadap waktu.<br><br>
+
+<b>Notasi Euler:</b> Df, D²f. Operator D diterapkan ke fungsi.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: ATURAN TURUNAN DASAR ==================== -->
+
+<div class="section">
+
+<h2>2. Aturan Turunan Dasar — "Cheat Codes" untuk Turunan</h2>
+
+<p>
+
+Menghitung turunan dari definisi limit setiap kali sangat tidak efisien.
+Untungnya, matematikawan telah menemukan <b>aturan-aturan</b> yang memungkinkan
+kita menghitung turunan dengan cepat tanpa harus kembali ke definisi limit.
+Aturan-aturan ini <b>dibuktikan dari definisi</b>, tapi setelah terbukti,
+kita bisa menggunakannya sebagai "jalan pintas".
+
+</p>
+
+<hr>
+
+<h3>2.1 Aturan Konstanta — Turunan dari Bilangan Tetap</h3>
+
+<div class="summary">
+
+<b>d/dx (c) = 0</b> &nbsp; untuk konstanta c.
+
+</div>
+
+<p>
+
+<b>Mengapa?</b> Grafik y = c adalah garis horizontal. Kemiringannya nol di mana-mana.
+Secara aljabar: f(x+h) - f(x) = c - c = 0, jadi limitnya 0.
+
+</p>
+
+<div class="example">
+
+d/dx (5) = <b>0</b><br>
+
+d/dx (π) = <b>0</b><br>
+
+d/dx (-1000) = <b>0</b>
+
+</div>
+
+<hr>
+
+<h3>2.2 Aturan Pangkat (Power Rule) — Yang Paling Sering Dipakai</h3>
+
+<div class="summary">
+
+<b>d/dx (xⁿ) = n·xⁿ⁻¹</b>
+
+</div>
+
+<p>
+
+<b>Mengapa? — Pembuktian dengan Binomial</b>
+
+</p>
+
+<div class="example">
+
+Untuk n bilangan bulat positif, gunakan teorema binomial:<br><br>
+
+(x+h)ⁿ = xⁿ + n·xⁿ⁻¹·h + [n(n-1)/2]·xⁿ⁻²·h² + ... + hⁿ<br><br>
+
+[(x+h)ⁿ - xⁿ]/h = n·xⁿ⁻¹ + [n(n-1)/2]·xⁿ⁻²·h + ... + hⁿ⁻¹<br><br>
+
+Saat h → 0, semua suku yang mengandung h lenyap. Tersisa n·xⁿ⁻¹. ✅<br><br>
+
+<b>Aturan ini berlaku untuk SEMUA bilangan real n</b> (bulat, pecahan, negatif, irasional)—
+bisa dibuktikan dengan logaritma atau turunan implisit.
+
+</div>
+
+<div class="example">
+
+d/dx (x³) = <b>3x²</b><br>
+
+d/dx (x⁵) = <b>5x⁴</b><br>
+
+d/dx (x) = <b>1</b> &nbsp; (x¹ → 1·x⁰ = 1)<br>
+
+d/dx (x¹⁰⁰) = <b>100x⁹⁹</b>
+
+</div>
+
+<hr>
+
+<h3>2.3 Aturan Perkalian dengan Konstanta</h3>
+
+<div class="summary">
+
+<b>d/dx (c·f(x)) = c·f'(x)</b>
+
+</div>
+
+<div class="example">
+
+d/dx (5x³) = 5 × 3x² = <b>15x²</b><br>
+
+d/dx (-2x⁴) = -2 × 4x³ = <b>-8x³</b>
+
+</div>
+
+<hr>
+
+<h3>2.4 Aturan Penjumlahan dan Pengurangan</h3>
+
+<div class="summary">
+
+<b>d/dx [f(x) ± g(x)] = f'(x) ± g'(x)</b><br><br>
+
+Turunan dari jumlah = jumlah dari turunan.
+
+</div>
+
+<div class="example">
+
+d/dx (x³ + 5x² - 3x + 7)<br>
+
+= 3x² + 10x - 3 + 0 = <b>3x² + 10x - 3</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.5 Aturan Perkalian (Product Rule)</h3>
+
+<div class="summary">
+
+<b>d/dx [f(x)·g(x)] = f'(x)·g(x) + f(x)·g'(x)</b><br><br>
+
+<b>BUKAN</b> f'(x)·g'(x)! Ini kesalahan paling umum.
+
+</div>
+
+<p>
+
+<b>Mengapa? — Pembuktian dengan Menambah dan Mengurangi</b>
+
+</p>
+
+<div class="example">
+
+[f(x+h)g(x+h) - f(x)g(x)]/h<br>
+
+= [f(x+h)g(x+h) - f(x)g(x+h) + f(x)g(x+h) - f(x)g(x)]/h<br>
+
+= [(f(x+h)-f(x))/h]·g(x+h) + f(x)·[(g(x+h)-g(x))/h]<br><br>
+
+Saat h → 0: (f(x+h)-f(x))/h → f'(x), g(x+h) → g(x), (g(x+h)-g(x))/h → g'(x).<br><br>
+
+Hasil: f'(x)g(x) + f(x)g'(x). ✅
+
+</div>
+
+<div class="example">
+
+d/dx (x² · sin x) = <b>2x·sin x + x²·cos x</b> ✅<br><br>
+
+d/dx (eˣ · x³) = <b>eˣ·x³ + eˣ·3x²</b> = eˣ(x³ + 3x²) ✅
+
+</div>
+
+<hr>
+
+<h3>2.6 Aturan Pembagian (Quotient Rule)</h3>
+
+<div class="summary">
+
+<b>d/dx [f(x)/g(x)] = [f'(x)g(x) - f(x)g'(x)] / [g(x)]²</b><br><br>
+
+Pembilang: <b>turunan atas × bawah - atas × turunan bawah</b>. Jangan tertukar!
+
+</div>
+
+<div class="example">
+
+d/dx (x²/sin x) = [2x·sin x - x²·cos x] / sin²x ✅<br><br>
+
+d/dx (tan x) = d/dx (sin x/cos x)<br>
+
+= [cos x·cos x - sin x·(-sin x)] / cos²x<br>
+
+= [cos²x + sin²x] / cos²x<br>
+
+= 1/cos²x = <b>sec²x</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.7 Aturan Rantai (Chain Rule) — Yang Paling Powerful</h3>
+
+<div class="summary">
+
+Jika y = f(u) dan u = g(x), maka:<br><br>
+
+<b>dy/dx = dy/du × du/dx = f'(g(x)) × g'(x)</b><br><br>
+
+"Turunan luar dikali turunan dalam."
+
+</div>
+
+<p>
+
+<b>Mengapa? — Intuisi Leibniz</b>
+
+</p>
+
+<div class="example">
+
+Notasi Leibniz membuat aturan rantai terlihat seperti "pencoretan" pecahan:<br><br>
+
+dy/dx = (dy/du) × (du/dx).<br><br>
+
+Seolah-olah du "dicoret". Meskipun ini bukan pembuktian formal,
+ini adalah cara yang powerful untuk mengingat dan menerapkan aturan rantai.<br><br>
+
+<b>Pembuktian formal</b> menggunakan definisi limit dan kontinuitas.
+
+</div>
+
+<div class="example">
+
+y = (x² + 1)⁵<br><br>
+
+u = x² + 1 (fungsi dalam), y = u⁵ (fungsi luar).<br><br>
+
+dy/du = 5u⁴. du/dx = 2x.<br><br>
+
+dy/dx = 5u⁴ × 2x = 5(x²+1)⁴ × 2x = <b>10x(x²+1)⁴</b> ✅
+
+</div>
+
+<div class="example">
+
+y = sin(x³)<br><br>
+
+u = x³ (dalam), y = sin u (luar).<br><br>
+
+dy/du = cos u. du/dx = 3x².<br><br>
+
+dy/dx = cos(x³) × 3x² = <b>3x² cos(x³)</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: TURUNAN FUNGSI KHUSUS ==================== -->
+
+<div class="section">
+
+<h2>3. Turunan Fungsi-Fungsi Penting — Wajib Dihafal</h2>
+
+<h3>3.1 Turunan Fungsi Trigonometri</h3>
+
+<div class="summary">
+
+d/dx (sin x) = <b>cos x</b><br>
+
+d/dx (cos x) = <b>-sin x</b> &nbsp; (perhatikan tanda minus!)<br>
+
+d/dx (tan x) = <b>sec² x</b><br>
+
+d/dx (cot x) = <b>-csc² x</b><br>
+
+d/dx (sec x) = <b>sec x tan x</b><br>
+
+d/dx (csc x) = <b>-csc x cot x</b>
+
+</div>
+
+<p>
+
+<b>Mengapa turunan sin x = cos x? — Pembuktian dengan Limit</b>
+
+</p>
+
+<div class="example">
+
+d/dx sin x = lim[h→0] [sin(x+h) - sin x]/h<br><br>
+
+Gunakan identitas: sin(x+h) = sin x cos h + cos x sin h.<br><br>
+
+= lim[h→0] [sin x cos h + cos x sin h - sin x]/h<br>
+
+= sin x · lim[h→0] (cos h - 1)/h + cos x · lim[h→0] sin h/h<br><br>
+
+Limit fundamental: lim[h→0] sin h/h = 1, lim[h→0] (cos h - 1)/h = 0.<br><br>
+
+= sin x · 0 + cos x · 1 = <b>cos x</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Turunan Fungsi Eksponen</h3>
+
+<div class="summary">
+
+d/dx (eˣ) = <b>eˣ</b> &nbsp; (ajaib! turunan dari eˣ adalah eˣ sendiri!)<br><br>
+
+d/dx (aˣ) = <b>aˣ ln a</b> &nbsp; (untuk a > 0, a ≠ 1)
+
+</div>
+
+<p>
+
+<b>Mengapa eˣ istimewa?</b> Karena e adalah satu-satunya basis yang membuat
+turunan fungsi eksponen sama dengan dirinya sendiri. Inilah definisi
+alami dari bilangan e: d/dx(eˣ) = eˣ, dan e adalah bilangan unik
+yang memenuhi lim[h→0] (eʰ - 1)/h = 1.
+
+</p>
+
+<hr>
+
+<h3>3.3 Turunan Fungsi Logaritma</h3>
+
+<div class="summary">
+
+d/dx (ln x) = <b>1/x</b> &nbsp; (untuk x > 0)<br><br>
+
+d/dx (ᵃlog x) = <b>1/(x ln a)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa turunan ln x = 1/x?</b> Karena ln x adalah invers dari eˣ.
+Dengan aturan turunan invers, jika f⁻¹(x) = ln x dan f(x) = eˣ, maka
+(f⁻¹)'(x) = 1/f'(f⁻¹(x)) = 1/e^(ln x) = 1/x.
+
+</p>
+
+</div>
+<!-- ==================== MATERI 4: TURUNAN FUNGSI INVERS ==================== -->
+
+<div class="section">
+
+<h2>4. Turunan Fungsi Invers — Membalikkan Turunan</h2>
+
+<p>
+
+Di Aljabar 5, kita belajar bahwa fungsi invers f⁻¹ "membalikkan" pemetaan f.
+Sekarang kita akan mencari <b>turunan dari fungsi invers</b> tanpa harus
+mencari rumus eksplisit inversnya terlebih dahulu.
+
+</p>
+
+<div class="summary">
+
+Jika f adalah fungsi yang memiliki invers f⁻¹, dan f'(f⁻¹(x)) ≠ 0, maka:<br><br>
+
+<b>(f⁻¹)'(x) = 1 / f'(f⁻¹(x))</b><br><br>
+
+Atau dalam notasi Leibniz: <b>dx/dy = 1 / (dy/dx)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Dua Cara Memahami</b>
+
+</p>
+
+<p>
+
+<b>Cara 1: Aturan Rantai</b>
+
+</p>
+
+<div class="example">
+
+Kita tahu bahwa f(f⁻¹(x)) = x (definisi invers).<br><br>
+
+Turunkan kedua ruas terhadap x menggunakan aturan rantai:<br>
+
+f'(f⁻¹(x)) × (f⁻¹)'(x) = 1<br><br>
+
+(f⁻¹)'(x) = 1 / f'(f⁻¹(x)). ✅<br><br>
+
+Sederhana dan elegan!
+
+</div>
+
+<p>
+
+<b>Cara 2: Intuisi Geometris</b>
+
+</p>
+
+<div class="example">
+
+Grafik f⁻¹ adalah pencerminan grafik f terhadap garis y = x.<br><br>
+
+Kemiringan garis singgung pada f⁻¹ di titik (b, a) adalah
+<b>kebalikan</b> dari kemiringan garis singgung pada f di titik (a, b).<br><br>
+
+Jika f naik curam (f' besar), maka f⁻¹ naik landai ((f⁻¹)' kecil = 1/f' kecil).
+Jika f'(a) = 3, maka (f⁻¹)'(b) = 1/3. Masuk akal!
+
+</div>
+
+<hr>
+
+<h3>4.1 Contoh: Turunan dari ln x (Logaritma Natural)</h3>
+
+<div class="example">
+
+f(x) = eˣ, maka f⁻¹(x) = ln x.<br><br>
+
+f'(x) = eˣ, maka f'(f⁻¹(x)) = e^(ln x) = x.<br><br>
+
+(f⁻¹)'(x) = 1 / f'(f⁻¹(x)) = 1/x.<br><br>
+
+Jadi, <b>d/dx (ln x) = 1/x</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Contoh: Turunan dari arcsin x (Invers Trigonometri)</h3>
+
+<div class="example">
+
+f(x) = sin x, dengan domain [-π/2, π/2] agar memiliki invers.<br>
+
+f⁻¹(x) = arcsin x (atau sin⁻¹ x).<br><br>
+
+f'(x) = cos x. f'(f⁻¹(x)) = cos(arcsin x).<br><br>
+
+Gunakan identitas: cos²(arcsin x) = 1 - sin²(arcsin x) = 1 - x².<br>
+
+Karena arcsin x ∈ [-π/2, π/2], cos(arcsin x) ≥ 0, maka cos(arcsin x) = √(1-x²).<br><br>
+
+(f⁻¹)'(x) = 1 / √(1-x²).<br><br>
+
+Jadi, <b>d/dx (arcsin x) = 1/√(1-x²)</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Tabel Turunan Fungsi Invers Trigonometri</h3>
+
+<div class="summary">
+
+d/dx (arcsin x) = <b>1/√(1-x²)</b><br>
+
+d/dx (arccos x) = <b>-1/√(1-x²)</b> &nbsp; (perhatikan tanda minus!)<br>
+
+d/dx (arctan x) = <b>1/(1+x²)</b><br>
+
+d/dx (arccot x) = <b>-1/(1+x²)</b><br>
+
+d/dx (arcsec x) = <b>1/(|x|√(x²-1))</b><br>
+
+d/dx (arccsc x) = <b>-1/(|x|√(x²-1))</b>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: TURUNAN IMPLISIT ==================== -->
+
+<div class="section">
+
+<h2>5. Turunan Implisit — Ketika y Tidak Bisa Diisolasi</h2>
+
+<p>
+
+Selama ini kita menurunkan fungsi dalam bentuk <b>eksplisit</b>: y = f(x),
+di mana y sudah "sendirian" di ruas kiri. Tapi bagaimana kalau persamaannya
+seperti x² + y² = 25? y tidak bisa diisolasi dengan mudah (y = ±√(25-x²),
+tapi ada dua cabang).
+
+</p>
+
+<div class="summary">
+
+<b>Turunan implisit</b> adalah teknik untuk mencari dy/dx dari persamaan
+yang melibatkan x dan y secara campuran, <b>tanpa perlu mengisolasi y</b>.<br><br>
+
+Caranya: <b>turunkan kedua ruas terhadap x</b>, perlakukan y sebagai <b>fungsi dari x</b>,
+dan gunakan <b>aturan rantai</b> setiap kali menurunkan suku yang mengandung y.
+
+</div>
+
+<p>
+
+<b>Mengapa harus pakai aturan rantai untuk y?</b>
+
+</p>
+
+<div class="example">
+
+Karena y adalah fungsi dari x (y = y(x)), maka saat menurunkan y² terhadap x:<br><br>
+
+d/dx (y²) = 2y × dy/dx (aturan rantai: turunan luar × turunan dalam).<br><br>
+
+Bukan 2y saja! dy/dx adalah "turunan dalam" yang harus dikalikan.
+
+</div>
+
+<hr>
+
+<h3>5.1 Contoh Klasik: Lingkaran x² + y² = 25</h3>
+
+<div class="example">
+
+Cari dy/dx dari x² + y² = 25.<br><br>
+
+Turunkan kedua ruas terhadap x:<br>
+
+d/dx(x²) + d/dx(y²) = d/dx(25)<br>
+
+2x + 2y × dy/dx = 0 &nbsp; (aturan rantai untuk y²!)<br><br>
+
+2y × dy/dx = -2x<br>
+
+dy/dx = <b>-x/y</b> ✅<br><br>
+
+<b>Verifikasi:</b> Di titik (3, 4) pada lingkaran, dy/dx = -3/4.
+Garis singgungnya turun dengan kemiringan -3/4. Masuk akal untuk lingkaran!
+
+</div>
+
+<hr>
+
+<h3>5.2 Contoh: Folium of Descartes x³ + y³ = 6xy</h3>
+
+<div class="example">
+
+Cari dy/dx dari x³ + y³ = 6xy.<br><br>
+
+Turunkan kedua ruas terhadap x:<br>
+
+3x² + 3y² × dy/dx = 6(y + x × dy/dx) &nbsp; (aturan produk untuk 6xy!)<br><br>
+
+3x² + 3y² × dy/dx = 6y + 6x × dy/dx<br><br>
+
+3y² × dy/dx - 6x × dy/dx = 6y - 3x²<br>
+
+dy/dx(3y² - 6x) = 6y - 3x²<br>
+
+dy/dx = (6y - 3x²)/(3y² - 6x) = <b>(2y - x²)/(y² - 2x)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Aplikasi: Membuktikan Turunan ln x</h3>
+
+<div class="example">
+
+y = ln x → eʸ = x (definisi logaritma).<br><br>
+
+Turunkan implisit eʸ = x terhadap x:<br>
+
+eʸ × dy/dx = 1<br>
+
+dy/dx = 1/eʸ = 1/x.<br><br>
+
+Jadi d/dx(ln x) = 1/x. Terbukti dengan elegan! ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: TURUNAN PARAMETRIK ==================== -->
+
+<div class="section">
+
+<h2>6. Turunan Parametrik — Kurva yang Didefinisikan oleh Parameter</h2>
+
+<p>
+
+Kadang-kadang, kurva tidak dinyatakan sebagai y = f(x), melainkan
+sebagai pasangan <b>persamaan parametrik</b>: x = x(t), y = y(t),
+di mana t adalah parameter (bisa dianggap sebagai "waktu").
+
+</p>
+
+<div class="summary">
+
+Untuk kurva parametrik x = x(t), y = y(t):<br><br>
+
+<b>dy/dx = (dy/dt) / (dx/dt)</b> &nbsp; (turunan y terhadap t dibagi turunan x terhadap t).<br><br>
+
+<b>d²y/dx² = [d/dt(dy/dx)] / (dx/dt)</b> &nbsp; (turunan kedua lebih kompleks).
+
+</div>
+
+<p>
+
+<b>Mengapa dy/dx = (dy/dt)/(dx/dt)? — Intuisi Leibniz</b>
+
+</p>
+
+<div class="example">
+
+Dalam notasi Leibniz: dy/dx = (dy/dt) × (dt/dx) = (dy/dt) / (dx/dt).<br><br>
+
+Seolah-olah dt "dicoret". Ini adalah aplikasi aturan rantai.
+
+</div>
+
+<hr>
+
+<h3>6.1 Contoh: Lingkaran Parametrik</h3>
+
+<div class="example">
+
+x = cos t, y = sin t (lingkaran satuan, parameter t = sudut).<br><br>
+
+dx/dt = -sin t. dy/dt = cos t.<br><br>
+
+dy/dx = cos t / (-sin t) = <b>-cot t</b>.<br><br>
+
+Di t = π/4 (45°): dy/dx = -cot(π/4) = -1.<br>
+
+Di titik (cos π/4, sin π/4) = (√2/2, √2/2), garis singgung memiliki kemiringan -1.
+
+</div>
+
+<hr>
+
+<h3>6.2 Contoh: Sikloid (Cycloid)</h3>
+
+<div class="example">
+
+x = t - sin t, y = 1 - cos t (lintasan titik pada roda yang menggelinding).<br><br>
+
+dx/dt = 1 - cos t. dy/dt = sin t.<br><br>
+
+dy/dx = sin t / (1 - cos t).<br><br>
+
+Menggunakan identitas trigonometri: sin t = 2 sin(t/2) cos(t/2),
+1-cos t = 2 sin²(t/2).<br><br>
+
+dy/dx = [2 sin(t/2) cos(t/2)] / [2 sin²(t/2)] = <b>cot(t/2)</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 7: TURUNAN TINGKAT TINGGI ==================== -->
+
+<div class="section">
+
+<h2>7. Turunan Tingkat Tinggi — Turunan dari Turunan</h2>
+
+<p>
+
+Turunan pertama f'(x) memberi kita <b>laju perubahan</b>.
+Turunan kedua f''(x) memberi kita <b>laju perubahan dari laju perubahan</b>—
+atau <b>percepatan</b>. Turunan ketiga, keempat, dan seterusnya
+memberi informasi lebih dalam tentang perilaku fungsi.
+
+</p>
+
+<div class="summary">
+
+<b>f'(x):</b> turunan pertama — kecepatan, kemiringan.<br><br>
+
+<b>f''(x):</b> turunan kedua — percepatan, kecekungan.<br><br>
+
+<b>f'''(x):</b> turunan ketiga — jerk (sentakan), laju perubahan percepatan.<br><br>
+
+<b>f⁽ⁿ⁾(x):</b> turunan ke-n.
+
+</div>
+
+<hr>
+
+<h3>7.1 Contoh: Turunan Tingkat Tinggi Polinomial</h3>
+
+<div class="example">
+
+f(x) = x⁵ - 3x⁴ + 2x³ - x + 7<br><br>
+
+f'(x) = 5x⁴ - 12x³ + 6x² - 1<br>
+
+f''(x) = 20x³ - 36x² + 12x<br>
+
+f'''(x) = 60x² - 72x + 12<br>
+
+f⁽⁴⁾(x) = 120x - 72<br>
+
+f⁽⁵⁾(x) = 120<br>
+
+f⁽⁶⁾(x) = 0<br><br>
+
+Semua turunan di atas ke-6 adalah nol. Polinomial derajat n memiliki
+turunan ke-(n+1) = 0.
+
+</div>
+
+<hr>
+
+<h3>7.2 Turunan Tingkat Tinggi Fungsi Trigonometri — Pola Berulang</h3>
+
+<div class="example">
+
+f(x) = sin x<br><br>
+
+f'(x) = cos x<br>
+
+f''(x) = -sin x<br>
+
+f'''(x) = -cos x<br>
+
+f⁽⁴⁾(x) = sin x &nbsp; (kembali ke awal!)<br><br>
+
+Turunan sin x dan cos x <b>berulang setiap 4 kali</b>. Pola: sin → cos → -sin → -cos → sin.
+
+</div>
+
+<hr>
+
+<h3>7.3 Turunan Tingkat Tinggi eˣ — Selalu Sama</h3>
+
+<div class="example">
+
+f(x) = eˣ<br><br>
+
+f'(x) = eˣ<br>
+
+f''(x) = eˣ<br>
+
+f⁽ⁿ⁾(x) = eˣ &nbsp; (untuk semua n!)<br><br>
+
+Inilah kenapa eˣ disebut "fungsi abadi"—semua turunannya sama dengan dirinya sendiri.
+
+</div>
+
+<hr>
+
+<h3>7.4 Notasi Leibniz untuk Turunan Tingkat Tinggi</h3>
+
+<div class="summary">
+
+f'(x) = dy/dx<br>
+
+f''(x) = d²y/dx²<br>
+
+f'''(x) = d³y/dx³<br>
+
+f⁽ⁿ⁾(x) = dⁿy/dxⁿ
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 8: DIFERENSIAL ==================== -->
+
+<div class="section">
+
+<h2>8. Diferensial — "Potongan Kecil" dari x dan y</h2>
+
+<p>
+
+Diferensial adalah konsep yang memisahkan dy dan dx dari notasi Leibniz.
+Ini menjadi dasar untuk integrasi dan aproksimasi linear.
+
+</p>
+
+<div class="summary">
+
+<b>dx:</b> diferensial dari x — perubahan kecil pada x (variabel bebas).<br><br>
+
+<b>dy:</b> diferensial dari y — perubahan kecil pada y yang dihitung dari dy = f'(x) dx.<br><br>
+
+<b>Δy:</b> perubahan aktual pada y: f(x+Δx) - f(x).<br><br>
+
+<b>dy ≈ Δy</b> untuk Δx kecil. dy adalah aproksimasi linear dari Δy.
+
+</div>
+
+<p>
+
+<b>Mengapa dy = f'(x) dx?</b> Dari definisi turunan: f'(x) = lim[Δx→0] Δy/Δx.
+Untuk Δx yang sangat kecil, Δy/Δx ≈ f'(x), sehingga Δy ≈ f'(x) dx.
+Dalam "dunia limit", aproksimasi ini menjadi eksak: dy = f'(x) dx.
+
+</p>
+
+<div class="example">
+
+f(x) = x². Cari dy jika x = 3 dan dx = 0,1.<br><br>
+
+f'(x) = 2x → f'(3) = 6.<br>
+
+dy = 6 × 0,1 = <b>0,6</b>.<br><br>
+
+Nilai aktual: f(3,1) - f(3) = 9,61 - 9 = 0,61. dy ≈ Δy (0,6 ≈ 0,61). ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 2</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Definisi turunan:</b> f'(x) = lim[h→0] [f(x+h)-f(x)]/h. Kemiringan garis singgung.</li>
+
+<li><b>Aturan dasar:</b> Konstanta=0, Pangkat: nxⁿ⁻¹, Produk: f'g+fg', Kuosien: (f'g-fg')/g², Rantai: f'(g(x))·g'(x).</li>
+
+<li><b>Trigonometri:</b> sin→cos, cos→-sin, tan→sec².</li>
+
+<li><b>Eksponen:</b> eˣ→eˣ, aˣ→aˣ ln a.</li>
+
+<li><b>Logaritma:</b> ln x→1/x.</li>
+
+<li><b>Invers:</b> (f⁻¹)'(x) = 1/f'(f⁻¹(x)).</li>
+
+<li><b>Implisit:</b> Turunkan kedua ruas, y pakai aturan rantai.</li>
+
+<li><b>Parametrik:</b> dy/dx = (dy/dt)/(dx/dt).</li>
+
+<li><b>Tingkat tinggi:</b> f'' = percepatan, f⁽ⁿ⁾ = turunan ke-n.</li>
+
+<li><b>Diferensial:</b> dy = f'(x)dx, aproksimasi linear.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Aturan rantai = turunan luar × turunan dalam.</b>
+Ini adalah aturan yang paling sering dipakai. Identifikasi "fungsi dalam" dulu, baru "fungsi luar".
+
+</li>
+
+<li>
+
+<b>Turunan implisit: jangan lupa kalikan dy/dx setiap menurunkan y.</b>
+Ini kesalahan paling umum. y² → 2y·dy/dx, bukan 2y saja.
+
+</li>
+
+<li>
+
+<b>Produk vs Kuosien: kuosien lebih rumit.</b>
+Kalau memungkinkan, tulis ulang sebagai perkalian (x⁻¹) dan pakai aturan produk.
+
+</li>
+
+<li>
+
+<b>Notasi Leibniz membantu aturan rantai.</b>
+dy/dx = (dy/du)(du/dx). Visualisasikan "pencoretan" du.
+
+</li>
+
+<li>
+
+<b>Hafalkan turunan dasar:</b> sin→cos, cos→-sin, eˣ→eˣ, ln x→1/x. Ini harus refleks.</li>
+
+<li>
+
+<b>Turunan parametrik: bagi dua turunan.</b>
+dy/dx = (dy/dt)/(dx/dt). Turunan kedua lebih rumit, hati-hati!
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus1.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus3.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
