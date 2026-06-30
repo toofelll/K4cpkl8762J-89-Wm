@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 9 | Kalkulus Multivariabel</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 9 • Kalkulus Multivariabel</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Dari Satu Variabel ke Banyak Variabel</h2>
+
+<p>
+
+Sejauh ini, seluruh kalkulus yang kita pelajari berurusan dengan
+<b>fungsi satu variabel</b>: y = f(x). Satu input, satu output.
+Tapi dunia nyata tidak sesederhana itu. Suhu di suatu ruangan
+bergantung pada tiga koordinat (x, y, z) dan waktu (t).
+Keuntungan perusahaan bergantung pada harga, biaya produksi,
+jumlah karyawan, dan biaya pemasaran. Semua ini adalah
+<b>fungsi multivariabel</b>—fungsi dengan banyak input.
+
+</p>
+
+<p>
+
+Kalkulus multivariabel memperluas semua konsep yang sudah kita
+pelajari—limit, turunan, integral, optimasi—ke dimensi yang lebih tinggi.
+Di sinilah kita bertemu dengan <b>turunan parsial</b> (menurunkan terhadap
+satu variabel sementara yang lain dianggap konstan), <b>gradien</b>
+(vektor yang menunjuk ke arah kenaikan tercepat), <b>divergensi dan curl</b>
+(operator diferensial untuk medan vektor), dan <b>Lagrange Multiplier</b>
+(teknik optimasi dengan kendala).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami fungsi multivariabel dan cara memvisualisasikannya.</li>
+
+<li>Menguasai turunan parsial—menurunkan terhadap satu variabel sambil menahan yang lain.</li>
+
+<li>Memahami gradien vektor sebagai arah kenaikan tercepat.</li>
+
+<li>Memahami directional derivative (turunan berarah).</li>
+
+<li>Mengenal operator diferensial: divergensi dan curl.</li>
+
+<li>Menguasai matriks Jacobian dan Hessian.</li>
+
+<li>Mampu menyelesaikan masalah optimasi dengan Lagrange Multiplier.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: FUNGSI MULTIVARIABEL ==================== -->
+
+<div class="section">
+
+<h2>1. Fungsi Multivariabel — Lebih dari Satu Input</h2>
+
+<div class="summary">
+
+<b>Fungsi dua variabel:</b> z = f(x, y). Input: (x, y). Output: z.<br><br>
+
+<b>Fungsi tiga variabel:</b> w = f(x, y, z). Input: (x, y, z). Output: w.<br><br>
+
+<b>Domain:</b> himpunan semua pasangan (x, y) yang membuat f terdefinisi.<br>
+
+<b>Range:</b> himpunan semua nilai z yang dihasilkan.
+
+</div>
+
+<p>
+
+<b>Visualisasi:</b> Grafik fungsi dua variabel adalah <b>permukaan</b> di ruang 3D.
+Setiap titik (x, y) di bidang xy memiliki ketinggian z = f(x, y).
+Ini seperti peta topografi—setiap lokasi memiliki elevasi.
+
+</p>
+
+<div class="example">
+
+f(x, y) = x² + y² → paraboloid (mangkuk).<br>
+
+f(x, y) = √(1 - x² - y²) → setengah bola atas.<br>
+
+f(x, y) = sin(x)cos(y) → permukaan bergelombang.<br><br>
+
+Untuk fungsi tiga variabel, grafiknya berada di ruang 4D—tidak bisa
+divisualisasikan secara langsung, tapi kita bisa memvisualisasikan
+<b>level sets</b> (permukaan di mana f(x,y,z) = konstanta).
+
+</div>
+
+<hr>
+
+<h3>1.1 Kurva Level (Level Curves) — Peta Kontur</h3>
+
+<div class="summary">
+
+<b>Kurva level</b> adalah irisan permukaan z = f(x, y) dengan bidang horizontal z = k.<br><br>
+
+f(x, y) = k → semua titik (x, y) yang menghasilkan ketinggian yang sama.<br><br>
+
+Ini adalah <b>peta kontur</b> yang kamu lihat di peta topografi!
+
+</div>
+
+<div class="example">
+
+Untuk f(x, y) = x² + y²: kurva level x² + y² = k adalah lingkaran berjari-jari √k.<br>
+
+Untuk f(x, y) = x² - y²: kurva level x² - y² = k adalah hiperbola.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: TURUNAN PARSIAL ==================== -->
+
+<div class="section">
+
+<h2>2. Turunan Parsial — Menurunkan Satu Variabel, Menahan yang Lain</h2>
+
+<p>
+
+Bagaimana cara "menurunkan" fungsi dua variabel f(x, y)? Kita tidak bisa
+menurunkan terhadap "semua variabel sekaligus". Solusinya: turunkan
+<b>terhadap satu variabel</b>, sementara variabel lainnya <b>dianggap konstan</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Turunan parsial terhadap x:</b> ∂f/∂x = lim[h→0] [f(x+h, y) - f(x, y)]/h<br><br>
+
+<b>Turunan parsial terhadap y:</b> ∂f/∂y = lim[h→0] [f(x, y+h) - f(x, y)]/h<br><br>
+
+<b>Notasi:</b> ∂f/∂x = fₓ (subscript) — ∂ adalah "d bundar" (dibaca: "do" atau "partial d").
+
+</div>
+
+<p>
+
+<b>Mengapa simbol ∂ khusus?</b> Untuk membedakan dari turunan biasa d/dx
+yang dipakai untuk fungsi satu variabel. Simbol ∂ menekankan bahwa
+ini adalah <b>turunan parsial</b>—hanya sebagian dari variabel yang berubah.
+
+</p>
+
+<div class="example">
+
+f(x, y) = x³y² + 2xy - y⁴<br><br>
+
+<b>∂f/∂x:</b> Anggap y konstan. x³ → 3x², 2xy → 2y, -y⁴ → 0.<br>
+
+∂f/∂x = <b>3x²y² + 2y</b>. ✅<br><br>
+
+<b>∂f/∂y:</b> Anggap x konstan. x³y² → 2x³y, 2xy → 2x, -y⁴ → -4y³.<br>
+
+∂f/∂y = <b>2x³y + 2x - 4y³</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>2.1 Interpretasi Geometris ∂f/∂x dan ∂f/∂y</h3>
+
+<div class="example">
+
+∂f/∂x di titik (a, b) adalah <b>kemiringan</b> permukaan z = f(x,y)
+jika kita berjalan <b>sejajar sumbu X</b> (y tetap = b).<br><br>
+
+∂f/∂y di titik (a, b) adalah <b>kemiringan</b> jika kita berjalan
+<b>sejajar sumbu Y</b> (x tetap = a).<br><br>
+
+Keduanya adalah kemiringan dari dua "irisan" yang saling tegak lurus.
+
+</div>
+
+<hr>
+
+<h3>2.2 Turunan Parsial Tingkat Tinggi — Turunan dari Turunan Parsial</h3>
+
+<div class="summary">
+
+<b>∂²f/∂x² = fₓₓ:</b> Turunkan ∂f/∂x terhadap x lagi.<br>
+
+<b>∂²f/∂y² = fᵧᵧ:</b> Turunkan ∂f/∂y terhadap y lagi.<br>
+
+<b>∂²f/∂x∂y = fₓᵧ:</b> Turunkan ∂f/∂x terhadap y (atau ∂f/∂y terhadap x—<b>hasilnya sama!</b>).<br><br>
+
+<b>Teorema Clairaut:</b> Jika turunan parsial kedua kontinu, maka <b>fₓᵧ = fᵧₓ</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: GRADIEN VEKTOR ==================== -->
+
+<div class="section">
+
+<h2>3. Gradien Vektor — Arah Kenaikan Tercepat</h2>
+
+<div class="summary">
+
+<b>Gradien</b> dari f(x, y) adalah <b>vektor</b> yang komponennya adalah
+turunan parsial pertama:<br><br>
+
+<b>∇f = (∂f/∂x, ∂f/∂y)</b> &nbsp; (nabla f, dibaca "del f")<br><br>
+
+Untuk tiga variabel: ∇f = (∂f/∂x, ∂f/∂y, ∂f/∂z).
+
+</div>
+
+<p>
+
+<b>Makna geometris:</b> ∇f di suatu titik menunjuk ke <b>arah kenaikan tercepat</b>
+(arah "pendakian" paling curam). Magnitudenya |∇f| adalah <b>laju kenaikan</b>
+di arah tersebut. Negatif gradien (-∇f) menunjuk ke arah <b>penurunan tercepat</b>.
+
+</p>
+
+<p>
+
+<b>Mengapa gradien menunjuk ke arah kenaikan tercepat?</b> Ini bisa dibuktikan
+dengan directional derivative (dibahas di bagian 4). Intuisinya: bayangkan
+kamu di lereng gunung. Ke mana kamu harus melangkah agar elevasimu naik
+paling cepat? Ke arah paling curam—itulah arah gradien.
+
+</p>
+
+<div class="example">
+
+f(x, y) = x² + y².<br><br>
+
+∂f/∂x = 2x, ∂f/∂y = 2y.<br>
+
+∇f = <b>(2x, 2y)</b>.<br><br>
+
+Di titik (1, 2): ∇f(1,2) = (2, 4).<br>
+
+Arah kenaikan tercepat: (2, 4). Laju kenaikan: |∇f| = √(4+16) = √20 ≈ 4,47.<br><br>
+
+Perhatikan: ∇f selalu menunjuk <b>menjauhi titik asal</b>—masuk akal,
+karena f = x²+y² adalah mangkuk dengan titik terendah di (0,0).
+
+</div>
+
+<hr>
+
+<h3>3.1 Sifat-Sifat Gradien</h3>
+
+<div class="summary">
+
+1. ∇f <b>tegak lurus</b> terhadap kurva level f(x,y) = k di setiap titik.<br>
+
+2. ∇f = <b>0⃗</b> di titik kritis (di mana semua turunan parsial = 0).<br>
+
+3. ∇(f + g) = ∇f + ∇g. ∇(cf) = c∇f.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: DIRECTIONAL DERIVATIVE ==================== -->
+
+<div class="section">
+
+<h2>4. Directional Derivative — Turunan ke Segala Arah</h2>
+
+<p>
+
+Turunan parsial ∂f/∂x dan ∂f/∂y hanya memberi kita laju perubahan
+di dua arah khusus (sejajar sumbu X dan Y). Bagaimana jika kita ingin
+tahu laju perubahan ke <b>arah sembarang</b>?
+
+</p>
+
+<div class="summary">
+
+<b>Directional derivative</b> dari f di titik P ke arah vektor satuan <b>û</b>:<br><br>
+
+<b>D_û f = ∇f · û</b> &nbsp; (dot product antara gradien dan arah)<br><br>
+
+= |∇f| cos θ &nbsp; (di mana θ = sudut antara ∇f dan û).
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya dot product?</b> Ini berasal dari aturan rantai multivariabel.
+Intuisinya: dot product mengukur "seberapa searah" gradien dengan arah yang diinginkan.
+Jika arahnya persis searah gradien (θ=0), D_ûf = |∇f| (maksimum).
+Jika tegak lurus (θ=90°), D_ûf = 0. Jika berlawanan (θ=180°), D_ûf = -|∇f|.
+
+</p>
+
+<div class="example">
+
+f(x, y) = x² + y². ∇f(1, 1) = (2, 2).<br><br>
+
+Cari laju perubahan ke arah û = (1/√2, 1/√2) (arah 45°).<br><br>
+
+D_ûf = (2, 2) · (1/√2, 1/√2) = 2/√2 + 2/√2 = 4/√2 = <b>2√2</b>.<br><br>
+
+Cari laju perubahan ke arah v̂ = (-1/√2, 1/√2) (tegak lurus arah diagonal).<br><br>
+
+D_v̂f = (2, 2) · (-1/√2, 1/√2) = -2/√2 + 2/√2 = <b>0</b>.<br><br>
+
+Ini masuk akal: di titik (1,1) pada mangkuk x²+y², arah diagonal 45°
+adalah arah menanjak, sedangkan arah tegak lurusnya adalah menyusuri
+kurva level (ketinggian konstan).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: DIVERGENSI & CURL ==================== -->
+
+<div class="section">
+
+<h2>5. Divergensi dan Curl — Operator Diferensial untuk Medan Vektor</h2>
+
+<p>
+
+Sejauh ini kita menurunkan <b>fungsi skalar</b> f(x, y, z). Tapi dalam fisika,
+kita sering bekerja dengan <b>medan vektor</b>: fungsi yang outputnya adalah vektor.
+Contoh: medan kecepatan fluida, medan listrik, medan gravitasi.
+
+</p>
+
+<div class="summary">
+
+<b>Medan vektor:</b> <b>F⃗(x, y, z) = (P, Q, R)</b> — setiap komponen adalah fungsi dari (x, y, z).<br><br>
+
+Untuk medan vektor, ada dua operator diferensial fundamental:<br><br>
+
+<b>Divergensi (div F⃗):</b> ∇ · F⃗ = ∂P/∂x + ∂Q/∂y + ∂R/∂z &nbsp; (skalar)<br><br>
+
+<b>Curl (curl F⃗):</b> ∇ × F⃗ = (∂R/∂y - ∂Q/∂z, ∂P/∂z - ∂R/∂x, ∂Q/∂x - ∂P/∂y) &nbsp; (vektor)
+
+</div>
+
+<p>
+
+<b>Apa makna fisiknya?</b>
+
+</p>
+
+<div class="example">
+
+<b>Divergensi</b> mengukur "seberapa banyak fluida mengalir keluar" dari suatu titik.
+Divergensi positif → sumber (source). Divergensi negatif → lubang (sink).
+Divergensi nol → fluida tak termampatkan (incompressible).<br><br>
+
+<b>Curl</b> mengukur "kecenderungan berputar" (rotasi lokal) dari medan vektor.
+Curl besar → pusaran kuat. Curl nol → medan konservatif (ada fungsi potensial).<br><br>
+
+Bayangkan sungai: di pusaran air, curl besar. Di aliran lurus, curl nol.
+
+</div>
+
+<div class="example">
+
+F⃗ = (x, y, z).<br><br>
+
+div F⃗ = 1 + 1 + 1 = <b>3</b> (setiap titik adalah sumber—fluida mengembang).<br>
+
+curl F⃗ = (0-0, 0-0, 0-0) = <b>(0,0,0)</b> (tidak ada rotasi).<br><br>
+
+F⃗ = (-y, x, 0).<br><br>
+
+div F⃗ = 0 + 0 + 0 = <b>0</b> (fluida tak termampatkan).<br>
+
+curl F⃗ = (0-0, 0-0, 1-(-1)) = <b>(0, 0, 2)</b> (berputar di bidang xy!).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: JACOBIAN ==================== -->
+
+<div class="section">
+
+<h2>6. Matriks Jacobian — "Turunan" dari Fungsi Multivariabel</h2>
+
+<div class="summary">
+
+Untuk fungsi vektor <b>F⃗: ℝⁿ → ℝᵐ</b>, <b>matriks Jacobian J</b> adalah
+matriks m×n yang berisi semua turunan parsial pertama.<br><br>
+
+Jᵢⱼ = ∂Fᵢ/∂xⱼ<br><br>
+
+<b>Determinan Jacobian</b> (jika m=n) mengukur "faktor skala lokal"—
+seberapa besar volume berubah di sekitar titik akibat transformasi F⃗.
+
+</div>
+
+<div class="example">
+
+Transformasi dari koordinat polar ke kartesius: x = r cos θ, y = r sin θ.<br><br>
+
+F⃗(r, θ) = (r cos θ, r sin θ).<br><br>
+
+J = [∂x/∂r &nbsp; ∂x/∂θ] = [cos θ &nbsp; -r sin θ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[∂y/∂r &nbsp; ∂y/∂θ] &nbsp;&nbsp;&nbsp;[sin θ &nbsp; &nbsp;r cos θ]<br><br>
+
+det(J) = r cos²θ + r sin²θ = <b>r</b>.<br><br>
+
+Inilah kenapa dx dy = <b>r dr dθ</b> dalam integral polar! Faktor r berasal dari determinan Jacobian.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 7: HESSIAN ==================== -->
+
+<div class="section">
+
+<h2>7. Matriks Hessian — "Turunan Kedua" Multivariabel</h2>
+
+<div class="summary">
+
+<b>Matriks Hessian H</b> adalah matriks persegi yang berisi semua
+<b>turunan parsial kedua</b> dari f(x₁, ..., xₙ).<br><br>
+
+Hᵢⱼ = ∂²f/∂xᵢ∂xⱼ<br><br>
+
+Untuk f(x, y): H = [fₓₓ &nbsp; fₓᵧ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[fᵧₓ &nbsp; fᵧᵧ]
+
+</div>
+
+<p>
+
+<b>Kegunaan Hessian:</b> Uji turunan kedua untuk fungsi multivariabel.
+Di titik kritis (∇f = 0):
+
+</p>
+
+<div class="summary">
+
+Hitung determinan Hessian D = fₓₓ·fᵧᵧ - (fₓᵧ)²:<br><br>
+
+<b>D > 0 dan fₓₓ > 0:</b> minimum lokal.<br>
+
+<b>D > 0 dan fₓₓ < 0:</b> maksimum lokal.<br>
+
+<b>D < 0:</b> titik pelana (saddle point).<br>
+
+<b>D = 0:</b> tidak dapat disimpulkan.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 8: LAGRANGE MULTIPLIER ==================== -->
+
+<div class="section">
+
+<h2>8. Lagrange Multiplier — Optimasi dengan Kendala</h2>
+
+<p>
+
+Bagaimana mencari maksimum/minimum f(x, y) dengan syarat g(x, y) = k?
+Kita tidak bisa menggunakan metode titik kritis biasa karena domainnya
+terbatas pada kurva g(x, y) = k (bukan seluruh bidang).
+
+</p>
+
+<div class="summary">
+
+<b>Metode Lagrange Multiplier:</b><br><br>
+
+Selesaikan sistem: <b>∇f = λ ∇g</b> &nbsp; bersama dengan &nbsp; g(x, y) = k.<br><br>
+
+λ adalah <b>Lagrange multiplier</b>—suatu skalar yang tidak diketahui.<br><br>
+
+Sistem ini menghasilkan 3 persamaan untuk 3 variabel (x, y, λ).
+
+</div>
+
+<p>
+
+<b>Mengapa ∇f = λ∇g? — Intuisi Geometris</b>
+
+</p>
+
+<div class="example">
+
+Di titik optimum pada kurva kendala g(x,y) = k, gradien f harus
+<b>tegak lurus</b> terhadap kurva (karena kalau tidak, kita bisa bergerak
+sepanjang kurva untuk menaikkan/menurunkan f).<br><br>
+
+Gradien g juga selalu tegak lurus terhadap kurva levelnya (g(x,y) = k).<br><br>
+
+Jadi ∇f dan ∇g harus <b>sejajar</b> (atau berlawanan arah).
+Dua vektor sejajar artinya satu adalah kelipatan skalar dari yang lain:
+∇f = λ∇g. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Cari nilai maksimum dan minimum f(x, y) = xy pada lingkaran x² + y² = 1.<br><br>
+
+∇f = (y, x). ∇g = (2x, 2y).<br><br>
+
+Lagrange: (y, x) = λ(2x, 2y) → y = 2λx, x = 2λy.<br><br>
+
+Substitusi: y = 2λ(2λy) = 4λ²y → y(1 - 4λ²) = 0.<br><br>
+
+<b>Kasus 1:</b> y = 0. Dari x² + y² = 1 → x = ±1. Titik: (1,0), (-1,0). f = 0.<br><br>
+
+<b>Kasus 2:</b> 1 - 4λ² = 0 → λ = ±1/2.<br>
+
+λ = 1/2: y = x. Dari x² + x² = 1 → 2x² = 1 → x = ±1/√2.<br>
+
+Titik: (1/√2, 1/√2) dan (-1/√2, -1/√2). f = 1/2.<br><br>
+
+λ = -1/2: y = -x. Dari x² + x² = 1 → x = ±1/√2.<br>
+
+Titik: (1/√2, -1/√2) dan (-1/√2, 1/√2). f = -1/2.<br><br>
+
+<b>Maksimum:</b> f = 1/2 (di dua titik). <b>Minimum:</b> f = -1/2 (di dua titik). ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 9</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Fungsi multivariabel:</b> z = f(x,y). Grafik berupa permukaan. Kurva level = peta kontur.</li>
+
+<li><b>Turunan parsial:</b> ∂f/∂x — turunkan terhadap x, anggap y konstan. fₓᵧ = fᵧₓ (Clairaut).</li>
+
+<li><b>Gradien:</b> ∇f = (∂f/∂x, ∂f/∂y). Menunjuk ke arah kenaikan tercepat. Tegak lurus kurva level.</li>
+
+<li><b>Directional derivative:</b> D_ûf = ∇f · û. Laju perubahan ke arah û.</li>
+
+<li><b>Divergensi:</b> ∇·F⃗ = ∂P/∂x + ∂Q/∂y + ∂R/∂z. Mengukur "sumber/lubang".</li>
+
+<li><b>Curl:</b> ∇×F⃗. Mengukur "rotasi lokal" medan vektor.</li>
+
+<li><b>Jacobian:</b> Matriks turunan parsial pertama. Determinan = faktor skala volume (dx dy = r dr dθ).</li>
+
+<li><b>Hessian:</b> Matriks turunan parsial kedua. Untuk uji ekstrem multivariabel.</li>
+
+<li><b>Lagrange Multiplier:</b> ∇f = λ∇g, g=k. Optimasi dengan kendala.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Turunan parsial: variabel yang tidak diturunkan dianggap konstan.</b>
+Ini adalah kunci. Jangan bingung—perlakukan seperti turunan biasa,
+hanya saja variabel lain seperti angka.
+
+</li>
+
+<li>
+
+<b>Gradien selalu tegak lurus kurva level.</b> Ini adalah fakta yang sering
+dipakai di soal. Jika kamu tahu kurva levelnya, kamu tahu arah gradiennya.
+
+</li>
+
+<li>
+
+<b>Directional derivative maksimum = |∇f|, minimum = -|∇f|.</b>
+Maksimum terjadi saat û searah ∇f, minimum saat berlawanan arah.
+
+</li>
+
+<li>
+
+<b>Jacobian = r untuk koordinat polar.</b> Ini wajib diingat untuk integral lipat
+(Kalkulus 10). Faktor r sering terlupakan.
+
+</li>
+
+<li>
+
+<b>Lagrange: selesaikan sistem, bukan eliminasi satu-satu.</b>
+Bandingkan komponen ∇f dan λ∇g, lalu substitusi ke kendala g(x,y)=k.
+
+</li>
+
+<li>
+
+<b>Hessian menentukan jenis titik kritis.</b> D > 0 → ekstrem (cek fₓₓ untuk min/max).
+D < 0 → saddle point. D = 0 → perlu analisis lebih lanjut.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus8.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus10.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
