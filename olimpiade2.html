@@ -1,1 +1,3066 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Olimpiade 2 - Ketimpangan Lanjutan</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="hero">
+
+<h1>🏆 Olimpiade 2</h1>
+
+<h2>Ketimpangan Lanjutan</h2>
+
+<p class="subtitle">
+
+Bab ini membahas berbagai ketimpangan tingkat lanjut yang sering muncul
+pada OSN Nasional, International Mathematical Olympiad (IMO),
+serta kompetisi matematika tingkat internasional.
+
+</p>
+
+</header>
+
+<section class="section">
+
+<h2>📖 Pengantar</h2>
+
+<p>
+
+Pada bab sebelumnya kita mempelajari enam ketimpangan dasar, yaitu
+AM-GM, Cauchy-Schwarz, Titu's Lemma, Jensen, Chebyshev,
+dan Rearrangement.
+
+</p>
+
+<p>
+
+Ketimpangan-ketimpangan tersebut merupakan fondasi yang sangat penting.
+Namun, pada soal Olimpiade tingkat lanjut,
+sering kali dibutuhkan teknik yang lebih kuat.
+
+</p>
+
+<p>
+
+Bab ini akan memperkenalkan beberapa ketimpangan terkenal yang mampu
+menyelesaikan soal-soal yang tidak lagi dapat diselesaikan
+menggunakan teknik dasar saja.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Pembelajaran</h2>
+
+<ul>
+
+<li>Memahami ketimpangan tingkat lanjut.</li>
+
+<li>Mengetahui hubungan antar ketimpangan.</li>
+
+<li>Memilih teknik yang paling efisien.</li>
+
+<li>Menyelesaikan soal Olimpiade tingkat nasional.</li>
+
+<li>Membangun intuisi matematika yang lebih kuat.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Ketimpangan Lanjutan?</h2>
+
+<p>
+
+Ketimpangan lanjutan biasanya digunakan apabila:
+
+</p>
+
+<ul>
+
+<li>AM-GM tidak cukup kuat.</li>
+
+<li>Cauchy menghasilkan batas yang terlalu lemah.</li>
+
+<li>Variabel berjumlah tiga atau lebih.</li>
+
+<li>Bentuk soal simetris.</li>
+
+<li>Terdapat pangkat tinggi.</li>
+
+<li>Diminta membuktikan ketimpangan yang cukup rumit.</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>① Schur's Inequality</h1>
+
+<h2>📖 Apa itu Schur's Inequality?</h2>
+
+<p>
+
+<b>Schur's Inequality</b> merupakan salah satu ketimpangan klasik
+yang ditemukan oleh matematikawan Jerman
+<b>Issai Schur</b>.
+
+</p>
+
+<p>
+
+Schur sangat terkenal karena mampu menghubungkan
+jumlah, hasil kali, dan pangkat dari tiga bilangan positif.
+
+Banyak soal Olimpiade yang tampaknya mustahil
+dapat disederhanakan menggunakan ketimpangan ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Misalkan terdapat tiga bilangan positif.
+
+Apabila ketiga bilangan tersebut saling mendekati,
+maka banyak ketimpangan akan mencapai keadaan setimbang.
+
+Schur memanfaatkan fakta tersebut
+untuk menghasilkan batas bawah yang sangat kuat.
+
+</p>
+
+<p>
+
+Ketimpangan ini sering digunakan bersama
+AM-GM dan Muirhead.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Dasar Schur</h2>
+
+<p>
+
+Untuk
+
+</p>
+
+<pre>
+
+a,b,c ≥0
+
+</pre>
+
+<p>
+
+berlaku
+
+</p>
+
+<pre>
+
+a³+b³+c³+3abc
+
+≥
+
+ab(a+b)
+
++bc(b+c)
+
++ca(c+a)
+
+</pre>
+
+<p>
+
+Inilah bentuk Schur yang paling sering muncul
+dalam Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Alternatif</h2>
+
+<pre>
+
+(a+b+c)
+
+(a-b)²
+
++
+
+(a+b+c)
+
+(b-c)²
+
++
+
+(a+b+c)
+
+(c-a)²
+
+≥0
+
+</pre>
+
+<p>
+
+Karena ruas kiri merupakan jumlah beberapa kuadrat,
+hasilnya selalu tidak negatif.
+
+Dari sinilah Schur dapat dibuktikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Mengapa Schur Penting?</h2>
+
+<ul>
+
+<li>Membuktikan ketimpangan simetris.</li>
+
+<li>Mencari batas minimum.</li>
+
+<li>Menghubungkan suku kubik dan hasil kali.</li>
+
+<li>Digunakan pada banyak soal IMO.</li>
+
+<li>Sering dipadukan dengan AM-GM.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=b=c=2
+
+</pre>
+
+<p>
+
+Ruas kiri
+
+</p>
+
+<pre>
+
+8+8+8
+
++
+
+24
+
+=
+
+48
+
+</pre>
+
+<p>
+
+Ruas kanan
+
+</p>
+
+<pre>
+
+8+8
+
++
+
+8+8
+
++
+
+8+8
+
+=
+
+48
+
+</pre>
+
+<p>
+
+Karena kedua ruas sama,
+
+</p>
+
+<pre>
+
+48=48
+
+</pre>
+
+<p>
+
+terlihat bahwa tanda sama dengan memang dapat terjadi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Kapan Tanda Sama Dengan Berlaku?</h2>
+
+<p>
+
+Pada bentuk dasar Schur,
+tanda sama dengan berlaku apabila:
+
+</p>
+
+<ul>
+
+<li>a = b = c</li>
+
+<li>atau salah satu variabel bernilai 0 pada bentuk umum.</li>
+
+</ul>
+
+<p>
+
+Mengenali kondisi tanda sama dengan
+sangat penting dalam pembuktian Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menggunakan Schur pada bentuk yang tidak simetris.</li>
+
+<li>Lupa bahwa syarat utama adalah variabel tidak negatif.</li>
+
+<li>Menghafal rumus tanpa memahami kapan digunakan.</li>
+
+<li>Memaksa menggunakan Schur padahal AM-GM sudah cukup.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Cara Mengenali Soal Schur</h2>
+
+<p>
+
+Ketika melihat soal, coba tanyakan:
+
+</p>
+
+<ol>
+
+<li>Apakah terdapat tiga variabel?</li>
+
+<li>Apakah muncul suku berpangkat tiga?</li>
+
+<li>Apakah ada hasil kali abc?</li>
+
+<li>Apakah bentuknya simetris?</li>
+
+<li>Apakah soal meminta batas minimum?</li>
+
+</ol>
+
+<p>
+
+Jika sebagian besar jawabannya "Ya",
+kemungkinan besar Schur dapat digunakan.
+
+</p>
+
+</section><section class="section">
+
+<h2>🧠 Mengapa Schur's Inequality Benar?</h2>
+
+<p>
+
+Sekilas rumus Schur tampak rumit.
+Namun sebenarnya ide dasarnya cukup sederhana.
+
+Schur berasal dari fakta bahwa jumlah beberapa kuadrat
+selalu bernilai tidak negatif.
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(a-b)² ≥ 0
+
+(b-c)² ≥ 0
+
+(c-a)² ≥ 0
+
+</pre>
+
+<p>
+
+maka kombinasi dari bentuk-bentuk tersebut juga
+selalu tidak negatif.
+
+Melalui manipulasi aljabar, bentuk tersebut dapat
+diubah menjadi rumus Schur.
+
+</p>
+
+<p>
+
+Hal ini menunjukkan bahwa Schur bukanlah rumus yang
+muncul begitu saja, melainkan berasal dari sifat dasar
+kuadrat bilangan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Schur Lebih Baik daripada AM-GM?</h2>
+
+<p>
+
+AM-GM sangat baik untuk dua atau tiga suku sederhana.
+
+Namun apabila muncul bentuk seperti
+
+</p>
+
+<pre>
+
+a³+b³+c³
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+abc
+
+</pre>
+
+<p>
+
+AM-GM sering kali menghasilkan batas yang kurang kuat.
+
+Dalam kondisi seperti ini,
+Schur biasanya memberikan hasil yang lebih baik.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Menengah</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a+b+c=6
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+a,b,c>0
+
+</pre>
+
+<p>
+
+Schur dapat digunakan untuk memperoleh batas bawah
+dari
+
+</p>
+
+<pre>
+
+a³+b³+c³
+
+</pre>
+
+<p>
+
+dengan menghubungkannya terhadap
+
+</p>
+
+<pre>
+
+abc
+
+</pre>
+
+<p>
+
+Pada soal Olimpiade,
+langkah berikutnya biasanya dikombinasikan
+dengan AM-GM atau Jensen.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Insight OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal mengandung ketiga bentuk berikut secara bersamaan,
+
+</p>
+
+<ul>
+
+<li>a+b+c</li>
+
+<li>ab+bc+ca</li>
+
+<li>abc</li>
+
+</ul>
+
+<p>
+
+maka salah satu kandidat pertama yang perlu dipertimbangkan adalah
+<b>Schur's Inequality</b>.
+
+Sering kali Schur menjadi "jembatan" untuk menghubungkan
+ketiga bentuk tersebut.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan Schur</h2>
+
+<ol>
+
+<li>Tuliskan kembali bentuk dasar Schur tanpa melihat catatan.</li>
+
+<li>Kapan tanda sama dengan berlaku?</li>
+
+<li>Sebutkan syarat agar Schur dapat digunakan.</li>
+
+<li>Mengapa Schur sering dipadukan dengan AM-GM?</li>
+
+<li>Cari satu soal OSN yang menggunakan Schur sebagai langkah utama.</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>② Muirhead's Inequality</h1>
+
+<h2>📖 Apa itu Muirhead's Inequality?</h2>
+
+<p>
+
+<b>Muirhead's Inequality</b> adalah salah satu ketimpangan
+paling kuat dalam matematika Olimpiade.
+
+Ketimpangan ini berlaku untuk bentuk-bentuk simetris
+dan menggunakan konsep yang disebut
+<b>majorization</b>.
+
+</p>
+
+<p>
+
+Di antara seluruh ketimpangan klasik,
+Muirhead termasuk yang paling sulit dipahami,
+tetapi juga paling kuat.
+
+Banyak ketimpangan lain sebenarnya merupakan kasus khusus
+dari Muirhead.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Mengapa Muirhead Sulit?</h2>
+
+<p>
+
+Pada AM-GM kita hanya membandingkan rata-rata.
+
+Pada Cauchy kita membandingkan hasil kali.
+
+Namun pada Muirhead,
+yang dibandingkan justru adalah
+<b>susunan pangkat</b> dari setiap variabel.
+
+Karena itu,
+pemahaman mengenai majorization menjadi sangat penting.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📖 Apa itu Majorization?</h2>
+
+<p>
+
+Misalkan terdapat dua susunan pangkat.
+
+</p>
+
+<pre>
+
+(3,1)
+
+dan
+
+(2,2)
+
+</pre>
+
+<p>
+
+Kita membandingkan jumlah pangkat secara bertahap.
+
+Jika susunan pertama lebih "terpusat"
+daripada susunan kedua,
+maka dikatakan susunan pertama
+<b>memajorasi</b> susunan kedua.
+
+</p>
+
+<p>
+
+Dalam contoh di atas,
+
+</p>
+
+<pre>
+
+(3,1)
+
+majorizes
+
+(2,2)
+
+</pre>
+
+<p>
+
+Konsep inilah yang menjadi dasar
+Muirhead's Inequality.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Intuisi</h2>
+
+<p>
+
+Bayangkan terdapat empat koin.
+
+</p>
+
+<p>
+
+Susunan
+
+</p>
+
+<pre>
+
+3 + 1
+
+</pre>
+
+<p>
+
+lebih tidak merata dibandingkan
+
+</p>
+
+<pre>
+
+2 + 2
+
+</pre>
+
+<p>
+
+Muirhead mempelajari bagaimana
+ketidakmerataan pangkat tersebut
+mempengaruhi nilai suatu ekspresi simetris.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Umum</h2>
+
+<p>
+
+Secara sederhana,
+apabila suatu susunan pangkat
+memajorasi susunan lainnya,
+maka jumlah simetris dari susunan pertama
+akan lebih besar atau sama.
+
+</p>
+
+<p>
+
+Pada praktik Olimpiade,
+peserta jarang menggunakan bentuk umum secara langsung.
+Sebaliknya,
+yang lebih penting adalah mengenali pola majorization.
+
+</p>
+
+</section><section class="section">
+
+<h2>🧠 Cara Menentukan Majorization</h2>
+
+<p>
+
+Sebelum menggunakan Muirhead, kita harus memastikan bahwa
+salah satu susunan pangkat <b>memajorasi</b> susunan lainnya.
+
+Caranya dilakukan secara bertahap.
+
+</p>
+
+<h3>Langkah 1</h3>
+
+<p>
+
+Urutkan kedua susunan pangkat dari yang terbesar ke yang terkecil.
+
+</p>
+
+<pre>
+
+(3,1)
+
+(2,2)
+
+</pre>
+
+<p>
+
+Kedua susunan tersebut sebenarnya sudah terurut.
+
+</p>
+
+<h3>Langkah 2</h3>
+
+<p>
+
+Bandingkan jumlah pangkat pertama.
+
+</p>
+
+<pre>
+
+3 ≥ 2
+
+✔ Benar
+
+</pre>
+
+<h3>Langkah 3</h3>
+
+<p>
+
+Bandingkan jumlah dua pangkat pertama.
+
+</p>
+
+<pre>
+
+3+1 = 4
+
+2+2 = 4
+
+✔ Sama
+
+</pre>
+
+<p>
+
+Karena seluruh syarat terpenuhi,
+maka
+
+</p>
+
+<pre>
+
+(3,1)
+
+majorizes
+
+(2,2)
+
+</pre>
+
+<p>
+
+Artinya Muirhead dapat digunakan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Contoh Bentuk Muirhead</h2>
+
+<p>
+
+Misalkan terdapat tiga variabel positif
+
+</p>
+
+<pre>
+
+a,b,c>0
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(2,0,0)
+
+majorizes
+
+(1,1,0)
+
+</pre>
+
+<p>
+
+maka berlaku
+
+</p>
+
+<pre>
+
+a²+b²+c²
+
+≥
+
+ab+bc+ca
+
+</pre>
+
+<p>
+
+Ketimpangan ini merupakan salah satu bentuk
+Muirhead yang paling terkenal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=1
+
+b=2
+
+c=3
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+1²+2²+3²
+
+=
+
+1+4+9
+
+=
+
+14
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+1×2
+
++
+
+2×3
+
++
+
+1×3
+
+=
+
+2+6+3
+
+=
+
+11
+
+</pre>
+
+<p>
+
+Terlihat bahwa
+
+</p>
+
+<pre>
+
+14 ≥11
+
+</pre>
+
+<p>
+
+Ketimpangan benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=b=c=5
+
+</pre>
+
+<p>
+
+Ruas kiri.
+
+</p>
+
+<pre>
+
+25+25+25
+
+=
+
+75
+
+</pre>
+
+<p>
+
+Ruas kanan.
+
+</p>
+
+<pre>
+
+25+25+25
+
+=
+
+75
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+75=75
+
+</pre>
+
+<p>
+
+maka tanda sama dengan berlaku.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Hubungan Muirhead dengan AM-GM</h2>
+
+<p>
+
+AM-GM sebenarnya dapat dipandang sebagai salah satu
+konsekuensi dari Muirhead.
+
+Namun dalam praktik,
+AM-GM jauh lebih sederhana sehingga lebih sering digunakan.
+
+</p>
+
+<p>
+
+Jika sebuah soal dapat diselesaikan dengan AM-GM,
+biasanya tidak perlu menggunakan Muirhead.
+
+Gunakan Muirhead hanya ketika bentuk soal memang
+memerlukan ketimpangan yang lebih kuat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Hubungan Muirhead dengan Schur</h2>
+
+<p>
+
+Schur dan Muirhead sama-sama digunakan
+pada ketimpangan simetris.
+
+Perbedaannya adalah:
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Schur</th>
+
+<th>Muirhead</th>
+
+</tr>
+
+<tr>
+
+<td>Menghubungkan a+b+c, ab+bc+ca, dan abc.</td>
+
+<td>Membandingkan susunan pangkat.</td>
+
+</tr>
+
+<tr>
+
+<td>Lebih mudah digunakan.</td>
+
+<td>Lebih kuat tetapi lebih sulit.</td>
+
+</tr>
+
+<tr>
+
+<td>Sering muncul pada OSN.</td>
+
+<td>Sering muncul pada IMO.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Muirhead?</h2>
+
+<ul>
+
+<li>Ekspresi berbentuk simetris.</li>
+
+<li>Variabel semuanya positif.</li>
+
+<li>Terdapat pangkat berbeda-beda.</li>
+
+<li>Susunan pangkat memenuhi majorization.</li>
+
+<li>AM-GM tidak cukup kuat.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<h3>1. Tidak mengecek majorization</h3>
+
+<p>
+
+Banyak siswa langsung menggunakan Muirhead
+tanpa memeriksa apakah susunan pangkat memenuhi syarat.
+
+Ini merupakan kesalahan yang paling sering terjadi.
+
+</p>
+
+<hr>
+
+<h3>2. Variabel tidak positif</h3>
+
+<p>
+
+Muirhead hanya berlaku
+untuk variabel bernilai positif.
+
+</p>
+
+<hr>
+
+<h3>3. Menggunakan pada bentuk yang tidak simetris</h3>
+
+<p>
+
+Jika ekspresi tidak simetris,
+biasanya Muirhead tidak dapat digunakan secara langsung.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Muirhead</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Dasar</td>
+
+<td>Majorization</td>
+
+</tr>
+
+<tr>
+
+<td>Syarat</td>
+
+<td>Variabel positif</td>
+
+</tr>
+
+<tr>
+
+<td>Digunakan pada</td>
+
+<td>Ketimpangan simetris</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN Nasional hingga IMO</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>③ Nesbitt's Inequality</h1>
+
+<h2>📖 Apa itu Nesbitt's Inequality?</h2>
+
+<p>
+
+<b>Nesbitt's Inequality</b> adalah salah satu ketimpangan klasik
+yang hanya melibatkan tiga variabel positif.
+
+Meskipun bentuknya terlihat sederhana,
+ketimpangan ini sangat terkenal dalam Olimpiade
+karena memiliki banyak metode pembuktian,
+mulai dari AM-GM, Cauchy-Schwarz,
+hingga Jensen.
+
+</p>
+
+<p>
+
+Justru karena memiliki banyak cara pembuktian,
+Nesbitt sering dijadikan latihan untuk memilih
+metode yang paling efisien.
+
+</p>
+
+</section><section class="section">
+
+<h2>🧠 Intuisi Nesbitt's Inequality</h2>
+
+<p>
+
+Sekilas, bentuk Nesbitt terlihat hanya berupa penjumlahan tiga pecahan.
+Namun sebenarnya, ketimpangan ini menunjukkan bahwa ketiga pecahan tersebut
+memiliki batas bawah yang tetap, yaitu <b>3/2</b>.
+
+</p>
+
+<p>
+
+Artinya, berapa pun nilai positif dari
+<b>a</b>, <b>b</b>, dan <b>c</b>,
+jumlah ketiga pecahan tersebut tidak akan pernah lebih kecil dari 3/2.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Nesbitt's Inequality</h2>
+
+<p>
+
+Untuk setiap
+
+</p>
+
+<pre>
+
+a,b,c > 0
+
+</pre>
+
+<p>
+
+berlaku
+
+</p>
+
+<pre>
+
+a/(b+c)
+
++
+
+b/(c+a)
+
++
+
+c/(a+b)
+
+≥
+
+3/2
+
+</pre>
+
+<p>
+
+Inilah bentuk klasik Nesbitt's Inequality.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Mengapa Bernilai 3/2?</h2>
+
+<p>
+
+Angka 3/2 bukan muncul secara kebetulan.
+
+Nilai tersebut merupakan batas minimum yang dicapai
+ketika ketiga variabel bernilai sama.
+
+</p>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=b=c=1
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+1/(1+1)
+
++
+
+1/(1+1)
+
++
+
+1/(1+1)
+
+=
+
+1/2+1/2+1/2
+
+=
+
+3/2
+
+</pre>
+
+<p>
+
+Karena tanda sama dengan dapat terjadi,
+maka 3/2 merupakan batas terbaik.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=2
+
+b=2
+
+c=2
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+2/(2+2)
+
+=
+
+1/2
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+1/2+1/2+1/2
+
+=
+
+3/2
+
+</pre>
+
+<p>
+
+Ketimpangan tepat mencapai tanda sama dengan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=3
+
+b=2
+
+c=1
+
+</pre>
+
+<p>
+
+Hitung masing-masing pecahan.
+
+</p>
+
+<pre>
+
+3/(2+1)=1
+
+</pre>
+
+<pre>
+
+2/(1+3)=1/2
+
+</pre>
+
+<pre>
+
+1/(3+2)=1/5
+
+</pre>
+
+<p>
+
+Jumlahnya
+
+</p>
+
+<pre>
+
+1
+
++
+
+1/2
+
++
+
+1/5
+
+=
+
+1,7
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+1,7 ≥1,5
+
+</pre>
+
+<p>
+
+maka Nesbitt tetap berlaku.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Nesbitt?</h2>
+
+<ul>
+
+<li>Terdapat tiga variabel positif.</li>
+
+<li>Bentuk pecahan menyerupai a/(b+c).</li>
+
+<li>Soal meminta batas minimum.</li>
+
+<li>Muncul jumlah tiga pecahan yang simetris.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🧩 Metode Pembuktian</h2>
+
+<p>
+
+Nesbitt merupakan ketimpangan yang menarik karena
+dapat dibuktikan dengan berbagai cara.
+
+</p>
+
+<ul>
+
+<li>Titu's Lemma.</li>
+
+<li>Cauchy-Schwarz.</li>
+
+<li>Jensen's Inequality.</li>
+
+<li>AM-GM.</li>
+
+<li>Substitusi.</li>
+
+</ul>
+
+<p>
+
+Pada Olimpiade, memilih metode yang paling sederhana
+sering kali lebih penting daripada menggunakan metode yang paling rumit.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menggunakan Nesbitt saat variabel tidak semuanya positif.</li>
+
+<li>Menganggap ketimpangan berlaku untuk empat atau lebih variabel.</li>
+
+<li>Tidak mengenali pola a/(b+c).</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Nesbitt</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Bentuk</td>
+
+<td>a/(b+c)+b/(c+a)+c/(a+b)</td>
+
+</tr>
+
+<tr>
+
+<td>Batas Minimum</td>
+
+<td>3/2</td>
+
+</tr>
+
+<tr>
+
+<td>Syarat</td>
+
+<td>a,b,c > 0</td>
+
+</tr>
+
+<tr>
+
+<td>Metode Pembuktian</td>
+
+<td>AM-GM, Titu, Cauchy, Jensen, dll.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN hingga IMO</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan Nesbitt</h2>
+
+<ol>
+
+<li>Buktikan bahwa tanda sama dengan berlaku ketika a=b=c.</li>
+
+<li>Hitung nilai ruas kiri jika a=4, b=2, c=2.</li>
+
+<li>Cari satu pembuktian Nesbitt menggunakan Titu's Lemma.</li>
+
+<li>Cari pembuktian lain menggunakan Cauchy-Schwarz, lalu bandingkan kedua metode tersebut.</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>④ Hölder's Inequality</h1>
+
+<p>
+
+Setelah mempelajari Schur, Muirhead, dan Nesbitt, kita akan memasuki salah satu ketimpangan paling kuat dalam analisis matematika, yaitu <b>Hölder's Inequality</b>. Ketimpangan ini merupakan perluasan dari Cauchy-Schwarz dan menjadi dasar bagi banyak teorema dalam analisis, kalkulus lanjut, serta berbagai soal Olimpiade tingkat internasional.
+
+</p>
+
+</section><section class="section">
+
+<h2>📖 Apa itu Hölder's Inequality?</h2>
+
+<p>
+
+<b>Hölder's Inequality</b> merupakan perluasan (generalisasi)
+dari <b>Cauchy-Schwarz Inequality</b>.
+
+Jika Cauchy-Schwarz membandingkan dua buah vektor,
+maka Hölder mampu membandingkan bentuk yang jauh lebih umum
+dengan pangkat berbeda.
+
+</p>
+
+<p>
+
+Ketimpangan ini ditemukan oleh matematikawan Jerman
+<b>Otto Hölder</b> pada akhir abad ke-19.
+
+Saat ini Hölder menjadi salah satu dasar dalam
+analisis real, ruang vektor, teori peluang,
+hingga machine learning.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan kita memiliki dua kelompok bilangan.
+
+Cauchy-Schwarz hanya melihat hubungan sederhana
+antara kedua kelompok tersebut.
+
+Namun Hölder memberikan cara yang lebih umum
+dengan memperhatikan pangkat setiap kelompok.
+
+</p>
+
+<p>
+
+Karena itulah Hölder sering disebut sebagai
+"versi yang lebih kuat" dari Cauchy-Schwarz.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Hölder</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+p > 1
+
+q > 1
+
+</pre>
+
+<p>
+
+dan memenuhi
+
+</p>
+
+<pre>
+
+1/p + 1/q = 1
+
+</pre>
+
+<p>
+
+Maka berlaku
+
+</p>
+
+<pre>
+
+Σ(ai · bi)
+
+≤
+
+(Σ|ai|ᵖ)^(1/p)
+
+×
+
+(Σ|bi|ᵠ)^(1/q)
+
+</pre>
+
+<p>
+
+dengan simbol
+
+</p>
+
+<pre>
+
+Σ
+
+</pre>
+
+<p>
+
+menyatakan penjumlahan seluruh suku.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Mengapa Ada Dua Pangkat?</h2>
+
+<p>
+
+Bilangan
+
+</p>
+
+<pre>
+
 p
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+q
+
+</pre>
+
+<p>
+
+disebut sebagai <b>pangkat konjugat</b>.
+
+Keduanya harus memenuhi syarat
+
+</p>
+
+<pre>
+
+1/p + 1/q = 1
+
+</pre>
+
+<p>
+
+Contoh pasangan yang sering digunakan.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>p</th>
+
+<th>q</th>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>3/2</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>4/3</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>5/4</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🔗 Hubungan dengan Cauchy-Schwarz</h2>
+
+<p>
+
+Jika dipilih
+
+</p>
+
+<pre>
+
+p = 2
+
+q = 2
+
+</pre>
+
+<p>
+
+maka Hölder berubah menjadi
+
+</p>
+
+<pre>
+
+(Σai²)
+
+(Σbi²)
+
+≥
+
+(Σaibi)²
+
+</pre>
+
+<p>
+
+yang tidak lain adalah
+<b>Cauchy-Schwarz Inequality</b>.
+
+Artinya, Cauchy hanyalah salah satu kasus khusus dari Hölder.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a=(1,2)
+
+b=(3,4)
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+p=q=2
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+1×3 + 2×4
+
+=
+
+11
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+√(1²+2²)
+
+×
+
+√(3²+4²)
+
+</pre>
+
+<pre>
+
+=
+
+√5 × √25
+
+=
+
+5√5
+
+≈11,18
+
+</pre>
+
+<p>
+
+Terlihat bahwa
+
+</p>
+
+<pre>
+
+11 ≤11,18
+
+</pre>
+
+<p>
+
+sehingga Hölder terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Hölder?</h2>
+
+<ul>
+
+<li>Terdapat banyak variabel.</li>
+
+<li>Muncul penjumlahan hasil kali.</li>
+
+<li>Pangkat tidak semuanya sama.</li>
+
+<li>Cauchy-Schwarz belum cukup kuat.</li>
+
+<li>Soal analisis atau ketimpangan tingkat lanjut.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<h3>1. Salah memilih p dan q</h3>
+
+<p>
+
+Pastikan selalu memenuhi syarat
+
+</p>
+
+<pre>
+
+1/p + 1/q = 1
+
+</pre>
+
+<hr>
+
+<h3>2. Menganggap Hölder selalu lebih baik</h3>
+
+<p>
+
+Pada banyak soal dasar,
+Cauchy-Schwarz sudah cukup sederhana.
+Gunakan Hölder hanya jika memang diperlukan.
+
+</p>
+
+<hr>
+
+<h3>3. Salah menghitung pangkat</h3>
+
+<p>
+
+Perhatikan bahwa setiap suku harus dipangkatkan
+sesuai nilai p atau q sebelum dijumlahkan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Hölder</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Penemu</td>
+<td>Otto Hölder</td>
+</tr>
+
+<tr>
+<td>Hubungan</td>
+<td>Generalisasi Cauchy-Schwarz</td>
+</tr>
+
+<tr>
+<td>Syarat</td>
+<td>1/p + 1/q = 1</td>
+</tr>
+
+<tr>
+<td>Tingkat</td>
+<td>OSN Nasional, IMO, Universitas</td>
+</tr>
+
+<tr>
+<td>Kegunaan</td>
+<td>Ketimpangan dan Analisis</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑤ Minkowski's Inequality</h1>
+
+<p>
+
+Setelah mempelajari Hölder, kita akan membahas <b>Minkowski's Inequality</b>. Ketimpangan ini sering disebut sebagai "versi segitiga" dalam ruang berdimensi banyak dan merupakan dasar penting dalam analisis, geometri, serta teori ruang norma. Minkowski juga memiliki hubungan yang sangat erat dengan Hölder dan Cauchy-Schwarz.
+
+</p>
+
+</section><section class="section">
+
+<h2>📖 Apa itu Minkowski's Inequality?</h2>
+
+<p>
+
+<b>Minkowski's Inequality</b> merupakan perluasan dari
+<b>Triangle Inequality (Ketaksamaan Segitiga)</b>
+ke ruang berdimensi banyak.
+
+Ketimpangan ini ditemukan oleh matematikawan Jerman
+<b>Hermann Minkowski</b>, yang juga terkenal sebagai
+pelopor Geometri Bilangan (Geometry of Numbers).
+
+</p>
+
+<p>
+
+Dalam analisis matematika, Minkowski menjelaskan bahwa
+"panjang" hasil penjumlahan dua vektor
+tidak akan melebihi jumlah panjang masing-masing vektor.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan dua orang berjalan.
+
+Orang pertama berjalan sejauh 5 meter.
+
+Orang kedua berjalan sejauh 4 meter.
+
+Jika keduanya bergerak ke arah yang sama,
+jarak totalnya memang 9 meter.
+
+Namun jika arahnya berbeda,
+jarak akhirnya pasti tidak akan melebihi 9 meter.
+
+Inilah ide dasar Minkowski.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Minkowski</h2>
+
+<p>
+
+Untuk
+
+</p>
+
+<pre>
+
+p ≥ 1
+
+</pre>
+
+<p>
+
+berlaku
+
+</p>
+
+<pre>
+
+(Σ|ai+bi|ᵖ)^(1/p)
+
+≤
+
+(Σ|ai|ᵖ)^(1/p)
+
++
+
+(Σ|bi|ᵖ)^(1/p)
+
+</pre>
+
+<p>
+
+Rumus ini dikenal sebagai
+<b>Minkowski's Inequality</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🔗 Hubungan dengan Hölder</h2>
+
+<p>
+
+Minkowski dapat dibuktikan menggunakan
+<b>Hölder's Inequality</b>.
+
+Karena itu, dalam banyak buku analisis,
+Hölder selalu dipelajari lebih dahulu.
+
+Urutannya biasanya sebagai berikut.
+
+</p>
+
+<pre>
+
+AM-GM
+
+↓
+
+Cauchy-Schwarz
+
+↓
+
+Hölder
+
+↓
+
+Minkowski
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A=(1,2)
+
+B=(2,1)
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+p=2
+
+</pre>
+
+<p>
+
+Jumlah kedua vektor adalah
+
+</p>
+
+<pre>
+
+(3,3)
+
+</pre>
+
+<p>
+
+Panjang vektor tersebut adalah
+
+</p>
+
+<pre>
+
+√(3²+3²)
+
+=
+
+√18
+
+≈4,24
+
+</pre>
+
+<p>
+
+Sedangkan
+
+</p>
+
+<pre>
+
+|A|
+
+=
+
+√5
+
+≈2,24
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+|B|
+
+=
+
+√5
+
+≈2,24
+
+</pre>
+
+<p>
+
+Jumlah panjang keduanya
+
+</p>
+
+<pre>
+
+2,24+2,24
+
+=
+
+4,48
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+4,24 ≤4,48
+
+</pre>
+
+<p>
+
+Minkowski terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Minkowski?</h2>
+
+<ul>
+
+<li>Soal melibatkan panjang vektor.</li>
+
+<li>Terdapat norma atau jarak.</li>
+
+<li>Muncul penjumlahan beberapa vektor.</li>
+
+<li>Soal analisis atau geometri lanjut.</li>
+
+<li>Diperlukan batas atas suatu norma.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Menggunakan Minkowski untuk p kurang dari 1.</li>
+
+<li>Keliru membedakan norma dengan nilai mutlak biasa.</li>
+
+<li>Mengira Minkowski berlaku untuk semua jenis fungsi.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Minkowski</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Penemu</td>
+
+<td>Hermann Minkowski</td>
+
+</tr>
+
+<tr>
+
+<td>Dasar</td>
+
+<td>Perluasan Ketaksamaan Segitiga</td>
+
+</tr>
+
+<tr>
+
+<td>Hubungan</td>
+
+<td>Dibuktikan menggunakan Hölder</td>
+
+</tr>
+
+<tr>
+
+<td>Syarat</td>
+
+<td>p ≥ 1</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN Nasional, IMO, Universitas</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan Minkowski</h2>
+
+<ol>
+
+<li>Jelaskan mengapa Minkowski merupakan perluasan dari Ketaksamaan Segitiga.</li>
+
+<li>Buktikan bahwa untuk p = 2, Minkowski menghasilkan bentuk yang konsisten dengan norma Euclidean.</li>
+
+<li>Cari contoh dua vektor yang memenuhi tanda sama dengan.</li>
+
+<li>Bandingkan peran Hölder dan Minkowski dalam analisis matematika.</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑥ Bernoulli's Inequality</h1>
+
+<p>
+
+Sebagai penutup bab ini, kita akan mempelajari <b>Bernoulli's Inequality</b>. Walaupun rumusnya jauh lebih sederhana dibandingkan Hölder atau Minkowski, ketimpangan ini sangat berguna dalam pembuktian, limit, deret, dan analisis. Banyak soal Olimpiade menggunakan Bernoulli sebagai langkah awal sebelum menerapkan teknik lain.
+
+</p>
+
+</section><section class="section">
+
+<h2>📖 Apa itu Bernoulli's Inequality?</h2>
+
+<p>
+
+<b>Bernoulli's Inequality</b> merupakan salah satu ketimpangan paling
+sederhana tetapi sangat penting dalam matematika.
+
+Ketimpangan ini ditemukan oleh matematikawan Swiss
+<b>Jacob Bernoulli</b>.
+
+Walaupun bentuknya sederhana, Bernoulli sering digunakan
+pada pembuktian limit, deret, analisis, dan berbagai soal
+Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Jika suatu bilangan positif dipangkatkan berkali-kali,
+hasilnya biasanya tumbuh lebih cepat daripada pertumbuhan linear.
+
+Bernoulli memberikan batas bawah sederhana untuk pertumbuhan tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Bernoulli</h2>
+
+<p>
+
+Untuk
+
+</p>
+
+<pre>
+
+x ≥ -1
+
+n ∈ ℕ
+
+</pre>
+
+<p>
+
+berlaku
+
+</p>
+
+<pre>
+
+(1+x)ⁿ ≥ 1+nx
+
+</pre>
+
+<p>
+
+Rumus ini dikenal sebagai Bernoulli's Inequality.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x=0,2
+
+n=3
+
+</pre>
+
+<p>
+
+Ruas kiri.
+
+</p>
+
+<pre>
+
+(1,2)³
+
+=
+
+1,728
+
+</pre>
+
+<p>
+
+Ruas kanan.
+
+</p>
+
+<pre>
+
+1+3(0,2)
+
+=
+
+1,6
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+1,728 ≥1,6
+
+</pre>
+
+<p>
+
+ketimpangan Bernoulli terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Bernoulli?</h2>
+
+<ul>
+
+<li>Limit.</li>
+
+<li>Deret.</li>
+
+<li>Pendekatan fungsi eksponen.</li>
+
+<li>Pembuktian ketimpangan sederhana.</li>
+
+<li>Langkah awal pembuktian Olimpiade.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Menggunakan Bernoulli saat x < -1.</li>
+
+<li>Lupa bahwa n harus bilangan bulat positif.</li>
+
+<li>Menganggap rumus berlaku untuk semua pangkat tanpa syarat.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Bernoulli</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Penemu</td>
+
+<td>Jacob Bernoulli</td>
+
+</tr>
+
+<tr>
+
+<td>Rumus</td>
+
+<td>(1+x)<sup>n</sup> ≥ 1+nx</td>
+
+</tr>
+
+<tr>
+
+<td>Syarat</td>
+
+<td>x ≥ -1 dan n bilangan bulat positif</td>
+
+</tr>
+
+<tr>
+
+<td>Kegunaan</td>
+
+<td>Limit, Deret, Analisis, Ketimpangan</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>🎓 Ringkasan Bab 2</h1>
+
+<p>
+
+Pada bab ini kita telah mempelajari enam ketimpangan lanjutan yang
+menjadi dasar berbagai pembuktian pada OSN Nasional hingga IMO.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Materi</th>
+
+<th>Kegunaan</th>
+
+</tr>
+
+<tr>
+
+<td>Schur</td>
+
+<td>Ketimpangan simetris dan hubungan a+b+c, ab+bc+ca, abc.</td>
+
+</tr>
+
+<tr>
+
+<td>Muirhead</td>
+
+<td>Membandingkan bentuk simetris menggunakan majorization.</td>
+
+</tr>
+
+<tr>
+
+<td>Nesbitt</td>
+
+<td>Ketimpangan pecahan tiga variabel.</td>
+
+</tr>
+
+<tr>
+
+<td>Hölder</td>
+
+<td>Generalisasi Cauchy-Schwarz.</td>
+
+</tr>
+
+<tr>
+
+<td>Minkowski</td>
+
+<td>Ketaksamaan segitiga pada ruang berdimensi banyak.</td>
+
+</tr>
+
+<tr>
+
+<td>Bernoulli</td>
+
+<td>Pembuktian limit, deret, dan ketimpangan sederhana.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Hubungan Antar Ketimpangan</h2>
+
+<pre>
+
+AM-GM
+   │
+   ├──────────────┐
+   │              │
+Cauchy       Schur
+   │              │
+   │          Muirhead
+   │
+Titu's Lemma
+   │
+Holder
+   │
+Minkowski
+
+Bernoulli
+│
+├─ Limit
+├─ Deret
+└─ Analisis
+
+</pre>
+
+<p>
+
+Diagram ini menunjukkan bahwa banyak ketimpangan saling berkaitan.
+Memahami hubungan tersebut akan memudahkanmu memilih metode yang tepat
+saat menyelesaikan soal Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Latihan Bab 2</h2>
+
+<h3>Level ★☆☆☆☆</h3>
+
+<ol>
+
+<li>Tentukan kapan tanda sama dengan berlaku pada Schur.</li>
+
+<li>Jelaskan arti majorization dengan bahasamu sendiri.</li>
+
+<li>Buktikan Bernoulli untuk n = 2.</li>
+
+</ol>
+
+<h3>Level ★★☆☆☆</h3>
+
+<ol start="4">
+
+<li>Buktikan Nesbitt menggunakan Titu's Lemma.</li>
+
+<li>Bandingkan Hölder dengan Cauchy-Schwarz.</li>
+
+</ol>
+
+<h3>Level ★★★☆☆</h3>
+
+<ol start="6">
+
+<li>Tentukan contoh ketimpangan yang memerlukan Muirhead.</li>
+
+<li>Buktikan bahwa Cauchy merupakan kasus khusus Hölder.</li>
+
+</ol>
+
+<h3>Level ★★★★☆</h3>
+
+<ol start="8">
+
+<li>Buktikan Minkowski menggunakan Hölder (bila sudah memahami analisis).</li>
+
+<li>Carilah satu soal OSN yang menggunakan Schur atau Muirhead.</li>
+
+</ol>
+
+<h3>Level ★★★★★</h3>
+
+<ol start="10">
+
+<li>Selesaikan satu soal IMO yang menggunakan salah satu ketimpangan pada bab ini, kemudian jelaskan alasan pemilihan metodenya.</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Target Setelah Bab Ini</h2>
+
+<ul>
+
+<li>Memahami penggunaan Schur.</li>
+
+<li>Mengenali konsep majorization pada Muirhead.</li>
+
+<li>Menggunakan Nesbitt pada bentuk pecahan tiga variabel.</li>
+
+<li>Memahami hubungan Hölder dan Cauchy.</li>
+
+<li>Menggunakan Minkowski pada norma dan vektor.</li>
+
+<li>Menerapkan Bernoulli pada limit dan deret.</li>
+
+</ul>
+
+</section>
+
+<div class="button-group">
+
+<a href="olimpiade1.html" class="btn">
+⬅ Bab Sebelumnya
+</a>
+
+<a href="olimpiade3.html" class="btn">
+Lanjut ke Bab 3 ➜
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
