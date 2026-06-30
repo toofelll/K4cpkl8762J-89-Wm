@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 6 | Geometri Koordinat & Analitik</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📐 GEOMETRI</h1>
+
+<p>Part 6 • Geometri Koordinat & Analitik</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Ketika Aljabar Bertemu Geometri</h2>
+
+<p>
+
+Selama ini kita mempelajari geometri secara "murni": menggambar,
+mengukur, dan membuktikan dengan logika deduktif. Sekarang kita
+akan menggabungkan <b>aljabar</b> dengan <b>geometri</b>—dua cabang
+matematika yang tampak berbeda tapi sebenarnya saudara kembar.
+
+</p>
+
+<p>
+
+<b>Geometri analitik</b> (disebut juga geometri koordinat) ditemukan oleh
+<b>René Descartes</b> pada abad ke-17. Ide revolusionernya sederhana:
+<b>setiap titik pada bidang bisa dinyatakan dengan sepasang bilangan (x, y)</b>.
+Dengan ide ini, semua objek geometri—garis, lingkaran, parabola—bisa
+dinyatakan sebagai <b>persamaan aljabar</b>. Pembuktian geometri yang tadinya
+rumit kini bisa dilakukan dengan manipulasi aljabar.
+
+</p>
+
+<p>
+
+Ini adalah lompatan paradigma yang melahirkan matematika modern.
+Dari sinilah lahir kalkulus, fisika matematis, dan semua sains kuantitatif.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami sistem koordinat Kartesius dan bagaimana titik dinyatakan.</li>
+
+<li>Menguasai rumus jarak antara dua titik dan titik tengah.</li>
+
+<li>Memahami gradien sebagai ukuran kemiringan garis.</li>
+
+<li>Menguasai berbagai bentuk persamaan garis lurus.</li>
+
+<li>Mampu menghitung jarak titik ke garis.</li>
+
+<li>Memahami persamaan lingkaran dan kedudukan dua lingkaran.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: KOORDINAT KARTESIUS ==================== -->
+
+<div class="section">
+
+<h2>1. Sistem Koordinat Kartesius — Peta untuk Bidang Datar</h2>
+
+<p>
+
+<b>Sistem koordinat Kartesius</b> adalah cara memberi "alamat" pada setiap titik
+di bidang datar menggunakan dua bilangan: <b>x</b> (horizontal) dan <b>y</b> (vertikal).
+
+</p>
+
+<div class="summary">
+
+Bidang Kartesius terdiri dari:<br><br>
+
+<b>Sumbu X:</b> garis horizontal (kiri-kanan).<br>
+
+<b>Sumbu Y:</b> garis vertikal (atas-bawah).<br>
+
+<b>Titik asal O(0,0):</b> perpotongan sumbu X dan Y.<br><br>
+
+Setiap titik dinyatakan sebagai <b>P(x, y)</b>:<br>
+
+x = jarak horizontal dari sumbu Y (absis).<br>
+
+y = jarak vertikal dari sumbu X (ordinat).
+
+</div>
+
+<p>
+
+<b>Mengapa disebut "Kartesius"?</b> Dari nama Latin René Descartes:
+<i>Renatus Cartesius</i>. Descartes menemukan sistem ini pada tahun 1637
+dalam bukunya <i>Discours de la Méthode</i>. Konon, idenya muncul
+saat ia melihat lalat merayap di langit-langit kamarnya yang berpola kotak-kotak.
+Ia berpikir: posisi lalat itu bisa dinyatakan dengan dua angka—jarak dari dinding kiri
+dan jarak dari dinding depan.
+
+</p>
+
+<hr>
+
+<h3>1.1 Empat Kuadran — Membagi Bidang Jadi 4 Wilayah</h3>
+
+<div class="summary">
+
+Sumbu X dan Y membagi bidang menjadi <b>4 kuadran</b>:<br><br>
+
+<b>Kuadran I:</b> x > 0, y > 0 (kanan atas).<br>
+
+<b>Kuadran II:</b> x < 0, y > 0 (kiri atas).<br>
+
+<b>Kuadran III:</b> x < 0, y < 0 (kiri bawah).<br>
+
+<b>Kuadran IV:</b> x > 0, y < 0 (kanan bawah).<br><br>
+
+Titik pada sumbu (x=0 atau y=0) tidak termasuk kuadran manapun.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: JARAK DUA TITIK ==================== -->
+
+<div class="section">
+
+<h2>2. Jarak Antara Dua Titik — Teorema Pythagoras di Bidang Koordinat</h2>
+
+<div class="summary">
+
+Jarak antara titik A(x₁, y₁) dan B(x₂, y₂) adalah:<br><br>
+
+<b>|AB| = √[(x₂ - x₁)² + (y₂ - y₁)²]</b>
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan dua titik A(x₁, y₁) dan B(x₂, y₂).<br><br>
+
+Tarik garis horizontal dari A ke kanan sejauh (x₂ - x₁).<br>
+
+Tarik garis vertikal dari sana ke atas sejauh (y₂ - y₁) sampai di B.<br><br>
+
+Kedua garis ini membentuk <b>segitiga siku-siku</b> dengan:<br>
+
+- Kaki horizontal = |x₂ - x₁|.<br>
+
+- Kaki vertikal = |y₂ - y₁|.<br>
+
+- Hipotenusa = jarak AB.<br><br>
+
+Dengan Teorema Pythagoras:<br>
+
+AB² = (x₂ - x₁)² + (y₂ - y₁)²<br>
+
+AB = √[(x₂ - x₁)² + (y₂ - y₁)²] ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung jarak antara A(1, 2) dan B(4, 6).<br><br>
+
+AB = √[(4-1)² + (6-2)²] = √[9 + 16] = √25 = <b>5</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: TITIK TENGAH ==================== -->
+
+<div class="section">
+
+<h2>3. Titik Tengah — Rata-Rata Koordinat</h2>
+
+<div class="summary">
+
+Titik tengah M dari ruas garis AB dengan A(x₁, y₁) dan B(x₂, y₂) adalah:<br><br>
+
+<b>M = ((x₁ + x₂)/2, (y₁ + y₂)/2)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa rata-rata?</b>
+
+</p>
+
+<div class="example">
+
+Titik tengah adalah titik yang membagi ruas garis menjadi dua bagian
+<b>sama panjang</b>. Secara intuitif, titik tengah harus berada
+"di tengah-tengah" dalam arah horizontal dan vertikal.<br><br>
+
+Titik tengah horizontal = rata-rata x₁ dan x₂.<br>
+
+Titik tengah vertikal = rata-rata y₁ dan y₂.<br><br>
+
+Pembuktian formal: AM = MB. Substitusi rumus jarak, kuadratkan,
+dan akan terbukti bahwa M dengan koordinat rata-rata memenuhi AM = MB. ✅
+
+</div>
+
+<div class="example">
+
+A(2, 5) dan B(8, 11).<br><br>
+
+M = ((2+8)/2, (5+11)/2) = (5, 8).<br><br>
+
+Cek: |AM| = √[(5-2)² + (8-5)²] = √[9+9] = √18 = 3√2.<br>
+
+|MB| = √[(8-5)² + (11-8)²] = √[9+9] = √18 = 3√2. <b>Sama!</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: GRADIEN ==================== -->
+
+<div class="section">
+
+<h2>4. Gradien — Ukuran Kemiringan Garis</h2>
+
+<div class="summary">
+
+<b>Gradien (m)</b> adalah ukuran "kecuraman" suatu garis.<br><br>
+
+m = (y₂ - y₁)/(x₂ - x₁) = Δy/Δx = tan θ<br><br>
+
+Δy = perubahan vertikal (rise).<br>
+
+Δx = perubahan horizontal (run).<br>
+
+θ = sudut antara garis dan sumbu X positif.
+
+</div>
+
+<p>
+
+<b>Mengapa m = tan θ?</b>
+
+</p>
+
+<div class="example">
+
+Dalam segitiga siku-siku yang dibentuk oleh garis dan sumbu X:<br><br>
+
+tan θ = sisi depan / sisi samping = Δy / Δx = m. ✅<br><br>
+
+Jadi, gradien adalah <b>tangen sudut kemiringan</b> garis.
+
+</div>
+
+<hr>
+
+<h3>4.1 Interpretasi Gradien</h3>
+
+<div class="summary">
+
+<b>m > 0:</b> garis naik dari kiri ke kanan.<br>
+
+<b>m < 0:</b> garis turun dari kiri ke kanan.<br>
+
+<b>m = 0:</b> garis horizontal (sejajar sumbu X).<br>
+
+<b>m tak terdefinisi:</b> garis vertikal (sejajar sumbu Y, Δx = 0).<br><br>
+
+<b>|m| besar:</b> garis curam. <b>|m| kecil:</b> garis landai.
+
+</div>
+
+<div class="example">
+
+m = 2 → setiap 1 langkah ke kanan, naik 2 langkah.<br>
+
+m = -1/2 → setiap 2 langkah ke kanan, turun 1 langkah.<br>
+
+m = 0 → tidak naik maupun turun (datar).<br>
+
+m = ∞ → garis vertikal (Δx = 0, tidak bisa dihitung).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: PERSAMAAN GARIS ==================== -->
+
+<div class="section">
+
+<h2>5. Persamaan Garis Lurus — Empat Bentuk, Satu Garis</h2>
+
+<p>
+
+Satu garis lurus bisa dinyatakan dalam <b>empat bentuk</b> yang berbeda.
+Masing-masing punya kelebihan dalam situasi tertentu.
+
+</p>
+
+<hr>
+
+<h3>5.1 Bentuk Gradien-Titik: y - y₁ = m(x - x₁)</h3>
+
+<div class="summary">
+
+Digunakan jika diketahui <b>gradien m</b> dan <b>satu titik (x₁, y₁)</b> yang dilalui.
+
+</div>
+
+<p>
+
+<b>Mengapa bentuknya seperti itu?</b>
+
+</p>
+
+<div class="example">
+
+Ambil sembarang titik (x, y) pada garis.<br><br>
+
+Gradien dari (x₁, y₁) ke (x, y) harus sama dengan m:<br>
+
+(y - y₁)/(x - x₁) = m<br>
+
+y - y₁ = m(x - x₁). ✅
+
+</div>
+
+<div class="example">
+
+Garis dengan m = 3 melalui titik (2, 1):<br><br>
+
+y - 1 = 3(x - 2)<br>
+
+y - 1 = 3x - 6<br>
+
+y = 3x - 5 ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Bentuk Gradien-Intersep: y = mx + c</h3>
+
+<div class="summary">
+
+Digunakan jika diketahui <b>gradien m</b> dan <b>titik potong sumbu Y (0, c)</b>.<br><br>
+
+c = intersep Y (nilai y saat x = 0).
+
+</div>
+
+<p>
+
+<b>Ini adalah bentuk paling populer</b> karena langsung menunjukkan
+dua informasi penting: kemiringan (m) dan titik potong sumbu Y (c).
+
+</p>
+
+<div class="example">
+
+y = 2x + 3 → m = 2, memotong sumbu Y di (0, 3).<br>
+
+y = -x + 5 → m = -1, memotong sumbu Y di (0, 5).
+
+</div>
+
+<hr>
+
+<h3>5.3 Bentuk Umum: Ax + By + C = 0</h3>
+
+<div class="summary">
+
+Bentuk paling umum dari persamaan garis. A, B, C adalah konstanta,
+dengan A dan B tidak keduanya nol.
+
+</div>
+
+<div class="example">
+
+2x - 3y + 6 = 0<br><br>
+
+Ubah ke y = mx + c: 3y = 2x + 6 → y = (2/3)x + 2.<br>
+
+Jadi, m = 2/3, intersep Y = 2.
+
+</div>
+
+<hr>
+
+<h3>5.4 Hubungan Dua Garis: Sejajar dan Tegak Lurus</h3>
+
+<div class="summary">
+
+<b>Sejajar (∥):</b> m₁ = m₂ (gradien sama).<br><br>
+
+<b>Tegak lurus (⟂):</b> m₁ × m₂ = <b>-1</b>
+
+</div>
+
+<p>
+
+<b>Mengapa m₁ × m₂ = -1 untuk garis tegak lurus?</b>
+
+</p>
+
+<div class="example">
+
+Dua garis tegak lurus membentuk sudut 90°.<br><br>
+
+Misalkan garis 1 punya sudut θ₁, garis 2 punya sudut θ₂.<br>
+
+θ₂ = θ₁ + 90°.<br><br>
+
+m₁ = tan θ₁, m₂ = tan(θ₁ + 90°) = -cot θ₁ = -1/tan θ₁ = -1/m₁.<br><br>
+
+Maka m₁ × m₂ = m₁ × (-1/m₁) = <b>-1</b>. ✅
+
+</div>
+
+<div class="example">
+
+Garis g: y = 3x + 1 (m₁ = 3).<br>
+
+Garis h yang ⟂ g: m₂ = -1/3.<br><br>
+
+Garis h melalui (0, 2): y - 2 = (-1/3)(x - 0) → y = (-1/3)x + 2. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: JARAK TITIK KE GARIS ==================== -->
+
+<div class="section">
+
+<h2>6. Jarak Titik ke Garis — Rumus yang Sering Dipakai</h2>
+
+<div class="summary">
+
+Jarak dari titik P(x₁, y₁) ke garis Ax + By + C = 0 adalah:<br><br>
+
+<b>d = |Ax₁ + By₁ + C| / √(A² + B²)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Intuisi Geometris</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan garis Ax + By + C = 0. Jarak dari titik P ke garis adalah
+<b>panjang ruas garis terpendek</b> yang menghubungkan P ke garis tersebut—
+yaitu ruas garis yang <b>tegak lurus</b> terhadap garis.<br><br>
+
+Pembuktiannya melibatkan proyeksi vektor dan trigonometri, tapi intuisinya:<br>
+
+- Pembilang |Ax₁ + By₁ + C| adalah "seberapa besar" titik P melanggar persamaan garis
+  (kalau P tepat di garis, nilainya 0).<br>
+
+- Penyebut √(A² + B²) adalah faktor normalisasi agar satuannya menjadi jarak sejati.<br><br>
+
+Rumus ini adalah generalisasi dari rumus jarak titik ke titik.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung jarak titik P(3, 4) ke garis 3x + 4y - 10 = 0.<br><br>
+
+d = |3(3) + 4(4) - 10| / √(3² + 4²)<br>
+
+= |9 + 16 - 10| / √25<br>
+
+= |15| / 5<br>
+
+= <b>3 satuan</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 7: PERSAMAAN LINGKARAN ==================== -->
+
+<div class="section">
+
+<h2>7. Persamaan Lingkaran — Lingkaran dalam Bahasa Aljabar</h2>
+
+<div class="summary">
+
+<b>Bentuk baku:</b> (x - h)² + (y - k)² = r²<br><br>
+
+Pusat: P(h, k). Jari-jari: r.<br><br>
+
+<b>Bentuk umum:</b> x² + y² + Ax + By + C = 0<br><br>
+
+Pusat: (-A/2, -B/2). Jari-jari: r = √(A²/4 + B²/4 - C).
+
+</div>
+
+<p>
+
+<b>Mengapa (x - h)² + (y - k)² = r²?</b>
+
+</p>
+
+<div class="example">
+
+Lingkaran adalah himpunan semua titik yang berjarak <b>r</b> dari pusat (h, k).<br><br>
+
+Ambil sembarang titik (x, y) pada lingkaran.<br>
+
+Jarak dari (x, y) ke (h, k) harus = r.<br><br>
+
+Dengan rumus jarak: √[(x - h)² + (y - k)²] = r<br>
+
+Kuadratkan: <b>(x - h)² + (y - k)² = r²</b>. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Tentukan pusat dan jari-jari lingkaran x² + y² - 6x + 8y - 11 = 0.<br><br>
+
+Ubah ke bentuk baku dengan melengkapkan kuadrat:<br><br>
+
+(x² - 6x + 9) + (y² + 8y + 16) = 11 + 9 + 16<br>
+
+(x - 3)² + (y + 4)² = 36<br><br>
+
+Pusat: (3, -4). Jari-jari: 6. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 8: KEDUDUKAN DUA LINGKARAN ==================== -->
+
+<div class="section">
+
+<h2>8. Kedudukan Dua Lingkaran — Berapa Titik Potongnya?</h2>
+
+<p>
+
+Dua lingkaran bisa memiliki <b>0, 1, 2, atau tak hingga</b> titik potong,
+tergantung jarak pusat dan jari-jarinya.
+
+</p>
+
+<div class="summary">
+
+Misalkan dua lingkaran: pusat P₁, P₂; jari-jari r₁, r₂; jarak pusat d = |P₁P₂|.<br><br>
+
+<b>1. Terpisah (tidak berpotongan):</b> d > r₁ + r₂<br>
+
+<b>2. Bersinggungan luar:</b> d = r₁ + r₂ (1 titik potong)<br>
+
+<b>3. Berpotongan di dua titik:</b> |r₁ - r₂| < d < r₁ + r₂<br>
+
+<b>4. Bersinggungan dalam:</b> d = |r₁ - r₂| (1 titik potong, lingkaran kecil di dalam)<br>
+
+<b>5. Sepusat (konsentris):</b> d = 0 (0 titik potong jika r₁ ≠ r₂)<br>
+
+<b>6. Berimpit:</b> d = 0 dan r₁ = r₂ (tak hingga titik potong)
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Lingkaran A: pusat (0,0), r=5. Lingkaran B: pusat (8,0), r=3.<br><br>
+
+d = 8. r₁ + r₂ = 8. d = r₁ + r₂ → <b>bersinggungan luar</b> di (5, 0). ✅<br><br>
+
+<b>Soal:</b> Lingkaran A: pusat (0,0), r=10. Lingkaran B: pusat (6,0), r=3.<br><br>
+
+d = 6. |r₁ - r₂| = 7. r₁ + r₂ = 13. 7 < 6 < 13? <b>Tidak!</b><br>
+
+Karena d < |r₁ - r₂| → lingkaran kecil <b>di dalam</b> lingkaran besar tanpa bersentuhan.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 6</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Jarak dua titik:</b> √[(x₂-x₁)² + (y₂-y₁)²] (Pythagoras di bidang koordinat).</li>
+
+<li><b>Titik tengah:</b> ((x₁+x₂)/2, (y₁+y₂)/2) (rata-rata koordinat).</li>
+
+<li><b>Gradien:</b> m = Δy/Δx = tan θ. m > 0 naik, m < 0 turun, m = 0 datar.</li>
+
+<li><b>Persamaan garis:</b> y-y₁=m(x-x₁), y=mx+c, Ax+By+C=0.</li>
+
+<li><b>Sejajar:</b> m₁=m₂. <b>Tegak lurus:</b> m₁×m₂=-1.</li>
+
+<li><b>Jarak titik ke garis:</b> d = |Ax₁+By₁+C|/√(A²+B²).</li>
+
+<li><b>Lingkaran:</b> (x-h)²+(y-k)²=r². Pusat (h,k), jari-jari r.</li>
+
+<li><b>Kedudukan dua lingkaran:</b> tergantung jarak pusat (d) vs r₁+r₂ dan |r₁-r₂|.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Jarak dua titik = Pythagoras.</b> Jangan hafal rumusnya sebagai "magic formula".
+Ingat selalu: ini cuma Pythagoras di bidang koordinat.
+
+</li>
+
+<li>
+
+<b>Gradien garis tegak lurus: balik dan negatifkan.</b>
+m₂ = -1/m₁. Kalau m₁ = 3 → m₂ = -1/3. Kalau m₁ = -2/5 → m₂ = 5/2.
+
+</li>
+
+<li>
+
+<b>Untuk mencari persamaan garis, cukup 2 informasi:</b>
+(1) gradien + satu titik, atau (2) dua titik yang dilalui.
+
+</li>
+
+<li>
+
+<b>Jarak titik ke garis: jangan lupa nilai mutlak dan akar.</b>
+Pembilang pakai |...| (jarak selalu positif). Penyebut pakai √(A²+B²).
+
+</li>
+
+<li>
+
+<b>Lingkaran: lengkapkan kuadrat untuk cari pusat dan r.</b>
+Dari bentuk umum x²+y²+Ax+By+C=0, ubah ke (x-h)²+(y-k)²=r².
+
+</li>
+
+<li>
+
+<b>Gambar dulu sebelum menghitung.</b> Visualisasi posisi titik, garis, dan lingkaran
+membantu mencegah kesalahan perhitungan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri5.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri7.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
