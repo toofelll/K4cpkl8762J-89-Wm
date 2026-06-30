@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 10 | Teorema Ceva, Menelaus, Stewart & Inversi Geometri</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🏆 GEOMETRI</h1>
+
+<p>Part 10 • Teorema Ceva, Menelaus, Stewart & Inversi Geometri</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Senjata Rahasia Geometri Kompetitif</h2>
+
+<p>
+
+Ini adalah bab pamungkas Geometri. Di sini kita akan mempelajari
+<b>empat teorema tingkat lanjut</b> yang menjadi senjata andalan
+dalam soal-soal geometri kompetitif. Teorema-teorema ini mungkin
+tidak diajarkan di kelas biasa, tapi mereka adalah kunci untuk
+menyelesaikan soal-soal sulit dengan elegan.
+
+</p>
+
+<p>
+
+<b>Teorema Ceva dan Menelaus</b> adalah pasangan yang saling melengkapi—
+satu untuk membuktikan tiga garis <b>berpotongan di satu titik</b> (konkuren),
+satunya untuk membuktikan tiga titik <b>segaris</b> (kolinear).
+
+</p>
+
+<p>
+
+<b>Teorema Stewart</b> adalah generalisasi dari Teorema Pythagoras
+untuk segitiga dengan sebuah cevian (garis dari sudut ke sisi depan).
+
+</p>
+
+<p>
+
+<b>Inversi Geometri</b> adalah teknik transformasi canggih yang
+mengubah lingkaran menjadi garis dan sebaliknya, menyederhanakan
+masalah yang tadinya rumit menjadi jauh lebih mudah.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami dan mampu menggunakan Teorema Ceva untuk membuktikan konkurensi.</li>
+
+<li>Memahami dan mampu menggunakan Teorema Menelaus untuk membuktikan kolinearitas.</li>
+
+<li>Menguasai Teorema Stewart untuk menghitung panjang cevian.</li>
+
+<li>Mengenal konsep inversi geometri dan bagaimana ia menyederhanakan masalah.</li>
+
+<li>Mampu memilih teorema yang tepat untuk jenis soal yang dihadapi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: TEOREMA CEVA ==================== -->
+
+<div class="section">
+
+<h2>1. Teorema Ceva — Tiga Garis Bertemu di Satu Titik</h2>
+
+<div class="summary">
+
+<b>Teorema Ceva (ditemukan oleh Giovanni Ceva, 1678):</b><br><br>
+
+Dalam segitiga ABC, titik D pada BC, E pada CA, F pada AB.<br>
+
+Garis AD, BE, CF <b>berpotongan di satu titik (konkuren)</b>
+
+<b>jika dan hanya jika:</b><br><br>
+
+<b>(BD/DC) × (CE/EA) × (AF/FB) = 1</b>
+
+</div>
+
+<p>
+
+<b>Mengapa perkaliannya = 1? — Intuisi</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan tiga garis AD, BE, CF bertemu di titik P di dalam segitiga.<br><br>
+
+Perhatikan segitiga ABD dan ADC: mereka memiliki tinggi yang sama
+(dari A ke BC), sehingga perbandingan luasnya = BD/DC.<br><br>
+
+Dengan cara yang sama, kita bisa membandingkan luas enam segitiga kecil
+yang dibentuk oleh titik P. Setelah disusun dan disederhanakan,
+perkalian ketiga perbandingan tersebut tepat = 1.<br><br>
+
+<b>Ini bukan kebetulan—ini adalah konsekuensi dari kekekalan "rasio luas"
+saat garis-garis membagi segitiga.</b>
+
+</div>
+
+<hr>
+
+<h3>Pembuktian Teorema Ceva — Menggunakan Luas</h3>
+
+<div class="example">
+
+Misalkan AD, BE, CF bertemu di titik P.<br><br>
+
+BD/DC = Luas △ABD / Luas △ADC = Luas △PBD / Luas △PDC.<br>
+
+Dengan sifat perbandingan: BD/DC = (Luas △ABD - Luas △PBD)/(Luas △ADC - Luas △PDC) = Luas △APB / Luas △APC.<br><br>
+
+Dengan cara yang sama:<br>
+
+CE/EA = Luas △BPC / Luas △APB.<br>
+
+AF/FB = Luas △APC / Luas △BPC.<br><br>
+
+Kalikan ketiganya:<br>
+
+(BD/DC) × (CE/EA) × (AF/FB) = (Luas △APB/Luas △APC) × (Luas △BPC/Luas △APB) × (Luas △APC/Luas △BPC) = <b>1</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh Aplikasi Teorema Ceva</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dalam △ABC, titik D pada BC, E pada CA, F pada AB.<br>
+
+BD = 4, DC = 5. CE = 3, EA = 4. AF = 2, FB = ?<br><br>
+
+Syarat konkuren: (4/5) × (3/4) × (2/FB) = 1<br>
+
+(12/20) × (2/FB) = 1<br>
+
+(3/5) × (2/FB) = 1<br>
+
+6/(5FB) = 1<br>
+
+FB = 6/5 = <b>1,2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Teorema Ceva untuk Garis Berat, Garis Tinggi, dan Garis Bagi</h3>
+
+<div class="example">
+
+<b>Garis berat:</b> D, E, F adalah titik tengah → BD=DC, CE=EA, AF=FB → (1)(1)(1) = 1. Terbukti konkuren di titik berat! ✅<br><br>
+
+<b>Garis bagi:</b> BD/DC = AB/AC, CE/EA = BC/BA, AF/FB = CA/CB.<br>
+
+(AB/AC) × (BC/BA) × (CA/CB) = 1. Terbukti konkuren di titik bagi! ✅<br><br>
+
+<b>Garis tinggi:</b> BD/DC = (AB cos B)/(AC cos C), dst. Juga menghasilkan 1. Terbukti konkuren! ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: TEOREMA MENELAUS ==================== -->
+
+<div class="section">
+
+<h2>2. Teorema Menelaus — Tiga Titik Segaris</h2>
+
+<div class="summary">
+
+<b>Teorema Menelaus (ditemukan oleh Menelaus dari Alexandria, sekitar 100 M):</b><br><br>
+
+Dalam segitiga ABC, titik D pada BC (atau perpanjangannya),<br>
+
+E pada CA (atau perpanjangannya), F pada AB (atau perpanjangannya).<br>
+
+D, E, F <b>segaris (kolinear)</b> <b>jika dan hanya jika:</b><br><br>
+
+<b>(BD/DC) × (CE/EA) × (AF/FB) = 1</b><br><br>
+
+<i>Dengan catatan: perbandingan bertanda (negatif jika titik di perpanjangan).</i>
+
+</div>
+
+<p>
+
+<b>Perhatikan! Rumusnya PERSIS SAMA dengan Ceva!</b>
+Bedanya: di Ceva, D, E, F pada sisi segitiga (garis konkuren).
+Di Menelaus, D, E, F pada sisi atau <b>perpanjangannya</b> (titik segaris).
+
+</p>
+
+<p>
+
+<b>Mengapa bisa sama rumusnya tapi beda makna?</b>
+
+</p>
+
+<div class="example">
+
+Ini adalah dualitas yang indah dalam geometri!<br><br>
+
+Di Ceva: perbandingan <b>positif</b> (titik di dalam sisi).<br>
+
+Di Menelaus: perbandingan <b>bisa negatif</b> (titik di luar sisi).<br><br>
+
+Untuk Menelaus, jika titik di perpanjangan, perbandingannya <b>negatif</b>.
+Ini yang membedakan dari Ceva.
+
+</div>
+
+<hr>
+
+<h3>Pembuktian Teorema Menelaus — Menggunakan Kesebangunan</h3>
+
+<div class="example">
+
+Misalkan garis transversal memotong BC di D, CA di E, dan AB di F.<br><br>
+
+Tarik garis melalui C sejajar AB, memotong garis DEF di titik X.<br><br>
+
+△CDX ∼ △BDF → BD/DC = BF/CX.<br>
+
+△AEF ∼ △CEX → CE/EA = CX/AF.<br><br>
+
+Kalikan: (BD/DC) × (CE/EA) = (BF/CX) × (CX/AF) = BF/AF.<br><br>
+
+Maka: (BD/DC) × (CE/EA) × (AF/BF) = 1. ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh Aplikasi Teorema Menelaus</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dalam △ABC, titik D pada perpanjangan BC melewati B,
+E pada CA, dan F pada AB sedemikian sehingga D, E, F segaris.<br>
+
+BD = 2 (B di antara C dan D), DC = 3. CE = 4, EA = 1. AF = 1. Cari FB.<br><br>
+
+Perhatikan: D di perpanjangan BC, sehingga BD bertanda negatif.<br>
+
+BD/DC = -2/3.<br><br>
+
+(-2/3) × (4/1) × (1/FB) = 1<br>
+
+(-8/3) × (1/FB) = 1<br>
+
+-8/(3FB) = 1<br>
+
+FB = -8/3<br><br>
+
+Tanda negatif artinya F di perpanjangan AB melewati B.<br>
+
+Jarak FB = <b>8/3</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: TEOREMA STEWART ==================== -->
+
+<div class="section">
+
+<h2>3. Teorema Stewart — Generalisasi Pythagoras</h2>
+
+<div class="summary">
+
+<b>Teorema Stewart (ditemukan oleh Matthew Stewart, 1746):</b><br><br>
+
+Dalam segitiga ABC, titik D pada sisi BC.<br>
+
+Misalkan AB = c, AC = b, BC = a, AD = d, BD = m, DC = n, dengan a = m + n.<br><br>
+
+<b>c²·n + b²·m = a(d² + m·n)</b><br><br>
+
+Atau bentuk yang lebih mudah diingat:<br>
+
+<b>b²·m + c²·n = a(d² + m·n)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ini generalisasi Pythagoras?</b>
+
+</p>
+
+<div class="example">
+
+Jika AD adalah garis tinggi (AD ⟂ BC), maka d² + mn = ...?<br><br>
+
+Untuk garis tinggi, d² = b² - n² = c² - m², dan mn = ...<br>
+
+Teorema Stewart menyederhanakan menjadi hubungan Pythagoras
+ketika d adalah garis tinggi.<br><br>
+
+<b>Bukti:</b> Gunakan aturan cosinus pada △ABD dan △ADC,
+lalu eliminasi cos ∠ADB (karena cos(180°-θ) = -cos θ).
+
+</div>
+
+<hr>
+
+<h3>Pembuktian Teorema Stewart — Dua Kali Aturan Cosinus</h3>
+
+<div class="example">
+
+Pada △ABD: c² = d² + m² - 2dm·cos ∠ADB ...(1)<br><br>
+
+Pada △ADC: b² = d² + n² - 2dn·cos ∠ADC ...(2)<br><br>
+
+Karena D pada BC, ∠ADB + ∠ADC = 180°, maka cos ∠ADC = -cos ∠ADB.<br><br>
+
+Dari (1): cos ∠ADB = (d² + m² - c²)/(2dm).<br>
+
+Dari (2): cos ∠ADC = (d² + n² - b²)/(2dn) = -(d² + m² - c²)/(2dm).<br><br>
+
+Samakan dan selesaikan:<br>
+
+(d² + n² - b²)/(2dn) = -(d² + m² - c²)/(2dm)<br>
+
+m(d² + n² - b²) = -n(d² + m² - c²)<br>
+
+md² + mn² - mb² = -nd² - nm² + nc²<br>
+
+d²(m + n) + mn(m + n) = b²m + c²n<br>
+
+a(d² + mn) = b²m + c²n. ✅
+
+</div>
+
+<hr>
+
+<h3>Contoh Aplikasi Teorema Stewart</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dalam △ABC, AB = c = 10, AC = b = 8, BC = a = 12.
+Titik D pada BC dengan BD = m = 5, DC = n = 7. Cari panjang AD.<br><br>
+
+Gunakan Stewart: b²m + c²n = a(d² + mn)<br><br>
+
+8²(5) + 10²(7) = 12(d² + 5·7)<br>
+
+64(5) + 100(7) = 12(d² + 35)<br>
+
+320 + 700 = 12(d² + 35)<br>
+
+1020 = 12d² + 420<br>
+
+600 = 12d²<br>
+
+d² = 50<br>
+
+d = <b>5√2 ≈ 7,07</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kasus Khusus Teorema Stewart</h3>
+
+<div class="example">
+
+<b>1. Garis Berat (m = n = a/2):</b><br>
+
+Stewart menghasilkan rumus panjang garis berat:<br>
+
+d² = (2b² + 2c² - a²)/4<br><br>
+
+<b>2. Garis Bagi (m/n = c/b):</b><br>
+
+Stewart menghasilkan rumus panjang garis bagi:<br>
+
+d² = bc[1 - (a/(b+c))²]<br><br>
+
+<b>3. Garis Tinggi (d ⟂ BC):</b><br>
+
+Stewart menyederhanakan menjadi Teorema Pythagoras.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: INVERSI GEOMETRI ==================== -->
+
+<div class="section">
+
+<h2>4. Inversi Geometri — Transformasi yang Mengubah Lingkaran Jadi Garis</h2>
+
+<p>
+
+<b>Inversi geometri</b> adalah transformasi bidang yang "membalik"
+titik-titik terhadap suatu lingkaran acuan. Bayangkan dunia
+yang dipantulkan melalui cermin melengkung—itulah inversi.
+
+</p>
+
+<div class="summary">
+
+<b>Inversi terhadap lingkaran dengan pusat O dan jari-jari R:</b><br><br>
+
+Titik P (≠ O) dipetakan ke titik P' pada sinar OP sedemikian sehingga:<br><br>
+
+<b>OP × OP' = R²</b><br><br>
+
+P' disebut <b>invers</b> dari P terhadap lingkaran (O, R).
+
+</div>
+
+<p>
+
+<b>Mengapa ini berguna?</b>
+
+</p>
+
+<p>
+
+Inversi memiliki sifat ajaib: ia mengubah <b>lingkaran yang melalui pusat O
+menjadi garis lurus</b>, dan <b>garis yang tidak melalui O menjadi lingkaran
+yang melalui O</b>. Dengan inversi, masalah yang melibatkan banyak lingkaran
+bisa disederhanakan menjadi masalah garis lurus yang jauh lebih mudah.
+
+</p>
+
+<hr>
+
+<h3>4.1 Sifat Fundamental Inversi</h3>
+
+<div class="summary">
+
+<b>1. Invers dari invers = titik asli:</b> (P')' = P.<br><br>
+
+<b>2. Titik di lingkaran inversi tetap:</b> OP = R → P = P'.<br><br>
+
+<b>3. Garis melalui O ↔ Garis melalui O (dibalik, tapi tetap garis).</b><br><br>
+
+<b>4. Garis TIDAK melalui O ↔ Lingkaran melalui O.</b><br><br>
+
+<b>5. Lingkaran melalui O ↔ Garis TIDAK melalui O.</b><br><br>
+
+<b>6. Lingkaran tidak melalui O ↔ Lingkaran tidak melalui O.</b><br><br>
+
+<b>7. Sudut dipertahankan:</b> Inversi adalah transformasi <b>konformal</b>
+(mempertahankan besar sudut antara dua kurva).
+
+</div>
+
+<hr>
+
+<h3>4.2 Inversi dalam Koordinat</h3>
+
+<div class="summary">
+
+Untuk inversi terhadap lingkaran pusat O(0,0) dan jari-jari R:<br><br>
+
+<b>P(x, y) → P'(R²·x/(x²+y²), R²·y/(x²+y²))</b>
+
+</div>
+
+<div class="example">
+
+Inversi terhadap lingkaran satuan (R=1) dari titik P(2, 0):<br><br>
+
+x²+y² = 4. P' = (1·2/4, 1·0/4) = <b>(0,5, 0)</b>.<br><br>
+
+Verifikasi: OP = 2, OP' = 0,5. OP × OP' = 1 = R². ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Aplikasi Inversi — Menyederhanakan Soal</h3>
+
+<div class="example">
+
+<b>Masalah klasik:</b> Dua lingkaran bersinggungan. Buktikan bahwa
+garis singgung persekutuan melalui titik potong tertentu.<br><br>
+
+Dengan inversi yang berpusat di titik singgung, kedua lingkaran
+berubah menjadi <b>dua garis sejajar</b>! Masalahnya menjadi
+jauh lebih sederhana—membuktikan sesuatu tentang dua garis sejajar
+jauh lebih mudah daripada dua lingkaran.<br><br>
+
+Setelah dibuktikan di dunia inversi, kita kembalikan (invers lagi)
+untuk mendapatkan bukti di dunia asli.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 10</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Teorema Ceva:</b> AD, BE, CF konkuren ⇔ (BD/DC)×(CE/EA)×(AF/FB) = 1. Membuktikan garis berpotongan di satu titik.</li>
+
+<li><b>Teorema Menelaus:</b> D,E,F segaris ⇔ (BD/DC)×(CE/EA)×(AF/FB) = 1 (perbandingan bertanda). Membuktikan titik segaris.</li>
+
+<li><b>Ceva vs Menelaus:</b> Rumus sama, beda di tanda (+ untuk Ceva, bisa - untuk Menelaus).</li>
+
+<li><b>Teorema Stewart:</b> b²m + c²n = a(d² + mn). Generalisasi Pythagoras untuk sebarang cevian.</li>
+
+<li><b>Inversi Geometri:</b> OP × OP' = R². Mengubah lingkaran↔garis, sudut tetap.</li>
+
+<li><b>Kasus khusus Stewart:</b> Garis berat (d² = (2b²+2c²-a²)/4), garis bagi, garis tinggi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Ceva = Konkuren (bertemu), Menelaus = Kolinear (segaris).</b>
+Rumusnya sama, jadi jangan tertukar maknanya. Lihat posisi titik: di sisi (Ceva) atau di perpanjangan (Menelaus).
+
+</li>
+
+<li>
+
+<b>Untuk Ceva, semua perbandingan positif.</b>
+Untuk Menelaus, jika titik di perpanjangan, beri tanda negatif.
+
+</li>
+
+<li>
+
+<b>Stewart = alternatif Pythagoras.</b>
+Kalau kamu tahu panjang sisi segitiga dan posisi titik di sisi depan,
+Stewart langsung kasih panjang cevian tanpa perlu cari sudut.
+
+</li>
+
+<li>
+
+<b>Garis berat, bagi, tinggi: semua kasus khusus Stewart.</b>
+Kamu bisa turunkan sendiri rumus panjangnya dari Stewart.
+
+</li>
+
+<li>
+
+<b>Inversi: pilih pusat yang strategis.</b>
+Pusat inversi biasanya dipilih di titik yang banyak lingkarannya lewat,
+supaya banyak lingkaran berubah jadi garis lurus.
+
+</li>
+
+<li>
+
+<b>Inversi + teorema lain = kombinasi mematikan.</b>
+Setelah diinversi, soal sering jadi lebih sederhana dan bisa diselesaikan
+dengan Ceva, Menelaus, atau Stewart.
+
+</li>
+
+<li>
+
+<b>Gambar sebelum menghitung.</b> Visualisasi adalah kunci.
+Untuk Ceva/Menelaus, tandai titik dan perbandingan di gambar.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri9.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
