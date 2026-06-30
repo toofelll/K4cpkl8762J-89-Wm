@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 10 | Integral Lipat & Teorema Vektor</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 10 • Integral Lipat & Teorema Vektor</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Dari Integral Tunggal ke Integral Lipat</h2>
+
+<p>
+
+Sejauh ini, integral yang kita pelajari adalah <b>integral tunggal</b>:
+∫ f(x) dx menghitung luas di bawah kurva. Tapi bagaimana menghitung
+<b>volume di bawah permukaan</b>? Bagaimana menghitung <b>luas permukaan
+yang melengkung</b>? Bagaimana menghitung <b>fluks medan vektor</b>
+yang menembus suatu permukaan?
+
+</p>
+
+<p>
+
+Jawabannya adalah <b>integral lipat</b> (multiple integrals)—generalisasi
+integral ke dimensi yang lebih tinggi. Integral lipat dua (∫∫) menghitung
+volume atau luas daerah di bidang. Integral lipat tiga (∫∫∫) menghitung
+"hiper-volume" atau massa benda tiga dimensi. Integral garis dan integral
+permukaan membawa kita ke teorema-teorema puncak kalkulus vektor:
+<b>Green's Theorem, Stokes' Theorem, dan Divergence Theorem (Gauss)</b>.
+
+</p>
+
+<p>
+
+Teorema-teorema ini adalah "jembatan agung" yang menghubungkan integral
+di suatu daerah dengan integral di batas daerah tersebut. Mereka adalah
+generalisasi multidimensi dari Teorema Dasar Kalkulus (∫ₐᵇ f'(x)dx = f(b)-f(a)).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Menguasai integral lipat dua: menghitung volume, luas daerah, dan massa.</li>
+
+<li>Mampu mengubah urutan integrasi dan mengganti ke koordinat polar.</li>
+
+<li>Menguasai integral lipat tiga dalam koordinat kartesius, silinder, dan bola.</li>
+
+<li>Memahami integral garis (line integral) untuk medan skalar dan vektor.</li>
+
+<li>Memahami integral permukaan (surface integral) untuk fungsi skalar dan fluks.</li>
+
+<li>Menguasai Green's Theorem, Stokes' Theorem, dan Divergence Theorem.</li>
+
+<li>Memahami hubungan mendalam antara ketiga teorema sebagai "Teorema Dasar Kalkulus dalam dimensi tinggi".</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: INTEGRAL LIPAT DUA ==================== -->
+
+<div class="section">
+
+<h2>1. Integral Lipat Dua — Volume di Bawah Permukaan</h2>
+
+<p>
+
+Bayangkan sebuah permukaan z = f(x, y) di atas daerah persegi panjang
+R = [a, b] × [c, d] pada bidang xy. Bagaimana menghitung <b>volume</b>
+benda yang dibatasi oleh permukaan di atas, bidang xy di bawah,
+dan dinding-dinding vertikal di sepanjang batas R?
+
+</p>
+
+<div class="summary">
+
+<b>Strategi:</b> Iris daerah R menjadi persegi-persegi kecil.
+Volume setiap "kolom" tipis ≈ f(xᵢ, yⱼ) × Δx × Δy (tinggi × luas alas).
+Jumlahkan semua kolom, lalu ambil limit ukuran persegi → 0.<br><br>
+
+<b>Notasi integral lipat dua:</b><br><br>
+
+∬_R f(x, y) dA = ∬_R f(x, y) dx dy<br><br>
+
+dA = dx dy (atau dy dx) adalah <b>elemen luas</b>—"persegi sangat kecil".
+
+</div>
+
+<p>
+
+<b>Mengapa ini bekerja?</b> Sama seperti integral tunggal menghitung luas
+dengan menjumlahkan persegi panjang tipis, integral lipat dua menghitung
+volume dengan menjumlahkan <b>balok-balok tipis</b> (prisma persegi).
+Ini adalah generalisasi alami: luas = ∫ f(x)dx, volume = ∬ f(x,y)dA.
+
+</p>
+
+<hr>
+
+<h3>1.1 Integral Iterasi — Menghitung Dua Kali Berturut-turut</h3>
+
+<div class="summary">
+
+<b>Teorema Fubini:</b> Jika f kontinu pada persegi panjang R = [a,b]×[c,d],
+maka integral lipat dua bisa dihitung sebagai <b>integral iterasi</b>
+(integral bersarang):<br><br>
+
+∬_R f(x,y) dA = ∫ₐᵇ [∫_cᵈ f(x,y) dy] dx = ∫_cᵈ [∫ₐᵇ f(x,y) dx] dy<br><br>
+
+<b>Urutan integrasi:</b> Dari dalam ke luar. Integral paling dalam dikerjakan dulu,
+variabel lainnya dianggap konstan.
+
+</div>
+
+<p>
+
+<b>Mengapa urutan bisa ditukar?</b> Teorema Fubini menjamin bahwa untuk fungsi
+kontinu pada daerah persegi panjang, <b>urutan integrasi tidak mempengaruhi hasil</b>.
+Ini seperti menghitung volume dengan mengiris secara vertikal lalu horizontal,
+atau horizontal lalu vertikal—total volumenya sama.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∬_R (x² + y²) dA di mana R = [0, 1] × [0, 1].<br><br>
+
+<b>Cara 1: dy dulu, dx kemudian.</b><br>
+
+Integral dalam (terhadap y, x dianggap konstan):<br>
+
+∫₀¹ (x² + y²) dy = [x²y + y³/3]₀¹ = x² + 1/3.<br><br>
+
+Integral luar (terhadap x):<br>
+
+∫₀¹ (x² + 1/3) dx = [x³/3 + x/3]₀¹ = 1/3 + 1/3 = <b>2/3</b>.<br><br>
+
+<b>Cara 2: dx dulu, dy kemudian.</b><br>
+
+∫₀¹ (x² + y²) dx = [x³/3 + xy²]₀¹ = 1/3 + y².<br>
+
+∫₀¹ (1/3 + y²) dy = [y/3 + y³/3]₀¹ = 1/3 + 1/3 = <b>2/3</b>. ✅<br><br>
+
+Hasilnya sama! Teorema Fubini bekerja.
+
+</div>
+
+<hr>
+
+<h3>1.2 Daerah Tidak Persegi Panjang — Integral Lipat Dua pada Daerah Umum</h3>
+
+<div class="summary">
+
+Jika daerah D bukan persegi panjang, batas integralnya menjadi <b>fungsi</b>,
+bukan konstanta.<br><br>
+
+<b>Tipe I (vertikal):</b> D = {(x,y) | a ≤ x ≤ b, g₁(x) ≤ y ≤ g₂(x)}.<br>
+
+∬_D f(x,y) dA = ∫ₐᵇ ∫_{g₁(x)}^{g₂(x)} f(x,y) dy dx<br><br>
+
+<b>Tipe II (horizontal):</b> D = {(x,y) | c ≤ y ≤ d, h₁(y) ≤ x ≤ h₂(y)}.<br>
+
+∬_D f(x,y) dA = ∫_cᵈ ∫_{h₁(y)}^{h₂(y)} f(x,y) dx dy
+
+</div>
+
+<p>
+
+<b>Bagaimana memilih tipe?</b> Gambar daerahnya. Jika batas atas dan bawah
+bisa dinyatakan sebagai fungsi y = f(x) → gunakan Tipe I (integralkan terhadap y dulu).
+Jika batas kiri dan kanan bisa dinyatakan sebagai fungsi x = g(y) → gunakan Tipe II.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∬_D x dA di mana D adalah segitiga dengan titik sudut (0,0), (1,0), (1,1).<br><br>
+
+Daerah: x dari 0 ke 1, untuk setiap x, y dari 0 ke x (garis y = x).<br><br>
+
+∬_D x dA = ∫₀¹ ∫₀ˣ x dy dx<br>
+
+= ∫₀¹ [xy]₀ˣ dx = ∫₀¹ x² dx<br>
+
+= [x³/3]₀¹ = <b>1/3</b>. ✅<br><br>
+
+<b>Alternatif (Tipe II):</b> y dari 0 ke 1, x dari y ke 1.<br>
+
+∬_D x dA = ∫₀¹ ∫_y¹ x dx dy = ∫₀¹ [x²/2]_y¹ dy<br>
+
+= ∫₀¹ (1/2 - y²/2) dy = [y/2 - y³/6]₀¹ = 1/2 - 1/6 = <b>1/3</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Mengubah Urutan Integrasi — Ketika Satu Urutan Lebih Mudah</h3>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∫₀¹ ∫_y¹ e^(x²) dx dy.<br><br>
+
+Integral ini tidak bisa diselesaikan dengan urutan dx dy karena e^(x²)
+tidak memiliki anti-turunan elementer terhadap x!<br><br>
+
+<b>Strategi:</b> Gambar daerahnya. y dari 0 ke 1, x dari y ke 1.
+Ini adalah segitiga yang sama seperti contoh sebelumnya.<br><br>
+
+Ubah ke Tipe I: x dari 0 ke 1, y dari 0 ke x.<br><br>
+
+∫₀¹ ∫_y¹ e^(x²) dx dy = ∫₀¹ ∫₀ˣ e^(x²) dy dx<br>
+
+= ∫₀¹ e^(x²) [y]₀ˣ dx = ∫₀¹ x e^(x²) dx.<br><br>
+
+Substitusi u = x², du = 2x dx → x dx = du/2.<br>
+
+= (1/2)∫₀¹ eᵘ du = (1/2)[eᵘ]₀¹ = <b>(e-1)/2</b>. ✅<br><br>
+
+Mengubah urutan integrasi mengubah integral yang "mustahil" menjadi mudah!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: KOORDINAT POLAR ==================== -->
+
+<div class="section">
+
+<h2>2. Integral Lipat Dua dalam Koordinat Polar — Untuk Daerah Melingkar</h2>
+
+<div class="summary">
+
+Untuk daerah yang melibatkan lingkaran, koordinat polar seringkali
+jauh lebih mudah daripada kartesius.<br><br>
+
+<b>Transformasi:</b> x = r cos θ, y = r sin θ.<br><br>
+
+<b>Elemen luas:</b> dA = <b>r dr dθ</b> &nbsp; (bukan dr dθ saja!)<br><br>
+
+∬_D f(x,y) dA = ∬_D f(r cos θ, r sin θ) · <b>r</b> dr dθ
+
+</div>
+
+<p>
+
+<b>Mengapa dA = r dr dθ? — Dua Cara Memahami</b>
+
+</p>
+
+<p>
+
+<b>Cara 1: Jacobian (dari Kalkulus 9).</b> Determinan Jacobian untuk transformasi
+(x,y) → (r,θ) adalah r. Maka dx dy = |J| dr dθ = r dr dθ.
+
+</p>
+
+<p>
+
+<b>Cara 2: Geometri (lebih intuitif).</b> Sebuah "persegi kecil" dalam koordinat
+polar berbentuk hampir persegi panjang melengkung. Satu sisinya = dr (radial).
+Sisi lainnya = r dθ (busur lingkaran, panjang = jari-jari × sudut).
+Luasnya ≈ dr × r dθ = r dr dθ.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∬_D (x² + y²) dA di mana D adalah lingkaran dengan jari-jari 2.<br><br>
+
+Dalam polar: x² + y² = r². D: 0 ≤ r ≤ 2, 0 ≤ θ ≤ 2π.<br><br>
+
+∬_D r² · r dr dθ = ∫₀²ᵖⁱ ∫₀² r³ dr dθ<br>
+
+= ∫₀²ᵖⁱ [r⁴/4]₀² dθ = ∫₀²ᵖⁱ (16/4) dθ<br>
+
+= ∫₀²ᵖⁱ 4 dθ = 4[θ]₀²ᵖⁱ = <b>8π</b>. ✅<br><br>
+
+<b>Bandingkan dengan kartesius:</b> ∬ (x²+y²) dA dengan domain lingkaran
+jauh lebih rumit karena batasnya y = ±√(4-x²). Polar jauh lebih sederhana!
+
+</div>
+
+<hr>
+
+<h3>2.1 Aplikasi: Menghitung Integral Gaussian ∮ e^(-x²) dx</h3>
+
+<div class="example">
+
+Salah satu aplikasi paling terkenal dari integral polar adalah menghitung
+integral Gaussian: I = ∫₋∞^∞ e^(-x²) dx.<br><br>
+
+<b>Triks:</b> Hitung I² sebagai integral lipat dua, lalu ubah ke polar.<br><br>
+
+I² = (∫₋∞^∞ e^(-x²) dx)(∫₋∞^∞ e^(-y²) dy) = ∬ e^(-(x²+y²)) dx dy<br><br>
+
+Dalam polar: = ∫₀²ᵖⁱ ∫₀^∞ e^(-r²) · r dr dθ<br><br>
+
+Integral dalam: ∫₀^∞ r e^(-r²) dr. Substitusi u = r², du = 2r dr → = (1/2)∫₀^∞ e^(-u) du = 1/2.<br><br>
+
+Integral luar: ∫₀²ᵖⁱ (1/2) dθ = (1/2)(2π) = π.<br><br>
+
+I² = π → I = <b>√π</b>. ✅<br><br>
+
+Jadi, ∫₋∞^∞ e^(-x²) dx = √π. Integral ini sangat penting dalam statistika dan fisika!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: APLIKASI INTEGRAL LIPAT DUA ==================== -->
+
+<div class="section">
+
+<h2>3. Aplikasi Integral Lipat Dua — Lebih dari Sekadar Volume</h2>
+
+<h3>3.1 Luas Daerah</h3>
+
+<div class="summary">
+
+<b>Luas daerah D</b> = ∬_D 1 dA = ∬_D dA<br><br>
+
+Cukup integralkan 1 pada daerah tersebut.
+
+</div>
+
+<div class="example">
+
+Luas lingkaran dengan jari-jari R dalam polar:<br><br>
+
+L = ∫₀²ᵖⁱ ∫₀ᴿ r dr dθ = ∫₀²ᵖⁱ (R²/2) dθ = <b>πR²</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Massa dan Pusat Massa Lamina</h3>
+
+<div class="summary">
+
+Untuk lamina (lempeng tipis) dengan densitas ρ(x, y):<br><br>
+
+<b>Massa:</b> M = ∬_D ρ(x, y) dA<br><br>
+
+<b>Momen terhadap sumbu Y:</b> Mᵧ = ∬_D x ρ(x, y) dA<br>
+
+<b>Momen terhadap sumbu X:</b> Mₓ = ∬_D y ρ(x, y) dA<br><br>
+
+<b>Pusat massa:</b> x̄ = Mᵧ/M, ȳ = Mₓ/M
+
+</div>
+
+<div class="example">
+
+Lamina berbentuk setengah lingkaran (y ≥ 0, x²+y² ≤ R²) dengan densitas seragam ρ = 1.<br><br>
+
+Massa = luas = πR²/2.<br><br>
+
+Mᵧ = ∬ x dA. Karena simetri terhadap sumbu Y, Mᵧ = 0. x̄ = <b>0</b>.<br><br>
+
+Mₓ = ∬ y dA. Dalam polar: y = r sin θ.<br>
+
+= ∫₀ᵖⁱ ∫₀ᴿ (r sin θ) · r dr dθ = ∫₀ᵖⁱ sin θ dθ · ∫₀ᴿ r² dr<br>
+
+= [-cos θ]₀ᵖⁱ · [r³/3]₀ᴿ = 2 · R³/3 = 2R³/3.<br><br>
+
+ȳ = Mₓ/M = (2R³/3)/(πR²/2) = <b>4R/(3π)</b>. ✅
+
+</div>
+<!-- ==================== MATERI 4: INTEGRAL LIPAT TIGA ==================== -->
+
+<div class="section">
+
+<h2>4. Integral Lipat Tiga — Volume dan Massa di Ruang 3D</h2>
+
+<p>
+
+Setelah menguasai integral lipat dua untuk daerah di bidang,
+kita naik ke <b>integral lipat tiga</b> untuk benda di ruang tiga dimensi.
+Jika integral lipat dua menghitung volume di bawah permukaan,
+integral lipat tiga menghitung "hiper-volume" dari fungsi w = f(x,y,z)
+pada suatu daerah di ruang—atau lebih sering, menghitung <b>massa</b>,
+<b>muatan listrik</b>, atau <b>probabilitas total</b> dari suatu benda 3D.
+
+</p>
+
+<div class="summary">
+
+<b>Integral lipat tiga:</b><br><br>
+
+∭_E f(x, y, z) dV = ∭_E f(x, y, z) dx dy dz<br><br>
+
+dV = dx dy dz adalah <b>elemen volume</b>—"kubus sangat kecil" berukuran dx×dy×dz.<br><br>
+
+<b>Integral iterasi (Teorema Fubini 3D):</b><br>
+
+∭_E f dV = ∫∫∫ f dz dy dx (atau urutan lainnya—ada 6 kemungkinan urutan!)
+
+</div>
+
+<p>
+
+<b>Mengapa ada 6 urutan?</b> Karena kita bisa mengintegralkan terhadap
+z dulu, lalu y, lalu x (dz dy dx), atau x dulu, lalu z, lalu y (dx dz dy),
+dan seterusnya. Total ada 3! = 6 urutan yang berbeda. Semuanya menghasilkan
+hasil yang sama untuk fungsi kontinu pada daerah "cukup baik".
+
+</p>
+
+<hr>
+
+<h3>4.1 Menghitung Volume Benda 3D</h3>
+
+<div class="summary">
+
+<b>Volume benda E</b> = ∭_E 1 dV = ∭_E dV<br><br>
+
+Cukup integralkan 1 pada seluruh benda.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung volume bola dengan jari-jari R.<br><br>
+
+Dalam koordinat kartesius: x² + y² + z² ≤ R².<br>
+
+Batas: -R ≤ x ≤ R, -√(R²-x²) ≤ y ≤ √(R²-x²), -√(R²-x²-y²) ≤ z ≤ √(R²-x²-y²).<br>
+
+Ini sangat rumit! Nanti kita akan lihat koordinat bola jauh lebih mudah.<br><br>
+
+Tapi untuk "membuktikan" volumenya = ⁴/₃πR³:<br><br>
+
+V = ∫₋ᴿᴿ ∫ dy dz dx... (sangat panjang).<br><br>
+
+<b>Hasilnya:</b> V = <b>⁴/₃πR³</b>. ✅<br><br>
+
+Kita akan membuktikan ini dengan koordinat bola di bagian 4.3.
+
+</div>
+
+<hr>
+
+<h3>4.2 Massa, Pusat Massa, dan Momen Inersia Benda 3D</h3>
+
+<div class="summary">
+
+Untuk benda E dengan densitas ρ(x, y, z):<br><br>
+
+<b>Massa:</b> M = ∭_E ρ dV<br><br>
+
+<b>Pusat massa:</b> x̄ = (1/M)∭_E xρ dV, ȳ = (1/M)∭_E yρ dV, z̄ = (1/M)∭_E zρ dV<br><br>
+
+<b>Momen inersia terhadap sumbu Z:</b> I_z = ∭_E (x² + y²)ρ dV<br>
+
+<b>Momen inersia terhadap sumbu X:</b> I_x = ∭_E (y² + z²)ρ dV<br>
+
+<b>Momen inersia terhadap sumbu Y:</b> I_y = ∭_E (x² + z²)ρ dV
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah kubus [0, 1]×[0, 1]×[0, 1] memiliki densitas ρ(x,y,z) = x + y + z.
+Hitung massanya.<br><br>
+
+M = ∫₀¹ ∫₀¹ ∫₀¹ (x + y + z) dz dy dx<br><br>
+
+Integral terhadap z (x, y konstan):<br>
+
+∫₀¹ (x + y + z) dz = [(x+y)z + z²/2]₀¹ = x + y + 1/2.<br><br>
+
+Integral terhadap y (x konstan):<br>
+
+∫₀¹ (x + y + 1/2) dy = [xy + y²/2 + y/2]₀¹ = x + 1/2 + 1/2 = x + 1.<br><br>
+
+Integral terhadap x:<br>
+
+∫₀¹ (x + 1) dx = [x²/2 + x]₀¹ = 1/2 + 1 = <b>3/2</b>. ✅<br><br>
+
+Massa kubus = 3/2 satuan massa.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: KOORDINAT SILINDER & BOLA ==================== -->
+
+<div class="section">
+
+<h2>5. Integral Lipat Tiga dalam Koordinat Silinder dan Bola</h2>
+
+<p>
+
+Sama seperti koordinat polar menyederhanakan integral lipat dua pada daerah
+melingkar, <b>koordinat silinder</b> dan <b>koordinat bola</b> menyederhanakan
+integral lipat tiga pada daerah dengan simetri tertentu.
+
+</p>
+
+<hr>
+
+<h3>5.1 Koordinat Silinder (Cylindrical Coordinates)</h3>
+
+<div class="summary">
+
+<b>Transformasi:</b> x = r cos θ, y = r sin θ, z = z (z tidak berubah).<br><br>
+
+<b>Elemen volume:</b> dV = <b>r dr dθ dz</b><br><br>
+
+∭_E f dV = ∭_E f(r cos θ, r sin θ, z) · r dr dθ dz<br><br>
+
+<b>Kapan dipakai:</b> Daerah dengan simetri rotasi terhadap sumbu Z
+(seperti silinder, kerucut, paraboloid).
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung volume silinder x² + y² ≤ R², 0 ≤ z ≤ H.<br><br>
+
+Dalam silinder: 0 ≤ r ≤ R, 0 ≤ θ ≤ 2π, 0 ≤ z ≤ H.<br><br>
+
+V = ∫₀²ᵖⁱ ∫₀ᴿ ∫₀ᴴ r dz dr dθ<br>
+
+= ∫₀²ᵖⁱ ∫₀ᴿ rH dr dθ = ∫₀²ᵖⁱ [r²H/2]₀ᴿ dθ<br>
+
+= ∫₀²ᵖⁱ (R²H/2) dθ = (R²H/2)(2π) = <b>πR²H</b>. ✅<br><br>
+
+Rumus yang familiar: volume silinder = luas alas × tinggi!
+
+</div>
+
+<hr>
+
+<h3>5.2 Koordinat Bola (Spherical Coordinates)</h3>
+
+<div class="summary">
+
+<b>Transformasi:</b><br>
+
+x = ρ sin φ cos θ<br>
+
+y = ρ sin φ sin θ<br>
+
+z = ρ cos φ<br><br>
+
+ρ (rho) = jarak dari titik asal (ρ ≥ 0).<br>
+
+φ (phi) = sudut dari sumbu Z positif (0 ≤ φ ≤ π).<br>
+
+θ (theta) = sudut azimuthal di bidang xy (0 ≤ θ ≤ 2π).<br><br>
+
+<b>Elemen volume:</b> dV = <b>ρ² sin φ dρ dφ dθ</b><br><br>
+
+<b>Kapan dipakai:</b> Daerah dengan simetri bola (seperti bola, kerucut es krim).
+
+</div>
+
+<p>
+
+<b>Mengapa dV = ρ² sin φ dρ dφ dθ? — Intuisi Geometris</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan sebuah "kotak kecil" dalam koordinat bola:<br><br>
+
+- Sisi radial: dρ (arah menjauhi titik asal).<br>
+
+- Sisi "lintang" (latitude): ρ dφ (busur lingkaran besar, jari-jari = ρ).<br>
+
+- Sisi "bujur" (longitude): ρ sin φ dθ (busur lingkaran kecil, jari-jari = ρ sin φ).<br><br>
+
+Volume kotak ≈ dρ × ρ dφ × ρ sin φ dθ = <b>ρ² sin φ dρ dφ dθ</b>. ✅<br><br>
+
+<b>Dengan Jacobian:</b> |J| = ρ² sin φ. Hasilnya sama.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung volume bola dengan jari-jari R menggunakan koordinat bola.<br><br>
+
+Bola: 0 ≤ ρ ≤ R, 0 ≤ φ ≤ π, 0 ≤ θ ≤ 2π.<br><br>
+
+V = ∫₀²ᵖⁱ ∫₀ᵖⁱ ∫₀ᴿ ρ² sin φ dρ dφ dθ<br><br>
+
+Integral terhadap ρ:<br>
+
+∫₀ᴿ ρ² dρ = [ρ³/3]₀ᴿ = R³/3.<br><br>
+
+Integral terhadap φ:<br>
+
+∫₀ᵖⁱ (R³/3) sin φ dφ = (R³/3)[-cos φ]₀ᵖⁱ = (R³/3)(-(-1) + 1) = 2R³/3.<br><br>
+
+Integral terhadap θ:<br>
+
+∫₀²ᵖⁱ (2R³/3) dθ = (2R³/3)(2π) = <b>4πR³/3</b>. ✅<br><br>
+
+<b>Jauh lebih mudah daripada kartesius!</b> Inilah kenapa koordinat bola diciptakan.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: INTEGRAL GARIS ==================== -->
+
+<div class="section">
+
+<h2>6. Integral Garis — Mengintegralkan Sepanjang Kurva</h2>
+
+<p>
+
+Semua integral yang kita pelajari sejauh ini memiliki domain berupa
+<b>interval</b> (∫), <b>daerah</b> (∬), atau <b>benda</b> (∭).
+Sekarang kita akan mengintegralkan <b>sepanjang kurva</b> di ruang 2D atau 3D.
+
+</p>
+
+<hr>
+
+<h3>6.1 Integral Garis untuk Fungsi Skalar — "Massa Kawat"</h3>
+
+<div class="summary">
+
+<b>Integral garis fungsi skalar</b> f(x, y) sepanjang kurva C:<br><br>
+
+∫_C f(x, y) ds = ∫ₐᵇ f(x(t), y(t)) · √[(dx/dt)² + (dy/dt)²] dt<br><br>
+
+ds = √[(dx)² + (dy)²] adalah <b>elemen panjang busur</b> (arc length element).<br><br>
+
+<b>Aplikasi:</b> Massa kawat dengan densitas f(x,y). Panjang kawat. Pusat massa kawat.
+
+</div>
+
+<p>
+
+<b>Mengapa ada akar kuadrat?</b> Ini adalah rumus panjang busur dari Kalkulus 7:
+panjang segmen kecil kurva = √(dx² + dy²) = √((dx/dt)² + (dy/dt)²) dt.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∫_C (x² + y²) ds di mana C adalah lingkaran x² + y² = 4, satu putaran penuh.<br><br>
+
+Parameterisasi: x = 2 cos t, y = 2 sin t, 0 ≤ t ≤ 2π.<br>
+
+dx/dt = -2 sin t, dy/dt = 2 cos t.<br>
+
+ds = √(4 sin²t + 4 cos²t) dt = √4 dt = <b>2 dt</b>.<br><br>
+
+x² + y² = 4 cos²t + 4 sin²t = 4.<br><br>
+
+∫_C 4 · 2 dt = ∫₀²ᵖⁱ 8 dt = <b>16π</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>6.2 Integral Garis untuk Medan Vektor — "Kerja" (Work)</h3>
+
+<div class="summary">
+
+<b>Integral garis medan vektor F⃗</b> sepanjang kurva C:<br><br>
+
+∫_C F⃗ · dr⃗ = ∫ₐᵇ F⃗(r⃗(t)) · r⃗'(t) dt<br><br>
+
+dr⃗ = (dx, dy, dz) adalah vektor perpindahan kecil sepanjang kurva.<br><br>
+
+<b>Aplikasi:</b> Kerja (usaha) yang dilakukan oleh gaya F⃗ sepanjang lintasan C.<br>
+
+<b>Notasi alternatif:</b> ∫_C P dx + Q dy + R dz
+
+</div>
+
+<p>
+
+<b>Mengapa dot product?</b> Kerja = gaya × perpindahan <b>dalam arah gaya</b>.
+Jika gaya dan perpindahan tidak searah, hanya komponen gaya yang sejajar
+perpindahan yang melakukan kerja. Dot product F⃗ · dr⃗ menghitung tepat itu:
+|F⃗| × |dr⃗| × cos θ.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Hitung kerja yang dilakukan oleh F⃗ = (y, -x) sepanjang
+setengah lingkaran atas x² + y² = 1 dari (1,0) ke (-1,0).<br><br>
+
+Parameterisasi: x = cos t, y = sin t, t dari 0 ke π.<br>
+
+r⃗(t) = (cos t, sin t). r⃗'(t) = (-sin t, cos t).<br><br>
+
+F⃗(r⃗(t)) = (sin t, -cos t).<br><br>
+
+F⃗ · r⃗' = (sin t)(-sin t) + (-cos t)(cos t) = -sin²t - cos²t = <b>-1</b>.<br><br>
+
+∫₀ᵖⁱ (-1) dt = <b>-π</b>. ✅<br><br>
+
+Tanda negatif artinya gaya "melawan" arah gerakan (seperti gesekan).
+
+</div>
+<!-- ==================== MATERI 7: INTEGRAL PERMUKAAN ==================== -->
+
+<div class="section">
+
+<h2>7. Integral Permukaan — Mengintegralkan pada Kulit 3D</h2>
+
+<p>
+
+Setelah integral garis (sepanjang kurva 1D), naik satu dimensi lagi:
+<b>integral permukaan</b>—mengintegralkan pada <b>permukaan 2D</b> yang
+melengkung di ruang 3D. Ini adalah generalisasi dari integral lipat dua
+(pada bidang datar) ke permukaan yang melengkung seperti kulit bola,
+paraboloid, atau bentuk apa pun.
+
+</p>
+
+<hr>
+
+<h3>7.1 Integral Permukaan untuk Fungsi Skalar — "Massa Kulit"</h3>
+
+<div class="summary">
+
+<b>Integral permukaan fungsi skalar</b> f(x, y, z) pada permukaan S:<br><br>
+
+∬_S f(x, y, z) dS = ∬_D f(r⃗(u, v)) · |r⃗_u × r⃗_v| du dv<br><br>
+
+dS = |r⃗_u × r⃗_v| du dv adalah <b>elemen luas permukaan</b>.<br><br>
+
+r⃗(u, v) = parameterisasi permukaan (dua parameter: u, v).<br>
+
+r⃗_u = ∂r⃗/∂u, r⃗_v = ∂r⃗/∂v (vektor singgung).<br>
+
+r⃗_u × r⃗_v = vektor normal, |...| = luas jajar genjang kecil.
+
+</div>
+
+<p>
+
+<b>Mengapa ada cross product |r⃗_u × r⃗_v|?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan sepotong kecil permukaan yang dibatasi oleh garis parameter
+u, u+du, v, v+dv. Keempat sudutnya adalah r⃗(u,v), r⃗(u+du,v),
+r⃗(u,v+dv), r⃗(u+du,v+dv).<br><br>
+
+Dua sisi yang bertemu di r⃗(u,v) adalah vektor:<br>
+
+r⃗(u+du, v) - r⃗(u, v) ≈ r⃗_u du<br>
+
+r⃗(u, v+dv) - r⃗(u, v) ≈ r⃗_v dv<br><br>
+
+Luas jajar genjang kecil = |(r⃗_u du) × (r⃗_v dv)| = |r⃗_u × r⃗_v| du dv.<br><br>
+
+Ini adalah generalisasi dari dA = dx dy di bidang datar!
+Di bidang datar, r⃗_u = (1,0,0), r⃗_v = (0,1,0) → |r⃗_u × r⃗_v| = |(0,0,1)| = 1 → dS = du dv. ✅
+
+</div>
+
+<hr>
+
+<h3>7.2 Kasus Khusus: Permukaan z = g(x, y)</h3>
+
+<div class="summary">
+
+Jika permukaan dinyatakan sebagai z = g(x, y), maka:<br><br>
+
+<b>dS = √(1 + (∂g/∂x)² + (∂g/∂y)²) dx dy</b><br><br>
+
+∬_S f dS = ∬_D f(x, y, g(x,y)) · √(1 + gₓ² + gᵧ²) dx dy<br><br>
+
+Ini adalah rumus yang paling sering dipakai!
+
+</div>
+
+<p>
+
+<b>Mengapa ada akar 1 + gₓ² + gᵧ²?</b>
+
+</p>
+
+<div class="example">
+
+Dengan parameterisasi r⃗(x, y) = (x, y, g(x, y)):<br><br>
+
+r⃗_x = (1, 0, gₓ), r⃗_y = (0, 1, gᵧ).<br><br>
+
+r⃗_x × r⃗_y = (-gₓ, -gᵧ, 1) (cross product).<br><br>
+
+|r⃗_x × r⃗_y| = √(gₓ² + gᵧ² + 1) = √(1 + gₓ² + gᵧ²). ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung ∬_S z dS di mana S adalah bagian paraboloid z = x² + y²
+di bawah z = 4.<br><br>
+
+g(x, y) = x² + y². gₓ = 2x, gᵧ = 2y.<br>
+
+dS = √(1 + 4x² + 4y²) dx dy.<br><br>
+
+Domain D: x² + y² ≤ 4 (karena z ≤ 4). Dalam polar: 0 ≤ r ≤ 2, 0 ≤ θ ≤ 2π.<br><br>
+
+∬_S z dS = ∬_D (x²+y²) · √(1 + 4x² + 4y²) dx dy<br>
+
+= ∫₀²ᵖⁱ ∫₀² r² · √(1 + 4r²) · r dr dθ<br>
+
+= ∫₀²ᵖⁱ ∫₀² r³ √(1+4r²) dr dθ.<br><br>
+
+Substitusi u = 1+4r², du = 8r dr → r³ dr = r²·r dr = ((u-1)/4)·(du/8).<br>
+
+Setelah perhitungan: = <b>(π/60)(391√17 + 1)</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>7.3 Integral Permukaan untuk Medan Vektor — Fluks</h3>
+
+<div class="summary">
+
+<b>Fluks</b> medan vektor F⃗ menembus permukaan S:<br><br>
+
+∬_S F⃗ · dS⃗ = ∬_S F⃗ · n̂ dS = ∬_D F⃗(r⃗(u,v)) · (r⃗_u × r⃗_v) du dv<br><br>
+
+dS⃗ = n̂ dS adalah <b>vektor elemen luas</b>—tegak lurus permukaan, besarnya dS.<br><br>
+
+<b>Aplikasi:</b> Debit fluida yang menembus permukaan. Fluks medan listrik (Hukum Gauss).
+Fluks medan magnet (Hukum Faraday).
+
+</div>
+
+<p>
+
+<b>Mengapa dot product dengan normal?</b> Fluks mengukur "seberapa banyak"
+medan vektor "menembus" permukaan. Jika F⃗ sejajar dengan n̂ (menembus tegak lurus),
+fluks maksimum. Jika F⃗ tegak lurus n̂ (menyusuri permukaan), fluks = 0.
+Dot product F⃗ · n̂ menghitung komponen yang benar-benar menembus.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 8: GREEN'S THEOREM ==================== -->
+
+<div class="section">
+
+<h2>8. Green's Theorem — Integral Garis ↔ Integral Lipat Dua</h2>
+
+<div class="summary">
+
+<b>Green's Theorem (Teorema Green):</b><br><br>
+
+Untuk daerah D dengan batas C (kurva tertutup, orientasi positif/berlawanan arah jarum jam):<br><br>
+
+<b>∮_C P dx + Q dy = ∬_D (∂Q/∂x - ∂P/∂y) dA</b><br><br>
+
+∮ = integral garis pada kurva <b>tertutup</b>.<br>
+
+C berorientasi <b>positif</b>: daerah selalu di <b>kiri</b> saat berjalan sepanjang C.
+
+</div>
+
+<p>
+
+<b>Mengapa ini revolusioner?</b> Green's Theorem mengubah integral garis
+(yang domainnya kurva 1D) menjadi integral lipat dua (yang domainnya daerah 2D).
+Seringkali salah satunya jauh lebih mudah dihitung daripada yang lain.
+
+</p>
+
+<p>
+
+<b>Intuisi:</b> Green's Theorem adalah <b>Teorema Dasar Kalkulus versi 2D</b>.
+FTC: ∫ₐᵇ f'(x) dx = f(b) - f(a) (integral turunan di dalam = nilai di batas).
+Green: ∬ (∂Q/∂x - ∂P/∂y) dA = ∮ (P dx + Q dy) (integral "turunan" di dalam = integral di batas).
+
+</p>
+
+<hr>
+
+<h3>8.1 Pembuktian Sketsa — Dari FTC ke Green</h3>
+
+<div class="example">
+
+Untuk daerah tipe I (vertikal): a ≤ x ≤ b, g₁(x) ≤ y ≤ g₂(x).<br><br>
+
+∬_D ∂P/∂y dA = ∫ₐᵇ ∫_{g₁(x)}^{g₂(x)} ∂P/∂y dy dx<br>
+
+= ∫ₐᵇ [P(x, g₂(x)) - P(x, g₁(x))] dx = -∮_C P dx.<br><br>
+
+Dengan cara yang sama untuk ∂Q/∂x, didapat ∮_C Q dy.<br><br>
+
+Jumlahkan: ∮_C P dx + Q dy = ∬_D (∂Q/∂x - ∂P/∂y) dA. ✅
+
+</div>
+
+<hr>
+
+<h3>8.2 Aplikasi Green's Theorem — Menghitung Luas dengan Integral Garis!</h3>
+
+<div class="summary">
+
+Pilih P = 0, Q = x (atau P = -y, Q = 0, atau variasi lainnya), maka:<br><br>
+
+∂Q/∂x - ∂P/∂y = 1 - 0 = 1.<br><br>
+
+<b>Luas D</b> = ∬_D 1 dA = <b>∮_C x dy</b> = <b>-∮_C y dx</b> = <b>½∮_C (x dy - y dx)</b>
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Hitung luas elips x²/a² + y²/b² = 1 menggunakan Green's Theorem.<br><br>
+
+Parameterisasi: x = a cos t, y = b sin t, 0 ≤ t ≤ 2π.<br>
+
+dx = -a sin t dt, dy = b cos t dt.<br><br>
+
+Luas = ½∮ (x dy - y dx)<br>
+
+= ½∫₀²ᵖⁱ [a cos t · b cos t - b sin t · (-a sin t)] dt<br>
+
+= ½∫₀²ᵖⁱ (ab cos²t + ab sin²t) dt<br>
+
+= ½∫₀²ᵖⁱ ab dt = ½(ab)(2π) = <b>πab</b>. ✅<br><br>
+
+Rumus luas elips yang terkenal: πab!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 9: STOKES' THEOREM ==================== -->
+
+<div class="section">
+
+<h2>9. Stokes' Theorem — Green's Theorem di Ruang 3D</h2>
+
+<div class="summary">
+
+<b>Stokes' Theorem (Teorema Stokes):</b><br><br>
+
+Untuk permukaan S dengan batas kurva tertutup C:<br><br>
+
+<b>∮_C F⃗ · dr⃗ = ∬_S (curl F⃗) · dS⃗</b><br><br>
+
+= ∬_S (∇ × F⃗) · n̂ dS<br><br>
+
+<b>Intuisi:</b> Integral garis (sirkulasi) di sepanjang batas = integral curl (rotasi)
+di seluruh permukaan yang dibatasi.
+
+</div>
+
+<p>
+
+<b>Mengapa ini generalisasi Green?</b> Jika S adalah daerah di bidang xy
+(dengan n̂ = k̂), maka curl F⃗ · k̂ = ∂Q/∂x - ∂P/∂y, dan Stokes' Theorem
+tereduksi menjadi Green's Theorem. Stokes = Green dalam 3D!
+
+</p>
+
+<p>
+
+<b>Makna fisik:</b> Sirkulasi medan vektor di sepanjang kurva tertutup
+sama dengan total "pusaran" (curl) yang menembus permukaan yang dibatasi kurva itu.
+Ini adalah prinsip dasar di balik <b>Hukum Ampere</b> dan <b>Hukum Faraday</b>
+dalam elektromagnetisme!
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Verifikasi Stokes' Theorem untuk F⃗ = (-y, x, z) dan S adalah
+paraboloid z = 1 - x² - y² di atas bidang xy (z ≥ 0).<br><br>
+
+<b>Langkah 1: Integral Garis</b> — Batas C adalah lingkaran x²+y²=1 di z=0.<br>
+
+Parameterisasi: x = cos t, y = sin t, z = 0, 0 ≤ t ≤ 2π.<br>
+
+F⃗ = (-sin t, cos t, 0). dr⃗ = (-sin t, cos t, 0) dt.<br>
+
+F⃗ · dr⃗ = sin²t + cos²t = 1.<br><br>
+
+∮_C F⃗ · dr⃗ = ∫₀²ᵖⁱ 1 dt = <b>2π</b>.<br><br>
+
+<b>Langkah 2: Integral Permukaan</b> — curl F⃗ = (0, 0, 2).<br>
+
+dS⃗ untuk z = g(x,y): dS⃗ = (-gₓ, -gᵧ, 1) dx dy = (2x, 2y, 1) dx dy.<br><br>
+
+curl F⃗ · dS⃗ = (0,0,2) · (2x, 2y, 1) = 2.<br><br>
+
+∬_S 2 dS = 2 × (luas proyeksi ke xy) = 2 × π(1)² = <b>2π</b>. ✅<br><br>
+
+Kedua cara menghasilkan 2π! Stokes' Theorem terverifikasi!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 10: DIVERGENCE THEOREM ==================== -->
+
+<div class="section">
+
+<h2>10. Divergence Theorem (Teorema Gauss) — Fluks = Integral Divergensi</h2>
+
+<div class="summary">
+
+<b>Divergence Theorem (Teorema Gauss):</b><br><br>
+
+Untuk benda E dengan batas permukaan tertutup S (orientasi ke luar):<br><br>
+
+<b>∬_S F⃗ · dS⃗ = ∭_E div F⃗ dV</b><br><br>
+
+= ∭_E (∇ · F⃗) dV<br><br>
+
+<b>Intuisi:</b> Total fluks yang keluar dari permukaan tertutup = total "sumber"
+(divergensi) di dalam volume yang dilingkupi.
+
+</div>
+
+<p>
+
+<b>Mengapa ini puncak kalkulus vektor?</b> Karena Divergence Theorem
+adalah <b>generalisasi FTC ke dimensi 3</b>: integral "turunan" (divergensi)
+di dalam volume = integral fungsi di batas (fluks). Ini menghubungkan
+integral lipat tiga dengan integral permukaan.
+
+</p>
+
+<p>
+
+<b>Makna fisik:</b>
+
+</p>
+
+<div class="example">
+
+<b>Fluida:</b> Total air yang keluar dari balon (fluks) = total "mata air"
+di dalam balon (divergensi).<br><br>
+
+<b>Elektromagnetisme (Hukum Gauss):</b> Fluks medan listrik melalui permukaan tertutup
+= muatan total di dalamnya / ε₀. ∬ E⃗·dS⃗ = Q/ε₀.<br><br>
+
+<b>Gravitasi (Hukum Gauss untuk gravitasi):</b> Fluks medan gravitasi = -4πGM.<br><br>
+
+Ini adalah salah satu persamaan Maxwell—pilar fisika modern!
+
+</div>
+
+<hr>
+
+<h3>10.1 Verifikasi Divergence Theorem</h3>
+
+<div class="example">
+
+<b>Soal:</b> Verifikasi Divergence Theorem untuk F⃗ = (x, y, z) dan E = bola x²+y²+z² ≤ R².<br><br>
+
+<b>Langkah 1: Integral Lipat Tiga</b> — div F⃗ = 1+1+1 = 3.<br><br>
+
+∭_E 3 dV = 3 × Volume bola = 3 × (4πR³/3) = <b>4πR³</b>.<br><br>
+
+<b>Langkah 2: Integral Permukaan</b> — S adalah kulit bola x²+y²+z² = R².<br>
+
+Normal ke luar: n̂ = (x/R, y/R, z/R).<br><br>
+
+F⃗ · n̂ = (x, y, z) · (x/R, y/R, z/R) = (x²+y²+z²)/R = R²/R = <b>R</b>.<br><br>
+
+∬_S R dS = R × (luas kulit bola) = R × 4πR² = <b>4πR³</b>. ✅<br><br>
+
+Kedua cara menghasilkan 4πR³! Divergence Theorem terverifikasi!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 11: HUBUNGAN KETIGA TEOREMA ==================== -->
+
+<div class="section">
+
+<h2>11. Hubungan Ketiga Teorema — "Teorema Dasar Kalkulus" dalam Berbagai Dimensi</h2>
+
+<div class="summary">
+
+Semua teorema integral yang kita pelajari adalah <b>satu teorema yang sama</b>
+dalam dimensi yang berbeda:<br><br>
+
+<b>Dimensi 1 (FTC):</b> ∫ₐᵇ f'(x) dx = f(b) - f(a)<br>
+
+Integral turunan di dalam [a,b] = nilai di batas {a,b}.<br><br>
+
+<b>Dimensi 2 (Green):</b> ∬_D (∂Q/∂x - ∂P/∂y) dA = ∮_C (P dx + Q dy)<br>
+
+Integral "turunan" di daerah D = integral di batas C.<br><br>
+
+<b>Dimensi 2,5 (Stokes):</b> ∬_S (curl F⃗) · dS⃗ = ∮_C F⃗ · dr⃗<br>
+
+Integral curl di permukaan S = integral di batas C.<br><br>
+
+<b>Dimensi 3 (Gauss/Divergence):</b> ∭_E div F⃗ dV = ∬_S F⃗ · dS⃗<br>
+
+Integral divergensi di benda E = integral di batas S.
+
+</div>
+
+<p>
+
+<b>Polanya selalu sama:</b> Integral dari <b>"turunan"</b> di suatu daerah =
+Integral dari <b>fungsi aslinya</b> di <b>batas</b> daerah tersebut.
+
+</p>
+
+<p>
+
+Ini adalah <b>prinsip fundamental kalkulus</b> yang menyatukan seluruh materi
+dari Kalkulus 1 sampai Kalkulus 10. Jika kamu memahami pola ini,
+kamu memahami esensi kalkulus.
+
+</p>
+
+<div class="note">
+
+<b>Generalized Stokes' Theorem (untuk yang ingin tahu lebih):</b><br><br>
+
+Dalam bahasa differential forms, semua teorema di atas adalah kasus khusus dari:<br><br>
+
+<b>∫_M dω = ∫_{∂M} ω</b><br><br>
+
+"Integral dari turunan luar (exterior derivative) suatu differential form ω
+pada manifold M sama dengan integral ω pada batas ∂M."<br><br>
+
+Ini adalah teorema paling umum—dan FTC, Green, Stokes, Gauss semuanya
+adalah kasus khusus dari teorema ini! (Dibahas di Differential Forms—Kalkulus 11.)
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 10</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Integral Lipat Dua:</b> ∬_D f dA. Volume di bawah permukaan. Iterasi: ∫∫ f dy dx. Koordinat polar: dA = r dr dθ.</li>
+
+<li><b>Integral Lipat Tiga:</b> ∭_E f dV. Massa benda 3D. Silinder: dV = r dr dθ dz. Bola: dV = ρ² sin φ dρ dφ dθ.</li>
+
+<li><b>Integral Garis Skalar:</b> ∫_C f ds. ds = √(dx²+dy²) = √((dx/dt)²+(dy/dt)²) dt.</li>
+
+<li><b>Integral Garis Vektor:</b> ∫_C F⃗ · dr⃗ = kerja. F⃗(r⃗(t)) · r⃗'(t) dt.</li>
+
+<li><b>Integral Permukaan Skalar:</b> ∬_S f dS. dS = √(1+gₓ²+gᵧ²) dx dy (untuk z=g(x,y)).</li>
+
+<li><b>Integral Permukaan Vektor (Fluks):</b> ∬_S F⃗ · dS⃗. F⃗ · (r⃗_u × r⃗_v) du dv.</li>
+
+<li><b>Green's Theorem:</b> ∮_C P dx+Q dy = ∬_D (∂Q/∂x-∂P/∂y) dA. FTC versi 2D.</li>
+
+<li><b>Stokes' Theorem:</b> ∮_C F⃗·dr⃗ = ∬_S curl F⃗·dS⃗. Green dalam 3D.</li>
+
+<li><b>Divergence Theorem:</b> ∬_S F⃗·dS⃗ = ∭_E div F⃗ dV. FTC versi 3D.</li>
+
+<li><b>Semua teorema = FTC dalam berbagai dimensi!</b></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Pilih sistem koordinat dengan bijak.</b> Daerah lingkaran/bola → polar/silinder/bola.
+Daerah persegi → kartesius. Jangan melawan arus.
+
+</li>
+
+<li>
+
+<b>Jangan lupa Jacobian!</b> Polar: r. Silinder: r. Bola: ρ² sin φ.
+Tanpa faktor ini, integralmu salah total.
+
+</li>
+
+<li>
+
+<b>Urutan integrasi bisa mengubah "mustahil" menjadi "mudah".</b>
+Kalau mentok di satu urutan, coba urutan lain. Gambar daerahnya!
+
+</li>
+
+<li>
+
+<b>Green/Stokes/Gauss: hitung dari kedua sisi untuk verifikasi.</b>
+Pilih sisi yang lebih mudah. Kalau integral garisnya rumit, coba integral lipatnya, atau sebaliknya.
+
+</li>
+
+<li>
+
+<b>Luas dengan Green: ½∮(x dy - y dx).</b> Ini adalah cara paling elegan
+menghitung luas daerah yang batasnya mudah diparameterisasi.
+
+</li>
+
+<li>
+
+<b>Fluks = F⃗ · n̂ dS. Kerja = F⃗ · dr⃗.</b> Jangan tertukar!
+Fluks berkaitan dengan Divergence Theorem. Kerja berkaitan dengan Stokes' Theorem.
+
+</li>
+
+<li>
+
+<b>Semua teorema = FTC.</b> Kalau kamu paham FTC, kamu paham esensi
+Green, Stokes, dan Gauss. Mereka semua mengatakan hal yang sama:
+integral "turunan" di dalam = integral "fungsi" di batas.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus9.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus11.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
