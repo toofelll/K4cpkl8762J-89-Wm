@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 4 | Ekstrem, Optimasi & Teorema</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 4 • Ekstrem, Optimasi & Teorema</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Mencari Nilai Terbaik dan Terburuk</h2>
+
+<p>
+
+Di dunia nyata, kita terus-menerus mencari <b>nilai optimal</b>:
+bagaimana memaksimalkan keuntungan dengan biaya minimum,
+bagaimana mendesain kaleng dengan bahan paling sedikit,
+bagaimana rute terpendek antara dua titik.
+
+</p>
+
+<p>
+
+Semua pertanyaan ini dijawab oleh <b>teori optimasi</b> dalam kalkulus.
+Dengan turunan, kita bisa menemukan <b>titik-titik kritis</b> di mana
+fungsi mencapai nilai maksimum atau minimum—baik secara lokal
+(di sekitar titik itu) maupun global (di seluruh domain).
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membangun teori dari dasar: dari perbedaan
+ekstrem lokal vs global, uji turunan pertama dan kedua,
+kecekungan dan titik belok, sampai teorema-teorema fundamental
+(Rolle, Teorema Nilai Rata-rata) yang menjadi tulang punggung seluruh kalkulus,
+dan Aturan L'Hôpital untuk menaklukkan limit bentuk tak tentu.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami perbedaan nilai maksimum/minimum lokal vs global secara mendalam.</li>
+
+<li>Menguasai cara mencari titik kritis dan mengklasifikasikannya.</li>
+
+<li>Menggunakan Uji Turunan Pertama dan Uji Turunan Kedua dengan tepat.</li>
+
+<li>Memahami kecekungan (concavity) dan titik belok (inflection point).</li>
+
+<li>Menyelesaikan berbagai jenis masalah optimasi di dunia nyata.</li>
+
+<li>Memahami Teorema Rolle dan Teorema Nilai Rata-rata beserta bukti dan aplikasinya.</li>
+
+<li>Menguasai Aturan L'Hôpital untuk berbagai bentuk tak tentu.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: NILAI EKSTREM ==================== -->
+
+<div class="section">
+
+<h2>1. Nilai Maksimum dan Minimum — Dua Jenis "Puncak" dan "Lembah"</h2>
+
+<p>
+
+Ketika kita berbicara tentang "nilai terbesar" atau "nilai terkecil" suatu fungsi,
+kita harus berhati-hati: apakah kita berbicara tentang <b>seluruh domain</b>
+atau hanya <b>di sekitar suatu titik</b>? Inilah perbedaan antara
+<b>global (absolute)</b> dan <b>lokal (relative)</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Nilai maksimum global (absolute maximum):</b><br>
+
+f(c) adalah maksimum global jika f(c) ≥ f(x) untuk <b>semua x di domain f</b>.<br>
+
+Ini adalah "juara dunia"—tidak ada nilai yang lebih tinggi di mana pun.<br><br>
+
+<b>Nilai minimum global (absolute minimum):</b><br>
+
+f(c) adalah minimum global jika f(c) ≤ f(x) untuk <b>semua x di domain f</b>.<br>
+
+Ini adalah "dasar jurang"—tidak ada nilai yang lebih rendah di mana pun.<br><br>
+
+<b>Nilai maksimum lokal (relative maximum):</b><br>
+
+f(c) adalah maksimum lokal jika f(c) ≥ f(x) untuk semua x <b>di sekitar c</b>.<br>
+
+Ini adalah "juara kampung"—tertinggi di lingkungannya, tapi mungkin bukan yang tertinggi secara keseluruhan.<br><br>
+
+<b>Nilai minimum lokal (relative minimum):</b><br>
+
+f(c) adalah minimum lokal jika f(c) ≤ f(x) untuk semua x <b>di sekitar c</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa perbedaan ini penting?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan sebuah fungsi seperti pegunungan dengan banyak puncak dan lembah.<br><br>
+
+Puncak Everest adalah <b>maksimum global</b> (titik tertinggi di seluruh pegunungan).<br>
+
+Puncak bukit kecil di kaki Everest adalah <b>maksimum lokal</b> (tertinggi di area situ, tapi lebih rendah dari Everest).<br>
+
+Lembah di antara dua bukit adalah <b>minimum lokal</b>.<br>
+
+Palung Mariana adalah <b>minimum global</b>.<br><br>
+
+Dalam matematika juga begitu: fungsi seperti y = x³ - 3x memiliki
+maksimum lokal di x = -1 dan minimum lokal di x = 1, tapi tidak memiliki
+maksimum atau minimum global karena fungsi ini menuju ±∞ saat x → ±∞.
+
+</div>
+
+<hr>
+
+<h3>1.1 Titik Kritis — Di Mana Ekstrem Bisa Terjadi?</h3>
+
+<div class="summary">
+
+<b>Titik kritis</b> dari fungsi f adalah titik x = c di mana:<br><br>
+
+<b>1. f'(c) = 0</b> — gradien nol, garis singgung horizontal.<br>
+
+<b>2. f'(c) tidak ada</b> — fungsi tidak terdiferensialkan di situ (titik patah, sudut, garis vertikal).<br>
+
+<b>3. c adalah titik ujung</b> interval (jika domainnya interval tertutup).<br><br>
+
+<b>Teorema Fermat:</b> Jika f memiliki ekstrem lokal di c dan f'(c) ada, maka <b>f'(c) = 0</b>.<br><br>
+
+<b>Akibat penting:</b> Semua ekstrem lokal pasti terjadi di titik kritis.<br>
+
+Tapi <b>tidak semua titik kritis adalah ekstrem</b>—bisa jadi titik pelana (saddle point).
+
+</div>
+
+<p>
+
+<b>Mengapa f'(c) = 0 di titik ekstrem? — Bukti Teorema Fermat</b>
+
+</p>
+
+<div class="example">
+
+Misalkan f memiliki maksimum lokal di c dan f'(c) ada.<br><br>
+
+Untuk x > c (di kanan c): [f(x) - f(c)]/(x-c) ≤ 0 (karena f(x) ≤ f(c) dan x-c > 0).<br>
+
+Limit kanan: f'(c⁺) ≤ 0.<br><br>
+
+Untuk x < c (di kiri c): [f(x) - f(c)]/(x-c) ≥ 0 (karena f(x) ≤ f(c) dan x-c < 0).<br>
+
+Limit kiri: f'(c⁻) ≥ 0.<br><br>
+
+Karena f'(c) ada, limit kiri = limit kanan = f'(c).<br>
+
+Maka 0 ≤ f'(c) ≤ 0 → <b>f'(c) = 0</b>. ✅<br><br>
+
+Intuisinya: di puncak bukit, permukaannya <b>mendatar</b>. Tidak mungkin miring ke atas atau ke bawah.
+
+</div>
+
+<hr>
+
+<h3>1.2 Contoh: Mencari Semua Titik Kritis</h3>
+
+<div class="example">
+
+<b>Soal 1:</b> f(x) = x³ - 6x² + 9x + 1.<br><br>
+
+f'(x) = 3x² - 12x + 9 = 3(x² - 4x + 3) = 3(x-1)(x-3).<br>
+
+f'(x) = 0 → x = <b>1</b> atau x = <b>3</b>.<br>
+
+f'(x) selalu ada (polinomial) → titik kritis: <b>{1, 3}</b>.<br><br>
+
+f(1) = 1 - 6 + 9 + 1 = <b>5</b>. f(3) = 27 - 54 + 27 + 1 = <b>1</b>.<br><br>
+
+<b>Soal 2:</b> f(x) = |x| (nilai mutlak).<br><br>
+
+Untuk x > 0: f'(x) = 1. Untuk x < 0: f'(x) = -1.<br>
+
+Di x = 0, limit kiri ≠ limit kanan → <b>f'(0) tidak ada</b>.<br>
+
+Titik kritis: <b>{0}</b> (karena f' tidak ada).<br><br>
+
+f(0) = 0, dan ini adalah minimum global. ✅<br><br>
+
+<b>Soal 3:</b> f(x) = x^(2/3) pada [-1, 8].<br><br>
+
+f'(x) = (2/3)x^(-1/3) = 2/(3∛x).<br>
+
+f'(x) tidak ada di x = <b>0</b> (penyebut nol).<br>
+
+f'(x) = 0 tidak mungkin karena pembilang konstan.<br>
+
+Titik ujung: x = <b>-1</b> dan x = <b>8</b>.<br>
+
+Titik kritis: <b>{-1, 0, 8}</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Teorema Nilai Ekstrem (Extreme Value Theorem — EVT)</h3>
+
+<div class="summary">
+
+<b>Teorema Nilai Ekstrem:</b><br><br>
+
+Jika f <b>kontinu</b> pada interval <b>tertutup</b> [a, b],
+maka f <b>pasti</b> mencapai maksimum global dan minimum global
+di suatu titik dalam [a, b].
+
+</div>
+
+<p>
+
+<b>Mengapa butuh interval tertutup dan kontinu?</b>
+
+</p>
+
+<div class="example">
+
+f(x) = x² pada (-2, 2) (interval terbuka): tidak ada maksimum global
+karena fungsi mendekati 4 tapi tidak pernah mencapainya di dalam interval.<br><br>
+
+f(x) = 1/x pada [-1, 1]: tidak kontinu di x = 0, tidak ada maks/min global.<br><br>
+
+f(x) = x² pada [-2, 2]: kontinu dan tertutup → minimum global di (0,0),
+maksimum global di (±2, 4). ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: UJI TURUNAN PERTAMA ==================== -->
+
+<div class="section">
+
+<h2>2. Uji Turunan Pertama — "Naik-Turun" Menentukan Jenis Ekstrem</h2>
+
+<div class="summary">
+
+<b>Uji Turunan Pertama (First Derivative Test):</b><br><br>
+
+1. Cari semua titik kritis c (f'(c) = 0 atau f'(c) tidak ada).<br>
+
+2. Buat garis bilangan dan uji tanda f'(x) di setiap interval.<br>
+
+3. Tentukan jenis ekstrem dari perubahan tanda:<br><br>
+
+&nbsp;&nbsp;• f' berubah dari <b>positif (+)</b> ke <b>negatif (-)</b> → <b>maksimum lokal</b> di c.<br>
+
+&nbsp;&nbsp;• f' berubah dari <b>negatif (-)</b> ke <b>positif (+)</b> → <b>minimum lokal</b> di c.<br>
+
+&nbsp;&nbsp;• f' <b>tidak berubah</b> tanda → <b>bukan ekstrem</b> (titik pelana/saddle point).
+
+</div>
+
+<p>
+
+<b>Mengapa perubahan tanda menentukan jenis ekstrem? — Intuisi Gerak</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu sedang mendaki gunung.<br><br>
+
+f'(x) > 0 artinya kamu <b>naik</b> (elevasi bertambah).<br>
+
+f'(x) < 0 artinya kamu <b>turun</b> (elevasi berkurang).<br><br>
+
+<b>Dari naik (+) ke turun (-):</b> kamu mencapai <b>puncak</b> → maksimum lokal.<br>
+
+<b>Dari turun (-) ke naik (+):</b> kamu mencapai <b>lembah</b> → minimum lokal.<br>
+
+<b>Tetap naik (+ ke +):</b> kamu terus mendaki, belum mencapai puncak → bukan ekstrem.<br>
+
+<b>Tetap turun (- ke -):</b> kamu terus menurun → bukan ekstrem.
+
+</div>
+
+<hr>
+
+<h3>2.1 Contoh Lengkap dengan Garis Bilangan</h3>
+
+<div class="example">
+
+f(x) = x³ - 3x² + 1. f'(x) = 3x² - 6x = 3x(x - 2).<br><br>
+
+Titik kritis: x = <b>0</b> dan x = <b>2</b>.<br><br>
+
+Garis bilangan: ---0---2---<br><br>
+
+<b>Interval (-∞, 0):</b> Uji x = -1 → f'(-1) = 3(-1)(-3) = +9 > 0. <b>Naik ↗</b><br>
+
+<b>Interval (0, 2):</b> Uji x = 1 → f'(1) = 3(1)(-1) = -3 < 0. <b>Turun ↘</b><br>
+
+<b>Interval (2, ∞):</b> Uji x = 3 → f'(3) = 3(3)(1) = +9 > 0. <b>Naik ↗</b><br><br>
+
+Di x = 0: naik → turun → <b>maksimum lokal</b>. f(0) = <b>1</b>.<br>
+
+Di x = 2: turun → naik → <b>minimum lokal</b>. f(2) = 8 - 12 + 1 = <b>-3</b>. ✅<br><br>
+
+<b>Verifikasi grafik:</b> f naik dari -∞ ke x=0 (puncak), turun ke x=2 (lembah), naik ke ∞.
+
+</div>
+
+<hr>
+
+<h3>2.2 Contoh dengan Titik di Mana f' Tidak Ada</h3>
+
+<div class="example">
+
+f(x) = x^(2/3). f'(x) = 2/(3∛x).<br><br>
+
+f'(x) tidak ada di x = <b>0</b>. Tidak ada solusi f'(x) = 0.<br><br>
+
+<b>Interval (-∞, 0):</b> Uji x = -1 → f'(-1) = 2/(3(-1)) = -2/3 < 0. <b>Turun ↘</b><br>
+
+<b>Interval (0, ∞):</b> Uji x = 1 → f'(1) = 2/3 > 0. <b>Naik ↗</b><br><br>
+
+Di x = 0: turun → naik → <b>minimum lokal</b> (bahkan global). f(0) = 0. ✅<br><br>
+
+Grafiknya berbentuk "V" yang melengkung, dengan titik terdalam di (0,0).
+
+</div>
+
+<hr>
+
+<h3>2.3 Contoh Titik Kritis yang Bukan Ekstrem (Saddle Point)</h3>
+
+<div class="example">
+
+f(x) = x³. f'(x) = 3x². Titik kritis: x = <b>0</b> (f'(0) = 0).<br><br>
+
+<b>Interval (-∞, 0):</b> Uji x = -1 → f'(-1) = 3 > 0. <b>Naik ↗</b><br>
+
+<b>Interval (0, ∞):</b> Uji x = 1 → f'(1) = 3 > 0. <b>Naik ↗</b><br><br>
+
+Tidak ada perubahan tanda → <b>bukan ekstrem</b>.<br><br>
+
+Grafiknya naik, mendatar sebentar di x=0 (titik belok), lalu naik lagi.
+Ini disebut <b>titik pelana</b> (saddle point) atau <b>titik stasioner yang bukan ekstrem</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: UJI TURUNAN KEDUA ==================== -->
+
+<div class="section">
+
+<h2>3. Uji Turunan Kedua — Lebih Cepat, Tapi Ada Batasnya</h2>
+
+<div class="summary">
+
+<b>Uji Turunan Kedua (Second Derivative Test):</b><br><br>
+
+Misalkan f'(c) = 0 (titik stasioner) dan f''(c) ada:<br><br>
+
+• <b>f''(c) > 0</b> → grafik cekung ke atas ∪ → <b>minimum lokal</b>.<br>
+
+• <b>f''(c) < 0</b> → grafik cekung ke bawah ∩ → <b>maksimum lokal</b>.<br>
+
+• <b>f''(c) = 0</b> → <b>tidak dapat disimpulkan</b> (perlu uji turunan pertama).<br><br>
+
+<b>Catatan:</b> Uji ini hanya bekerja untuk titik di mana f'(c) = 0.
+Tidak bisa dipakai untuk titik di mana f' tidak ada.
+
+</div>
+
+<p>
+
+<b>Mengapa f'' menentukan jenis ekstrem? — Intuisi Kecekungan</b>
+
+</p>
+
+<div class="example">
+
+f'' mengukur <b>kecekungan</b> (curvature)—seberapa "melengkung" grafiknya.<br><br>
+
+<b>f'' > 0 (cekung ke atas ∪):</b> Grafik seperti <b>mangkuk</b>.
+Di titik terendah mangkuk, kamu berada di minimum.
+Kalau kamu sedikit bergeser ke kiri atau kanan, kamu naik.<br><br>
+
+<b>f'' < 0 (cekung ke bawah ∩):</b> Grafik seperti <b>kubah</b>.
+Di titik tertinggi kubah, kamu berada di maksimum.
+Kalau kamu sedikit bergeser, kamu turun.<br><br>
+
+<b>f'' = 0:</b> Kecekungan nol—grafik "lurus" di sekitar titik itu.
+Mungkin titik belok, mungkin juga ekstrem (seperti x⁴). Tidak bisa dipastikan.
+
+</div>
+
+<hr>
+
+<h3>3.1 Contoh Uji Turunan Kedua</h3>
+
+<div class="example">
+
+f(x) = x³ - 6x² + 9x + 1. f'(x) = 3x² - 12x + 9. f''(x) = 6x - 12.<br><br>
+
+Titik kritis: f'(x) = 0 → 3(x-1)(x-3) = 0 → x = 1, 3.<br><br>
+
+Di x = 1: f''(1) = 6-12 = <b>-6 < 0</b> → <b>maksimum lokal</b>. f(1) = 5.<br>
+
+Di x = 3: f''(3) = 18-12 = <b>6 > 0</b> → <b>minimum lokal</b>. f(3) = 1.<br><br>
+
+Hasilnya sama dengan uji turunan pertama, tapi lebih cepat! ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Kapan Uji Turunan Kedua Gagal?</h3>
+
+<div class="example">
+
+<b>Kasus 1: f''(c) = 0</b><br><br>
+
+f(x) = x³. f'(0) = 0. f''(0) = 0. <b>Bukan ekstrem</b> (titik belok).<br>
+
+f(x) = x⁴. f'(0) = 0. f''(0) = 0. <b>Minimum lokal!</b><br><br>
+
+Keduanya punya f''(0) = 0, tapi hasilnya berbeda.
+Uji turunan kedua tidak bisa membedakan. <b>Wajib pakai uji turunan pertama.</b><br><br>
+
+<b>Kasus 2: f'(c) tidak ada</b><br><br>
+
+f(x) = |x|. f'(0) tidak ada. Uji turunan kedua tidak bisa dipakai.<br><br>
+
+<b>Kesimpulan:</b> Uji turunan kedua adalah <b>jalan pintas</b> yang cepat,
+tapi hanya berlaku untuk titik stasioner dengan f''(c) ≠ 0.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: KECEKUNGAN & TITIK BELOK ==================== -->
+
+<div class="section">
+
+<h2>4. Kecekungan dan Titik Belok — "Kelengkungan" Grafik</h2>
+
+<div class="summary">
+
+<b>Kecekungan (Concavity):</b><br><br>
+
+• <b>f''(x) > 0</b> pada interval I → grafik <b>cekung ke atas</b> (concave up) di I.<br>
+
+&nbsp;&nbsp;Bentuk: ∪ (seperti mangkuk, menampung air).<br><br>
+
+• <b>f''(x) < 0</b> pada interval I → grafik <b>cekung ke bawah</b> (concave down) di I.<br>
+
+&nbsp;&nbsp;Bentuk: ∩ (seperti kubah, menumpahkan air).<br><br>
+
+<b>Titik Belok (Inflection Point):</b><br><br>
+
+Titik P(c, f(c)) adalah titik belok jika <b>kecekungan berubah</b> di c.<br>
+
+Syarat perlu: f''(c) = 0 <b>atau</b> f''(c) tidak ada.<br>
+
+Syarat cukup: f'' <b>berubah tanda</b> di sekitar c.
+
+</div>
+
+<p>
+
+<b>Mengapa titik belok penting?</b>
+
+</p>
+
+<div class="example">
+
+Di titik belok, <b>laju perubahan mencapai ekstrem lokal</b>.<br><br>
+
+Dalam fisika: jika f(t) adalah posisi, maka f'(t) adalah kecepatan,
+f''(t) adalah percepatan. Titik belok adalah saat <b>percepatan berubah tanda</b>—
+dari mempercepat menjadi memperlambat, atau sebaliknya.<br><br>
+
+Dalam ekonomi: titik belok pada kurva pertumbuhan menunjukkan
+perubahan dari "pertumbuhan yang semakin cepat" ke "pertumbuhan yang melambat".
+
+</div>
+
+<hr>
+
+<h3>4.1 Contoh Mencari Kecekungan dan Titik Belok</h3>
+
+<div class="example">
+
+f(x) = x³ - 3x. f'(x) = 3x² - 3. f''(x) = 6x.<br><br>
+
+f''(x) = 0 → x = <b>0</b>.<br><br>
+
+<b>Interval (-∞, 0):</b> Uji x = -1 → f''(-1) = -6 < 0. <b>Cekung ke bawah ∩</b><br>
+
+<b>Interval (0, ∞):</b> Uji x = 1 → f''(1) = 6 > 0. <b>Cekung ke atas ∪</b><br><br>
+
+Kecekungan berubah di x = 0 → <b>titik belok di (0, 0)</b>. ✅<br><br>
+
+<b>Verifikasi:</b> f'(0) = -3 (minimum lokal dari f'!). f''(0) = 0.
+Grafik berbentuk "S" — turun melandai di kiri, lalu naik di kanan.
+
+</div>
+
+<hr>
+
+<h3>4.2 Contoh Titik di Mana f'' Tidak Ada</h3>
+
+<div class="example">
+
+f(x) = x^(1/3) (akar pangkat tiga).<br><br>
+
+f'(x) = 1/(3x^(2/3)). f''(x) = -2/(9x^(5/3)).<br><br>
+
+f''(x) tidak ada di x = <b>0</b>.<br><br>
+
+<b>Interval (-∞, 0):</b> Uji x = -1 → f''(-1) = -2/(-9) > 0. <b>∪</b><br>
+
+<b>Interval (0, ∞):</b> Uji x = 1 → f''(1) = -2/9 < 0. <b>∩</b><br><br>
+
+Kecekungan berubah di x = 0 → <b>titik belok di (0, 0)</b>. ✅<br><br>
+
+Grafiknya unik: dari cekung ke atas, melewati titik belok vertikal, lalu cekung ke bawah.
+
+</div>
+
+<hr>
+
+<h3>4.3 Titik Belok vs Titik Ekstrem — Tabel Perbandingan</h3>
+
+<div class="summary">
+
+| Aspek | Titik Ekstrem Lokal | Titik Belok |
+|---|---|---|
+| **Definisi** | f mencapai maksimum atau minimum di sekitar titik | Kecekungan berubah (∪↔∩) |
+| **f'(c)** | = 0 (atau tidak ada) | Bisa apa saja |
+| **f''(c)** | ≠ 0 biasanya (jika f'(c)=0) | = 0 atau tidak ada (biasanya) |
+| **Uji** | Uji turunan pertama atau kedua | Uji perubahan tanda f'' |
+| **Bentuk visual** | Puncak atau lembah | Gelombang "S" (cekung berubah) |
+| **Arti fisis** | Posisi tertinggi/terendah | Percepatan berubah tanda |
+
+</div>
+<!-- ==================== MATERI 5: OPTIMASI ==================== -->
+
+<div class="section">
+
+<h2>5. Optimasi — Mencari Nilai Terbaik dalam Kehidupan Nyata</h2>
+
+<p>
+
+<b>Optimasi</b> adalah puncak dari aplikasi turunan. Di sinilah kalkulus
+benar-benar "berbicara" dengan dunia nyata: mendesain produk dengan
+biaya minimum, memaksimalkan keuntungan, mencari rute terpendek,
+atau meminimalkan waste. Setiap masalah optimasi adalah teka-teki
+yang menunggu untuk dipecahkan.
+
+</p>
+
+<div class="summary">
+
+<b>Strategi Umum Menyelesaikan Masalah Optimasi:</b><br><br>
+
+<b>Langkah 1 — Pahami:</b> Baca soal dengan teliti. Apa yang dimaksimalkan/diminimalkan?<br>
+
+<b>Langkah 2 — Gambar:</b> Buat diagram/sketsa. Beri label variabel yang relevan.<br>
+
+<b>Langkah 3 — Fungsi Objektif:</b> Tulis fungsi yang akan dioptimasi (misal: luas, volume, biaya).<br>
+
+<b>Langkah 4 — Kendala:</b> Tulis persamaan yang menghubungkan variabel (constraint).<br>
+
+<b>Langkah 5 — Satu Variabel:</b> Gunakan kendala untuk mengubah fungsi objektif menjadi fungsi satu variabel.<br>
+
+<b>Langkah 6 — Kritis:</b> Cari turunan, tentukan titik kritis (f'(x) = 0 atau tidak ada).<br>
+
+<b>Langkah 7 — Uji:</b> Gunakan uji turunan pertama/kedua untuk memastikan maksimum/minimum.<br>
+
+<b>Langkah 8 — Titik Ujung:</b> Periksa nilai di ujung domain (jika domain terbatas).<br>
+
+<b>Langkah 9 — Jawab:</b> Tulis jawaban dalam kalimat lengkap dengan satuan.
+
+</div>
+
+<hr>
+
+<h3>5.1 Contoh 1: Pagar di Tepi Tembok — Memaksimalkan Luas</h3>
+
+<div class="example">
+
+<b>Soal:</b> Seorang petani memiliki 120 meter pagar. Ia ingin membuat
+kandang persegi panjang yang satu sisinya berupa tembok (tidak perlu pagar).
+Berapa ukuran kandang agar luasnya maksimum?<br><br>
+
+<b>Gambar:</b> Persegi panjang dengan tembok di satu sisi panjang.
+Misal: x = lebar (dua sisi), y = panjang (satu sisi, karena sisi lainnya tembok).<br><br>
+
+<b>Kendala:</b> Total pagar = 2x + y = 120 → <b>y = 120 - 2x</b>.<br><br>
+
+<b>Fungsi Objektif (Luas):</b> A = x × y = x(120 - 2x) = 120x - 2x².<br><br>
+
+<b>Domain:</b> x > 0 dan y > 0 → x > 0 dan 120-2x > 0 → 0 < x < 60.<br><br>
+
+<b>Titik Kritis:</b> A'(x) = 120 - 4x = 0 → x = <b>30</b>.<br><br>
+
+<b>Uji:</b> A''(x) = -4 < 0 → <b>maksimum</b>.<br><br>
+
+y = 120 - 2(30) = <b>60</b>.<br><br>
+
+<b>Ukuran optimal:</b> lebar = 30 m, panjang = 60 m. Luas maks = 1800 m².<br><br>
+
+<b>Verifikasi:</b> x=20 → A=1600. x=40 → A=1600. x=30 → A=1800. Puncak di 30! ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Contoh 2: Kotak dari Karton — Memaksimalkan Volume</h3>
+
+<div class="example">
+
+<b>Soal:</b> Selembar karton persegi berukuran 20 × 20 cm. Dari setiap sudut
+dipotong persegi kecil berukuran x × x, lalu dilipat membentuk kotak terbuka.
+Berapa x agar volume kotak maksimum?<br><br>
+
+<b>Visualisasi:</b> Setelah dipotong, alas kotak berukuran (20-2x) × (20-2x),
+dan tinggi kotak = x.<br><br>
+
+<b>Volume:</b> V(x) = x(20-2x)² = x(400 - 80x + 4x²) = 4x³ - 80x² + 400x.<br><br>
+
+<b>Domain:</b> 0 < x < 10 (agar 20-2x > 0).<br><br>
+
+<b>Titik Kritis:</b> V'(x) = 12x² - 160x + 400 = 0.<br>
+
+Bagi 4: 3x² - 40x + 100 = 0.<br>
+
+(3x - 10)(x - 10) = 0 → x = 10/3 ≈ <b>3,33</b> atau x = 10 (titik ujung).<br><br>
+
+<b>Uji Turunan Kedua:</b> V''(x) = 24x - 160.<br>
+
+V''(10/3) = 24(10/3) - 160 = 80 - 160 = -80 < 0 → <b>maksimum</b>.<br><br>
+
+<b>Ukuran optimal:</b> x = 10/3 ≈ <b>3,33 cm</b>. Volume maks = V(10/3) ≈ <b>592,6 cm³</b>.<br><br>
+
+<b>Verifikasi:</b> x=2 → V=512. x=4 → V=576. x=3,33 → V≈592,6. ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Contoh 3: Kaleng Silinder — Meminimalkan Bahan</h3>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah kaleng silinder harus memiliki volume 1000 cm³.
+Tentukan jari-jari dan tinggi yang meminimalkan luas permukaan
+(bahan yang digunakan untuk membuat kaleng, termasuk tutup).<br><br>
+
+<b>Volume (kendala):</b> V = πr²h = 1000 → <b>h = 1000/(πr²)</b>.<br><br>
+
+<b>Luas Permukaan (fungsi objektif):</b> A = 2πr² + 2πrh (alas+tutup + selimut).<br><br>
+
+Substitusi h: A(r) = 2πr² + 2πr(1000/(πr²)) = 2πr² + 2000/r.<br><br>
+
+<b>Domain:</b> r > 0.<br><br>
+
+<b>Titik Kritis:</b> A'(r) = 4πr - 2000/r² = 0.<br>
+
+4πr = 2000/r² → r³ = 500/π → r = ∛(500/π) ≈ <b>5,42 cm</b>.<br><br>
+
+<b>Uji Turunan Kedua:</b> A''(r) = 4π + 4000/r³ > 0 (selalu positif) → <b>minimum</b>.<br><br>
+
+h = 1000/(π(5,42)²) ≈ <b>10,84 cm</b>.<br><br>
+
+<b>Fakta menarik:</b> h = 2r (tinggi = diameter). Kaleng paling efisien
+memiliki tinggi sama dengan diameter alasnya! ✅
+
+</div>
+
+<hr>
+
+<h3>5.4 Contoh 4: Jarak Terpendek ke Kurva</h3>
+
+<div class="example">
+
+<b>Soal:</b> Cari titik pada parabola y = x² yang terdekat ke titik P(0, 3).<br><br>
+
+<b>Fungsi Jarak:</b> d = √[(x-0)² + (x²-3)²].<br><br>
+
+Minimalkan d² (lebih mudah, karena akar monoton):<br>
+
+D(x) = x² + (x²-3)² = x² + x⁴ - 6x² + 9 = <b>x⁴ - 5x² + 9</b>.<br><br>
+
+<b>Domain:</b> semua bilangan real (x ∈ ℝ).<br><br>
+
+<b>Titik Kritis:</b> D'(x) = 4x³ - 10x = 2x(2x² - 5) = 0.<br>
+
+x = <b>0</b> atau x = ±√(5/2) ≈ ±<b>1,581</b>.<br><br>
+
+<b>Uji Turunan Kedua:</b> D''(x) = 12x² - 10.<br>
+
+x = 0: D''(0) = -10 < 0 → <b>maksimum lokal</b> (titik terjauh).<br>
+
+x = ±√(5/2): D''(±√2,5) = 12(2,5) - 10 = 20 > 0 → <b>minimum lokal</b>.<br><br>
+
+D(±√2,5) = (2,5)² - 5(2,5) + 9 = 6,25 - 12,5 + 9 = <b>2,75</b>.<br>
+
+Jarak minimum = √2,75 ≈ <b>1,658</b>.<br><br>
+
+<b>Titik terdekat:</b> (√2,5, 2,5) dan (-√2,5, 2,5). ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: TEOREMA ROLLE ==================== -->
+
+<div class="section">
+
+<h2>6. Teorema Rolle — Di Antara Dua Akar, Ada Akar Turunan</h2>
+
+<div class="summary">
+
+<b>Teorema Rolle (ditemukan Michel Rolle, 1691):</b><br><br>
+
+Jika f <b>kontinu</b> pada [a, b], <b>terdiferensialkan</b> pada (a, b),
+dan <b>f(a) = f(b)</b>, maka <b>ada c di (a, b)</b> sedemikian sehingga <b>f'(c) = 0</b>.<br><br>
+
+Artinya: di antara dua titik dengan nilai fungsi yang sama,
+pasti ada setidaknya satu titik di mana garis singgungnya horizontal.
+
+</div>
+
+<p>
+
+<b>Intuisi Fisik — "Apa yang Naik Harus Turun":</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu melempar bola vertikal ke atas. Bola mulai dari tanah (ketinggian 0),
+naik ke titik tertinggi, lalu turun kembali ke tanah (ketinggian 0 lagi).<br><br>
+
+f(t) = ketinggian bola. f(t₁) = 0, f(t₂) = 0 (kembali ke tanah).<br>
+
+Di antara t₁ dan t₂, ada momen di puncak tertinggi di mana kecepatan vertikal = 0.<br><br>
+
+f'(t_puncak) = 0. Inilah Teorema Rolle dalam aksi! ✅
+
+</div>
+
+<hr>
+
+<h3>6.1 Pembuktian Teorema Rolle</h3>
+
+<div class="example">
+
+<b>Kasus 1:</b> f(x) = k (fungsi konstan) pada [a, b].<br>
+
+Maka f'(x) = 0 di mana-mana. Setiap c di (a, b) memenuhi. ✅<br><br>
+
+<b>Kasus 2:</b> f(x) > f(a) untuk suatu x di (a, b).<br>
+
+Dengan Teorema Nilai Ekstrem, f mencapai maksimum global di suatu c ∈ (a, b)
+(karena f(a)=f(b) dan ada nilai yang lebih besar, maksimum tidak mungkin di ujung).<br>
+
+Di c, f memiliki maksimum lokal → dengan Teorema Fermat: f'(c) = 0. ✅<br><br>
+
+<b>Kasus 3:</b> f(x) < f(a) untuk suatu x di (a, b).<br>
+
+Argumen serupa, f mencapai minimum global di suatu c ∈ (a, b) → f'(c) = 0. ✅
+
+</div>
+
+<hr>
+
+<h3>6.2 Aplikasi Teorema Rolle — Menjamin Keberadaan Akar Turunan</h3>
+
+<div class="example">
+
+<b>Soal:</b> f(x) = x³ - 3x pada [-√3, √3].<br><br>
+
+f(-√3) = -3√3 + 3√3 = <b>0</b>. f(√3) = 3√3 - 3√3 = <b>0</b>.<br>
+
+f(a) = f(b) = 0 → Rolle berlaku!<br><br>
+
+f'(x) = 3x² - 3 = 3(x² - 1) = 0 → x = <b>-1</b> atau <b>1</b>.<br>
+
+Keduanya di dalam (-√3, √3). Jadi ada <b>dua</b> nilai c: <b>c = -1 dan c = 1</b>.<br><br>
+
+<b>Makna:</b> Di antara dua akar fungsi (x = ±√3), ada dua titik
+di mana garis singgung horizontal (x = ±1). ✅
+
+</div>
+
+<hr>
+
+<h3>6.3 Kenapa Semua Syarat Rolle Diperlukan?</h3>
+
+<div class="example">
+
+<b>Tanpa Kontinuitas:</b> f(x) = x pada [0, 1] dengan f(1) diubah jadi f(1) = 0.
+f(0) = 0, f(1) = 0, tapi f tidak kontinu di x=1. Tidak ada c dengan f'(c) = 0 di (0,1).<br><br>
+
+<b>Tanpa Diferensiabilitas:</b> f(x) = |x| pada [-1, 1]. f(-1) = f(1) = 1.
+Tapi f tidak terdiferensialkan di x=0 (titik patah). f'(x) tidak pernah 0.<br><br>
+
+<b>Tanpa f(a) = f(b):</b> f(x) = x pada [0, 1]. f(0) = 0, f(1) = 1 (tidak sama).
+f'(x) = 1 (tidak pernah 0). ❌
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 7: TEOREMA NILAI RATA-RATA ==================== -->
+
+<div class="section">
+
+<h2>7. Teorema Nilai Rata-rata (MVT) — Jantung Kalkulus</h2>
+
+<div class="summary">
+
+<b>Teorema Nilai Rata-rata (Mean Value Theorem — MVT):</b><br><br>
+
+Jika f <b>kontinu</b> pada [a, b] dan <b>terdiferensialkan</b> pada (a, b),
+maka <b>ada c di (a, b)</b> sedemikian sehingga:<br><br>
+
+<b>f'(c) = [f(b) - f(a)] / (b - a)</b><br><br>
+
+Artinya: <b>ada titik di mana laju perubahan sesaat = laju perubahan rata-rata</b>.
+
+</div>
+
+<p>
+
+<b>Intuisi — "Anda Pasti Pernah Tepat di Kecepatan Rata-Rata":</b>
+
+</p>
+
+<div class="example">
+
+Kamu berkendara dari Jakarta ke Bandung (150 km) dalam 2 jam.
+Kecepatan rata-ratamu = 75 km/jam.<br><br>
+
+MVT menjamin: <b>pasti ada setidaknya satu momen</b> di perjalanan itu
+di mana speedometer menunjukkan tepat 75 km/jam.<br><br>
+
+Kenapa? Karena kamu tidak mungkin selalu di atas 75 km/jam
+(lalu bagaimana bisa rata-ratanya 75?) atau selalu di bawah 75 km/jam.
+Harus ada saat di mana kamu melintasi batas 75 km/jam.
+
+</div>
+
+<hr>
+
+<h3>7.1 Pembuktian MVT dari Teorema Rolle</h3>
+
+<div class="example">
+
+Definisikan fungsi bantu:<br><br>
+
+g(x) = f(x) - [f(a) + ((f(b)-f(a))/(b-a))(x-a)]<br><br>
+
+g(x) adalah <b>selisih vertikal</b> antara f(x) dan garis secant dari (a,f(a)) ke (b,f(b)).<br><br>
+
+g(a) = f(a) - f(a) = 0. g(b) = f(b) - f(b) = 0.<br>
+
+g kontinu dan terdiferensialkan (karena f juga).<br><br>
+
+Dengan Teorema Rolle: ada c di (a,b) dengan g'(c) = 0.<br><br>
+
+g'(x) = f'(x) - (f(b)-f(a))/(b-a).<br>
+
+g'(c) = 0 → f'(c) = (f(b)-f(a))/(b-a). ✅
+
+</div>
+
+<hr>
+
+<h3>7.2 Contoh MVT — Mencari Nilai c</h3>
+
+<div class="example">
+
+f(x) = x² pada [1, 4].<br><br>
+
+f(1) = 1, f(4) = 16. Laju rata-rata = (16-1)/(4-1) = 15/3 = <b>5</b>.<br><br>
+
+f'(x) = 2x. MVT: f'(c) = 5 → 2c = 5 → c = <b>2,5</b>.<br><br>
+
+c = 2,5 ada di dalam (1, 4). ✅<br><br>
+
+Di x = 2,5, laju sesaat = 5, persis sama dengan laju rata-rata di interval [1,4].
+
+</div>
+
+<hr>
+
+<h3>7.3 Akibat-Akibat Penting MVT — Fondasi Kalkulus</h3>
+
+<div class="summary">
+
+<b>Akibat 1:</b> Jika f'(x) = 0 untuk semua x di interval I, maka f <b>konstan</b> di I.<br><br>
+
+<b>Akibat 2:</b> Jika f'(x) = g'(x) untuk semua x di I, maka f(x) = g(x) + C.<br><br>
+
+<b>Akibat 3:</b> Jika f'(x) > 0 di I, maka f <b>naik tegas</b> di I.<br>
+
+Jika f'(x) < 0 di I, maka f <b>turun tegas</b> di I.<br><br>
+
+<b>Akibat 4 (Teorema Rolle sebagai kasus khusus):</b><br>
+
+Jika f(a) = f(b), maka f'(c) = (f(b)-f(a))/(b-a) = 0. Inilah Rolle!
+
+</div>
+
+<p>
+
+<b>Mengapa MVT disebut "jantung kalkulus"?</b> Karena hampir semua teorema
+dalam kalkulus (termasuk Teorema Dasar Kalkulus, Aturan L'Hôpital,
+deret Taylor) bergantung pada MVT. Tanpa MVT, kalkulus runtuh.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 8: ATURAN L'HÔPITAL ==================== -->
+
+<div class="section">
+
+<h2>8. Aturan L'Hôpital — Senjata Pamungkas untuk Limit Sulit</h2>
+
+<div class="summary">
+
+<b>Aturan L'Hôpital (dipopulerkan oleh Marquis de L'Hôpital, 1696,
+tapi sebenarnya ditemukan oleh Johann Bernoulli):</b><br><br>
+
+Jika lim[x→c] f(x)/g(x) berbentuk <b>0/0</b> atau <b>∞/∞</b>, maka:<br><br>
+
+<b>lim[x→c] f(x)/g(x) = lim[x→c] f'(x)/g'(x)</b><br><br>
+
+Asalkan limit di ruas kanan ada (atau menuju ±∞).<br><br>
+
+Aturan ini juga berlaku untuk x → ∞, x → -∞, dan limit sepihak.
+
+</div>
+
+<p>
+
+<b>Mengapa ini berhasil? — Intuisi dari MVT</b>
+
+</p>
+
+<div class="example">
+
+Untuk kasus 0/0 dengan f(c) = g(c) = 0:<br><br>
+
+f(x)/g(x) = [f(x)-f(c)]/[g(x)-g(c)]<br>
+
+= ([f(x)-f(c)]/(x-c)) / ([g(x)-g(c)]/(x-c))<br><br>
+
+Saat x → c, pembilang → f'(c), penyebut → g'(c) (definisi turunan!).<br><br>
+
+Jadi limitnya = f'(c)/g'(c). ✅<br><br>
+
+<b>Untuk kasus ∞/∞ atau x → ∞:</b> pembuktiannya lebih teknis,
+tapi intuisinya sama: L'Hôpital "mempercepat" konvergensi
+dengan membandingkan laju perubahan, bukan nilai absolutnya.
+
+</div>
+
+<hr>
+
+<h3>8.1 Contoh Dasar L'Hôpital</h3>
+
+<div class="example">
+
+<b>1. lim[x→0] sin x / x</b> (bentuk 0/0)<br>
+
+= lim[x→0] cos x / 1 = <b>1</b>. ✅<br><br>
+
+<b>2. lim[x→0] (eˣ - 1)/x</b> (bentuk 0/0)<br>
+
+= lim[x→0] eˣ / 1 = <b>1</b>. ✅<br><br>
+
+<b>3. lim[x→0] (1 - cos x)/x²</b> (bentuk 0/0, butuh 2 kali L'Hôpital)<br>
+
+= lim[x→0] sin x / (2x) (masih 0/0!)<br>
+
+= lim[x→0] cos x / 2 = <b>1/2</b>. ✅<br><br>
+
+<b>4. lim[x→∞] ln x / x</b> (bentuk ∞/∞)<br>
+
+= lim[x→∞] (1/x) / 1 = <b>0</b>. ✅<br><br>
+
+<b>5. lim[x→∞] eˣ / x²</b> (bentuk ∞/∞, butuh 2 kali)<br>
+
+= lim[x→∞] eˣ / (2x) (masih ∞/∞!)<br>
+
+= lim[x→∞] eˣ / 2 = <b>∞</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>8.2 Bentuk Tak Tentu yang Harus Diubah Dulu</h3>
+
+<p>
+
+L'Hôpital hanya bekerja untuk <b>0/0</b> dan <b>∞/∞</b>.
+Bentuk lain harus dimanipulasi dulu.
+
+</p>
+
+<div class="summary">
+
+<b>0 × ∞:</b> Ubah jadi 0/0 atau ∞/∞ dengan memindahkan salah satu faktor ke penyebut.<br><br>
+
+<b>∞ - ∞:</b> Samakan penyebut atau faktorkan.<br><br>
+
+<b>1^∞, 0⁰, ∞⁰:</b> Gunakan logaritma natural: ln(y) = ... lalu cari limit ln(y).
+
+</div>
+
+<div class="example">
+
+<b>6. lim[x→0⁺] x ln x</b> (bentuk 0 × (-∞))<br>
+
+Ubah: x ln x = ln x / (1/x) → bentuk -∞/∞.<br>
+
+= lim[x→0⁺] (1/x) / (-1/x²) = lim[x→0⁺] (-x) = <b>0</b>. ✅<br><br>
+
+<b>7. lim[x→∞] (1 + 1/x)ˣ</b> (bentuk 1^∞ — trik: gunakan ln)<br>
+
+Misal y = (1 + 1/x)ˣ. ln y = x ln(1 + 1/x).<br><br>
+
+lim[x→∞] ln y = lim[x→∞] ln(1+1/x) / (1/x) (bentuk 0/0)<br>
+
+= lim[x→∞] [(-1/x²)/(1+1/x)] / (-1/x²)<br>
+
+= lim[x→∞] 1/(1+1/x) = <b>1</b>.<br><br>
+
+Maka lim[x→∞] y = e¹ = <b>e</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>8.3 Kapan L'Hôpital Tidak Boleh Dipakai?</h3>
+
+<div class="note">
+
+<b>⚠️ JANGAN pakai L'Hôpital jika:</b><br><br>
+
+❌ Limit bukan bentuk 0/0 atau ∞/∞. Cek dulu!<br>
+
+❌ Limit f'(x)/g'(x) tidak ada (bukan berarti limit aslinya tidak ada).<br>
+
+❌ Terjebak dalam siklus (misal: lim[x→∞] x/√(x²+1) — lebih baik pakai aljabar).<br><br>
+
+<b>Contoh penyalahgunaan:</b><br><br>
+
+lim[x→0] (x + sin x)/x (bentuk 0/0) → L'Hôpital → lim(1+cos x)/1 = 2. ✅<br><br>
+
+Tapi lim[x→0] (x² sin(1/x))/sin x: L'Hôpital membuatnya makin rumit!
+Lebih baik pakai teorema squeeze.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 4</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Titik kritis:</b> f'(c)=0, f'(c) tidak ada, atau titik ujung. Kandidat ekstrem.</li>
+
+<li><b>Uji Turunan Pertama:</b> + ke - → maks lokal. - ke + → min lokal. Tidak berubah → bukan.</li>
+
+<li><b>Uji Turunan Kedua:</b> f''(c)>0 → min. f''(c)<0 → maks. f''(c)=0 → tidak tahu (pakai uji pertama).</li>
+
+<li><b>Kecekungan:</b> f''>0 → ∪. f''<0 → ∩. Titik belok: kecekungan berubah (f''=0 atau tidak ada + perubahan tanda).</li>
+
+<li><b>Optimasi:</b> 9 langkah: pahami → gambar → objektif → kendala → satu variabel → kritis → uji → ujung → jawab.</li>
+
+<li><b>Teorema Rolle:</b> f(a)=f(b) → ada c dengan f'(c)=0. Perlu kontinu + terdiferensialkan.</li>
+
+<li><b>Teorema Nilai Rata-rata:</b> f'(c) = (f(b)-f(a))/(b-a). Laju sesaat = laju rata-rata. Jantung kalkulus!</li>
+
+<li><b>Aturan L'Hôpital:</b> 0/0 atau ∞/∞ → turunkan pembilang dan penyebut. Bisa berulang. Bentuk lain harus diubah dulu.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Selalu periksa titik ujung dalam optimasi!</b> Maksimum/minimum global
+bisa terjadi di ujung interval, bukan di titik stasioner.
+Ini kesalahan yang sangat umum.
+
+</li>
+
+<li>
+
+<b>f''(c) = 0 → jangan memaksakan kesimpulan.</b> Langsung pakai uji turunan pertama.
+Contoh: x³ dan x⁴ sama-sama f''(0)=0, tapi hasilnya berbeda.
+
+</li>
+
+<li>
+
+<b>L'Hôpital bisa dipakai berulang.</b> Kalau setelah satu kali turunan
+masih 0/0 atau ∞/∞, turunkan lagi. Tapi jangan lupa cek bentuknya setiap kali!
+
+</li>
+
+<li>
+
+<b>Optimasi: gambar dulu!</b> Visualisasi masalah membantu menemukan
+fungsi objektif dan kendala. Sketsa sederhana sudah cukup.
+
+</li>
+
+<li>
+
+<b>MVT adalah "mesin" di balik banyak teorema.</b> Kalau kamu paham MVT,
+kamu bisa menurunkan Rolle, sifat naik/turun, dan bahkan Teorema Dasar Kalkulus.
+
+</li>
+
+<li>
+
+<b>Bentuk 1^∞, 0⁰, ∞⁰: logaritma natural adalah kuncinya.</b>
+Ambil ln dari kedua sisi, cari limit ln(y), lalu eksponensialkan hasilnya.
+
+</li>
+
+<li>
+
+<b>Verifikasi selalu!</b> Setelah optimasi, cek nilai di sekitar titik kritis.
+Kalau bisa, bandingkan dengan intuisi atau perhitungan kasar.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus3.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus5.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
