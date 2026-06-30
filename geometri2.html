@@ -6,29 +6,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Geometri Part 2 | Bangun Datar</title>
+<title>Geometri Part 2 | Bangun Datar: Segitiga, Segiempat & Poligon</title>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-    /* Perbaikan: pastikan semua section punya background solid */
     .section {
         background: #1a2740;
         position: relative;
         z-index: 1;
     }
-    
     .container {
         background: #0f1a2e;
     }
-    
     body {
         background: #0f1a2e;
-    }
-    
-    /* Pastikan tidak ada transparansi */
-    .hero, .section, .note, .summary, .example {
-        background-opacity: 1;
     }
 </style>
 
@@ -54,8 +46,9 @@
 
 Di Geometri 1, kita sudah mempelajari unsur-unsur paling dasar:
 <b>titik, garis, ruas garis, sinar garis, dan sudut</b>.
-Sekarang kita akan merangkai unsur-unsur itu menjadi <b>bangun datar</b>—
-bentuk-bentuk dua dimensi yang menjadi fondasi seluruh geometri.
+Unsur-unsur itu adalah "alfabet" geometri.
+Sekarang kita akan merangkai alfabet itu menjadi <b>kata dan kalimat</b>—
+yaitu <b>bangun datar</b>.
 
 </p>
 
@@ -63,17 +56,17 @@ bentuk-bentuk dua dimensi yang menjadi fondasi seluruh geometri.
 
 <b>Bangun datar</b> adalah bangun geometri yang seluruh bagiannya
 terletak pada <b>satu bidang</b> (2 dimensi). Bangun datar hanya memiliki
-<b>panjang dan lebar</b>, tidak memiliki tinggi (ketebalan).
+<b>panjang dan lebar</b>, tidak memiliki tinggi atau ketebalan.
+Kalau kamu menggambar di atas kertas, itulah bangun datar.
 
 </p>
 
 <p>
 
-Di bab ini, kita akan membahas secara mendalam:
-<b>segitiga</b> (bangun datar paling fundamental dengan 3 sisi),
-<b>segiempat</b> (berbagai jenis dengan 4 sisi),
-<b>poligon</b> (segi banyak secara umum),
-serta cara menghitung <b>keliling dan luas</b> mereka.
+Di bab ini, kita akan membahas secara mendalam tiga keluarga besar:
+<b>segitiga</b> (3 sisi), <b>segiempat</b> (4 sisi), dan <b>poligon</b> (n sisi).
+Kita akan mempelajari jenis-jenisnya, sifat-sifatnya, dan cara menghitung
+<b>keliling serta luasnya</b>—termasuk trik-trik yang tidak diajarkan di kelas biasa.
 
 </p>
 
@@ -83,19 +76,23 @@ serta cara menghitung <b>keliling dan luas</b> mereka.
 
 <ul>
 
-<li>Mengenal jenis-jenis segitiga berdasarkan sisi dan sudutnya.</li>
+<li>Menguasai klasifikasi segitiga berdasarkan sisi dan sudut, lengkap dengan sifat-sifatnya.</li>
 
-<li>Memahami sifat-sifat fundamental segitiga (jumlah sudut, ketaksamaan segitiga).</li>
+<li>Memahami dan bisa membuktikan sifat fundamental segitiga (jumlah sudut 180°, ketaksamaan segitiga).</li>
 
-<li>Menguasai rumus keliling dan luas segitiga, termasuk rumus Heron.</li>
+<li>Mengenal sudut luar segitiga dan teoremanya.</li>
 
-<li>Mengenal jenis-jenis segiempat dan sifat-sifatnya.</li>
+<li>Mampu menghitung keliling dan luas segitiga dengan 5 metode berbeda.</li>
 
-<li>Memahami poligon secara umum: segi-n beraturan dan tidak beraturan.</li>
+<li>Menguasai 6 jenis segiempat: persegi, persegi panjang, jajar genjang, belah ketupat, layang-layang, trapesium.</li>
 
-<li>Mampu menghitung keliling dan luas berbagai bangun datar.</li>
+<li>Memahami hierarki segiempat (mana yang termasuk mana).</li>
 
-<li>Memahami konsep bangun datar gabungan dan cara menghitung luasnya.</li>
+<li>Mampu menghitung keliling dan luas semua jenis segiempat.</li>
+
+<li>Mengenal poligon beraturan dan tidak beraturan, serta rumus umumnya.</li>
+
+<li>Mampu menghitung luas bangun datar gabungan.</li>
 
 </ul>
 
@@ -103,7 +100,7 @@ serta cara menghitung <b>keliling dan luas</b> mereka.
 
 </div>
 
-<!-- ==================== MATERI 1: SEGITIGA (BAGIAN 1 - DEFINISI & JENIS) ==================== -->
+<!-- ==================== MATERI 1: SEGITIGA ==================== -->
 
 <div class="section">
 
@@ -119,211 +116,363 @@ dan ketiga titik pertemuannya disebut <b>titik sudut</b>.
 
 <div class="summary">
 
-Segitiga memiliki:<br><br>
+Segitiga △ABC memiliki:<br><br>
 
-<b>3 sisi</b> (ruas garis pembentuk).<br>
+<b>3 sisi:</b> AB, BC, CA (sering ditulis a, b, c: a = BC, b = AC, c = AB).<br>
 
-<b>3 titik sudut</b> (perpotongan sisi-sisi).<br>
+<b>3 titik sudut:</b> A, B, C.<br>
 
-<b>3 sudut dalam</b> (sudut di setiap titik sudut, di dalam segitiga).<br><br>
+<b>3 sudut dalam:</b> ∠A, ∠B, ∠C (sudut di dalam segitiga).<br><br>
 
-Notasi: △ABC (segitiga dengan titik sudut A, B, C).<br>
-
-Sisi: AB, BC, CA. Sudut: ∠A, ∠B, ∠C.
+<b>Konvensi penamaan:</b> Sisi a berhadapan dengan sudut A. Sisi b berhadapan dengan B. Sisi c berhadapan dengan C.
 
 </div>
 
 <p>
 
-<b>Mengapa segitiga disebut "paling fundamental"?</b>
+<b>Mengapa segitiga disebut "paling fundamental" dalam geometri?</b>
 
 </p>
 
 <p>
 
-Karena <b>setiap poligon bisa diuraikan menjadi segitiga-segitiga</b>.
-Segiempat bisa dibagi menjadi 2 segitiga. Segilima menjadi 3 segitiga.
-Segi-n bisa dibagi menjadi (n-2) segitiga. Ini yang menjadi dasar
-rumus jumlah sudut dalam poligon.
+Ada beberapa alasan mendalam:
 
 </p>
 
 <p>
 
-Selain itu, segitiga adalah satu-satunya bangun datar yang <b>kaku</b> (rigid).
-Jika kamu membuat segitiga dari batang kayu yang disambung di ujungnya,
-bentuknya tidak bisa berubah tanpa merusak batangnya. Ini berbeda dengan segiempat
-yang bisa "melipat" (makanya jembatan dan menara sering menggunakan rangka segitiga).
+<b>1. Setiap poligon bisa diurai menjadi segitiga.</b>
+Segiempat = 2 segitiga. Segilima = 3 segitiga. Segi-n = (n-2) segitiga.
+Inilah dasar rumus jumlah sudut poligon = (n-2) × 180°.
+
+</p>
+
+<p>
+
+<b>2. Segitiga adalah satu-satunya bangun datar yang kaku (rigid).</b>
+Jika kamu membuat segitiga dari tiga batang kayu yang disambung di ujungnya,
+<b>bentuknya tidak bisa berubah</b> tanpa merusak batangnya. Ini berbeda dengan segiempat:
+rangka segiempat bisa "melipat" dan berubah bentuk.
+Karena sifat inilah, <b>jembatan, menara, dan rangka atap</b> selalu menggunakan
+ratusan rangkaian segitiga untuk kekuatan.
+
+</p>
+
+<p>
+
+<b>3. Segitiga adalah "atom" dari geometri Euclidean.</b>
+Banyak teorema geometri lanjut dibuktikan dengan memecah bangun kompleks
+menjadi segitiga-segitiga.
 
 </p>
 
 <hr>
 
-<h3>Jenis-Jenis Segitiga Berdasarkan Sisi</h3>
-
-<div class="summary">
-
-<b>1. Segitiga Sama Sisi (Equilateral):</b> ketiga sisi <b>sama panjang</b>.<br>
-
-<b>2. Segitiga Sama Kaki (Isosceles):</b> <b>dua sisi</b> sama panjang.<br>
-
-<b>3. Segitiga Sembarang (Scalene):</b> ketiga sisi <b>berbeda panjang</b>.
-
-</div>
-
-<h3>Segitiga Sama Sisi — Simetri Sempurna</h3>
-
-<div class="example">
-
-AB = BC = CA = s (semua sisi sama panjang).<br><br>
-
-<b>Sifat-sifat:</b><br>
-
-- Ketiga sudut sama besar: ∠A = ∠B = ∠C = <b>60°</b>.<br>
-
-- Memiliki <b>3 sumbu simetri</b> (garis yang membagi segitiga menjadi dua sama persis).<br>
-
-- Memiliki simetri putar tingkat 3 (diputar 120° kembali ke bentuk semula).<br>
-
-- Semua garis istimewa (garis berat, garis tinggi, garis bagi) <b>berimpit</b>.<br><br>
-
-<b>Mengapa sudutnya 60°?</b><br>
-
-Jumlah sudut segitiga = 180°. Karena ketiga sudut sama:<br>
-
-3 × ∠A = 180° → ∠A = 60°.
-
-</div>
-
-<h3>Segitiga Sama Kaki — Dua Sisi yang Sama</h3>
-
-<div class="example">
-
-AB = AC (dua sisi yang sama disebut <b>kaki</b>). BC disebut <b>alas</b>.<br><br>
-
-<b>Sifat-sifat:</b><br>
-
-- <b>Sudut di kaki sama besar:</b> ∠B = ∠C.<br>
-
-- Memiliki <b>1 sumbu simetri</b> (garis dari puncak A ke tengah alas BC).<br>
-
-- Garis tinggi dari A ke BC <b>sekaligus</b> garis berat, garis bagi, dan sumbu simetri.<br><br>
-
-<b>Mengapa ∠B = ∠C?</b><br>
-
-Kalau kamu melipat segitiga sama kaki sepanjang sumbu simetrinya,
-titik B akan tepat menimpa titik C. Ini membuktikan ∠B = ∠C.
-
-</div>
-
-<h3>Segitiga Sembarang — Tidak Ada yang Sama</h3>
-
-<div class="example">
-
-AB ≠ BC ≠ CA. Ketiga sisi berbeda panjang.<br><br>
-
-<b>Sifat-sifat:</b><br>
-
-- Ketiga sudut juga berbeda besar.<br>
-
-- Tidak memiliki sumbu simetri.<br>
-
-- Tidak memiliki simetri putar (kecuali 360°).<br>
-
-- Semua garis istimewa berbeda letaknya.
-
-</div>
-
-<hr>
-
-<h3>Jenis-Jenis Segitiga Berdasarkan Sudut</h3>
-
-<div class="summary">
-
-<b>1. Segitiga Lancip (Acute):</b> ketiga sudut < 90°.<br>
-
-<b>2. Segitiga Siku-Siku (Right):</b> satu sudut = 90°.<br>
-
-<b>3. Segitiga Tumpul (Obtuse):</b> satu sudut > 90°.
-
-</div>
+<h3>Konvensi Penamaan yang Perlu Diketahui</h3>
 
 <p>
 
-<b>Mengapa hanya satu sudut yang bisa tumpul atau siku-siku?</b>
+Dalam segitiga, ada konvensi standar yang dipakai di seluruh dunia:
 
 </p>
-
-<p>
-
-Karena jumlah sudut segitiga = 180°. Kalau ada dua sudut ≥ 90°,
-jumlahnya sudah ≥ 180°, tidak menyisakan ruang untuk sudut ketiga.
-Jadi, <b>maksimal satu sudut</b> yang boleh ≥ 90° dalam segitiga.
-
-</p>
-
-<h3>Segitiga Siku-Siku — Yang Paling Istimewa</h3>
 
 <div class="example">
 
-∠C = 90°. Sisi di depan sudut siku-siku disebut <b>hipotenusa</b> (sisi terpanjang).<br>
+Titik sudut: <b>huruf kapital</b> (A, B, C).<br>
 
-Dua sisi lainnya disebut <b>kaki siku-siku</b>.<br><br>
+Sisi: <b>huruf kecil</b> sesuai sudut di depannya (a = BC, b = AC, c = AB).<br>
 
-<b>Sifat-sifat:</b><br>
+Sudut: <b>huruf Yunani</b> atau huruf kapital dengan simbol ∠ (α = ∠A, β = ∠B, γ = ∠C).<br><br>
 
-- Berlaku Teorema Pythagoras: a² + b² = c² (c = hipotenusa).<br>
+Jadi, sisi a selalu berhadapan dengan sudut A.<br>
 
-- Kedua sudut lancip berpenyiku: ∠A + ∠B = 90°.<br>
+Sisi b selalu berhadapan dengan sudut B.<br>
 
-- Pusat lingkaran luar terletak di tengah hipotenusa.<br><br>
-
-Segitiga siku-siku akan dibahas lebih dalam di materi Teorema Pythagoras (Geometri 3).
-
-</div>
-
-<hr>
-
-<h3>Tabel Kombinasi Jenis Segitiga</h3>
-
-<div class="summary">
-
-Segitiga bisa diklasifikasi <b>sekaligus</b> berdasarkan sisi dan sudut:<br><br>
-
-- <b>Sama sisi + Lancip:</b> semua segitiga sama sisi pasti lancip (60°).<br>
-
-- <b>Sama kaki + Lancip:</b> dua sisi sama, semua sudut < 90°.<br>
-
-- <b>Sama kaki + Siku-siku:</b> sudut 90° di antara dua kaki yang sama, atau di puncak.<br>
-
-- <b>Sama kaki + Tumpul:</b> sudut puncak > 90°, dua sudut kaki lancip.<br>
-
-- <b>Sembarang + Lancip:</b> semua sisi beda, semua sudut < 90°.<br>
-
-- <b>Sembarang + Siku-siku:</b> semua sisi beda, satu sudut 90°.<br>
-
-- <b>Sembarang + Tumpul:</b> semua sisi beda, satu sudut > 90°.
+Sisi c selalu berhadapan dengan sudut C.
 
 </div>
 
 </div>
-
-<!-- ==================== MATERI 1: SEGITIGA (BAGIAN 2 - SIFAT FUNDAMENTAL) ==================== -->
 
 <div class="section">
 
-<h2>2. Sifat-Sifat Fundamental Segitiga</h2>
+<h2>2. Klasifikasi Segitiga Berdasarkan Sisi</h2>
 
 <p>
 
-Ada beberapa sifat yang berlaku untuk <b>semua segitiga</b>,
-apapun jenisnya. Ini adalah "aturan main" yang tidak bisa dilanggar.
+Ini adalah cara mengelompokkan segitiga berdasarkan <b>panjang sisi-sisinya</b>.
+Ada tiga jenis, dan masing-masing punya sifat unik.
 
 </p>
 
 <hr>
 
-<h3>Sifat 1: Jumlah Sudut Dalam Segitiga = 180°</h3>
+<h3>2.1 Segitiga Sama Sisi (Equilateral Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Ketiga sisi <b>sama panjang</b>. AB = BC = CA = s.<br><br>
+
+<b>Sifat utama:</b><br>
+
+- Ketiga sudut sama besar: ∠A = ∠B = ∠C = <b>60°</b>.<br>
+
+- Memiliki <b>3 sumbu simetri</b>.<br>
+
+- Semua garis istimewa (garis berat, garis tinggi, garis bagi, garis sumbu) <b>berimpit</b>.<br>
+
+- Titik berat = titik tinggi = titik bagi = titik sumbu (semua di satu titik yang sama!).
+
+</div>
+
+<p>
+
+<b>Mengapa sudutnya 60°?</b>
+
+</p>
+
+<div class="example">
+
+Jumlah sudut segitiga = 180° (sifat fundamental, dibahas nanti).<br><br>
+
+Karena ketiga sudut sama besar, maka:<br>
+
+∠A + ∠B + ∠C = 180°<br>
+
+3∠A = 180°<br>
+
+∠A = 60°<br><br>
+
+Jadi setiap sudut segitiga sama sisi = 60°. ✅
+
+</div>
+
+<p>
+
+<b>Mengapa semua garis istimewa berimpit?</b>
+
+</p>
+
+<p>
+
+Karena segitiga sama sisi sangat simetris. Tidak peduli dari sudut mana
+kamu melihatnya, segitiga ini terlihat sama. Garis dari puncak ke tengah alas
+sekaligus menjadi garis tinggi (karena tegak lurus), garis berat (karena membagi dua alas),
+dan garis bagi (karena membagi dua sudut puncak).
+
+</p>
+
+<hr>
+
+<h3>2.2 Segitiga Sama Kaki (Isosceles Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> <b>Dua sisi</b> sama panjang. Sisi yang sama disebut <b>kaki</b>,
+sisi yang lain disebut <b>alas</b>.<br><br>
+
+<b>Sifat utama:</b><br>
+
+- <b>Sudut di kaki sama besar:</b> sudut yang berhadapan dengan kaki yang sama, nilainya sama.<br>
+
+- Memiliki <b>1 sumbu simetri</b> (garis dari puncak ke tengah alas).<br>
+
+- Garis tinggi dari puncak <b>sekaligus</b> garis berat, garis bagi, dan sumbu simetri.
+
+</div>
+
+<p>
+
+<b>Mengapa sudut di kaki sama besar?</b>
+
+</p>
+
+<div class="example">
+
+Misalkan AB = AC (kaki), BC adalah alas.<br><br>
+
+Jika kamu melipat segitiga sepanjang sumbu simetrinya
+(garis dari A ke tengah BC), maka:<br><br>
+
+- Titik B akan tepat menimpa titik C (karena AB = AC).<br>
+
+- Sisi AB akan tepat menimpa sisi AC.<br>
+
+- Sudut B akan tepat menimpa sudut C.<br><br>
+
+Karena saling menimpa, berarti ∠B = ∠C. ✅
+
+</div>
+
+<p>
+
+<b>Kasus khusus:</b> Segitiga sama sisi adalah kasus khusus segitiga sama kaki
+di mana alasnya sama panjang dengan kakinya. Jadi, semua sifat segitiga sama kaki
+berlaku juga untuk segitiga sama sisi.
+
+</p>
+
+<hr>
+
+<h3>2.3 Segitiga Sembarang (Scalene Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Ketiga sisi <b>berbeda panjang</b>. AB ≠ BC ≠ CA.<br><br>
+
+<b>Sifat utama:</b><br>
+
+- Ketiga sudut juga berbeda besar.<br>
+
+- <b>Tidak memiliki</b> sumbu simetri.<br>
+
+- Semua garis istimewa <b>berbeda</b> letaknya.
+
+</div>
+
+<p>
+
+Mayoritas segitiga di dunia nyata adalah segitiga sembarang.
+Justru segitiga sama sisi dan sama kaki yang istimewa.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>3. Klasifikasi Segitiga Berdasarkan Sudut</h2>
+
+<p>
+
+Selain dari sisi, segitiga juga bisa diklasifikasikan dari <b>besar sudut terbesarnya</b>.
+
+</p>
+
+<hr>
+
+<h3>3.1 Segitiga Lancip (Acute Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> <b>Semua</b> sudut < 90°.<br><br>
+
+∠A < 90°, ∠B < 90°, ∠C < 90°.
+
+</div>
+
+<div class="example">
+
+Segitiga sama sisi: 60°, 60°, 60° → lancip.<br>
+
+Segitiga dengan sudut 50°, 60°, 70° → lancip.
+
+</div>
+
+<hr>
+
+<h3>3.2 Segitiga Siku-Siku (Right Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> <b>Satu</b> sudut = 90°.<br><br>
+
+<b>Istilah:</b><br>
+
+- Sisi di depan sudut 90° disebut <b>hipotenusa</b> (sisi terpanjang).<br>
+
+- Dua sisi lainnya disebut <b>kaki siku-siku</b> (legs).<br><br>
+
+<b>Sifat:</b><br>
+
+- a² + b² = c² (Teorema Pythagoras, c = hipotenusa).<br>
+
+- Kedua sudut lancip saling berpenyiku: ∠A + ∠B = 90°.
+
+</div>
+
+<p>
+
+<b>Mengapa hipotenusa selalu sisi terpanjang?</b>
+
+</p>
+
+<div class="example">
+
+Karena sudut 90° adalah sudut terbesar dalam segitiga siku-siku
+(tidak mungkin ada sudut lain yang ≥ 90° karena totalnya cuma 180°).<br><br>
+
+Berdasarkan sifat: <b>sisi terpanjang berhadapan dengan sudut terbesar</b>.
+Maka sisi di depan sudut 90° (hipotenusa) pasti yang terpanjang. ✅
+
+</div>
+
+<p>
+
+Segitiga siku-siku akan dibahas sangat mendalam di Geometri 3
+(Teorema Pythagoras dan aplikasinya).
+
+</p>
+
+<hr>
+
+<h3>3.3 Segitiga Tumpul (Obtuse Triangle)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> <b>Satu</b> sudut > 90°.<br><br>
+
+<b>Sifat:</b> Sisi terpanjang adalah sisi di depan sudut tumpul.
+
+</div>
+
+<div class="example">
+
+Segitiga dengan sudut 100°, 40°, 40° → tumpul (satu sudut > 90°).<br>
+
+Segitiga dengan sudut 120°, 30°, 30° → tumpul.
+
+</div>
+
+<hr>
+
+<h3>Mengapa Hanya Bisa Satu Sudut yang ≥ 90°?</h3>
+
+<p>
+
+Ini pertanyaan yang sangat bagus, dan jawabannya sederhana:
+
+</p>
+
+<div class="example">
+
+Jumlah sudut segitiga = 180°.<br><br>
+
+Kalau ada <b>dua</b> sudut yang ≥ 90°, jumlah keduanya sudah ≥ 180°.<br>
+
+Itu artinya tidak ada sisa untuk sudut ketiga (harusnya 0° atau negatif, yang mustahil).<br><br>
+
+Jadi, <b>maksimal satu sudut</b> yang boleh ≥ 90° dalam segitiga. ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>4. Sifat-Sifat Fundamental Segitiga</h2>
+
+<p>
+
+Ini adalah "hukum alam" yang berlaku untuk <b>semua segitiga tanpa kecuali</b>.
+Kamu harus menguasainya karena hampir semua soal geometri melibatkan sifat-sifat ini.
+
+</p>
+
+<hr>
+
+<h3>4.1 Jumlah Sudut Dalam = 180°</h3>
 
 <div class="summary">
 
@@ -333,23 +482,33 @@ apapun jenisnya. Ini adalah "aturan main" yang tidak bisa dilanggar.
 
 <p>
 
-<b>Pembuktian — cara paling intuitif:</b>
+Ini adalah teorema paling fundamental tentang segitiga.
+Ada beberapa cara membuktikannya:
+
+</p>
+
+<p>
+
+<b>Pembuktian 1 — Menggunakan Garis Sejajar (Cara Euclid):</b>
 
 </p>
 
 <div class="example">
 
-Ambil segitiga ABC. Tarik garis melalui A yang <b>sejajar</b> dengan BC.<br><br>
+Diberikan △ABC. Tarik garis melalui A yang <b>sejajar</b> dengan BC.
+Sebut garis itu garis l.<br><br>
 
-Sekarang di titik A ada tiga sudut:<br>
+Sekarang di titik A, ada tiga sudut yang membentuk garis lurus (180°):<br><br>
 
-- Sudut antara garis sejajar dan AB = ∠B (berseberangan dalam).<br>
+1. Sudut antara l dan AB = ∠B. <b>Kenapa?</b> Karena l ∥ BC, maka sudut ini
+   berseberangan dalam dengan ∠B. Jadi besarnya = ∠B.<br><br>
 
-- Sudut antara garis sejajar dan AC = ∠C (berseberangan dalam).<br>
+2. Sudut ∠A asli dari segitiga.<br><br>
 
-- Sudut ∠A asli segitiga.<br><br>
+3. Sudut antara l dan AC = ∠C. <b>Kenapa?</b> Karena l ∥ BC, maka sudut ini
+   berseberangan dalam dengan ∠C. Jadi besarnya = ∠C.<br><br>
 
-Ketiga sudut ini membentuk <b>garis lurus</b> di atas garis sejajar → 180°.<br><br>
+Ketiga sudut ini (∠B + ∠A + ∠C) membentuk sudut lurus = 180°.<br><br>
 
 Jadi, ∠A + ∠B + ∠C = 180°. ✅
 
@@ -357,27 +516,130 @@ Jadi, ∠A + ∠B + ∠C = 180°. ✅
 
 <p>
 
-<b>Cara lain — eksperimen:</b>
-
-Gunting segitiga dari kertas. Sobek ketiga sudutnya.
-Tempelkan ketiga sobekan itu berdampingan.
-Kamu akan melihat ketiganya membentuk garis lurus (180°).
+<b>Pembuktian 2 — Eksperimen Fisik:</b>
 
 </p>
 
+<div class="example">
+
+Ambil selembar kertas berbentuk segitiga.<br>
+
+Gunting atau sobek ketiga sudutnya.<br>
+
+Tempelkan ketiga potongan sudut itu berdampingan
+dengan titik sudutnya bertemu di satu titik.<br><br>
+
+Kamu akan melihat ketiganya membentuk <b>garis lurus sempurna</b> (180°). ✅
+
+</div>
+
+<p>
+
+<b>Pembuktian 3 — "Berjalan Mengelilingi Segitiga":</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu berdiri di titik A, menghadap ke B.<br>
+
+1. Jalan lurus ke B.<br>
+
+2. Di B, putar tubuhmu sebesar (180° - ∠B) agar menghadap ke C. Jalan ke C.<br>
+
+3. Di C, putar tubuhmu sebesar (180° - ∠C) agar menghadap ke A. Jalan ke A.<br>
+
+4. Di A, putar tubuhmu sebesar (180° - ∠A) agar menghadap ke B lagi (posisi awal).<br><br>
+
+Total putaran = (180°-∠B) + (180°-∠C) + (180°-∠A) = 540° - (∠A+∠B+∠C).<br><br>
+
+Tapi total putaran juga harus = 360° (satu putaran penuh kembali ke arah semula).<br><br>
+
+540° - (∠A+∠B+∠C) = 360°<br>
+
+∠A + ∠B + ∠C = 180°. ✅
+
+</div>
+
 <hr>
 
-<h3>Sifat 2: Ketaksamaan Segitiga (Triangle Inequality)</h3>
+<h3>4.2 Sudut Luar Segitiga (Exterior Angle Theorem)</h3>
 
 <div class="summary">
 
-<b>Jumlah dua sisi mana pun HARUS LEBIH BESAR dari sisi ketiga.</b><br><br>
+<b>Sudut luar</b> adalah sudut yang terbentuk jika salah satu sisi diperpanjang.<br><br>
 
-AB + BC > AC<br>
+<b>Teorema Sudut Luar:</b> Sudut luar = jumlah dua sudut dalam yang tidak bersebelahan.<br><br>
 
-AB + AC > BC<br>
+∠CBD (luar di B) = ∠A + ∠C
 
-BC + AC > AB
+</div>
+
+<p>
+
+<b>Pembuktian:</b>
+
+</p>
+
+<div class="example">
+
+Perhatikan △ABC. Perpanjang sisi AB melewati B ke titik D.<br><br>
+
+∠CBD adalah sudut luar di B.<br><br>
+
+∠ABC + ∠CBD = 180° (berpelurus, membentuk garis lurus ABD).<br>
+
+∠ABC + ∠A + ∠C = 180° (jumlah sudut dalam segitiga).<br><br>
+
+Maka:<br>
+
+∠ABC + ∠CBD = ∠ABC + ∠A + ∠C<br>
+
+∠CBD = ∠A + ∠C ✅
+
+</div>
+
+<p>
+
+<b>Mengapa teorema ini penting?</b>
+
+</p>
+
+<p>
+
+Teorema sudut luar sering menjadi <b>jalan pintas</b> dalam soal geometri.
+Daripada menghitung dua sudut dalam, kamu bisa langsung menghitung sudut luar.
+Ini juga menjadi dasar untuk membuktikan banyak teorema lainnya.
+
+</p>
+
+<div class="example">
+
+<b>Aplikasi:</b> Dalam △ABC, ∠A = 40°, ∠B = 70°. Berapa sudut luar di C?<br><br>
+
+<b>Cara 1 (langsung):</b> ∠C = 180° - 40° - 70° = 70°. Sudut luar di C = 180° - 70° = 110°.<br><br>
+
+<b>Cara 2 (teorema sudut luar):</b> Sudut luar di C = ∠A + ∠B = 40° + 70° = <b>110°</b>. ✅<br><br>
+
+Jauh lebih cepat!
+
+</div>
+
+<hr>
+
+<h3>4.3 Ketaksamaan Segitiga (Triangle Inequality)</h3>
+
+<div class="summary">
+
+<b>Jumlah panjang dua sisi mana pun HARUS LEBIH BESAR dari sisi ketiga.</b><br><br>
+
+a + b > c<br>
+
+a + c > b<br>
+
+b + c > a<br><br>
+
+<b>Ketiga syarat harus terpenuhi semuanya.</b>
 
 </div>
 
@@ -389,60 +651,73 @@ BC + AC > AB
 
 <p>
 
-Bayangkan kamu ingin pergi dari A ke C. Ada dua rute:
-
-</p>
-
-<ul>
-
-<li><b>Langsung:</b> sisi AC.</li>
-
-<li><b>Memutar:</b> lewat B (AB + BC).</li>
-
-</ul>
-
-<p>
-
-Rute langsung adalah <b>jarak terpendek</b> antara dua titik.
-Rute memutar pasti lebih panjang. Jadi AB + BC > AC.
-
-</p>
-
-<p>
-
-Kalau AB + BC = AC, maka B terletak <b>tepat pada</b> ruas garis AC
-(dan tidak membentuk segitiga, melainkan garis lurus).
-
-</p>
-
-<p>
-
-Kalau AB + BC < AC, maka tidak mungkin ada segitiga dengan sisi-sisi itu.
-Ini adalah cara cepat mengecek apakah tiga panjang bisa membentuk segitiga.
+Bayangkan kamu punya tiga batang kayu dengan panjang a, b, dan c.
+Kamu ingin membentuk segitiga dari ketiganya. Kapan ini mungkin?
 
 </p>
 
 <div class="example">
 
-<b>Bisa jadi segitiga:</b> 3, 4, 5 → 3+4=7>5, 3+5=8>4, 4+5=9>3. ✅<br><br>
+<b>Bisa jadi segitiga:</b> 3, 4, 5 → 3+4=7>5, 3+5=8>4, 4+5=9>3. Semua syarat terpenuhi. ✅<br><br>
 
-<b>Tidak bisa:</b> 2, 3, 7 → 2+3=5 < 7. ❌ Tidak mungkin ada segitiga dengan sisi 2, 3, 7.
+<b>Tidak bisa:</b> 2, 3, 7 → 2+3=5 < 7. ❌<br>
+
+Kenapa? Karena kalau sisi terpanjangnya 7, dua sisi lainnya (2 dan 3)
+bahkan kalau direntangkan lurus pun totalnya cuma 5—tidak akan bisa "bertemu"
+untuk membentuk segitiga.
+
+</div>
+
+<p>
+
+<b>Intuisi fisik:</b> Jika kamu ingin pergi dari A ke C, rute langsung (sisi b)
+pasti lebih pendek daripada rute memutar lewat B (sisi a + sisi c).
+Jadi a + c > b. Ini berlaku untuk semua kombinasi.
+
+</p>
+
+<p>
+
+<b>Ketaksamaan segitiga dalam bentuk selisih:</b>
+
+</p>
+
+<div class="summary">
+
+|a - b| < c < a + b
+
+<br><br>
+
+Sisi ketiga harus <b>lebih besar dari selisih</b> dua sisi lainnya,
+dan <b>lebih kecil dari jumlah</b> dua sisi lainnya.
+
+</div>
+
+<div class="example">
+
+Dua sisi segitiga: 5 dan 8. Berapa kemungkinan sisi ketiga?<br><br>
+
+|5 - 8| < c < 5 + 8<br>
+
+3 < c < 13<br><br>
+
+Sisi ketiga bisa 4, 5, 6, ..., 12. Tapi tidak bisa 3 atau kurang, dan tidak bisa 13 atau lebih.
 
 </div>
 
 <hr>
 
-<h3>Sifat 3: Hubungan Sisi dan Sudut</h3>
+<h3>4.4 Hubungan Sisi dan Sudut</h3>
 
 <div class="summary">
 
-<b>Sisi terpanjang berhadapan dengan sudut terbesar.</b><br>
+<b>Sisi terpanjang ⇔ berhadapan dengan sudut terbesar.</b><br>
 
-<b>Sisi terpendek berhadapan dengan sudut terkecil.</b><br><br>
+<b>Sisi terpendek ⇔ berhadapan dengan sudut terkecil.</b><br><br>
 
-Jika AB > BC maka ∠C > ∠A.<br>
+Jika a > b > c, maka ∠A > ∠B > ∠C.<br>
 
-Jika ∠A > ∠B maka BC > AC.
+Jika ∠A > ∠B > ∠C, maka a > b > c.
 
 </div>
 
@@ -454,260 +729,18 @@ Jika ∠A > ∠B maka BC > AC.
 
 <p>
 
-Ini bisa dibuktikan dengan teorema yang lebih lanjut,
-tapi intuisinya: semakin besar sudut, semakin "terbuka" kedua kakinya,
-sehingga sisi di depannya semakin panjang. Bayangkan mulut buaya—
-semakin lebar bukaan, semakin jauh jarak antara rahang atas dan bawah.
-
-</p>
-
-</div>
-
-<!-- ==================== MATERI 1: SEGITIGA (BAGIAN 3 - KELILING) ==================== -->
-
-<div class="section">
-
-<h2>3. Keliling Segitiga</h2>
-
-<p>
-
-<b>Keliling</b> adalah <b>total panjang semua sisi</b>—jarak yang kamu tempuh
-jika berjalan mengelilingi segitiga tepat satu putaran.
-
-</p>
-
-<div class="summary">
-
-K = AB + BC + CA = a + b + c
-
-</div>
-
-<div class="example">
-
-Segitiga dengan sisi 5 cm, 7 cm, 9 cm.<br><br>
-
-K = 5 + 7 + 9 = <b>21 cm</b> ✅
-
-</div>
-
-<p>
-
-Untuk segitiga sama sisi dengan panjang sisi s: <b>K = 3s</b>.
+Ini bisa dibuktikan secara formal dengan teorema, tapi intuisinya sederhana:
+semakin besar sudut, semakin "terbuka" kedua kaki sudutnya,
+sehingga sisi di depannya semakin lebar dan panjang.
 
 </p>
 
 <p>
 
-Untuk segitiga sama kaki dengan kaki p dan alas q: <b>K = 2p + q</b>.
+Bayangkan kamu membuka gunting. Semakin lebar kamu membukanya,
+semakin jauh jarak antara kedua ujung gunting. Sudut yang lebih besar
+menghasilkan sisi depan yang lebih panjang.
 
 </p>
-
-<hr>
-
-<h3>Keliling Setengah (Semiperimeter) — Sangat Penting!</h3>
-
-<div class="summary">
-
-<b>Semiperimeter (s)</b> = setengah dari keliling.<br><br>
-
-s = K/2 = (a + b + c)/2
-
-</div>
-
-<p>
-
-<b>Mengapa semiperimeter penting?</b>
-
-Karena semiperimeter muncul di <b>Rumus Heron</b> untuk menghitung luas segitiga
-hanya dari panjang sisi-sisinya. Ini akan kita bahas di bagian Luas.
-
-</p>
-
-</div>
-
-<!-- ==================== MATERI 1: SEGITIGA (BAGIAN 4 - LUAS) ==================== -->
-
-<div class="section">
-
-<h2>4. Luas Segitiga — Berbagai Cara Menghitung</h2>
-
-<p>
-
-<b>Luas</b> adalah ukuran <b>seberapa besar daerah</b> yang ditempati segitiga
-pada bidang. Ada beberapa rumus luas, tergantung informasi yang diketahui.
-
-</p>
-
-<hr>
-
-<h3>Rumus 1: Alas × Tinggi / 2 (Rumus Dasar)</h3>
-
-<div class="summary">
-
-L = ½ × a × t
-
-<br><br>
-
-a = panjang alas (salah satu sisi).<br>
-
-t = tinggi (jarak tegak lurus dari sisi alas ke titik sudut di depannya).
-
-</div>
-
-<p>
-
-<b>Mengapa rumusnya seperti itu?</b>
-
-</p>
-
-<p>
-
-Bayangkan segitiga sebagai <b>setengah dari jajar genjang</b>.
-Jika kamu menduplikasi segitiga dan memutar 180°, lalu menempelkannya,
-kamu akan mendapat jajar genjang dengan alas a dan tinggi t.
-
-</p>
-
-<div class="example">
-
-Luas jajar genjang = a × t.<br>
-
-Karena segitiga adalah setengah jajar genjang, maka:<br>
-
-Luas segitiga = ½ × a × t. ✅
-
-</div>
-
-<p>
-
-<b>Penting:</b> Tinggi harus <b>tegak lurus</b> dengan alas.
-Ini adalah kesalahan paling umum: menggunakan sisi miring sebagai tinggi.
-
-</p>
-
-<div class="example">
-
-Segitiga dengan alas 10 cm dan tinggi 6 cm.<br><br>
-
-L = ½ × 10 × 6 = <b>30 cm²</b> ✅<br><br>
-
-<b>Perhatikan:</b> Tinggi 6 cm bukan sisi miring, tapi jarak tegak lurus
-dari alas ke puncak segitiga.
-
-</div>
-
-<hr>
-
-<h3>Rumus 2: Dua Sisi dan Sudut Apit (SAS)</h3>
-
-<div class="summary">
-
-Jika diketahui dua sisi dan sudut yang diapitnya:<br><br>
-
-L = ½ × a × b × sin C
-
-<br><br>
-
-a, b = dua sisi yang diketahui.<br>
-
-C = sudut yang diapit oleh sisi a dan b.
-
-</div>
-
-<p>
-
-<b>Mengapa ada sin C?</b>
-
-</p>
-
-<p>
-
-Ini berasal dari rumus dasar L = ½ × alas × tinggi.
-Jika kita pilih a sebagai alas, maka tinggi = b × sin C
-(karena sin C = tinggi/b dalam segitiga siku-siku kecil yang terbentuk).
-
-</p>
-
-<div class="example">
-
-Segitiga dengan sisi a = 8 cm, b = 6 cm, sudut C = 30°.<br><br>
-
-L = ½ × 8 × 6 × sin 30°<br>
-
-= ½ × 8 × 6 × 0,5<br>
-
-= ½ × 24<br>
-
-= <b>12 cm²</b> ✅
-
-</div>
-
-<hr>
-
-<h3>Rumus 3: Rumus Heron — Hanya dari Tiga Sisi (SSS)</h3>
-
-<div class="summary">
-
-Jika diketahui ketiga sisi a, b, c:<br><br>
-
-s = (a + b + c)/2 &nbsp; (semiperimeter)<br><br>
-
-<b>L = √[s(s - a)(s - b)(s - c)]</b>
-
-</div>
-
-<p>
-
-<b>Mengapa rumus ini ajaib?</b>
-
-Karena kamu tidak perlu tahu tinggi atau sudut sama sekali!
-Cukup panjang ketiga sisinya, dan luas bisa dihitung.
-Rumus ini ditemukan oleh <b>Heron dari Alexandria</b> (sekitar 60 M).
-
-</p>
-
-<div class="example">
-
-Segitiga dengan sisi a = 5 cm, b = 6 cm, c = 7 cm.<br><br>
-
-s = (5+6+7)/2 = 18/2 = 9.<br><br>
-
-L = √[9(9-5)(9-6)(9-7)]<br>
-
-= √[9 × 4 × 3 × 2]<br>
-
-= √[216]<br>
-
-= <b>6√6 ≈ 14,7 cm²</b> ✅<br><br>
-
-<b>Verifikasi:</b> Dengan penggaris dan kertas, segitiga 5-6-7 memang memiliki luas sekitar 14,7 cm².
-
-</div>
-
-<hr>
-
-<h3>Rumus 4: Segitiga Sama Sisi</h3>
-
-<div class="summary">
-
-Untuk segitiga sama sisi dengan panjang sisi s:<br><br>
-
-<b>L = (s²√3)/4</b>
-
-</div>
-
-<p>
-
-<b>Mengapa?</b> Ini kasus khusus dari rumus Heron.
-Substitusi a = b = c = s, maka s = 3s/2,
-dan L = √[(3s/2)(s/2)(s/2)(s/2)] = √(3s⁴/16) = (s²√3)/4.
-
-</p>
-
-<div class="example">
-
-Segitiga sama sisi dengan sisi 4 cm.<br><br>
-
-L = (16√3)/4 = <b>4√3 ≈ 6,93 cm²</b> ✅
 
 </div>
