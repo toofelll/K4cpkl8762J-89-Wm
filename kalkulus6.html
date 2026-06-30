@@ -1,1 +1,583 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 6 | Integral: Teknik Lanjut</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 6 • Integral: Teknik Lanjut</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Melampaui Substitusi Dasar</h2>
+
+<p>
+
+Di Kalkulus 5, kita sudah menguasai integral dasar dan substitusi sederhana.
+Tapi tidak semua integral bisa diselesaikan dengan substitusi biasa.
+Ada integral yang melibatkan akar kuadrat dari jumlah/selisih kuadrat,
+perkalian dua jenis fungsi yang berbeda, pecahan polinomial yang rumit,
+pangkat trigonometri tinggi, atau batas tak hingga.
+
+</p>
+
+<p>
+
+Untuk menaklukkan integral-integral "bandel" ini, kita membutuhkan
+<b>teknik-teknik lanjut</b>: substitusi trigonometri, integral parsial,
+dekomposisi pecahan parsial, dan teknik integral trigonometri.
+Kita juga akan mempelajari <b>integral improper</b>—integral dengan
+batas tak hingga atau integran yang tidak terdefinisi.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Menguasai substitusi trigonometri untuk integral dengan √(a²±x²) dan √(x²-a²).</li>
+
+<li>Menguasai integral parsial (integration by parts)—"aturan produk terbalik".</li>
+
+<li>Mampu mendekomposisi pecahan parsial untuk integral fungsi rasional.</li>
+
+<li>Menguasai teknik integral trigonometri untuk pangkat tinggi sin dan cos.</li>
+
+<li>Memahami integral improper dan syarat konvergensinya.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: SUBSTITUSI TRIGONOMETRI ==================== -->
+
+<div class="section">
+
+<h2>1. Substitusi Trigonometri — Menyederhanakan Akar Kuadrat</h2>
+
+<p>
+
+Substitusi trigonometri adalah teknik untuk mengintegralkan fungsi
+yang mengandung <b>akar kuadrat dari bentuk kuadrat</b>.
+Ide dasarnya: gunakan identitas Pythagoras trigonometri
+untuk "menghilangkan" akar kuadrat.
+
+</p>
+
+<div class="summary">
+
+<b>Tiga Kasus Substitusi Trigonometri:</b><br><br>
+
+<b>Kasus 1: √(a² - x²)</b> → Substitusi x = a sin θ, dx = a cos θ dθ.<br>
+
+Maka √(a² - x²) = √(a² - a² sin²θ) = a cos θ. (cos θ ≥ 0 untuk θ ∈ [-π/2, π/2])<br><br>
+
+<b>Kasus 2: √(a² + x²)</b> → Substitusi x = a tan θ, dx = a sec²θ dθ.<br>
+
+Maka √(a² + x²) = √(a² + a² tan²θ) = a sec θ.<br><br>
+
+<b>Kasus 3: √(x² - a²)</b> → Substitusi x = a sec θ, dx = a sec θ tan θ dθ.<br>
+
+Maka √(x² - a²) = √(a² sec²θ - a²) = a tan θ.
+
+</div>
+
+<p>
+
+<b>Mengapa ini berhasil? — Keajaiban Identitas Pythagoras</b>
+
+</p>
+
+<div class="example">
+
+<b>Kasus 1:</b> sin²θ + cos²θ = 1 → a² - a² sin²θ = a²(1 - sin²θ) = a² cos²θ.<br>
+
+Akar kuadratnya: a cos θ. Akar hilang!<br><br>
+
+<b>Kasus 2:</b> 1 + tan²θ = sec²θ → a² + a² tan²θ = a²(1 + tan²θ) = a² sec²θ.<br>
+
+Akar kuadratnya: a sec θ. Akar hilang!<br><br>
+
+<b>Kasus 3:</b> sec²θ - 1 = tan²θ → a² sec²θ - a² = a²(sec²θ - 1) = a² tan²θ.<br>
+
+Akar kuadratnya: a tan θ. Akar hilang!
+
+</div>
+
+<hr>
+
+<h3>1.1 Contoh Kasus 1: √(a² - x²)</h3>
+
+<div class="example">
+
+Hitung ∫ √(4 - x²) dx.<br><br>
+
+a = 2. Substitusi: x = 2 sin θ, dx = 2 cos θ dθ.<br>
+
+√(4 - 4sin²θ) = 2 cos θ.<br><br>
+
+∫ 2 cos θ · 2 cos θ dθ = 4 ∫ cos²θ dθ.<br><br>
+
+Gunakan identitas: cos²θ = (1 + cos 2θ)/2.<br>
+
+= 4 ∫ (1 + cos 2θ)/2 dθ = 2 ∫ (1 + cos 2θ) dθ<br>
+
+= 2(θ + (1/2)sin 2θ) + C = 2θ + sin 2θ + C.<br><br>
+
+Kembalikan ke x: sin θ = x/2 → θ = arcsin(x/2).<br>
+
+sin 2θ = 2 sin θ cos θ = 2(x/2)(√(4-x²)/2) = (x√(4-x²))/2.<br><br>
+
+= 2 arcsin(x/2) + (x√(4-x²))/2 + C. ✅<br><br>
+
+<b>Verifikasi:</b> Turunkan hasilnya, harus kembali ke √(4-x²).
+
+</div>
+
+<hr>
+
+<h3>1.2 Contoh Kasus 2: √(a² + x²)</h3>
+
+<div class="example">
+
+Hitung ∫ dx / √(x² + 9).<br><br>
+
+a = 3. Substitusi: x = 3 tan θ, dx = 3 sec²θ dθ.<br>
+
+√(x² + 9) = √(9 tan²θ + 9) = 3 sec θ.<br><br>
+
+∫ 3 sec²θ / (3 sec θ) dθ = ∫ sec θ dθ.<br><br>
+
+∫ sec θ dθ = ln |sec θ + tan θ| + C.<br><br>
+
+Kembalikan ke x: tan θ = x/3. sec θ = √(x²+9)/3.<br><br>
+
+= ln |√(x²+9)/3 + x/3| + C = <b>ln |√(x²+9) + x| + C'</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: INTEGRAL PARSIAL ==================== -->
+
+<div class="section">
+
+<h2>2. Integral Parsial — "Aturan Produk Terbalik"</h2>
+
+<p>
+
+Integral parsial adalah teknik yang berasal dari <b>membalik aturan produk turunan</b>.
+Ini adalah salah satu teknik paling powerful untuk integral yang melibatkan
+<b>perkalian dua jenis fungsi yang berbeda</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Rumus Integral Parsial:</b><br><br>
+
+∫ u dv = u·v - ∫ v du<br><br>
+
+<b>Strategi memilih u (Aturan LIATE):</b><br><br>
+
+<b>L</b>ogaritma → <b>I</b>nvers trigonometri → <b>A</b>ljabar (polinomial) → <b>T</b>rigonometri → <b>E</b>ksponen<br><br>
+
+Pilih <b>u</b> dari yang paling kiri dalam daftar LIATE. Sisanya jadi <b>dv</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Dari Aturan Produk</b>
+
+</p>
+
+<div class="example">
+
+Aturan produk: d(uv)/dx = u(dv/dx) + v(du/dx).<br><br>
+
+Integralkan kedua ruas: uv = ∫ u dv + ∫ v du.<br><br>
+
+Susun ulang: ∫ u dv = uv - ∫ v du. ✅<br><br>
+
+Jadi integral parsial adalah <b>aturan produk yang diintegralkan</b>.
+
+</div>
+
+<hr>
+
+<h3>2.1 Contoh Dasar: Polinomial × Eksponen</h3>
+
+<div class="example">
+
+Hitung ∫ x·eˣ dx.<br><br>
+
+LIATE: Aljabar (x) sebelum Eksponen (eˣ). Pilih u = x, dv = eˣ dx.<br>
+
+du = dx. v = ∫ eˣ dx = eˣ.<br><br>
+
+∫ x·eˣ dx = x·eˣ - ∫ eˣ dx = <b>x·eˣ - eˣ + C = eˣ(x - 1) + C</b>. ✅<br><br>
+
+<b>Verifikasi:</b> d/dx [eˣ(x-1)] = eˣ(x-1) + eˣ(1) = x·eˣ. ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Contoh: Polinomial × Trigonometri</h3>
+
+<div class="example">
+
+Hitung ∫ x·sin x dx.<br><br>
+
+u = x, dv = sin x dx. du = dx, v = -cos x.<br><br>
+
+= x(-cos x) - ∫ (-cos x) dx = -x cos x + ∫ cos x dx<br>
+
+= <b>-x cos x + sin x + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Contoh: Logaritma (LIATE: L paling awal!)</h3>
+
+<div class="example">
+
+Hitung ∫ ln x dx.<br><br>
+
+Ini terlihat seperti satu fungsi, tapi bisa ditulis sebagai ln x · 1.<br>
+
+u = ln x, dv = 1·dx. du = (1/x)dx, v = x.<br><br>
+
+= x ln x - ∫ x·(1/x) dx = x ln x - ∫ 1 dx<br>
+
+= <b>x ln x - x + C = x(ln x - 1) + C</b>. ✅<br><br>
+
+<b>Verifikasi:</b> d/dx [x(ln x - 1)] = (ln x - 1) + x(1/x) = ln x. ✅
+
+</div>
+
+<hr>
+
+<h3>2.4 Contoh: Perlu Integral Parsial Dua Kali</h3>
+
+<div class="example">
+
+Hitung ∫ eˣ·sin x dx.<br><br>
+
+u = sin x, dv = eˣ dx. du = cos x dx, v = eˣ.<br><br>
+
+∫ eˣ sin x dx = eˣ sin x - ∫ eˣ cos x dx.<br><br>
+
+Integral parsial lagi untuk ∫ eˣ cos x dx: u = cos x, dv = eˣ dx.<br>
+
+du = -sin x dx, v = eˣ.<br><br>
+
+∫ eˣ cos x dx = eˣ cos x - ∫ eˣ(-sin x) dx = eˣ cos x + ∫ eˣ sin x dx.<br><br>
+
+Substitusi balik:<br>
+
+∫ eˣ sin x dx = eˣ sin x - [eˣ cos x + ∫ eˣ sin x dx]<br>
+
+= eˣ sin x - eˣ cos x - ∫ eˣ sin x dx.<br><br>
+
+2 ∫ eˣ sin x dx = eˣ(sin x - cos x).<br>
+
+∫ eˣ sin x dx = <b>(eˣ/2)(sin x - cos x) + C</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: INTEGRAL PARSIAL PECAHAN ==================== -->
+
+<div class="section">
+
+<h2>3. Dekomposisi Pecahan Parsial — Memecah Pecahan Kompleks</h2>
+
+<div class="summary">
+
+<b>Dekomposisi pecahan parsial</b> adalah teknik mengubah pecahan polinomial
+yang kompleks menjadi <b>jumlah pecahan-pecahan sederhana</b> yang mudah diintegralkan.<br><br>
+
+Digunakan untuk integral berbentuk ∫ P(x)/Q(x) dx, di mana derajat P < derajat Q.
+
+</div>
+
+<p>
+
+<b>Mengapa ini diperlukan?</b> Karena integral seperti ∫ (2x+1)/(x²+x) dx
+tidak bisa langsung diselesaikan dengan substitusi biasa.
+Tapi setelah dipecah menjadi pecahan parsial, integralnya menjadi
+penjumlahan ln-ln yang sederhana.
+
+</p>
+
+<hr>
+
+<h3>3.1 Kasus 1: Penyebut Berfaktor Linear Berbeda</h3>
+
+<div class="example">
+
+Hitung ∫ (2x+1)/(x²+x-2) dx.<br><br>
+
+Faktorkan penyebut: x²+x-2 = (x-1)(x+2).<br><br>
+
+Tulis: (2x+1)/((x-1)(x+2)) = A/(x-1) + B/(x+2).<br><br>
+
+Kalikan dengan (x-1)(x+2): 2x+1 = A(x+2) + B(x-1).<br><br>
+
+x = 1: 3 = 3A → A = 1.<br>
+
+x = -2: -3 = -3B → B = 1.<br><br>
+
+∫ = ∫ [1/(x-1) + 1/(x+2)] dx<br>
+
+= <b>ln|x-1| + ln|x+2| + C = ln|(x-1)(x+2)| + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Kasus 2: Penyebut Berfaktor Linear Berulang</h3>
+
+<div class="example">
+
+Hitung ∫ (x)/(x²-2x+1) dx.<br><br>
+
+x²-2x+1 = (x-1)² (faktor berulang).<br><br>
+
+Tulis: x/(x-1)² = A/(x-1) + B/(x-1)².<br><br>
+
+x = A(x-1) + B = Ax - A + B.<br><br>
+
+Bandingkan koefisien: A = 1, -A+B = 0 → B = 1.<br><br>
+
+∫ = ∫ [1/(x-1) + 1/(x-1)²] dx<br>
+
+= ln|x-1| - 1/(x-1) + C. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: INTEGRAL TRIGONOMETRI ==================== -->
+
+<div class="section">
+
+<h2>4. Integral Trigonometri — Pangkat Tinggi sin & cos</h2>
+
+<div class="summary">
+
+<b>Strategi umum:</b><br><br>
+
+<b>∫ sinᵐ x cosⁿ x dx:</b><br>
+
+• Jika m ganjil → simpan satu sin x, ubah sisanya dengan sin²x = 1 - cos²x, substitusi u = cos x.<br>
+
+• Jika n ganjil → simpan satu cos x, ubah sisanya dengan cos²x = 1 - sin²x, substitusi u = sin x.<br>
+
+• Jika m dan n genap → gunakan identitas setengah sudut: sin²x = (1-cos 2x)/2, cos²x = (1+cos 2x)/2.
+
+</div>
+
+<hr>
+
+<h3>4.1 Contoh: m Ganjil</h3>
+
+<div class="example">
+
+Hitung ∫ sin³x dx.<br><br>
+
+sin³x = sin x · sin²x = sin x(1 - cos²x).<br><br>
+
+u = cos x, du = -sin x dx → sin x dx = -du.<br><br>
+
+∫ sin x(1-cos²x) dx = -∫ (1-u²) du = -(u - u³/3) + C<br>
+
+= <b>-cos x + cos³x/3 + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Contoh: m dan n Genap</h3>
+
+<div class="example">
+
+Hitung ∫ sin²x dx.<br><br>
+
+sin²x = (1 - cos 2x)/2.<br><br>
+
+∫ sin²x dx = ∫ (1/2 - cos 2x/2) dx = <b>x/2 - sin 2x/4 + C</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: INTEGRAL IMPROPER ==================== -->
+
+<div class="section">
+
+<h2>5. Integral Improper — Batas Tak Hingga & Diskontinuitas</h2>
+
+<div class="summary">
+
+<b>Integral improper</b> adalah integral tentu yang memiliki:<br><br>
+
+<b>Tipe 1:</b> Batas integral menuju <b>±∞</b>.<br>
+
+<b>Tipe 2:</b> Integran <b>tidak terdefinisi</b> di suatu titik dalam interval (asimtot vertikal).<br><br>
+
+<b>Cara menyelesaikan:</b> Ganti batas "bermasalah" dengan variabel, integralkan, lalu ambil limit.
+
+</div>
+
+<hr>
+
+<h3>5.1 Tipe 1: Batas Tak Hingga</h3>
+
+<div class="example">
+
+Hitung ∫₁^∞ (1/x²) dx.<br><br>
+
+= lim[b→∞] ∫₁ᵇ x⁻² dx = lim[b→∞] [-1/x]₁ᵇ<br>
+
+= lim[b→∞] (-1/b + 1) = <b>1</b> (konvergen). ✅<br><br>
+
+<b>Makna:</b> Luas daerah di bawah kurva y=1/x² dari x=1 sampai tak hingga adalah tepat 1.
+
+</div>
+
+<hr>
+
+<h3>5.2 Tipe 2: Integran Tak Terdefinisi</h3>
+
+<div class="example">
+
+Hitung ∫₀¹ (1/√x) dx.<br><br>
+
+1/√x tidak terdefinisi di x = 0. Ubah batas bawah:<br><br>
+
+= lim[a→0⁺] ∫ₐ¹ x^(-1/2) dx = lim[a→0⁺] [2√x]ₐ¹<br>
+
+= lim[a→0⁺] (2 - 2√a) = <b>2</b> (konvergen). ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 6</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Substitusi Trigonometri:</b> √(a²-x²)→x=a sin θ, √(a²+x²)→x=a tan θ, √(x²-a²)→x=a sec θ.</li>
+
+<li><b>Integral Parsial:</b> ∫u dv = uv - ∫v du. Aturan LIATE untuk memilih u.</li>
+
+<li><b>Pecahan Parsial:</b> P(x)/Q(x) → A/(x-a) + B/(x-b) + ... untuk faktor linear berbeda.</li>
+
+<li><b>Integral Trigonometri:</b> m ganjil→simpan satu, substitusi. m dan n genap→setengah sudut.</li>
+
+<li><b>Integral Improper:</b> Batas ∞ atau integran tak terdefinisi → ganti dengan limit.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Substitusi trigonometri: gambar segitiga siku-siku!</b> Setelah substitusi,
+gambar segitiga untuk mengembalikan ke variabel asli. Ini jauh lebih mudah
+daripada menghafal rumus invers.
+
+</li>
+
+<li>
+
+<b>Integral parsial: pilih u dengan LIATE.</b> Logaritma selalu jadi u.
+Eksponen hampir selalu jadi dv. Polinomial biasanya jadi u kecuali lawannya log atau invers trig.
+
+</li>
+
+<li>
+
+<b>Pecahan parsial: derajat pembilang < penyebut dulu.</b> Kalau derajat pembilang ≥ penyebut,
+lakukan pembagian polinomial dulu sebelum dekomposisi.
+
+</li>
+
+<li>
+
+<b>Integral trigonometri: simpan satu, ubah sisanya.</b> Kalau pangkat ganjil,
+simpan satu faktor untuk du, ubah sisanya dengan identitas Pythagoras.
+
+</li>
+
+<li>
+
+<b>Integral improper: selalu tulis limit!</b> Jangan langsung memasukkan ∞.
+Tulis lim[b→∞], integralkan, baru ambil limitnya.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus5.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus7.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
