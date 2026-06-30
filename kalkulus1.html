@@ -450,4 +450,507 @@ lim[x→0⁻] |x|/x = <b>-1</b> (limit kiri).<br><br>
 Karena 1 ≠ -1, maka lim[x→0] |x|/x <b>tidak ada</b>. ❌
 
 </div>
+<!-- ==================== MATERI 4: LIMIT TAK HINGGA ==================== -->
 
+<div class="section">
+
+<h2>4. Limit Tak Hingga — Ketika Fungsi Meledak</h2>
+
+<p>
+
+Apa yang terjadi ketika nilai fungsi <b>tumbuh tanpa batas</b> saat x mendekati suatu nilai?
+Inilah yang disebut <b>limit tak hingga</b>. Secara teknis, limit ini "tidak ada"
+dalam artian tidak menuju ke bilangan real tertentu, tapi kita menuliskan ∞
+untuk menunjukkan perilakunya.
+
+</p>
+
+<div class="summary">
+
+<b>Notasi:</b> lim[x→c] f(x) = ∞<br><br>
+
+Artinya: f(x) dapat dibuat <b>sebesar mungkin</b> dengan mendekatkan x ke c.<br><br>
+
+Ini <b>bukan</b> berarti limitnya "ada" dalam bilangan real. ∞ bukan bilangan.<br>
+
+Ini hanya cara untuk mendeskripsikan <b>perilaku</b> fungsi.
+
+</div>
+
+<p>
+
+<b>Kapan limit tak hingga terjadi?</b> Biasanya saat penyebut mendekati nol
+tapi pembilang tidak nol. Fungsi rasional dengan asimtot vertikal
+adalah contoh klasik.
+
+</p>
+
+<hr>
+
+<h3>4.1 Limit Satu Sisi Menuju Tak Hingga</h3>
+
+<div class="example">
+
+f(x) = 1/x. Cari limit saat x → 0.<br><br>
+
+lim[x→0⁺] 1/x = <b>+∞</b> (dari kanan, 1 dibagi bilangan positif kecil → besar positif).<br>
+
+lim[x→0⁻] 1/x = <b>-∞</b> (dari kiri, 1 dibagi bilangan negatif kecil → besar negatif).<br><br>
+
+Karena limit kiri ≠ limit kanan, lim[x→0] 1/x <b>tidak ada</b>.<br><br>
+
+Tapi kita tetap menulis limit sepihaknya sebagai ±∞ untuk menunjukkan arah "ledakan".
+
+</div>
+
+<hr>
+
+<h3>4.2 Asimtot Vertikal</h3>
+
+<div class="summary">
+
+Garis x = c adalah <b>asimtot vertikal</b> dari f(x) jika:<br><br>
+
+lim[x→c⁻] f(x) = ±∞ &nbsp; <b>atau</b> &nbsp; lim[x→c⁺] f(x) = ±∞<br><br>
+
+Cukup salah satu sisi menuju tak hingga, sudah merupakan asimtot vertikal.
+
+</div>
+
+<div class="example">
+
+f(x) = 1/(x-2)².<br><br>
+
+Saat x → 2, penyebut → 0⁺ (kuadrat selalu positif), pembilang = 1.<br><br>
+
+lim[x→2] 1/(x-2)² = <b>+∞</b>. Asimtot vertikal di x = 2.<br><br>
+
+Grafik "meledak" ke atas di kedua sisi x = 2.
+
+</div>
+
+<hr>
+
+<h3>4.3 Bentuk Tak Tentu yang Melibatkan ∞</h3>
+
+<div class="summary">
+
+<b>∞/∞:</b> Pembilang dan penyebut sama-sama menuju tak hingga. Perlu analisis lebih lanjut.<br><br>
+
+<b>∞ - ∞:</b> Dua suku menuju tak hingga, selisihnya tidak jelas.<br><br>
+
+<b>0 × ∞:</b> Satu menuju nol, satu menuju tak hingga. Hasilnya bisa apa saja.
+
+</div>
+
+<div class="example">
+
+lim[x→∞] (x² + x)/(2x² + 1)<br><br>
+
+Bentuk ∞/∞. Bagi dengan x²:<br>
+
+= lim[x→∞] (1 + 1/x)/(2 + 1/x²) = <b>1/2</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: LIMIT DI TAK HINGGA ==================== -->
+
+<div class="section">
+
+<h2>5. Limit di Tak Hingga — Perilaku Fungsi saat x Sangat Besar</h2>
+
+<div class="summary">
+
+<b>Notasi:</b> lim[x→∞] f(x) = L<br><br>
+
+Artinya: Saat x tumbuh <b>tanpa batas</b>, nilai f(x) mendekati L.<br><br>
+
+<b>Notasi:</b> lim[x→-∞] f(x) = L<br><br>
+
+Artinya: Saat x mengecil <b>tanpa batas</b> (sangat negatif), nilai f(x) mendekati L.
+
+</div>
+
+<p>
+
+<b>Mengapa ini penting?</b> Limit di tak hingga menunjukkan <b>perilaku ujung</b>
+(end behavior) suatu fungsi—ke mana grafik "menuju" di ujung kiri dan kanan.
+Ini juga berkaitan dengan <b>asimtot horizontal</b>.
+
+</p>
+
+<hr>
+
+<h3>5.1 Limit di Tak Hingga untuk Fungsi Rasional</h3>
+
+<div class="summary">
+
+Untuk f(x) = P(x)/Q(x) = (aₙxⁿ + ...)/(bₘxᵐ + ...):<br><br>
+
+<b>n < m:</b> lim[x→±∞] f(x) = <b>0</b> (asimtot horizontal y = 0).<br><br>
+
+<b>n = m:</b> lim[x→±∞] f(x) = <b>aₙ/bₘ</b> (asimtot horizontal di y = aₙ/bₘ).<br><br>
+
+<b>n > m:</b> lim[x→±∞] f(x) = <b>±∞</b> (tidak ada asimtot horizontal, mungkin ada asimtot miring).
+
+</div>
+
+<p>
+
+<b>Mengapa aturan ini berlaku?</b>
+
+</p>
+
+<div class="example">
+
+Untuk x yang sangat besar, suku dengan pangkat tertinggi <b>mendominasi</b>.
+Suku-suku lain bisa diabaikan.<br><br>
+
+f(x) = (3x² + 2x)/(x² + 5) ≈ 3x²/x² = 3 untuk x besar.<br><br>
+
+Itulah kenapa limitnya 3.
+
+</div>
+
+<div class="example">
+
+lim[x→∞] (5x³ - 2x)/(x³ + 1) = <b>5</b> (n=m=3, koefisien 5/1).<br><br>
+
+lim[x→∞] (2x + 1)/(x² - 3) = <b>0</b> (n=1 < m=2, pembilang "kalah").<br><br>
+
+lim[x→∞] (x² - 1)/(x + 2) = <b>∞</b> (n=2 > m=1, pembilang "menang").<br><br>
+
+lim[x→-∞] eˣ = <b>0</b> (eˣ menuju 0 saat x → -∞).<br><br>
+
+lim[x→∞] eˣ = <b>∞</b> (eˣ tumbuh tanpa batas).
+
+</div>
+
+<hr>
+
+<h3>5.2 Asimtot Horizontal dan Asimtot Miring</h3>
+
+<div class="summary">
+
+<b>Asimtot horizontal:</b> y = L jika lim[x→±∞] f(x) = L.<br><br>
+
+<b>Asimtot miring:</b> y = mx + c jika derajat pembilang = derajat penyebut + 1.<br>
+
+Ditemukan dengan pembagian polinomial.
+
+</div>
+
+<div class="example">
+
+f(x) = (x² + 1)/x = x + 1/x.<br><br>
+
+Saat x → ∞, 1/x → 0. Jadi f(x) ≈ x.<br><br>
+
+Asimtot miring: <b>y = x</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Limit di Tak Hingga untuk Fungsi Eksponen dan Logaritma</h3>
+
+<div class="example">
+
+lim[x→∞] eˣ = <b>∞</b> &nbsp; (tumbuh paling cepat di antara semua fungsi).<br>
+
+lim[x→-∞] eˣ = <b>0</b> &nbsp; (mendekati nol tapi tidak pernah menyentuh).<br><br>
+
+lim[x→∞] ln x = <b>∞</b> &nbsp; (tumbuh, tapi sangat lambat).<br>
+
+lim[x→0⁺] ln x = <b>-∞</b> &nbsp; (menuju negatif tak hingga saat mendekati nol dari kanan).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: KONTINUITAS ==================== -->
+
+<div class="section">
+
+<h2>6. Kontinuitas — Fungsi yang "Tidak Putus"</h2>
+
+<p>
+
+Secara intuitif, fungsi <b>kontinu</b> (continuous) adalah fungsi yang
+grafiknya bisa digambar <b>tanpa mengangkat pensil dari kertas</b>.
+Tidak ada lompatan, tidak ada lubang, tidak ada asimtot vertikal.
+
+</p>
+
+<div class="summary">
+
+Fungsi f(x) <b>kontinu di x = c</b> jika memenuhi <b>tiga syarat</b>:<br><br>
+
+<b>1. f(c) terdefinisi</b> (c ada di domain f).<br><br>
+
+<b>2. lim[x→c] f(x) ada</b> (limit kiri = limit kanan).<br><br>
+
+<b>3. lim[x→c] f(x) = f(c)</b> (limit sama dengan nilai fungsi).
+
+</div>
+
+<p>
+
+<b>Mengapa tiga syarat ini?</b> Karena masing-masing mencegah satu jenis "keputusan":
+syarat 1 mencegah lubang (hole), syarat 2 mencegah lompatan (jump),
+syarat 3 mencegah titik yang "melayang" (removable discontinuity yang tidak diisi).
+
+</p>
+
+<hr>
+
+<h3>6.1 Tiga Jenis Diskontinuitas</h3>
+
+<div class="summary">
+
+<b>1. Diskontinuitas yang Dapat Dihilangkan (Removable):</b><br>
+
+Limit ada, tapi f(c) tidak terdefinisi atau f(c) ≠ limit.<br>
+
+Contoh: f(x) = (x²-1)/(x-1) di x=1. Ada "lubang" di (1,2).<br><br>
+
+<b>2. Diskontinuitas Lompat (Jump):</b><br>
+
+Limit kiri ≠ limit kanan. Fungsi "melompat" dari satu nilai ke nilai lain.<br>
+
+Contoh: fungsi tangga, f(x) = |x|/x di x=0.<br><br>
+
+<b>3. Diskontinuitas Tak Hingga (Infinite):</b><br>
+
+Limit menuju ±∞ (asimtot vertikal).<br>
+
+Contoh: f(x) = 1/x di x=0.
+
+</div>
+
+<hr>
+
+<h3>6.2 Kontinuitas pada Interval</h3>
+
+<div class="summary">
+
+Fungsi <b>kontinu pada interval (a,b)</b> jika kontinu di <b>setiap titik</b> pada interval itu.<br><br>
+
+Fungsi <b>kontinu pada [a,b]</b> jika kontinu di (a,b), kontinu kanan di a, dan kontinu kiri di b.
+
+</div>
+
+<hr>
+
+<h3>6.3 Fungsi-Fungsi yang Selalu Kontinu</h3>
+
+<div class="summary">
+
+Fungsi-fungsi berikut kontinu di <b>seluruh domainnya</b>:<br><br>
+
+✅ Polinomial → kontinu di ℝ.<br>
+
+✅ sin x, cos x → kontinu di ℝ.<br>
+
+✅ eˣ → kontinu di ℝ.<br>
+
+✅ ln x → kontinu di (0, ∞).<br>
+
+✅ √x → kontinu di [0, ∞).<br><br>
+
+Jumlah, selisih, hasil kali, komposisi fungsi kontinu → kontinu.<br>
+
+Hasil bagi fungsi kontinu → kontinu di mana penyebut ≠ 0.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 7: TEOREMA NILAI ANTARA ==================== -->
+
+<div class="section">
+
+<h2>7. Teorema Nilai Antara (Intermediate Value Theorem — IVT)</h2>
+
+<div class="summary">
+
+<b>Teorema Nilai Antara (IVT):</b><br><br>
+
+Jika f <b>kontinu</b> pada interval tertutup [a, b], dan N adalah bilangan
+<b>di antara f(a) dan f(b)</b> (inklusif), maka <b>ada c di [a, b]</b>
+sedemikian sehingga <b>f(c) = N</b>.
+
+</div>
+
+<p>
+
+<b>Intuisinya:</b> Jika kamu naik dari ketinggian 100 m ke 500 m
+tanpa melompat (kontinu), kamu pasti melewati semua ketinggian
+di antaranya—200 m, 300 m, 400 m. Kamu tidak mungkin "melompati"
+ketinggian 300 m.
+
+</p>
+
+<p>
+
+<b>Mengapa kontinuitas penting?</b> Karena jika fungsinya tidak kontinu
+(ada lompatan), fungsi bisa "melompati" nilai N tanpa pernah mencapainya.
+
+</p>
+
+<div class="example">
+
+f(x) = { 1, jika x < 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 3, jika x ≥ 2<br><br>
+
+f(1) = 1, f(3) = 3. Apakah ada c di [1,3] dengan f(c) = 2? <b>Tidak!</b><br>
+
+Karena fungsi melompat dari 1 ke 3 di x=2, melewati 2.<br>
+
+Ini melanggar IVT karena f tidak kontinu.
+
+</div>
+
+<hr>
+
+<h3>7.1 Aplikasi IVT — Mencari Akar Persamaan</h3>
+
+<div class="summary">
+
+<b>Akibat IVT:</b> Jika f kontinu pada [a,b] dan f(a) × f(b) < 0
+(tanda berlawanan), maka <b>pasti ada c di (a,b)</b> di mana f(c) = 0.<br><br>
+
+Ini adalah dasar dari <b>metode bisection</b> untuk mencari akar persamaan.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Buktikan bahwa x³ + x - 1 = 0 memiliki akar di antara 0 dan 1.<br><br>
+
+f(x) = x³ + x - 1 (polinomial, kontinu di ℝ).<br><br>
+
+f(0) = -1 (negatif). f(1) = 1 (positif).<br><br>
+
+Karena f(0) < 0 dan f(1) > 0, dan f kontinu, maka <b>pasti ada c di (0,1)</b>
+dengan f(c) = 0. ✅<br><br>
+
+(Tanpa IVT, kita harus menyelesaikan x³ + x - 1 = 0 secara eksak—yang tidak mudah.)
+
+</div>
+
+<hr>
+
+<h3>7.2 Keterbatasan IVT</h3>
+
+<div class="note">
+
+<b>IVT hanya menjamin keberadaan c, tapi tidak memberitahu:</b><br>
+
+- Di mana tepatnya c berada (hanya di antara a dan b).<br>
+
+- Berapa banyak c yang ada (bisa lebih dari satu).<br><br>
+
+IVT adalah teorema <b>eksistensi</b> (menjamin ada), bukan teorema <b>konstruksi</b> (menemukan).
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 1</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Fungsi:</b> Aturan yang memasangkan setiap input ke tepat satu output. Domain, range, jenis-jenis fungsi.</li>
+
+<li><b>Limit:</b> Nilai yang didekati f(x) saat x mendekati c. lim[x→c] f(x) = L.</li>
+
+<li><b>Menghitung limit:</b> Substitusi langsung → jika 0/0 → faktorkan, kali sekawan, atau bagi pangkat tertinggi.</li>
+
+<li><b>Limit sepihak:</b> Kiri (x→c⁻) dan kanan (x→c⁺). Limit ada jika keduanya sama.</li>
+
+<li><b>Limit tak hingga:</b> f(x) → ±∞. Menunjukkan asimtot vertikal.</li>
+
+<li><b>Limit di tak hingga:</b> x → ±∞. Menunjukkan perilaku ujung dan asimtot horizontal.</li>
+
+<li><b>Kontinuitas:</b> f(c) terdefinisi, limit ada, limit = f(c). Tiga jenis diskontinuitas.</li>
+
+<li><b>Teorema Nilai Antara (IVT):</b> f kontinu pada [a,b] → f mengambil semua nilai antara f(a) dan f(b).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Substitusi dulu, manipulasi kemudian.</b> Jangan langsung memfaktorkan.
+Coba substitusi dulu. Kalau hasilnya terdefinisi, itu jawabannya.
+
+</li>
+
+<li>
+
+<b>0/0 adalah undangan untuk manipulasi aljabar.</b>
+Faktorkan, kali sekawan, atau sederhanakan. Jangan menyerah.
+
+</li>
+
+<li>
+
+<b>Limit di tak hingga: lihat pangkat tertinggi.</b>
+Pangkat pembilang < penyebut → 0. Sama → koefisien/pembilang > penyebut → ±∞.
+
+</li>
+
+<li>
+
+<b>Kontinuitas = tiga syarat.</b> Kalau salah satu gagal, fungsi tidak kontinu di situ.
+Identifikasi jenis diskontinuitasnya.
+
+</li>
+
+<li>
+
+<b>IVT hanya butuh kontinuitas dan tanda berlawanan.</b>
+Ini cara cepat membuktikan akar persamaan ada di interval tertentu.
+
+</li>
+
+<li>
+
+<b>Hafalkan limit-limit fundamental:</b> lim[x→0] sin x/x = 1, lim[x→0] (1-cos x)/x = 0, lim[x→∞] (1+1/x)ˣ = e.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="kalkulus2.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
