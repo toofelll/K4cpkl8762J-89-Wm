@@ -1,1 +1,3185 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olimpiade 1 - Ketimpangan Dasar & Menengah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="hero">
+    <h1>🏆 Olimpiade 1</h1>
+    <h2>Ketimpangan Dasar & Menengah</h2>
+    <p class="subtitle">
+        Mempelajari berbagai ketimpangan (inequality) yang menjadi dasar penyelesaian
+        soal Olimpiade Matematika tingkat kabupaten, provinsi, nasional, hingga IMO.
+    </p>
+</header>
+
+<section class="section">
+
+<h2>📖 Apa itu Ketimpangan?</h2>
+
+<p>
+Ketimpangan (<i>Inequality</i>) adalah cabang matematika yang mempelajari hubungan
+antara dua nilai yang tidak harus sama besar.
+Jika persamaan menggunakan tanda "=",
+maka ketimpangan menggunakan tanda:
+</p>
+
+<ul>
+<li>&lt; (lebih kecil)</li>
+<li>&gt; (lebih besar)</li>
+<li>≤ (lebih kecil atau sama dengan)</li>
+<li>≥ (lebih besar atau sama dengan)</li>
+</ul>
+
+<p>
+Contoh sederhana:
+</p>
+
+<pre>
+5 > 3
+2 < 9
+7 ≥ 7
+</pre>
+
+<p>
+Namun pada Olimpiade, ketimpangan jauh lebih kompleks.
+Kita tidak hanya membandingkan angka,
+tetapi juga bentuk aljabar yang melibatkan banyak variabel.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Mengapa Ketimpangan Penting?</h2>
+
+<p>
+Ketimpangan merupakan salah satu materi yang paling sering muncul
+pada Olimpiade Matematika.
+Banyak soal yang tampak sulit sebenarnya dapat diselesaikan
+menggunakan satu ketimpangan yang tepat.
+</p>
+
+<p>
+Selain digunakan secara langsung,
+ketimpangan juga sering dipadukan dengan:
+</p>
+
+<ul>
+<li>Aljabar</li>
+<li>Kalkulus</li>
+<li>Kombinatorika</li>
+<li>Teori Bilangan</li>
+<li>Geometri</li>
+</ul>
+
+<p>
+Karena itu, menguasai ketimpangan akan sangat membantu
+menyelesaikan berbagai jenis soal.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Ketimpangan?</h2>
+
+<p>
+Saat mengerjakan soal, ketimpangan biasanya digunakan apabila soal meminta:
+</p>
+
+<ul>
+
+<li>Nilai maksimum.</li>
+
+<li>Nilai minimum.</li>
+
+<li>Membuktikan suatu ekspresi selalu lebih besar atau lebih kecil dari nilai tertentu.</li>
+
+<li>Membandingkan dua bentuk aljabar.</li>
+
+<li>Mencari batas suatu nilai (upper bound atau lower bound).</li>
+
+</ul>
+
+<p>
+
+Jika menemukan kata-kata seperti:
+
+</p>
+
+<ul>
+
+<li>"Buktikan bahwa..."</li>
+
+<li>"Tunjukkan bahwa..."</li>
+
+<li>"Nilai minimum..."</li>
+
+<li>"Nilai maksimum..."</li>
+
+<li>"Selalu berlaku..."</li>
+
+</ul>
+
+<p>
+
+Maka kemungkinan besar terdapat teknik ketimpangan yang dapat digunakan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Cara Berpikir Saat Menghadapi Soal Ketimpangan</h2>
+
+<p>
+
+Banyak peserta langsung mencari rumus.
+Padahal, langkah pertama adalah mengenali bentuk soalnya.
+
+</p>
+
+<p>
+
+Biasakan bertanya pada diri sendiri:
+
+</p>
+
+<ol>
+
+<li>Berapa banyak variabel?</li>
+
+<li>Apakah semua variabel bernilai positif?</li>
+
+<li>Apakah bentuknya simetris?</li>
+
+<li>Apakah terdapat penjumlahan?</li>
+
+<li>Apakah terdapat hasil kali?</li>
+
+<li>Apakah bentuknya pecahan?</li>
+
+</ol>
+
+<p>
+
+Jawaban dari pertanyaan tersebut biasanya akan menunjukkan
+ketimpangan mana yang paling sesuai digunakan.
+
+</p>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>① AM-GM Inequality</h1>
+
+<h2>📖 Pengertian</h2>
+
+<p>
+
+AM-GM merupakan singkatan dari
+
+<b>Arithmetic Mean - Geometric Mean Inequality.</b>
+
+Ini adalah salah satu ketimpangan paling terkenal
+dan hampir selalu muncul dalam Olimpiade Matematika.
+
+</p>
+
+<p>
+
+AM-GM menyatakan bahwa
+
+<b>rata-rata aritmetika selalu lebih besar atau sama dengan rata-rata geometri.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Dua Variabel</h2>
+
+<pre>
+
+Untuk a,b ≥ 0
+
+(a+b)/2 ≥ √(ab)
+
+</pre>
+
+<p>
+
+Tanda "=" terjadi jika
+
+</p>
+
+<pre>
+
+a = b
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Tiga Variabel</h2>
+
+<pre>
+
+(a+b+c)/3 ≥ ³√(abc)
+
+</pre>
+
+<p>
+
+Berlaku untuk semua
+
+</p>
+
+<pre>
+
+a,b,c ≥ 0
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Mengapa Rumus Ini Benar?</h2>
+
+<p>
+
+Misalkan terdapat dua bilangan positif.
+
+Perhatikan bahwa kuadrat suatu bilangan tidak pernah negatif.
+
+</p>
+
+<pre>
+
+(a-b)² ≥ 0
+
+</pre>
+
+<p>
+
+Kembangkan:
+
+</p>
+
+<pre>
+
+a²-2ab+b² ≥0
+
+</pre>
+
+<pre>
+
+a²+2ab+b² ≥4ab
+
+</pre>
+
+<pre>
+
+(a+b)²≥4ab
+
+</pre>
+
+<p>
+
+Karena kedua ruas bernilai positif,
+ambil akar kedua ruas.
+
+</p>
+
+<pre>
+
+a+b ≥2√ab
+
+</pre>
+
+<p>
+
+Membagi kedua ruas dengan 2 menghasilkan
+
+</p>
+
+<pre>
+
+(a+b)/2 ≥ √ab
+
+</pre>
+
+<p>
+
+Inilah asal-usul rumus AM-GM.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Intuisi</h2>
+
+<p>
+
+Bayangkan kamu memiliki dua bilangan dengan jumlah tetap.
+
+Semakin jauh kedua bilangan tersebut,
+hasil perkaliannya justru semakin kecil.
+
+Perkalian terbesar terjadi ketika kedua bilangan sama besar.
+
+</p>
+
+<p>
+
+Inilah alasan mengapa tanda sama dengan pada AM-GM selalu muncul saat
+
+<b>a = b.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+x + 4/x ≥4
+
+(x>0)
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+a=x
+
+b=4/x
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+(x+4/x)/2 ≥ √(4)=2
+
+</pre>
+
+<p>
+
+Kalikan kedua ruas dengan 2.
+
+</p>
+
+<pre>
+
+x+4/x ≥4
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</section><section class="section">
+
+<h2>📝 Contoh 2 (Menengah)</h2>
+
+<p>
+
+Tentukan nilai minimum dari
+
+</p>
+
+<pre>
+
+a+b
+
+</pre>
+
+<p>
+
+jika
+
+</p>
+
+<pre>
+
+ab = 25
+
+a,b > 0
+
+</pre>
+
+<p>
+
+Karena hasil kali sudah diketahui, gunakan AM-GM.
+
+</p>
+
+<pre>
+
+(a+b)/2 ≥ √(ab)
+
+</pre>
+
+<p>
+
+Substitusi nilai
+
+</p>
+
+<pre>
+
+√25 = 5
+
+</pre>
+
+<pre>
+
+(a+b)/2 ≥ 5
+
+</pre>
+
+<pre>
+
+a+b ≥ 10
+
+</pre>
+
+<p>
+
+Jadi nilai minimum adalah
+
+</p>
+
+<pre>
+
+10
+
+</pre>
+
+<p>
+
+dan terjadi ketika
+
+</p>
+
+<pre>
+
+a=b=5
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 3 (Sedikit Lebih Sulit)</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+a²+b² ≥ 2ab
+
+</pre>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x=a²
+
+y=b²
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(x+y)/2 ≥ √xy
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+(a²+b²)/2 ≥ √(a²b²)
+
+</pre>
+
+<pre>
+
+(a²+b²)/2 ≥ ab
+
+</pre>
+
+<p>
+
+Kalikan kedua ruas dengan 2.
+
+</p>
+
+<pre>
+
+a²+b² ≥ 2ab
+
+</pre>
+
+<p>
+
+Ketimpangan ini juga sering muncul dalam berbagai soal OSN.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⭐ Kapan Harus Menggunakan AM-GM?</h2>
+
+<p>
+
+AM-GM sangat cocok digunakan apabila memenuhi beberapa ciri berikut.
+
+</p>
+
+<ul>
+
+<li>Semua variabel bernilai positif.</li>
+
+<li>Terdapat bentuk penjumlahan dan hasil kali.</li>
+
+<li>Diminta mencari nilai minimum.</li>
+
+<li>Terdapat akar.</li>
+
+<li>Terdapat pecahan yang dapat dipasangkan.</li>
+
+<li>Nilai hasil kali sudah diketahui.</li>
+
+</ul>
+
+<p>
+
+Semakin sering berlatih, semakin mudah mengenali bentuk-bentuk tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<h3>1. Menggunakan pada bilangan negatif</h3>
+
+<p>
+
+AM-GM hanya berlaku untuk bilangan yang tidak negatif.
+
+</p>
+
+<pre>
+
+a,b ≥ 0
+
+</pre>
+
+<p>
+
+Jika salah satu bernilai negatif,
+rumus ini tidak boleh digunakan.
+
+</p>
+
+<hr>
+
+<h3>2. Lupa syarat tanda sama dengan</h3>
+
+<p>
+
+Banyak siswa menulis
+
+</p>
+
+<pre>
+
+(a+b)/2 = √ab
+
+</pre>
+
+<p>
+
+Padahal yang benar adalah
+
+</p>
+
+<pre>
+
+(a+b)/2 ≥ √ab
+
+</pre>
+
+<p>
+
+Tanda "=" hanya berlaku jika
+
+</p>
+
+<pre>
+
+a=b
+
+</pre>
+
+<hr>
+
+<h3>3. Memilih pasangan yang salah</h3>
+
+<p>
+
+Misalnya terdapat bentuk
+
+</p>
+
+<pre>
+
+x + 16/x
+
+</pre>
+
+<p>
+
+Pasangan yang digunakan adalah
+
+</p>
+
+<pre>
+
+x
+
+dan
+
+16/x
+
+</pre>
+
+<p>
+
+Bukan dipisahkan menjadi bentuk lain yang lebih rumit.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Tips Mengenali Soal AM-GM</h2>
+
+<p>
+
+Saat melihat soal, tanyakan beberapa hal berikut.
+
+</p>
+
+<ol>
+
+<li>Apakah semua variabel positif?</li>
+
+<li>Apakah ada penjumlahan?</li>
+
+<li>Apakah ada hasil kali?</li>
+
+<li>Apakah mencari nilai minimum?</li>
+
+<li>Apakah bentuk dapat dipasangkan dua-dua?</li>
+
+</ol>
+
+<p>
+
+Jika sebagian besar jawabannya "Ya",
+kemungkinan besar AM-GM adalah teknik yang tepat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan AM-GM</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Isi</th>
+
+</tr>
+
+<tr>
+
+<td>Nama</td>
+
+<td>Arithmetic Mean - Geometric Mean</td>
+
+</tr>
+
+<tr>
+
+<td>Syarat</td>
+
+<td>Semua variabel ≥ 0</td>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Mencari batas minimum atau maksimum</td>
+
+</tr>
+
+<tr>
+
+<td>Rumus</td>
+
+<td>(a+b)/2 ≥ √ab</td>
+
+</tr>
+
+<tr>
+
+<td>Tanda Sama Dengan</td>
+
+<td>a = b</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan AM-GM</h2>
+
+<h3>Mudah</h3>
+
+<ol>
+
+<li>Buktikan bahwa x+9/x ≥ 6.</li>
+
+<li>Tentukan nilai minimum dari a+b jika ab=16.</li>
+
+<li>Buktikan bahwa y+25/y ≥10.</li>
+
+</ol>
+
+<h3>Menengah</h3>
+
+<ol start="4">
+
+<li>Buktikan bahwa a²+b²+c² ≥ ab+bc+ca.</li>
+
+<li>Tentukan nilai minimum dari x²+16/x².</li>
+
+<li>Buktikan bahwa (a+b+c)/3 ≥ ³√abc.</li>
+
+</ol>
+
+<p>
+
+<b>Jangan melihat pembahasan terlebih dahulu.</b>
+
+Biasakan mencoba sendiri selama beberapa menit agar kemampuan problem solving berkembang.
+
+</p>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>② Cauchy-Schwarz Inequality</h1>
+
+<p>
+
+Setelah menguasai AM-GM, kita akan mempelajari salah satu ketimpangan paling kuat dalam matematika, yaitu <b>Cauchy-Schwarz Inequality</b>. Ketimpangan ini sangat sering digunakan pada OSN, IMO, serta berbagai cabang matematika seperti aljabar linear, analisis, hingga teori peluang.
+
+</p>
+
+</section><section class="section">
+
+<h2>📖 Apa itu Cauchy-Schwarz Inequality?</h2>
+
+<p>
+
+<b>Cauchy-Schwarz Inequality</b> adalah salah satu ketimpangan paling penting dalam matematika.
+Teorema ini ditemukan oleh matematikawan <b>Augustin-Louis Cauchy</b> dan
+<b>Hermann Amandus Schwarz</b>.
+
+</p>
+
+<p>
+
+Jika AM-GM sering digunakan untuk dua atau tiga variabel,
+maka Cauchy-Schwarz mampu menangani bentuk yang jauh lebih kompleks.
+
+Ketimpangan ini digunakan pada:
+
+</p>
+
+<ul>
+
+<li>OSN Matematika</li>
+
+<li>IMO (International Mathematical Olympiad)</li>
+
+<li>Aljabar Linear</li>
+
+<li>Analisis Real</li>
+
+<li>Statistika</li>
+
+<li>Teori Peluang</li>
+
+<li>Machine Learning</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan dua buah vektor.
+
+Jika kedua vektor memiliki arah yang hampir sama,
+hasil perkalian keduanya akan besar.
+
+Sebaliknya,
+jika arahnya saling tegak lurus,
+hasil perkaliannya menjadi kecil.
+
+</p>
+
+<p>
+
+Cauchy-Schwarz memberikan batas maksimum
+seberapa besar hasil kali dua vektor tersebut.
+
+Meskipun pada bab ini kita belum membahas vektor secara mendalam,
+konsep tersebut membantu memahami mengapa ketimpangan ini sangat kuat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Dasar</h2>
+
+<pre>
+
+(a₁²+a₂²+...+aₙ²)
+
+×
+
+(b₁²+b₂²+...+bₙ²)
+
+≥
+
+(a₁b₁+a₂b₂+...+aₙbₙ)²
+
+</pre>
+
+<p>
+
+Untuk dua variabel,
+rumusnya menjadi
+
+</p>
+
+<pre>
+
+(a²+b²)(c²+d²)
+
+≥
+
+(ac+bd)²
+
+</pre>
+
+<p>
+
+Tanda sama dengan berlaku apabila kedua vektor
+searah atau merupakan kelipatan satu sama lain.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Bentuk yang Paling Sering Muncul di OSN</h2>
+
+<p>
+
+Dalam Olimpiade,
+bentuk berikut adalah yang paling sering digunakan.
+
+</p>
+
+<pre>
+
+(a²+b²)
+
+(x²+y²)
+
+≥
+
+(ax+by)²
+
+</pre>
+
+<p>
+
+Hafalkan bentuk ini terlebih dahulu.
+Sebagian besar soal dasar hingga menengah
+menggunakan bentuk tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+(1²+2²)
+
+(3²+4²)
+
+≥
+
+(1×3+2×4)²
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+1²+2²
+
+=
+
+1+4
+
+=
+
+5
+
+</pre>
+
+<pre>
+
+3²+4²
+
+=
+
+9+16
+
+=
+
+25
+
+</pre>
+
+<pre>
+
+5×25
+
+=
+
+125
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+(3+8)²
+
+=
+
+11²
+
+=
+
+121
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+125 ≥121
+
+</pre>
+
+<p>
+
+Terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+(a²+b²)
+
+≥
+
+(a+b)²/2
+
+</pre>
+
+<p>
+
+Gunakan Cauchy dengan memilih
+
+</p>
+
+<pre>
+
+(a,b)
+
+dan
+
+(1,1)
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+(a²+b²)
+
+(1²+1²)
+
+≥
+
+(a+b)²
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+1²+1²
+
+=
+
+2
+
+</pre>
+
+<p>
+
+diperoleh
+
+</p>
+
+<pre>
+
+2(a²+b²)
+
+≥
+
+(a+b)²
+
+</pre>
+
+<p>
+
+Bagi kedua ruas dengan 2.
+
+</p>
+
+<pre>
+
+a²+b²
+
+≥
+
+(a+b)²/2
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Cauchy?</h2>
+
+<ul>
+
+<li>Terdapat banyak kuadrat.</li>
+
+<li>Terdapat bentuk penjumlahan hasil kali.</li>
+
+<li>Terdapat bentuk (a²+b²).</li>
+
+<li>Soal meminta batas minimum atau maksimum.</li>
+
+<li>Terdapat banyak variabel yang sulit dipisahkan.</li>
+
+</ul>
+
+<p>
+
+Jika melihat pola seperti ini,
+cobalah mempertimbangkan Cauchy-Schwarz.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<h3>1. Salah memasangkan variabel</h3>
+
+<p>
+
+Kesalahan paling sering terjadi adalah
+memilih pasangan yang tidak sesuai.
+
+Selalu pastikan pasangan pertama dan kedua
+memiliki jumlah elemen yang sama.
+
+</p>
+
+<hr>
+
+<h3>2. Lupa mengkuadratkan</h3>
+
+<p>
+
+Banyak siswa menulis
+
+</p>
+
+<pre>
+
+(ac+bd)
+
+</pre>
+
+<p>
+
+padahal yang benar
+
+</p>
+
+<pre>
+
+(ac+bd)²
+
+</pre>
+
+<hr>
+
+<h3>3. Salah menghitung hasil kali</h3>
+
+<p>
+
+Hitung setiap komponen secara perlahan
+agar tidak terjadi kesalahan aritmetika.
+
+</p>
+
+</section><hr>
+
+<section class="section">
+
+<h1>③ Titu's Lemma (Engel Form)</h1>
+
+<h2>📖 Apa itu Titu's Lemma?</h2>
+
+<p>
+
+<b>Titu's Lemma</b> adalah bentuk khusus dari
+<b>Cauchy-Schwarz Inequality</b>.
+Ketimpangan ini diperkenalkan oleh matematikawan
+<b>Titu Andreescu</b>, seorang pelatih Olimpiade Matematika
+yang terkenal di dunia.
+
+</p>
+
+<p>
+
+Di Olimpiade Matematika, Titu's Lemma sangat populer karena
+mampu menyederhanakan soal-soal yang mengandung
+<b>jumlah pecahan</b>.
+
+Banyak soal OSN, IMO, maupun kompetisi internasional
+yang dapat diselesaikan lebih cepat menggunakan teknik ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Jika Cauchy-Schwarz sering digunakan pada bentuk kuadrat,
+maka Titu's Lemma digunakan ketika melihat pola seperti berikut.
+
+</p>
+
+<pre>
+
+a²/x
+
++
+
+b²/y
+
++
+
+c²/z
+
+</pre>
+
+<p>
+
+Daripada menghitung setiap pecahan satu per satu,
+Titu's Lemma langsung memberikan batas bawah
+yang jauh lebih mudah dihitung.
+
+</p>
+
+<p>
+
+Karena itu, ketika melihat banyak pecahan dengan
+<b>pembilang berbentuk kuadrat</b>,
+Titu's Lemma hampir selalu menjadi kandidat pertama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Dasar</h2>
+
+<pre>
+
+a²/x
+
++
+
+b²/y
+
++
+
+c²/z
+
+≥
+
+(a+b+c)²
+
+──────────
+
+x+y+z
+
+</pre>
+
+<p>
+
+dengan syarat
+
+</p>
+
+<pre>
+
+x,y,z > 0
+
+</pre>
+
+<p>
+
+Semua penyebut harus bernilai positif.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Bentuk Dua Variabel</h2>
+
+<pre>
+
+a²/x
+
++
+
+b²/y
+
+≥
+
+(a+b)²
+
+────────
+
+x+y
+
+</pre>
+
+<p>
+
+Bentuk dua variabel ini paling sering muncul
+pada soal tingkat dasar hingga menengah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Mengapa Rumus Ini Benar?</h2>
+
+<p>
+
+Titu's Lemma sebenarnya merupakan hasil langsung
+dari Cauchy-Schwarz.
+
+Misalkan dipilih dua vektor berikut.
+
+</p>
+
+<pre>
+
+(a/√x , b/√y)
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+(√x , √y)
+
+</pre>
+
+<p>
+
+Kemudian diterapkan Cauchy-Schwarz.
+
+Hasil akhirnya akan menjadi
+
+</p>
+
+<pre>
+
+a²/x+b²/y
+
+≥
+
+(a+b)²
+
+───────
+
+x+y
+
+</pre>
+
+<p>
+
+Artinya, Titu's Lemma bukan rumus baru,
+melainkan bentuk praktis dari Cauchy-Schwarz.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+1²/2
+
++
+
+2²/3
+
+≥
+
+(1+2)²
+
+───────
+
+2+3
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+1/2
+
++
+
+4/3
+
+=
+
+11/6
+
+≈1,833
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+9/5
+
+=
+
+1,8
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+11/6 ≥ 9/5
+
+</pre>
+
+<p>
+
+maka ketimpangan terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x>0
+
+y>0
+
+</pre>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+x²/y
+
++
+
+y²/x
+
+≥
+
+(x+y)²
+
+───────
+
+x+y
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(x+y)²/(x+y)
+
+=
+
+x+y
+
+</pre>
+
+<p>
+
+maka diperoleh
+
+</p>
+
+<pre>
+
+x²/y
+
++
+
+y²/x
+
+≥
+
+x+y
+
+</pre>
+
+<p>
+
+Ketimpangan ini sering muncul dalam soal OSN.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Titu's Lemma?</h2>
+
+<ul>
+
+<li>Terdapat penjumlahan beberapa pecahan.</li>
+
+<li>Pembilang berupa kuadrat.</li>
+
+<li>Penyebut semuanya positif.</li>
+
+<li>Soal meminta nilai minimum.</li>
+
+<li>Bentuknya mirip a²/x + b²/y + c²/z.</li>
+
+</ul>
+
+<p>
+
+Semakin sering mengerjakan soal,
+kamu akan langsung mengenali pola tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<h3>1. Penyebut bernilai negatif</h3>
+
+<p>
+
+Titu's Lemma hanya berlaku apabila seluruh penyebut positif.
+
+</p>
+
+<hr>
+
+<h3>2. Pembilang bukan kuadrat</h3>
+
+<p>
+
+Misalnya
+
+</p>
+
+<pre>
+
+a/x
+
++
+
+b/y
+
+</pre>
+
+<p>
+
+tidak bisa langsung menggunakan Titu's Lemma.
+
+</p>
+
+<hr>
+
+<h3>3. Salah menjumlahkan penyebut</h3>
+
+<p>
+
+Perhatikan bahwa penyebut pada hasil akhir adalah
+
+</p>
+
+<pre>
+
+x+y+z
+
+</pre>
+
+<p>
+
+bukan hasil kali.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Titu's Lemma</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Isi</th>
+</tr>
+
+<tr>
+<td>Asal</td>
+<td>Bentuk khusus Cauchy-Schwarz</td>
+</tr>
+
+<tr>
+<td>Kegunaan</td>
+<td>Menyederhanakan jumlah pecahan</td>
+</tr>
+
+<tr>
+<td>Syarat</td>
+<td>Semua penyebut positif</td>
+</tr>
+
+<tr>
+<td>Pola</td>
+<td>a²/x + b²/y + c²/z</td>
+</tr>
+
+<tr>
+<td>Tujuan</td>
+<td>Mencari batas bawah (minimum)</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan</h2>
+
+<ol>
+
+<li>Buktikan bahwa
+\(\frac{a^2}{1}+\frac{b^2}{1}\ge\frac{(a+b)^2}{2}\).</li>
+
+<li>Buktikan bahwa
+\(\frac{x^2}{2}+\frac{y^2}{3}\ge\frac{(x+y)^2}{5}\).</li>
+
+<li>Buktikan bahwa
+\(\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a}\ge a+b+c\).</li>
+
+<li>Tentukan syarat agar tanda "=" berlaku pada Titu's Lemma.</li>
+
+</ol>
+
+<p>
+
+Cobalah menyelesaikan latihan terlebih dahulu tanpa melihat referensi. Kemampuan mengenali pola akan berkembang jauh lebih cepat jika kamu membiasakan diri mencoba sendiri.
+
+</p>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>④ Jensen's Inequality</h1>
+
+<p>
+
+Setelah mempelajari AM-GM, Cauchy-Schwarz, dan Titu's Lemma, kita akan memasuki salah satu ketimpangan paling elegan dalam matematika, yaitu <b>Jensen's Inequality</b>. Ketimpangan ini melibatkan konsep <b>fungsi cembung (convex)</b> dan <b>fungsi cekung (concave)</b>, serta menjadi dasar dalam analisis, optimasi, teori peluang, dan berbagai soal Olimpiade tingkat lanjut.
+
+</p>
+
+</section><section class="section">
+
+<h2>📖 Apa itu Jensen's Inequality?</h2>
+
+<p>
+
+<b>Jensen's Inequality</b> adalah ketimpangan yang menghubungkan
+nilai suatu fungsi dengan rata-rata dari beberapa bilangan.
+
+Ketimpangan ini dinamai dari matematikawan Denmark
+<b>Johan Ludwig William Jensen</b>.
+
+</p>
+
+<p>
+
+Berbeda dengan AM-GM atau Cauchy yang bekerja langsung pada bilangan,
+Jensen bekerja pada <b>fungsi</b>.
+
+Karena itu, sebelum mempelajari rumus Jensen,
+kita harus memahami dua konsep penting, yaitu
+<b>fungsi cembung (convex)</b> dan
+<b>fungsi cekung (concave)</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Fungsi Cembung (Convex Function)</h2>
+
+<p>
+
+Sebuah fungsi disebut <b>cembung</b> apabila grafiknya
+melengkung ke atas seperti mangkuk.
+
+</p>
+
+<pre>
+
+     •
+   •   •
+  •     •
+ •       •
+──────────────
+
+</pre>
+
+<p>
+
+Contoh fungsi cembung adalah
+
+</p>
+
+<pre>
+
+f(x)=x²
+
+f(x)=eˣ
+
+</pre>
+
+<p>
+
+Pada fungsi cembung,
+nilai fungsi di rata-rata selalu
+<b>lebih kecil atau sama dengan</b>
+rata-rata nilai fungsi.
+
+Inilah inti dari Jensen.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Fungsi Cekung (Concave Function)</h2>
+
+<p>
+
+Fungsi cekung merupakan kebalikan dari fungsi cembung.
+
+Grafiknya melengkung ke bawah.
+
+</p>
+
+<pre>
+
+──────────────
+ •         •
+  •       •
+   •     •
+     • •
+      •
+
+</pre>
+
+<p>
+
+Contoh fungsi cekung adalah
+
+</p>
+
+<pre>
+
+f(x)=√x
+
+f(x)=ln(x)
+
+</pre>
+
+<p>
+
+Untuk fungsi cekung,
+arah ketimpangan Jensen akan terbalik.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus Jensen</h2>
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+f(x)
+
+</pre>
+
+<p>
+
+merupakan fungsi cembung,
+maka berlaku
+
+</p>
+
+<pre>
+
+f((x₁+x₂+...+xₙ)/n)
+
+≤
+
+(f(x₁)+f(x₂)+...+f(xₙ))/n
+
+</pre>
+
+<p>
+
+Sedangkan jika fungsi tersebut cekung,
+arah tanda ketimpangan berubah menjadi
+
+</p>
+
+<pre>
+
+≥
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Intuisi Jensen</h2>
+
+<p>
+
+Bayangkan terdapat beberapa nilai.
+
+Kita dapat melakukan dua cara.
+
+</p>
+
+<ol>
+
+<li>Menghitung rata-ratanya terlebih dahulu, kemudian memasukkan ke fungsi.</li>
+
+<li>Memasukkan setiap nilai ke fungsi terlebih dahulu, kemudian mengambil rata-ratanya.</li>
+
+</ol>
+
+<p>
+
+Untuk fungsi cembung,
+cara kedua selalu menghasilkan nilai
+yang lebih besar atau sama.
+
+Sedangkan pada fungsi cekung,
+hasilnya justru sebaliknya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Gunakan fungsi
+
+</p>
+
+<pre>
+
+f(x)=x²
+
+</pre>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x₁=2
+
+x₂=6
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+((2+6)/2)²
+
+=
+
+4²
+
+=
+
+16
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+(2²+6²)/2
+
+=
+
+(4+36)/2
+
+=
+
+20
+
+</pre>
+
+<p>
+
+Terlihat bahwa
+
+</p>
+
+<pre>
+
+16 ≤20
+
+</pre>
+
+<p>
+
+Jensen terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Gunakan fungsi
+
+</p>
+
+<pre>
+
+f(x)=√x
+
+</pre>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x₁=1
+
+x₂=9
+
+</pre>
+
+<p>
+
+Ruas kiri
+
+</p>
+
+<pre>
+
+√((1+9)/2)
+
+=
+
+√5
+
+≈2,236
+
+</pre>
+
+<p>
+
+Ruas kanan
+
+</p>
+
+<pre>
+
+(√1+√9)/2
+
+=
+
+(1+3)/2
+
+=
+
+2
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+2,236 ≥2
+
+</pre>
+
+<p>
+
+arah ketimpangan menjadi terbalik karena
+akar merupakan fungsi cekung.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Jensen?</h2>
+
+<ul>
+
+<li>Soal melibatkan fungsi.</li>
+
+<li>Terdapat rata-rata beberapa bilangan.</li>
+
+<li>Fungsi berbentuk x², eˣ, √x, ln(x), dan fungsi lain yang diketahui sifatnya.</li>
+
+<li>Diminta mencari batas maksimum atau minimum.</li>
+
+<li>Terdapat banyak variabel yang memiliki perlakuan sama.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<h3>1. Tidak mengecek apakah fungsi cembung atau cekung.</h3>
+
+<p>
+
+Kesalahan ini menyebabkan arah tanda ketimpangan menjadi salah.
+
+</p>
+
+<hr>
+
+<h3>2. Salah menghitung rata-rata.</h3>
+
+<p>
+
+Pastikan seluruh nilai dijumlahkan terlebih dahulu,
+baru dibagi banyaknya data.
+
+</p>
+
+<hr>
+
+<h3>3. Menggunakan Jensen tanpa memastikan domain fungsi.</h3>
+
+<p>
+
+Sebagai contoh,
+fungsi
+
+</p>
+
+<pre>
+
+ln(x)
+
+</pre>
+
+<p>
+
+hanya terdefinisi untuk
+
+</p>
+
+<pre>
+
+x>0
+
+</pre>
+
+<p>
+
+Domain selalu harus diperhatikan.
+
+</p>
+
+</section><hr>
+
+<section class="section">
+
+<h1>⑤ Chebyshev's Inequality</h1>
+
+<h2>📖 Apa itu Chebyshev's Inequality?</h2>
+
+<p>
+
+<b>Chebyshev's Inequality</b> adalah ketimpangan yang membandingkan
+rata-rata hasil kali dua barisan bilangan dengan hasil kali rata-rata
+masing-masing barisan.
+
+Ketimpangan ini ditemukan oleh matematikawan Rusia
+<b>Pafnuty Chebyshev</b>.
+
+</p>
+
+<p>
+
+Chebyshev digunakan ketika terdapat dua barisan bilangan yang
+memiliki urutan yang sama, misalnya sama-sama naik atau sama-sama turun.
+Jika syarat ini terpenuhi, maka hasil kali pasangan yang bersesuaian
+akan memberikan nilai yang relatif besar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Misalkan terdapat dua barisan.
+
+</p>
+
+<pre>
+
+1   2   3
+
+10 20 30
+
+</pre>
+
+<p>
+
+Jika kita mengalikan pasangan yang searah,
+
+</p>
+
+<pre>
+
+1×10
+
+2×20
+
+3×30
+
+</pre>
+
+<p>
+
+hasil totalnya lebih besar dibandingkan apabila pasangan tersebut diacak.
+
+Karena itulah Chebyshev bekerja.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Rumus</h2>
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+a₁≤a₂≤...≤aₙ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+b₁≤b₂≤...≤bₙ
+
+</pre>
+
+<p>
+
+atau keduanya sama-sama menurun, maka berlaku
+
+</p>
+
+<pre>
+
+(a₁b₁+a₂b₂+...+aₙbₙ)/n
+
+≥
+
+[(a₁+a₂+...+aₙ)/n]
+
+×
+
+[(b₁+b₂+...+bₙ)/n]
+
+</pre>
+
+<p>
+
+Inilah bentuk dasar Chebyshev's Inequality.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A = (1,2,3)
+
+B = (4,5,6)
+
+</pre>
+
+<p>
+
+Hitung ruas kiri.
+
+</p>
+
+<pre>
+
+(1×4 + 2×5 + 3×6)/3
+
+=
+
+(4+10+18)/3
+
+=
+
+32/3
+
+≈10,67
+
+</pre>
+
+<p>
+
+Hitung ruas kanan.
+
+</p>
+
+<pre>
+
+((1+2+3)/3)
+
+×
+
+((4+5+6)/3)
+
+</pre>
+
+<pre>
+
+2 × 5
+
+=
+
+10
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+10,67 ≥ 10
+
+</pre>
+
+<p>
+
+maka ketimpangan terbukti benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Chebyshev?</h2>
+
+<ul>
+
+<li>Dua barisan sudah diurutkan.</li>
+
+<li>Keduanya sama-sama naik atau sama-sama turun.</li>
+
+<li>Soal membandingkan hasil kali dua barisan.</li>
+
+<li>Diminta mencari batas bawah atau batas atas.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<h3>1. Barisan tidak searah</h3>
+
+<p>
+
+Jika satu barisan naik dan yang lain turun,
+Chebyshev tidak dapat langsung digunakan.
+
+</p>
+
+<hr>
+
+<h3>2. Salah mengurutkan data</h3>
+
+<p>
+
+Pastikan kedua barisan benar-benar memiliki urutan yang sama
+sebelum menerapkan rumus.
+
+</p>
+
+<hr>
+
+<h3>3. Lupa membagi dengan banyak data</h3>
+
+<p>
+
+Rumus menggunakan rata-rata, sehingga setiap jumlah harus dibagi
+dengan banyaknya elemen.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Chebyshev</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Kegunaan</td>
+<td>Membandingkan dua barisan terurut</td>
+</tr>
+
+<tr>
+<td>Syarat</td>
+<td>Kedua barisan sama-sama naik atau sama-sama turun</td>
+</tr>
+
+<tr>
+<td>Sering Muncul</td>
+<td>OSN Provinsi, Nasional, dan IMO</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑥ Rearrangement Inequality</h1>
+
+<h2>📖 Apa itu Rearrangement Inequality?</h2>
+
+<p>
+
+<b>Rearrangement Inequality</b> menyatakan bahwa hasil penjumlahan
+perkalian dua barisan akan mencapai nilai maksimum apabila kedua
+barisan diurutkan dengan arah yang sama, dan mencapai nilai minimum
+apabila salah satu barisan dibalik urutannya.
+
+</p>
+
+<p>
+
+Ketimpangan ini sangat berguna dalam kombinatorika,
+ketimpangan, optimasi, serta berbagai soal Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Misalkan terdapat dua barisan.
+
+</p>
+
+<pre>
+
+1 2 3
+
+4 5 6
+
+</pre>
+
+<p>
+
+Pasangkan terbesar dengan terbesar.
+
+</p>
+
+<pre>
+
+1×4
+
+2×5
+
+3×6
+
+</pre>
+
+<p>
+
+Jumlahnya akan menjadi maksimum.
+
+Jika barisan kedua dibalik,
+
+</p>
+
+<pre>
+
+1×6
+
+2×5
+
+3×4
+
+</pre>
+
+<p>
+
+jumlahnya justru menjadi minimum.
+
+Inilah ide utama Rearrangement Inequality.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Teorema</h2>
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+a₁≤a₂≤...≤aₙ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+b₁≤b₂≤...≤bₙ
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+a₁b₁+a₂b₂+...+aₙbₙ
+
+</pre>
+
+<p>
+
+merupakan nilai maksimum.
+
+Sedangkan
+
+</p>
+
+<pre>
+
+a₁bₙ+a₂bₙ₋₁+...
+
+</pre>
+
+<p>
+
+merupakan nilai minimum.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A = (1,2,3)
+
+B = (4,5,6)
+
+</pre>
+
+<p>
+
+Maksimum
+
+</p>
+
+<pre>
+
+1×4+2×5+3×6
+
+=
+
+32
+
+</pre>
+
+<p>
+
+Minimum
+
+</p>
+
+<pre>
+
+1×6+2×5+3×4
+
+=
+
+28
+
+</pre>
+
+<p>
+
+Terlihat bahwa memasangkan bilangan terbesar dengan terbesar
+menghasilkan jumlah terbesar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Rearrangement?</h2>
+
+<ul>
+
+<li>Terdapat dua barisan bilangan.</li>
+
+<li>Diminta mencari nilai maksimum.</li>
+
+<li>Diminta mencari nilai minimum.</li>
+
+<li>Bentuk berupa jumlah hasil kali.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Tidak mengurutkan kedua barisan terlebih dahulu.</li>
+
+<li>Salah menentukan pasangan maksimum dan minimum.</li>
+
+<li>Menggunakan teorema pada data yang belum memenuhi syarat.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🎓 Ringkasan Bab</h2>
+
+<p>
+
+Selamat! Kamu telah mempelajari enam ketimpangan dasar yang menjadi fondasi
+bagi banyak soal Olimpiade Matematika.
+
+</p>
+
+<ul>
+
+<li>AM-GM Inequality</li>
+<li>Cauchy-Schwarz Inequality</li>
+<li>Titu's Lemma (Engel Form)</li>
+<li>Jensen's Inequality</li>
+<li>Chebyshev's Inequality</li>
+<li>Rearrangement Inequality</li>
+
+</ul>
+
+<p>
+
+Sebelum melanjutkan ke bab berikutnya, pastikan kamu memahami:
+cara mengenali pola soal, syarat penggunaan setiap ketimpangan,
+serta kapan masing-masing teknik lebih efektif digunakan.
+
+</p>
+
+</section><section class="section">
+
+<h2>💎 Tips Olimpiade</h2>
+
+<p>
+
+Menghafal rumus saja tidak cukup untuk menyelesaikan soal Olimpiade.
+Yang jauh lebih penting adalah mampu mengenali pola suatu soal.
+
+</p>
+
+<p>
+
+Berikut beberapa tips yang sering digunakan peserta OSN dan IMO.
+
+</p>
+
+<ul>
+
+<li>Selalu baca syarat pada soal terlebih dahulu.</li>
+
+<li>Perhatikan apakah semua variabel bernilai positif.</li>
+
+<li>Cari apakah terdapat bentuk simetris.</li>
+
+<li>Jangan langsung menggunakan rumus pertama yang diingat.</li>
+
+<li>Cobalah beberapa pendekatan apabila cara pertama gagal.</li>
+
+<li>Biasakan membuktikan sendiri setiap rumus sederhana.</li>
+
+<li>Perbanyak latihan dibanding menghafal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Latihan Bab 1</h2>
+
+<h3>Level ★☆☆☆☆</h3>
+
+<ol>
+
+<li>Buktikan bahwa x + 9/x ≥ 6.</li>
+
+<li>Jika ab = 16, tentukan nilai minimum dari a + b.</li>
+
+<li>Buktikan bahwa (a²+b²)/2 ≥ ab.</li>
+
+</ol>
+
+<h3>Level ★★☆☆☆</h3>
+
+<ol start="4">
+
+<li>Buktikan bahwa x²+y² ≥ (x+y)²/2.</li>
+
+<li>Gunakan Titu's Lemma untuk membuktikan:
+
+<pre>
+
+a²/b + b²/a ≥ a+b
+
+</pre>
+
+</li>
+
+<li>Gunakan Cauchy-Schwarz untuk membuktikan:
+
+<pre>
+
+(a²+b²)(1²+1²) ≥ (a+b)²
+
+</pre>
+
+</li>
+
+</ol>
+
+<h3>Level ★★★☆☆</h3>
+
+<ol start="7">
+
+<li>Buktikan bahwa
+
+<pre>
+
+(a+b+c)² ≤ 3(a²+b²+c²)
+
+</pre>
+
+</li>
+
+<li>Tentukan nilai minimum dari
+
+<pre>
+
+x²+25/x²
+
+</pre>
+
+</li>
+
+<li>Gunakan AM-GM untuk membuktikan
+
+<pre>
+
+abc ≤ ((a+b+c)/3)³
+
+</pre>
+
+</li>
+
+</ol>
+
+<h3>Level ★★★★☆</h3>
+
+<ol start="10">
+
+<li>Buktikan menggunakan Jensen bahwa
+
+<pre>
+
+(x²+y²)/2 ≥ ((x+y)/2)²
+
+</pre>
+
+</li>
+
+<li>Gunakan Rearrangement untuk menentukan nilai maksimum suatu penjumlahan hasil kali dua barisan.</li>
+
+</ol>
+
+<h3>Level ★★★★★</h3>
+
+<ol start="12">
+
+<li>
+
+Suatu soal dapat diselesaikan menggunakan AM-GM maupun Cauchy.
+
+Bandingkan kedua metode tersebut dan tentukan metode yang paling sederhana.
+
+</li>
+
+<li>
+
+Buatlah pembuktian sendiri bahwa Titu's Lemma merupakan bentuk khusus dari Cauchy-Schwarz.
+
+</li>
+
+<li>
+
+Carilah satu soal OSN yang menggunakan salah satu ketimpangan pada bab ini, kemudian selesaikan dengan bahasamu sendiri.
+
+</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Bab</h2>
+
+<table>
+
+<tr>
+
+<th>Materi</th>
+
+<th>Kegunaan Utama</th>
+
+</tr>
+
+<tr>
+
+<td>AM-GM</td>
+
+<td>Mencari nilai minimum atau maksimum pada bilangan positif.</td>
+
+</tr>
+
+<tr>
+
+<td>Cauchy-Schwarz</td>
+
+<td>Membandingkan jumlah kuadrat dan hasil kali.</td>
+
+</tr>
+
+<tr>
+
+<td>Titu's Lemma</td>
+
+<td>Menyederhanakan jumlah pecahan.</td>
+
+</tr>
+
+<tr>
+
+<td>Jensen</td>
+
+<td>Ketimpangan pada fungsi cembung dan cekung.</td>
+
+</tr>
+
+<tr>
+
+<td>Chebyshev</td>
+
+<td>Membandingkan dua barisan yang terurut.</td>
+
+</tr>
+
+<tr>
+
+<td>Rearrangement</td>
+
+<td>Menentukan pasangan maksimum atau minimum.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Target Setelah Menyelesaikan Bab Ini</h2>
+
+<p>
+
+Jika kamu sudah memahami seluruh isi bab ini, maka kamu seharusnya mampu:
+
+</p>
+
+<ul>
+
+<li>Mengenali kapan menggunakan AM-GM.</li>
+
+<li>Menggunakan Cauchy-Schwarz pada bentuk dasar.</li>
+
+<li>Menyelesaikan soal pecahan dengan Titu's Lemma.</li>
+
+<li>Membedakan fungsi cembung dan cekung pada Jensen.</li>
+
+<li>Menggunakan Chebyshev pada dua barisan yang terurut.</li>
+
+<li>Menerapkan Rearrangement untuk mencari nilai maksimum dan minimum.</li>
+
+</ul>
+
+<p>
+
+Jangan terburu-buru melanjutkan ke bab berikutnya apabila keenam teknik ini belum benar-benar dipahami.
+
+</p>
+
+</section>
+
+<div class="button-group">
+
+<a href="olimpiade.html" class="btn">
+⬅ Kembali
+</a>
+
+<a href="olimpiade2.html" class="btn">
+Lanjut ke Bab 2 ➜
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
