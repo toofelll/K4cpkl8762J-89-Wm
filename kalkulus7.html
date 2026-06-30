@@ -1,1 +1,682 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 7 | Aplikasi Integral</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 7 • Aplikasi Integral: Luas, Volume, Panjang & Pusat Massa</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Integral Bukan Cuma Teori</h2>
+
+<p>
+
+Di Kalkulus 5 dan 6, kita sudah menguasai cara menghitung integral—
+dari substitusi dasar sampai teknik-teknik advance. Sekarang saatnya
+menuai hasil: <b>menerapkan integral untuk memecahkan masalah nyata</b>.
+
+</p>
+
+<p>
+
+Aplikasi integral sangat luas. Insinyur menggunakannya untuk menghitung
+volume tangki, arsitek untuk menghitung luas permukaan kubah,
+fisikawan untuk mencari pusat massa dan momen inersia benda.
+Setiap kali kamu melihat benda melengkung—jembatan gantung, botol,
+bola, bahkan bentuk telur—integral adalah alat untuk mengukurnya.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membahas <b>enam aplikasi fundamental</b> integral:
+luas daerah (termasuk daerah yang dibatasi dua kurva), volume benda putar
+(dengan metode cakram, cincin, dan kulit tabung), panjang kurva,
+luas permukaan benda putar, pusat massa (titik keseimbangan),
+dan momen inersia (ukuran resistansi terhadap rotasi).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Mampu menghitung luas daerah yang dibatasi oleh kurva.</li>
+
+<li>Menguasai perhitungan volume benda putar dengan metode cakram dan kulit tabung.</li>
+
+<li>Memahami kapan menggunakan metode cakram vs metode kulit.</li>
+
+<li>Mampu menghitung panjang kurva (arc length).</li>
+
+<li>Mampu menghitung luas permukaan benda putar.</li>
+
+<li>Memahami konsep pusat massa dan cara menghitungnya.</li>
+
+<li>Mengenal momen inersia sebagai ukuran resistansi rotasi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: LUAS DAERAH ==================== -->
+
+<div class="section">
+
+<h2>1. Luas Daerah di Bawah Kurva — Kembali ke Akar Integral</h2>
+
+<div class="summary">
+
+<b>Luas daerah antara kurva y = f(x) dan sumbu X</b> dari x = a ke x = b:<br><br>
+
+<b>L = ∫ₐᵇ |f(x)| dx</b><br><br>
+
+Nilai mutlak diperlukan karena luas selalu positif. Jika f(x) bisa negatif
+di sebagian interval, kita harus memecah integral atau menggunakan |f(x)|.
+
+</div>
+
+<hr>
+
+<h3>1.1 Luas dengan Satu Kurva — Hati-hati dengan Bagian Negatif!</h3>
+
+<div class="example">
+
+Hitung luas daerah antara y = x² - 4 dan sumbu X dari x = 0 ke x = 3.<br><br>
+
+f(0) = -4 (negatif), f(2) = 0, f(3) = 5 (positif).<br>
+
+Kurva memotong sumbu X di x = 2.<br><br>
+
+<b>Pecah integral:</b><br>
+
+L = ∫₀² -(x²-4) dx + ∫₂³ (x²-4) dx<br>
+
+= ∫₀² (4-x²) dx + ∫₂³ (x²-4) dx<br><br>
+
+= [4x - x³/3]₀² + [x³/3 - 4x]₂³<br>
+
+= (8 - 8/3) + (27/3 - 12) - (8/3 - 8)<br>
+
+= (16/3) + (9 - 12) - (8/3 - 24/3)<br>
+
+= 16/3 + (-3) - (-16/3)<br>
+
+= 16/3 - 3 + 16/3 = 32/3 - 3 = <b>23/3 ≈ 7,67</b> ✅<br><br>
+
+<b>Perhatikan:</b> Jika langsung ∫₀³ (x²-4)dx tanpa nilai mutlak,
+hasilnya = [x³/3 - 4x]₀³ = (9-12) - 0 = -3. Ini SALAH karena luas tidak mungkin negatif!
+
+</div>
+
+<hr>
+
+<h3>1.2 Luas Antara Dua Kurva — Kurva Atas Dikurangi Kurva Bawah</h3>
+
+<div class="summary">
+
+<b>Luas daerah antara dua kurva</b> y = f(x) (atas) dan y = g(x) (bawah)
+dari x = a ke x = b:<br><br>
+
+<b>L = ∫ₐᵇ [f(x) - g(x)] dx</b><br><br>
+
+f(x) ≥ g(x) pada [a, b].
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya pengurangan?</b> Karena luas di bawah f(x) dikurangi
+luas di bawah g(x) menyisakan luas di antara keduanya.
+Ini seperti menghitung luas "selaput" di antara dua kurva.
+
+</p>
+
+<div class="example">
+
+Hitung luas daerah antara y = x² dan y = x + 2 dari titik potong ke titik potong.<br><br>
+
+Cari titik potong: x² = x + 2 → x² - x - 2 = 0 → (x-2)(x+1) = 0.<br>
+
+Titik potong di x = -1 dan x = 2.<br><br>
+
+Untuk x ∈ [-1, 2]: mana yang di atas? Uji x = 0: f(0) = 0, g(0) = 2 → g di atas!<br>
+
+Jadi f(x) = x+2 (atas), g(x) = x² (bawah).<br><br>
+
+L = ∫₋₁² [(x+2) - x²] dx = ∫₋₁² (x + 2 - x²) dx<br>
+
+= [x²/2 + 2x - x³/3]₋₁²<br>
+
+= (4/2 + 4 - 8/3) - (1/2 - 2 + 1/3)<br>
+
+= (2 + 4 - 8/3) - (1/2 - 2 + 1/3)<br>
+
+= (6 - 8/3) - (-3/2 + 1/3)<br>
+
+= (18/3 - 8/3) - (-9/6 + 2/6)<br>
+
+= 10/3 - (-7/6) = 10/3 + 7/6 = 20/6 + 7/6 = 27/6 = <b>9/2 = 4,5</b> ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Luas Terhadap Sumbu Y — Ketika x Dinyatakan dalam y</h3>
+
+<div class="summary">
+
+Kadang lebih mudah mengintegralkan terhadap y daripada x.<br><br>
+
+<b>L = ∫ₐᵇ [f(y) - g(y)] dy</b><br><br>
+
+di mana f(y) adalah kurva kanan, g(y) adalah kurva kiri.
+
+</div>
+
+<div class="example">
+
+Hitung luas daerah antara x = y² dan x = y + 2.<br><br>
+
+Titik potong: y² = y + 2 → y² - y - 2 = 0 → (y-2)(y+1) = 0 → y = -1, 2.<br><br>
+
+Untuk y ∈ [-1, 2]: mana yang di kanan? Uji y = 0: x_kiri = 0, x_kanan = 2 → x = y+2 di kanan.<br><br>
+
+L = ∫₋₁² [(y+2) - y²] dy = [y²/2 + 2y - y³/3]₋₁²<br>
+
+= (2 + 4 - 8/3) - (1/2 - 2 + 1/3) = <b>9/2 = 4,5</b> ✅<br><br>
+
+Hasilnya sama dengan contoh sebelumnya—hanya variabel integrasinya yang berbeda!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: VOLUME BENDA PUTAR ==================== -->
+
+<div class="section">
+
+<h2>2. Volume Benda Putar — Memutar Kurva Menjadi Benda 3D</h2>
+
+<p>
+
+Bayangkan sebuah kurva diputar 360° mengelilingi suatu sumbu.
+Hasilnya adalah <b>benda putar (solid of revolution)</b>—benda tiga dimensi
+yang simetris terhadap sumbu putar. Contoh: bola (dari setengah lingkaran),
+kerucut (dari garis miring), tabung (dari garis horizontal).
+
+</p>
+
+<hr>
+
+<h3>2.1 Metode Cakram (Disk Method) — Irisan Berbentuk Lingkaran</h3>
+
+<div class="summary">
+
+<b>Metode Cakram</b> digunakan ketika sumbu putar <b>sejajar</b> dengan arah irisan.<br><br>
+
+<b>Putar terhadap sumbu X (dari y = f(x)):</b><br>
+
+V = ∫ₐᵇ π[f(x)]² dx &nbsp; (satu kurva, dari x=a ke x=b)<br><br>
+
+<b>Putar terhadap sumbu Y (dari x = g(y)):</b><br>
+
+V = ∫ₐᵇ π[g(y)]² dy
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya π[f(x)]²?</b> Setiap irisan tegak lurus sumbu putar
+berbentuk <b>lingkaran</b> dengan jari-jari f(x). Luas lingkaran = πr² = π[f(x)]².
+Volume = jumlah luas irisan × ketebalan = ∫ π[f(x)]² dx.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Kurva y = √x dari x = 0 ke x = 4 diputar mengelilingi sumbu X.
+Hitung volume benda putarnya.<br><br>
+
+V = ∫₀⁴ π(√x)² dx = π ∫₀⁴ x dx = π [x²/2]₀⁴ = π(16/2) = <b>8π</b> ✅<br><br>
+
+Bentuknya seperti mangkuk parabola (paraboloid).
+
+</div>
+
+<hr>
+
+<h3>2.2 Metode Cincin (Washer Method) — Untuk Daerah Antara Dua Kurva</h3>
+
+<div class="summary">
+
+Jika daerah antara <b>dua kurva</b> diputar, irisannya berbentuk <b>cincin</b>
+(lingkaran besar dikurangi lingkaran kecil).<br><br>
+
+<b>V = ∫ₐᵇ π[(f(x))² - (g(x))²] dx</b><br><br>
+
+f(x) = jari-jari luar, g(x) = jari-jari dalam.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Daerah antara y = x² dan y = x dari x = 0 ke x = 1 diputar mengelilingi sumbu X.<br><br>
+
+Untuk x ∈ [0,1]: x ≥ x², jadi f(x) = x (jari-jari luar), g(x) = x² (jari-jari dalam).<br><br>
+
+V = ∫₀¹ π[x² - (x²)²] dx = π ∫₀¹ (x² - x⁴) dx<br>
+
+= π [x³/3 - x⁵/5]₀¹ = π(1/3 - 1/5) = π(5/15 - 3/15) = <b>2π/15</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Metode Kulit Tabung (Shell Method) — Alternatif yang Sering Lebih Mudah</h3>
+
+<div class="summary">
+
+<b>Metode Kulit Tabung</b> digunakan ketika sumbu putar <b>tegak lurus</b> arah irisan,
+atau ketika fungsi sulit dinyatakan dalam variabel yang diinginkan.<br><br>
+
+<b>Putar terhadap sumbu Y (dari y = f(x)):</b><br>
+
+V = ∫ₐᵇ 2πx·f(x) dx<br><br>
+
+<b>Intuisi:</b> Setiap "kulit" adalah selimut tabung dengan jari-jari x,
+tinggi f(x), dan ketebalan dx. Luas selimut = 2πx × f(x). Volume = luas × ketebalan.
+
+</div>
+
+<p>
+
+<b>Mengapa 2πx·f(x)?</b> Bayangkan kamu membuka kulit tabung dan meratakannya.
+Kamu dapat persegi panjang dengan lebar = keliling lingkaran (2πx) dan tinggi = f(x).
+Luasnya 2πx·f(x). Dikalikan ketebalan dx, itulah volume kulit.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Daerah di bawah y = x² dari x = 0 ke x = 2 diputar mengelilingi sumbu Y.
+Hitung volumenya.<br><br>
+
+<b>Metode Kulit:</b><br>
+
+V = ∫₀² 2πx·x² dx = 2π ∫₀² x³ dx = 2π [x⁴/4]₀² = 2π(16/4) = <b>8π</b> ✅<br><br>
+
+<b>Bandingkan dengan metode cakram terhadap Y:</b><br>
+
+y = x² → x = √y. Batas y: 0 ke 4.<br>
+
+V = ∫₀⁴ π(√y)² dy = π ∫₀⁴ y dy = π[y²/2]₀⁴ = π(16/2) = 8π. Sama!<br><br>
+
+Tapi metode kulit jauh lebih langsung karena tidak perlu mengubah fungsi ke x = g(y).
+
+</div>
+
+<hr>
+
+<h3>2.4 Kapan Pakai Cakram vs Kulit?</h3>
+
+<div class="summary">
+
+| Situasi | Metode |
+|---|---|
+| Sumbu putar sejajar irisan & fungsi mudah dikuadratkan | <b>Cakram/Cincin</b> |
+| Sumbu putar tegak lurus irisan | <b>Kulit Tabung</b> |
+| Fungsi sulit diubah ke variabel lain (misal y = x³+x) | <b>Kulit Tabung</b> |
+| Daerah antara dua kurva dengan sumbu putar di antaranya | <b>Cincin</b> |
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: PANJANG KURVA ==================== -->
+
+<div class="section">
+
+<h2>3. Panjang Kurva (Arc Length) — Mengukur Garis Lengkung</h2>
+
+<div class="summary">
+
+<b>Panjang kurva</b> y = f(x) dari x = a ke x = b:<br><br>
+
+<b>L = ∫ₐᵇ √(1 + [f'(x)]²) dx</b><br><br>
+
+<b>Intuisi:</b> Potong kurva menjadi segmen-segmen sangat kecil.
+Setiap segmen hampir lurus. Panjangnya ≈ √(dx² + dy²) = √(1 + (dy/dx)²) dx.
+Jumlahkan semua segmen → integral.
+
+</div>
+
+<p>
+
+<b>Mengapa ada √(1 + [f'(x)]²)? — Teorema Pythagoras pada Segmen Kecil</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan satu segmen kecil pada kurva. Perubahan horizontal = dx.
+Perubahan vertikal = dy = f'(x)dx.<br><br>
+
+Dengan Pythagoras: panjang segmen = √(dx² + dy²) = √(dx² + (f'(x)dx)²)<br>
+
+= √(1 + [f'(x)]²) · dx.<br><br>
+
+Integralkan dari a ke b → total panjang kurva. ✅
+
+</div>
+
+<div class="example">
+
+Hitung panjang kurva y = x^(3/2) dari x = 0 ke x = 4.<br><br>
+
+f'(x) = (3/2)x^(1/2). [f'(x)]² = (9/4)x.<br><br>
+
+L = ∫₀⁴ √(1 + 9x/4) dx.<br><br>
+
+Substitusi u = 1 + 9x/4 → du = (9/4)dx → dx = (4/9)du.<br>
+
+Saat x = 0: u = 1. Saat x = 4: u = 1 + 9 = 10.<br><br>
+
+L = ∫₁¹⁰ √u · (4/9) du = (4/9) ∫₁¹⁰ u^(1/2) du<br>
+
+= (4/9) [u^(3/2)/(3/2)]₁¹⁰ = (4/9) · (2/3) [u^(3/2)]₁¹⁰<br>
+
+= (8/27)(10^(3/2) - 1) ≈ (8/27)(31,623 - 1) ≈ (8/27)(30,623) ≈ <b>9,07</b> ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: LUAS PERMUKAAN PUTAR ==================== -->
+
+<div class="section">
+
+<h2>4. Luas Permukaan Benda Putar — "Kulit" Benda 3D</h2>
+
+<div class="summary">
+
+<b>Luas permukaan</b> yang dihasilkan ketika kurva y = f(x) diputar
+mengelilingi sumbu X dari x = a ke x = b:<br><br>
+
+<b>S = ∫ₐᵇ 2π f(x) √(1 + [f'(x)]²) dx</b><br><br>
+
+<b>Intuisi:</b> Setiap "pita" kecil pada kurva, ketika diputar,
+membentuk selimut kerucut terpancung dengan jari-jari f(x)
+dan panjang sisi miring √(1 + [f'(x)]²) dx. Luas pita = 2πr × panjang miring.
+
+</div>
+
+<div class="example">
+
+Hitung luas permukaan bola berjari-jari R (dari setengah lingkaran y = √(R²-x²)).<br><br>
+
+f(x) = √(R²-x²), domain x ∈ [-R, R].<br>
+
+f'(x) = -x/√(R²-x²).<br><br>
+
+1 + [f'(x)]² = 1 + x²/(R²-x²) = (R²-x²+x²)/(R²-x²) = R²/(R²-x²).<br>
+
+√(1+[f'(x)]²) = R/√(R²-x²).<br><br>
+
+S = ∫₋ᴿᴿ 2π √(R²-x²) · R/√(R²-x²) dx = ∫₋ᴿᴿ 2πR dx<br>
+
+= 2πR [x]₋ᴿᴿ = 2πR(R - (-R)) = <b>4πR²</b> ✅<br><br>
+
+<b>Ini adalah rumus luas permukaan bola yang legendaris!</b>
+Diturunkan dengan elegan menggunakan integral.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: PUSAT MASSA ==================== -->
+
+<div class="section">
+
+<h2>5. Pusat Massa (Centroid) — Titik Keseimbangan</h2>
+
+<div class="summary">
+
+<b>Pusat massa</b> (centroid) adalah titik di mana seluruh massa benda
+"terkonsentrasi" untuk tujuan perhitungan keseimbangan.
+Jika benda ditopang tepat di pusat massanya, ia akan seimbang sempurna.<br><br>
+
+Untuk <b>daerah datar</b> (lamina) dengan densitas seragam yang dibatasi
+oleh y = f(x) dan y = g(x) dari x = a ke x = b:<br><br>
+
+<b>Massa:</b> M = ρ ∫ₐᵇ [f(x) - g(x)] dx &nbsp; (ρ = densitas, biasanya ρ=1 untuk centroid)<br><br>
+
+<b>Momen terhadap sumbu Y:</b> Mᵧ = ρ ∫ₐᵇ x[f(x) - g(x)] dx<br><br>
+
+<b>Momen terhadap sumbu X:</b> Mₓ = ρ ∫ₐᵇ (1/2)[f(x)² - g(x)²] dx<br><br>
+
+<b>Koordinat pusat massa:</b> x̄ = Mᵧ/M, &nbsp; ȳ = Mₓ/M
+
+</div>
+
+<p>
+
+<b>Mengapa momen terhadap X memakai (1/2)[f(x)² - g(x)²]?</b>
+
+</p>
+
+<div class="example">
+
+Momen adalah "berat × jarak". Untuk setiap irisan vertikal tipis,
+jarak rata-rata titik-titik di irisan itu ke sumbu X adalah
+<b>rata-rata f(x) dan g(x)</b> = (f(x)+g(x))/2.<br><br>
+
+Maka momen irisan = (f(x)+g(x))/2 × (f(x)-g(x))dx × ρ<br>
+
+= (ρ/2)(f(x)² - g(x)²)dx. ✅
+
+</div>
+
+<div class="example">
+
+Cari pusat massa daerah antara y = x² dan y = x dari x = 0 ke x = 1 (ρ = 1).<br><br>
+
+<b>Massa:</b> M = ∫₀¹ (x - x²) dx = [x²/2 - x³/3]₀¹ = 1/2 - 1/3 = <b>1/6</b>.<br><br>
+
+<b>Mᵧ:</b> ∫₀¹ x(x - x²) dx = ∫₀¹ (x² - x³) dx = [x³/3 - x⁴/4]₀¹ = 1/3 - 1/4 = <b>1/12</b>.<br><br>
+
+<b>Mₓ:</b> (1/2)∫₀¹ (x² - x⁴) dx = (1/2)[x³/3 - x⁵/5]₀¹ = (1/2)(1/3 - 1/5) = (1/2)(2/15) = <b>1/15</b>.<br><br>
+
+x̄ = (1/12)/(1/6) = <b>1/2</b>. ȳ = (1/15)/(1/6) = 6/15 = <b>2/5</b>.<br><br>
+
+Pusat massa: <b>(1/2, 2/5)</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: MOMEN INERSIA ==================== -->
+
+<div class="section">
+
+<h2>6. Momen Inersia — Resistansi Terhadap Rotasi</h2>
+
+<div class="summary">
+
+<b>Momen inersia</b> (I) mengukur seberapa sulit memutar suatu benda
+terhadap sumbu tertentu. Mirip dengan massa untuk gerak translasi,
+momen inersia adalah "massa rotasional".<br><br>
+
+Untuk daerah datar dengan densitas ρ = 1:<br><br>
+
+<b>Terhadap sumbu X:</b> Iₓ = ∫ₐᵇ (1/3)[f(x)³ - g(x)³] dx<br><br>
+
+<b>Terhadap sumbu Y:</b> Iᵧ = ∫ₐᵇ x²[f(x) - g(x)] dx<br><br>
+
+<b>Momen inersia polar (terhadap titik asal):</b> I₀ = Iₓ + Iᵧ
+
+</div>
+
+<p>
+
+<b>Mengapa Iₓ memakai (1/3)[f(x)³ - g(x)³]?</b>
+
+</p>
+
+<div class="example">
+
+Momen inersia adalah integral dari (jarak)² × massa.<br>
+
+Untuk irisan vertikal, jarak titik ke sumbu X adalah y.
+Rata-rata y² di irisan = ∫ y² dy / Δy = (f³-g³)/(3(f-g)).<br>
+
+Kalikan dengan massa irisan (f-g)dx → (f³-g³)/3 dx. ✅
+
+</div>
+
+<div class="example">
+
+Hitung momen inersia terhadap sumbu Y untuk daerah antara y = x² dan y = x dari 0 ke 1.<br><br>
+
+Iᵧ = ∫₀¹ x²(x - x²) dx = ∫₀¹ (x³ - x⁴) dx<br>
+
+= [x⁴/4 - x⁵/5]₀¹ = 1/4 - 1/5 = 5/20 - 4/20 = <b>1/20</b> ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 7</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Luas daerah:</b> L = ∫ₐᵇ [f(x)-g(x)] dx. Bisa terhadap x atau y. Hati-hati dengan bagian negatif!</li>
+
+<li><b>Volume — Cakram:</b> V = ∫ π[f(x)]² dx. Sumbu putar sejajar irisan.</li>
+
+<li><b>Volume — Cincin:</b> V = ∫ π[f(x)² - g(x)²] dx. Daerah antara dua kurva.</li>
+
+<li><b>Volume — Kulit Tabung:</b> V = ∫ 2πx·f(x) dx. Sumbu putar tegak lurus irisan.</li>
+
+<li><b>Panjang kurva:</b> L = ∫ √(1 + [f'(x)]²) dx. Pythagoras pada segmen kecil.</li>
+
+<li><b>Luas permukaan putar:</b> S = ∫ 2πf(x)√(1+[f'(x)]²) dx.</li>
+
+<li><b>Pusat massa:</b> x̄ = Mᵧ/M, ȳ = Mₓ/M. Titik keseimbangan benda.</li>
+
+<li><b>Momen inersia:</b> I = ∫ (jarak)² dm. Resistansi terhadap rotasi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Luas: gambar dulu!</b> Sebelum menghitung, sketsa kurvanya.
+Tentukan mana yang di atas, mana yang di bawah, dan di mana titik potongnya.
+
+</li>
+
+<li>
+
+<b>Luas: periksa tanda!</b> Jika kurva di bawah sumbu X, integralnya negatif.
+Luas selalu positif → pakai nilai mutlak atau pecah integral.
+
+</li>
+
+<li>
+
+<b>Volume: pilih metode dengan bijak.</b> Cakram untuk sumbu sejajar irisan.
+Kulit untuk sumbu tegak lurus irisan atau fungsi sulit diinverskan.
+
+</li>
+
+<li>
+
+<b>Jangan lupa π di volume!</b> Luas lingkaran = πr². Kesalahan paling umum
+adalah lupa mengalikan dengan π.
+
+</li>
+
+<li>
+
+<b>Panjang kurva: turunan dulu, baru akar.</b> Hitung f'(x), kuadratkan,
+tambah 1, akarkan, baru integralkan. Urutannya penting.
+
+</li>
+
+<li>
+
+<b>Pusat massa: momen dibagi massa.</b> Mᵧ/M untuk x̄, Mₓ/M untuk ȳ.
+Jangan tertukar! Mᵧ = ∫ x·(f-g)dx, Mₓ = (1/2)∫ (f²-g²)dx.
+
+</li>
+
+<li>
+
+<b>Verifikasi dengan simetri.</b> Jika daerah simetris terhadap sumbu Y,
+maka x̄ = 0. Jika simetris terhadap garis y = c, maka ȳ = c.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus6.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus8.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
