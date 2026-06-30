@@ -1,1 +1,684 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulus Part 5 | Integral: Konsep & Teknik Dasar</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📊 KALKULUS</h1>
+
+<p>Part 5 • Integral: Konsep & Teknik Dasar</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Kebalikan dari Turunan</h2>
+
+<p>
+
+Sejauh ini kita telah mempelajari <b>kalkulus diferensial</b>—cabang kalkulus
+yang berfokus pada laju perubahan dan kemiringan kurva. Sekarang kita memasuki
+<b>kalkulus integral</b>—cabang yang berfokus pada <b>akumulasi</b> dan <b>luas</b>.
+
+</p>
+
+<p>
+
+Jika turunan menjawab "seberapa cepat?", integral menjawab "berapa totalnya?".
+Jika turunan mencari kemiringan garis singgung, integral mencari <b>luas daerah
+di bawah kurva</b>. Keduanya adalah operasi yang saling berkebalikan—
+seperti penjumlahan dan pengurangan, perkalian dan pembagian.
+
+</p>
+
+<p>
+
+Hubungan mendalam antara turunan dan integral diungkapkan oleh
+<b>Teorema Dasar Kalkulus (Fundamental Theorem of Calculus)</b>—
+salah satu pencapaian intelektual terbesar umat manusia.
+Teorema ini menyatakan bahwa <b>integral dari turunan kembali ke fungsi semula</b>,
+dan <b>turunan dari integral juga kembali ke fungsi semula</b>.
+
+</p>
+
+<p>
+
+Secara historis, integral ditemukan lebih dulu daripada turunan.
+<b>Archimedes</b> (287-212 SM) sudah menggunakan metode "exhaustion"
+(penjumlahan tak hingga) untuk menghitung luas dan volume—
+jauh sebelum Newton dan Leibniz merumuskan kalkulus modern.
+Tapi hubungan antara integral dan turunan baru dipahami pada abad ke-17.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami integral tak tentu sebagai "anti-turunan" (kebalikan dari turunan).</li>
+
+<li>Memahami integral tentu sebagai limit dari jumlah Riemann—luas di bawah kurva.</li>
+
+<li>Menguasai Teorema Dasar Kalkulus yang menghubungkan integral tak tentu dan integral tentu.</li>
+
+<li>Mampu menghitung integral dengan aturan pangkat, eksponen, trigonometri, dan substitusi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: INTEGRAL TAK TENTU ==================== -->
+
+<div class="section">
+
+<h2>1. Integral Tak Tentu — "Anti-Turunan"</h2>
+
+<div class="summary">
+
+<b>Integral tak tentu (indefinite integral)</b> adalah operasi <b>kebalikan dari turunan</b>.<br><br>
+
+Jika F'(x) = f(x), maka F adalah <b>anti-turunan</b> dari f, ditulis:<br><br>
+
+<b>∫ f(x) dx = F(x) + C</b><br><br>
+
+C adalah <b>konstanta integrasi</b>—sangat penting dan tidak boleh dilupakan!
+
+</div>
+
+<p>
+
+<b>Mengapa ada "+ C"? — Konstanta yang Hilang</b>
+
+</p>
+
+<div class="example">
+
+Turunan dari x² adalah 2x.<br>
+
+Turunan dari x² + 5 adalah 2x.<br>
+
+Turunan dari x² - 100 adalah 2x.<br>
+
+Turunan dari x² + π adalah 2x.<br><br>
+
+Semua fungsi ini memiliki turunan yang sama: 2x.<br><br>
+
+Jadi, ketika kita membalikkan prosesnya ("siapa yang turunannya 2x?"),
+ada <b>tak hingga</b> kemungkinan jawaban! Semua fungsi berbentuk x² + C
+memiliki turunan 2x.<br><br>
+
+Konstanta C mewakili <b>semua kemungkinan</b> itu. Inilah kenapa
+setiap integral tak tentu harus diakhiri dengan + C.
+
+</div>
+
+<hr>
+
+<h3>1.1 Aturan Pangkat — Kebalikan dari Turunan</h3>
+
+<div class="summary">
+
+<b>Aturan Pangkat untuk Integral:</b><br><br>
+
+∫ xⁿ dx = <b>xⁿ⁺¹/(n+1) + C</b>, &nbsp; untuk n ≠ -1<br><br>
+
+∫ x⁻¹ dx = ∫ (1/x) dx = <b>ln |x| + C</b>
+
+</div>
+
+<p>
+
+<b>Mengapa aturannya seperti itu? — Cek dengan Turunan</b>
+
+</p>
+
+<div class="example">
+
+d/dx [xⁿ⁺¹/(n+1)] = (n+1)xⁿ/(n+1) = xⁿ. ✅<br><br>
+
+d/dx [ln |x|] = 1/x. ✅<br><br>
+
+Jadi aturan pangkat untuk integral adalah <b>kebalikan persis</b>
+dari aturan pangkat untuk turunan: turunan mengurangi pangkat 1,
+integral menambah pangkat 1 (lalu dibagi dengan pangkat baru).
+
+</div>
+
+<div class="example">
+
+∫ x³ dx = x⁴/4 + C. Cek: d/dx(x⁴/4) = 4x³/4 = x³. ✅<br><br>
+
+∫ x⁵ dx = x⁶/6 + C. Cek: d/dx(x⁶/6) = 6x⁵/6 = x⁵. ✅<br><br>
+
+∫ √x dx = ∫ x^(1/2) dx = x^(3/2)/(3/2) + C = (2/3)x^(3/2) + C. ✅<br><br>
+
+∫ 1/x² dx = ∫ x⁻² dx = x⁻¹/(-1) + C = -1/x + C. ✅
+
+</div>
+
+<hr>
+
+<h3>1.2 Sifat-Sifat Integral — Linieritas</h3>
+
+<div class="summary">
+
+<b>1. ∫ k·f(x) dx = k·∫ f(x) dx</b> (konstanta bisa dikeluarkan).<br><br>
+
+<b>2. ∫ [f(x) ± g(x)] dx = ∫ f(x) dx ± ∫ g(x) dx</b> (integral jumlah = jumlah integral).<br><br>
+
+<b>3. ∫ dx = x + C</b> (integral dari 1 adalah x).
+
+</div>
+
+<div class="example">
+
+∫ (3x² + 4x - 5) dx = 3∫x² dx + 4∫x dx - 5∫dx<br>
+
+= 3(x³/3) + 4(x²/2) - 5x + C<br>
+
+= <b>x³ + 2x² - 5x + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Integral Fungsi-Fungsi Penting — Tabel Wajib Hafal</h3>
+
+<div class="summary">
+
+∫ xⁿ dx = xⁿ⁺¹/(n+1) + C &nbsp; (n ≠ -1)<br>
+
+∫ 1/x dx = ln |x| + C<br>
+
+∫ eˣ dx = eˣ + C<br>
+
+∫ aˣ dx = aˣ/ln a + C<br>
+
+∫ sin x dx = -cos x + C &nbsp; (perhatikan tanda minus!)<br>
+
+∫ cos x dx = sin x + C<br>
+
+∫ sec² x dx = tan x + C<br>
+
+∫ csc² x dx = -cot x + C<br>
+
+∫ sec x tan x dx = sec x + C<br>
+
+∫ csc x cot x dx = -csc x + C
+
+</div>
+
+<p>
+
+<b>Mengapa ∫ sin x dx = -cos x? Kenapa ada tanda minus?</b>
+
+</p>
+
+<div class="example">
+
+Karena d/dx(cos x) = -sin x, maka d/dx(-cos x) = sin x.<br><br>
+
+Jadi anti-turunan dari sin x adalah -cos x (bukan cos x!).<br><br>
+
+Ini adalah jebakan klasik: turunan cos x = -sin x,
+tapi turunan -cos x = sin x. Tanda minusnya "pindah".
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: INTEGRAL TENTU ==================== -->
+
+<div class="section">
+
+<h2>2. Integral Tentu — Luas di Bawah Kurva</h2>
+
+<p>
+
+<b>Integral tentu (definite integral)</b> dari f(x) dari a ke b adalah
+<b>luas bertanda</b> daerah antara kurva y = f(x) dan sumbu X,
+dari x = a sampai x = b.
+
+</p>
+
+<div class="summary">
+
+<b>Notasi:</b> ∫ₐᵇ f(x) dx<br><br>
+
+a = batas bawah, b = batas atas.<br><br>
+
+Hasilnya adalah <b>bilangan</b> (bukan fungsi), tidak ada + C!<br><br>
+
+Luas di atas sumbu X → positif. Luas di bawah sumbu X → negatif.
+
+</div>
+
+<hr>
+
+<h3>2.1 Dari Mana Integral Tentu Berasal? — Jumlah Riemann</h3>
+
+<p>
+
+<b>Motivasi:</b> Bagaimana menghitung luas daerah di bawah kurva yang melengkung?
+Kita tidak bisa menggunakan rumus persegi atau segitiga biasa.
+
+</p>
+
+<p>
+
+<b>Strategi:</b> Potong daerah menjadi <b>n persegi panjang tipis</b>,
+hitung luas masing-masing, jumlahkan, lalu biarkan n → ∞.
+
+</p>
+
+<div class="summary">
+
+<b>Jumlah Riemann:</b><br><br>
+
+Bagilah [a, b] menjadi n subinterval dengan lebar Δx = (b-a)/n.<br>
+
+Pilih titik sampel xᵢ* di setiap subinterval.<br><br>
+
+Jumlah Riemann: Σ[i=1..n] f(xᵢ*) · Δx<br><br>
+
+<b>Integral tentu = limit jumlah Riemann saat n → ∞:</b><br><br>
+
+∫ₐᵇ f(x) dx = lim[n→∞] Σ[i=1..n] f(xᵢ*) · Δx
+
+</div>
+
+<p>
+
+<b>Mengapa ini bekerja?</b> Semakin banyak persegi panjang (n besar),
+semakin kecil Δx, dan semakin akurat aproksimasinya.
+Saat n → ∞, jumlah persegi panjang tepat sama dengan luas di bawah kurva.
+
+</p>
+
+<div class="example">
+
+Hitung ∫₀² x dx menggunakan limit jumlah Riemann.<br><br>
+
+Δx = (2-0)/n = 2/n. Titik sampel: ujung kanan xᵢ = 2i/n.<br><br>
+
+Jumlah Riemann = Σ f(2i/n)·(2/n) = Σ (2i/n)·(2/n) = (4/n²) Σ i.<br><br>
+
+Σ[i=1..n] i = n(n+1)/2.<br><br>
+
+Jumlah Riemann = (4/n²) · n(n+1)/2 = 2(n+1)/n = 2 + 2/n.<br><br>
+
+lim[n→∞] (2 + 2/n) = <b>2</b>. ✅<br><br>
+
+Luas segitiga dengan alas 2 dan tinggi 2 = ½·2·2 = 2. Cocok!
+
+</div>
+
+<hr>
+
+<h3>2.2 Sifat-Sifat Integral Tentu</h3>
+
+<div class="summary">
+
+<b>1. ∫ₐᵃ f(x) dx = 0</b> (batas sama → luas nol).<br><br>
+
+<b>2. ∫ₐᵇ f(x) dx = -∫ᵇₐ f(x) dx</b> (membalik batas → tanda berubah).<br><br>
+
+<b>3. ∫ₐᵇ f(x) dx + ∫ᵇᶜ f(x) dx = ∫ₐᶜ f(x) dx</b> (aditif terhadap interval).<br><br>
+
+<b>4. ∫ₐᵇ k·f(x) dx = k·∫ₐᵇ f(x) dx</b> (konstanta bisa dikeluarkan).<br><br>
+
+<b>5. ∫ₐᵇ [f(x) ± g(x)] dx = ∫ₐᵇ f(x) dx ± ∫ₐᵇ g(x) dx</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: TEOREMA DASAR KALKULUS ==================== -->
+
+<div class="section">
+
+<h2>3. Teorema Dasar Kalkulus — Jembatan Turunan dan Integral</h2>
+
+<p>
+
+Ini adalah <b>teorema paling penting dalam kalkulus</b>.
+Ia menghubungkan dua operasi yang tampak berbeda: turunan (laju perubahan)
+dan integral (akumulasi). Teorema ini memiliki dua bagian.
+
+</p>
+
+<hr>
+
+<h3>3.1 Bagian 1 — Turunan dari Integral</h3>
+
+<div class="summary">
+
+<b>Teorema Dasar Kalkulus Bagian 1 (FTC1):</b><br><br>
+
+Jika f kontinu pada [a, b] dan F(x) = ∫ₐˣ f(t) dt, maka:<br><br>
+
+<b>F'(x) = f(x)</b><br><br>
+
+Artinya: <b>turunan dari integral (dengan batas atas variabel)
+kembali ke fungsi aslinya!</b>
+
+</div>
+
+<p>
+
+<b>Makna:</b> Jika kamu mengakumulasi f(t) dari a sampai x,
+lalu kamu mencari laju perubahan akumulasi itu terhadap x,
+kamu mendapatkan kembali f(x). Integral lalu turunan = fungsi semula.
+
+</p>
+
+<div class="example">
+
+F(x) = ∫₁ˣ t² dt. Maka F'(x) = x². (Tanpa perlu menghitung integralnya!)<br><br>
+
+<b>Verifikasi:</b> F(x) = [t³/3]₁ˣ = x³/3 - 1/3. F'(x) = 3x²/3 = x². ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Bagian 2 — Menghitung Integral Tentu</h3>
+
+<div class="summary">
+
+<b>Teorema Dasar Kalkulus Bagian 2 (FTC2):</b><br><br>
+
+Jika f kontinu pada [a, b] dan F adalah anti-turunan dari f (F' = f), maka:<br><br>
+
+<b>∫ₐᵇ f(x) dx = F(b) - F(a)</b><br><br>
+
+Artinya: <b>integral tentu = anti-turunan di batas atas dikurangi anti-turunan di batas bawah!</b>
+
+</div>
+
+<p>
+
+<b>Mengapa ini revolusioner?</b> Sebelum FTC2, menghitung luas di bawah kurva
+harus menggunakan limit jumlah Riemann yang sangat rumit.
+Dengan FTC2, kita cukup <b>mencari anti-turunan, lalu substitusi batas</b>.
+Proses yang tadinya berhalaman-halaman kini menjadi beberapa baris!
+
+</p>
+
+<div class="example">
+
+Hitung ∫₀² x² dx.<br><br>
+
+Anti-turunan x² = x³/3. (Cek: d/dx(x³/3) = x²)<br><br>
+
+∫₀² x² dx = [x³/3]₀² = (8/3) - (0/3) = <b>8/3</b>. ✅<br><br>
+
+Bandingkan dengan limit Riemann—jauh lebih cepat!
+
+</div>
+
+<div class="example">
+
+Hitung ∫₀ᵖⁱ sin x dx.<br><br>
+
+Anti-turunan sin x = -cos x.<br><br>
+
+∫₀ᵖⁱ sin x dx = [-cos x]₀ᵖⁱ = (-cos π) - (-cos 0)<br>
+
+= (-(-1)) - (-1) = 1 + 1 = <b>2</b>. ✅<br><br>
+
+Luas total satu "gunung" gelombang sinus = tepat 2 satuan luas!
+
+</div>
+
+<hr>
+
+<h3>3.3 Notasi Evaluasi — Cara Penulisan yang Rapi</h3>
+
+<div class="summary">
+
+<b>Notasi:</b> F(x)|ₐᵇ atau [F(x)]ₐᵇ artinya F(b) - F(a).<br><br>
+
+Contoh: ∫₁³ 2x dx = x²|₁³ = 9 - 1 = <b>8</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: SUBSTITUSI ==================== -->
+
+<div class="section">
+
+<h2>4. Teknik Substitusi — "Aturan Rantai Terbalik"</h2>
+
+<p>
+
+Sama seperti aturan rantai adalah teknik paling penting dalam turunan,
+<b>substitusi</b> adalah teknik paling penting dalam integral.
+Substitusi adalah <b>aturan rantai yang dibalik</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Rumus Substitusi:</b><br><br>
+
+∫ f(g(x)) · g'(x) dx = ∫ f(u) du<br><br>
+
+di mana u = g(x) dan du = g'(x) dx.<br><br>
+
+<b>Strategi:</b><br>
+
+1. Pilih u = g(x) (biasanya "fungsi dalam").<br>
+
+2. Hitung du = g'(x) dx.<br>
+
+3. Ubah semua x menjadi u (termasuk dx).<br>
+
+4. Integralkan dalam u.<br>
+
+5. Kembalikan u ke x.<br><br>
+
+<b>Untuk integral tentu:</b> ubah juga batas integral ke u!
+
+</div>
+
+<p>
+
+<b>Mengapa substitusi adalah "aturan rantai terbalik"?</b>
+
+</p>
+
+<div class="example">
+
+Aturan rantai: d/dx [F(g(x))] = F'(g(x)) · g'(x).<br><br>
+
+Ambil integral kedua ruas:<br>
+
+F(g(x)) = ∫ F'(g(x)) · g'(x) dx.<br><br>
+
+Misalkan f = F' (artinya F adalah anti-turunan f):<br>
+
+∫ f(g(x)) · g'(x) dx = F(g(x)) + C = ∫ f(u) du. ✅
+
+</div>
+
+<hr>
+
+<h3>4.1 Contoh Substitusi Dasar</h3>
+
+<div class="example">
+
+<b>Contoh 1:</b> ∫ 2x·cos(x²) dx.<br><br>
+
+Pilih u = x² → du = 2x dx. Perhatikan: 2x dx sudah ada!<br><br>
+
+∫ cos(x²) · 2x dx = ∫ cos u du = <b>sin u + C = sin(x²) + C</b>. ✅<br><br>
+
+<b>Contoh 2:</b> ∫ (3x² + 1)⁴ · 6x dx.<br><br>
+
+u = 3x² + 1 → du = 6x dx. Pas!<br><br>
+
+= ∫ u⁴ du = u⁵/5 + C = <b>(3x²+1)⁵/5 + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Substitusi yang Perlu Penyesuaian</h3>
+
+<div class="example">
+
+<b>Contoh 3:</b> ∫ x·√(x²+1) dx.<br><br>
+
+u = x² + 1 → du = 2x dx → x dx = du/2.<br><br>
+
+= ∫ √u · (du/2) = (1/2)∫ u^(1/2) du<br>
+
+= (1/2) · u^(3/2)/(3/2) + C = (1/2) · (2/3)u^(3/2) + C<br>
+
+= <b>(1/3)(x²+1)^(3/2) + C</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Substitusi pada Integral Tentu — Ubah Batas!</h3>
+
+<div class="example">
+
+<b>Contoh 4:</b> ∫₀¹ 2x(x²+1)³ dx.<br><br>
+
+u = x² + 1. du = 2x dx.<br>
+
+Saat x = 0: u = 0²+1 = <b>1</b>.<br>
+
+Saat x = 1: u = 1²+1 = <b>2</b>.<br><br>
+
+= ∫₁² u³ du = [u⁴/4]₁² = 16/4 - 1/4 = <b>15/4</b>. ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kalkulus 5</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Integral tak tentu:</b> ∫ f(x) dx = F(x) + C. Anti-turunan = kebalikan turunan. +C wajib!</li>
+
+<li><b>Aturan pangkat:</b> ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ -1). ∫ 1/x dx = ln |x| + C.</li>
+
+<li><b>Integral tentu:</b> ∫ₐᵇ f(x) dx = luas bertanda di bawah kurva dari a ke b.</li>
+
+<li><b>Jumlah Riemann:</b> Σ f(xᵢ*)Δx. Integral tentu = limit jumlah Riemann saat n→∞.</li>
+
+<li><b>FTC1:</b> d/dx ∫ₐˣ f(t) dt = f(x). Turunan dari integral kembali ke fungsi.</li>
+
+<li><b>FTC2:</b> ∫ₐᵇ f(x) dx = F(b) - F(a). Integral = anti-turunan di batas atas - bawah.</li>
+
+<li><b>Substitusi:</b> u = g(x), du = g'(x)dx. Aturan rantai terbalik. Ubah batas untuk integral tentu!</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>+C jangan pernah dilupakan!</b> Integral tak tentu selalu berakhir dengan +C.
+Tanpa +C, jawabanmu salah—meskipun perhitungannya benar.
+
+</li>
+
+<li>
+
+<b>Cek dengan turunan.</b> Setelah mengintegralkan, turunkan hasilnya.
+Kalau kembali ke fungsi awal, integralmu benar. Ini verifikasi termudah.
+
+</li>
+
+<li>
+
+<b>Substitusi: pilih u = "fungsi dalam".</b> Cari bagian yang kalau diturunkan,
+hasilnya muncul di integral. Biasanya yang di dalam kurung, di dalam akar,
+atau di dalam trigonometri.
+
+</li>
+
+<li>
+
+<b>Integral tentu substitusi: jangan lupa ubah batas!</b> Kalau tidak mengubah batas,
+kamu harus mengembalikan u ke x dulu sebelum memasukkan batas x.
+
+</li>
+
+<li>
+
+<b>Integral = luas bertanda.</b> Kalau kurva di bawah sumbu X, integralnya negatif.
+Luas total = |integral bagian atas| + |integral bagian bawah|.
+
+</li>
+
+<li>
+
+<b>Hafalkan integral dasar seperti turunan dasar.</b> ∫sin = -cos, ∫cos = sin,
+∫eˣ = eˣ, ∫1/x = ln|x|. Ini harus refleks.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kalkulus4.html" class="btn">⬅ Kembali</a>
+
+<a href="kalkulus.html" class="btn">📚 Daftar Kalkulus</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kalkulus6.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
