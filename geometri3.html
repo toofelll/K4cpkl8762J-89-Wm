@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 3 | Segitiga Lanjut</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section {
+        background: #1a2740;
+        position: relative;
+        z-index: 1;
+    }
+    .container {
+        background: #0f1a2e;
+    }
+    body {
+        background: #0f1a2e;
+    }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>📏 GEOMETRI</h1>
+
+<p>Part 3 • Segitiga Lanjut: Kesebangunan, Pythagoras & Garis Istimewa</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Di Geometri 2, kita sudah mempelajari segitiga dari sisi dasar:
+jenis-jenisnya, sifat fundamentalnya, dan cara menghitung keliling serta luasnya.
+Sekarang kita masuk ke level yang lebih dalam—materi yang menjadi <b>jantung</b>
+dari geometri kompetitif.
+
+</p>
+
+<p>
+
+<b>Kesebangunan dan kekongruenan</b> adalah dua konsep yang membandingkan segitiga.
+Keduanya menjadi alat utama untuk membuktikan hubungan antar sisi dan sudut.
+<b>Teorema Pythagoras</b> adalah salah satu teorema paling terkenal dalam matematika,
+menghubungkan ketiga sisi segitiga siku-siku dengan cara yang elegan.
+<b>Garis-garis istimewa</b>—garis berat, garis tinggi, garis bagi, dan garis sumbu—
+adalah "organ dalam" segitiga yang menentukan titik-titik pusat penting:
+titik berat, titik tinggi, titik bagi, dan titik sumbu.
+
+</p>
+
+<p>
+
+Menguasai bab ini berarti kamu bisa menyelesaikan sebagian besar soal geometri
+yang muncul di berbagai ujian dan kompetisi.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami konsep kesebangunan dan syarat-syaratnya.</li>
+
+<li>Memahami konsep kekongruenan dan perbedaannya dengan kesebangunan.</li>
+
+<li>Menguasai Teorema Pythagoras dan tripel Pythagoras.</li>
+
+<li>Mampu menggunakan Pythagoras untuk mencari sisi miring, sisi tegak, dan dalam bangun ruang.</li>
+
+<li>Mengenal dan memahami keempat garis istimewa pada segitiga.</li>
+
+<li>Memahami titik-titik istimewa: titik berat, titik tinggi, titik bagi, dan titik sumbu.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: KESEBANGUNAN ==================== -->
+
+<div class="section">
+
+<h2>1. Kesebangunan — Bentuk Sama, Ukuran Beda</h2>
+
+<p>
+
+Dua bangun dikatakan <b>sebangun</b> jika mereka memiliki <b>bentuk yang sama</b>,
+meskipun ukurannya berbeda. Seperti foto yang diperbesar atau diperkecil—
+bentuknya tetap sama, hanya skalanya yang berubah.
+
+</p>
+
+<div class="summary">
+
+Dua segitiga <b>sebangun</b> (ditulis △ABC ∼ △DEF) jika:<br><br>
+
+<b>1. Sudut-sudut yang bersesuaian sama besar.</b><br>
+
+∠A = ∠D, ∠B = ∠E, ∠C = ∠F<br><br>
+
+<b>2. Sisi-sisi yang bersesuaian sebanding.</b><br>
+
+AB/DE = BC/EF = CA/FD = k (faktor skala)
+
+</div>
+
+<p>
+
+<b>Mengapa dua syarat itu ekuivalen?</b>
+
+</p>
+
+<p>
+
+Dalam segitiga, jika ketiga sudutnya sama, maka bentuknya pasti sama—
+ukurannya mungkin berbeda, tapi proporsinya identik. Ini karena sudut
+menentukan "kemiringan" sisi-sisi, dan dengan sudut yang sama,
+sisi-sisi harus sebanding. Sebaliknya, jika sisi-sisinya sebanding,
+maka dengan aturan cosinus, sudut-sudutnya pasti sama.
+
+</p>
+
+<hr>
+
+<h3>Syarat-Syarat Kesebangunan Segitiga (3 Cara)</h3>
+
+<p>
+
+Untuk membuktikan dua segitiga sebangun, kamu tidak perlu mengecek
+semua sudut dan semua sisi. Cukup salah satu dari tiga syarat berikut:
+
+</p>
+
+<div class="summary">
+
+<b>1. Sudut-Sudut-Sudut (Sd-Sd-Sd):</b> Dua sudut yang bersesuaian sama besar.
+(Otomatis sudut ketiga juga sama, karena total 180°).<br><br>
+
+<b>2. Sisi-Sudut-Sisi (S-Sd-S):</b> Dua pasang sisi sebanding dan sudut yang diapit sama besar.<br><br>
+
+<b>3. Sisi-Sisi-Sisi (S-S-S):</b> Ketiga pasang sisi sebanding.
+
+</div>
+
+<p>
+
+<b>Mengapa Sd-Sd cukup?</b>
+
+</p>
+
+<div class="example">
+
+Kalau dua sudut segitiga A sama dengan dua sudut segitiga B,
+maka sudut ketiga otomatis sama (karena total 180°).
+Jadi, cukup dua sudut untuk membuktikan kesebangunan.
+Inilah syarat yang paling sering dipakai!
+
+</div>
+
+<hr>
+
+<h3>Akibat Kesebangunan — Perbandingan yang Sangat Berguna</h3>
+
+<p>
+
+Jika △ABC ∼ △DEF dengan faktor skala k, maka:
+
+</p>
+
+<div class="summary">
+
+AB = k·DE, BC = k·EF, CA = k·FD<br><br>
+
+<b>Perbandingan keliling</b> = k<br>
+
+<b>Perbandingan luas</b> = <b>k²</b> (ini yang sering dilupakan!)
+
+</div>
+
+<p>
+
+<b>Mengapa perbandingan luas = k²?</b>
+
+</p>
+
+<div class="example">
+
+Luas △ABC = ½ · AB · t₁.<br>
+
+Luas △DEF = ½ · DE · t₂.<br><br>
+
+Karena sebangun, t₁ = k·t₂ dan AB = k·DE.<br><br>
+
+Luas △ABC = ½ · (k·DE) · (k·t₂) = k² · (½ · DE · t₂) = k² × Luas △DEF.<br><br>
+
+Jadi, <b>jika panjang dikali k, luas dikali k²</b>. ✅
+
+</div>
+
+<div class="example">
+
+Dua segitiga sebangun. Segitiga besar memiliki sisi 15 cm.
+Segitiga kecil memiliki sisi bersesuaian 10 cm.<br><br>
+
+k = 15/10 = 1,5.<br><br>
+
+Jika luas segitiga kecil = 40 cm², maka:<br>
+
+Luas segitiga besar = k² × 40 = 2,25 × 40 = <b>90 cm²</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kesebangunan pada Segitiga Siku-Siku dengan Garis Tinggi</h3>
+
+<p>
+
+Ini adalah kasus kesebangunan yang paling sering muncul di soal:
+
+</p>
+
+<div class="summary">
+
+Dalam △ABC siku-siku di C, tarik garis tinggi CD ke hipotenusa AB.<br><br>
+
+Maka terbentuk <b>tiga segitiga yang saling sebangun</b>:<br><br>
+
+△ABC ∼ △ACD ∼ △CBD
+
+</div>
+
+<p>
+
+<b>Mengapa ketiganya sebangun?</b>
+
+</p>
+
+<div class="example">
+
+△ABC dan △ACD:<br>
+
+- ∠A sama (common angle).<br>
+
+- ∠ACB = ∠ADC = 90°.<br>
+
+- Maka ∠B = ∠ACD (karena total 180°).<br>
+
+Kedua segitiga punya dua sudut sama → sebangun (Sd-Sd). ✅<br><br>
+
+Dengan cara yang sama, △ABC ∼ △CBD.
+
+</div>
+
+<p>
+
+Dari kesebangunan ini, muncul <b>teorema proyeksi</b> yang sangat berguna:
+
+</p>
+
+<div class="summary">
+
+CD² = AD × DB &nbsp; (kuadrat tinggi = hasil kali proyeksi kaki)<br>
+
+AC² = AD × AB &nbsp; (kuadrat kaki = proyeksinya × hipotenusa)<br>
+
+BC² = BD × AB
+
+</div>
+
+<p>
+
+Ini akan dibahas lebih dalam di materi Pythagoras.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 2: KEKONGRUENAN ==================== -->
+
+<div class="section">
+
+<h2>2. Kekongruenan — Bentuk & Ukuran Sama Persis</h2>
+
+<p>
+
+<b>Kongruen</b> berarti <b>sama persis</b>—bentuk dan ukurannya identik.
+Jika dua segitiga kongruen, kamu bisa menimpa salah satunya ke yang lain
+dan semuanya pas (setelah mungkin diputar, dibalik, atau digeser).
+
+</p>
+
+<div class="summary">
+
+Dua segitiga <b>kongruen</b> (ditulis △ABC ≅ △DEF) jika:<br><br>
+
+Semua sisi yang bersesuaian <b>sama panjang</b>.<br>
+
+Semua sudut yang bersesuaian <b>sama besar</b>.<br><br>
+
+<b>Perbedaan dengan kesebangunan:</b> Kesebangunan hanya mensyaratkan
+perbandingan yang sama (boleh beda ukuran). Kekongruenan mensyaratkan
+ukurannya <b>sama persis</b> (faktor skala k = 1).
+
+</div>
+
+<hr>
+
+<h3>Syarat-Syarat Kekongruenan Segitiga (4 Cara)</h3>
+
+<p>
+
+Untuk membuktikan dua segitiga kongruen, cukup salah satu dari:
+
+</p>
+
+<div class="summary">
+
+<b>1. Sisi-Sisi-Sisi (S-S-S):</b> Ketiga pasang sisi sama panjang.<br><br>
+
+<b>2. Sisi-Sudut-Sisi (S-Sd-S):</b> Dua pasang sisi dan sudut apitnya sama.<br><br>
+
+<b>3. Sudut-Sisi-Sudut (Sd-S-Sd):</b> Dua pasang sudut dan sisi di antaranya sama.<br><br>
+
+<b>4. Sisi-Sisi-Sudut (S-S-Sd):</b> Dua pasang sisi dan satu sudut (bukan sudut apit,
+tapi sudut di depan sisi terpanjang) sama. Hanya berlaku untuk segitiga siku-siku (disebut RHS: Right-Hypotenuse-Side).
+
+</div>
+
+<p>
+
+<b>Mengapa tidak ada Sd-Sd-Sd saja untuk kongruen?</b>
+
+</p>
+
+<div class="example">
+
+Tiga sudut sama hanya menjamin <b>kesebangunan</b>, bukan kekongruenan.
+Segitiga dengan sudut 60°, 60°, 60° bisa berukuran kecil (sisi 5 cm)
+atau besar (sisi 100 cm). Bentuknya sama, ukurannya beda.
+Jadi perlu informasi sisi untuk memastikan ukurannya juga sama.
+
+</div>
+
+<hr>
+
+<h3>Contoh Penggunaan Kekongruenan</h3>
+
+<div class="example">
+
+<b>Soal:</b> Diketahui AB = DE, BC = EF, dan ∠B = ∠E.
+Buktikan △ABC ≅ △DEF.<br><br>
+
+Ini memenuhi syarat <b>S-Sd-S</b> (dua sisi dan sudut apit sama).<br>
+
+Maka △ABC ≅ △DEF. ✅<br><br>
+
+Akibatnya: AC = DF, ∠A = ∠D, ∠C = ∠F (semua yang bersesuaian sama).
+
+</div>
+
+<hr>
+
+<h3>Kekongruenan vs Kesebangunan — Tabel Perbandingan</h3>
+
+<div class="summary">
+
+| Aspek | Kesebangunan (∼) | Kekongruenan (≅) |
+|---|---|---|
+| **Bentuk** | Sama | Sama |
+| **Ukuran** | Boleh beda (faktor skala k) | Harus sama persis (k = 1) |
+| **Sisi** | Sebanding (rasio k) | Sama panjang |
+| **Sudut** | Sama besar | Sama besar |
+| **Syarat minimal** | 2 sudut sama (Sd-Sd) | Perlu info sisi |
+| **Perbandingan luas** | k² | 1 (sama) |
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: TEOREMA PYTHAGORAS ==================== -->
+
+<div class="section">
+
+<h2>3. Teorema Pythagoras — Keajaiban Segitiga Siku-Siku</h2>
+
+<p>
+
+<b>Teorema Pythagoras</b> adalah salah satu teorema paling terkenal
+dalam sejarah matematika. Ditemukan oleh Pythagoras (atau setidaknya
+dipopulerkan oleh pengikutnya) sekitar 570 SM di Yunani kuno—
+meskipun bukti penggunaannya sudah ada di Babilonia 1000 tahun sebelumnya.
+
+</p>
+
+<div class="summary">
+
+<b>Dalam segitiga siku-siku:</b><br><br>
+
+<b>a² + b² = c²</b><br><br>
+
+a, b = kaki siku-siku (sisi yang membentuk sudut 90°).<br>
+
+c = hipotenusa (sisi di depan sudut 90°, sisi terpanjang).
+
+</div>
+
+<hr>
+
+<h3>Pembuktian — Mengapa a² + b² = c²?</h3>
+
+<p>
+
+Ada <b>ratusan</b> cara membuktikan teorema ini.
+Kita akan bahas dua yang paling intuitif.
+
+</p>
+
+<h3>Bukti 1: Persegi dalam Persegi (Bukti Pythagoras asli)</h3>
+
+<div class="example">
+
+Buat persegi besar dengan sisi (a + b).<br><br>
+
+Di dalam persegi besar, buat 4 segitiga siku-siku identik (sisi a, b, c)
+yang disusun sehingga membentuk persegi miring di tengah dengan sisi c.<br><br>
+
+<b>Luas persegi besar</b> = (a + b)² = a² + 2ab + b².<br><br>
+
+<b>Luas persegi besar juga</b> = 4 × (½ab) + c² = 2ab + c².<br><br>
+
+Maka: a² + 2ab + b² = 2ab + c²<br>
+
+a² + b² = c² ✅
+
+</div>
+
+<h3>Bukti 2: Kesebangunan Segitiga (Bukti Einstein)</h3>
+
+<div class="example">
+
+Dalam △ABC siku-siku di C, tarik garis tinggi CD ke hipotenusa AB.<br><br>
+
+Dari kesebangunan △ABC ∼ △ACD ∼ △CBD (dibahas sebelumnya):<br><br>
+
+AC² = AD × AB &nbsp; (dari △ACD ∼ △ABC)<br>
+
+BC² = BD × AB &nbsp; (dari △CBD ∼ △ABC)<br><br>
+
+Jumlahkan:<br>
+
+AC² + BC² = AD×AB + BD×AB = (AD+BD)×AB = AB×AB = AB².<br><br>
+
+Jadi, a² + b² = c². ✅
+
+</div>
+
+<hr>
+
+<h3>Tripel Pythagoras — Keluarga Segitiga Siku-Siku "Bulat"</h3>
+
+<div class="summary">
+
+<b>Tripel Pythagoras</b> adalah tiga bilangan bulat positif (a, b, c)
+yang memenuhi a² + b² = c².<br><br>
+
+Tripel primitif: a, b, c relatif prima (FPB = 1).
+
+</div>
+
+<div class="example">
+
+<b>Tripel Pythagoras yang paling terkenal:</b><br><br>
+
+(3, 4, 5) → 9 + 16 = 25 ✅<br>
+
+(5, 12, 13) → 25 + 144 = 169 ✅<br>
+
+(8, 15, 17) → 64 + 225 = 289 ✅<br>
+
+(7, 24, 25) → 49 + 576 = 625 ✅<br>
+
+(20, 21, 29) → 400 + 441 = 841 ✅<br><br>
+
+<b>Cara menghasilkan tripel:</b><br>
+
+Untuk m > n, a = m² - n², b = 2mn, c = m² + n².<br><br>
+
+Contoh: m=2, n=1 → a=3, b=4, c=5.<br>
+
+m=3, n=2 → a=5, b=12, c=13.
+
+</div>
+
+<div class="note">
+
+<b>💡 Tips:</b> Hafalkan 5 tripel di atas. Mereka sangat sering muncul di soal.
+Kalau kamu melihat sisi 5 dan 12, langsung tahu sisi ketiganya 13 (siku-siku)
+atau bukan siku-siku.
+
+</div>
+
+<hr>
+
+<h3>Aplikasi Pythagoras — Mencari Sisi yang Belum Diketahui</h3>
+
+<div class="example">
+
+<b>Soal 1:</b> Segitiga siku-siku dengan kaki 6 cm dan 8 cm. Cari hipotenusa.<br><br>
+
+c² = 6² + 8² = 36 + 64 = 100<br>
+
+c = <b>10 cm</b> ✅ (Tripel 6-8-10 = 2 × 3-4-5)
+
+</div>
+
+<div class="example">
+
+<b>Soal 2:</b> Segitiga siku-siku dengan hipotenusa 13 cm dan satu kaki 5 cm.
+Cari kaki lainnya.<br><br>
+
+a² + 5² = 13²<br>
+
+a² + 25 = 169<br>
+
+a² = 144<br>
+
+a = <b>12 cm</b> ✅ (Tripel 5-12-13)
+
+</div>
+
+<div class="example">
+
+<b>Soal 3:</b> Sebuah tangga sepanjang 10 m disandarkan ke dinding.
+Jarak kaki tangga ke dinding 6 m. Berapa tinggi ujung tangga dari tanah?<br><br>
+
+Ini segitiga siku-siku: tangga = hipotenusa, jarak ke dinding = kaki, tinggi = kaki lainnya.<br><br>
+
+t² + 6² = 10²<br>
+
+t² + 36 = 100<br>
+
+t² = 64<br>
+
+t = <b>8 m</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Pythagoras di Bangun Ruang — Diagonal Ruang</h3>
+
+<p>
+
+Teorema Pythagoras bisa dipakai <b>dua kali berturut-turut</b>
+untuk mencari diagonal ruang.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah balok berukuran 6 × 8 × 24. Cari panjang diagonal ruangnya.<br><br>
+
+<b>Langkah 1:</b> Diagonal sisi alas = √(6² + 8²) = √100 = 10.<br><br>
+
+<b>Langkah 2:</b> Diagonal ruang = √(10² + 24²) = √(100 + 576) = √676 = <b>26</b>.<br><br>
+
+<b>Rumus cepat:</b> Diagonal ruang balok = √(p² + l² + t²) = √(36+64+576) = √676 = <b>26</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Kebalikan Teorema Pythagoras — Mengecek Siku-Siku</h3>
+
+<div class="summary">
+
+Jika dalam segitiga berlaku a² + b² = c² (dengan c sisi terpanjang),
+maka segitiga tersebut <b>siku-siku</b> di sudut yang berhadapan dengan c.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Apakah segitiga dengan sisi 9, 12, 15 siku-siku?<br><br>
+
+Cek: 9² + 12² = 81 + 144 = 225. 15² = 225.<br>
+
+225 = 225 → <b>Ya, siku-siku!</b> ✅<br><br>
+
+<b>Soal:</b> Apakah segitiga dengan sisi 6, 7, 10 siku-siku?<br><br>
+
+6² + 7² = 36 + 49 = 85. 10² = 100.<br>
+
+85 ≠ 100 → <b>Bukan siku-siku.</b> (10² > 6²+7², ini segitiga tumpul).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: GARIS ISTIMEWA SEGITIGA ==================== -->
+
+<div class="section">
+
+<h2>4. Garis-Garis Istimewa pada Segitiga</h2>
+
+<p>
+
+Segitiga memiliki <b>empat jenis garis istimewa</b> yang masing-masing
+memiliki fungsi dan sifat unik. Keempat garis ini bertemu di titik-titik
+yang disebut <b>titik istimewa</b> segitiga.
+
+</p>
+
+<hr>
+
+<h3>4.1 Garis Berat (Median)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Garis yang ditarik dari satu titik sudut ke <b>tengah</b> sisi di depannya.<br><br>
+
+Garis berat membagi sisi depan menjadi <b>dua sama panjang</b>.<br><br>
+
+<b>Titik berat (Centroid):</b> perpotongan ketiga garis berat.<br><br>
+
+Titik berat membagi setiap garis berat dengan perbandingan <b>2 : 1</b>
+(dari titik sudut ke titik berat : dari titik berat ke sisi).
+
+</div>
+
+<p>
+
+<b>Mengapa perbandingannya 2:1?</b>
+
+</p>
+
+<div class="example">
+
+Titik berat G adalah "pusat massa" segitiga. Jika segitiga dipotong dari karton,
+kamu bisa menyeimbangkannya di ujung jari tepat di titik G.<br><br>
+
+Karena titik berat adalah rata-rata dari ketiga titik sudut,
+ia lebih "dekat" ke sisi (1 bagian) daripada ke sudut (2 bagian).<br><br>
+
+<b>Rumus koordinat:</b> G = ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3). ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Garis Tinggi (Altitude)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Garis yang ditarik dari satu titik sudut <b>tegak lurus</b>
+ke sisi di depannya (atau perpanjangannya).<br><br>
+
+<b>Titik tinggi (Orthocenter):</b> perpotongan ketiga garis tinggi.<br><br>
+
+Posisi titik tinggi:<br>
+
+- Segitiga lancip: di <b>dalam</b> segitiga.<br>
+
+- Segitiga siku-siku: di <b>titik sudut siku-siku</b>.<br>
+
+- Segitiga tumpul: di <b>luar</b> segitiga.
+
+</div>
+
+<p>
+
+<b>Mengapa titik tinggi bisa di luar segitiga?</b>
+
+</p>
+
+<div class="example">
+
+Pada segitiga tumpul, dua garis tinggi "jatuh" di perpanjangan sisi,
+bukan di sisi itu sendiri. Perpotongannya terjadi di luar segitiga.
+
+</div>
+
+<hr>
+
+<h3>4.3 Garis Bagi (Angle Bisector)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Garis yang ditarik dari satu titik sudut <b>membagi dua
+sama besar</b> sudut tersebut.<br><br>
+
+<b>Titik bagi (Incenter):</b> perpotongan ketiga garis bagi.<br><br>
+
+Titik bagi adalah <b>pusat lingkaran dalam</b> segitiga.
+Jarak dari titik bagi ke ketiga sisi adalah <b>sama</b> (jari-jari lingkaran dalam r).
+
+</div>
+
+<p>
+
+<b>Teorema Garis Bagi:</b> Garis bagi membagi sisi di depannya
+dengan perbandingan yang sama dengan perbandingan sisi-sisi yang mengapit.
+
+</p>
+
+<div class="summary">
+
+Jika AD adalah garis bagi ∠A, maka: <b>BD/DC = AB/AC</b>
+
+</div>
+
+<div class="example">
+
+Segitiga ABC dengan AB = 8, AC = 12. Garis bagi dari A memotong BC di D.<br><br>
+
+BD/DC = 8/12 = 2/3.<br><br>
+
+Jika BC = 15, maka BD = 2/5 × 15 = 6, DC = 3/5 × 15 = 9. ✅
+
+</div>
+
+<hr>
+
+<h3>4.4 Garis Sumbu (Perpendicular Bisector)</h3>
+
+<div class="summary">
+
+<b>Definisi:</b> Garis yang ditarik <b>tegak lurus</b> dari <b>tengah</b> suatu sisi.<br><br>
+
+Garis sumbu <b>tidak selalu</b> melalui titik sudut di depannya!<br><br>
+
+<b>Titik sumbu (Circumcenter):</b> perpotongan ketiga garis sumbu.<br><br>
+
+Titik sumbu adalah <b>pusat lingkaran luar</b> segitiga.
+Jarak dari titik sumbu ke ketiga titik sudut adalah <b>sama</b> (jari-jari lingkaran luar R).
+
+</div>
+
+<p>
+
+Posisi titik sumbu:
+
+</p>
+
+<div class="example">
+
+<b>Segitiga lancip:</b> di dalam segitiga.<br>
+
+<b>Segitiga siku-siku:</b> di tengah hipotenusa.<br>
+
+<b>Segitiga tumpul:</b> di luar segitiga.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: TITIK ISTIMEWA SEGITIGA ==================== -->
+
+<div class="section">
+
+<h2>5. Titik-Titik Istimewa pada Segitiga — Rangkuman</h2>
+
+<div class="summary">
+
+| Titik | Garis yang Berpotongan | Lambang | Fungsi |
+|---|---|---|---|
+| **Titik Berat (Centroid)** | Garis Berat (Median) | G | Pusat massa segitiga. Membagi median 2:1. |
+| **Titik Tinggi (Orthocenter)** | Garis Tinggi (Altitude) | H | Perpotongan ketinggian. |
+| **Titik Bagi (Incenter)** | Garis Bagi (Angle Bisector) | I | Pusat lingkaran dalam segitiga (jari-jari r). |
+| **Titik Sumbu (Circumcenter)** | Garis Sumbu (Perpendicular Bisector) | O | Pusat lingkaran luar segitiga (jari-jari R). |
+
+</div>
+
+<hr>
+
+<h3>Garis Euler — Tiga Titik Segaris!</h3>
+
+<div class="summary">
+
+Dalam segitiga apapun, <b>titik berat (G), titik sumbu (O), dan titik tinggi (H)
+terletak pada satu garis lurus</b> yang disebut <b>Garis Euler</b>.<br><br>
+
+<b>HG : GO = 2 : 1</b> (dengan G di antara H dan O).
+
+</div>
+
+<p>
+
+Ini adalah salah satu fakta paling menakjubkan dalam geometri segitiga—
+ditemukan oleh Leonhard Euler pada tahun 1765. Bahkan dalam segitiga
+sembarang yang tidak simetris, ketiga titik ini selalu segaris!
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 3</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Kesebangunan (∼):</b> bentuk sama, ukuran boleh beda. Syarat: Sd-Sd, S-Sd-S, S-S-S. Perbandingan luas = k².</li>
+
+<li><b>Kekongruenan (≅):</b> bentuk dan ukuran sama persis. Syarat: S-S-S, S-Sd-S, Sd-S-Sd, RHS.</li>
+
+<li><b>Teorema Pythagoras:</b> a² + b² = c² untuk segitiga siku-siku. Tripel: (3,4,5), (5,12,13), (8,15,17), (7,24,25).</li>
+
+<li><b>Kebalikan Pythagoras:</b> Jika a²+b²=c² → segitiga siku-siku.</li>
+
+<li><b>Garis Berat:</b> dari sudut ke tengah sisi depan. Perpotongan = Titik Berat (G). Membagi 2:1.</li>
+
+<li><b>Garis Tinggi:</b> dari sudut tegak lurus sisi depan. Perpotongan = Titik Tinggi (H).</li>
+
+<li><b>Garis Bagi:</b> membagi dua sudut. Perpotongan = Titik Bagi (I) = pusat lingkaran dalam.</li>
+
+<li><b>Garis Sumbu:</b> tegak lurus dari tengah sisi. Perpotongan = Titik Sumbu (O) = pusat lingkaran luar.</li>
+
+<li><b>Garis Euler:</b> O, G, H segaris dengan HG:GO = 2:1.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Untuk membuktikan kesebangunan, cari dua sudut sama dulu.</b>
+Ini syarat paling mudah. Cari sudut yang sama karena sehadap, berseberangan,
+bertolak belakang, atau sudut bersama (common angle).
+
+</li>
+
+<li>
+
+<b>Jangan tertukar kesebangunan dan kekongruenan.</b>
+Kongruen = sama persis. Sebangun = bentuk sama, ukuran boleh beda.
+
+</li>
+
+<li>
+
+<b>Hafalkan 5 tripel Pythagoras utama.</b>
+(3,4,5), (5,12,13), (8,15,17), (7,24,25), (20,21,29).
+Kelipatannya juga tripel: (6,8,10), (9,12,15), (10,24,26), dll.
+
+</li>
+
+<li>
+
+<b>Cek siku-siku dengan Pythagoras.</b>
+Kalau dalam soal ada tiga panjang, langsung cek apakah memenuhi a²+b²=c².
+Kalau iya, ada sudut 90° yang bisa kamu manfaatkan.
+
+</li>
+
+<li>
+
+<b>Garis berat membagi 2:1 — ini sering keluar di soal.</b>
+Dari titik sudut ke centroid = 2/3 panjang garis berat.
+Dari centroid ke sisi = 1/3 panjang garis berat.
+
+</li>
+
+<li>
+
+<b>Garis bagi membagi sisi dengan perbandingan sisi pengapit.</b>
+Ini adalah senjata rahasia untuk soal yang melibatkan garis bagi.
+BD/DC = AB/AC.
+
+</li>
+
+<li>
+
+<b>Garis Euler hanya berlaku untuk O, G, H.</b>
+Titik bagi (I) tidak terletak pada garis Euler secara umum.
+Jangan salah generalization!
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri2.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri4.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
