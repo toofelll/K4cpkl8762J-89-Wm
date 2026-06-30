@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geometri Part 8 | Vektor</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>➡️ GEOMETRI</h1>
+
+<p>Part 8 • Vektor</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Besaran yang Memiliki Arah</h2>
+
+<p>
+
+Di dunia nyata, banyak besaran yang tidak cukup hanya dinyatakan dengan
+<b>nilai</b> saja. "Bergerak 5 meter" tidak lengkap—<b>ke arah mana?</b>
+"Gaya 10 Newton" tidak cukup—<b>ke mana arahnya?</b>
+
+</p>
+
+<p>
+
+Di sinilah <b>vektor</b> hadir. Vektor adalah besaran yang memiliki
+<b>besar (magnitude) dan arah (direction)</b>. Ini berbeda dengan <b>skalar</b>
+yang hanya memiliki besar (seperti suhu, massa, waktu).
+
+</p>
+
+<p>
+
+Vektor adalah bahasa alam semesta. Kecepatan, percepatan, gaya, momentum,
+medan listrik, medan magnet—semuanya adalah vektor. Bahkan dalam grafika komputer,
+setiap pixel dan polygon dimanipulasi menggunakan operasi vektor.
+Menguasai vektor berarti menguasai bahasa fundamental fisika dan teknik.
+
+</p>
+
+<p>
+
+Secara geometris, vektor adalah <b>ruas garis berarah</b>—sebuah anak panah
+yang memiliki titik pangkal, panjang, dan arah. Inilah yang membedakannya
+dari ruas garis biasa yang tidak memiliki arah.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi vektor sebagai ruas garis berarah dengan besar dan arah.</li>
+
+<li>Menguasai operasi vektor: penjumlahan, pengurangan, perkalian skalar.</li>
+
+<li>Memahami vektor posisi dan vektor dalam sistem koordinat.</li>
+
+<li>Menguasai panjang (magnitude) vektor dan vektor satuan.</li>
+
+<li>Memahami dot product (perkalian titik) dan makna geometrisnya.</li>
+
+<li>Memahami cross product (perkalian silang) dan aplikasinya.</li>
+
+<li>Mampu menerapkan vektor untuk membuktikan teorema geometri.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DEFINISI VEKTOR ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Vektor? — Lebih dari Sekadar Angka</h2>
+
+<div class="summary">
+
+<b>Vektor</b> adalah besaran yang memiliki <b>besar (magnitude)</b> dan <b>arah (direction)</b>.<br><br>
+
+Notasi: <b>a⃗</b> (huruf tebal) atau <b>AB⃗</b> (dari titik A ke titik B).<br><br>
+
+Besar vektor a⃗ ditulis <b>|a⃗|</b> atau <b>||a⃗||</b>.
+
+</div>
+
+<p>
+
+<b>Vektor vs Skalar — Perbedaan Fundamental</b>
+
+</p>
+
+<div class="example">
+
+<b>Skalar:</b> "Suhu ruangan 25°C." Hanya nilai, tidak ada arah.<br>
+
+<b>Vektor:</b> "Angin bertiup 15 km/jam ke arah barat laut." Ada nilai (15) dan arah (barat laut).<br><br>
+
+<b>Mengapa perbedaan ini penting?</b><br>
+
+Karena operasi pada vektor harus memperhitungkan arah.
+Kamu tidak bisa menjumlahkan dua vektor seperti menjumlahkan dua skalar.
+5 N ke kanan + 5 N ke kiri = 0 N (seimbang), bukan 10 N!
+
+</div>
+
+<hr>
+
+<h3>Vektor Secara Geometris — Anak Panah</h3>
+
+<div class="summary">
+
+Sebuah vektor digambarkan sebagai <b>anak panah</b>:<br><br>
+
+<b>Titik pangkal (tail):</b> tempat vektor dimulai.<br>
+
+<b>Titik ujung (head):</b> tempat panah menunjuk.<br>
+
+<b>Panjang panah:</b> besar vektor (magnitude).<br>
+
+<b>Arah panah:</b> arah vektor.
+
+</div>
+
+<p>
+
+<b>Dua vektor dikatakan sama</b> jika memiliki <b>besar dan arah yang sama</b>,
+tidak peduli di mana titik pangkalnya. Ini disebut <b>vektor bebas</b>.
+
+</p>
+
+<div class="example">
+
+Vektor dari (0,0) ke (3,4) dan vektor dari (5,1) ke (8,5) adalah <b>sama</b>
+karena keduanya bergerak 3 satuan ke kanan dan 4 satuan ke atas.
+
+</div>
+
+<hr>
+
+<h3>Vektor dalam Koordinat — Komponen x dan y</h3>
+
+<div class="summary">
+
+Vektor pada bidang dinyatakan sebagai pasangan terurut:<br><br>
+
+<b>a⃗ = (x, y)</b> — vektor dengan komponen horizontal x dan vertikal y.<br><br>
+
+Atau dalam notasi kolom: a⃗ = [x; y] (ditulis vertikal).
+
+</div>
+
+<p>
+
+<b>Vektor dari A(x₁, y₁) ke B(x₂, y₂):</b>
+
+</p>
+
+<div class="summary">
+
+<b>AB⃗ = (x₂ - x₁, y₂ - y₁)</b><br><br>
+
+Ini adalah "selisih" koordinat B dan A.
+
+</div>
+
+<div class="example">
+
+A(2, 3) ke B(7, 11).<br><br>
+
+AB⃗ = (7-2, 11-3) = <b>(5, 8)</b><br><br>
+
+Artinya: dari A ke B, bergerak 5 satuan ke kanan dan 8 satuan ke atas.
+
+</div>
+
+<hr>
+
+<h3>Vektor Posisi — Vektor dari Titik Asal</h3>
+
+<div class="summary">
+
+<b>Vektor posisi</b> titik P adalah vektor dari O(0,0) ke P.<br><br>
+
+OP⃗ = (x, y) — koordinat P persis menjadi komponen vektornya.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: OPERASI VEKTOR ==================== -->
+
+<div class="section">
+
+<h2>2. Operasi Vektor — Aturan Main</h2>
+
+<h3>2.1 Penjumlahan Vektor — Metode Segitiga dan Jajar Genjang</h3>
+
+<div class="summary">
+
+Jika a⃗ = (x₁, y₁) dan b⃗ = (x₂, y₂), maka:<br><br>
+
+<b>a⃗ + b⃗ = (x₁ + x₂, y₁ + y₂)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa penjumlahan vektor seperti itu? — Dua cara memahami:</b>
+
+</p>
+
+<p>
+
+<b>Cara 1: Metode Segitiga (Triangle Method)</b>
+
+</p>
+
+<div class="example">
+
+Letakkan pangkal b⃗ di ujung a⃗. Vektor hasil a⃗ + b⃗ adalah vektor
+dari pangkal a⃗ ke ujung b⃗.<br><br>
+
+Ini seperti perjalanan: dari A ke B (a⃗), lalu dari B ke C (b⃗).
+Total perjalanan = dari A ke C (a⃗ + b⃗).<br><br>
+
+<b>Secara aljabar:</b> a⃗ = (x₁, y₁) artinya bergerak x₁ ke kanan, y₁ ke atas.
+b⃗ = (x₂, y₂) artinya bergerak x₂ ke kanan, y₂ ke atas.
+Total: (x₁+x₂) ke kanan, (y₁+y₂) ke atas = (x₁+x₂, y₁+y₂). ✅
+
+</div>
+
+<p>
+
+<b>Cara 2: Metode Jajar Genjang (Parallelogram Method)</b>
+
+</p>
+
+<div class="example">
+
+Letakkan pangkal a⃗ dan b⃗ di titik yang sama. Lengkapi jajar genjang.
+Diagonal jajar genjang = a⃗ + b⃗.<br><br>
+
+Ini adalah hukum fisika untuk resultan gaya: dua gaya yang bekerja
+pada satu titik menghasilkan gaya total sebesar diagonal jajar genjang.
+
+</div>
+
+<div class="example">
+
+a⃗ = (3, 1), b⃗ = (1, 4).<br><br>
+
+a⃗ + b⃗ = (3+1, 1+4) = <b>(4, 5)</b> ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Pengurangan Vektor — Penjumlahan dengan Negatif</h3>
+
+<div class="summary">
+
+<b>a⃗ - b⃗ = a⃗ + (-b⃗) = (x₁ - x₂, y₁ - y₂)</b>
+
+</div>
+
+<p>
+
+<b>Makna geometris:</b> a⃗ - b⃗ adalah vektor dari ujung b⃗ ke ujung a⃗
+(jika pangkalnya disamakan).
+
+</p>
+
+<div class="example">
+
+a⃗ = (5, 4), b⃗ = (2, 1).<br><br>
+
+a⃗ - b⃗ = (5-2, 4-1) = <b>(3, 3)</b> ✅<br><br>
+
+Vektor dari ujung b⃗ ke ujung a⃗ = (5,4) - (2,1) = (3,3). Cocok!
+
+</div>
+
+<hr>
+
+<h3>2.3 Perkalian Skalar — Memperpanjang atau Memperpendek</h3>
+
+<div class="summary">
+
+<b>k × a⃗ = (k·x, k·y)</b><br><br>
+
+k > 0: arah tetap, panjang dikali |k|.<br>
+
+k < 0: arah berlawanan, panjang dikali |k|.<br>
+
+k = 0: vektor nol 0⃗ = (0, 0).
+
+</div>
+
+<div class="example">
+
+a⃗ = (2, 3).<br><br>
+
+3a⃗ = (6, 9) → 3 kali lebih panjang, arah sama.<br>
+
+-2a⃗ = (-4, -6) → 2 kali lebih panjang, arah berlawanan.<br>
+
+½a⃗ = (1, 1,5) → setengah panjang.
+
+</div>
+
+<hr>
+
+<h3>2.4 Vektor Satuan — Vektor dengan Panjang 1</h3>
+
+<div class="summary">
+
+<b>Vektor satuan</b> dari a⃗ adalah vektor yang searah a⃗ tapi panjangnya 1.<br><br>
+
+<b>â = a⃗ / |a⃗|</b><br><br>
+
+<b>î = (1, 0):</b> vektor satuan arah sumbu X.<br>
+
+<b>ĵ = (0, 1):</b> vektor satuan arah sumbu Y.<br><br>
+
+Setiap vektor bisa ditulis: a⃗ = x·î + y·ĵ
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: PANJANG VEKTOR ==================== -->
+
+<div class="section">
+
+<h2>3. Panjang (Magnitude) Vektor — Teorema Pythagoras Lagi</h2>
+
+<div class="summary">
+
+Untuk a⃗ = (x, y):<br><br>
+
+<b>|a⃗| = √(x² + y²)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa? Karena vektor adalah sisi miring segitiga siku-siku
+dengan kaki x dan y. Ini adalah teorema Pythagoras!</b>
+
+</p>
+
+<div class="example">
+
+a⃗ = (3, 4) → |a⃗| = √(9+16) = √25 = <b>5</b> ✅<br><br>
+
+b⃗ = (-5, 12) → |b⃗| = √(25+144) = √169 = <b>13</b> ✅<br><br>
+
+c⃗ = (1, 1) → |c⃗| = √(1+1) = <b>√2</b> ✅
+
+</div>
+
+<hr>
+
+<h3>Jarak Antara Dua Titik — Aplikasi Panjang Vektor</h3>
+
+<div class="summary">
+
+Jarak A ke B = |AB⃗| = <b>√[(x₂-x₁)² + (y₂-y₁)²]</b><br><br>
+
+Ini persis rumus jarak di Geometri 6, hanya ditulis dalam bahasa vektor!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: DOT PRODUCT ==================== -->
+
+<div class="section">
+
+<h2>4. Dot Product (Perkalian Titik) — Proyeksi dan Sudut</h2>
+
+<div class="summary">
+
+Untuk a⃗ = (x₁, y₁) dan b⃗ = (x₂, y₂):<br><br>
+
+<b>a⃗ · b⃗ = x₁x₂ + y₁y₂</b> &nbsp; (definisi aljabar)<br><br>
+
+<b>a⃗ · b⃗ = |a⃗| × |b⃗| × cos θ</b> &nbsp; (definisi geometris)<br><br>
+
+θ = sudut antara a⃗ dan b⃗.
+
+</div>
+
+<p>
+
+<b>Mengapa dua definisi ini ekuivalen? — Hukum Cosinus!</b>
+
+</p>
+
+<div class="example">
+
+Bentuk segitiga dari a⃗, b⃗, dan (a⃗ - b⃗).<br><br>
+
+Dengan Hukum Cosinus:<br>
+
+|a⃗ - b⃗|² = |a⃗|² + |b⃗|² - 2|a⃗||b⃗| cos θ<br><br>
+
+Di sisi lain, dengan aljabar:<br>
+
+|a⃗ - b⃗|² = (x₁-x₂)² + (y₁-y₂)² = |a⃗|² + |b⃗|² - 2(x₁x₂+y₁y₂)<br><br>
+
+Samakan: |a⃗|² + |b⃗|² - 2(x₁x₂+y₁y₂) = |a⃗|² + |b⃗|² - 2|a⃗||b⃗| cos θ<br>
+
+Maka: x₁x₂ + y₁y₂ = |a⃗||b⃗| cos θ. ✅
+
+</div>
+
+<hr>
+
+<h3>Makna Geometris — Apa yang Diukur Dot Product?</h3>
+
+<p>
+
+<b>a⃗ · b⃗ = |a⃗| × |b⃗| × cos θ</b> mengukur <b>seberapa sejajar</b> dua vektor.
+
+</p>
+
+<div class="summary">
+
+<b>θ = 0° (sejajar, arah sama):</b> cos 0° = 1 → a⃗·b⃗ = |a⃗||b⃗| (maksimum).<br><br>
+
+<b>θ = 90° (tegak lurus):</b> cos 90° = 0 → a⃗·b⃗ = <b>0</b>.<br><br>
+
+<b>θ = 180° (sejajar, arah berlawanan):</b> cos 180° = -1 → a⃗·b⃗ = -|a⃗||b⃗|.<br><br>
+
+<b>θ lancip (0° < θ < 90°):</b> dot product > 0.<br>
+
+<b>θ tumpul (90° < θ < 180°):</b> dot product < 0.
+
+</div>
+
+<p>
+
+<b>Ini adalah fakta paling powerful:</b> dot product = 0 ⇔ dua vektor tegak lurus.
+Ini adalah <b>uji ortogonalitas</b> yang sangat cepat!
+
+</p>
+
+<div class="example">
+
+a⃗ = (3, 4), b⃗ = (-4, 3).<br><br>
+
+a⃗ · b⃗ = 3(-4) + 4(3) = -12 + 12 = <b>0</b> → a⃗ ⟂ b⃗ ✅<br><br>
+
+|a⃗| = 5, |b⃗| = 5. cos θ = 0/25 = 0 → θ = 90°. ✅
+
+</div>
+
+<hr>
+
+<h3>Mencari Sudut Antara Dua Vektor</h3>
+
+<div class="summary">
+
+<b>cos θ = (a⃗ · b⃗) / (|a⃗| × |b⃗|)</b><br><br>
+
+θ = arccos((a⃗·b⃗)/(|a⃗||b⃗|))
+
+</div>
+
+<div class="example">
+
+a⃗ = (1, 2), b⃗ = (3, 1).<br><br>
+
+a⃗·b⃗ = 1(3) + 2(1) = 5.<br>
+
+|a⃗| = √5, |b⃗| = √10.<br><br>
+
+cos θ = 5/(√5·√10) = 5/√50 = 5/(5√2) = 1/√2 ≈ 0,707.<br><br>
+
+θ = 45°. ✅
+
+</div>
+
+<hr>
+
+<h3>Proyeksi Vektor — Bayangan Satu Vektor ke Vektor Lain</h3>
+
+<div class="summary">
+
+<b>Proyeksi a⃗ pada b⃗:</b> "bayangan" a⃗ yang jatuh pada garis b⃗.<br><br>
+
+<b>Panjang proyeksi:</b> |a⃗| cos θ = (a⃗·b⃗)/|b⃗|<br><br>
+
+<b>Vektor proyeksi:</b> proj_b⃗ a⃗ = ((a⃗·b⃗)/|b⃗|²) × b⃗
+
+</div>
+
+<div class="example">
+
+a⃗ = (4, 3), b⃗ = (1, 0) (sumbu X).<br><br>
+
+a⃗·b⃗ = 4(1) + 3(0) = 4. |b⃗|² = 1.<br><br>
+
+proj_b⃗ a⃗ = (4/1) × (1, 0) = <b>(4, 0)</b> ✅<br><br>
+
+Proyeksi (4,3) ke sumbu X adalah (4,0)—masuk akal!
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: CROSS PRODUCT ==================== -->
+
+<div class="section">
+
+<h2>5. Cross Product (Perkalian Silang) — Menghasilkan Vektor Tegak Lurus</h2>
+
+<div class="summary">
+
+Cross product hanya terdefinisi di <b>Ruang 3D (ℝ³)</b>, bukan di bidang 2D.<br><br>
+
+Untuk a⃗ = (x₁, y₁, z₁) dan b⃗ = (x₂, y₂, z₂):<br><br>
+
+<b>a⃗ × b⃗ = (y₁z₂ - z₁y₂, z₁x₂ - x₁z₂, x₁y₂ - y₁x₂)</b><br><br>
+
+Hasilnya adalah <b>vektor baru</b> yang <b>tegak lurus</b> terhadap a⃗ dan b⃗.
+
+</div>
+
+<p>
+
+<b>Mengapa cross product menghasilkan vektor tegak lurus?</b>
+
+</p>
+
+<div class="example">
+
+Ini adalah definisi: cross product dirancang untuk menghasilkan
+vektor yang tegak lurus terhadap bidang yang dibentuk a⃗ dan b⃗.<br><br>
+
+Arahnya mengikuti <b>aturan tangan kanan (right-hand rule)</b>:<br>
+
+- Jari telunjuk = arah a⃗.<br>
+
+- Jari tengah = arah b⃗.<br>
+
+- Ibu jari = arah a⃗ × b⃗.
+
+</div>
+
+<hr>
+
+<h3>Makna Geometris — Luas Jajar Genjang</h3>
+
+<div class="summary">
+
+<b>|a⃗ × b⃗| = |a⃗| × |b⃗| × sin θ</b><br><br>
+
+Ini adalah <b>luas jajar genjang</b> yang dibentuk oleh a⃗ dan b⃗!
+
+</div>
+
+<p>
+
+<b>Mengapa? Karena |b⃗| sin θ adalah tinggi jajar genjang
+(jika |a⃗| sebagai alas). Luas = alas × tinggi = |a⃗| × |b⃗| sin θ.</b>
+
+</p>
+
+<div class="example">
+
+a⃗ = (3, 0, 0), b⃗ = (0, 4, 0).<br><br>
+
+a⃗ × b⃗ = (0·0 - 0·4, 0·0 - 3·0, 3·4 - 0·0) = (0, 0, <b>12</b>).<br><br>
+
+|a⃗ × b⃗| = 12.<br>
+
+Luas jajar genjang = |a⃗| × |b⃗| × sin 90° = 3 × 4 × 1 = 12. ✅
+
+</div>
+
+<hr>
+
+<h3>Cross Product "2D" — Determinan</h3>
+
+<p>
+
+Meskipun cross product murni adalah operasi 3D, di bidang 2D kita bisa
+menggunakan <b>determinan</b> untuk mendapatkan "cross product skalar"
+yang menghasilkan <b>luas bertanda</b> jajar genjang.
+
+</p>
+
+<div class="summary">
+
+Untuk vektor 2D a⃗ = (x₁, y₁) dan b⃗ = (x₂, y₂):<br><br>
+
+<b>a⃗ × b⃗ (skalar) = x₁y₂ - y₁x₂ = det([a⃗ b⃗])</b><br><br>
+
+Nilai mutlaknya = luas jajar genjang.<br>
+
+Tandanya menunjukkan orientasi (positif = CCW, negatif = CW).
+
+</div>
+
+<div class="example">
+
+a⃗ = (3, 1), b⃗ = (1, 4).<br><br>
+
+a⃗ × b⃗ = 3(4) - 1(1) = 12 - 1 = <b>11</b>.<br><br>
+
+Luas jajar genjang = |11| = 11.<br>
+
+Luas segitiga yang dibentuk = ½ × 11 = <b>5,5</b>. ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Geometri 8</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Vektor:</b> besaran dengan besar dan arah. a⃗ = (x, y). AB⃗ = (x₂-x₁, y₂-y₁).</li>
+
+<li><b>Penjumlahan:</b> (x₁+x₂, y₁+y₂). Metode segitiga & jajar genjang.</li>
+
+<li><b>Perkalian skalar:</b> k·a⃗ = (kx, ky). k>0 searah, k<0 berlawanan.</li>
+
+<li><b>Vektor satuan:</b> â = a⃗/|a⃗|. î=(1,0), ĵ=(0,1).</li>
+
+<li><b>Panjang:</b> |a⃗| = √(x²+y²) — Pythagoras.</li>
+
+<li><b>Dot product:</b> a⃗·b⃗ = x₁x₂+y₁y₂ = |a⃗||b⃗|cos θ. Uji tegak lurus: a⃗·b⃗ = 0.</li>
+
+<li><b>Cross product 3D:</b> a⃗×b⃗ tegak lurus a⃗ dan b⃗. |a⃗×b⃗| = luas jajar genjang.</li>
+
+<li><b>Cross product 2D (skalar):</b> x₁y₂ - y₁x₂ = luas bertanda jajar genjang.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Vektor dari A ke B = B - A (dalam koordinat).</b>
+Ini adalah "segitiga emas" vektor. Jangan terbalik: AB⃗ = B - A, bukan A - B.
+
+</li>
+
+<li>
+
+<b>Dot product = 0 ⇔ tegak lurus.</b>
+Ini adalah cara tercepat membuktikan dua garis tegak lurus.
+Tidak perlu Pythagoras, tidak perlu gradien.
+
+</li>
+
+<li>
+
+<b>Cross product 2D = determinan = luas.</b>
+Untuk menghitung luas segitiga dari tiga titik: hitung dua vektor sisi,
+cross product-kan, ambil nilai mutlak, bagi dua. Selesai.
+
+</li>
+
+<li>
+
+<b>Vektor adalah jembatan geometri dan aljabar.</b>
+Banyak teorema geometri yang rumit bisa dibuktikan dengan sederhana
+menggunakan vektor. Contoh: titik tengah, garis berat, teorema Pythagoras.
+
+</li>
+
+<li>
+
+<b>Gambar dulu.</b> Sebelum menghitung, sketsa vektornya.
+Visualisasi mencegah kesalahan arah dan tanda.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="geometri7.html" class="btn">⬅ Kembali</a>
+
+<a href="geometri.html" class="btn">📚 Daftar Geometri</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="geometri9.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
