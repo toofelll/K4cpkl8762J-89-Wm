@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
@@ -8,520 +9,350 @@
 
 <title>Kombinatorika Part 5 | Prinsip Inklusi-Eksklusi</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
-    .section { background: #1a2740; position: relative; z-index: 1; }
-    .container { background: #0f1a2e; }
-    body { background: #0f1a2e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #0a0f1a; color: #d0d8e8; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.8; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .hero { background: linear-gradient(135deg, #1a2740 0%, #0f1a2e 100%); border: 1px solid #2a3a5e; border-radius: 16px; padding: 40px 30px; text-align: center; margin-bottom: 30px; }
+    .hero h1 { font-size: 2.2em; color: #ffd966; margin-bottom: 8px; }
+    .hero p { font-size: 1.1em; color: #8899bb; }
+    .section { background: #111c30; border: 1px solid #1e2d4a; border-radius: 14px; padding: 30px; margin-bottom: 28px; }
+    .section h2 { color: #ffd966; font-size: 1.6em; margin-bottom: 20px; border-bottom: 2px solid #2a3a5e; padding-bottom: 12px; }
+    .section h3 { color: #e8c96a; font-size: 1.25em; margin: 24px 0 14px; }
+    .summary { background: #0d1525; border-left: 4px solid #ffd966; padding: 20px 24px; margin: 20px 0; border-radius: 8px; }
+    .example { background: #0f1828; border: 1px solid #1e3050; padding: 20px 24px; margin: 18px 0; border-radius: 8px; }
+    .example b { color: #ffd966; }
+    .note { background: #0f1a20; border: 1px solid #2a4a3e; padding: 18px 24px; margin: 20px 0; border-radius: 8px; }
+    .note b { color: #66cc88; }
+    ul, ol { margin-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    hr { border: none; border-top: 1px solid #1e2d4a; margin: 24px 0; }
+    .navigation { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { background: #1e3050; color: #d0d8e8; text-decoration: none; padding: 12px 22px; border-radius: 8px; border: 1px solid #2a3a5e; transition: 0.2s; }
+    .btn:hover { background: #2a4070; border-color: #ffd966; }
 </style>
 
 </head>
 
-<body style="background-color: #0f1a2e;">
+<body>
 
-<div class="container" style="background-color: #0f1a2e;">
+<div class="container">
 
 <div class="hero">
-
 <h1>🔢 KOMBINATORIKA</h1>
-
-<p>Part 5 • Prinsip Inklusi-Eksklusi</p>
-
+<p>Part 5 • Prinsip Inklusi-Eksklusi — Menghitung Gabungan yang Tumpang Tindih</p>
 </div>
 
 <div class="section">
-
 <h2>📖 Pendahuluan — Masalah yang Tidak Bisa Dijumlahkan Begitu Saja</h2>
-
-<p>
-
-Bayangkan kamu sedang mendata siswa di sekolah. Kamu ingin tahu berapa banyak
-siswa yang ikut <b>setidaknya satu</b> dari tiga klub: Matematika, Fisika, atau Kimia.
-Kamu bertanya ke masing-masing klub dan mendapat data:
-
-</p>
-
+<p>Bayangkan kamu sedang mendata siswa di sekolah. Kamu ingin tahu berapa banyak siswa yang ikut <b>setidaknya satu</b> dari tiga klub: Matematika, Fisika, atau Kimia. Kamu bertanya ke masing-masing klub dan mendapat data:</p>
 <div class="example">
-
 Klub Matematika: 60 siswa.<br>
-
 Klub Fisika: 50 siswa.<br>
-
 Klub Kimia: 40 siswa.
-
 </div>
-
-<p>
-
-Kalau kamu menjumlahkan begitu saja: 60 + 50 + 40 = 150.
-Tapi total siswa di sekolah cuma 100 orang! Jelas ada yang salah.
-
-</p>
-
-<p>
-
-Kesalahannya: ada siswa yang ikut <b>dua klub sekaligus</b>, bahkan mungkin
-<b>tiga klub sekaligus</b>. Mereka dihitung dua kali (atau tiga kali) dalam
-penjumlahan sederhana tadi. Kita butuh cara untuk <b>mengoreksi hitungan ganda</b> ini.
-
-</p>
-
-<p>
-
-Di sinilah <b>Prinsip Inklusi-Eksklusi</b> berperan. Prinsip ini adalah
-metode sistematis untuk menghitung ukuran gabungan beberapa himpunan
-yang saling tumpang tindih. "Inklusi" berarti memasukkan (menjumlahkan),
-"Eksklusi" berarti mengeluarkan (mengurangkan). Kita akan memasukkan,
-mengeluarkan, memasukkan kembali, mengeluarkan kembali—bergantian—
-sampai setiap elemen dihitung tepat satu kali.
-
-</p>
-
+<p>Kalau kamu menjumlahkan begitu saja: 60 + 50 + 40 = 150. Tapi total siswa di sekolah cuma 100 orang! <b>Jelas ada yang salah.</b></p>
+<p>Kesalahannya: ada siswa yang ikut <b>dua klub sekaligus</b>, bahkan mungkin <b>tiga klub sekaligus</b>. Mereka dihitung dua kali (atau tiga kali) dalam penjumlahan sederhana tadi. Kita butuh cara untuk <b>mengoreksi hitungan ganda</b> ini.</p>
+<p>Di sinilah <b>Prinsip Inklusi-Eksklusi</b> berperan. Prinsip ini adalah metode sistematis untuk menghitung ukuran gabungan beberapa himpunan yang saling tumpang tindih. "Inklusi" berarti memasukkan (menjumlahkan), "Eksklusi" berarti mengeluarkan (mengurangkan). Kita akan memasukkan, mengeluarkan, memasukkan kembali, mengeluarkan kembali—bergantian—sampai setiap elemen dihitung <b>tepat satu kali</b>.</p>
 <div class="note">
-
 <b>Tujuan Bab</b>
-
 <ul>
-
 <li>Memahami dari mana rumus Inklusi-Eksklusi berasal—bukan sekadar menghafal.</li>
-
 <li>Melihat pola untuk 2, 3, dan 4 himpunan, serta bentuk umum untuk n himpunan.</li>
-
 <li>Menerapkan Inklusi-Eksklusi ke berbagai masalah: klub, bilangan, derangements, fungsi surjektif.</li>
-
 <li>Memahami koneksi dengan Euler's Totient Function φ(n).</li>
-
 </ul>
-
 </div>
-
 </div>
-
-<!-- ==================== MATERI 1: DUA HIMPUNAN ==================== -->
 
 <div class="section">
-
 <h2>1. Dua Himpunan — Kasus Paling Sederhana</h2>
-
-<p>
-
-Mari kita mulai dari kasus paling mendasar: <b>dua himpunan</b> A dan B.
-Kita ingin mencari berapa banyak elemen di gabungan A ∪ B.
-
-</p>
+<p>Mari kita mulai dari kasus paling mendasar: <b>dua himpunan</b> A dan B. Kita ingin mencari berapa banyak elemen di gabungan A ∪ B.</p>
 
 <h3>1.1 Diagram Venn — Visualisasi yang Membantu</h3>
 
-<p>
-
-Bayangkan dua lingkaran yang saling tumpang tindih. Lingkaran kiri adalah A,
-lingkaran kanan adalah B. Daerah tengah yang tumpang tindih adalah A ∩ B.
-
-</p>
-
-<p>
-
-Kalau kita menjumlahkan |A| + |B|, apa yang terjadi?
-
-</p>
-
+<p>Bayangkan dua lingkaran yang saling tumpang tindih. Lingkaran kiri adalah A, lingkaran kanan adalah B. Daerah tengah yang tumpang tindih adalah A ∩ B. Kalau kita menjumlahkan |A| + |B|, apa yang terjadi?</p>
 <div class="example">
-
 Setiap elemen di <b>A saja</b> (tidak di B): dihitung <b>1 kali</b> (dari |A|).<br>
-
 Setiap elemen di <b>B saja</b> (tidak di A): dihitung <b>1 kali</b> (dari |B|).<br>
-
 Setiap elemen di <b>A ∩ B</b>: dihitung <b>2 kali</b>—sekali dari |A|, sekali dari |B|! ⚠️<br><br>
-
-Elemen di A ∩ B mengalami <b>overcounting</b> (dihitung dua kali).
-Padahal kita ingin setiap elemen dihitung <b>tepat satu kali</b>.<br><br>
-
-Untuk mengoreksinya, kita <b>kurangi</b> kelebihan hitungan itu:
-|A| + |B| - |A ∩ B|.<br><br>
-
-Sekarang elemen di A∩B: dihitung 2 kali, dikurangi 1 kali → total <b>1 kali</b>. ✅
-
+Elemen di A ∩ B mengalami <b>overcounting</b> (dihitung dua kali). Padahal kita ingin setiap elemen dihitung <b>tepat satu kali</b>. Untuk mengoreksinya, kita <b>kurangi</b> kelebihan hitungan itu: |A| + |B| - |A ∩ B|. Sekarang elemen di A∩B: dihitung 2 kali, dikurangi 1 kali → total <b>1 kali</b>. ✅
 </div>
 
 <div class="summary">
-
 <b>Rumus Inklusi-Eksklusi untuk 2 himpunan:</b><br><br>
-
 |A ∪ B| = <b>|A| + |B| - |A ∩ B|</b><br><br>
-
 "Jumlahkan, lalu kurangi yang dobel."
-
 </div>
-
-<hr>
 
 <h3>1.2 Contoh 1: Klub Matematika dan Fisika</h3>
 
 <div class="example">
-
-<b>Soal:</b> Di sekolah ada 100 siswa. 60 ikut Matematika. 50 ikut Fisika.
-30 ikut keduanya. Berapa yang ikut setidaknya satu klub?<br><br>
-
+<b>Soal:</b> Di sekolah ada 100 siswa. 60 ikut Matematika. 50 ikut Fisika. 30 ikut keduanya. Berapa yang ikut setidaknya satu klub?<br><br>
 A = siswa ikut Matematika, |A| = 60.<br>
-
 B = siswa ikut Fisika, |B| = 50.<br>
-
 A ∩ B = siswa ikut keduanya, |A∩B| = 30.<br><br>
-
-|A ∪ B| = 60 + 50 - 30 = <b>80 siswa</b>.<br><br>
-
+|A ∪ B| = 60 + 50 - 30 = <b>80 siswa</b>.<br>
 Yang tidak ikut sama sekali = 100 - 80 = <b>20 siswa</b>. ✅
-
 </div>
-
-<hr>
 
 <h3>1.3 Contoh 2: Bilangan yang Habis Dibagi 2 atau 3</h3>
 
 <div class="example">
-
 <b>Soal:</b> Berapa banyak bilangan dari 1 sampai 100 yang habis dibagi 2 <b>atau</b> habis dibagi 3?<br><br>
-
 A = {bilangan habis dibagi 2}. |A| = ⌊100/2⌋ = <b>50</b>.<br>
-
-B = {bilangan habis dibagi 3}. |B| = ⌊100/3⌋ = <b>33</b>.<br><br>
-
+B = {bilangan habis dibagi 3}. |B| = ⌊100/3⌋ = <b>33</b>.<br>
 A ∩ B = {bilangan habis dibagi 6} (KPK dari 2 dan 3). |A∩B| = ⌊100/6⌋ = <b>16</b>.<br><br>
-
 |A ∪ B| = 50 + 33 - 16 = <b>67 bilangan</b>. ✅<br><br>
-
 <b>Verifikasi manual untuk 1-12:</b><br>
-
 Habis dibagi 2: 2,4,6,8,10,12 (6 bilangan).<br>
-
 Habis dibagi 3: 3,6,9,12 (4 bilangan).<br>
-
 Habis dibagi 6: 6,12 (2 bilangan—ini yang dobel).<br>
-
 Gabungan: 2,3,4,6,8,9,10,12 = 8 bilangan = 6+4-2 = 8. ✅
-
 </div>
 
-</div>
-
-<!-- ==================== MATERI 2: TIGA HIMPUNAN ==================== -->
-
-<div class="section">
-
-<h2>2. Tiga Himpunan — Pola Mulai Terlihat</h2>
-
-<p>
-
-Sekarang kita naik ke <b>tiga himpunan</b> A, B, C. Kasus ini lebih rumit
-karena ada daerah yang tumpang tindih 2 kali, dan ada daerah yang
-tumpang tindih 3 kali.
-
-</p>
-
-<h3>2.1 Dari Diagram Venn ke Rumus</h3>
+<h3>1.4 Contoh 3: Surat dan Amplop (Kasus Kecil)</h3>
 
 <div class="example">
+<b>Soal:</b> Ada 2 surat dan 2 amplop beralamat. Berapa banyak cara memasukkan surat sehingga <b>tidak ada</b> surat yang masuk ke amplopnya sendiri?<br><br>
+Total cara tanpa syarat = 2! = 2.<br>
+A₁ = cara di mana surat 1 benar. |A₁| = 1! = 1.<br>
+A₂ = cara di mana surat 2 benar. |A₂| = 1.<br>
+A₁∩A₂ = cara di mana keduanya benar = 1.<br><br>
+Dengan Inklusi-Eksklusi, yang <b>tidak</b> keduanya benar:<br>
+2 - (1+1) + 1 = <b>1 cara</b> (yaitu kedua surat tertukar). ✅
+</div>
+</div>
 
-Bayangkan tiga lingkaran yang saling tumpang tindih.<br><br>
+<div class="section">
+<h2>2. Tiga Himpunan — Pola Mulai Terlihat</h2>
+<p>Sekarang kita naik ke <b>tiga himpunan</b> A, B, C. Kasus ini lebih rumit karena ada daerah yang tumpang tindih 2 kali, dan ada daerah yang tumpang tindih 3 kali.</p>
 
-Kalau kita jumlahkan |A| + |B| + |C|:<br><br>
+<h3>2.1 Dari Diagram Venn ke Rumus — Langkah demi Langkah</h3>
 
+<p>Bayangkan tiga lingkaran yang saling tumpang tindih. Kalau kita jumlahkan |A| + |B| + |C|:</p>
+<div class="example">
 - Daerah yang hanya di 1 himpunan: dihitung <b>1 kali</b> (benar).<br>
-
 - Daerah yang di 2 himpunan (A∩B, A∩C, B∩C): dihitung <b>2 kali</b> (overcounting!).<br>
-
 - Daerah yang di 3 himpunan (A∩B∩C): dihitung <b>3 kali</b> (overcounting parah!).<br><br>
-
 <b>Langkah 1 (Inklusi):</b> Jumlahkan semua: |A| + |B| + |C|.<br><br>
-
 <b>Langkah 2 (Eksklusi):</b> Kurangi irisan dua-dua untuk mengoreksi yang dobel:<br>
-
 Kurangi |A∩B|, |A∩C|, |B∩C|.<br><br>
-
-<b>Tapi tunggu!</b> Daerah A∩B∩C tadinya dihitung 3 kali (dari |A|+|B|+|C|),
-lalu dikurangi 3 kali (dari -|A∩B|-|A∩C|-|B∩C|). Sekarang jadi <b>0 kali</b>—hilang!<br><br>
-
-<b>Langkah 3 (Inklusi lagi):</b> Tambahkan kembali |A∩B∩C|.<br><br>
-
+<b>Tapi tunggu!</b> Daerah A∩B∩C tadinya dihitung 3 kali (dari |A|+|B|+|C|), lalu dikurangi 3 kali (dari -|A∩B|-|A∩C|-|B∩C|). Sekarang jadi <b>0 kali</b>—hilang!<br><br>
+<b>Langkah 3 (Inklusi lagi):</b> Tambahkan kembali |A∩B∩C|.<br>
 Sekarang daerah A∩B∩C: 3 - 3 + 1 = <b>1 kali</b>. ✅
-
 </div>
 
 <div class="summary">
-
 <b>Rumus Inklusi-Eksklusi untuk 3 himpunan:</b><br><br>
-
 |A ∪ B ∪ C| = <b>|A| + |B| + |C|</b><br>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>- |A∩B| - |A∩C| - |B∩C|</b><br>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>+ |A∩B∩C|</b><br><br>
-
 Polanya: + untuk 1 himpunan, - untuk 2 himpunan, + untuk 3 himpunan. Tanda bergantian!
-
 </div>
-
-<hr>
 
 <h3>2.2 Contoh: Tiga Klub</h3>
 
 <div class="example">
-
-<b>Soal:</b> Dari 200 mahasiswa: 120 mengambil Matematika, 100 mengambil Fisika,
-80 mengambil Kimia. 50 mengambil Matematika dan Fisika, 40 mengambil Matematika
-dan Kimia, 30 mengambil Fisika dan Kimia, 20 mengambil ketiganya.
-Berapa mahasiswa yang mengambil <b>setidaknya satu</b> mata kuliah?<br><br>
-
+<b>Soal:</b> Dari 200 mahasiswa: 120 mengambil Matematika, 100 mengambil Fisika, 80 mengambil Kimia. 50 mengambil Matematika dan Fisika, 40 mengambil Matematika dan Kimia, 30 mengambil Fisika dan Kimia, 20 mengambil ketiganya. Berapa mahasiswa yang mengambil <b>setidaknya satu</b> mata kuliah?<br><br>
 |M| = 120, |F| = 100, |K| = 80.<br>
-
 |M∩F| = 50, |M∩K| = 40, |F∩K| = 30.<br>
-
 |M∩F∩K| = 20.<br><br>
-
 |M ∪ F ∪ K| = 120 + 100 + 80 - 50 - 40 - 30 + 20<br>
-
 = 300 - 120 + 20 = <b>200 mahasiswa</b>.<br><br>
-
-Ternyata semua 200 mahasiswa mengambil setidaknya satu mata kuliah!
-Tidak ada yang "bolong". ✅
-
+Ternyata semua 200 mahasiswa mengambil setidaknya satu mata kuliah! Tidak ada yang "bolong". ✅
 </div>
-
-<hr>
 
 <h3>2.3 Verifikasi dengan Diagram — Memastikan Logika</h3>
 
 <div class="example">
-
-Mari kita hitung jumlah mahasiswa di setiap "daerah" diagram Venn
-untuk memverifikasi bahwa totalnya 200.<br><br>
-
-<b>Hanya M (tidak di F atau K):</b><br>
-
-120 - 50 - 40 + 20 = <b>50</b> mahasiswa.<br>
-
+Mari kita hitung jumlah mahasiswa di setiap "daerah" diagram Venn untuk memverifikasi bahwa totalnya 200.<br><br>
+<b>Hanya M (tidak di F atau K):</b> 120 - 50 - 40 + 20 = <b>50</b> mahasiswa.<br>
 (Mengapa +20? Karena saat mengurangi 50 dan 40, yang 20 di M∩F∩K terkurangi 2 kali, jadi harus dikembalikan 1 kali.)<br><br>
-
-<b>Hanya F:</b> 100 - 50 - 30 + 20 = <b>40</b> mahasiswa.<br><br>
-
-<b>Hanya K:</b> 80 - 40 - 30 + 20 = <b>30</b> mahasiswa.<br><br>
-
-<b>M∩F saja (tidak K):</b> 50 - 20 = <b>30</b> mahasiswa.<br><br>
-
-<b>M∩K saja (tidak F):</b> 40 - 20 = <b>20</b> mahasiswa.<br><br>
-
-<b>F∩K saja (tidak M):</b> 30 - 20 = <b>10</b> mahasiswa.<br><br>
-
+<b>Hanya F:</b> 100 - 50 - 30 + 20 = <b>40</b> mahasiswa.<br>
+<b>Hanya K:</b> 80 - 40 - 30 + 20 = <b>30</b> mahasiswa.<br>
+<b>M∩F saja (tidak K):</b> 50 - 20 = <b>30</b> mahasiswa.<br>
+<b>M∩K saja (tidak F):</b> 40 - 20 = <b>20</b> mahasiswa.<br>
+<b>F∩K saja (tidak M):</b> 30 - 20 = <b>10</b> mahasiswa.<br>
 <b>M∩F∩K:</b> <b>20</b> mahasiswa.<br><br>
-
 Total = 50+40+30+30+20+10+20 = <b>200</b>. Cocok! ✅
-
 </div>
 
-</div>
+<h3>2.4 Contoh: Bilangan yang Habis Dibagi 2, 3, atau 5</h3>
 
-<!-- ==================== MATERI 3: BENTUK UMUM ==================== -->
+<div class="example">
+<b>Soal:</b> Berapa banyak bilangan dari 1 sampai 100 yang habis dibagi 2, 3, <b>atau</b> 5?<br><br>
+A₂ = {habis dibagi 2}: |A₂| = 50.<br>
+A₃ = {habis dibagi 3}: |A₃| = 33.<br>
+A₅ = {habis dibagi 5}: |A₅| = 20.<br><br>
+|A₂∩A₃| = {habis dibagi 6}: 16.<br>
+|A₂∩A₅| = {habis dibagi 10}: 10.<br>
+|A₃∩A₅| = {habis dibagi 15}: 6.<br>
+|A₂∩A₃∩A₅| = {habis dibagi 30}: 3.<br><br>
+|A₂ ∪ A₃ ∪ A₅| = 50 + 33 + 20 - 16 - 10 - 6 + 3<br>
+= 103 - 32 + 3 = <b>74 bilangan</b>. ✅
+</div>
+</div>
 
 <div class="section">
-
-<h2>3. Bentuk Umum Inklusi-Eksklusi — Untuk n Himpunan</h2>
-
+<h2>3. Empat Himpunan — Pola Semakin Jelas</h2>
+<p>Sekarang kita lihat pola untuk 4 himpunan. Rumusnya menjadi:</p>
 <div class="summary">
+<b>Rumus Inklusi-Eksklusi untuk 4 himpunan A, B, C, D:</b><br><br>
+|A ∪ B ∪ C ∪ D| = <b>+|A|+|B|+|C|+|D|</b> (suku 1: 4 suku, tanda +)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>-|A∩B|-|A∩C|-|A∩D|-|B∩C|-|B∩D|-|C∩D|</b> (suku 2: 6 suku, tanda -)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>+|A∩B∩C|+|A∩B∩D|+|A∩C∩D|+|B∩C∩D|</b> (suku 3: 4 suku, tanda +)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>-|A∩B∩C∩D|</b> (suku 4: 1 suku, tanda -)
+</div>
+<p>Perhatikan jumlah sukunya: C(4,1)=4, C(4,2)=6, C(4,3)=4, C(4,4)=1. Polanya persis koefisien binomial! Tanda: +, -, +, - bergantian.</p>
 
+<div class="example">
+<b>Soal:</b> Dari 500 orang, diketahui: 200 suka apel, 180 suka pisang, 150 suka ceri, 120 suka durian. 80 suka apel&pisang, 70 apel&ceri, 60 apel&durian, 50 pisang&ceri, 40 pisang&durian, 30 ceri&durian. 25 suka apel&pisang&ceri, 20 apel&pisang&durian, 15 apel&ceri&durian, 10 pisang&ceri&durian. 5 suka keempatnya. Berapa yang suka <b>setidaknya satu</b> buah?<br><br>
+Suku 1: 200+180+150+120 = <b>650</b>.<br>
+Suku 2: 80+70+60+50+40+30 = <b>330</b>.<br>
+Suku 3: 25+20+15+10 = <b>70</b>.<br>
+Suku 4: <b>5</b>.<br><br>
+Total = 650 - 330 + 70 - 5 = <b>385 orang</b>. ✅
+</div>
+</div>
+
+<div class="section">
+<h2>4. Bentuk Umum Inklusi-Eksklusi — Untuk n Himpunan</h2>
+<div class="summary">
 <b>Bentuk Umum (n himpunan A₁, A₂, ..., Aₙ):</b><br><br>
-
 |A₁ ∪ A₂ ∪ ... ∪ Aₙ| = Σ|Aᵢ| - Σ|Aᵢ∩Aⱼ| + Σ|Aᵢ∩Aⱼ∩Aₖ| - ... + (-1)ⁿ⁺¹|A₁∩...∩Aₙ|<br><br>
-
-- Suku pertama: jumlah ukuran semua himpunan (tanda +).<br>
-
-- Suku kedua: jumlah ukuran irisan 2 himpunan (tanda -).<br>
-
-- Suku ketiga: jumlah ukuran irisan 3 himpunan (tanda +).<br>
-
-- ...dan seterusnya, tanda bergantian, sampai irisan semua n himpunan.
-
+- Suku pertama: jumlah ukuran semua himpunan (C(n,1) suku, tanda +).<br>
+- Suku kedua: jumlah ukuran irisan 2 himpunan (C(n,2) suku, tanda -).<br>
+- Suku ketiga: jumlah ukuran irisan 3 himpunan (C(n,3) suku, tanda +).<br>
+- ...dan seterusnya, tanda bergantian, sampai irisan semua n himpunan (C(n,n)=1 suku).
 </div>
 
-<p>
+<h3>4.1 Bukti Formal — Mengapa Rumus Ini Benar?</h3>
 
-<b>Mengapa polanya seperti itu? — Bukti dengan Counting Argument</b>
-
-</p>
-
+<p>Ambil sembarang elemen x yang termasuk dalam <b>tepat m</b> dari n himpunan tersebut. Pertanyaan: berapa kali x dihitung dalam rumus Inklusi-Eksklusi?</p>
 <div class="example">
-
-Ambil sembarang elemen x yang termasuk dalam <b>tepat m</b> dari n himpunan tersebut.<br><br>
-
-Pertanyaan: berapa kali x dihitung dalam rumus Inklusi-Eksklusi?<br><br>
-
 - Suku pertama (Σ|Aᵢ|): x dihitung <b>C(m,1)</b> kali (dari setiap himpunan yang memuatnya).<br>
-
 - Suku kedua (Σ|Aᵢ∩Aⱼ|): x dihitung <b>C(m,2)</b> kali (dari setiap pasangan himpunan yang memuatnya).<br>
-
 - Suku ketiga: <b>C(m,3)</b> kali.<br>
-
 - ...<br>
-
 - Suku ke-m: <b>C(m,m)</b> kali.<br>
-
 - Suku > m: 0 kali (karena x tidak ada di irisan lebih dari m himpunan).<br><br>
-
 Total hitungan untuk x = C(m,1) - C(m,2) + C(m,3) - ... + (-1)ᵐ⁺¹ C(m,m).<br><br>
-
-Dari identitas binomial: 1 - [C(m,0) - C(m,1) + C(m,2) - ... + (-1)ᵐ C(m,m)] = 1 - (1-1)ᵐ = 1 - 0 = <b>1</b>.<br><br>
-
+Dari identitas binomial: (1-1)ᵐ = Σ[k=0..m] (-1)ᵏ C(m,k) = 0.<br>
+Maka 1 - [C(m,0) - C(m,1) + C(m,2) - ... + (-1)ᵐ C(m,m)] = 1 - 0 = 1.<br>
+Sehingga C(m,1) - C(m,2) + C(m,3) - ... + (-1)ᵐ⁺¹ C(m,m) = <b>1</b>.<br><br>
 Jadi setiap elemen dihitung <b>tepat 1 kali</b>! ✅ Inilah kenapa rumus Inklusi-Eksklusi benar.
-
 </div>
-
 </div>
-
-<!-- ==================== MATERI 4: APLIKASI ==================== -->
 
 <div class="section">
+<h2>5. Aplikasi Lanjutan — Dari Derangements sampai Euler's Totient</h2>
 
-<h2>4. Aplikasi Inklusi-Eksklusi — Dari Derangements sampai Euler's Totient</h2>
-
-<h3>4.1 Derangements — Tidak Ada yang di Tempat Semula</h3>
+<h3>5.1 Derangements — Tidak Ada yang di Tempat Semula</h3>
 
 <div class="example">
-
-<b>Soal:</b> Ada n surat dan n amplop beralamat. Berapa banyak cara memasukkan
-surat ke amplop sehingga <b>tidak ada satu pun surat</b> yang masuk ke amplopnya sendiri?
-Ini disebut <b>derangement</b>, ditulis !n atau D(n).<br><br>
-
-Total cara tanpa syarat = n!.<br><br>
-
+<b>Soal:</b> Ada n surat dan n amplop beralamat. Berapa banyak cara memasukkan surat ke amplop sehingga <b>tidak ada satu pun surat</b> yang masuk ke amplopnya sendiri? Ini disebut <b>derangement</b>, ditulis !n atau D(n).<br><br>
+Total cara tanpa syarat = n!.<br>
 Aᵢ = himpunan cara di mana surat ke-i masuk ke amplopnya sendiri.<br>
-
 |Aᵢ| = (n-1)! (surat ke-i sudah tetap, sisanya bebas).<br>
-
 |Aᵢ∩Aⱼ| = (n-2)! (dua surat tetap).<br>
-
 ...<br><br>
-
-Dengan Inklusi-Eksklusi:<br><br>
-
-D(n) = n! - C(n,1)(n-1)! + C(n,2)(n-2)! - C(n,3)(n-3)! + ... + (-1)ⁿ C(n,n)·0!<br><br>
-
-= n! - n! + n!/2! - n!/3! + ... + (-1)ⁿ n!/n!<br><br>
-
+Dengan Inklusi-Eksklusi:<br>
+D(n) = n! - C(n,1)(n-1)! + C(n,2)(n-2)! - C(n,3)(n-3)! + ... + (-1)ⁿ C(n,n)·0!<br>
+= n! - n·(n-1)! + [n(n-1)/2]·(n-2)! - [n(n-1)(n-2)/6]·(n-3)! + ...<br>
+= n! - n! + n!/2! - n!/3! + ... + (-1)ⁿ n!/n!<br>
 = <b>n! Σ[k=0..n] (-1)ᵏ/k!</b>.<br><br>
-
-Untuk n=4: D(4) = 4!(1 - 1 + 1/2 - 1/6 + 1/24) = 24(12/24 - 4/24 + 1/24) = 24(9/24) = <b>9</b>. ✅
-
+Untuk n=3: D(3) = 3!(1 - 1 + 1/2 - 1/6) = 6(2/6) = <b>2</b>.<br>
+(Verifikasi: surat 1,2,3 → amplop 2,3,1 atau amplop 3,1,2. Hanya 2 cara!)<br><br>
+Untuk n=4: D(4) = 4!(1 - 1 + 1/2 - 1/6 + 1/24) = 24(9/24) = <b>9</b>. ✅<br><br>
+Untuk n=5: D(5) = 5!(1 - 1 + 1/2 - 1/6 + 1/24 - 1/120) = 120(44/120) = <b>44</b>. ✅
 </div>
 
-<hr>
-
-<h3>4.2 Euler's Totient Function φ(n)</h3>
+<h3>5.2 Fungsi Surjektif — Setiap Kotak Terisi</h3>
 
 <div class="example">
-
-<b>Soal:</b> φ(n) = banyaknya bilangan 1 ≤ k ≤ n yang <b>relatif prima</b> terhadap n
-(FPB(k,n) = 1).<br><br>
-
-Misalkan n = p₁ᵃ¹ × p₂ᵃ² × ... (faktorisasi prima).<br><br>
-
-Aᵢ = himpunan bilangan ≤ n yang habis dibagi pᵢ.<br>
-
-|Aᵢ| = n/pᵢ. |Aᵢ∩Aⱼ| = n/(pᵢpⱼ). ...<br><br>
-
-Dengan Inklusi-Eksklusi:<br><br>
-
-φ(n) = n - Σ n/pᵢ + Σ n/(pᵢpⱼ) - ... <br>
-
-= <b>n Π(1 - 1/pᵢ)</b>.<br><br>
-
-Contoh: φ(60) = 60 × (1-1/2)(1-1/3)(1-1/5) = 60 × 1/2 × 2/3 × 4/5 = <b>16</b>. ✅
-
+<b>Soal:</b> Berapa banyak cara memetakan n bola berbeda ke k kotak berbeda sedemikian sehingga <b>setiap kotak terisi minimal 1 bola</b>? Ini disebut banyaknya <b>fungsi surjektif</b> dari n ke k.<br><br>
+Total cara tanpa syarat: setiap bola bebas ke k kotak → <b>kⁿ</b>.<br>
+Aᵢ = himpunan cara di mana kotak ke-i <b>kosong</b>.<br>
+|Aᵢ| = (k-1)ⁿ (semua bola ke k-1 kotak lain).<br>
+|Aᵢ∩Aⱼ| = (k-2)ⁿ (dua kotak kosong).<br>
+...<br><br>
+Dengan Inklusi-Eksklusi, banyak cara di mana <b>tidak ada kotak kosong</b>:<br>
+S(n,k) × k! = Σ[i=0..k] (-1)ⁱ C(k,i) (k-i)ⁿ.<br><br>
+Untuk n=4 bola, k=3 kotak:<br>
+= C(3,0)×3⁴ - C(3,1)×2⁴ + C(3,2)×1⁴ - C(3,3)×0⁴<br>
+= 1×81 - 3×16 + 3×1 - 1×0<br>
+= 81 - 48 + 3 = <b>36 cara</b>. ✅
 </div>
 
+<h3>5.3 Euler's Totient Function φ(n)</h3>
+
+<div class="example">
+<b>Definisi:</b> φ(n) = banyaknya bilangan 1 ≤ k ≤ n yang <b>relatif prima</b> terhadap n (FPB(k,n) = 1).<br><br>
+Misalkan faktorisasi prima n = p₁ᵃ¹ × p₂ᵃ² × ... × pₘᵃᵐ.<br>
+Aᵢ = himpunan bilangan ≤ n yang habis dibagi pᵢ.<br><br>
+|Aᵢ| = n/pᵢ.<br>
+|Aᵢ∩Aⱼ| = n/(pᵢpⱼ).<br>
+|Aᵢ∩Aⱼ∩Aₖ| = n/(pᵢpⱼpₖ).<br>
+...<br><br>
+φ(n) = n - (n/p₁ + n/p₂ + ...) + (n/(p₁p₂) + n/(p₁p₃) + ...) - ...<br>
+= <b>n × (1 - 1/p₁)(1 - 1/p₂)...(1 - 1/pₘ)</b>.<br><br>
+Contoh: n = 60 = 2² × 3 × 5.<br>
+φ(60) = 60 × (1-1/2)(1-1/3)(1-1/5)<br>
+= 60 × (1/2) × (2/3) × (4/5)<br>
+= 60 × (8/30) = 60 × 4/15 = <b>16</b>.<br><br>
+Artinya ada 16 bilangan dari 1 sampai 60 yang relatif prima dengan 60. ✅
+</div>
+
+<h3>5.4 Menghitung Banyaknya Bilangan Prima — Sieve of Eratosthenes</h3>
+
+<div class="example">
+<b>Soal:</b> Berapa banyak bilangan prima ≤ 100? Kita bisa menggunakan Inklusi-Eksklusi untuk menghitung bilangan komposit lalu mengurangkannya dari total.<br><br>
+Bilangan komposit ≤ 100 pasti memiliki faktor prima ≤ √100 = 10. Faktor primanya: 2, 3, 5, 7.<br><br>
+A₂ = kelipatan 2 (selain 2): |A₂| = ⌊100/2⌋ - 1 = 49.<br>
+A₃ = kelipatan 3 (selain 3): |A₃| = ⌊100/3⌋ - 1 = 32.<br>
+A₅ = kelipatan 5 (selain 5): |A₅| = ⌊100/5⌋ - 1 = 19.<br>
+A₇ = kelipatan 7 (selain 7): |A₇| = ⌊100/7⌋ - 1 = 13.<br><br>
+|A₂∩A₃| = kelipatan 6 (selain 2,3): ⌊100/6⌋ - 2 = 14.<br>
+...dan seterusnya (ini adalah prinsip Sieve of Eratosthenes yang dihitung dengan Inklusi-Eksklusi).<br><br>
+Setelah semua dihitung, bilangan prima ≤ 100 = 100 - (jumlah komposit) - 1 (untuk angka 1) = <b>25 bilangan prima</b>. ✅
+</div>
 </div>
 
 <div class="section">
-
 <h2>📝 Ringkasan Cepat</h2>
-
 <div class="summary">
-
 <ul>
-
-<li><b>2 himpunan:</b> |A∪B| = |A|+|B|-|A∩B|.</li>
-
-<li><b>3 himpunan:</b> |A∪B∪C| = |A|+|B|+|C| - |A∩B|-|A∩C|-|B∩C| + |A∩B∩C|.</li>
-
-<li><b>Pola:</b> Tanda +, -, +, -, ... bergantian. Jumlahkan 1 himpunan, kurangi 2, tambah 3, kurang 4, dst.</li>
-
-<li><b>Bukti:</b> Setiap elemen dihitung Σ(-1)ᵏ⁺¹C(m,k) = 1 kali.</li>
-
+<li><b>2 himpunan:</b> |A∪B| = |A|+|B|-|A∩B|. Jumlahkan, kurangi yang dobel.</li>
+<li><b>3 himpunan:</b> |A∪B∪C| = Σ|A| - Σ|A∩B| + |A∩B∩C|. + - +.</li>
+<li><b>4 himpunan:</b> +Σ1 -Σ2 +Σ3 -Σ4. Jumlah suku = C(n,k).</li>
+<li><b>n himpunan:</b> Σ(-1)ᵏ⁺¹ × (jumlah irisan k himpunan). Tanda bergantian.</li>
+<li><b>Bukti:</b> Setiap elemen dihitung Σ(-1)ᵏ⁺¹C(m,k) = 1 kali tepat.</li>
 <li><b>Derangements:</b> D(n) = n! Σ(-1)ᵏ/k!. Tidak ada yang di tempat semula.</li>
-
+<li><b>Fungsi Surjektif:</b> Σ(-1)ⁱC(k,i)(k-i)ⁿ cara.</li>
 <li><b>Euler's Totient:</b> φ(n) = n Π(1-1/pᵢ).</li>
-
 </ul>
-
 </div>
-
 </div>
 
 <div class="section">
-
 <h2>✨ Tips & Trik</h2>
-
 <ul>
-
-<li>
-
-<b>Gambar diagram Venn dulu.</b> Untuk 2 atau 3 himpunan, visualisasi
-membantu memahami daerah mana yang overcounting.
-
-</li>
-
-<li>
-
-<b>Pola tanda: + - + - + ...</b> Dimulai dari + untuk 1 himpunan, - untuk 2, + untuk 3.
-Jangan sampai tertukar!
-
-</li>
-
-<li>
-
-<b>Untuk n besar, gunakan rumus umum dengan hati-hati.</b>
-Ada C(n,1) suku pertama, C(n,2) suku kedua, C(n,3) suku ketiga, dst.
-
-</li>
-
-<li>
-
-<b>Verifikasi dengan n kecil.</b> Kalau ragu, uji rumus dengan n=2 atau n=3
-yang bisa dihitung manual.
-
-</li>
-
-<li>
-
-<b>Inklusi-Eksklusi = mengoreksi overcounting.</b>
-Ini adalah intuisinya. Jumlahkan dulu seolah-olah semua lepas,
-lalu koreksi yang dobel, koreksi lagi yang triple, dan seterusnya.
-
-</li>
-
+<li><b>Gambar diagram Venn dulu.</b> Untuk 2 atau 3 himpunan, visualisasi membantu memahami daerah mana yang overcounting.</li>
+<li><b>Pola tanda: + - + - + ...</b> Dimulai dari + untuk 1 himpunan, - untuk 2, + untuk 3. Jangan sampai tertukar!</li>
+<li><b>Untuk n besar, ingat jumlah sukunya C(n,k).</b> Suku pertama ada C(n,1) suku, suku kedua C(n,2) suku, dst.</li>
+<li><b>Verifikasi dengan n kecil.</b> Kalau ragu, uji rumus dengan n=2 atau n=3 yang bisa dihitung manual dari diagram Venn.</li>
+<li><b>Inklusi-Eksklusi = mengoreksi overcounting.</b> Jumlahkan dulu seolah-olah semua lepas, lalu koreksi yang dobel, koreksi lagi yang triple, dan seterusnya.</li>
+<li><b>Derangements: hafal rumus untuk n kecil.</b> D(1)=0, D(2)=1, D(3)=2, D(4)=9, D(5)=44. Ini sering muncul!</li>
+<li><b>Euler's Totient: rumus produk lebih mudah.</b> φ(n) = n × Π(1-1/pᵢ). Tidak perlu menghitung Inklusi-Eksklusi satu per satu.</li>
 </ul>
-
 </div>
 
 <div class="navigation">
-
 <a href="kombinatorika4.html" class="btn">⬅ Kembali</a>
-
 <a href="kombinatorika.html" class="btn">📚 Daftar Kombinatorika</a>
-
 <a href="index.html" class="btn">🏠 Home</a>
-
 <a href="kombinatorika6.html" class="btn">Lanjut ➜</a>
-
 </div>
 
 </div>
