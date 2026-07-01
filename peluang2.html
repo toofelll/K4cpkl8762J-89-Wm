@@ -1,1 +1,1105 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handbook Matematika - Peluang Bab 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+
+    <h1>📘 Handbook Matematika</h1>
+    <h2>BAB 2 — OPERASI & ATURAN PELUANG</h2>
+
+    <p>
+        Pada bab ini kita tidak lagi hanya memahami apa itu peluang,
+        tetapi bagaimana peluang dapat <b>dihitung secara sistematis</b>
+        menggunakan operasi himpunan dan aturan dasar probabilitas.
+    </p>
+
+</header>
+
+<hr>
+
+<nav>
+
+<h2>📚 Daftar Isi Bab 2</h2>
+
+<ol>
+
+<li><a href="#penguatan">Penguatan Konsep Peluang</a></li>
+<li><a href="#peluang-dasar">Konsep Dasar Peluang</a></li>
+
+</ol>
+
+</nav>
+
+<hr>
+
+<section id="penguatan">
+
+<h2>2.1 Penguatan Konsep Peluang</h2>
+
+<p>
+Sebelum masuk ke operasi peluang, kita harus benar-benar memahami satu hal:
+</p>
+
+<blockquote>
+
+<b>Peluang selalu berbicara tentang perbandingan</b> antara kejadian yang diinginkan
+dengan seluruh kemungkinan yang ada.
+
+</blockquote>
+
+<p>
+Secara umum:
+</p>
+
+<pre>
+P(A) = jumlah anggota A / jumlah anggota S
+</pre>
+
+<p>
+Namun rumus ini hanya berlaku jika setiap hasil memiliki peluang yang sama
+(equiprobable sample space).
+</p>
+
+<aside>
+
+<h3>💡 Insight Olimpiade</h3>
+
+<p>
+Kesalahan terbesar siswa adalah langsung memakai rumus tanpa mengecek:
+apakah ruang sampelnya benar-benar seimbang?
+</p>
+
+</aside>
+
+</section>
+
+<hr>
+
+<section id="peluang-dasar">
+
+<h2>2.2 Konsep Dasar Peluang (Reinforcement)</h2>
+
+<p>
+Misalkan kita punya ruang sampel:
+</p>
+
+<pre>
+S = {1,2,3,4,5,6}
+</pre>
+
+<p>
+Dan kejadian:
+</p>
+
+<pre>
+A = {2,4,6}
+</pre>
+
+<p>
+Maka:
+</p>
+
+<pre>
+P(A) = 3/6 = 1/2
+</pre>
+
+<p>
+Dari sini kita mulai masuk ke pertanyaan yang lebih penting:
+</p>
+
+<ul>
+<li>Bagaimana jika kita ingin menggabungkan dua kejadian?</li>
+<li>Bagaimana jika dua kejadian terjadi bersamaan?</li>
+<li>Bagaimana jika kita ingin menghitung “atau” dan “dan”?</li>
+</ul>
+
+<p>
+Jawaban dari semua pertanyaan itu ada pada operasi himpunan:
+<b>gabungan dan irisan</b>.
+</p>
+
+</section>
+
+<hr>
+
+<!-- LANJUT BAGIAN 2 --><hr>
+
+<section id="peluang-gabungan">
+
+<h2>2.3 Peluang Gabungan (Union)</h2>
+
+<p>
+Dalam banyak soal peluang, kita sering dihadapkan pada situasi “atau”.
+Misalnya:
+</p>
+
+<ul>
+<li>muncul angka genap <b>atau</b> bilangan prima</li>
+<li>muncul gambar <b>atau</b> angka pada koin</li>
+<li>mendapat kartu hati <b>atau</b> kartu merah</li>
+</ul>
+
+<p>
+Konsep “atau” dalam matematika direpresentasikan sebagai
+<b>gabungan dua kejadian</b>.
+</p>
+
+<div class="definition">
+
+<h3>Definisi</h3>
+
+<p>
+Gabungan dua kejadian A dan B adalah kejadian yang memuat semua
+anggota yang berada di A <b>atau</b> di B.
+</p>
+
+<pre>
+A ∪ B
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Intuisi Penting</h3>
+
+<p>
+Bayangkan dua himpunan sebagai dua lingkaran.
+Gabungan berarti seluruh area kedua lingkaran tersebut digabungkan,
+termasuk bagian yang tumpang tindih.
+</p>
+
+<p>
+Inilah sumber kesalahan paling umum: bagian yang tumpang tindih sering
+terhitung dua kali jika tidak hati-hati.
+</p>
+
+</section>
+
+<hr>
+
+<section id="contoh-gabungan">
+
+<h3>Contoh 1</h3>
+
+<p>
+Sebuah dadu dilempar satu kali.
+</p>
+
+<pre>
+S = {1,2,3,4,5,6}
+A = bilangan genap = {2,4,6}
+B = bilangan prima = {2,3,5}
+</pre>
+
+<p>
+Gabungan A dan B:
+</p>
+
+<pre>
+A ∪ B = {2,3,4,5,6}
+</pre>
+
+<p>
+Perhatikan bahwa angka 2 hanya dihitung sekali meskipun ada di kedua kejadian.
+</p>
+
+</section>
+
+<hr>
+
+<section id="peluang-irisan">
+
+<h2>2.4 Peluang Irisan (Intersection)</h2>
+
+<p>
+Jika gabungan berarti “atau”, maka irisan berarti “dan”.
+</p>
+
+<div class="definition">
+
+<h3>Definisi</h3>
+
+<p>
+Irisan dua kejadian A dan B adalah kejadian yang memuat semua anggota
+yang berada di A <b>dan</b> B sekaligus.
+</p>
+
+<pre>
+A ∩ B
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Contoh</h3>
+
+<pre>
+A = {2,4,6}
+B = {2,3,5}
+</pre>
+
+<p>
+Maka:
+</p>
+
+<pre>
+A ∩ B = {2}
+</pre>
+
+<p>
+Hanya angka 2 yang memenuhi kedua syarat sekaligus.
+</p>
+
+<hr>
+
+<h3>Insight Olimpiade</h3>
+
+<div class="insight">
+
+<p>
+Dalam soal tingkat lanjut, irisan sering menjadi “inti informasi”.
+Jika kamu bisa menemukan irisan dengan cepat, biasanya soal langsung
+menjadi sederhana.
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<section id="visualisasi">
+
+<h2>Visualisasi Himpunan</h2>
+
+<p>
+Dalam peluang, visualisasi sangat penting untuk menghindari kesalahan hitung.
+</p>
+
+<pre>
+        A ∪ B
+
+   +-------------+
+   |   A   ∩ B   |
+   |  (overlap)  |
+   +-------------+
+</pre>
+
+<p>
+Bagian overlap (irisan) sering membuat orang menghitung dua kali jika tidak hati-hati.
+</p>
+
+</section>
+
+<hr>
+
+<section id="kesalahan">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Menganggap A ∪ B = A + B tanpa mengurangi irisan</li>
+
+<li>Lupa bahwa elemen yang sama tidak boleh dihitung dua kali</li>
+
+<li>Salah membedakan “atau” dan “dan”</li>
+
+<li>Tidak menuliskan ruang sampel terlebih dahulu</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section id="insight">
+
+<h2>💡 Insight Penting</h2>
+
+<p>
+Dalam banyak soal, kesalahan bukan pada rumus,
+tetapi pada pemodelan kejadian.
+</p>
+
+<p>
+Jika kamu salah menentukan A dan B,
+maka semua perhitungan berikutnya pasti salah.
+</p>
+
+</section>
+
+<hr>
+
+<!-- LANJUT BAGIAN 3 --><hr>
+
+<section id="kejadian-saling-lepas">
+
+<h2>2.5 Kejadian Saling Lepas</h2>
+
+<p>
+Setelah memahami gabungan dan irisan, kita masuk ke konsep penting:
+<b>kejadian yang tidak bisa terjadi bersamaan</b>.
+</p>
+
+<div class="definition">
+
+<h3>Definisi</h3>
+
+<p>
+Dua kejadian A dan B disebut <b>saling lepas</b> jika:
+</p>
+
+<pre>
+A ∩ B = ∅
+</pre>
+
+<p>
+Artinya tidak ada satu pun hasil yang termasuk di kedua kejadian sekaligus.
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Intuitif</h3>
+
+<p>
+Pada pelemparan dadu:
+</p>
+
+<pre>
+A = {2,4,6}  (genap)
+B = {1,3,5}  (ganjil)
+</pre>
+
+<p>
+Karena tidak ada irisan:
+</p>
+
+<pre>
+A ∩ B = ∅
+</pre>
+
+<p>
+Maka A dan B saling lepas.
+</p>
+
+</section>
+
+<hr>
+
+<section id="tidak-saling-lepas">
+
+<h2>2.6 Kejadian Tidak Saling Lepas</h2>
+
+<p>
+Sebaliknya, jika dua kejadian memiliki anggota yang sama,
+maka keduanya <b>tidak saling lepas</b>.
+</p>
+
+<h3>Contoh</h3>
+
+<pre>
+A = {2,4,6}
+B = {4,5,6}
+</pre>
+
+<p>
+Irisan:
+</p>
+
+<pre>
+A ∩ B = {4,6}
+</pre>
+
+<p>
+Karena tidak kosong, maka A dan B tidak saling lepas.
+</p>
+
+<hr>
+
+<h3>Kenapa Ini Penting?</h3>
+
+<p>
+Konsep ini sangat penting karena akan menentukan rumus yang digunakan
+pada aturan penjumlahan peluang.
+</p>
+
+<aside>
+
+<h3>⚠ Peringatan Penting</h3>
+
+<p>
+Banyak siswa langsung menjumlahkan peluang dua kejadian
+tanpa mengecek apakah keduanya saling lepas atau tidak.
+Ini adalah sumber error paling umum dalam bab peluang.
+</p>
+
+</aside>
+
+</section>
+
+<hr>
+
+<section id="aturan-penjumlahan-awal">
+
+<h2>2.7 Aturan Penjumlahan (Versi Awal)</h2>
+
+<p>
+Sekarang kita masuk ke salah satu aturan paling penting dalam peluang.
+</p>
+
+<h3>Kasus 1: Jika Saling Lepas</h3>
+
+<div class="definition">
+
+<pre>
+P(A ∪ B) = P(A) + P(B)
+</pre>
+
+</div>
+
+<h4>Contoh</h4>
+
+<p>
+Dadu dilempar:
+</p>
+
+<pre>
+A = {1}
+B = {6}
+</pre>
+
+<p>
+Karena saling lepas:
+</p>
+
+<pre>
+P(A ∪ B)
+= P(A) + P(B)
+= 1/6 + 1/6
+= 1/3
+</pre>
+
+</section>
+
+<hr>
+
+<section id="intuisi-penjumlahan">
+
+<h2>💡 Intuisi Aturan Penjumlahan</h2>
+
+<p>
+Jika dua kejadian tidak memiliki irisan, maka kita cukup menjumlahkan
+peluang masing-masing.
+</p>
+
+<p>
+Namun jika memiliki irisan, kita akan menghitung bagian yang sama dua kali,
+sehingga perlu koreksi (ini akan dibahas di bagian berikutnya).
+</p>
+
+<pre>
+A ∪ B = A + B - (A ∩ B)
+</pre>
+
+<p>
+Rumus lengkap ini akan kita bahas di bagian selanjutnya.
+</p>
+
+</section>
+
+<hr>
+
+<section id="insight-olimpiade">
+
+<h2>🔥 Insight Olimpiade</h2>
+
+<p>
+Dalam soal olimpiade, aturan penjumlahan hampir selalu muncul dalam bentuk
+“tersembunyi”.
+</p>
+
+<p>
+Kunci utama:
+</p>
+
+<ul>
+<li>Selalu cari irisan terlebih dahulu</li>
+<li>Jangan langsung menjumlahkan</li>
+<li>Gunakan diagram jika perlu</li>
+</ul>
+
+</section>
+
+<hr>
+
+<!-- LANJUT BAGIAN 4 --><hr>
+
+<section id="aturan-penjumlahan-lengkap">
+
+<h2>2.8 Aturan Penjumlahan (Versi Lengkap)</h2>
+
+<p>
+Pada bagian sebelumnya kita sudah melihat versi sederhana aturan penjumlahan
+untuk kejadian yang saling lepas.
+Sekarang kita akan masuk ke bentuk yang lebih umum.
+</p>
+
+<div class="definition">
+
+<h3>Rumus Umum</h3>
+
+<pre>
+P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+</pre>
+
+</div>
+
+<p>
+Rumus ini digunakan ketika dua kejadian <b>tidak saling lepas</b>.
+</p>
+
+<hr>
+
+<h3>Mengapa Harus Dikurangi?</h3>
+
+<p>
+Ketika kita menjumlahkan P(A) dan P(B),
+bagian irisan A ∩ B akan terhitung <b>dua kali</b>.
+</p>
+
+<p>
+Oleh karena itu kita perlu menguranginya sekali agar hasilnya benar.
+</p>
+
+<pre>
+A + B → menghitung irisan 2 kali
+A + B - (A ∩ B) → koreksi agar hanya 1 kali
+</pre>
+
+</section>
+
+<hr>
+
+<section id="contoh-penjumlahan">
+
+<h2>Contoh Soal</h2>
+
+<p>
+Sebuah dadu dilempar satu kali.
+</p>
+
+<pre>
+S = {1,2,3,4,5,6}
+
+A = bilangan genap = {2,4,6}
+B = bilangan prima = {2,3,5}
+</pre>
+
+<p>
+Langkah 1: Peluang masing-masing
+</p>
+
+<pre>
+P(A) = 3/6
+P(B) = 3/6
+</pre>
+
+<p>
+Langkah 2: Irisan
+</p>
+
+<pre>
+A ∩ B = {2}
+P(A ∩ B) = 1/6
+</pre>
+
+<p>
+Langkah 3: Gunakan rumus
+</p>
+
+<pre>
+P(A ∪ B)
+= P(A) + P(B) - P(A ∩ B)
+= 3/6 + 3/6 - 1/6
+= 5/6
+</pre>
+
+</section>
+
+<hr>
+
+<section id="peluang-irisan">
+
+<h2>2.9 Peluang Irisan (Pendalaman)</h2>
+
+<p>
+Sekarang kita lihat irisan dari sudut pandang peluang.
+</p>
+
+<h3>Makna Intuitif</h3>
+
+<p>
+P(A ∩ B) adalah peluang bahwa <b>dua syarat terjadi sekaligus</b>.
+</p>
+
+<p>
+Ini biasanya lebih sulit dibanding A atau B secara terpisah,
+karena kita mencari titik yang memenuhi dua kondisi sekaligus.
+</p>
+
+<hr>
+
+<h3>Contoh</h3>
+
+<p>
+Dadu dilempar:
+</p>
+
+<pre>
+A = genap = {2,4,6}
+B = >3 = {4,5,6}
+</pre>
+
+<pre>
+A ∩ B = {4,6}
+</pre>
+
+<pre>
+P(A ∩ B) = 2/6 = 1/3
+</pre>
+
+</section>
+
+<hr>
+
+<section id="insight-olimpiade">
+
+<h2>🔥 Insight Olimpiade</h2>
+
+<p>
+Dalam soal tingkat lanjut, irisan sering tidak diberikan langsung.
+Kamu harus “membangunnya” sendiri dari syarat soal.
+</p>
+
+<p>
+Strategi:
+</p>
+
+<ul>
+<li>Ubah kalimat menjadi himpunan</li>
+<li>Gambar ruang sampel jika perlu</li>
+<li>Cari bagian yang memenuhi dua syarat sekaligus</li>
+</ul>
+
+</section>
+
+<hr>
+
+<section id="kesalahan-umum">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Lupa mengurangi irisan pada rumus penjumlahan</li>
+<li>Salah menentukan A ∩ B</li>
+<li>Mengira semua kejadian selalu saling lepas</li>
+<li>Tidak menuliskan ruang sampel terlebih dahulu</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section id="ringkasan-bab2">
+
+<h2>📌 Ringkasan Sementara Bab 2</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Inti</th>
+</tr>
+
+<tr>
+<td>Gabungan (A ∪ B)</td>
+<td>A atau B terjadi</td>
+</tr>
+
+<tr>
+<td>Irisan (A ∩ B)</td>
+<td>A dan B terjadi bersamaan</td>
+</tr>
+
+<tr>
+<td>Saling lepas</td>
+<td>Tidak ada irisan</td>
+</tr>
+
+<tr>
+<td>Penjumlahan sederhana</td>
+<td>P(A)+P(B) jika saling lepas</td>
+</tr>
+
+<tr>
+<td>Penjumlahan umum</td>
+<td>P(A)+P(B)-P(A∩B)</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<!-- LANJUT KE BAGIAN 5 --><hr>
+
+<section id="aturan-perkalian">
+
+<h2>2.10 Aturan Perkalian (Multiplication Rule)</h2>
+
+<p>
+Setelah membahas “atau” (gabungan) dan “dan” (irisan),
+kita masuk ke salah satu konsep paling penting dalam peluang:
+<b>aturan perkalian</b>.
+</p>
+
+<p>
+Aturan ini digunakan ketika kita ingin menghitung peluang dari
+<b>dua kejadian yang terjadi berurutan</b> atau bersamaan.
+</p>
+
+<hr>
+
+<h3>Bentuk Dasar</h3>
+
+<div class="definition">
+
+<pre>
+P(A ∩ B) = P(A) × P(B|A)
+</pre>
+
+</div>
+
+<p>
+Artinya:
+peluang A dan B terjadi sekaligus = peluang A terjadi × peluang B terjadi
+dengan syarat A sudah terjadi.
+</p>
+
+</section>
+
+<hr>
+
+<section id="intuisi-perkalian">
+
+<h2>💡 Intuisi Aturan Perkalian</h2>
+
+<p>
+Bayangkan proses bertahap:
+</p>
+
+<ol>
+
+<li>Peristiwa pertama terjadi (A)</li>
+<li>Setelah itu, kondisi berubah</li>
+<li>Lalu peristiwa kedua terjadi (B)</li>
+
+</ol>
+
+<p>
+Karena kondisi setelah A terjadi bisa berbeda,
+maka peluang B harus disesuaikan menjadi P(B|A).
+</p>
+
+<aside>
+
+<h3>🔥 Insight Olimpiade</h3>
+
+<p>
+Kesalahan umum adalah menganggap:
+</p>
+
+<pre>
+P(A ∩ B) = P(A) × P(B)
+</pre>
+
+<p>
+Padahal ini hanya benar jika A dan B independen.
+</p>
+
+</aside>
+
+</section>
+
+<hr>
+
+<section id="contoh-perkalian">
+
+<h2>Contoh 1 (Tanpa Ketergantungan)</h2>
+
+<p>
+Sebuah koin dilempar 2 kali.
+</p>
+
+<p>
+A = muncul gambar pada lemparan pertama  
+B = muncul gambar pada lemparan kedua
+</p>
+
+<p>
+Karena independen:
+</p>
+
+<pre>
+P(A) = 1/2
+P(B) = 1/2
+</pre>
+
+<pre>
+P(A ∩ B) = 1/2 × 1/2 = 1/4
+</pre>
+
+</section>
+
+<hr>
+
+<section id="contoh-kondisional">
+
+<h2>Contoh 2 (Dengan Syarat)</h2>
+
+<p>
+Dalam sebuah kotak terdapat:
+</p>
+
+<pre>
+3 bola merah
+2 bola biru
+</pre>
+
+<p>
+Diambil 2 bola tanpa pengembalian.
+</p>
+
+<p>
+A = bola pertama merah  
+B = bola kedua merah
+</p>
+
+<hr>
+
+<p><b>Langkah 1:</b></p>
+
+<pre>
+P(A) = 3/5
+</pre>
+
+<p><b>Langkah 2:</b></p>
+
+<p>
+Jika bola pertama merah sudah diambil,
+sisa bola merah tinggal 2 dari total 4.
+</p>
+
+<pre>
+P(B|A) = 2/4
+</pre>
+
+<p><b>Langkah 3:</b></p>
+
+<pre>
+P(A ∩ B)
+= (3/5) × (2/4)
+= 6/20
+= 3/10
+</pre>
+
+</section>
+
+<hr>
+
+<section id="independen">
+
+<h2>2.11 Kejadian Independen</h2>
+
+<p>
+Dua kejadian disebut <b>independen</b> jika kejadian satu tidak
+mempengaruhi kejadian lainnya.
+</p>
+
+<div class="definition">
+
+<pre>
+P(B|A) = P(B)
+</pre>
+
+</div>
+
+<p>
+Sehingga:
+</p>
+
+<pre>
+P(A ∩ B) = P(A) × P(B)
+</pre>
+
+</section>
+
+<hr>
+
+<section id="contoh-independen">
+
+<h2>Contoh</h2>
+
+<p>
+Dua koin dilempar.
+</p>
+
+<pre>
+A = koin pertama gambar
+B = koin kedua gambar
+</pre>
+
+<p>
+Karena tidak saling mempengaruhi:
+</p>
+
+<pre>
+P(A ∩ B) = 1/2 × 1/2 = 1/4
+</pre>
+
+</section>
+
+<hr>
+
+<section id="insight-perkalian">
+
+<h2>🔥 Insight Penting</h2>
+
+<p>
+Dalam soal tingkat lanjut, kunci utama aturan perkalian adalah:
+</p>
+
+<ul>
+
+<li>Tentukan apakah independen atau tidak</li>
+<li>Jika tidak, gunakan probabilitas bersyarat</li>
+<li>Jika ya, boleh langsung dikalikan</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section id="kesalahan-perkalian">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Selalu menganggap kejadian independen</li>
+<li>Lupa mengubah ruang sampel setelah kejadian pertama</li>
+<li>Salah menentukan P(B|A)</li>
+<li>Langsung mengalikan tanpa analisis</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section id="ringkasan-bab2">
+
+<h2>📌 Ringkasan Bab 2</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Inti</th>
+</tr>
+
+<tr>
+<td>Gabungan</td>
+<td>A atau B</td>
+</tr>
+
+<tr>
+<td>Irisan</td>
+<td>A dan B</td>
+</tr>
+
+<tr>
+<td>Penjumlahan</td>
+<td>P(A)+P(B)-P(A∩B)</td>
+</tr>
+
+<tr>
+<td>Perkalian</td>
+<td>P(A)×P(B|A)</td>
+</tr>
+
+<tr>
+<td>Independen</td>
+<td>P(B|A)=P(B)</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section id="checkpoint">
+
+<h2>🎯 Checkpoint Bab 2</h2>
+
+<p>
+Jika kamu sudah memahami Bab 2, berarti kamu sudah bisa:
+</p>
+
+<ul>
+
+<li>Menggabungkan kejadian</li>
+<li>Mencari irisan kejadian</li>
+<li>Membedakan “atau” dan “dan”</li>
+<li>Menggunakan aturan penjumlahan</li>
+<li>Menggunakan aturan perkalian</li>
+
+</ul>
+
+<p>
+Ini adalah fondasi penting sebelum masuk ke:
+<b>Peluang Bersyarat & Teorema Bayes</b>.
+</p>
+
+</section>
+
+<hr>
+
+<div class="navigation-buttons">
+
+<a href="peluang1.html" class="btn">⬅ Kembali ke Bab 1</a>
+
+<a href="peluang3.html" class="btn">➡ Lanjut ke Bab 3</a>
+
+</div>
+
+</body>
+</html>
