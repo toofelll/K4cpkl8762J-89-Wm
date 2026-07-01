@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Trigonometri | Materi Lengkap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0b1a2f 0%, #1a2f40 100%);
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      color: #eef5ff;
+    }
+
+    .trigonometry-container {
+      max-width: 1300px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 30px 55px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #f9d56e, #f8b042, #e58e26);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 i {
+      font-style: normal;
+      font-size: 2.8rem;
+      filter: drop-shadow(0 8px 12px black);
+    }
+
+    .subhead {
+      text-align: center;
+      font-size: 1.25rem;
+      color: #b4cdff;
+      margin-bottom: 2.8rem;
+      font-weight: 400;
+      border-bottom: 1px dashed rgba(255, 200, 100, 0.4);
+      padding-bottom: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.8rem 0 2.5rem;
+    }
+
+    .btn {
+      background: rgba(20, 30, 44, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 140, 0.35);
+      padding: 0.9rem 2.2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: #ffd78b;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      letter-spacing: 0.3px;
+    }
+
+    .btn:hover {
+      background: #f5b042;
+      color: #0a121f;
+      border-color: #f5b042;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 22px rgba(245, 176, 66, 0.3);
+      font-weight: 700;
+    }
+
+    .btn-home {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #f0f9ff;
+    }
+
+    .btn-home:hover {
+      background: #f0f9ff;
+      color: #0b1a2f;
+      border-color: #f0f9ff;
+      box-shadow: 0 12px 24px rgba(255,255,240,0.25);
+    }
+
+    .grid-materi {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .card {
+      background: rgba(12, 22, 35, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 1.8rem;
+      padding: 1.4rem 1.2rem;
+      border: 1px solid rgba(255, 180, 60, 0.18);
+      transition: 0.25s ease;
+      box-shadow: 0 12px 22px -8px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 200, 70, 0.55);
+      background: rgba(20, 34, 50, 0.8);
+      box-shadow: 0 20px 28px -5px #f6ae2d22;
+    }
+
+    .card h2 {
+      font-size: 1.45rem;
+      font-weight: 650;
+      margin-bottom: 1rem;
+      color: #fedb8f;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid #f7b731;
+      padding-left: 0.8rem;
+    }
+
+    .list-materi {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-top: 0.3rem;
+    }
+
+    .list-materi li {
+      font-size: 1rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 0.8rem;
+      background: rgba(255, 255, 255, 0.03);
+      transition: background 0.2s;
+      color: #ccdeff;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .list-materi li::before {
+      content: "▹";
+      color: #f9a826;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .list-materi li:hover {
+      background: rgba(255, 215, 130, 0.12);
+      color: #ffffff;
+    }
+
+    footer {
+      margin-top: 2.2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #7f95b5;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem;
+      }
+      .trigonometry-container {
+        padding: 1.8rem 1rem;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      .btn {
+        padding: 0.7rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="trigonometry-container">
+    <h1>
+      <span>📐</span> TRIGONOMETRI <span>📏</span>
+    </h1>
+    <div class="subhead">
+      <span>Sudut · Derajat · Radian · Grafik · Identitas</span>
+    </div>
+
+    <!-- Tombol navigasi utama : Home & Mulai Belajar -->
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-home">🏠 Home</a>
+      <a href="trigonometri1.html" class="btn">📘 Mulai Belajar →</a>
+    </div>
+
+    <!-- Grid materi sesuai permintaan, semua topik dicantumkan -->
+    <div class="grid-materi">
+      
+      <!-- Kartu 1: Sudut & Konversi -->
+      <div class="card">
+        <h2>🔹 Sudut & Satuan</h2>
+        <ul class="list-materi">
+          <li>Sudut</li>
+          <li>Derajat</li>
+          <li>Radian</li>
+          <li>Konversi Derajat ↔ Radian</li>
+          <li>Panjang Busur</li>
+          <li>Luas Juring</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 2: Fungsi Dasar Trigonometri -->
+      <div class="card">
+        <h2>🔸 Sin, Cos, Tan, dll</h2>
+        <ul class="list-materi">
+          <li>Sin</li>
+          <li>Cos</li>
+          <li>Tan</li>
+          <li>Cosec</li>
+          <li>Sec</li>
+          <li>Cot</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 3: Lingkaran Satuan & Kuadran -->
+      <div class="card">
+        <h2>⚪ Lingkaran Satuan</h2>
+        <ul class="list-materi">
+          <li>Lingkaran Satuan (Unit Circle)</li>
+          <li>Kuadran Trigonometri</li>
+          <li>Tanda Fungsi Trigonometri</li>
+          <li>Nilai Trigonometri Sudut Istimewa</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 4: Identitas Dasar -->
+      <div class="card">
+        <h2>🧮 Identitas Dasar</h2>
+        <ul class="list-materi">
+          <li>Identitas Dasar Trigonometri</li>
+          <li>Identitas Pythagoras</li>
+          <li>Identitas Kebalikan</li>
+          <li>Identitas Hasil Bagi</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 5: Persamaan & Pertidaksamaan -->
+      <div class="card">
+        <h2>📈 Persamaan</h2>
+        <ul class="list-materi">
+          <li>Persamaan Trigonometri</li>
+          <li>Pertidaksamaan Trigonometri</li>
+          <li>Akar Persamaan Trigonometri</li>
+          <li>Persamaan Homogen Trigonometri</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 6: Grafik & Transformasi -->
+      <div class="card">
+        <h2>📉 Grafik & Transformasi</h2>
+        <ul class="list-materi">
+          <li>Grafik Fungsi Trigonometri</li>
+          <li>Transformasi Grafik</li>
+          <li>Amplitudo</li>
+          <li>Periode</li>
+          <li>Pergeseran Fase</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 7: Rumus Jumlah, Selisih, Rangkap -->
+      <div class="card">
+        <h2>➕ Rumus Sudut</h2>
+        <ul class="list-materi">
+          <li>Rumus Jumlah Sudut</li>
+          <li>Rumus Selisih Sudut</li>
+          <li>Rumus Sudut Rangkap</li>
+          <li>Rumus Sudut Setengah</li>
+          <li>Rumus Sudut Tiga Kali</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 8: Perkalian & Penjumlahan -->
+      <div class="card">
+        <h2>✖️➡️➕ Konversi</h2>
+        <ul class="list-materi">
+          <li>Rumus Perkalian ke Penjumlahan</li>
+          <li>Rumus Penjumlahan ke Perkalian</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 9: Substitusi & Weierstrass -->
+      <div class="card">
+        <h2>🔄 Substitusi</h2>
+        <ul class="list-materi">
+          <li>Substitusi Trigonometri</li>
+          <li>Substitusi Weierstrass</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 10: Aturan Segitiga -->
+      <div class="card">
+        <h2>📐 Aturan Segitiga</h2>
+        <ul class="list-materi">
+          <li>Aturan Sinus</li>
+          <li>Aturan Cosinus</li>
+          <li>Rumus Luas Segitiga</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 11: Invers & Koordinat Polar -->
+      <div class="card">
+        <h2>🔄 Invers & Polar</h2>
+        <ul class="list-materi">
+          <li>Fungsi Trigonometri Invers</li>
+          <li>Persamaan Polar</li>
+          <li>Koordinat Polar</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 12: Euler & De Moivre -->
+      <div class="card">
+        <h2>⚡ Euler & De Moivre</h2>
+        <ul class="list-materi">
+          <li>Rumus Euler</li>
+          <li>Rumus De Moivre</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 13: Identitas Simetri, Kofungsi, Periodik -->
+      <div class="card">
+        <h2>🔁 Identitas Lanjutan</h2>
+        <ul class="list-materi">
+          <li>Identitas Simetri</li>
+          <li>Identitas Kofungsi</li>
+          <li>Identitas Periodik</li>
+        </ul>
+      </div>
+
+      <!-- Kartu 14: Aplikasi & Pemodelan -->
+      <div class="card">
+        <h2>🌊 Aplikasi</h2>
+        <ul class="list-materi">
+          <li>Aplikasi Trigonometri</li>
+          <li>Pemodelan Gelombang</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <span>⚡ sin²θ + cos²θ = 1</span>
+      <span>📐 π rad = 180°</span>
+      <span>🔄 e<sup>iθ</sup> = cosθ + i sinθ</span>
+    </footer>
+  </div>
+
+  <!-- Penjelasan tambahan: halaman ini sebagai pusat materi, tanpa sejarah panjang.
+       User tinggal klik "Mulai Belajar" menuju trigonometri1.html -->
+</body>
+</html>
