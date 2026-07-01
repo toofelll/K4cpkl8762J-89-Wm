@@ -1,1 +1,807 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kombinatorika Part 4 | Teorema Binomial & Segitiga Pascal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔢 KOMBINATORIKA</h1>
+
+<p>Part 4 • Teorema Binomial & Segitiga Pascal</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Pola yang Tersembunyi dalam Perpangkatan</h2>
+
+<p>
+
+Coba hitung ini:
+
+</p>
+
+<div class="example">
+
+(x + y)⁰ = <b>1</b><br>
+
+(x + y)¹ = <b>1x + 1y</b><br>
+
+(x + y)² = <b>1x² + 2xy + 1y²</b><br>
+
+(x + y)³ = <b>1x³ + 3x²y + 3xy² + 1y³</b><br>
+
+(x + y)⁴ = <b>1x⁴ + 4x³y + 6x²y² + 4xy³ + 1y⁴</b>
+
+</div>
+
+<p>
+
+Lihat koefisien-koefisiennya: <b>1, 1 | 1, 2, 1 | 1, 3, 3, 1 | 1, 4, 6, 4, 1</b>.
+Apakah kamu mengenali pola ini? Ini adalah <b>Segitiga Pascal</b>!
+Dan koefisien-koefisien ini ternyata adalah <b>kombinasi</b>—sesuatu yang
+baru saja kita pelajari di bab sebelumnya.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan mengungkap <b>hubungan mendalam</b> antara
+perpangkatan (x+y)ⁿ, kombinasi C(n,r), dan Segitiga Pascal.
+Kita akan menjawab: <b>mengapa</b> koefisien (x+y)ⁿ adalah C(n,r)?
+<b>Dari mana</b> Segitiga Pascal berasal? Dan <b>apa hubungannya</b>
+dengan memilih dan menyusun?
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami Teorema Binomial: cara menjabarkan (x+y)ⁿ tanpa mengalikan berulang-ulang.</li>
+
+<li>Melihat bukti kombinatorik: kenapa koefisiennya adalah kombinasi C(n,r).</li>
+
+<li>Mengenal Segitiga Pascal: bagaimana membangunnya, pola-pola di dalamnya, dan identitas-identitas penting.</li>
+
+<li>Mampu menggunakan Teorema Binomial untuk menyelesaikan soal.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: MENGALIKAN (x+y)ⁿ SECARA MANUAL ==================== -->
+
+<div class="section">
+
+<h2>1. Dari Mengalikan Manual ke Pola — Apa yang Sebenarnya Terjadi?</h2>
+
+<p>
+
+Mari kita mulai dari yang paling dasar. Kita akan mengalikan (x+y)² dan (x+y)³
+<b>secara manual</b> dan mengamati dari mana koefisien-koefisien itu berasal.
+
+</p>
+
+<hr>
+
+<h3>1.1 Menjabarkan (x+y)² — Mengamati Proses Pemilihan</h3>
+
+<div class="example">
+
+(x+y)² = (x+y)(x+y).<br><br>
+
+Apa artinya mengalikan dua kurung ini? Artinya kita harus mengambil
+<b>satu suku dari kurung pertama</b> dan <b>satu suku dari kurung kedua</b>,
+lalu mengalikannya. Setiap pilihan menghasilkan satu "potongan" dari hasil akhir.<br><br>
+
+Mari kita daftar SEMUA kemungkinan pilihan:<br><br>
+
+Pilihan 1: Ambil x dari kurung pertama, x dari kurung kedua → x·x = <b>x²</b>.<br>
+
+Pilihan 2: Ambil x dari kurung pertama, y dari kurung kedua → x·y = <b>xy</b>.<br>
+
+Pilihan 3: Ambil y dari kurung pertama, x dari kurung kedua → y·x = <b>xy</b>.<br>
+
+Pilihan 4: Ambil y dari kurung pertama, y dari kurung kedua → y·y = <b>y²</b>.<br><br>
+
+Sekarang jumlahkan semua hasil: x² + xy + xy + y² = <b>x² + 2xy + y²</b>.<br><br>
+
+<b>Pertanyaan penting:</b> Kenapa koefisien xy adalah 2?<br><br>
+
+Karena ada <b>dua cara berbeda</b> untuk mendapatkan xy:
+(x dari kurung pertama, y dari kurung kedua) <b>ATAU</b>
+(y dari kurung pertama, x dari kurung kedua).<br><br>
+
+Jadi koefisien 2 itu sebenarnya adalah <b>banyaknya cara memilih</b>!
+
+</div>
+
+<hr>
+
+<h3>1.2 Menjabarkan (x+y)³ — Pola Mulai Terlihat Jelas</h3>
+
+<div class="example">
+
+(x+y)³ = (x+y)(x+y)(x+y). Tiga kurung.<br><br>
+
+Sekarang kita harus mengambil satu suku dari <b>setiap</b> kurung.
+Setiap pilihan menghasilkan x atau y. Hasil akhirnya adalah
+x^(jumlah x yang diambil) · y^(jumlah y yang diambil).<br><br>
+
+Karena ada 3 kurung, total kita membuat 3 "keputusan" (satu per kurung).
+Mari kita lihat setiap kemungkinan hasil akhir:<br><br>
+
+<b>Mendapatkan x³:</b><br>
+
+Artinya kita mengambil x dari <b>semua 3 kurung</b>. Berapa cara? Hanya <b>1 cara</b>.
+(Karena tidak ada pilihan: setiap kurung harus memberikan x).<br>
+
+→ Koefisien x³ = <b>1</b>.<br><br>
+
+<b>Mendapatkan x²y:</b><br>
+
+Artinya kita mengambil x dari <b>2 kurung</b> dan y dari <b>1 kurung</b>.<br>
+
+Pertanyaannya sekarang: <b>dari 3 kurung, yang mana yang memberikan y?</b><br>
+
+Kita bisa memilih 1 kurung dari 3 untuk memberikan y. Banyak cara = C(3,1) = <b>3 cara</b>.<br>
+
+(Atau dengan kata lain: memilih 2 kurung dari 3 untuk memberikan x. Banyak cara = C(3,2) = 3. Sama!)<br>
+
+→ Koefisien x²y = <b>3</b>.<br><br>
+
+<b>Mendapatkan xy²:</b><br>
+
+Artinya kita mengambil x dari <b>1 kurung</b> dan y dari <b>2 kurung</b>.<br>
+
+Dari 3 kurung, yang mana yang memberikan x? Banyak cara = C(3,1) = <b>3 cara</b>.<br>
+
+→ Koefisien xy² = <b>3</b>.<br><br>
+
+<b>Mendapatkan y³:</b><br>
+
+Artinya kita mengambil y dari <b>semua 3 kurung</b>. Hanya <b>1 cara</b>.<br>
+
+→ Koefisien y³ = <b>1</b>.<br><br>
+
+Jadi (x+y)³ = <b>1x³ + 3x²y + 3xy² + 1y³</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Generalisasi — Untuk Pangkat Berapapun</h3>
+
+<div class="summary">
+
+Sekarang bayangkan kita menjabarkan (x+y)ⁿ = (x+y)(x+y)...(x+y) dengan <b>n kurung</b>.<br><br>
+
+Untuk mendapatkan suku dengan <b>r buah x</b> dan <b>(n-r) buah y</b>:<br><br>
+
+Kita harus memilih <b>r kurung dari n kurung</b> untuk memberikan x.
+Sisanya (n-r) kurung otomatis memberikan y.<br><br>
+
+<b>Berapa banyak cara memilih r kurung dari n?</b> Jawabannya: <b>C(n, r)</b>.<br><br>
+
+Jadi, <b>koefisien dari xʳyⁿ⁻ʳ adalah C(n, r)</b>!<br><br>
+
+Ini adalah inti dari Teorema Binomial. Koefisien-koefisien itu bukan angka ajaib—
+mereka adalah <b>banyaknya cara memilih</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: TEOREMA BINOMIAL ==================== -->
+
+<div class="section">
+
+<h2>2. Teorema Binomial — Rumus Umumnya</h2>
+
+<div class="summary">
+
+<b>Teorema Binomial:</b><br><br>
+
+(x + y)ⁿ = C(n,0)x⁰yⁿ + C(n,1)x¹yⁿ⁻¹ + C(n,2)x²yⁿ⁻² + ... + C(n,n)xⁿy⁰<br><br>
+
+Atau dalam notasi sigma:<br><br>
+
+(x + y)ⁿ = <b>Σ[k=0..n] C(n,k) · xᵏ · yⁿ⁻ᵏ</b>
+
+</div>
+
+<p>
+
+<b>Apa artinya ini?</b> Teorema Binomial memberitahu kita bahwa untuk menjabarkan (x+y)ⁿ,
+kita tidak perlu mengalikan (x+y) sebanyak n kali secara manual. Kita cukup menghitung
+koefisien binomial C(n,k) untuk setiap k dari 0 sampai n, dan menyusunnya dengan
+pangkat x yang naik dan pangkat y yang turun.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Jabarkan (x + y)⁵ menggunakan Teorema Binomial.<br><br>
+
+n = 5. Kita perlu C(5,0), C(5,1), C(5,2), C(5,3), C(5,4), C(5,5).<br><br>
+
+C(5,0) = 1 (selalu 1, memilih 0 dari 5).<br>
+
+C(5,1) = 5 (memilih 1 dari 5).<br>
+
+C(5,2) = 10 (memilih 2 dari 5).<br>
+
+C(5,3) = 10 (memilih 3 dari 5, sama dengan C(5,2)).<br>
+
+C(5,4) = 5.<br>
+
+C(5,5) = 1.<br><br>
+
+(x+y)⁵ = 1·x⁰y⁵ + 5·x¹y⁴ + 10·x²y³ + 10·x³y² + 5·x⁴y¹ + 1·x⁵y⁰<br>
+
+= <b>y⁵ + 5xy⁴ + 10x²y³ + 10x³y² + 5x⁴y + x⁵</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>2.1 Mencari Suku Tertentu Tanpa Menjabarkan Semua</h3>
+
+<p>
+
+Salah satu kekuatan Teorema Binomial: kita bisa mencari <b>satu suku tertentu</b>
+tanpa harus menjabarkan seluruh penjabaran yang panjang.
+
+</p>
+
+<div class="example">
+
+<b>Soal:</b> Dalam penjabaran (x + 2)¹⁰, berapa koefisien dari x⁷?<br><br>
+
+<b>Analisis:</b> Kita ingin suku yang mengandung x⁷.<br>
+
+Total pangkat = 10. Jika x pangkat 7, maka 2 pangkat 3 (karena 7+3=10).<br><br>
+
+Suku ini terbentuk dari: memilih x dari <b>7 kurung</b> dan memilih 2 dari <b>3 kurung sisanya</b>.<br><br>
+
+Banyak cara memilih 7 kurung dari 10 = C(10,7) = C(10,3) = (10×9×8)/(3×2×1) = <b>120</b>.<br><br>
+
+Setiap cara menghasilkan: x⁷ × 2³ = x⁷ × 8.<br><br>
+
+Jadi koefisien x⁷ = 120 × 8 = <b>960</b>. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Dalam penjabaran (2x - 3y)⁸, berapa koefisien dari x³y⁵?<br><br>
+
+<b>Analisis:</b> Suku x³y⁵: pangkat x=3, pangkat y=5, total 8 (cocok).<br><br>
+
+Suku ini terbentuk dari: memilih (2x) dari <b>3 kurung</b> dan memilih (-3y) dari <b>5 kurung sisanya</b>.<br><br>
+
+Banyak cara memilih 3 kurung dari 8 = C(8,3) = C(8,5) = (8×7×6)/(3×2×1) = <b>56</b>.<br><br>
+
+Setiap cara menghasilkan: (2x)³ × (-3y)⁵.<br>
+
+(2x)³ = 8x³.<br>
+
+(-3y)⁵ = (-3)⁵ y⁵ = -243 y⁵.<br>
+
+8x³ × (-243)y⁵ = -1944 x³y⁵.<br><br>
+
+Koefisien total = 56 × (-1944) = <b>-108.864</b>. ✅
+
+</div>
+
+
+<!-- ==================== MATERI 3: SEGITIGA PASCAL ==================== -->
+
+<div class="section">
+
+<h2>3. Segitiga Pascal — Gudangnya Koefisien Binomial</h2>
+
+<p>
+
+Kita sudah melihat bahwa koefisien-koefisien dalam penjabaran (x+y)ⁿ
+adalah C(n,0), C(n,1), ..., C(n,n). Sekarang mari kita susun koefisien-koefisien
+ini dalam bentuk segitiga. Hasilnya adalah <b>Segitiga Pascal</b>—
+salah satu objek matematika paling indah yang pernah ditemukan.
+
+</p>
+
+<div class="example">
+
+Baris 0 (n=0): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+
+Baris 1 (n=1): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;1<br>
+
+Baris 2 (n=2): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;1<br>
+
+Baris 3 (n=3): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;1<br>
+
+Baris 4 (n=4): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;1<br>
+
+Baris 5 (n=5): &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;10 &nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;1<br>
+
+Baris 6 (n=6): 1 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;15 &nbsp;&nbsp;20 &nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;1
+
+</div>
+
+<p>
+
+Setiap baris ke-n berisi C(n,0), C(n,1), C(n,2), ..., C(n,n).
+Baris 0 adalah (x+y)⁰ = 1. Baris 1 adalah (x+y)¹ = 1x + 1y.
+Baris 2 adalah (x+y)² = 1x² + 2xy + 1y². Dan seterusnya.
+
+</p>
+
+<hr>
+
+<h3>3.1 Cara Membangun Segitiga Pascal — Aturan Sederhana</h3>
+
+<div class="summary">
+
+<b>Aturan membangun Segitiga Pascal:</b><br><br>
+
+1. Tulis angka 1 di puncak (baris 0).<br>
+
+2. Setiap baris dimulai dan diakhiri dengan 1.<br>
+
+3. Setiap angka di dalam segitiga adalah <b>jumlah dua angka di atasnya</b>
+(angka di kiri-atas + angka di kanan-atas).
+
+</div>
+
+<p>
+
+<b>Mengapa aturan ini benar?</b> Karena ini persis identitas kombinasi
+yang sudah kita pelajari: <b>C(n,r) = C(n-1, r-1) + C(n-1, r)</b>.
+
+</p>
+
+<div class="example">
+
+Lihat baris 5: 1, 5, 10, 10, 5, 1.<br><br>
+
+Angka 5 di posisi kedua: dari 1 + 4 (di atasnya). C(5,1) = C(4,0) + C(4,1) = 1 + 4 = 5. ✅<br>
+
+Angka 10 di posisi ketiga: dari 4 + 6 (di atasnya). C(5,2) = C(4,1) + C(4,2) = 4 + 6 = 10. ✅<br><br>
+
+Inilah kenapa Segitiga Pascal dan kombinasi saling terkait erat.
+Aturan penjumlahan di Segitiga Pascal adalah <b>identitas Pascal</b>
+dalam bentuk visual.
+
+</div>
+
+<hr>
+
+<h3>3.2 Pola-Pola Menakjubkan dalam Segitiga Pascal</h3>
+
+<p>
+
+Segitiga Pascal menyimpan banyak pola yang tidak terlihat sekilas.
+Berikut adalah beberapa yang paling terkenal:
+
+</p>
+
+<h3>Pola 1: Jumlah Setiap Baris = 2ⁿ</h3>
+
+<div class="example">
+
+Baris 0: 1 = 1 = 2⁰<br>
+
+Baris 1: 1+1 = 2 = 2¹<br>
+
+Baris 2: 1+2+1 = 4 = 2²<br>
+
+Baris 3: 1+3+3+1 = 8 = 2³<br>
+
+Baris 4: 1+4+6+4+1 = 16 = 2⁴<br><br>
+
+Jumlah setiap baris ke-n adalah <b>2ⁿ</b>.<br><br>
+
+<b>Kenapa?</b> Karena jumlah semua koefisien binomial di baris n adalah
+C(n,0)+C(n,1)+...+C(n,n). Dan kita sudah tahu dari Teorema Binomial
+dengan x=1, y=1: (1+1)ⁿ = 2ⁿ = ΣC(n,k). ✅
+
+</div>
+
+<h3>Pola 2: Bilangan Fibonacci Tersembunyi</h3>
+
+<div class="example">
+
+Coba jumlahkan diagonal-diagonal miring pada Segitiga Pascal:<br><br>
+
+Diagonal 1: 1 = 1<br>
+
+Diagonal 2: 1 = 1<br>
+
+Diagonal 3: 1+1 = 2<br>
+
+Diagonal 4: 1+2 = 3<br>
+
+Diagonal 5: 1+3+1 = 5<br>
+
+Diagonal 6: 1+4+3 = 8<br>
+
+Diagonal 7: 1+5+6+1 = 13<br><br>
+
+Hasilnya: 1, 1, 2, 3, 5, 8, 13, ... — ini adalah <b>Bilangan Fibonacci</b>!
+
+</div>
+
+<h3>Pola 3: Pangkat 11</h3>
+
+<div class="example">
+
+Baris 0: 1 → 11⁰ = 1<br>
+
+Baris 1: 1, 1 → 11¹ = 11<br>
+
+Baris 2: 1, 2, 1 → 11² = 121<br>
+
+Baris 3: 1, 3, 3, 1 → 11³ = 1331<br>
+
+Baris 4: 1, 4, 6, 4, 1 → 11⁴ = 14641<br><br>
+
+Untuk baris kecil, angka-angka di Segitiga Pascal persis sama dengan digit-digit 11ⁿ!
+
+</div>
+
+<h3>Pola 4: Segitiga Sierpinski (Fraktal)</h3>
+
+<div class="example">
+
+Kalau kamu mewarnai semua <b>bilangan ganjil</b> di Segitiga Pascal dengan hitam,
+dan membiarkan bilangan genap putih, kamu akan mendapatkan pola <b>Segitiga Sierpinski</b>—
+sebuah fraktal terkenal! Pola ini terus berulang di setiap skala.
+Ini menunjukkan bahwa kombinatorika, teori bilangan, dan geometri fraktal saling terhubung.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: HUBUNGAN KOMBINASI DAN SEGITIGA PASCAL ==================== -->
+
+<div class="section">
+
+<h2>4. Hubungan Kombinasi dan Segitiga Pascal — Semua Menyatu</h2>
+
+<p>
+
+Sekarang kita bisa melihat gambaran besarnya. Tiga hal yang tampaknya berbeda:
+
+</p>
+
+<div class="summary">
+
+<b>1. Perpangkatan (x+y)ⁿ</b> — sesuatu dari aljabar.<br>
+
+<b>2. Kombinasi C(n,r)</b> — sesuatu dari kombinatorika (memilih).<br>
+
+<b>3. Segitiga Pascal</b> — sesuatu dari geometri/rekreasi matematika.<br><br>
+
+<b>Ketiganya adalah hal yang sama!</b>
+
+</div>
+
+<p>
+
+Koefisien dalam (x+y)ⁿ adalah C(n,r). C(n,r) disusun membentuk Segitiga Pascal.
+Segitiga Pascal dibangun dengan aturan penjumlahan yang merupakan identitas kombinasi.
+Semua saling terhubung dalam satu kerangka yang elegan.
+
+</p>
+
+<div class="example">
+
+<b>Bukti nyata keterhubungan ini:</b><br><br>
+
+(x+y)³ = 1x³ + 3x²y + 3xy² + 1y³ (Teorema Binomial).<br>
+
+Koefisien: 1, 3, 3, 1 = C(3,0), C(3,1), C(3,2), C(3,3).<br>
+
+Koefisien yang sama muncul di baris ke-3 Segitiga Pascal.<br>
+
+Aturan pembuatan baris ke-3: 1, 1+2=3, 2+1=3, 1 → persis C(3,r) = C(2,r-1)+C(2,r).<br><br>
+
+<b>Satu lingkaran penuh, semuanya konsisten.</b> ✅
+
+</div>
+<!-- ==================== MATERI 5: APLIKASI TEOREMA BINOMIAL ==================== -->
+
+<div class="section">
+
+<h2>5. Aplikasi Teorema Binomial — Lebih dari Sekadar Menjabarkan</h2>
+
+<p>
+
+Teorema Binomial bukan cuma untuk menjabarkan (x+y)ⁿ. Ia bisa dipakai
+untuk membuktikan identitas-identitas kombinatorik, mencari suku tengah,
+menghitung jumlah koefisien, dan masih banyak lagi. Di bagian ini,
+kita akan melihat beberapa aplikasi yang paling berguna.
+
+</p>
+
+<hr>
+
+<h3>5.1 Mencari Suku Tengah</h3>
+
+<div class="summary">
+
+Dalam penjabaran (x+y)ⁿ, jika <b>n genap</b>, ada <b>satu suku tengah</b>
+di posisi k = n/2. Jika <b>n ganjil</b>, ada <b>dua suku tengah</b>
+di posisi k = (n-1)/2 dan k = (n+1)/2.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Cari suku tengah dari penjabaran (x + 2)⁸.<br><br>
+
+n = 8 (genap). Suku tengah di k = 8/2 = <b>4</b>.<br>
+
+Suku ke-4 (dihitung dari k=0): C(8,4) × x⁴ × 2⁴.<br><br>
+
+C(8,4) = 70. 2⁴ = 16.<br><br>
+
+Suku tengah = 70 × x⁴ × 16 = <b>1120 x⁴</b>. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Cari suku tengah dari penjabaran (x + 3)⁷.<br><br>
+
+n = 7 (ganjil). Dua suku tengah di k = 3 dan k = 4.<br><br>
+
+Suku ke-3: C(7,3) × x³ × 3⁴ = 35 × x³ × 81 = <b>2835 x³</b>.<br>
+
+Suku ke-4: C(7,4) × x⁴ × 3³ = 35 × x⁴ × 27 = <b>945 x⁴</b>.<br><br>
+
+Dua suku tengah: <b>2835 x³ dan 945 x⁴</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Mencari Koefisien Tanpa Menjabarkan — Trik Substitusi</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dalam penjabaran (1 + x)¹⁰⁰, berapa koefisien dari x⁵⁰?<br><br>
+
+Langsung pakai rumus: suku x⁵⁰ = C(100,50) × 1⁵⁰ × x⁵⁰.<br>
+
+Koefisien = <b>C(100,50)</b>.<br><br>
+
+Kita tidak perlu menghitung nilainya (sangat besar!), cukup nyatakan dalam C(100,50). ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Membuktikan Identitas Kombinatorik dengan Teorema Binomial</h3>
+
+<p>
+
+Salah satu kekuatan terbesar Teorema Binomial adalah kemampuannya
+membuktikan identitas-identitas kombinatorik dengan elegan.
+
+</p>
+
+<div class="example">
+
+<b>Buktikan:</b> C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2ⁿ.<br><br>
+
+<b>Bukti:</b> Ambil Teorema Binomial (x+y)ⁿ = Σ C(n,k) xᵏ yⁿ⁻ᵏ.<br>
+
+Substitusi x = 1, y = 1:<br>
+
+(1+1)ⁿ = Σ C(n,k) × 1ᵏ × 1ⁿ⁻ᵏ<br>
+
+2ⁿ = Σ C(n,k). ✅<br><br>
+
+<b>Selesai dalam satu baris!</b> Tanpa Teorema Binomial, kita harus membuktikan
+dengan argumen kombinatorik yang lebih panjang.
+
+</div>
+
+<div class="example">
+
+<b>Buktikan:</b> C(n,0) - C(n,1) + C(n,2) - C(n,3) + ... + (-1)ⁿ C(n,n) = 0 (untuk n ≥ 1).<br><br>
+
+<b>Bukti:</b> Substitusi x = 1, y = -1 ke Teorema Binomial:<br>
+
+(1 + (-1))ⁿ = Σ C(n,k) × 1ᵏ × (-1)ⁿ⁻ᵏ<br>
+
+0ⁿ = 0 = Σ C(n,k) × (-1)ⁿ⁻ᵏ.<br>
+
+Kalikan kedua ruas dengan (-1)ⁿ: Σ (-1)ᵏ C(n,k) = 0. ✅<br><br>
+
+Artinya: jumlah koefisien posisi ganjil = jumlah koefisien posisi genap.
+
+</div>
+
+<hr>
+
+<h3>5.4 Identitas Vandermonde dari Teorema Binomial</h3>
+
+<div class="example">
+
+<b>Identitas Vandermonde:</b> Σ[k=0..r] C(m, k) × C(n, r-k) = C(m+n, r).<br><br>
+
+<b>Makna:</b> Memilih r orang dari gabungan dua kelompok (m dan n) sama dengan
+menjumlahkan semua kasus: k orang dari kelompok pertama dan (r-k) dari kelompok kedua.<br><br>
+
+<b>Bukti dengan Teorema Binomial:</b><br>
+
+(1+x)ᵐ⁺ⁿ = (1+x)ᵐ × (1+x)ⁿ.<br><br>
+
+Koefisien xʳ di ruas kiri: C(m+n, r).<br>
+
+Koefisien xʳ di ruas kanan: Σ C(m, k) × C(n, r-k) (dari perkalian dua deret).<br><br>
+
+Karena koefisien harus sama: Σ C(m,k) C(n,r-k) = C(m+n, r). ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: RANGKUMAN & PENUTUP ==================== -->
+
+<div class="section">
+
+<h2>6. Rangkuman — Satu Kesatuan yang Indah</h2>
+
+<p>
+
+Mari kita rangkum semua yang sudah kita pelajari di bab ini.
+Semuanya terhubung dalam satu kerangka yang elegan:
+
+</p>
+
+<div class="summary">
+
+<b>Teorema Binomial:</b> (x+y)ⁿ = Σ C(n,k) xᵏ yⁿ⁻ᵏ<br><br>
+
+<b>Koefisien binomial C(n,k):</b> Banyaknya cara memilih k objek dari n.<br>
+
+Ini adalah koefisien dalam penjabaran (x+y)ⁿ.<br><br>
+
+<b>Segitiga Pascal:</b> Susunan visual dari C(n,k).<br>
+
+Aturan pembangunannya: C(n,k) = C(n-1,k-1) + C(n-1,k).<br><br>
+
+<b>Identitas-identitas:</b><br>
+
+- Jumlah baris = 2ⁿ (substitusi x=1,y=1).<br>
+
+- Jumlah berselang-seling = 0 (substitusi x=1,y=-1).<br>
+
+- Fibonacci tersembunyi di diagonal.<br>
+
+- Pangkat 11 untuk n kecil.<br>
+
+- Vandermonde: Σ C(m,k)C(n,r-k) = C(m+n,r).
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kombinatorika 4</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Teorema Binomial:</b> (x+y)ⁿ = Σ C(n,k) xᵏ yⁿ⁻ᵏ. Koefisien = kombinasi.</li>
+
+<li><b>Bukti kombinatorik:</b> Memilih k kurung dari n untuk x → C(n,k) cara.</li>
+
+<li><b>Segitiga Pascal:</b> Susunan C(n,k). Aturan: jumlah dua di atasnya.</li>
+
+<li><b>Jumlah baris = 2ⁿ:</b> Substitusi x=y=1 ke Teorema Binomial.</li>
+
+<li><b>Fibonacci:</b> Jumlahkan diagonal miring Segitiga Pascal.</li>
+
+<li><b>Suku tengah:</b> n genap → satu suku (k=n/2). n ganjil → dua suku.</li>
+
+<li><b>Vandermonde:</b> Σ C(m,k)C(n,r-k) = C(m+n,r).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Untuk mencari koefisien tertentu, jangan menjabarkan semua.</b>
+Gunakan C(n,k) langsung. Ini jauh lebih cepat.
+
+</li>
+
+<li>
+
+<b>Untuk membuktikan identitas jumlah, substitusi x dan y yang sesuai.</b>
+x=1,y=1 untuk jumlah semua. x=1,y=-1 untuk jumlah berselang-seling.
+
+</li>
+
+<li>
+
+<b>Segitiga Pascal = kalkulator kombinasi manual.</b>
+Untuk n kecil (≤10), kamu bisa membaca C(n,k) langsung dari Segitiga Pascal
+tanpa menghitung faktorial.
+
+</li>
+
+<li>
+
+<b>Ingat simetri: C(n,k) = C(n,n-k).</b>
+Ini terlihat jelas di Segitiga Pascal—setiap baris simetris.
+
+</li>
+
+<li>
+
+<b>Teorema Binomial berlaku untuk semua bilangan, bukan cuma bulat.</b>
+Untuk pangkat negatif atau pecahan, ini menjadi deret tak hingga
+(deret binomial)—dipelajari di Kalkulus 8.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kombinatorika3.html" class="btn">⬅ Kembali</a>
+
+<a href="kombinatorika.html" class="btn">📚 Daftar Kombinatorika</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kombinatorika5.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
