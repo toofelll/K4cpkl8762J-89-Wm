@@ -1,1 +1,1897 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 6 - Distribusi Diskrit</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 6</h1>
+
+<h2>Distribusi Diskrit</h2>
+
+<p>
+
+Bab ini membahas keluarga distribusi peluang diskrit yang menjadi fondasi penting dalam teori probabilitas tingkat lanjut dan olimpiade.
+
+Setiap distribusi di sini menggambarkan pola acak yang berbeda, tetapi semuanya berasal dari satu ide dasar: <b>percobaan Bernoulli</b>.
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="#intro">Pengantar</a>
+
+<a href="#bernoulli">Bernoulli</a>
+
+<a href="#binomial">Binomial</a>
+
+<a href="#geometrik">Geometrik</a>
+
+<a href="#hipergeometrik">Hipergeometrik</a>
+
+<a href="#poisson">Poisson</a>
+
+<a href="#uniform">Uniform</a>
+
+</nav>
+
+<main>
+
+<section id="intro" class="materi">
+
+<h1>Pengantar Distribusi Diskrit</h1>
+
+<p>
+
+Distribusi diskrit adalah cara matematis untuk menggambarkan bagaimana peluang tersebar pada variabel acak yang hanya memiliki nilai terhitung (countable).
+
+</p>
+
+<p>
+
+Setiap distribusi menjawab pertanyaan berbeda dalam proses acak:
+
+</p>
+
+<ul>
+
+<li>Bernoulli → satu percobaan</li>
+<li>Binomial → jumlah sukses</li>
+<li>Geometrik → waktu sampai sukses pertama</li>
+<li>Hipergeometrik → tanpa pengembalian</li>
+<li>Poisson → jumlah kejadian dalam interval</li>
+<li>Uniform → semua hasil sama peluang</li>
+
+</ul>
+
+<div class="note">
+
+<h3>Intuisi Besar</h3>
+
+<p>
+
+Semua distribusi diskrit sebenarnya adalah variasi dari satu konsep utama: bagaimana kita memodelkan ketidakpastian dalam proses yang terukur.
+
+</p>
+
+</div>
+
+</section>
+<section id="bernoulli" class="materi">
+
+<h1>6.1 Distribusi Bernoulli</h1>
+
+<p>
+
+Distribusi Bernoulli adalah distribusi diskrit paling dasar.
+
+Semua distribusi lain di bab ini (Binomial, Geometrik, Hipergeometrik, Poisson) pada akhirnya dapat diturunkan dari konsep Bernoulli.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Bernoulli adalah percobaan acak yang hanya memiliki dua kemungkinan hasil:
+
+</p>
+
+<ul>
+
+<li><b>Sukses (1)</b></li>
+<li><b>Gagal (0)</b></li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Definisi Formal</h2>
+
+<p>
+
+Variabel acak X disebut berdistribusi Bernoulli jika:
+
+</p>
+
+<p class="rumus">
+
+X ∈ {0, 1}
+
+</p>
+
+<p>
+
+dengan probabilitas:
+
+</p>
+
+<p class="rumus">
+
+P(X = 1) = p  
+P(X = 0) = 1 - p
+
+</p>
+
+<p>
+
+dengan 0 ≤ p ≤ 1.
+
+</p>
+
+<hr>
+
+<h2>Fungsi PMF Bernoulli</h2>
+
+<p>
+
+Bentuk umum PMF Bernoulli dapat ditulis dalam satu rumus:
+
+</p>
+
+<p class="rumus">
+
+P(X = x) = p^x (1 - p)^(1 - x),  x ∈ {0,1}
+
+</p>
+
+<p>
+
+Rumus ini sangat penting karena menjadi dasar semua distribusi diskrit.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Koin Fair</h2>
+
+<p>
+
+Sebuah koin dilempar satu kali.
+
+Misalkan:
+
+</p>
+
+<ul>
+
+<li>X = 1 jika muncul kepala</li>
+<li>X = 0 jika muncul ekor</li>
+
+</ul>
+
+<p>
+
+Karena koin fair:
+
+</p>
+
+<p class="rumus">
+
+p = 1/2
+
+</p>
+
+<p>
+
+maka:
+
+</p>
+
+<p class="rumus">
+
+P(X=1)=1/2  
+P(X=0)=1/2
+
+</p>
+
+<hr>
+
+<h2>Contoh 2 — Kualitas Produk</h2>
+
+<p>
+
+Sebuah produk memiliki peluang cacat sebesar 0,1.
+
+Misalkan:
+
+</p>
+
+<ul>
+
+<li>X = 1 jika produk cacat</li>
+<li>X = 0 jika tidak cacat</li>
+
+</ul>
+
+<p>
+
+Maka:
+
+</p>
+
+<p class="rumus">
+
+P(X=1)=0.1  
+P(X=0)=0.9
+
+</p>
+
+<hr>
+
+<h2>Nilai Harapan dan Variansi</h2>
+
+<div class="note">
+
+<h3>Hasil Penting (Wajib Hafal)</h3>
+
+<p class="rumus">
+
+E(X) = p  
+Var(X) = p(1 - p)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="warning">
+
+<h3>Jangan Terkecoh</h3>
+
+<p>
+
+Bernoulli bukan hanya “koin”.
+
+Selama suatu kejadian hanya punya dua hasil, maka itu Bernoulli:
+
+</p>
+
+<ul>
+
+<li>Lulus / gagal</li>
+<li>Menang / kalah</li>
+<li>Rusak / tidak rusak</li>
+<li>Benar / salah</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Penting</h3>
+
+<p>
+
+Semua distribusi diskrit di bab ini sebenarnya dibangun dari pengulangan Bernoulli dengan aturan berbeda.
+
+</p>
+
+</div>
+
+</section>
+<section id="binomial" class="materi">
+
+<h1>6.2 Distribusi Binomial</h1>
+
+<p>
+
+Distribusi Binomial muncul ketika kita melakukan beberapa percobaan Bernoulli yang identik dan independen.
+
+Tujuannya adalah menghitung:
+
+<b>berapa banyak sukses yang terjadi dalam n percobaan.</b>
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Bayangkan kita mengulang percobaan Bernoulli sebanyak n kali.
+
+Setiap percobaan hanya punya dua hasil: sukses atau gagal.
+
+Binomial tidak peduli urutan, hanya jumlah sukses.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Syarat Distribusi Binomial</h2>
+
+<ul>
+
+<li>Jumlah percobaan tetap (n)</li>
+<li>Setiap percobaan independen</li>
+<li>Peluang sukses sama (p)</li>
+<li>Dua hasil: sukses / gagal</li>
+
+</ul>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+Jika X = jumlah sukses dalam n percobaan, maka:
+
+</p>
+
+<p class="rumus">
+
+X ~ Bin(n, p)
+
+</p>
+
+<hr>
+
+<h2>Fungsi PMF Binomial</h2>
+
+<p>
+
+Peluang tepat k sukses dari n percobaan adalah:
+
+</p>
+
+<p class="rumus">
+
+P(X = k) = C(n,k) · p^k · (1 - p)^(n - k)
+
+</p>
+
+<p>
+
+Komponen penting:
+
+</p>
+
+<ul>
+
+<li>C(n,k) → banyak cara memilih posisi sukses</li>
+<li>p^k → peluang k sukses</li>
+<li>(1-p)^(n-k) → peluang gagal</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh 1 — Koin 3 Kali</h2>
+
+<p>
+
+Sebuah koin fair dilempar 3 kali.
+
+Tentukan peluang tepat 2 kepala.
+
+</p>
+
+<h3>Langkah</h3>
+
+<p class="rumus">
+
+n = 3, k = 2, p = 1/2
+
+</p>
+
+<p class="rumus">
+
+P(X=2) = C(3,2)(1/2)^2(1/2)^1
+
+</p>
+
+<p class="rumus">
+
+= 3 × 1/8 = 3/8
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: 3/8</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2 — Peluang Lulus</h2>
+
+<p>
+
+Seorang siswa memiliki peluang lulus 0,7 setiap ujian.
+
+Jika ia mengikuti 4 ujian, berapa peluang tepat 3 kali lulus?
+
+</p>
+
+<p class="rumus">
+
+n = 4, k = 3, p = 0.7
+
+</p>
+
+<p class="rumus">
+
+P(X=3) = C(4,3)(0.7)^3(0.3)^1
+
+</p>
+
+<p class="rumus">
+
+= 4 × 0.343 × 0.3 = 0.4116
+
+</p>
+
+<hr>
+
+<h2>Nilai Harapan dan Variansi Binomial</h2>
+
+<div class="note">
+
+<p class="rumus">
+
+E(X) = np  
+Var(X) = np(1 - p)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa mencoba menghitung urutan satu per satu.
+
+Padahal Binomial hanya menghitung jumlah, bukan urutan.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Trik Penting</h3>
+
+<p>
+
+Soal Binomial hampir selalu bisa diselesaikan dengan:
+
+</p>
+
+<ul>
+
+<li>Identifikasi Bernoulli</li>
+<li>Tentukan n dan p</li>
+<li>Hitung k sukses</li>
+<li>Gunakan kombinasi</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section id="geometrik" class="materi">
+
+<h1>6.3 Distribusi Geometrik</h1>
+
+<p>
+
+Distribusi Geometrik muncul ketika kita mengulangi percobaan Bernoulli sampai mendapatkan <b>sukses pertama</b>.
+
+Berbeda dengan Binomial yang menghitung jumlah sukses, Geometrik fokus pada:
+
+<b>kapan sukses pertama terjadi.</b>
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Kita terus melakukan percobaan satu per satu.
+
+Tujuannya bukan menghitung berapa sukses, tetapi mencari percobaan ke berapa sukses pertama muncul.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Syarat Geometrik</h2>
+
+<ul>
+
+<li>Setiap percobaan independen</li>
+<li>Peluang sukses tetap (p)</li>
+<li>Percobaan diulang sampai sukses pertama</li>
+
+</ul>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+Jika X = jumlah percobaan sampai sukses pertama, maka:
+
+</p>
+
+<p class="rumus">
+
+X ~ Geo(p)
+
+</p>
+
+<p>
+
+Nilai X = 1, 2, 3, ...
+
+</p>
+
+<hr>
+
+<h2>Fungsi PMF Geometrik</h2>
+
+<p>
+
+Agar sukses pertama terjadi pada percobaan ke-k:
+
+</p>
+
+<p class="rumus">
+
+P(X = k) = (1 - p)^(k - 1) · p
+
+</p>
+
+<p>
+
+Artinya:
+- gagal sebanyak k−1 kali
+- lalu sukses pada percobaan ke-k
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Koin</h2>
+
+<p>
+
+Sebuah koin fair dilempar sampai muncul kepala pertama.
+
+Tentukan peluang kepala pertama muncul pada lemparan ke-3.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+p = 1/2, k = 3
+
+</p>
+
+<p class="rumus">
+
+P(X=3) = (1/2)^(2) · (1/2)
+
+</p>
+
+<p class="rumus">
+
+= 1/8
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: 1/8</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2 — Lampu</h2>
+
+<p>
+
+Sebuah lampu memiliki peluang rusak 0,2 setiap hari.
+
+Berapa peluang pertama kali rusak pada hari ke-4?
+
+</p>
+
+<p class="rumus">
+
+p = 0.2, k = 4
+
+</p>
+
+<p class="rumus">
+
+P(X=4) = (0.8)^3 · 0.2
+
+</p>
+
+<p class="rumus">
+
+= 0.1024
+
+</p>
+
+<hr>
+
+<h2>Nilai Harapan Geometrik</h2>
+
+<div class="note">
+
+<p class="rumus">
+
+E(X) = 1 / p
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasi penting:
+
+semakin kecil peluang sukses, semakin lama waktu yang dibutuhkan untuk sukses pertama.
+
+</p>
+
+<hr>
+
+<h2>Variansi Geometrik</h2>
+
+<p class="rumus">
+
+Var(X) = (1 - p) / p^2
+
+</p>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa mengira Geometrik mirip Binomial.
+
+Padahal:
+
+</p>
+
+<ul>
+
+<li>Binomial → jumlah sukses</li>
+<li>Geometrik → posisi sukses pertama</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Trik Cepat</h3>
+
+<p>
+
+Jika soal berbunyi:
+
+</p>
+
+<ul>
+
+<li>"pertama kali terjadi"</li>
+<li>"sampai sukses pertama"</li>
+<li>"berapa percobaan hingga berhasil"</li>
+
+</ul>
+
+<p>
+
+→ hampir pasti Geometrik.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section id="hipergeometrik" class="materi">
+
+<h1>6.4 Distribusi Hipergeometrik</h1>
+
+<p>
+
+Distribusi Hipergeometrik muncul ketika kita mengambil sampel <b>tanpa pengembalian</b> dari suatu populasi terbatas.
+
+Ini adalah perbedaan paling penting dibanding Binomial.
+
+</p>
+
+<div class="warning">
+
+<h3>Perbedaan Kunci dengan Binomial</h3>
+
+<ul>
+
+<li>Binomial → dengan pengembalian / independen</li>
+<li>Hipergeometrik → tanpa pengembalian / tidak independen</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Intuisi Kunci</h2>
+
+<p>
+
+Bayangkan sebuah kotak berisi bola:
+
+- Ada bola merah (sukses)
+- Ada bola biru (gagal)
+
+Kita mengambil beberapa bola tanpa mengembalikannya.
+
+Setiap pengambilan mengubah peluang berikutnya.
+
+</p>
+
+<hr>
+
+<h2>Parameter</h2>
+
+<ul>
+
+<li>N = total populasi</li>
+<li>K = jumlah sukses dalam populasi</li>
+<li>n = jumlah sampel</li>
+<li>X = jumlah sukses dalam sampel</li>
+
+</ul>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+X ~ Hipergeometrik(N, K, n)
+
+</p>
+
+<hr>
+
+<h2>Fungsi PMF</h2>
+
+<p>
+
+Peluang mendapatkan tepat k sukses adalah:
+
+</p>
+
+<p class="rumus">
+
+P(X = k) =
+[C(K, k) · C(N-K, n-k)] / C(N, n)
+
+</p>
+
+<p>
+
+Interpretasi:
+
+- pilih k sukses dari K
+- pilih sisanya dari gagal
+- dibagi semua kemungkinan sampel
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Bola dalam Kotak</h2>
+
+<p>
+
+Dalam kotak terdapat:
+
+- 5 bola merah
+- 3 bola biru
+
+Diambil 3 bola tanpa pengembalian.
+
+Tentukan peluang tepat 2 bola merah.
+
+</p>
+
+<h3>Langkah</h3>
+
+<p class="rumus">
+
+N = 8, K = 5, n = 3, k = 2
+
+</p>
+
+<p class="rumus">
+
+P(X=2) =
+[C(5,2) · C(3,1)] / C(8,3)
+
+</p>
+
+<p class="rumus">
+
+= (10 × 3) / 56 = 30/56 = 15/28
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: 15/28</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2 — Kartu</h2>
+
+<p>
+
+Dari 52 kartu diambil 5 kartu tanpa pengembalian.
+
+Peluang tepat 2 kartu As:
+
+</p>
+
+<p class="rumus">
+
+P(X=2) =
+[C(4,2) · C(48,3)] / C(52,5)
+
+</p>
+
+<hr>
+
+<h2>Perbandingan dengan Binomial</h2>
+
+<table>
+
+<tr>
+
+<th>Binomial</th>
+<th>Hipergeometrik</th>
+
+</tr>
+
+<tr>
+
+<td>Independen</td>
+<td>Tidak independen</td>
+
+</tr>
+
+<tr>
+
+<td>Ada pengembalian</td>
+<td>Tanpa pengembalian</td>
+
+</tr>
+
+<tr>
+
+<td>p tetap</td>
+<td>p berubah setiap langkah</td>
+
+</tr>
+
+<tr>
+
+<td>C(n,k)p^k(1-p)^(n-k)</td>
+<td>Kombinasi ganda</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Nilai Harapan</h2>
+
+<p class="rumus">
+
+E(X) = n · (K / N)
+
+</p>
+
+<hr>
+
+<h2>Variansi</h2>
+
+<p class="rumus">
+
+Var(X) =
+n · (K/N) · (1 - K/N) · (N - n)/(N - 1)
+
+</p>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Hipergeometrik hampir selalu muncul dalam soal:
+
+- pengambilan kartu
+- pengambilan bola
+- sampling tanpa replacement
+
+Jika ada kata "tanpa pengembalian", hampir pasti ini Hipergeometrik.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section id="poisson" class="materi">
+
+<h1>6.5 Distribusi Poisson</h1>
+
+<p>
+
+Distribusi Poisson digunakan untuk memodelkan jumlah kejadian yang terjadi dalam suatu interval waktu atau ruang.
+
+Berbeda dengan Binomial yang menghitung “jumlah sukses dalam n percobaan”, Poisson menghitung:
+
+<b>berapa banyak kejadian terjadi dalam interval kontinu</b>.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Poisson muncul ketika kejadian terjadi secara acak, tetapi dengan rata-rata kejadian tertentu dalam interval.
+
+Contoh:
+
+- jumlah pelanggan per jam
+- jumlah error per halaman
+- jumlah kendaraan per menit
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Parameter</h2>
+
+<p>
+
+Distribusi Poisson hanya memiliki satu parameter:
+
+</p>
+
+<p class="rumus">
+
+λ (lambda) = rata-rata kejadian dalam interval
+
+</p>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+Jika X adalah jumlah kejadian dalam suatu interval:
+
+</p>
+
+<p class="rumus">
+
+X ~ Poisson(λ)
+
+</p>
+
+<hr>
+
+<h2>Fungsi PMF Poisson</h2>
+
+<p>
+
+Peluang terjadi tepat k kejadian:
+
+</p>
+
+<p class="rumus">
+
+P(X = k) = (λ^k · e^{-λ}) / k!
+
+</p>
+
+<p>
+
+di mana:
+
+- e ≈ 2.71828
+- k! = faktorial
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Panggilan Telepon</h2>
+
+<p>
+
+Rata-rata ada 2 panggilan per menit.
+
+Tentukan peluang ada 3 panggilan dalam 1 menit.
+
+</p>
+
+<p class="rumus">
+
+λ = 2, k = 3
+
+</p>
+
+<p class="rumus">
+
+P(X=3) = (2^3 · e^{-2}) / 3!
+
+</p>
+
+<p class="rumus">
+
+= (8 · e^{-2}) / 6
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: (4/3)e^{-2}</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2 — Error Sistem</h2>
+
+<p>
+
+Rata-rata terjadi 0.5 error per halaman.
+
+Tentukan peluang tidak ada error dalam satu halaman.
+
+</p>
+
+<p class="rumus">
+
+λ = 0.5, k = 0
+
+</p>
+
+<p class="rumus">
+
+P(X=0) = e^{-0.5}
+
+</p>
+
+<hr>
+
+<h2>Nilai Harapan dan Variansi</h2>
+
+<div class="note">
+
+<p class="rumus">
+
+E(X) = λ  
+Var(X) = λ
+
+</p>
+
+</div>
+
+<p>
+
+Menariknya, pada Poisson:
+
+<b>mean = variansi</b>
+
+</p>
+
+<hr>
+
+<h2>Hubungan dengan Binomial</h2>
+
+<p>
+
+Poisson dapat dianggap sebagai limit dari Binomial:
+
+</p>
+
+<p class="rumus">
+
+Bin(n, p) → Poisson(λ)
+
+dengan λ = np, saat n besar dan p kecil
+
+</p>
+
+<div class="warning">
+
+<h3>Makna Penting</h3>
+
+<p>
+
+Jika kejadian jarang terjadi tetapi percobaan sangat banyak, maka Binomial akan mendekati Poisson.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="note">
+
+<h3>Trik Identifikasi</h3>
+
+<p>
+
+Gunakan Poisson jika:
+
+</p>
+
+<ul>
+
+<li>“jumlah kejadian dalam waktu/ruang”</li>
+<li>kejadian jarang</li>
+<li>tidak ada n percobaan eksplisit</li>
+<li>hanya rata-rata (λ) yang diketahui</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section id="uniform" class="materi">
+
+<h1>6.6 Distribusi Uniform Diskrit</h1>
+
+<p>
+
+Distribusi Uniform Diskrit adalah distribusi paling sederhana dalam keluarga distribusi diskrit.
+
+Pada distribusi ini, setiap nilai yang mungkin memiliki peluang yang sama besar.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Tidak ada nilai yang lebih “diunggulkan”.
+
+Semua hasil dianggap setara dalam hal peluang.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+Jika variabel acak X dapat mengambil nilai dari himpunan diskrit berukuran n:
+
+</p>
+
+<p class="rumus">
+
+X ∈ {x₁, x₂, ..., xₙ}
+
+</p>
+
+<p>
+
+maka:
+
+</p>
+
+<p class="rumus">
+
+P(X = xᵢ) = 1/n
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Dadu Fair</h2>
+
+<p>
+
+Sebuah dadu fair dilempar.
+
+</p>
+
+<p>
+
+Semua hasil memiliki peluang yang sama:
+
+</p>
+
+<p class="rumus">
+
+P(X = 1) = P(X = 2) = ... = P(X = 6) = 1/6
+
+</p>
+
+<hr>
+
+<h2>Contoh 2 — Kartu Acak</h2>
+
+<p>
+
+Satu kartu diambil dari 52 kartu.
+
+Setiap kartu memiliki peluang yang sama:
+
+</p>
+
+<p class="rumus">
+
+P(X = kartu tertentu) = 1/52
+
+</p>
+
+<hr>
+
+<h2>Nilai Harapan</h2>
+
+<p>
+
+Jika nilai-nilai berurutan dari a sampai b:
+
+</p>
+
+<p class="rumus">
+
+E(X) = (a + b) / 2
+
+</p>
+
+<p>
+
+Artinya, rata-rata berada di tengah interval.
+
+</p>
+
+<hr>
+
+<h2>Variansi</h2>
+
+<p>
+
+Untuk distribusi uniform diskrit berurutan:
+
+</p>
+
+<p class="rumus">
+
+Var(X) = ((b - a + 1)² - 1) / 12
+
+</p>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<p>
+
+Banyak siswa mengira “uniform” berarti “acak bebas”.
+
+Padahal arti sebenarnya adalah:
+
+<b>semua hasil memiliki peluang yang sama</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="note">
+
+<h3>Ciri Soal Uniform</h3>
+
+<ul>
+
+<li>Tidak ada informasi probabilitas khusus</li>
+<li>Semua hasil simetris</li>
+<li>Dikatakan “acak secara adil”</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Hubungan dengan Distribusi Lain</h2>
+
+<p>
+
+Uniform adalah dasar paling netral dalam distribusi diskrit.
+
+Distribusi lain muncul ketika:
+
+</p>
+
+<ul>
+
+<li>Bernoulli → hanya 2 hasil</li>
+<li>Binomial → pengulangan Bernoulli</li>
+<li>Geometrik → sampai sukses pertama</li>
+<li>Hipergeometrik → tanpa pengembalian</li>
+<li>Poisson → kejadian jarang dalam interval</li>
+
+</ul>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>6.x Peta Besar Distribusi Diskrit</h1>
+
+<p>
+
+Setelah mempelajari semua distribusi diskrit, bagian terpenting bukan hanya rumusnya, tetapi:
+
+<b>kapan harus menggunakan distribusi yang tepat.</b>
+
+Ini adalah inti strategi olimpiade.
+
+</p>
+
+<hr>
+
+<h2>Kerangka Besar (Mind Map)</h2>
+
+<p>
+
+Semua distribusi diskrit dapat dipetakan dari satu pertanyaan utama:
+
+</p>
+
+<div class="note">
+
+<h3>Pertanyaan Dasar</h3>
+
+<p>
+
+“Apa yang sedang kita hitung dari proses acak ini?”
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>1. Apakah hanya 1 percobaan?</h2>
+
+<p>
+
+Jika hanya satu percobaan dengan dua kemungkinan hasil:
+
+</p>
+
+<p class="rumus">
+
+→ Bernoulli
+
+</p>
+
+<hr>
+
+<h2>2. Apakah banyak percobaan dan menghitung jumlah sukses?</h2>
+
+<p>
+
+Jika percobaan diulang n kali dan kita menghitung total sukses:
+
+</p>
+
+<p class="rumus">
+
+→ Binomial
+
+</p>
+
+<hr>
+
+<h2>3. Apakah sampai sukses pertama?</h2>
+
+<p>
+
+Jika percobaan diulang sampai sukses pertama muncul:
+
+</p>
+
+<p class="rumus">
+
+→ Geometrik
+
+</p>
+
+<hr>
+
+<h2>4. Apakah tanpa pengembalian?</h2>
+
+<p>
+
+Jika pengambilan dilakukan dari populasi terbatas tanpa pengembalian:
+
+</p>
+
+<p class="rumus">
+
+→ Hipergeometrik
+
+</p>
+
+<hr>
+
+<h2>5. Apakah menghitung kejadian dalam interval?</h2>
+
+<p>
+
+Jika kita menghitung jumlah kejadian dalam waktu/ruang tertentu:
+
+</p>
+
+<p class="rumus">
+
+→ Poisson
+
+</p>
+
+<hr>
+
+<h2>6. Apakah semua hasil sama peluang?</h2>
+
+<p>
+
+Jika semua kemungkinan dianggap setara:
+
+</p>
+
+<p class="rumus">
+
+→ Uniform Diskrit
+
+</p>
+
+<hr>
+
+<h2>Tabel Ringkas Olimpiade</h2>
+
+<table>
+
+<tr>
+<th>Situasi</th>
+<th>Distribusi</th>
+</tr>
+
+<tr>
+<td>1 percobaan</td>
+<td>Bernoulli</td>
+</tr>
+
+<tr>
+<td>n percobaan, hitung sukses</td>
+<td>Binomial</td>
+</tr>
+
+<tr>
+<td>sampai sukses pertama</td>
+<td>Geometrik</td>
+</tr>
+
+<tr>
+<td>tanpa pengembalian</td>
+<td>Hipergeometrik</td>
+</tr>
+
+<tr>
+<td>kejadian dalam interval</td>
+<td>Poisson</td>
+</tr>
+
+<tr>
+<td>semua sama peluang</td>
+<td>Uniform</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Strategi Cepat Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Dalam soal olimpiade, langkah pertama bukan menghitung, tetapi:
+
+</p>
+
+<ul>
+
+<li>Identifikasi struktur percobaan</li>
+<li>Tentukan apakah ada pengulangan</li>
+<li>Cek independensi atau tidak</li>
+<li>Lihat apakah ada “tanpa pengembalian”</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Fatal Siswa</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Salah memilih distribusi</li>
+<li>Menggunakan Binomial padahal tanpa pengembalian</li>
+<li>Menggunakan Geometrik padahal ada batas n</li>
+<li>Mengira Poisson butuh n percobaan eksplisit</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>6.x Cheat Sheet Distribusi Diskrit</h1>
+
+<p>
+
+Bagian ini merangkum semua rumus penting yang wajib dikuasai untuk kecepatan olimpiade.
+
+Tujuannya bukan hanya memahami, tetapi <b>menghafal pola inti</b>.
+
+</p>
+
+<hr>
+
+<h2>1. Bernoulli</h2>
+
+<p class="rumus">
+
+X ~ Bern(p)
+
+</p>
+
+<p class="rumus">
+
+P(X=1)=p, P(X=0)=1-p  
+E(X)=p  
+Var(X)=p(1-p)
+
+</p>
+
+<hr>
+
+<h2>2. Binomial</h2>
+
+<p class="rumus">
+
+X ~ Bin(n,p)
+
+</p>
+
+<p class="rumus">
+
+P(X=k)=C(n,k)p^k(1-p)^(n-k)  
+E(X)=np  
+Var(X)=np(1-p)
+
+</p>
+
+<hr>
+
+<h2>3. Geometrik</h2>
+
+<p class="rumus">
+
+X ~ Geo(p)
+
+</p>
+
+<p class="rumus">
+
+P(X=k)=(1-p)^(k-1)p  
+E(X)=1/p  
+Var(X)=(1-p)/p²
+
+</p>
+
+<hr>
+
+<h2>4. Hipergeometrik</h2>
+
+<p class="rumus">
+
+X ~ Hyper(N,K,n)
+
+</p>
+
+<p class="rumus">
+
+P(X=k)= [C(K,k)C(N-K,n-k)] / C(N,n)  
+E(X)=n(K/N)  
+Var(X)=n(K/N)(1-K/N)(N-n)/(N-1)
+
+</p>
+
+<hr>
+
+<h2>5. Poisson</h2>
+
+<p class="rumus">
+
+X ~ Pois(λ)
+
+</p>
+
+<p class="rumus">
+
+P(X=k)=(λ^k e^{-λ})/k!  
+E(X)=λ  
+Var(X)=λ
+
+</p>
+
+<hr>
+
+<h2>6. Uniform Diskrit</h2>
+
+<p class="rumus">
+
+P(X=x)=1/n
+
+</p>
+
+<p class="rumus">
+
+E(X)=(a+b)/2  
+Var(X)=((b-a+1)² - 1)/12
+
+</p>
+
+<hr>
+
+<h2>Super Insight Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Hampir semua soal distribusi bisa diselesaikan dengan 3 langkah:
+
+</p>
+
+<ol>
+
+<li>Identifikasi distribusi</li>
+<li>Tentukan parameter</li>
+<li>Pakai rumus inti (PMF / E / Var)</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Cepat yang Harus Dihindari</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Lupa cek independensi (Binomial vs Hypergeometric)</li>
+<li>Salah interpretasi “sampai” (Geometrik)</li>
+<li>Mengira Poisson butuh percobaan n</li>
+<li>Mengabaikan λ sebagai rata-rata</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>Penutup Bab 6</h1>
+
+<p>
+
+Distribusi diskrit bukan hanya kumpulan rumus, tetapi cara berpikir untuk memodelkan ketidakpastian.
+
+Jika konsep ini sudah kuat, maka hampir semua soal peluang tingkat olimpiade bisa dipetakan dengan jelas.
+
+</p>
+
+<div class="note">
+
+<h3>Pesan Penting</h3>
+
+<p>
+
+Kunci utama bukan menghafal rumus, tetapi memahami:
+
+<b>“proses acak seperti apa yang sedang dimodelkan?”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ringkasan Akhir</h2>
+
+<ul>
+
+<li>Bernoulli → satu percobaan dua hasil</li>
+<li>Binomial → jumlah sukses dari n percobaan</li>
+<li>Geometrik → sukses pertama</li>
+<li>Hipergeometrik → tanpa pengembalian</li>
+<li>Poisson → kejadian dalam interval</li>
+<li>Uniform → semua sama peluang</li>
+
+</ul>
+
+<hr>
+
+<div class="warning">
+
+<h3>Mindset Olimpiade</h3>
+
+<p>
+
+Soal sulit bukan karena rumusnya sulit, tetapi karena:
+
+- salah memilih model
+- salah membaca proses acak
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Modul Probabilitas Olimpiade — Bab 6 Distribusi Diskrit</p>
+
+</footer>
+
+<div class="navigation-buttons">
+
+<a href="peluang5.html" class="btn-home">⬅ Bab Sebelumnya</a>
+<a href="peluang7.html" class="btn-next">Bab Selanjutnya ➜</a>
+<a href="index.html" class="btn-home">🏠 Home</a>
+
+</div>
+
+</body>
+</html>
