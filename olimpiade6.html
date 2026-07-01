@@ -1,1 +1,1801 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 6 - Prinsip Ekstrem & Descent</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bab 6</h1>
+
+<h2>Prinsip Ekstrem & Descent</h2>
+
+<p>
+
+Pada bab ini kamu akan mempelajari beberapa teknik yang sering muncul
+dalam Olimpiade Matematika tingkat lanjut.
+
+Berbeda dengan bab sebelumnya yang lebih banyak menggunakan pola,
+bab ini mengajarkan bagaimana memilih objek "paling istimewa"
+dan memanfaatkannya untuk memperoleh pembuktian.
+
+Teknik-teknik ini sangat terkenal pada soal OSN,
+IMO Shortlist,
+hingga International Mathematical Olympiad (IMO).
+
+</p>
+
+<div class="note">
+
+<h3>Materi Bab Ini</h3>
+
+<ul>
+
+<li>① Extremal Principle</li>
+
+<li>② Extremal Principle + Pigeonhole Combination</li>
+
+<li>③ Infinite Descent</li>
+
+<li>④ Infinite Ascent</li>
+
+<li>⑤ Vieta Jumping</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<section class="section">
+
+<h1>① Extremal Principle (Prinsip Ekstrem)</h1>
+
+<h2>📖 Apa itu Extremal Principle?</h2>
+
+<p>
+
+<b>Extremal Principle</b> adalah teknik pembuktian dengan memilih
+suatu objek yang memiliki sifat paling ekstrem,
+misalnya:
+
+</p>
+
+<ul>
+
+<li>Paling besar</li>
+
+<li>Paling kecil</li>
+
+<li>Paling panjang</li>
+
+<li>Paling pendek</li>
+
+<li>Paling kiri</li>
+
+<li>Paling kanan</li>
+
+<li>Paling awal</li>
+
+<li>Paling akhir</li>
+
+</ul>
+
+<p>
+
+Setelah objek ekstrem dipilih,
+kita memanfaatkan sifat khususnya
+untuk memperoleh informasi baru
+atau menemukan kontradiksi.
+
+Teknik ini merupakan salah satu metode pembuktian
+yang paling sering digunakan pada Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📜 Sejarah Singkat</h2>
+
+<p>
+
+Prinsip Ekstrem tidak berasal dari satu orang tertentu,
+melainkan berkembang sebagai teknik pembuktian
+dalam kombinatorika, geometri,
+dan teori bilangan.
+
+Saat ini,
+Extremal Principle menjadi salah satu teknik standar
+dalam pembinaan Olimpiade Matematika di berbagai negara.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan terdapat seratus batang kayu
+dengan panjang yang berbeda.
+
+Daripada menganalisis semuanya,
+kita cukup memilih batang kayu yang paling panjang.
+
+Karena tidak ada batang lain yang lebih panjang,
+banyak kemungkinan menjadi lebih mudah dianalisis.
+
+Inilah inti dari Extremal Principle.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Ide Dasar</h2>
+
+<p>
+
+Langkah umum menggunakan Extremal Principle adalah:
+
+</p>
+
+<ol>
+
+<li>Pilih objek yang paling ekstrem.</li>
+
+<li>Analisis sifat objek tersebut.</li>
+
+<li>Tunjukkan bahwa sifat tersebut memaksa terjadinya kondisi tertentu.</li>
+
+<li>Peroleh jawaban atau kontradiksi.</li>
+
+</ol>
+
+<p>
+
+Banyak soal yang tampak rumit menjadi jauh lebih sederhana
+setelah objek ekstrem dipilih.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Di dalam sebuah kelompok siswa,
+setiap siswa memiliki tinggi badan yang berbeda.
+
+Jika ingin membandingkan tinggi badan,
+akan lebih mudah memilih siswa yang paling tinggi.
+
+Karena tidak ada siswa yang lebih tinggi darinya,
+kita memperoleh informasi yang tidak dimiliki siswa lain.
+
+Prinsip yang sama digunakan
+dalam banyak pembuktian Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Matematika</h2>
+
+<p>
+
+Misalkan terdapat beberapa bilangan bulat positif.
+
+Pilihlah bilangan yang paling kecil.
+
+Karena tidak ada bilangan lain
+yang lebih kecil darinya,
+setiap operasi yang menghasilkan bilangan
+lebih kecil harus dianalisis dengan hati-hati.
+
+Jika ternyata operasi tersebut memang menghasilkan
+bilangan yang lebih kecil,
+maka terjadi kontradiksi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Mengapa Teknik Ini Efektif?</h2>
+
+<ul>
+
+<li>Mengurangi banyaknya kasus yang perlu diperiksa.</li>
+
+<li>Memberikan objek dengan sifat paling kuat.</li>
+
+<li>Sering menghasilkan kontradiksi secara alami.</li>
+
+<li>Dapat digabung dengan teknik lain seperti Invariant, Pigeonhole, atau Infinite Descent.</li>
+
+</ul>
+
+</section><section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Misalkan terdapat beberapa bilangan bulat positif.
+
+Buktikan bahwa selalu ada bilangan
+yang tidak mempunyai kelipatan lain
+di dalam himpunan tersebut.
+
+</p>
+
+<h3>Ide Penyelesaian</h3>
+
+<p>
+
+Pilih bilangan yang <b>paling besar</b>.
+
+Karena merupakan bilangan terbesar,
+tidak mungkin terdapat kelipatannya
+yang juga berada di dalam himpunan.
+
+Dengan memilih objek ekstrem,
+kita langsung memperoleh sifat yang dibutuhkan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Extremal Principle?</h2>
+
+<ul>
+
+<li>Soal meminta membuktikan keberadaan suatu objek.</li>
+
+<li>Terdapat himpunan hingga (finite set).</li>
+
+<li>Dapat memilih objek terbesar atau terkecil.</li>
+
+<li>Soal kombinatorika.</li>
+
+<li>Soal geometri.</li>
+
+<li>Soal teori bilangan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Memilih objek yang bukan ekstrem.</li>
+
+<li>Tidak memanfaatkan sifat objek ekstrem.</li>
+
+<li>Menganggap semua soal cocok menggunakan teknik ini.</li>
+
+<li>Tidak membuktikan mengapa objek ekstrem pasti ada.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal melibatkan banyak objek,
+cobalah bertanya:
+
+</p>
+
+<pre>
+
+"Bagaimana jika aku memilih
+objek yang paling besar?"
+
+atau
+
+"Bagaimana jika aku memilih
+objek yang paling kecil?"
+
+</pre>
+
+<p>
+
+Sering kali,
+solusi akan muncul dari sifat khusus objek tersebut.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Extremal Principle</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Memilih objek paling ekstrem.</td>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Menyederhanakan pembuktian.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Kombinatorika, Geometri, Teori Bilangan.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>② Extremal Principle + Pigeonhole Combination</h1>
+
+<h2>📖 Mengapa Digabung?</h2>
+
+<p>
+
+Dalam beberapa soal Olimpiade,
+satu teknik saja belum cukup.
+
+Kita perlu menggabungkan dua teknik
+agar pembuktian menjadi lebih kuat.
+
+Salah satu kombinasi yang paling sering digunakan adalah
+<b>Extremal Principle</b>
+dan
+<b>Pigeonhole Principle</b>.
+
+</p>
+
+<p>
+
+Ide umumnya adalah:
+
+</p>
+
+<ol>
+
+<li>Pilih objek yang paling ekstrem.</li>
+
+<li>Gunakan Pigeonhole Principle untuk menunjukkan bahwa suatu keadaan pasti terjadi.</li>
+
+<li>Gabungkan kedua informasi tersebut untuk memperoleh kontradiksi atau solusi.</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan terdapat banyak kotak
+dan banyak bola.
+
+Dengan Pigeonhole Principle,
+kita mengetahui bahwa pasti ada kotak
+yang berisi lebih dari satu bola.
+
+Selanjutnya,
+pilih kotak yang berisi bola paling banyak
+(objek ekstrem).
+
+Karena kotak tersebut adalah yang paling penuh,
+kita memperoleh informasi tambahan
+yang sering menjadi kunci penyelesaian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan terdapat
+
+</p>
+
+<pre>
+
+25 siswa
+
+</pre>
+
+<p>
+
+yang dibagi ke dalam
+
+</p>
+
+<pre>
+
+4 kelompok
+
+</pre>
+
+<p>
+
+Menurut Pigeonhole Principle,
+minimal ada satu kelompok
+yang berisi sedikitnya
+
+</p>
+
+<pre>
+
+⌈25/4⌉ = 7
+
+</pre>
+
+<p>
+
+Pilih kelompok tersebut.
+
+Kelompok itu merupakan kelompok
+dengan jumlah anggota paling banyak,
+sehingga dapat dianalisis lebih lanjut
+menggunakan Extremal Principle.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Ide Soal OSN</h2>
+
+<p>
+
+Dalam banyak soal kombinatorika,
+langkah pertama adalah membuktikan
+bahwa suatu kelompok "besar" pasti ada
+(Pigeonhole Principle).
+
+Kemudian,
+kelompok terbesar atau terkecil dipilih
+(Extremal Principle)
+untuk menyelesaikan pembuktian.
+
+Teknik gabungan ini sering muncul
+pada soal OSN tingkat provinsi,
+nasional,
+hingga IMO.
+
+</p>
+
+</section><section class="section">
+
+<h2>🎯 Kapan Menggunakan Gabungan Ini?</h2>
+
+<ul>
+
+<li>Jumlah objek lebih banyak daripada kategori.</li>
+
+<li>Perlu memilih kelompok terbesar atau terkecil.</li>
+
+<li>Mencari kontradiksi.</li>
+
+<li>Pembuktian kombinatorika.</li>
+
+<li>Soal graf.</li>
+
+<li>Masalah pembagian objek.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menggunakan Pigeonhole tanpa menentukan objek dan kotak.</li>
+
+<li>Memilih objek yang bukan ekstrem.</li>
+
+<li>Tidak menghubungkan kedua teknik.</li>
+
+<li>Menganggap kedua teknik bekerja secara terpisah.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal memiliki banyak kelompok
+dan setelah itu meminta menganalisis
+kelompok terbesar atau terkecil,
+kemungkinan besar teknik gabungan ini
+merupakan solusi yang tepat.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Gabungan Teknik</h2>
+
+<table>
+
+<tr>
+
+<th>Teknik</th>
+
+<th>Peran</th>
+
+</tr>
+
+<tr>
+
+<td>Pigeonhole Principle</td>
+
+<td>Membuktikan suatu kelompok pasti ada.</td>
+
+</tr>
+
+<tr>
+
+<td>Extremal Principle</td>
+
+<td>Memilih kelompok paling besar atau paling kecil.</td>
+
+</tr>
+
+<tr>
+
+<td>Gabungan</td>
+
+<td>Menghasilkan pembuktian yang lebih kuat.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>③ Infinite Descent (Metode Infinite Descent)</h1>
+
+<h2>📖 Apa itu Infinite Descent?</h2>
+
+<p>
+
+<b>Infinite Descent</b> (Penurunan Tak Hingga)
+adalah teknik pembuktian yang menunjukkan bahwa
+jika suatu solusi dianggap ada,
+maka kita selalu dapat membangun solusi lain
+yang lebih kecil.
+
+Proses ini dapat diulang terus-menerus,
+sehingga menghasilkan deret solusi yang semakin kecil tanpa batas.
+
+Karena bilangan bulat positif tidak mungkin terus mengecil selamanya,
+maka asumsi awal harus salah.
+
+Dengan demikian,
+pernyataan yang ingin dibuktikan menjadi benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📜 Sejarah Singkat</h2>
+
+<p>
+
+Metode ini pertama kali dipopulerkan oleh
+<b>Pierre de Fermat</b>.
+
+Beliau menggunakan teknik ini
+untuk membuktikan berbagai teorema
+dalam teori bilangan,
+terutama yang berkaitan dengan persamaan Diophantine.
+
+Hingga saat ini,
+Infinite Descent tetap menjadi salah satu teknik klasik
+dalam Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan terdapat sebuah tangga.
+
+Setiap kali kamu menemukan solusi,
+ternyata selalu ada solusi lain
+yang berada satu anak tangga di bawahnya.
+
+Kemudian dari solusi baru tersebut,
+masih ada solusi yang lebih rendah lagi.
+
+Jika tangga itu tidak memiliki dasar,
+kita bisa turun selamanya.
+
+Namun bilangan bulat positif memiliki batas bawah,
+yaitu 1.
+
+Karena itu,
+proses turun tanpa akhir tidak mungkin terjadi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Ide Dasar</h2>
+
+<ol>
+
+<li>Anggap terdapat suatu solusi.</li>
+
+<li>Tunjukkan bahwa dari solusi tersebut dapat dibuat solusi yang lebih kecil.</li>
+
+<li>Ulangi proses tersebut.</li>
+
+<li>Terjadi kontradiksi karena bilangan bulat positif tidak dapat turun tanpa batas.</li>
+
+<li>Kesimpulan: asumsi awal salah.</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan kita menganggap terdapat bilangan bulat positif terkecil
+yang memenuhi suatu sifat tertentu.
+
+Kemudian kita berhasil menunjukkan
+bahwa masih ada bilangan positif lain
+yang lebih kecil
+dan juga memenuhi sifat tersebut.
+
+Hal ini bertentangan dengan asumsi
+bahwa solusi pertama adalah yang paling kecil.
+
+Maka asumsi awal harus salah.
+
+</p>
+
+</section><section class="section">
+
+<h2>📝 Contoh Pembuktian Sederhana</h2>
+
+<p>
+
+Misalkan kita ingin membuktikan bahwa
+suatu persamaan tidak memiliki solusi
+bilangan bulat positif.
+
+Langkah pertama adalah menganggap
+bahwa solusi tersebut memang ada.
+
+Selanjutnya,
+pilih solusi dengan nilai paling kecil.
+
+Kemudian tunjukkan bahwa dari solusi itu
+dapat dibentuk solusi baru
+yang lebih kecil tetapi tetap memenuhi persamaan.
+
+Hal ini bertentangan dengan fakta bahwa
+kita telah memilih solusi terkecil.
+
+Karena kontradiksi muncul,
+maka solusi semula tidak mungkin ada.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Soal Gaya OSN</h2>
+
+<p>
+
+Misalkan suatu soal meminta membuktikan bahwa
+persamaan tertentu tidak memiliki solusi
+bilangan bulat positif.
+
+Daripada mencoba semua kemungkinan,
+gunakan langkah berikut:
+
+</p>
+
+<ol>
+
+<li>Andaikan terdapat sebuah solusi.</li>
+
+<li>Pilih solusi dengan nilai terkecil.</li>
+
+<li>Bentuk solusi lain yang lebih kecil.</li>
+
+<li>Peroleh kontradiksi.</li>
+
+<li>Simpulkan bahwa solusi tidak ada.</li>
+
+</ol>
+
+<p>
+
+Teknik ini sering muncul pada soal
+Teori Bilangan tingkat OSN Nasional
+hingga International Mathematical Olympiad (IMO).
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Infinite Descent?</h2>
+
+<ul>
+
+<li>Persamaan Diophantine.</li>
+
+<li>Teori Bilangan.</li>
+
+<li>Pembuktian kontradiksi.</li>
+
+<li>Membuktikan solusi tidak ada.</li>
+
+<li>Masalah yang melibatkan bilangan bulat positif.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Tidak memilih solusi terkecil di awal.</li>
+
+<li>Solusi baru ternyata tidak lebih kecil.</li>
+
+<li>Tidak membuktikan bahwa proses dapat diulang.</li>
+
+<li>Menggunakan teknik ini pada himpunan yang tidak memiliki batas bawah.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika soal meminta membuktikan
+bahwa suatu solusi tidak mungkin ada,
+dan melibatkan bilangan bulat positif,
+
+cobalah menggunakan langkah berikut:
+
+</p>
+
+<pre>
+
+Pilih solusi terkecil
+↓
+
+Bangun solusi yang lebih kecil
+↓
+
+Kontradiksi
+
+</pre>
+
+<p>
+
+Pola ini merupakan ciri khas
+Infinite Descent.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Infinite Descent</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Membangun solusi yang selalu lebih kecil.</td>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Memperoleh kontradiksi.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Teori Bilangan, Persamaan Diophantine.</td>
+
+</tr>
+
+<tr>
+
+<td>Pelopor</td>
+
+<td>Pierre de Fermat.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>④ Infinite Ascent (Penanjakan Tak Hingga)</h1>
+
+<h2>📖 Apa itu Infinite Ascent?</h2>
+
+<p>
+
+<b>Infinite Ascent</b> adalah teknik pembuktian yang merupakan kebalikan dari
+<b>Infinite Descent</b>.
+
+Jika Infinite Descent membangun solusi yang semakin kecil,
+maka Infinite Ascent membangun solusi yang semakin besar.
+
+Teknik ini menunjukkan bahwa apabila suatu solusi ada,
+maka dapat dibentuk solusi lain yang lebih besar,
+kemudian lebih besar lagi, dan seterusnya.
+
+Pada beberapa masalah, hal ini bertentangan
+dengan syarat bahwa solusi harus memiliki batas tertentu,
+sehingga menghasilkan kontradiksi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan menaiki tangga.
+
+Dari satu anak tangga,
+selalu ada anak tangga yang lebih tinggi.
+
+Jika suatu aturan mengatakan bahwa tangga memiliki jumlah anak tangga terbatas,
+tetapi kita dapat terus naik tanpa akhir,
+maka aturan tersebut pasti salah.
+
+Inilah ide utama dari Infinite Ascent.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Ide Dasar</h2>
+
+<ol>
+
+<li>Andaikan terdapat suatu solusi.</li>
+
+<li>Bangun solusi lain yang lebih besar.</li>
+
+<li>Ulangi proses tersebut.</li>
+
+<li>Peroleh kontradiksi karena solusi seharusnya memiliki batas.</li>
+
+<li>Simpulkan bahwa asumsi awal salah.</li>
+
+</ol>
+
+</section><section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan terdapat suatu proses yang selalu menghasilkan
+bilangan bulat yang lebih besar dari sebelumnya.
+
+Jika diketahui bahwa semua solusi harus berada
+di dalam himpunan yang terbatas,
+maka proses tersebut tidak mungkin berlangsung selamanya.
+
+Karena kita dapat terus membangun solusi yang lebih besar,
+terjadi kontradiksi.
+
+Dengan demikian,
+asumsi awal harus salah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Ide Soal OSN</h2>
+
+<p>
+
+Beberapa soal kombinatorika dan teori bilangan
+mengharuskan kita menunjukkan bahwa
+suatu proses tidak mungkin berhenti.
+
+Dengan membangun solusi yang selalu lebih besar,
+kita memperoleh deret solusi tak hingga.
+
+Apabila kondisi soal menyatakan bahwa
+jumlah solusi seharusnya terbatas,
+maka muncul kontradiksi.
+
+Walaupun lebih jarang digunakan daripada
+Infinite Descent,
+teknik ini tetap muncul pada beberapa soal
+Olimpiade tingkat lanjut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Infinite Ascent?</h2>
+
+<ul>
+
+<li>Proses selalu menghasilkan nilai yang lebih besar.</li>
+
+<li>Jumlah solusi seharusnya terbatas.</li>
+
+<li>Pembuktian kontradiksi.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Teori Bilangan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Tidak menunjukkan bahwa solusi baru benar-benar lebih besar.</li>
+
+<li>Tidak ada batas atas pada himpunan solusi.</li>
+
+<li>Menggunakan teknik ini ketika proses sebenarnya bisa berhenti.</li>
+
+<li>Menyimpulkan kontradiksi tanpa pembuktian.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Infinite Ascent memang lebih jarang muncul
+dibandingkan Infinite Descent.
+
+Namun apabila suatu soal memungkinkan
+membangun solusi yang selalu semakin besar,
+sementara kondisi soal menyatakan bahwa
+solusi harus terbatas,
+maka teknik ini sangat efektif.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Infinite Ascent</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Ide Utama</td>
+<td>Membangun solusi yang selalu lebih besar.</td>
+</tr>
+
+<tr>
+<td>Tujuan</td>
+<td>Memperoleh kontradiksi.</td>
+</tr>
+
+<tr>
+<td>Aplikasi</td>
+<td>Teori Bilangan dan Kombinatorika.</td>
+</tr>
+
+<tr>
+<td>Tingkat</td>
+<td>OSN, IMO, Universitas.</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑤ Vieta Jumping</h1>
+
+<h2>📖 Apa itu Vieta Jumping?</h2>
+
+<p>
+
+<b>Vieta Jumping</b> adalah teknik pembuktian dalam
+<b>Teori Bilangan</b> yang digunakan untuk menyelesaikan
+persamaan <b>Diophantine</b>,
+yaitu persamaan yang mencari solusi bilangan bulat.
+
+Teknik ini memanfaatkan <b>Rumus Vieta</b>
+untuk membangun solusi baru dari solusi yang sudah diketahui.
+
+Kemudian, solusi baru tersebut dipilih agar
+lebih kecil atau lebih sederhana,
+sehingga akhirnya diperoleh kontradiksi
+atau pembuktian yang diinginkan.
+
+Vieta Jumping merupakan salah satu teknik paling terkenal
+dalam Olimpiade Matematika modern.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📜 Sejarah Singkat</h2>
+
+<p>
+
+Nama <b>Vieta Jumping</b> berasal dari
+penggunaan <b>Rumus Vieta</b>
+yang diperkenalkan oleh
+0.
+
+Teknik ini mulai dikenal luas
+setelah digunakan pada beberapa soal
+International Mathematical Olympiad (IMO),
+terutama soal
+1
+yang kemudian menjadi contoh klasik penggunaan metode ini.
+
+Saat ini,
+Vieta Jumping menjadi salah satu teknik wajib
+bagi peserta Olimpiade tingkat nasional maupun internasional.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah persamaan kuadrat
+dengan dua akar.
+
+Jika satu akar sudah diketahui,
+maka menggunakan Rumus Vieta
+kita dapat menemukan akar lainnya.
+
+Dalam Vieta Jumping,
+akar baru tersebut dipilih sedemikian rupa
+sehingga menghasilkan solusi lain
+yang lebih kecil.
+
+Proses "melompat" dari satu solusi ke solusi lain
+inilah yang disebut <b>Jumping</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Ide Dasar</h2>
+
+<ol>
+
+<li>Anggap terdapat solusi bilangan bulat.</li>
+
+<li>Pandang salah satu variabel sebagai akar persamaan kuadrat.</li>
+
+<li>Gunakan Rumus Vieta untuk memperoleh akar lainnya.</li>
+
+<li>Tunjukkan bahwa akar baru juga merupakan solusi bilangan bulat.</li>
+
+<li>Pilih akar yang lebih kecil.</li>
+
+<li>Ulangi hingga memperoleh kontradiksi atau solusi yang diinginkan.</li>
+
+</ol>
+
+</section><section class="section">
+
+<h2>📝 Konsep Dasar Rumus Vieta</h2>
+
+<p>
+
+Misalkan terdapat persamaan kuadrat
+
+</p>
+
+<pre>
+
+ax² + bx + c = 0
+
+</pre>
+
+<p>
+
+Jika akar-akarnya adalah
+
+<b>x₁</b>
+
+dan
+
+<b>x₂</b>,
+
+maka menurut Rumus Vieta berlaku
+
+</p>
+
+<pre>
+
+x₁ + x₂ = -b/a
+
+x₁ × x₂ = c/a
+
+</pre>
+
+<p>
+
+Vieta Jumping memanfaatkan hubungan tersebut
+untuk menghasilkan solusi baru dari solusi lama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Perhatikan persamaan
+
+</p>
+
+<pre>
+
+x² - 5x + 6 = 0
+
+</pre>
+
+<p>
+
+Salah satu akarnya adalah
+
+</p>
+
+<pre>
+
+x = 2
+
+</pre>
+
+<p>
+
+Menggunakan Rumus Vieta,
+
+</p>
+
+<pre>
+
+x₁ + x₂ = 5
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+2 + x₂ = 5
+
+</pre>
+
+<p>
+
+maka diperoleh
+
+</p>
+
+<pre>
+
+x₂ = 3
+
+</pre>
+
+<p>
+
+Di sini kita berhasil menemukan akar kedua
+tanpa menyelesaikan persamaan dari awal.
+
+Ide inilah yang kemudian diperluas
+dalam teknik Vieta Jumping.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Ide Soal Olimpiade</h2>
+
+<p>
+
+Misalkan diketahui pasangan bilangan bulat positif
+
+<b>(x, y)</b>
+
+memenuhi suatu persamaan Diophantine.
+
+Alih-alih langsung mencari semua solusi,
+kita memandang persamaan tersebut
+sebagai persamaan kuadrat terhadap salah satu variabel.
+
+Kemudian:
+
+</p>
+
+<ol>
+
+<li>Pilih salah satu variabel sebagai akar pertama.</li>
+
+<li>Gunakan Rumus Vieta untuk memperoleh akar kedua.</li>
+
+<li>Buktikan bahwa akar kedua juga merupakan bilangan bulat.</li>
+
+<li>Tunjukkan bahwa akar baru lebih kecil.</li>
+
+<li>Ulangi proses hingga muncul kontradiksi.</li>
+
+</ol>
+
+<p>
+
+Teknik ini sering menghasilkan pembuktian
+yang sangat singkat namun elegan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Vieta Jumping?</h2>
+
+<ul>
+
+<li>Persamaan Diophantine.</li>
+
+<li>Persamaan kuadrat dua variabel.</li>
+
+<li>Mencari seluruh solusi bilangan bulat.</li>
+
+<li>Pembuktian kontradiksi.</li>
+
+<li>Soal teori bilangan tingkat lanjut.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Tidak mengubah persamaan menjadi bentuk kuadrat.</li>
+
+<li>Salah menggunakan Rumus Vieta.</li>
+
+<li>Tidak membuktikan akar baru merupakan bilangan bulat.</li>
+
+<li>Akar baru tidak lebih kecil dari solusi sebelumnya.</li>
+
+<li>Melakukan "jumping" tanpa alasan yang jelas.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika menemukan persamaan Diophantine
+yang berbentuk kuadrat terhadap salah satu variabel,
+
+jangan terburu-buru mencoba semua kemungkinan.
+
+Cobalah ubah persamaan menjadi bentuk kuadrat,
+kemudian gunakan Rumus Vieta
+untuk membangun solusi baru.
+
+Sering kali,
+itulah petunjuk bahwa soal tersebut
+dirancang untuk diselesaikan dengan
+<b>Vieta Jumping</b>.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Vieta Jumping</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Membangun solusi baru menggunakan Rumus Vieta.</td>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Mencari kontradiksi atau seluruh solusi.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Persamaan Diophantine.</td>
+
+</tr>
+
+<tr>
+
+<td>Teknik Pendukung</td>
+
+<td>Rumus Vieta dan Infinite Descent.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section><hr>
+
+<section class="section">
+
+<h1>🎉 Ringkasan Bab 6</h1>
+
+<p>
+
+Selamat!
+
+Kamu telah mempelajari lima teknik pembuktian tingkat lanjut
+yang sering muncul pada Olimpiade Matematika.
+
+Bab ini merupakan salah satu bab terpenting,
+karena teknik-teknik di dalamnya sering digunakan
+untuk menyelesaikan soal yang tampak sangat sulit
+dengan ide yang sederhana namun elegan.
+
+Semakin banyak latihan yang dikerjakan,
+semakin mudah mengenali kapan suatu teknik
+harus digunakan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Seluruh Materi</h2>
+
+<table>
+
+<tr>
+
+<th>Teknik</th>
+
+<th>Fungsi Utama</th>
+
+</tr>
+
+<tr>
+
+<td>Extremal Principle</td>
+
+<td>Memilih objek yang paling besar, paling kecil, atau paling ekstrem untuk mempermudah pembuktian.</td>
+
+</tr>
+
+<tr>
+
+<td>Extremal + Pigeonhole</td>
+
+<td>Menggabungkan keberadaan suatu objek dengan analisis objek paling ekstrem.</td>
+
+</tr>
+
+<tr>
+
+<td>Infinite Descent</td>
+
+<td>Membangun solusi yang selalu lebih kecil hingga muncul kontradiksi.</td>
+
+</tr>
+
+<tr>
+
+<td>Infinite Ascent</td>
+
+<td>Membangun solusi yang selalu lebih besar hingga muncul kontradiksi.</td>
+
+</tr>
+
+<tr>
+
+<td>Vieta Jumping</td>
+
+<td>Membangun solusi baru menggunakan Rumus Vieta pada persamaan Diophantine.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Memilih Teknik yang Tepat</h2>
+
+<table>
+
+<tr>
+
+<th>Jika Soal...</th>
+
+<th>Gunakan</th>
+
+</tr>
+
+<tr>
+
+<td>Memiliki banyak objek dan dapat dipilih yang terbesar atau terkecil.</td>
+
+<td>Extremal Principle</td>
+
+</tr>
+
+<tr>
+
+<td>Mengandung banyak kelompok dan dijamin ada kelompok tertentu.</td>
+
+<td>Extremal + Pigeonhole</td>
+
+</tr>
+
+<tr>
+
+<td>Melibatkan bilangan bulat positif dan ingin membuktikan solusi tidak ada.</td>
+
+<td>Infinite Descent</td>
+
+</tr>
+
+<tr>
+
+<td>Dapat menghasilkan solusi yang semakin besar.</td>
+
+<td>Infinite Ascent</td>
+
+</tr>
+
+<tr>
+
+<td>Berupa persamaan Diophantine berbentuk kuadrat terhadap salah satu variabel.</td>
+
+<td>Vieta Jumping</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Tips Menghadapi Soal Olimpiade</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Jangan langsung menghitung. Pahami struktur soal terlebih dahulu.</li>
+
+<li>Cari apakah terdapat objek yang paling besar atau paling kecil.</li>
+
+<li>Periksa apakah solusi dapat dibuat lebih kecil atau lebih besar.</li>
+
+<li>Untuk persamaan Diophantine, coba ubah menjadi bentuk kuadrat terhadap salah satu variabel.</li>
+
+<li>Gabungkan beberapa teknik jika satu teknik saja belum cukup.</li>
+
+<li>Biasakan membaca pembuktian klasik dari soal-soal Olimpiade.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📖 Materi Selanjutnya</h2>
+
+<p>
+
+Pada bab berikutnya,
+kamu akan mempelajari <b>Functional Equation Techniques</b>,
+yaitu teknik menyelesaikan persamaan yang melibatkan fungsi.
+
+Materi tersebut meliputi:
+
+</p>
+
+<ul>
+
+<li>Pengertian Functional Equation.</li>
+
+<li>Strategi umum penyelesaian.</li>
+
+<li>Substitusi nilai khusus.</li>
+
+<li>Mencari sifat fungsi.</li>
+
+<li>Pembuktian fungsi linear dan fungsi konstan.</li>
+
+<li>Contoh soal OSN dan Olimpiade Internasional.</li>
+
+</ul>
+
+<p>
+
+Functional Equation merupakan salah satu materi
+yang hampir selalu muncul pada Olimpiade tingkat nasional
+dan internasional karena menguji kreativitas
+serta kemampuan menyusun pembuktian.
+
+</p>
+
+</section>
+
+<hr>
+
+<div class="navigation">
+
+<a href="olimpiade5.html" class="btn">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="olimpiade7.html" class="btn">
+
+Bab Selanjutnya ➜
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
