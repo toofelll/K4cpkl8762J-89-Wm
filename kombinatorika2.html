@@ -1,1 +1,752 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kombinatorik Part 2 | Permutasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔢 KOMBINATORIK</h1>
+
+<p>Part 2 • Permutasi</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Menyusun dengan Urutan</h2>
+
+<p>
+
+Di Bab 1, kita sudah belajar bahwa faktorial n! adalah banyaknya cara
+menyusun n objek berbeda. Tapi itu hanya kasus khusus—bagaimana kalau
+kita hanya menyusun <b>sebagian</b> dari objek yang tersedia?
+Bagaimana kalau ada objek yang <b>identik</b>? Bagaimana kalau
+susunannya <b>melingkar</b>?
+
+</p>
+
+<p>
+
+Semua pertanyaan ini dijawab oleh <b>permutasi</b>—konsep kombinatorik
+yang menghitung banyaknya cara <b>menyusun</b> objek-objek dengan
+<b>urutan yang diperhatikan</b>. Dalam permutasi, AB dan BA adalah
+dua hal yang berbeda. Ini adalah fondasi yang akan dipakai terus
+sampai ke teori peluang, statistika, bahkan kriptografi.
+
+</p>
+
+<p>
+
+Di bab ini, kita akan membahas permutasi secara <b>sangat mendalam</b>:
+dari definisi, pembuktian rumus, kasus-kasus khusus, permutasi dengan
+pengulangan, permutasi melingkar, sampai soal-soal dengan syarat tambahan
+seperti "A dan B harus berdampingan" atau "A tidak boleh di posisi tertentu".
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami definisi permutasi dan kapan menggunakannya.</li>
+
+<li>Menguasai rumus P(n,r) = n!/(n-r)! dan pembuktiannya dari prinsip perkalian.</li>
+
+<li>Memahami perbedaan permutasi dengan pengembalian vs tanpa pengembalian.</li>
+
+<li>Menguasai permutasi dengan objek identik (pengulangan).</li>
+
+<li>Menguasai permutasi melingkar dan variasinya.</li>
+
+<li>Mampu menyelesaikan soal permutasi dengan syarat tambahan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DEFINISI & RUMUS DASAR ==================== -->
+
+<div class="section">
+
+<h2>1. Apa Itu Permutasi? — Definisi dan Intuisi</h2>
+
+<div class="summary">
+
+<b>Permutasi</b> adalah susunan objek-objek dengan memperhatikan <b>urutan</b>.<br><br>
+
+<b>Permutasi r objek dari n objek berbeda</b> (r ≤ n), ditulis <b>P(n, r)</b> atau <b>ⁿPᵣ</b>:<br><br>
+
+P(n, r) = <b>n! / (n - r)!</b> = n × (n-1) × (n-2) × ... × (n-r+1)
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Pembuktian dari Prinsip Perkalian</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kita memiliki n objek berbeda dan kita ingin menyusun r objek
+dalam r posisi berurutan (posisi 1, posisi 2, ..., posisi r).<br><br>
+
+<b>Posisi ke-1:</b> Kita bisa memilih dari n objek. → <b>n</b> pilihan.<br><br>
+
+<b>Posisi ke-2:</b> Satu objek sudah terpakai, tersisa (n-1) objek. → <b>n-1</b> pilihan.<br><br>
+
+<b>Posisi ke-3:</b> Dua objek sudah terpakai, tersisa (n-2) objek. → <b>n-2</b> pilihan.<br><br>
+
+...dan seterusnya.<br><br>
+
+<b>Posisi ke-r:</b> (r-1) objek sudah terpakai, tersisa n-(r-1) = <b>n-r+1</b> pilihan.<br><br>
+
+Dengan prinsip perkalian (setiap posisi adalah langkah berurutan "DAN"):<br><br>
+
+Total = n × (n-1) × (n-2) × ... × (n-r+1).<br><br>
+
+Kalikan dan bagi dengan (n-r)!:<br>
+
+= [n × (n-1) × ... × (n-r+1)] × [(n-r)! / (n-r)!]<br>
+
+= <b>n! / (n-r)!</b>. ✅<br><br>
+
+<b>Jadi, rumus permutasi adalah konsekuensi langsung dari prinsip perkalian.</b>
+
+</div>
+
+<hr>
+
+<h3>1.1 Kasus Khusus: r = n (Menyusun Semua Objek)</h3>
+
+<div class="summary">
+
+Jika r = n: P(n, n) = n! / (n-n)! = n! / 0! = n! / 1 = <b>n!</b><br><br>
+
+Ini adalah banyaknya cara menyusun <b>semua</b> n objek berbeda.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Ada 5 buku berbeda. Berapa banyak cara menyusunnya di rak?<br><br>
+
+P(5, 5) = 5! = 5 × 4 × 3 × 2 × 1 = <b>120</b> cara. ✅<br><br>
+
+Penjelasan intuitif: Posisi 1: 5 pilihan. Posisi 2: 4 pilihan. ... Posisi 5: 1 pilihan.
+5 × 4 × 3 × 2 × 1 = 120.
+
+</div>
+
+<hr>
+
+<h3>1.2 Kasus r < n (Menyusun Sebagian) — Contoh Klasik</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dari 8 pelari, akan dipilih juara 1, 2, dan 3.
+Berapa banyak kemungkinan podium?<br><br>
+
+n = 8, r = 3. P(8, 3) = 8! / (8-3)! = 8! / 5!<br>
+
+= (8 × 7 × 6 × 5 × 4 × 3 × 2 × 1) / (5 × 4 × 3 × 2 × 1)<br>
+
+= 8 × 7 × 6 = <b>336</b> kemungkinan. ✅<br><br>
+
+<b>Penjelasan intuitif:</b><br>
+
+Juara 1: 8 pilihan. Juara 2: 7 pilihan (satu sudah juara 1). Juara 3: 6 pilihan.<br>
+
+8 × 7 × 6 = 336. Sama!<br><br>
+
+<b>Mengapa ini permutasi, bukan kombinasi?</b> Karena urutan penting!
+(Andi juara 1, Budi juara 2, Caca juara 3) berbeda dengan
+(Caca juara 1, Andi juara 2, Budi juara 3). Posisi podium berbeda.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: PERMUTASI DENGAN PENGEMBALIAN ==================== -->
+
+<div class="section">
+
+<h2>2. Permutasi dengan Pengembalian — Boleh Pakai yang Sama</h2>
+
+<p>
+
+Sejauh ini, setiap objek yang sudah dipilih <b>tidak bisa dipilih lagi</b>
+(tanpa pengembalian). Tapi ada situasi di mana objek <b>bisa dipilih ulang</b>
+(dengan pengembalian).
+
+</p>
+
+<div class="summary">
+
+Jika kita memilih r objek dari n jenis objek berbeda, <b>dengan pengembalian</b>
+(setiap kali memilih, objek "dikembalikan" sehingga bisa dipilih lagi),
+maka banyaknya susunan adalah:<br><br>
+
+<b>n × n × n × ... × n = nʳ</b><br><br>
+
+Setiap posisi: n pilihan (tidak berkurang).
+
+</div>
+
+<p>
+
+<b>Mengapa nʳ, bukan n!/(n-r)!?</b>
+
+</p>
+
+<div class="example">
+
+Tanpa pengembalian: stok berkurang setiap kali memilih.
+Dengan pengembalian: stok selalu penuh, setiap posisi punya n pilihan.<br><br>
+
+Ini adalah perbedaan mendasar: tanpa pengembalian → faktorial,
+dengan pengembalian → pangkat.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah password terdiri dari 4 digit. Setiap digit adalah
+angka 0-9. Berapa banyak password yang mungkin?<br><br>
+
+Digit 1: 10 pilihan. Digit 2: 10 pilihan (boleh sama!). Digit 3: 10 pilihan. Digit 4: 10 pilihan.<br><br>
+
+Total = 10 × 10 × 10 × 10 = 10⁴ = <b>10.000</b> password. ✅<br><br>
+
+<b>Soal:</b> Berapa banyak password 4 digit dengan <b>semua digit berbeda</b>?<br><br>
+
+Ini tanpa pengembalian: P(10, 4) = 10 × 9 × 8 × 7 = <b>5040</b> password. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: PERMUTASI DENGAN OBJEK IDENTIK ==================== -->
+
+<div class="section">
+
+<h2>3. Permutasi dengan Objek Identik — Menghilangkan Overcounting</h2>
+
+<p>
+
+Sejauh ini kita mengasumsikan semua objek <b>berbeda</b> (distinguishable).
+Tapi bagaimana kalau ada objek yang <b>identik</b> (tidak bisa dibedakan)?
+
+</p>
+
+<div class="summary">
+
+Jika ada n objek yang terdiri dari:<br>
+
+n₁ objek jenis 1 (identik satu sama lain),<br>
+
+n₂ objek jenis 2 (identik satu sama lain),<br>
+
+...<br>
+
+nₖ objek jenis k (identik satu sama lain),<br>
+
+dengan n₁ + n₂ + ... + nₖ = n,<br><br>
+
+maka banyaknya susunan berbeda adalah:<br><br>
+
+<b>n! / (n₁! × n₂! × ... × nₖ!)</b>
+
+</div>
+
+<p>
+
+<b>Mengapa harus dibagi? — Masalah Overcounting</b>
+
+</p>
+
+<div class="example">
+
+Anggap kita punya 3 bola: 2 merah identik (M₁ dan M₂) dan 1 biru (B).<br><br>
+
+Kalau semua bola kita anggap berbeda: 3! = 6 susunan.<br>
+
+Keenam susunan itu: M₁M₂B, M₁BM₂, M₂M₁B, M₂BM₁, BM₁M₂, BM₂M₁.<br><br>
+
+Tapi karena M₁ dan M₂ tidak bisa dibedakan (keduanya hanya "merah"),
+susunan M₁M₂B dan M₂M₁B terlihat <b>sama persis</b>: MMB.<br>
+
+Begitu juga M₁BM₂ dan M₂BM₁: MBM.<br>
+
+Begitu juga BM₁M₂ dan BM₂M₁: BMM.<br><br>
+
+Jadi setiap susunan "asli" dihitung <b>2! = 2 kali</b> (karena 2 bola merah
+bisa ditukar tanpa mengubah penampilan).<br><br>
+
+Maka susunan berbeda = 6 / 2 = <b>3</b>: MMB, MBM, BMM. ✅<br><br>
+
+Itulah kenapa kita membagi dengan n₁! — untuk "membatalkan" overcounting
+akibat objek identik.
+
+</div>
+
+<hr>
+
+<h3>3.1 Contoh: Menyusun Huruf — Aplikasi Paling Umum</h3>
+
+<div class="example">
+
+<b>Soal:</b> Berapa banyak cara menyusun huruf-huruf pada kata "MAMA"?<br><br>
+
+Total huruf = 4. M muncul 2 kali (identik), A muncul 2 kali (identik).<br><br>
+
+Susunan = 4! / (2! × 2!) = 24 / (2 × 2) = 24 / 4 = <b>6</b> susunan.<br><br>
+
+Keenam susunan: MMAA, MAMA, MAAM, AMMA, AMAM, AAMM. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Berapa banyak cara menyusun huruf-huruf pada kata "KALKULUS"?<br><br>
+
+Total huruf = 8.<br>
+
+K muncul 2 kali → 2!<br>
+
+L muncul 2 kali → 2!<br>
+
+U muncul 2 kali → 2!<br>
+
+A muncul 1 kali → 1!<br>
+
+S muncul 1 kali → 1!<br><br>
+
+Susunan = 8! / (2! × 2! × 2! × 1! × 1!) = 40320 / 8 = <b>5040</b> susunan. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Berapa banyak cara menyusun huruf-huruf pada kata "MISSISSIPPI"?<br><br>
+
+Total huruf = 11.<br>
+
+M: 1, I: 4, S: 4, P: 2.<br><br>
+
+Susunan = 11! / (1! × 4! × 4! × 2!) = 39916800 / (24 × 24 × 2)<br>
+
+= 39916800 / 1152 = <b>34.650</b> susunan. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Overcounting Bertingkat — Intuisi yang Lebih Dalam</h3>
+
+<p>
+
+<b>Mengapa pembagian dengan faktorial bekerja untuk banyak jenis objek identik?</b>
+
+</p>
+
+<div class="example">
+
+Mulai dengan menganggap semua objek berbeda → n! susunan.<br><br>
+
+Untuk objek jenis 1 (n₁ identik): setiap susunan asli dihitung n₁! kali
+(karena n₁ objek identik bisa ditukar sesama mereka). Bagi dengan n₁!.<br><br>
+
+Untuk objek jenis 2 (n₂ identik): pembagian lebih lanjut dengan n₂!.<br><br>
+
+...dan seterusnya.<br><br>
+
+Karena overcounting dari masing-masing jenis objek identik bersifat
+<b>independen</b> (bisa ditukar sesama jenis 1 tanpa mempengaruhi jenis 2),
+kita bisa membagi berturut-turut. Inilah kenapa penyebutnya adalah
+<b>perkalian</b> semua faktorial jumlah objek identik. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: PERMUTASI MELINGKAR ==================== -->
+
+<div class="section">
+
+<h2>4. Permutasi Melingkar — Menyusun di Meja Bundar</h2>
+
+<p>
+
+Semua permutasi yang kita bahas sejauh ini adalah <b>susunan linear</b>
+(dalam garis lurus). Tapi bagaimana kalau objek disusun <b>melingkar</b>?
+
+</p>
+
+<div class="summary">
+
+Banyaknya cara menyusun n objek <b>berbeda</b> secara <b>melingkar</b>
+(misalnya di meja bundar, kalung, atau cincin) adalah:<br><br>
+
+<b>(n - 1)!</b>
+
+</div>
+
+<p>
+
+<b>Mengapa (n-1)!, bukan n!? — Masalah Simetri Rotasi</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan 3 orang (A, B, C) duduk di meja bundar.<br><br>
+
+Susunan linear: ABC, ACB, BAC, BCA, CAB, CBA. Total 3! = 6.<br><br>
+
+Tapi di meja bundar, susunan ABC, BCA, dan CAB adalah <b>sama</b>—
+kamu hanya merotasi mejanya! Setiap orang tetap memiliki tetangga
+kiri dan kanan yang sama.<br><br>
+
+Lihat:<br>
+
+ABC: A diapit C dan B. B diapit A dan C. C diapit B dan A.<br>
+
+BCA: B diapit A dan C. C diapit B dan A. A diapit C dan B. (SAMA!)<br>
+
+CAB: C diapit B dan A. A diapit C dan B. B diapit A dan C. (SAMA!)<br><br>
+
+Jadi 3 susunan linear (ABC, BCA, CAB) mewakili <b>1 susunan melingkar</b>.
+Begitu juga ACB, CBA, BAC mewakili 1 susunan melingkar lainnya.<br><br>
+
+Total susunan melingkar = 6 / 3 = 2! = <b>2</b>. ✅<br><br>
+
+Untuk n orang, setiap susunan melingkar diwakili oleh <b>n</b> susunan linear
+(yang merupakan rotasi satu sama lain). Maka:<br>
+
+Susunan melingkar = n! / n = <b>(n-1)!</b>. ✅
+
+</div>
+
+<p>
+
+<b>Cara lain memahami:</b> "Kunci" satu orang di posisi tetap
+(untuk memecahkan simetri rotasi), lalu susun (n-1) orang sisanya
+secara linear. Banyak cara = (n-1)!.
+
+</p>
+
+<hr>
+
+<h3>4.1 Contoh Soal Meja Bundar</h3>
+
+<div class="example">
+
+<b>Soal:</b> Ada 6 orang akan duduk di meja bundar. Berapa banyak susunan berbeda?<br><br>
+
+(6-1)! = 5! = <b>120</b> susunan. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Ada 5 pasangan (10 orang) duduk di meja bundar dengan syarat
+setiap pasangan harus duduk berdampingan. Berapa banyak susunan?<br><br>
+
+<b>Langkah 1:</b> Anggap setiap pasangan sebagai satu "blok".
+Ada 5 blok. Susunan melingkar 5 blok = (5-1)! = 4! = 24.<br><br>
+
+<b>Langkah 2:</b> Dalam setiap blok, pasangan bisa bertukar posisi (2 orang, 2! = 2 cara).
+Untuk 5 blok: 2⁵ = 32 cara.<br><br>
+
+Total = 24 × 32 = <b>768</b> susunan. ✅
+
+</div>
+
+<hr>
+
+<h3>4.2 Kalung vs Meja Bundar — Refleksi Juga Simetri!</h3>
+
+<div class="summary">
+
+Untuk <b>kalung</b> atau <b>cincin</b>, selain rotasi, <b>pencerminan (flip)</b>
+juga menghasilkan susunan yang sama (karena kalung bisa dibalik).<br><br>
+
+Banyak susunan kalung dengan n manik berbeda = <b>(n-1)! / 2</b> (untuk n ≥ 3).<br><br>
+
+Untuk n = 1 atau 2: susunan kalung = 1.
+
+</div>
+
+<div class="example">
+
+3 manik berbeda pada kalung: (3-1)! / 2 = 2! / 2 = <b>1</b> susunan.<br><br>
+
+Memang benar: ABC, BCA, CAB (rotasi) + CBA, BAC, ACB (refleksi dari ABC)
+semuanya adalah susunan yang sama pada kalung yang bisa dibalik.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: PERMUTASI DENGAN SYARAT ==================== -->
+
+<div class="section">
+
+<h2>5. Permutasi dengan Syarat Tambahan — "Harus Berdampingan", "Tidak Boleh Berdekatan"</h2>
+
+<p>
+
+Banyak soal permutasi yang tidak sesederhana "susun n objek".
+Ada syarat-syarat tambahan yang membuatnya lebih menantang.
+
+</p>
+
+<hr>
+
+<h3>5.1 Syarat: A dan B Harus Berdampingan</h3>
+
+<div class="summary">
+
+<b>Strategi:</b> Anggap A dan B sebagai satu "blok" atau "paket".
+Hitung permutasi dengan blok, lalu kalikan dengan cara menyusun di dalam blok.
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Ada 5 buku berbeda: Matematika (M), Fisika (F), Kimia (K),
+Biologi (B), dan Sejarah (S). Berapa banyak cara menyusunnya di rak
+jika buku Matematika dan Fisika harus <b>berdampingan</b>?<br><br>
+
+<b>Langkah 1:</b> Anggap M dan F sebagai satu blok [MF].
+Sekarang ada 4 entitas: [MF], K, B, S.<br>
+
+Susunan 4 entitas = 4! = 24.<br><br>
+
+<b>Langkah 2:</b> Di dalam blok, M dan F bisa bertukar posisi: MF atau FM → 2! = 2 cara.<br><br>
+
+Total = 24 × 2 = <b>48</b> susunan. ✅
+
+</div>
+
+<hr>
+
+<h3>5.2 Syarat: A dan B Tidak Boleh Berdampingan</h3>
+
+<div class="summary">
+
+<b>Strategi:</b> Hitung total tanpa syarat, lalu kurangi dengan kasus
+di mana A dan B berdampingan (komplemen).
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Dari 5 buku di atas, berapa banyak susunan jika buku Matematika
+dan Fisika <b>tidak boleh berdampingan</b>?<br><br>
+
+Total tanpa syarat = 5! = 120.<br>
+
+Kasus berdampingan = 48 (dari contoh sebelumnya).<br><br>
+
+Kasus tidak berdampingan = 120 - 48 = <b>72</b> susunan. ✅
+
+</div>
+
+<hr>
+
+<h3>5.3 Syarat: A Sebelum B (Urutan Relatif)</h3>
+
+<div class="summary">
+
+<b>Strategi:</b> Di antara semua susunan, setengahnya memiliki A sebelum B,
+setengahnya B sebelum A (karena simetri).
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Ada 6 orang dalam antrian. Berapa banyak cara jika Andi (A)
+harus <b>di depan</b> Budi (B)?<br><br>
+
+Total susunan 6 orang = 6! = 720.<br>
+
+Karena posisi A dan B simetris (A di depan B atau B di depan A,
+keduanya sama mungkin), maka setengahnya memiliki A di depan B.<br><br>
+
+Total = 720 / 2 = <b>360</b> cara. ✅
+
+</div>
+
+<hr>
+
+<h3>5.4 Syarat: Objek Tertentu Tidak Boleh di Posisi Tertentu</h3>
+
+<div class="example">
+
+<b>Soal:</b> Ada 5 orang akan difoto berjajar. Satu orang (sebut X)
+tidak boleh di posisi ujung kiri. Berapa banyak susunan?<br><br>
+
+<b>Cara 1 (Komplemen):</b><br>
+
+Total = 5! = 120.<br>
+
+X di ujung kiri: posisi 1 diisi X (1 cara), 4 posisi lain: 4! = 24.<br>
+
+Total yang tidak di ujung kiri = 120 - 24 = <b>96</b>.<br><br>
+
+<b>Cara 2 (Konstruktif):</b><br>
+
+Posisi 1 (ujung kiri): hanya 4 orang (bukan X) → 4 pilihan.<br>
+
+4 posisi lain: 4! = 24.<br>
+
+Total = 4 × 24 = <b>96</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 6: RANGKUMAN PERBANDINGAN ==================== -->
+
+<div class="section">
+
+<h2>6. Tabel Perbandingan — Jenis-Jenis Permutasi</h2>
+
+<div class="summary">
+
+| Jenis | Objek | Rumus | Kunci |
+|---|---|---|---|
+| **Permutasi Biasa** | n objek berbeda, pilih r, tanpa pengembalian | n!/(n-r)! | Urutan penting, stok berkurang |
+| **Permutasi Semua** | n objek berbeda, susun semua | n! | Kasus khusus r=n |
+| **Dengan Pengembalian** | n jenis, pilih r, boleh ulang | nʳ | Stok tidak berkurang |
+| **Objek Identik** | n objek, beberapa identik | n!/(n₁!n₂!...nₖ!) | Bagi untuk hilangkan overcounting |
+| **Melingkar** | n objek berbeda, susun melingkar | (n-1)! | Kunci satu posisi, pecahkan rotasi |
+| **Kalung** | n objek berbeda, kalung bisa dibalik | (n-1)!/2 | Rotasi + refleksi = simetri |
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kombinatorik 2</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Permutasi P(n,r) = n!/(n-r)!:</b> Menyusun r dari n objek berbeda, urutan PENTING. Dibuktikan dari prinsip perkalian.</li>
+
+<li><b>Dengan pengembalian = nʳ:</b> Setiap posisi punya n pilihan penuh.</li>
+
+<li><b>Objek identik = n!/(n₁!n₂!...):</b> Bagi dengan faktorial jumlah objek identik untuk menghilangkan overcounting.</li>
+
+<li><b>Melingkar = (n-1)!:</b> Rotasi dianggap sama. Kunci satu posisi untuk memecahkan simetri.</li>
+
+<li><b>Kalung = (n-1)!/2:</b> Tambahan simetri refleksi (bisa dibalik).</li>
+
+<li><b>Syarat berdampingan:</b> Jadikan satu blok, hitung permutasi blok, kali susunan dalam blok.</li>
+
+<li><b>Syarat tidak berdampingan:</b> Total tanpa syarat dikurangi kasus berdampingan.</li>
+
+<li><b>Syarat A sebelum B:</b> Setengah dari total (karena simetri).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Pertanyaan pertama:</b> "Apakah urutan penting?" Kalau iya → permutasi.
+Kalau tidak → kombinasi (Bab 3).
+
+</li>
+
+<li>
+
+<b>Objek identik = BAGI, jangan kali.</b> Banyak yang keliru mengalikan
+dengan faktorial jumlah objek identik. Ingat: overcounting harus dihilangkan dengan pembagian.
+
+</li>
+
+<li>
+
+<b>Melingkar: kunci satu posisi.</b> Jangan menghafal (n-1)! tanpa memahami kenapa.
+Kalau lupa, ingat: meja bundar, satu orang jadi "patokan", sisanya disusun linear.
+
+</li>
+
+<li>
+
+<b>Syarat berdampingan: blok dulu.</b> Ini strategi yang sangat umum.
+Anggap objek yang harus berdampingan sebagai satu kesatuan.
+
+</li>
+
+<li>
+
+<b>Syarat tidak berdampingan: total - berdampingan.</b> Lebih mudah
+menghitung yang dilarang lalu mengurangkan dari total.
+
+</li>
+
+<li>
+
+<b>Gambar atau daftar untuk n kecil.</b> Untuk memverifikasi rumus,
+coba dengan n kecil (3 atau 4) dan daftar semua kemungkinan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kombinatorik1.html" class="btn">⬅ Kembali</a>
+
+<a href="kombinatorik.html" class="btn">📚 Daftar Kombinatorik</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kombinatorik3.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
