@@ -1,1 +1,1518 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 7 - Distribusi Kontinu & Teorema Limit</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 7</h1>
+
+<h2>Distribusi Kontinu & Teorema Limit</h2>
+
+<p>
+
+Bab ini membahas distribusi yang tidak lagi berbentuk hitungan diskrit, tetapi berbentuk kontinu (interval).
+
+Di sini kita juga masuk ke salah satu ide paling kuat dalam probabilitas:
+
+<b>bagaimana banyak proses acak berperilaku ketika jumlahnya sangat besar.</b>
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="#intro">Pengantar</a>
+<a href="#uniform">Uniform Kontinu</a>
+<a href="#eksponensial">Eksponensial</a>
+<a href="#normal">Normal</a>
+<a href="#clt">CLT</a>
+<a href="#lln">LLN</a>
+
+</nav>
+
+<main>
+
+<section id="intro" class="materi">
+
+<h1>Pengantar Distribusi Kontinu</h1>
+
+<p>
+
+Distribusi kontinu berbeda dari diskrit karena variabel acaknya tidak lagi berupa hitungan, tetapi nilai dalam suatu interval.
+
+Artinya, peluang tidak dihitung untuk satu titik, tetapi untuk suatu rentang.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Untuk variabel kontinu:
+
+<b>P(X = x) = 0</b>
+
+yang bermakna kita selalu menghitung peluang dalam interval:
+
+<b>P(a ≤ X ≤ b)</b>
+
+</p>
+
+</div>
+
+</section>
+<section id="uniform" class="materi">
+
+<h1>7.1 Distribusi Uniform Kontinu</h1>
+
+<p>
+
+Distribusi Uniform Kontinu adalah distribusi paling sederhana dalam dunia kontinu.
+
+Semua nilai dalam interval tertentu memiliki peluang yang sama “kepadatan”-nya.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika sebuah variabel acak X tersebar merata di interval [a, b], maka tidak ada nilai yang lebih mungkin dari yang lain.
+
+Yang penting bukan titik, tetapi panjang interval.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+X ~ U(a, b)
+
+</p>
+
+<p>
+
+dengan interval:
+
+</p>
+
+<p class="rumus">
+
+a ≤ X ≤ b
+
+</p>
+
+<hr>
+
+<h2>Fungsi PDF</h2>
+
+<p>
+
+Probabilitas density function (PDF):
+
+</p>
+
+<p class="rumus">
+
+f(x) = 1 / (b - a),  untuk a ≤ x ≤ b
+
+</p>
+
+<p>
+
+dan 0 di luar interval.
+
+</p>
+
+<hr>
+
+<h2>Peluang Interval</h2>
+
+<p>
+
+Peluang dihitung sebagai luas:
+
+</p>
+
+<p class="rumus">
+
+P(c ≤ X ≤ d) = (d - c) / (b - a)
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Waktu Kedatangan</h2>
+
+<p>
+
+Seseorang datang secara acak antara jam 1 sampai 2 siang.
+
+Tentukan peluang datang antara menit ke-10 sampai ke-30.
+
+</p>
+
+<p class="rumus">
+
+a = 0, b = 60
+
+</p>
+
+<p class="rumus">
+
+P = (30 - 10) / 60 = 20/60 = 1/3
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: 1/3</b>
+
+</div>
+
+<hr>
+
+<h2>Nilai Harapan</h2>
+
+<p class="rumus">
+
+E(X) = (a + b) / 2
+
+</p>
+
+<p>
+
+Artinya titik tengah interval.
+
+</p>
+
+<hr>
+
+<h2>Variansi</h2>
+
+<p class="rumus">
+
+Var(X) = (b - a)² / 12
+
+</p>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa mencoba menghitung peluang titik.
+
+Padahal dalam kontinu:
+
+<b>peluang titik selalu 0</b>.
+
+</p>
+
+</div>
+
+</section>
+<section id="eksponensial" class="materi">
+
+<h1>7.2 Distribusi Eksponensial</h1>
+
+<p>
+
+Distribusi Eksponensial digunakan untuk memodelkan waktu tunggu sampai suatu kejadian terjadi.
+
+Ini adalah versi kontinu dari ide “menunggu sukses pertama”.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika kejadian terjadi secara acak dalam waktu, maka kita tidak menghitung jumlah kejadian, tetapi:
+
+<b>berapa lama sampai kejadian berikutnya terjadi</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Parameter</h2>
+
+<p class="rumus">
+
+λ (lambda) = laju kejadian per satuan waktu
+
+</p>
+
+<hr>
+
+<h2>Definisi</h2>
+
+<p>
+
+X ~ Exp(λ)
+
+</p>
+
+<p>
+
+X = waktu tunggu sampai kejadian pertama.
+
+</p>
+
+<hr>
+
+<h2>Fungsi PDF</h2>
+
+<p class="rumus">
+
+f(x) = λ e^{-λx},  x ≥ 0
+
+</p>
+
+<p>
+
+dan f(x) = 0 untuk x < 0.
+
+</p>
+
+<hr>
+
+<h2>Fungsi Peluang (CDF)</h2>
+
+<p class="rumus">
+
+P(X ≤ x) = 1 - e^{-λx}
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Kedatangan Bus</h2>
+
+<p>
+
+Bus datang rata-rata 3 kali per jam.
+
+Tentukan peluang menunggu kurang dari 10 menit.
+
+</p>
+
+<p class="rumus">
+
+λ = 3 per jam  
+x = 10 menit = 1/6 jam
+
+</p>
+
+<p class="rumus">
+
+P(X ≤ x) = 1 - e^{-3(1/6)}
+
+</p>
+
+<p class="rumus">
+
+= 1 - e^{-1/2}
+
+</p>
+
+<hr>
+
+<h2>Contoh 2 — Error Sistem</h2>
+
+<p>
+
+Rata-rata error terjadi 2 per jam.
+
+Peluang waktu sampai error pertama lebih dari 1 jam:
+
+</p>
+
+<p class="rumus">
+
+P(X > 1) = e^{-2}
+
+</p>
+
+<hr>
+
+<h2>Sifat Penting (Memoryless)</h2>
+
+<div class="note">
+
+<h3>Sifat Unik</h3>
+
+<p>
+
+Distribusi eksponensial memiliki sifat:
+
+</p>
+
+<p class="rumus">
+
+P(X > s + t | X > s) = P(X > t)
+
+</p>
+
+<p>
+
+Artinya:
+
+masa lalu tidak mempengaruhi masa depan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Nilai Harapan</h2>
+
+<p class="rumus">
+
+E(X) = 1 / λ
+
+</p>
+
+<hr>
+
+<h2>Variansi</h2>
+
+<p class="rumus">
+
+Var(X) = 1 / λ²
+
+</p>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa bingung antara Poisson dan Eksponensial:
+
+</p>
+
+<ul>
+
+<li>Poisson → jumlah kejadian</li>
+<li>Eksponensial → waktu antar kejadian</li>
+
+</ul>
+
+</div>
+
+</section>
+<section id="normal" class="materi">
+
+<h1>7.3 Distribusi Normal</h1>
+
+<p>
+
+Distribusi Normal adalah distribusi paling penting dalam statistika dan probabilitas.
+
+Banyak fenomena alami—tinggi badan, nilai ujian, error pengukuran—cenderung mengikuti distribusi ini.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Distribusi Normal berbentuk kurva lonceng (bell curve), simetris terhadap mean.
+
+Sebagian besar data terkumpul di sekitar rata-rata, dan semakin jauh dari rata-rata, semakin kecil peluangnya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Notasi</h2>
+
+<p class="rumus">
+
+X ~ N(μ, σ²)
+
+</p>
+
+<p>
+
+di mana:
+
+</p>
+
+<ul>
+
+<li>μ = mean (rata-rata)</li>
+<li>σ = standar deviasi</li>
+
+</ul>
+
+<hr>
+
+<h2>Fungsi PDF</h2>
+
+<p class="rumus">
+
+f(x) = (1 / (σ√(2π))) · e^{-(x - μ)² / (2σ²)}
+
+</p>
+
+<hr>
+
+<h2>Sifat Penting</h2>
+
+<ul>
+
+<li>Simetris terhadap μ</li>
+<li>Mean = Median = Modus</li>
+<li>Total luas kurva = 1</li>
+
+</ul>
+
+<hr>
+
+<h2>Standarisasi (Z-Score)</h2>
+
+<p>
+
+Untuk menghitung peluang, kita ubah ke standar normal:
+
+</p>
+
+<p class="rumus">
+
+Z = (X - μ) / σ
+
+</p>
+
+<div class="note">
+
+<h3>Makna Z-Score</h3>
+
+<p>
+
+Z menunjukkan seberapa jauh nilai X dari rata-rata dalam satuan standar deviasi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh 1 — Nilai Ujian</h2>
+
+<p>
+
+Nilai ujian berdistribusi normal dengan:
+
+</p>
+
+<p class="rumus">
+
+μ = 70, σ = 10
+
+</p>
+
+<p>
+
+Tentukan Z untuk nilai 85:
+
+</p>
+
+<p class="rumus">
+
+Z = (85 - 70) / 10 = 1.5
+
+</p>
+
+<hr>
+
+<h2>Contoh 2 — Interpretasi</h2>
+
+<p>
+
+Jika Z = 0 → tepat di rata-rata.
+
+Jika Z > 0 → di atas rata-rata.
+
+Jika Z < 0 → di bawah rata-rata.
+
+</p>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa mengira semua distribusi simetris adalah normal.
+
+Padahal normal memiliki struktur matematis khusus (eksponensial kuadrat).
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section id="clt" class="materi">
+
+<h1>7.4 Central Limit Theorem (CLT)</h1>
+
+<p>
+
+Central Limit Theorem adalah salah satu teorema paling penting dalam probabilitas.
+
+Intinya: <b>jumlah dari banyak variabel acak akan mendekati distribusi normal</b>, meskipun distribusi asalnya tidak normal.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika kita menjumlahkan banyak “kejadian acak kecil”, maka hasil akhirnya akan membentuk pola lonceng (normal).
+
+Ini berlaku sangat luas dalam matematika, fisika, ekonomi, dan statistik.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ide Dasar</h2>
+
+<p>
+
+Misalkan kita punya variabel acak independen:
+
+</p>
+
+<p class="rumus">
+
+X₁, X₂, ..., Xₙ
+
+</p>
+
+<p>
+
+dengan mean μ dan variansi σ².
+
+</p>
+
+<p>
+
+Jika kita definisikan jumlahnya:
+
+</p>
+
+<p class="rumus">
+
+Sₙ = X₁ + X₂ + ... + Xₙ
+
+</p>
+
+<hr>
+
+<h2>Bentuk CLT</h2>
+
+<p>
+
+Ketika n besar:
+
+</p>
+
+<p class="rumus">
+
+Sₙ ~ N(nμ, nσ²)
+
+</p>
+
+<p>
+
+atau dalam bentuk standar:
+
+</p>
+
+<p class="rumus">
+
+Z = (Sₙ - nμ) / (σ√n)
+
+</p>
+
+<hr>
+
+<h2>Makna Penting</h2>
+
+<div class="note">
+
+<p>
+
+CLT menjelaskan mengapa distribusi normal begitu sering muncul di dunia nyata.
+
+Karena banyak proses adalah hasil penjumlahan dari banyak faktor kecil.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Intuisi</h2>
+
+<p>
+
+Misalkan kita melempar dadu 100 kali.
+
+Masing-masing hasil acak, tetapi jika dijumlahkan:
+
+</p>
+
+<ul>
+
+<li>hasil total akan mendekati distribusi normal</li>
+<li>meskipun dadu itu sendiri tidak normal</li>
+
+</ul>
+
+<hr>
+
+<h2>Aplikasi Olimpiade</h2>
+
+<div class="note">
+
+<h3>CLT dipakai untuk:</h3>
+
+<ul>
+
+<li>aproksimasi Binomial besar</li>
+<li>analisis rata-rata sampel</li>
+<li>estimasi probabilitas kompleks</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira CLT hanya berlaku untuk normal awal</li>
+<li>Mengabaikan syarat independensi</li>
+<li>Menggunakan CLT untuk n kecil</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section id="lln" class="materi">
+
+<h1>7.5 Hukum Bilangan Besar (Law of Large Numbers)</h1>
+
+<p>
+
+Hukum Bilangan Besar menjelaskan bagaimana rata-rata hasil percobaan acak akan mendekati nilai harapan ketika jumlah percobaan semakin besar.
+
+Ini adalah fondasi penting yang menjelaskan mengapa probabilitas “stabil” dalam jangka panjang.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika sebuah percobaan diulang berkali-kali, maka:
+
+<b>rata-rata hasil observasi akan mendekati nilai ekspektasi (E(X))</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Bentuk Matematis</h2>
+
+<p>
+
+Misalkan X₁, X₂, ..., Xₙ adalah variabel acak independen identik dengan mean μ.
+
+Definisikan rata-rata sampel:
+
+</p>
+
+<p class="rumus">
+
+X̄ₙ = (X₁ + X₂ + ... + Xₙ) / n
+
+</p>
+
+<p>
+
+Maka:
+
+</p>
+
+<p class="rumus">
+
+X̄ₙ → μ (ketika n → ∞)
+
+</p>
+
+<hr>
+
+<h2>Makna Penting</h2>
+
+<div class="note">
+
+<p>
+
+LLN menjelaskan bahwa:
+
+meskipun hasil individual acak, rata-ratanya menjadi stabil dalam jangka panjang.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Intuisi</h2>
+
+<p>
+
+Jika kita melempar koin:
+
+</p>
+
+<ul>
+
+<li>10 kali → bisa sangat tidak stabil</li>
+<li>100 kali → mulai stabil</li>
+<li>10.000 kali → sangat dekat 50% kepala</li>
+
+</ul>
+
+<hr>
+
+<h2>LLN vs CLT</h2>
+
+<table>
+
+<tr>
+<th>Hukum Bilangan Besar</th>
+<th>Central Limit Theorem</th>
+</tr>
+
+<tr>
+<td>Rata-rata → mendekati mean</td>
+<td>Distribusi jumlah → mendekati normal</td>
+</tr>
+
+<tr>
+<td>Fokus pada konvergensi</td>
+<td>Fokus pada bentuk distribusi</td>
+</tr>
+
+<tr>
+<td>Menjawab “menuju ke mana”</td>
+<td>Menjawab “bentuknya seperti apa”</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Aplikasi Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+LLN sering digunakan untuk:
+
+</p>
+
+<ul>
+
+<li>estimasi probabilitas dari eksperimen besar</li>
+<li>validasi model peluang</li>
+<li>intuisi kestabilan statistik</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira LLN berlaku pada jumlah kecil</li>
+<li>Menyamakan LLN dengan CLT</li>
+<li>Mengabaikan bahwa konvergensi terjadi saat n besar</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>7.x Peta Besar Distribusi Kontinu & Teorema Limit</h1>
+
+<p>
+
+Setelah mempelajari seluruh distribusi kontinu dan teorema limit, bagian ini menyatukan semua konsep menjadi satu struktur besar.
+
+Tujuannya agar kamu tidak hanya tahu rumus, tetapi tahu <b>hubungan antar konsep</b>.
+
+</p>
+
+<hr>
+
+<h2>Struktur Besar</h2>
+
+<div class="note">
+
+<p>
+
+Distribusi kontinu dan teorema limit dapat dipahami sebagai tiga lapisan besar:
+
+</p>
+
+<ul>
+
+<li>Lapisan 1 → Distribusi dasar (Uniform, Eksponensial, Normal)</li>
+<li>Lapisan 2 → Struktur proses acak (waktu & skala)</li>
+<li>Lapisan 3 → Perilaku jangka panjang (CLT & LLN)</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>1. Distribusi Uniform Kontinu</h2>
+
+<p>
+
+Semua nilai dalam interval memiliki peluang yang sama.
+
+Ini adalah bentuk paling sederhana dari distribusi kontinu.
+
+</p>
+
+<p class="rumus">
+
+U(a, b)
+
+</p>
+
+<hr>
+
+<h2>2. Distribusi Eksponensial</h2>
+
+<p>
+
+Model waktu tunggu antar kejadian acak.
+
+</p>
+
+<p class="rumus">
+
+f(x) = λe^{-λx}
+
+</p>
+
+<p>
+
+Eksponensial adalah “pasangan waktu” dari Poisson (jumlah kejadian).
+
+</p>
+
+<hr>
+
+<h2>3. Distribusi Normal</h2>
+
+<p>
+
+Distribusi paling penting dalam statistika.
+
+Muncul dari penjumlahan banyak faktor kecil acak.
+
+</p>
+
+<p class="rumus">
+
+N(μ, σ²)
+
+</p>
+
+<hr>
+
+<h2>4. Central Limit Theorem (CLT)</h2>
+
+<p>
+
+CLT menjelaskan bahwa:
+
+</p>
+
+<div class="note">
+
+<p>
+
+Jumlah banyak variabel acak independen akan mendekati distribusi normal, meskipun distribusi asalnya tidak normal.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>5. Hukum Bilangan Besar (LLN)</h2>
+
+<p>
+
+LLN menjelaskan bahwa:
+
+</p>
+
+<div class="note">
+
+<p>
+
+Rata-rata sampel akan mendekati nilai harapan (mean) ketika jumlah percobaan sangat besar.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Besar Antar Konsep</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Fokus</th>
+<th>Hasil</th>
+</tr>
+
+<tr>
+<td>Uniform</td>
+<td>Kepastian peluang sama</td>
+<td>Distribusi dasar</td>
+</tr>
+
+<tr>
+<td>Eksponensial</td>
+<td>Waktu tunggu</td>
+<td>Proses kejadian</td>
+</tr>
+
+<tr>
+<td>Normal</td>
+<td>Bentuk distribusi</td>
+<td>Kurva lonceng</td>
+</tr>
+
+<tr>
+<td>CLT</td>
+<td>Penjumlahan variabel</td>
+<td>Menuju normal</td>
+</tr>
+
+<tr>
+<td>LLN</td>
+<td>Rata-rata sampel</td>
+<td>Menuju mean</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Kesalahan Konseptual Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira CLT dan LLN adalah hal yang sama</li>
+<li>Menganggap normal hanya “kurva simetris”</li>
+<li>Lupa bahwa eksponensial berhubungan dengan waktu, bukan jumlah</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>7.x Cheat Sheet Distribusi Kontinu & Limit</h1>
+
+<p>
+
+Bagian ini merangkum semua rumus penting untuk kecepatan olimpiade.
+
+Fokusnya bukan derivasi, tetapi <b>hafalan pola + intuisi cepat</b>.
+
+</p>
+
+<hr>
+
+<h2>1. Uniform Kontinu</h2>
+
+<p class="rumus">
+
+X ~ U(a,b)
+
+</p>
+
+<p class="rumus">
+
+f(x) = 1/(b-a)  
+P(c ≤ X ≤ d) = (d-c)/(b-a)  
+E(X) = (a+b)/2  
+Var(X) = (b-a)²/12
+
+</p>
+
+<hr>
+
+<h2>2. Eksponensial</h2>
+
+<p class="rumus">
+
+X ~ Exp(λ)
+
+</p>
+
+<p class="rumus">
+
+f(x) = λe^{-λx}  
+P(X ≤ x) = 1 - e^{-λx}  
+P(X > x) = e^{-λx}  
+E(X) = 1/λ  
+Var(X) = 1/λ²
+
+</p>
+
+<div class="note">
+
+<p>
+
+Ingat: eksponensial = waktu tunggu
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>3. Normal</h2>
+
+<p class="rumus">
+
+X ~ N(μ, σ²)
+
+</p>
+
+<p class="rumus">
+
+Z = (X - μ)/σ
+
+</p>
+
+<p>
+
+Aturan penting:
+
+</p>
+
+<ul>
+
+<li>±1σ ≈ 68%</li>
+<li>±2σ ≈ 95%</li>
+<li>±3σ ≈ 99.7%</li>
+
+</ul>
+
+<hr>
+
+<h2>4. Central Limit Theorem (CLT)</h2>
+
+<p class="rumus">
+
+Sₙ ≈ N(nμ, nσ²)
+
+Z = (Sₙ - nμ)/(σ√n)
+
+</p>
+
+<div class="note">
+
+<p>
+
+Jumlah banyak variabel acak → normal
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>5. Hukum Bilangan Besar (LLN)</h2>
+
+<p class="rumus">
+
+X̄ₙ → μ
+
+</p>
+
+<p>
+
+Artinya:
+
+rata-rata sampel mendekati mean saat n besar.
+
+</p>
+
+<hr>
+
+<h2>Intuisi Super Cepat</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Uniform → “semua sama mungkin”</li>
+<li>Eksponensial → “berapa lama nunggu”</li>
+<li>Normal → “bentuk alami data”</li>
+<li>CLT → “penjumlahan jadi normal”</li>
+<li>LLN → “rata-rata jadi stabil”</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Cepat</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Salah pakai Z-score</li>
+<li>Lupa eksponensial adalah waktu</li>
+<li>Menyamakan CLT dan LLN</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>7.x Strategi Pemilihan Distribusi (Olimpiade)</h1>
+
+<p>
+
+Bagian ini adalah inti “kecerdasan soal”.
+
+Bukan rumus yang menentukan jawaban, tetapi <b>model yang kamu pilih</b>.
+
+Salah memilih distribusi = seluruh jawaban salah.
+
+</p>
+
+<hr>
+
+<h2>Langkah Super Penting</h2>
+
+<div class="note">
+
+<ol>
+
+<li>Baca proses acaknya</li>
+<li>Tentukan apa yang dihitung</li>
+<li>Cek apakah diskrit atau kontinu</li>
+<li>Cari keyword penting</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h2>Peta Keputusan Cepat</h2>
+
+<table>
+
+<tr>
+<th>Kata Kunci / Situasi</th>
+<th>Distribusi</th>
+</tr>
+
+<tr>
+<td>“satu percobaan”</td>
+<td>Bernoulli</td>
+</tr>
+
+<tr>
+<td>“n percobaan, hitung sukses”</td>
+<td>Binomial</td>
+</tr>
+
+<tr>
+<td>“sampai sukses pertama”</td>
+<td>Geometrik</td>
+</tr>
+
+<tr>
+<td>“tanpa pengembalian”</td>
+<td>Hipergeometrik</td>
+</tr>
+
+<tr>
+<td>“jumlah kejadian dalam waktu/ruang”</td>
+<td>Poisson</td>
+</tr>
+
+<tr>
+<td>“semua sama peluang”</td>
+<td>Uniform</td>
+</tr>
+
+<tr>
+<td>“waktu tunggu”</td>
+<td>Eksponensial</td>
+</tr>
+
+<tr>
+<td>“penjumlahan banyak variabel”</td>
+<td>CLT → Normal</td>
+</tr>
+
+<tr>
+<td>“rata-rata sampel besar”</td>
+<td>LLN</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Jebakan Olimpiade</h2>
+
+<div class="warning">
+
+<h3>1. Binomial vs Hipergeometrik</h3>
+
+<p>
+
+Jika tidak ada pengembalian → bukan Binomial.
+
+</p>
+
+<h3>2. Poisson vs Eksponensial</h3>
+
+<ul>
+
+<li>Poisson → jumlah kejadian</li>
+<li>Eksponensial → waktu antar kejadian</li>
+
+</ul>
+
+<h3>3. CLT vs LLN</h3>
+
+<ul>
+
+<li>CLT → bentuk distribusi</li>
+<li>LLN → konvergensi rata-rata</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Strategi Emas</h2>
+
+<div class="note">
+
+<p>
+
+Dalam soal sulit, jangan langsung hitung.
+
+Tanyakan dulu:
+
+<b>“model acak apa yang sedang terjadi?”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kesimpulan Penting</h2>
+
+<p>
+
+Distribusi bukan sekadar rumus.
+
+Distribusi adalah cara berpikir untuk memodelkan ketidakpastian.
+
+</p>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>Penutup Bab 7</h1>
+
+<p>
+
+Distribusi kontinu dan teorema limit adalah fondasi utama statistika modern.
+
+Dari Uniform hingga Normal, dari CLT hingga LLN, semuanya membentuk satu kesatuan besar:
+
+<b>bagaimana dunia acak menjadi stabil ketika skalanya besar.</b>
+
+</p>
+
+<hr>
+
+<h2>Ringkasan Akhir</h2>
+
+<ul>
+
+<li>Uniform → semua nilai sama peluang</li>
+<li>Eksponensial → waktu tunggu kejadian</li>
+<li>Normal → bentuk alami data</li>
+<li>CLT → penjumlahan → normal</li>
+<li>LLN → rata-rata → mean</li>
+
+</ul>
+
+<hr>
+
+<div class="note">
+
+<h3>Pesan Kunci</h3>
+
+<p>
+
+Probabilitas bukan hanya tentang menghitung peluang,
+
+tetapi tentang memahami struktur ketidakpastian.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Penutup Mindset</h2>
+
+<div class="warning">
+
+<p>
+
+Jika kamu bisa mengenali model yang tepat,
+
+maka 80% soal sudah selesai bahkan sebelum menghitung.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Modul Probabilitas Olimpiade — Bab 7 Distribusi Kontinu & Teorema Limit</p>
+
+</footer>
+
+<div class="navigation-buttons">
+
+<a href="peluang6.html" class="btn-home">⬅ Bab Sebelumnya</a>
+<a href="peluang8.html" class="btn-next">Bab Selanjutnya ➜</a>
+<a href="index.html" class="btn-home">🏠 Home</a>
+
+</div>
+
+</body>
+</html>
