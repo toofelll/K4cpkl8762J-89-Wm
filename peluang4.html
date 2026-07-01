@@ -1,1 +1,2822 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4 - Ukuran Penyebaran Data</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 4</h1>
+
+<h2>Ukuran Penyebaran Data</h2>
+
+<p>
+
+Pada bab sebelumnya kita mempelajari bagaimana menentukan
+nilai yang dapat mewakili suatu kumpulan data menggunakan
+<b>mean</b>, <b>median</b>, dan <b>modus</b>.
+
+Namun, ukuran pemusatan saja belum cukup untuk
+menggambarkan karakteristik suatu data.
+
+Pada bab ini kita akan mempelajari bagaimana mengukur
+tingkat penyebaran suatu data sehingga kita dapat mengetahui
+apakah data tersebut saling berdekatan, tersebar luas,
+atau bahkan memiliki nilai-nilai ekstrem.
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="#range">Range</a>
+
+<a href="#iqr">IQR</a>
+
+<a href="#simpangan">Simpangan Rata-rata</a>
+
+<a href="#variansi">Variansi</a>
+
+<a href="#standar-deviasi">Standar Deviasi</a>
+
+<a href="#koefisien-variasi">Koefisien Variasi</a>
+
+<a href="#distribusi">Distribusi Data</a>
+
+<a href="#skewness">Skewness</a>
+
+<a href="#kurtosis">Kurtosis</a>
+
+</nav>
+
+<main>
+
+<section class="materi">
+
+<h1>Mengapa Ukuran Penyebaran Penting?</h1>
+
+<p>
+
+Misalkan terdapat dua kelompok siswa.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Kelompok A</th>
+
+<th>Kelompok B</th>
+
+</tr>
+
+<tr>
+
+<td>68, 69, 70, 71, 72</td>
+
+<td>20, 40, 70, 100, 120</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Hitung rata-rata kedua kelompok.
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}=70
+\]
+
+</p>
+
+<p>
+
+Ternyata kedua kelompok memiliki mean yang sama,
+yaitu <b>70</b>.
+
+Apakah kedua kelompok tersebut memiliki karakteristik
+yang sama?
+
+Tentu tidak.
+
+</p>
+
+<p>
+
+Data pada Kelompok A saling berdekatan sehingga relatif
+stabil.
+
+Sebaliknya, data pada Kelompok B tersebar sangat jauh.
+Artinya variasi data jauh lebih besar.
+
+</p>
+
+<div class="note">
+
+<h2>Ide Penting</h2>
+
+<p>
+
+Ukuran pemusatan hanya menjelaskan
+<b>di mana pusat data berada</b>.
+
+Ukuran penyebaran menjelaskan
+<b>seberapa jauh data menyebar dari pusatnya</b>.
+
+Kedua informasi tersebut harus digunakan
+bersama-sama agar analisis data menjadi lengkap.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Apa yang Akan Dipelajari?</h2>
+
+<ul>
+
+<li>Jangkauan (Range)</li>
+
+<li>Jangkauan Interkuartil (Interquartile Range / IQR)</li>
+
+<li>Simpangan Rata-rata</li>
+
+<li>Variansi</li>
+
+<li>Standar Deviasi</li>
+
+<li>Koefisien Variasi</li>
+
+<li>Distribusi Data</li>
+
+<li>Kemencengan (Skewness)</li>
+
+<li>Keruncingan (Kurtosis)</li>
+
+</ul>
+
+<p>
+
+Seluruh konsep tersebut saling berkaitan.
+
+Materi pada bagian awal akan menjadi dasar
+untuk memahami materi berikutnya.
+
+Oleh karena itu, pelajarilah setiap bagian secara
+berurutan.
+
+</p>
+
+</section>
+
+<section id="range" class="materi">
+
+<h1>4.1 Jangkauan (Range)</h1>
+
+<p>
+
+Jangkauan atau <i>Range</i> merupakan ukuran penyebaran
+yang paling sederhana.
+
+Range hanya memperhatikan dua nilai,
+yaitu nilai terbesar dan nilai terkecil.
+
+Walaupun sederhana, range dapat memberikan gambaran
+awal mengenai seberapa lebar penyebaran data.
+
+</p>
+
+<h2>Definisi</h2>
+
+<p>
+
+Range adalah selisih antara data terbesar
+dan data terkecil.
+
+</p>
+
+<p class="rumus">
+
+\[
+R=X_{maks}-X_{min}
+\]
+
+</p>
+
+<p>
+
+dengan:
+
+</p>
+
+<ul>
+
+<li><b>R</b> = Range (Jangkauan)</li>
+
+<li><b>X<sub>maks</sub></b> = Nilai terbesar</li>
+
+<li><b>X<sub>min</sub></b> = Nilai terkecil</li>
+
+</ul>
+
+<h2>Contoh 1</h2>
+
+<div class="contoh-data">
+
+12, 15, 18, 20, 24, 28
+
+</div>
+
+<p>
+
+Data terbesar = 28
+
+</p>
+
+<p>
+
+Data terkecil = 12
+
+</p>
+
+<p class="rumus">
+
+\[
+R=28-12=16
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jangkauan data adalah 16.</b>
+
+</div>
+
+</section>
+<section class="materi">
+
+<h2>Interpretasi Jangkauan (Range)</h2>
+
+<p>
+
+Nilai range memberikan gambaran awal mengenai seberapa lebar
+penyebaran suatu kumpulan data.
+
+Semakin kecil nilai range, semakin berdekatan data-data tersebut.
+
+Sebaliknya, semakin besar nilai range, semakin jauh penyebaran
+data dari nilai terkecil hingga nilai terbesar.
+
+</p>
+
+<h3>Contoh Perbandingan</h3>
+
+<table>
+
+<tr>
+<th>Data</th>
+<th>Range</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>18, 19, 20, 21, 22</td>
+<td>4</td>
+<td>Penyebaran sangat sempit.</td>
+</tr>
+
+<tr>
+<td>5, 20, 35, 50, 65</td>
+<td>60</td>
+<td>Penyebaran sangat lebar.</td>
+</tr>
+
+</table>
+
+<p>
+
+Walaupun kedua kumpulan data mungkin memiliki mean yang sama,
+tingkat penyebarannya dapat sangat berbeda.
+
+Inilah alasan ukuran penyebaran sangat penting dalam statistika.
+
+</p>
+
+<hr>
+
+<h2>Kelebihan Range</h2>
+
+<ul>
+
+<li>Sangat mudah dihitung.</li>
+
+<li>Mudah dipahami.</li>
+
+<li>Dapat memberikan gambaran awal mengenai penyebaran data.</li>
+
+<li>Cocok digunakan untuk analisis sederhana.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Range</h2>
+
+<ul>
+
+<li>Hanya menggunakan dua data, yaitu nilai terbesar dan terkecil.</li>
+
+<li>Mengabaikan seluruh data lainnya.</li>
+
+<li>Sangat sensitif terhadap outlier.</li>
+
+<li>Kurang representatif untuk analisis data yang lebih mendalam.</li>
+
+</ul>
+
+<div class="warning">
+
+<h3>Perhatian</h3>
+
+<p>
+
+Misalkan terdapat dua kumpulan data berikut.
+
+</p>
+
+<table>
+
+<tr>
+<th>Data A</th>
+<th>Data B</th>
+</tr>
+
+<tr>
+<td>10, 11, 12, 13, 14</td>
+<td>10, 12, 12, 12, 14</td>
+</tr>
+
+</table>
+
+<p>
+
+Kedua data memiliki range yang sama.
+
+Namun pola penyebarannya berbeda.
+
+Hal ini menunjukkan bahwa range tidak selalu mampu
+menggambarkan penyebaran data secara lengkap.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Soal 2</h2>
+
+<p>
+
+Tentukan jangkauan dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+7, 12, 15, 18, 22, 25, 31
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Data terbesar
+
+</p>
+
+<p>
+
+31
+
+</p>
+
+<p>
+
+Data terkecil
+
+</p>
+
+<p>
+
+7
+
+</p>
+
+<p class="rumus">
+
+\[
+R=31-7=24
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Range = 24</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh Soal 3</h2>
+
+<p>
+
+Nilai minimum suatu data adalah 14.
+
+Jika range data tersebut adalah 36,
+tentukan nilai maksimumnya.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Diketahui
+
+</p>
+
+<ul>
+
+<li>Range = 36</li>
+
+<li>Nilai minimum = 14</li>
+
+</ul>
+
+<p>
+
+Gunakan rumus
+
+</p>
+
+<p class="rumus">
+
+\[
+R=X_{maks}-X_{min}
+\]
+
+</p>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p class="rumus">
+
+\[
+X_{maks}=R+X_{min}
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+X_{maks}=36+14=50
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Nilai maksimum = 50</b>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h2>Insight</h2>
+
+<p>
+
+Dalam analisis data modern, range jarang digunakan
+sebagai satu-satunya ukuran penyebaran.
+
+Sebagai gantinya, statistika lebih sering menggunakan
+<b>Interquartile Range (IQR)</b>,
+<b>Variansi</b>, dan
+<b>Standar Deviasi</b>
+karena ketiga ukuran tersebut mempertimbangkan
+lebih banyak informasi dari keseluruhan data.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="iqr" class="materi">
+
+<h1>4.2 Jangkauan Interkuartil (Interquartile Range / IQR)</h1>
+
+<p>
+
+Range memiliki kelemahan karena hanya memperhatikan
+dua nilai ekstrem.
+
+Untuk mengatasi kelemahan tersebut,
+digunakan <b>Jangkauan Interkuartil (Interquartile Range atau IQR)</b>.
+
+IQR hanya memperhatikan 50% data yang berada di tengah,
+sehingga jauh lebih stabil terhadap pengaruh outlier.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Interquartile Range (IQR) adalah selisih
+antara kuartil ketiga dan kuartil pertama.
+
+</p>
+
+<p class="rumus">
+
+\[
+IQR=Q_3-Q_1
+\]
+
+</p>
+
+</div>
+
+<p>
+
+Karena menggunakan Q₁ dan Q₃,
+IQR tidak dipengaruhi oleh nilai yang sangat kecil
+atau sangat besar.
+
+Inilah alasan IQR sering digunakan
+dalam analisis statistik dan pembuatan
+<b>Box Plot</b>.
+
+</p>
+
+<hr>
+
+<h2>Makna IQR</h2>
+
+<p>
+
+IQR menunjukkan seberapa lebar penyebaran
+50% data yang berada di bagian tengah.
+
+Semakin kecil IQR,
+semakin rapat penyebaran data.
+
+Sebaliknya,
+semakin besar IQR,
+semakin besar variasi data di bagian tengah.
+
+</p><h2>Langkah-Langkah Menentukan IQR</h2>
+
+<ol>
+
+<li>Urutkan data dari nilai terkecil hingga terbesar.</li>
+
+<li>Tentukan kuartil bawah (Q₁).</li>
+
+<li>Tentukan kuartil atas (Q₃).</li>
+
+<li>Hitung selisih antara Q₃ dan Q₁.</li>
+
+</ol>
+
+<p class="rumus">
+
+\[
+IQR=Q_3-Q_1
+\]
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Diketahui data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+5, 7, 8, 10, 12, 15, 18, 20, 22
+
+</div>
+
+<p>
+
+Dari pembahasan pada bab sebelumnya diperoleh
+
+</p>
+
+<ul>
+
+<li>Q₁ = 7,5</li>
+
+<li>Q₃ = 19</li>
+
+</ul>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p class="rumus">
+
+\[
+IQR=19-7,5=11,5
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jangkauan Interkuartil = 11,5</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Suatu kumpulan data memiliki
+
+</p>
+
+<ul>
+
+<li>Q₁ = 24</li>
+
+<li>Q₃ = 41</li>
+
+</ul>
+
+<p>
+
+Hitunglah nilai IQR.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+IQR=Q_3-Q_1
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+IQR=41-24=17
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>IQR = 17</b>
+
+</div>
+
+<hr>
+
+<h2>Perbandingan Range dan IQR</h2>
+
+<table>
+
+<tr>
+
+<th>Range</th>
+
+<th>IQR</th>
+
+</tr>
+
+<tr>
+
+<td>Menggunakan data terbesar dan terkecil.</td>
+
+<td>Menggunakan Q₁ dan Q₃.</td>
+
+</tr>
+
+<tr>
+
+<td>Sangat sensitif terhadap outlier.</td>
+
+<td>Lebih tahan terhadap outlier.</td>
+
+</tr>
+
+<tr>
+
+<td>Perhitungan sederhana.</td>
+
+<td>Perhitungan sedikit lebih panjang.</td>
+
+</tr>
+
+<tr>
+
+<td>Cocok untuk gambaran awal.</td>
+
+<td>Lebih baik untuk analisis statistik.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Penerapan IQR</h2>
+
+<p>
+
+IQR sering digunakan untuk mendeteksi
+<b>outlier</b> atau data pencilan.
+
+Suatu data dikatakan berpotensi sebagai outlier apabila berada di luar batas berikut.
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Batas Bawah}=Q_1-1,5(IQR)
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Batas Atas}=Q_3+1,5(IQR)
+\]
+
+</p>
+
+<p>
+
+Jika suatu nilai berada di luar batas tersebut,
+nilai tersebut dicurigai sebagai outlier.
+
+</p>
+
+<div class="note">
+
+<h3>Tahukah Kamu?</h3>
+
+<p>
+
+Metode 1,5 × IQR merupakan metode yang sangat populer
+dalam statistika modern dan digunakan oleh banyak perangkat lunak,
+seperti R, Python, SPSS, dan Minitab,
+untuk mendeteksi data pencilan secara otomatis.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Latihan</h2>
+
+<ol>
+
+<li>
+
+Suatu data memiliki Q₁ = 18 dan Q₃ = 32.
+Hitunglah nilai IQR.
+
+</li>
+
+<li>
+
+Suatu data memiliki IQR = 12 dan Q₁ = 25.
+Tentukan nilai Q₃.
+
+</li>
+
+<li>
+
+Jelaskan mengapa IQR lebih tahan terhadap outlier dibandingkan range.
+
+</li>
+
+</ol>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>IQR adalah selisih antara kuartil atas dan kuartil bawah.</li>
+
+<li>Rumus IQR adalah \(IQR = Q_3 - Q_1\).</li>
+
+<li>IQR menggambarkan penyebaran 50% data di bagian tengah.</li>
+
+<li>IQR lebih stabil dibandingkan range karena tidak dipengaruhi secara langsung oleh nilai ekstrem.</li>
+
+<li>IQR banyak digunakan untuk mendeteksi outlier.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="simpangan" class="materi">
+
+<h1>4.3 Simpangan Rata-rata (Mean Absolute Deviation)</h1>
+
+<p>
+
+Range dan IQR hanya memanfaatkan sebagian informasi dari data.
+
+Untuk memperoleh ukuran penyebaran yang mempertimbangkan
+<b>seluruh data</b>, digunakan <b>Simpangan Rata-rata</b>.
+
+Simpangan rata-rata mengukur rata-rata jarak setiap data
+terhadap nilai mean tanpa memperhatikan arah penyimpangannya.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Simpangan rata-rata adalah rata-rata nilai mutlak
+penyimpangan setiap data terhadap mean.
+
+</p>
+
+<p class="rumus">
+
+\[
+SR=\frac{\sum |x_i-\bar{x}|}{n}
+\]
+
+</p>
+
+</div>
+<h2>Langkah-Langkah Menghitung Simpangan Rata-rata</h2>
+
+<ol>
+
+<li>Hitung nilai mean (\(\bar{x}\)).</li>
+
+<li>Hitung selisih setiap data terhadap mean.</li>
+
+<li>Ambil nilai mutlak dari setiap selisih.</li>
+
+<li>Jumlahkan seluruh nilai mutlak tersebut.</li>
+
+<li>Bagi dengan banyaknya data.</li>
+
+</ol>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Tentukan simpangan rata-rata dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+4, 6, 8, 10, 12
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Mean data
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{4+6+8+10+12}{5}
+=
+8
+\]
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Data (\(x_i\))</th>
+
+<th>\(|x_i-\bar{x}|\)</th>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>10</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>12</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<th>Jumlah</th>
+
+<th>12</th>
+
+</tr>
+
+</table>
+
+<p>
+
+Maka
+
+</p>
+
+<p class="rumus">
+
+\[
+SR
+=
+\frac{12}{5}
+=
+2,4
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Simpangan rata-rata = 2,4</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi</h2>
+
+<p>
+
+Nilai simpangan rata-rata sebesar <b>2,4</b>
+berarti setiap data rata-rata berjarak sekitar
+2,4 satuan dari nilai mean.
+
+Semakin kecil simpangan rata-rata,
+semakin rapat penyebaran data terhadap mean.
+
+Sebaliknya, semakin besar nilainya,
+semakin besar pula variasi data.
+
+</p>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<div class="contoh-data">
+
+15, 15, 15, 15, 15
+
+</div>
+
+<p>
+
+Mean data adalah
+
+<b>15</b>.
+
+Karena seluruh data sama dengan mean,
+maka seluruh penyimpangan bernilai nol.
+
+</p>
+
+<p class="rumus">
+
+\[
+SR
+=
+0
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Simpangan rata-rata = 0</b>
+
+</div>
+
+<div class="note">
+
+<h3>Insight</h3>
+
+<p>
+
+Simpangan rata-rata bernilai nol
+<b>hanya jika seluruh data memiliki nilai yang sama</b>.
+
+Apabila terdapat minimal satu data yang berbeda,
+maka simpangan rata-rata akan bernilai positif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Simpangan Rata-rata</h2>
+
+<ul>
+
+<li>Menggunakan seluruh data.</li>
+
+<li>Mudah diinterpretasikan.</li>
+
+<li>Memberikan ukuran penyebaran yang lebih baik dibanding range.</li>
+
+<li>Tidak hanya bergantung pada dua nilai ekstrem.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Simpangan Rata-rata</h2>
+
+<ul>
+
+<li>Kurang praktis untuk analisis matematika lanjutan.</li>
+
+<li>Jarang digunakan dalam statistika inferensial.</li>
+
+<li>Sebagian besar analisis modern lebih menggunakan variansi dan standar deviasi.</li>
+
+</ul>
+
+<div class="warning">
+
+<h3>Perhatian</h3>
+
+<p>
+
+Walaupun simpangan rata-rata cukup baik,
+dalam statistika modern ukuran penyebaran yang
+paling banyak digunakan adalah <b>variansi</b>
+dan <b>standar deviasi</b>.
+
+Kedua ukuran tersebut memiliki sifat matematis
+yang jauh lebih kuat sehingga dapat digunakan
+dalam berbagai teori statistika dan probabilitas.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="variansi" class="materi">
+
+<h1>4.4 Variansi (Variance)</h1>
+
+<p>
+
+Variansi merupakan salah satu ukuran penyebaran
+yang paling penting dalam statistika.
+
+Berbeda dengan simpangan rata-rata,
+variansi menggunakan <b>kuadrat penyimpangan</b>
+setiap data terhadap mean.
+
+Akibatnya, penyimpangan yang besar akan memberikan
+pengaruh yang lebih besar pula terhadap nilai variansi.
+
+Karena sifat tersebut, variansi menjadi dasar
+bagi banyak metode statistika modern,
+termasuk regresi, distribusi probabilitas,
+machine learning, dan analisis data.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi Variansi Populasi</h3>
+
+<p class="rumus">
+
+\[
+\sigma^2
+=
+\frac{\sum (x_i-\mu)^2}{N}
+\]
+
+</p>
+
+<p>
+
+dengan:
+
+</p>
+
+<ul>
+
+<li>\(\sigma^2\) = variansi populasi</li>
+
+<li>\(\mu\) = mean populasi</li>
+
+<li>\(N\) = banyak data populasi</li>
+
+</ul>
+
+</div>
+
+<div class="note">
+
+<h3>Definisi Variansi Sampel</h3>
+
+<p class="rumus">
+
+\[
+s^2
+=
+\frac{\sum (x_i-\bar{x})^2}{n-1}
+\]
+
+</p>
+
+<p>
+
+Variansi sampel menggunakan penyebut
+<b>\(n-1\)</b>, yang dikenal sebagai
+<b>Koreksi Bessel (Bessel's Correction)</b>,
+agar menjadi penduga yang tidak bias terhadap
+variansi populasi.
+
+</p>
+
+</div>
+<h2>Langkah-Langkah Menghitung Variansi</h2>
+
+<ol>
+
+<li>Tentukan nilai mean dari seluruh data.</li>
+
+<li>Hitung selisih setiap data terhadap mean.</li>
+
+<li>Kuadratkan setiap selisih tersebut.</li>
+
+<li>Jumlahkan seluruh hasil kuadrat penyimpangan.</li>
+
+<li>Bagi dengan banyak data (populasi) atau \(n-1\) (sampel).</li>
+
+</ol>
+
+<hr>
+
+<h2>Contoh 1 (Variansi Populasi)</h2>
+
+<p>
+
+Hitung variansi populasi dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+2, 4, 6, 8, 10
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Mean data
+
+</p>
+
+<p class="rumus">
+
+\[
+\mu
+=
+\frac{2+4+6+8+10}{5}
+=
+6
+\]
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Data</th>
+
+<th>\(x_i-\mu\)</th>
+
+<th>\((x_i-\mu)^2\)</th>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>-4</td>
+
+<td>16</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>-2</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+
+<td>2</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>10</td>
+
+<td>4</td>
+
+<td>16</td>
+
+</tr>
+
+<tr>
+
+<th>Jumlah</th>
+
+<th>-</th>
+
+<th>40</th>
+
+</tr>
+
+</table>
+
+<p>
+
+Karena data dianggap sebagai populasi,
+
+</p>
+
+<p class="rumus">
+
+\[
+\sigma^2
+=
+\frac{40}{5}
+=
+8
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Variansi Populasi = 8</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2 (Variansi Sampel)</h2>
+
+<p>
+
+Gunakan data yang sama, tetapi anggap data tersebut merupakan sampel.
+
+</p>
+
+<p>
+
+Karena merupakan sampel, penyebutnya adalah
+\(n-1\).
+
+</p>
+
+<p class="rumus">
+
+\[
+s^2
+=
+\frac{40}{4}
+=
+10
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Variansi Sampel = 10</b>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Ada Dua Rumus?</h2>
+
+<p>
+
+Dalam statistika, terdapat perbedaan antara
+<b>populasi</b> dan <b>sampel</b>.
+
+</p>
+
+<ul>
+
+<li>Jika seluruh anggota diamati, gunakan variansi populasi.</li>
+
+<li>Jika hanya sebagian anggota yang diamati, gunakan variansi sampel.</li>
+
+</ul>
+
+<p>
+
+Pada analisis data nyata, kita lebih sering bekerja dengan sampel.
+Oleh karena itu, rumus variansi sampel lebih banyak digunakan.
+
+</p>
+
+<div class="note">
+
+<h3>Tahukah Kamu?</h3>
+
+<p>
+
+Variansi selalu bernilai <b>tidak negatif</b>.
+Nilainya dapat berupa nol atau bilangan positif,
+tetapi tidak pernah bernilai negatif karena setiap
+penyimpangan dikuadratkan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Variansi</h2>
+
+<p>
+
+Semakin kecil nilai variansi,
+semakin dekat data terhadap nilai mean.
+
+Sebaliknya,
+semakin besar nilai variansi,
+semakin besar penyebaran data.
+
+</p>
+
+<p>
+
+Namun terdapat satu kelemahan penting.
+
+Satuan variansi merupakan
+<b>kuadrat dari satuan data</b>.
+
+Misalnya jika data diukur dalam meter,
+maka variansi memiliki satuan meter kuadrat.
+
+Hal ini membuat variansi kurang mudah
+diinterpretasikan secara langsung.
+
+</p>
+
+<div class="warning">
+
+<h3>Perhatian</h3>
+
+<p>
+
+Untuk mengatasi kelemahan tersebut,
+digunakan <b>Standar Deviasi</b>,
+yaitu akar kuadrat dari variansi.
+
+Standar deviasi memiliki satuan yang sama
+dengan data asli sehingga jauh lebih mudah dipahami.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="standar-deviasi" class="materi">
+
+<h1>4.5 Standar Deviasi (Standard Deviation)</h1>
+
+<p>
+
+Standar deviasi merupakan ukuran penyebaran
+yang paling banyak digunakan dalam statistika.
+
+Standar deviasi menunjukkan rata-rata
+jarak penyebaran data terhadap nilai mean
+dalam satuan yang sama dengan data aslinya.
+
+Karena lebih mudah diinterpretasikan,
+standar deviasi hampir selalu dilaporkan
+bersama nilai mean dalam berbagai penelitian,
+analisis data, dan machine learning.
+
+</p>
+
+<div class="note">
+
+<h3>Rumus Standar Deviasi Populasi</h3>
+
+<p class="rumus">
+
+\[
+\sigma
+=
+\sqrt{\sigma^2}
+\]
+
+</p>
+
+</div>
+
+<div class="note">
+
+<h3>Rumus Standar Deviasi Sampel</h3>
+
+<p class="rumus">
+
+\[
+s
+=
+\sqrt{s^2}
+\]
+
+</p>
+
+</div>
+<h2>Hubungan Variansi dan Standar Deviasi</h2>
+
+<p>
+
+Standar deviasi diperoleh dengan mengambil akar kuadrat dari variansi.
+
+Karena itu, kedua ukuran ini selalu saling berkaitan.
+
+Jika variansi diketahui, maka standar deviasi dapat dihitung dengan mudah.
+
+</p>
+
+<p class="rumus">
+
+\[
+\sigma=\sqrt{\sigma^2}
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+s=\sqrt{s^2}
+\]
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Pada contoh sebelumnya diperoleh variansi populasi sebesar
+
+<b>8</b>.
+
+Tentukan standar deviasinya.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+\sigma
+=
+\sqrt{8}
+=
+2\sqrt{2}
+\approx
+2,83
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Standar Deviasi = 2,83</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Suatu sampel memiliki variansi sebesar
+
+25.
+
+Hitung standar deviasinya.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+s
+=
+\sqrt{25}
+=
+5
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Standar Deviasi = 5</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Standar Deviasi</h2>
+
+<p>
+
+Standar deviasi menunjukkan seberapa jauh data cenderung menyimpang dari nilai mean.
+
+Semakin kecil standar deviasi, semakin rapat data mengelompok di sekitar mean.
+
+Sebaliknya, semakin besar standar deviasi, semakin besar pula penyebaran data.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Standar Deviasi</th>
+
+<th>Interpretasi</th>
+
+</tr>
+
+<tr>
+
+<td>Kecil</td>
+
+<td>Data relatif homogen dan berdekatan.</td>
+
+</tr>
+
+<tr>
+
+<td>Sedang</td>
+
+<td>Penyebaran data cukup bervariasi.</td>
+
+</tr>
+
+<tr>
+
+<td>Besar</td>
+
+<td>Data sangat beragam dan menyebar luas.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Perbandingan Variansi dan Standar Deviasi</h2>
+
+<table>
+
+<tr>
+
+<th>Variansi</th>
+
+<th>Standar Deviasi</th>
+
+</tr>
+
+<tr>
+
+<td>Menggunakan satuan kuadrat.</td>
+
+<td>Menggunakan satuan yang sama dengan data.</td>
+
+</tr>
+
+<tr>
+
+<td>Lebih banyak digunakan dalam teori statistika.</td>
+
+<td>Lebih mudah diinterpretasikan.</td>
+
+</tr>
+
+<tr>
+
+<td>Merupakan kuadrat dari standar deviasi.</td>
+
+<td>Merupakan akar kuadrat dari variansi.</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<h3>Insight</h3>
+
+<p>
+
+Dalam laporan penelitian, biasanya nilai mean ditulis bersama standar deviasi.
+
+Contoh:
+
+</p>
+
+<p>
+
+<b>75,4 ± 3,2</b>
+
+</p>
+
+<p>
+
+Artinya rata-rata data adalah 75,4 dengan standar deviasi sebesar 3,2.
+
+Semakin kecil angka setelah simbol ±,
+semakin seragam data yang diamati.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Latihan</h2>
+
+<ol>
+
+<li>
+
+Jika variansi suatu populasi adalah 49,
+tentukan standar deviasinya.
+
+</li>
+
+<li>
+
+Suatu sampel memiliki standar deviasi 6.
+Tentukan variansinya.
+
+</li>
+
+<li>
+
+Manakah yang memiliki penyebaran lebih besar,
+data dengan standar deviasi 2 atau standar deviasi 8?
+Jelaskan alasanmu.
+
+</li>
+
+</ol>
+
+<div class="summary">
+
+<h2>Ringkasan Standar Deviasi</h2>
+
+<ul>
+
+<li>Standar deviasi adalah akar kuadrat dari variansi.</li>
+
+<li>Standar deviasi memiliki satuan yang sama dengan data asli.</li>
+
+<li>Semakin besar standar deviasi, semakin besar penyebaran data.</li>
+
+<li>Standar deviasi merupakan ukuran penyebaran yang paling banyak digunakan dalam statistika.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="koefisien-variasi" class="materi">
+
+<h1>4.6 Koefisien Variasi (Coefficient of Variation)</h1>
+
+<p>
+
+Sering kali kita ingin membandingkan tingkat penyebaran dari dua kumpulan data yang memiliki rata-rata berbeda.
+
+Apabila hanya menggunakan standar deviasi, perbandingan tersebut dapat menjadi kurang adil.
+
+Untuk mengatasi masalah tersebut digunakan <b>Koefisien Variasi (Coefficient of Variation/CV)</b>.
+
+Koefisien variasi menyatakan besar penyebaran data relatif terhadap nilai rata-ratanya dalam bentuk persentase.
+
+</p>
+
+<div class="note">
+
+<h3>Rumus Koefisien Variasi</h3>
+
+<p class="rumus">
+
+\[
+CV
+=
+\frac{s}{\bar{x}}
+\times
+100\%
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li>\(CV\) = Koefisien Variasi</li>
+
+<li>\(s\) = Standar Deviasi</li>
+
+<li>\(\bar{x}\) = Mean</li>
+
+</ul>
+
+</div>
+
+<p>
+
+Koefisien variasi sangat berguna ketika membandingkan data yang memiliki satuan atau rata-rata yang berbeda.
+
+Semakin kecil nilai koefisien variasi, semakin konsisten atau homogen data tersebut.
+
+</p>
+<h2>Mengapa Koefisien Variasi Diperlukan?</h2>
+
+<p>
+
+Misalkan terdapat dua kelas dengan hasil ujian sebagai berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Kelas</th>
+
+<th>Mean</th>
+
+<th>Standar Deviasi</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>80</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>40</td>
+
+<td>4</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Jika hanya melihat standar deviasi, kedua kelas tampak memiliki tingkat penyebaran yang sama.
+
+Namun jika dibandingkan terhadap nilai rata-ratanya, penyebaran kelas B sebenarnya jauh lebih besar secara relatif.
+
+Di sinilah koefisien variasi memberikan gambaran yang lebih adil.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Suatu data memiliki:
+
+</p>
+
+<ul>
+
+<li>Mean = 50</li>
+
+<li>Standar Deviasi = 5</li>
+
+</ul>
+
+<p>
+
+Hitung koefisien variasinya.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+CV
+=
+\frac{5}{50}
+\times100\%
+=
+10\%
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Koefisien Variasi = 10%</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Diketahui dua kelompok data berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Kelompok</th>
+
+<th>Mean</th>
+
+<th>Standar Deviasi</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>40</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>80</td>
+
+<td>4</td>
+
+</tr>
+
+</table>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Untuk kelompok A
+
+</p>
+
+<p class="rumus">
+
+\[
+CV_A
+=
+\frac{4}{40}
+\times100\%
+=
+10\%
+\]
+
+</p>
+
+<p>
+
+Untuk kelompok B
+
+</p>
+
+<p class="rumus">
+
+\[
+CV_B
+=
+\frac{4}{80}
+\times100\%
+=
+5\%
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>
+
+Kelompok B memiliki penyebaran relatif yang lebih kecil sehingga datanya lebih konsisten.
+
+</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Koefisien Variasi</h2>
+
+<table>
+
+<tr>
+
+<th>Nilai CV</th>
+
+<th>Interpretasi</th>
+
+</tr>
+
+<tr>
+
+<td>Sangat kecil</td>
+
+<td>Data sangat konsisten.</td>
+
+</tr>
+
+<tr>
+
+<td>Sedang</td>
+
+<td>Penyebaran data masih wajar.</td>
+
+</tr>
+
+<tr>
+
+<td>Besar</td>
+
+<td>Variasi data relatif tinggi.</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<h3>Catatan</h3>
+
+<p>
+
+Tidak ada batas baku yang berlaku untuk semua kasus.
+
+Interpretasi nilai koefisien variasi bergantung pada bidang ilmu yang digunakan, seperti ekonomi, biologi, teknik, maupun statistika.
+
+Yang paling penting adalah membandingkan nilai CV antar kelompok data.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Koefisien Variasi</h2>
+
+<ul>
+
+<li>Dapat membandingkan dua kelompok data dengan rata-rata berbeda.</li>
+
+<li>Tidak bergantung pada satuan pengukuran.</li>
+
+<li>Banyak digunakan dalam penelitian ilmiah.</li>
+
+<li>Menunjukkan tingkat konsistensi data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Koefisien Variasi</h2>
+
+<ul>
+
+<li>Tidak cocok digunakan jika mean mendekati nol.</li>
+
+<li>Sangat bergantung pada ketelitian perhitungan mean dan standar deviasi.</li>
+
+</ul>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan Koefisien Variasi</h2>
+
+<ul>
+
+<li>Koefisien variasi merupakan ukuran penyebaran relatif.</li>
+
+<li>CV dihitung menggunakan standar deviasi dan mean.</li>
+
+<li>Semakin kecil CV, semakin konsisten data.</li>
+
+<li>CV sangat berguna untuk membandingkan dua kumpulan data yang berbeda skala.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="distribusi" class="materi">
+
+<h1>4.7 Distribusi Data</h1>
+
+<p>
+
+Selain mengetahui pusat dan penyebaran data, seorang analis juga perlu memahami <b>bentuk distribusi data</b>.
+
+Distribusi data menggambarkan bagaimana nilai-nilai dalam suatu kumpulan data tersebar, apakah terkumpul di tengah, condong ke salah satu sisi, atau memiliki lebih dari satu puncak.
+
+Memahami bentuk distribusi sangat penting karena banyak metode statistika memiliki asumsi terhadap distribusi data.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Distribusi data adalah pola penyebaran frekuensi nilai-nilai dalam suatu kumpulan data.
+
+Distribusi dapat diamati melalui tabel frekuensi, histogram, maupun kurva distribusi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Distribusi Simetris</h2>
+
+<p>
+
+Distribusi simetris adalah distribusi yang memiliki bentuk hampir sama antara sisi kiri dan sisi kanan terhadap titik tengah.
+
+Pada distribusi ini, mean, median, dan modus umumnya berada pada posisi yang hampir sama.
+
+</p>
+
+<pre>
+
+        █
+      █████
+    █████████
+      █████
+        █
+
+</pre>
+
+<p>
+
+Distribusi simetris sering dijumpai pada data yang mengikuti distribusi normal.
+
+</p>
+
+<hr>
+
+<h2>Distribusi Tidak Simetris</h2>
+
+<p>
+
+Tidak semua data memiliki bentuk simetris.
+
+Ada data yang lebih banyak terkumpul di sebelah kiri maupun di sebelah kanan.
+
+Fenomena ini akan dipelajari lebih lanjut pada materi <b>Kemencengan (Skewness)</b>.
+
+</p>
+<hr>
+
+<h2>Representasi Distribusi Data</h2>
+
+<p>
+
+Distribusi data dapat disajikan dalam berbagai bentuk. Masing-masing memiliki kelebihan sesuai tujuan analisis.
+
+</p>
+
+<table>
+
+<tr>
+<th>Bentuk Penyajian</th>
+<th>Kegunaan</th>
+</tr>
+
+<tr>
+<td>Tabel Frekuensi</td>
+<td>Menunjukkan banyaknya kemunculan setiap nilai atau kelas.</td>
+</tr>
+
+<tr>
+<td>Histogram</td>
+<td>Memperlihatkan bentuk distribusi secara visual.</td>
+</tr>
+
+<tr>
+<td>Poligon Frekuensi</td>
+<td>Memudahkan membandingkan beberapa distribusi.</td>
+</tr>
+
+<tr>
+<td>Box Plot</td>
+<td>Menunjukkan median, kuartil, IQR, dan outlier.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Mengapa Bentuk Distribusi Penting?</h2>
+
+<p>
+
+Dua kumpulan data dapat memiliki mean dan standar deviasi yang hampir sama, tetapi bentuk distribusinya berbeda.
+
+Akibatnya, kesimpulan yang diperoleh dari analisis juga dapat berbeda.
+
+Oleh karena itu, dalam statistika modern kita tidak hanya menghitung ukuran pemusatan dan ukuran penyebaran, tetapi juga memperhatikan bentuk distribusi data.
+
+</p>
+
+<div class="note">
+
+<h3>Insight</h3>
+
+<p>
+
+Dalam analisis data profesional, langkah yang umum dilakukan adalah:
+
+</p>
+
+<ol>
+
+<li>Menghitung mean atau median.</li>
+
+<li>Menghitung ukuran penyebaran.</li>
+
+<li>Melihat bentuk distribusi data.</li>
+
+<li>Baru memilih metode analisis yang sesuai.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<section id="skewness" class="materi">
+
+<h1>4.8 Kemencengan (Skewness)</h1>
+
+<p>
+
+Kemencengan atau <i>Skewness</i> adalah ukuran yang menunjukkan apakah distribusi data simetris atau cenderung miring ke salah satu sisi.
+
+Dengan kata lain, skewness mengukur arah dan tingkat ketidaksimetrian suatu distribusi.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Skewness adalah ukuran statistik yang menggambarkan arah dan besar kemencengan suatu distribusi terhadap pusatnya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>1. Distribusi Simetris</h2>
+
+<p>
+
+Pada distribusi simetris, sisi kiri dan sisi kanan memiliki bentuk yang hampir sama.
+
+Nilai mean, median, dan modus umumnya berada pada posisi yang hampir berimpit.
+
+</p>
+
+<pre>
+
+          █
+       ███████
+    █████████████
+       ███████
+          █
+
+Mean ≈ Median ≈ Modus
+
+</pre>
+
+<hr>
+
+<h2>2. Skewness Positif (Miring ke Kanan)</h2>
+
+<p>
+
+Pada distribusi ini, sebagian besar data berada di sebelah kiri, sedangkan ekor distribusi memanjang ke arah kanan.
+
+Kondisi ini biasanya disebabkan oleh beberapa nilai yang jauh lebih besar daripada sebagian besar data lainnya.
+
+</p>
+
+<pre>
+
+███████████
+████████
+█████
+██
+█
+            █
+              █
+
+</pre>
+
+<p>
+
+Hubungan ukuran pemusatan umumnya adalah
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Mean} >
+\text{Median} >
+\text{Modus}
+\]
+
+</p>
+
+<h3>Contoh</h3>
+
+<p>
+
+Pendapatan masyarakat sering memiliki skewness positif karena terdapat sedikit orang dengan pendapatan yang sangat tinggi.
+
+</p>
+
+<hr>
+
+<h2>3. Skewness Negatif (Miring ke Kiri)</h2>
+
+<p>
+
+Pada distribusi ini, sebagian besar data berada di sebelah kanan, sedangkan ekor distribusi memanjang ke arah kiri.
+
+Biasanya terjadi karena terdapat beberapa nilai yang jauh lebih kecil daripada data lainnya.
+
+</p>
+
+<pre>
+
+              █
+            ███
+         ███████
+██████████████
+
+</pre>
+
+<p>
+
+Hubungan ukuran pemusatan umumnya adalah
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Mean} <
+\text{Median} <
+\text{Modus}
+\]
+
+</p>
+
+<h3>Contoh</h3>
+
+<p>
+
+Nilai ujian pada kelas yang sebagian besar siswanya memperoleh nilai tinggi, tetapi ada beberapa siswa dengan nilai sangat rendah.
+
+</p>
+
+<hr>
+
+<h2>Interpretasi Nilai Skewness</h2>
+
+<table>
+
+<tr>
+<th>Nilai Skewness</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>≈ 0</td>
+<td>Distribusi hampir simetris.</td>
+</tr>
+
+<tr>
+<td>> 0</td>
+<td>Miring ke kanan (positif).</td>
+</tr>
+
+<tr>
+<td>< 0</td>
+<td>Miring ke kiri (negatif).</td>
+</tr>
+
+</table>
+
+<div class="warning">
+
+<h3>Catatan Penting</h3>
+
+<p>
+
+Dalam praktik, distribusi nyata hampir tidak pernah benar-benar simetris.
+
+Sedikit kemencengan masih dianggap wajar dan tidak selalu menjadi masalah dalam analisis data.
+
+</p>
+
+</div>
+</section>
+
+<section id="kurtosis" class="materi">
+
+<h1>4.9 Keruncingan (Kurtosis)</h1>
+
+<p>
+
+Selain memperhatikan kemencengan distribusi, statistika juga mempelajari
+<b>keruncingan</b> atau <i>Kurtosis</i>.
+
+Kurtosis mengukur bentuk puncak distribusi dan ketebalan ekor distribusi
+dibandingkan dengan distribusi normal.
+
+Perlu dipahami bahwa dalam statistika modern, kurtosis lebih banyak
+menggambarkan <b>ketebalan ekor (tails)</b> daripada sekadar tinggi
+rendahnya puncak distribusi.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Kurtosis adalah ukuran statistik yang menunjukkan karakteristik bentuk
+ekor dan tingkat keruncingan suatu distribusi data.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Jenis-Jenis Kurtosis</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+
+<th>Karakteristik</th>
+
+</tr>
+
+<tr>
+
+<td>Leptokurtik</td>
+
+<td>Puncak relatif tinggi dan ekor lebih tebal dibanding distribusi normal.</td>
+
+</tr>
+
+<tr>
+
+<td>Mesokurtik</td>
+
+<td>Memiliki karakteristik yang mendekati distribusi normal.</td>
+
+</tr>
+
+<tr>
+
+<td>Platykurtik</td>
+
+<td>Puncak relatif lebih landai dan ekor lebih tipis dibanding distribusi normal.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Interpretasi</h2>
+
+<ul>
+
+<li><b>Leptokurtik</b> menunjukkan kemungkinan munculnya nilai ekstrem lebih besar.</li>
+
+<li><b>Mesokurtik</b> dianggap sebagai distribusi acuan (normal).</li>
+
+<li><b>Platykurtik</b> menunjukkan data lebih menyebar dengan peluang nilai ekstrem yang relatif lebih kecil.</li>
+
+</ul>
+
+<hr>
+
+<div class="note">
+
+<h3>Tahukah Kamu?</h3>
+
+<p>
+
+Dalam ilmu data (Data Science), Machine Learning, ekonomi, dan keuangan,
+analisis skewness dan kurtosis sering dilakukan sebelum membangun model statistik.
+
+Hal ini membantu peneliti memilih metode analisis yang paling sesuai dengan karakteristik data.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Antar Ukuran Penyebaran</h2>
+
+<table>
+
+<tr>
+
+<th>Ukuran</th>
+
+<th>Fungsi Utama</th>
+
+</tr>
+
+<tr>
+
+<td>Range</td>
+
+<td>Mengukur jarak antara nilai terbesar dan terkecil.</td>
+
+</tr>
+
+<tr>
+
+<td>IQR</td>
+
+<td>Mengukur penyebaran 50% data di bagian tengah.</td>
+
+</tr>
+
+<tr>
+
+<td>Simpangan Rata-rata</td>
+
+<td>Mengukur rata-rata penyimpangan terhadap mean.</td>
+
+</tr>
+
+<tr>
+
+<td>Variansi</td>
+
+<td>Mengukur penyebaran menggunakan kuadrat penyimpangan.</td>
+
+</tr>
+
+<tr>
+
+<td>Standar Deviasi</td>
+
+<td>Mengukur penyebaran dalam satuan yang sama dengan data.</td>
+
+</tr>
+
+<tr>
+
+<td>Koefisien Variasi</td>
+
+<td>Membandingkan penyebaran relatif antar kelompok data.</td>
+
+</tr>
+
+<tr>
+
+<td>Skewness</td>
+
+<td>Mengukur arah kemencengan distribusi.</td>
+
+</tr>
+
+<tr>
+
+<td>Kurtosis</td>
+
+<td>Mengukur karakteristik ekor distribusi.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<section class="ringkasan-bab">
+
+<h1>Ringkasan Bab 4</h1>
+
+<ul>
+
+<li>Ukuran penyebaran menjelaskan seberapa jauh data tersebar dari pusatnya.</li>
+
+<li>Range merupakan ukuran penyebaran paling sederhana.</li>
+
+<li>IQR lebih tahan terhadap pengaruh outlier dibandingkan range.</li>
+
+<li>Simpangan rata-rata menggunakan seluruh data dan mengukur rata-rata penyimpangan terhadap mean.</li>
+
+<li>Variansi dan standar deviasi adalah ukuran penyebaran yang paling banyak digunakan dalam statistika.</li>
+
+<li>Koefisien variasi digunakan untuk membandingkan penyebaran relatif dari beberapa kelompok data.</li>
+
+<li>Skewness menunjukkan arah kemencengan distribusi.</li>
+
+<li>Kurtosis menggambarkan karakteristik ekor distribusi dan tingkat keruncingannya.</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section class="latihan-bab">
+
+<h1>Latihan Akhir Bab</h1>
+
+<ol>
+
+<li>
+Hitung range dari data:
+8, 12, 15, 17, 21, 25.
+</li>
+
+<li>
+Jika diketahui Q₁ = 18 dan Q₃ = 33, tentukan nilai IQR.
+</li>
+
+<li>
+Jelaskan perbedaan antara variansi dan standar deviasi.
+</li>
+
+<li>
+Suatu data memiliki mean = 80 dan standar deviasi = 8.
+Hitung koefisien variasinya.
+</li>
+
+<li>
+Jelaskan perbedaan distribusi simetris, skewness positif, dan skewness negatif.
+</li>
+
+<li>
+Mengapa IQR lebih baik daripada range dalam mendeteksi outlier?
+</li>
+
+<li>
+Jelaskan perbedaan antara distribusi leptokurtik, mesokurtik, dan platykurtik.
+</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<div class="navigation-buttons">
+
+<a href="index.html" class="btn-home">
+
+🏠 Kembali ke Home
+
+</a>
+
+<a href="peluang5.html" class="btn-next">
+
+Bab Selanjutnya ➜
+
+</a>
+
+</div>
+
+</main>
+
+<footer>
+
+<p>
+
+© 2026 Modul Statistika Interaktif
+
+<br>
+
+Bab 4 — Ukuran Penyebaran Data
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
