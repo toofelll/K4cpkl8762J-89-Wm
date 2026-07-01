@@ -1,1 +1,2829 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 5 - Prinsip Kombinatorial</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bab 5</h1>
+
+<h2>Prinsip Kombinatorial</h2>
+
+<p>
+
+Bab ini memperkenalkan berbagai teknik berpikir yang menjadi senjata utama
+dalam Olimpiade Matematika.
+
+Berbeda dengan bab sebelumnya yang lebih berfokus pada pembuktian,
+bab ini mengajarkan cara menemukan ide penyelesaian.
+
+Sebagian besar soal OSN, DLP, bahkan IMO dapat diselesaikan menggunakan
+satu atau gabungan beberapa prinsip kombinatorial berikut.
+
+</p>
+
+<div class="note">
+
+<h3>Materi Bab Ini</h3>
+
+<ul>
+
+<li>① Pigeonhole Principle</li>
+
+<li>② Parity (Genap-Ganjil)</li>
+
+<li>③ Coloring</li>
+
+<li>④ Symmetry</li>
+
+<li>⑤ Double Counting</li>
+
+<li>⑥ Invariant</li>
+
+<li>⑦ Monovariant</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<section class="section">
+
+<h1>① Pigeonhole Principle (Prinsip Dirichlet)</h1>
+
+<h2>📖 Apa itu Pigeonhole Principle?</h2>
+
+<p>
+
+<b>Pigeonhole Principle</b> atau
+<b>Prinsip Dirichlet</b>
+merupakan salah satu prinsip paling sederhana,
+namun sangat kuat dalam kombinatorika.
+
+Prinsip ini mengatakan bahwa apabila terdapat lebih banyak objek
+daripada tempat penyimpanannya,
+maka setidaknya ada satu tempat yang berisi lebih dari satu objek.
+
+Walaupun terdengar sederhana,
+prinsip ini mampu menyelesaikan banyak soal Olimpiade
+yang tampaknya sangat rumit.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📜 Sejarah Singkat</h2>
+
+<p>
+
+Prinsip ini diperkenalkan oleh matematikawan Jerman
+<b>Johann Peter Gustav Lejeune Dirichlet</b>.
+
+Karena itu,
+prinsip ini juga dikenal sebagai
+<b>Dirichlet Principle</b>.
+
+Istilah
+"Pigeonhole"
+berasal dari analogi
+merpati yang masuk ke dalam kandang.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan terdapat
+
+</p>
+
+<pre>
+
+11 ekor merpati
+
+</pre>
+
+<p>
+
+dan hanya tersedia
+
+</p>
+
+<pre>
+
+10 kandang
+
+</pre>
+
+<p>
+
+Tidak peduli bagaimana cara memasukkan merpati tersebut,
+pasti ada minimal satu kandang
+yang berisi sedikitnya dua ekor merpati.
+
+Tidak mungkin setiap kandang berisi tepat satu merpati
+karena jumlah merpatinya lebih banyak daripada kandangnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Umum</h2>
+
+<p>
+
+Jika terdapat
+
+</p>
+
+<pre>
+
+n objek
+
+</pre>
+
+<p>
+
+yang ditempatkan ke dalam
+
+</p>
+
+<pre>
+
+m kotak
+
+</pre>
+
+<p>
+
+dengan
+
+</p>
+
+<pre>
+
+n > m
+
+</pre>
+
+<p>
+
+maka pasti terdapat minimal satu kotak
+yang berisi sedikitnya
+
+</p>
+
+<pre>
+
+⌈n / m⌉
+
+</pre>
+
+<p>
+
+objek.
+
+Simbol
+
+<pre>
+
+⌈x⌉
+
+</pre>
+
+menyatakan pembulatan ke atas
+(<i>ceiling</i>).
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Misalkan terdapat
+
+</p>
+
+<pre>
+
+13 siswa
+
+</pre>
+
+<p>
+
+yang lahir pada salah satu dari
+
+</p>
+
+<pre>
+
+12 bulan
+
+</pre>
+
+<p>
+
+Dalam kasus ini
+
+</p>
+
+<pre>
+
+Objek = siswa
+
+Kotak = bulan
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+13 > 12
+
+</pre>
+
+<p>
+
+maka pasti terdapat
+minimal dua siswa
+yang lahir pada bulan yang sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Di dalam laci terdapat
+
+</p>
+
+<pre>
+
+5 kaus kaki hitam
+
+5 kaus kaki putih
+
+</pre>
+
+<p>
+
+Berapa minimal kaus kaki
+yang harus diambil
+agar dijamin mendapatkan
+sepasang dengan warna sama?
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Kemungkinan terburuk:
+
+</p>
+
+<pre>
+
+1 hitam
+
+1 putih
+
+</pre>
+
+<p>
+
+Belum mendapatkan pasangan.
+
+Ambil satu lagi.
+
+Apa pun warnanya,
+pasti sama dengan salah satu sebelumnya.
+
+</p>
+
+<pre>
+
+Jawaban = 3
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Soal OSN</h2>
+
+<p>
+
+Buktikan bahwa
+dari sembarang 367 orang,
+selalu ada minimal dua orang
+yang memiliki hari ulang tahun
+pada tanggal yang sama.
+
+</p>
+
+<p>
+
+Petunjuk:
+
+</p>
+
+<pre>
+
+Kotak = 366 tanggal
+(termasuk 29 Februari)
+
+Objek = 367 orang
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+367 > 366
+
+</pre>
+
+<p>
+
+maka menurut
+Pigeonhole Principle,
+minimal dua orang
+memiliki tanggal ulang tahun yang sama.
+
+</p>
+
+</section><section class="section">
+
+<h2>📐 Generalisasi Pigeonhole Principle</h2>
+
+<p>
+
+Pigeonhole Principle dapat diperluas.
+
+Jika terdapat
+
+</p>
+
+<pre>
+
+n objek
+
+</pre>
+
+<p>
+
+yang ditempatkan ke dalam
+
+</p>
+
+<pre>
+
+m kotak
+
+</pre>
+
+<p>
+
+maka selalu ada paling sedikit satu kotak yang berisi minimal
+
+</p>
+
+<pre>
+
+⌈n/m⌉
+
+</pre>
+
+<p>
+
+objek.
+
+Versi ini sering digunakan pada soal-soal Olimpiade yang lebih sulit.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Generalisasi</h2>
+
+<p>
+
+Sebanyak
+
+</p>
+
+<pre>
+
+100 bola
+
+</pre>
+
+<p>
+
+akan dimasukkan ke dalam
+
+</p>
+
+<pre>
+
+9 kotak
+
+</pre>
+
+<p>
+
+Berapa jumlah minimum bola
+yang pasti berada pada satu kotak?
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<pre>
+
+⌈100/9⌉
+
+=
+
+12
+
+</pre>
+
+<p>
+
+Jadi pasti ada satu kotak
+yang berisi sedikitnya
+
+<b>12 bola</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Pigeonhole Principle?</h2>
+
+<ul>
+
+<li>Jumlah objek lebih banyak daripada jumlah kategori.</li>
+
+<li>Mencari keberadaan suatu pasangan.</li>
+
+<li>Membuktikan bahwa sesuatu pasti terjadi.</li>
+
+<li>Soal tentang pembagian kelompok.</li>
+
+<li>Masalah ulang tahun, warna, kartu, atau angka.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Salah menentukan objek dan kotak.</li>
+
+<li>Lupa menggunakan pembulatan ke atas.</li>
+
+<li>Menggunakan prinsip ini ketika jumlah objek tidak lebih banyak.</li>
+
+<li>Tidak menjelaskan mengapa prinsip tersebut dapat diterapkan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Saat membaca soal,
+cobalah bertanya:
+
+</p>
+
+<ul>
+
+<li>Apa objeknya?</li>
+
+<li>Apa kotaknya?</li>
+
+<li>Apakah jumlah objek lebih banyak?</li>
+
+</ul>
+
+<p>
+
+Jika jawabannya "ya",
+kemungkinan besar Pigeonhole Principle dapat digunakan.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Pigeonhole Principle</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Objek lebih banyak daripada kotak.</td>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Membuktikan sesuatu pasti terjadi.</td>
+
+</tr>
+
+<tr>
+
+<td>Versi Umum</td>
+
+<td>Minimal ⌈n/m⌉ objek pada satu kotak.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Kombinatorika, Teori Bilangan, Graf.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>② Parity (Genap–Ganjil)</h1>
+
+<h2>📖 Apa itu Parity?</h2>
+
+<p>
+
+<b>Parity</b> adalah konsep yang membedakan
+bilangan menjadi dua kelompok,
+yaitu <b>genap</b> dan <b>ganjil</b>.
+
+Walaupun terlihat sederhana,
+parity merupakan salah satu teknik paling sering digunakan
+dalam Olimpiade Matematika.
+
+Banyak soal permainan, operasi berulang,
+hingga teori bilangan dapat diselesaikan hanya
+dengan memperhatikan apakah suatu nilai genap atau ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah sakelar lampu.
+
+Jika ditekan sekali,
+lampu menyala.
+
+Jika ditekan lagi,
+lampu mati.
+
+Keadaan lampu hanya bergantung pada
+apakah jumlah penekanan genap atau ganjil.
+
+Inilah ide dasar parity.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bilangan Genap dan Ganjil</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+
+<th>Bentuk</th>
+
+</tr>
+
+<tr>
+
+<td>Genap</td>
+
+<td>2k</td>
+
+</tr>
+
+<tr>
+
+<td>Ganjil</td>
+
+<td>2k+1</td>
+
+</tr>
+
+</table>
+
+<p>
+
+dengan
+
+<b>k</b>
+
+merupakan bilangan bulat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Operasi Parity</h2>
+
+<table>
+
+<tr>
+
+<th>Operasi</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>Genap + Genap</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Genap + Ganjil</td>
+
+<td>Ganjil</td>
+
+</tr>
+
+<tr>
+
+<td>Ganjil + Ganjil</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Genap × Genap</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Genap × Ganjil</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Ganjil × Ganjil</td>
+
+<td>Ganjil</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Tentukan parity dari
+
+</p>
+
+<pre>
+
+17 + 26
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+17 → ganjil
+
+26 → genap
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+ganjil + genap = ganjil
+
+</pre>
+
+<p>
+
+Sehingga hasilnya pasti ganjil.
+
+</p>
+
+</section><section class="section">
+
+<h2>🔄 Parity sebagai Invariant</h2>
+
+<p>
+
+Salah satu kegunaan paling penting dari parity adalah sebagai
+<b>invariant</b>, yaitu suatu sifat yang tetap walaupun dilakukan
+serangkaian operasi tertentu.
+
+Jika suatu operasi selalu mempertahankan parity,
+maka kita dapat menentukan apakah suatu keadaan akhir mungkin dicapai
+atau tidak.
+
+Inilah alasan mengapa banyak soal permainan dapat diselesaikan
+hanya dengan melihat genap atau ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Permainan</h2>
+
+<p>
+
+Misalkan terdapat sebuah papan.
+
+Pada setiap langkah,
+kita boleh menambah nilai dua kotak masing-masing sebesar 1.
+
+Pertanyaannya:
+
+Apakah mungkin akhirnya hanya terdapat satu kotak yang bernilai ganjil?
+
+</p>
+
+<h3>Analisis</h3>
+
+<p>
+
+Setiap operasi mengubah parity dua kotak sekaligus.
+
+Artinya jumlah kotak ganjil selalu berubah sebesar
+
+</p>
+
+<pre>
+
+0 atau 2
+
+</pre>
+
+<p>
+
+Sehingga parity banyaknya kotak ganjil tetap.
+
+Jika mula-mula jumlah kotak ganjil genap,
+maka mustahil berakhir dengan tepat satu kotak ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Pada papan catur berukuran
+
+</p>
+
+<pre>
+
+8 × 8
+
+</pre>
+
+<p>
+
+setiap langkah kita boleh membalik warna tepat dua petak.
+
+Bisakah akhirnya hanya tersisa satu petak hitam?
+
+</p>
+
+<p>
+
+Jawaban dapat dianalisis menggunakan parity.
+
+Karena setiap langkah mengubah dua petak,
+parity jumlah petak hitam tidak berubah.
+
+Apabila kondisi akhir memiliki parity yang berbeda dari kondisi awal,
+maka keadaan tersebut mustahil dicapai.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Parity?</h2>
+
+<ul>
+
+<li>Permainan bergiliran.</li>
+
+<li>Operasi berulang.</li>
+
+<li>Masalah papan catur.</li>
+
+<li>Bilangan bulat.</li>
+
+<li>Teori Bilangan.</li>
+
+<li>Kombinatorika.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Lupa menentukan parity keadaan awal.</li>
+
+<li>Tidak memperhatikan perubahan parity setiap operasi.</li>
+
+<li>Menganggap nilai berubah berarti parity juga berubah.</li>
+
+<li>Tidak memeriksa apakah parity benar-benar invariant.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal melibatkan:
+
+</p>
+
+<ul>
+
+<li>Genap dan ganjil</li>
+
+<li>Permainan</li>
+
+<li>Operasi yang diulang-ulang</li>
+
+<li>Papan catur</li>
+
+</ul>
+
+<p>
+
+maka cobalah melihat apakah parity dapat digunakan
+sebagai invariant.
+
+Sering kali solusi hanya membutuhkan satu pengamatan sederhana
+tentang genap dan ganjil.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Parity</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Menganalisis genap dan ganjil.</td>
+
+</tr>
+
+<tr>
+
+<td>Kegunaan</td>
+
+<td>Membuktikan kemungkinan atau kemustahilan.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Permainan, papan catur, teori bilangan.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>③ Coloring (Teknik Pewarnaan)</h1>
+
+<h2>📖 Apa itu Coloring?</h2>
+
+<p>
+
+<b>Coloring</b> adalah teknik menyelesaikan masalah dengan
+memberikan warna pada objek-objek tertentu.
+
+Warna tersebut bukan sekadar hiasan,
+melainkan digunakan untuk menunjukkan pola,
+membedakan kelompok,
+atau menemukan invariant yang tersembunyi.
+
+Teknik ini merupakan salah satu metode favorit
+dalam kombinatorika dan geometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan papan catur.
+
+Petak-petaknya diberi warna hitam dan putih secara bergantian.
+
+Dengan adanya dua warna tersebut,
+kita dapat melihat pola perpindahan bidak,
+jumlah langkah,
+dan berbagai sifat lain yang sulit terlihat
+jika papan tidak diberi warna.
+
+Inilah ide dasar teknik Coloring.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Mengapa Coloring Berguna?</h2>
+
+<ul>
+
+<li>Mempermudah melihat pola.</li>
+
+<li>Mengelompokkan objek.</li>
+
+<li>Membentuk invariant.</li>
+
+<li>Membuktikan suatu keadaan mustahil.</li>
+
+<li>Menyederhanakan soal geometri dan graf.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Perhatikan papan catur berukuran
+
+</p>
+
+<pre>
+
+8 × 8
+
+</pre>
+
+<p>
+
+Setiap petak memiliki warna hitam atau putih.
+
+Jika sebuah kuda bergerak sesuai aturan catur,
+maka setiap langkah selalu berpindah
+dari warna hitam ke putih,
+atau dari putih ke hitam.
+
+Pola sederhana ini dapat digunakan
+untuk menyelesaikan banyak soal Olimpiade.
+
+</p>
+
+</section><section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Sebuah papan catur berukuran
+
+</p>
+
+<pre>
+
+8 × 8
+
+</pre>
+
+<p>
+
+dipotong sehingga dua sudut yang saling berhadapan dihilangkan.
+
+Apakah sisa papan dapat ditutupi sempurna
+menggunakan domino berukuran
+
+</p>
+
+<pre>
+
+2 × 1
+
+</pre>
+
+<p>
+
+yang selalu menutupi dua petak bertetangga?
+
+</p>
+
+<h3>Analisis</h3>
+
+<p>
+
+Warnai papan seperti papan catur biasa.
+
+Dua sudut yang saling berhadapan selalu memiliki
+warna yang sama.
+
+Akibatnya jumlah petak hitam dan putih
+menjadi tidak sama.
+
+Padahal setiap domino selalu menutupi
+tepat satu petak hitam dan satu petak putih.
+
+Karena jumlah kedua warna berbeda,
+mustahil seluruh papan dapat ditutupi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Coloring?</h2>
+
+<ul>
+
+<li>Papan catur.</li>
+
+<li>Permainan.</li>
+
+<li>Graf.</li>
+
+<li>Geometri.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Masalah yang melibatkan pola berulang.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Pewarnaan tidak konsisten.</li>
+
+<li>Menggunakan terlalu banyak warna tanpa alasan.</li>
+
+<li>Tidak memanfaatkan informasi dari warna.</li>
+
+<li>Salah memilih pola pewarnaan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika melihat soal tentang:
+
+</p>
+
+<ul>
+
+<li>Papan</li>
+
+<li>Graf</li>
+
+<li>Petak</li>
+
+<li>Domino</li>
+
+<li>Lintasan</li>
+
+</ul>
+
+<p>
+
+cobalah memberi warna terlebih dahulu.
+
+Sering kali solusi muncul setelah pola warna terlihat.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Coloring</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Memberi warna untuk menemukan pola.</td>
+
+</tr>
+
+<tr>
+
+<td>Kelebihan</td>
+
+<td>Menyederhanakan masalah.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Papan catur, graf, geometri, kombinatorika.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>④ Symmetry (Simetri)</h1>
+
+<h2>📖 Apa itu Symmetry?</h2>
+
+<p>
+
+<b>Symmetry</b> (Simetri) adalah teknik yang memanfaatkan
+kesamaan bentuk, posisi, atau sifat suatu objek
+untuk menyederhanakan penyelesaian masalah.
+
+Dalam banyak soal Olimpiade,
+simetri memungkinkan kita mengurangi jumlah kasus yang harus diperiksa,
+sehingga solusi menjadi lebih singkat dan elegan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah lingkaran.
+
+Jika lingkaran diputar beberapa derajat,
+bentuknya tetap sama.
+
+Artinya, banyak informasi yang sebenarnya berulang.
+
+Daripada menghitung semua kemungkinan,
+cukup analisis satu bagian yang mewakili bagian lainnya.
+
+Inilah kekuatan simetri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Jenis-Jenis Simetri</h2>
+
+<ul>
+
+<li>Simetri Lipat (Refleksi).</li>
+
+<li>Simetri Putar (Rotasi).</li>
+
+<li>Simetri Translasi.</li>
+
+<li>Simetri Pusat.</li>
+
+<li>Simetri pada Persamaan Aljabar.</li>
+
+<li>Simetri dalam Kombinatorika.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Hitung jumlah sudut dalam sebuah persegi.
+
+Karena keempat sudut memiliki bentuk yang sama,
+cukup hitung satu sudut saja.
+
+</p>
+
+<pre>
+
+1 sudut = 90°
+
+4 × 90° = 360°
+
+</pre>
+
+<p>
+
+Kita memanfaatkan simetri untuk menyederhanakan perhitungan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Geometri</h2>
+
+<p>
+
+Misalkan sebuah persegi memiliki sisi
+
+</p>
+
+<pre>
+
+6 cm
+
+</pre>
+
+<p>
+
+Karena semua sisi persegi sama panjang,
+cukup diketahui satu sisi untuk menentukan:
+
+</p>
+
+<ul>
+
+<li>Keliling</li>
+
+<li>Luas</li>
+
+<li>Panjang diagonal</li>
+
+</ul>
+
+<p>
+
+Tanpa simetri,
+kita harus menghitung setiap sisi satu per satu.
+
+</p>
+
+</section><section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Misalkan terdapat sebuah segi enam beraturan.
+
+Berapa banyak diagonal yang berbeda?
+
+</p>
+
+<h3>Analisis</h3>
+
+<p>
+
+Karena bangun tersebut simetris,
+setiap titik sudut memiliki jumlah diagonal
+yang sama.
+
+Daripada menghitung satu per satu,
+kita cukup menghitung dari satu titik,
+kemudian memanfaatkan simetri.
+
+</p>
+
+<pre>
+
+Setiap titik terhubung ke
+3 diagonal.
+
+Total:
+
+6 × 3 = 18
+
+Namun setiap diagonal dihitung dua kali.
+
+18 ÷ 2 = 9
+
+</pre>
+
+<p>
+
+Jadi terdapat
+
+<b>9 diagonal</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Symmetry?</h2>
+
+<ul>
+
+<li>Bangun beraturan.</li>
+
+<li>Pola yang berulang.</li>
+
+<li>Permasalahan geometri.</li>
+
+<li>Graf.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Masalah yang memiliki bentuk identik.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap semua soal memiliki simetri.</li>
+
+<li>Mengabaikan kondisi khusus yang merusak simetri.</li>
+
+<li>Menghitung objek simetris lebih dari satu kali.</li>
+
+<li>Tidak memanfaatkan simetri secara maksimal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika melihat bangun beraturan,
+lingkaran,
+poligon,
+atau pola yang berulang,
+
+cobalah bertanya:
+
+</p>
+
+<pre>
+
+"Apakah semua bagian sebenarnya setara?"
+
+</pre>
+
+<p>
+
+Jika jawabannya ya,
+maka kemungkinan besar teknik simetri
+dapat digunakan untuk mempercepat penyelesaian.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Symmetry</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Memanfaatkan kesamaan bentuk atau posisi.</td>
+
+</tr>
+
+<tr>
+
+<td>Kelebihan</td>
+
+<td>Mengurangi jumlah kasus yang diperiksa.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Geometri, Graf, Kombinatorika.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑤ Double Counting (Menghitung Ganda)</h1>
+
+<h2>📖 Apa itu Double Counting?</h2>
+
+<p>
+
+<b>Double Counting</b> adalah teknik membuktikan suatu hasil
+dengan menghitung <b>objek yang sama menggunakan dua cara berbeda</b>.
+
+Karena kedua cara menghitung mengacu pada kumpulan objek yang sama,
+hasil akhirnya harus sama.
+
+Teknik ini sangat sering digunakan dalam
+kombinatorika, teori graf, dan Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah ruang kelas.
+
+Kita ingin mengetahui jumlah siswa.
+
+Cara pertama:
+
+</p>
+
+<ul>
+
+<li>Hitung langsung semua siswa.</li>
+
+</ul>
+
+<p>
+
+Cara kedua:
+
+</p>
+
+<ul>
+
+<li>Hitung jumlah siswa laki-laki.</li>
+<li>Hitung jumlah siswa perempuan.</li>
+<li>Jumlahkan keduanya.</li>
+
+</ul>
+
+<p>
+
+Walaupun caranya berbeda,
+hasil akhirnya harus sama.
+
+Inilah ide dasar Double Counting.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Prinsip Double Counting</h2>
+
+<p>
+
+Misalkan terdapat suatu himpunan objek.
+
+Jika banyak objek tersebut dihitung dengan dua metode berbeda,
+maka kedua hasil perhitungan harus sama.
+
+Sering kali dari persamaan tersebut
+akan diperoleh identitas atau jawaban yang dicari.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Dalam sebuah kelas terdapat
+
+</p>
+
+<pre>
+
+18 siswa laki-laki
+
+22 siswa perempuan
+
+</pre>
+
+<p>
+
+Cara pertama:
+
+</p>
+
+<pre>
+
+18 + 22 = 40
+
+</pre>
+
+<p>
+
+Cara kedua:
+
+Hitung langsung seluruh siswa.
+
+Hasilnya tetap
+
+</p>
+
+<pre>
+
+40
+
+</pre>
+
+<p>
+
+Walaupun sederhana,
+contoh ini menunjukkan bahwa
+satu objek dapat dihitung dengan dua cara.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Handshake Lemma</h2>
+
+<p>
+
+Misalkan terdapat beberapa orang yang saling berjabat tangan.
+
+Jika kita menghitung jumlah jabat tangan
+dari setiap orang,
+maka setiap jabat tangan akan dihitung dua kali.
+
+Akibatnya berlaku
+
+</p>
+
+<pre>
+
+Jumlah seluruh derajat
+
+=
+
+2 × jumlah sisi
+
+</pre>
+
+<p>
+
+Inilah salah satu contoh paling terkenal
+dari Double Counting
+dalam teori graf.
+
+</p>
+
+</section><section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Di sebuah turnamen catur,
+setiap pemain bertanding tepat satu kali
+melawan setiap pemain lainnya.
+
+Jika terdapat
+
+</p>
+
+<pre>
+
+10 pemain
+
+</pre>
+
+<p>
+
+Berapa banyak pertandingan yang dimainkan?
+
+</p>
+
+<h3>Analisis</h3>
+
+<p>
+
+Cara pertama:
+
+Setiap pemain bermain melawan
+
+</p>
+
+<pre>
+
+9 pemain
+
+</pre>
+
+<p>
+
+Sehingga total yang dihitung adalah
+
+</p>
+
+<pre>
+
+10 × 9 = 90
+
+</pre>
+
+<p>
+
+Namun setiap pertandingan dihitung dua kali,
+karena pertandingan A vs B sama dengan B vs A.
+
+Maka jumlah pertandingan sebenarnya adalah
+
+</p>
+
+<pre>
+
+90 ÷ 2 = 45
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Double Counting?</h2>
+
+<ul>
+
+<li>Menghitung pasangan objek.</li>
+
+<li>Graf dan jaringan.</li>
+
+<li>Permasalahan jabat tangan.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Membuktikan identitas.</li>
+
+<li>Menghubungkan dua cara perhitungan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menghitung objek yang berbeda.</li>
+
+<li>Lupa bahwa beberapa objek dihitung dua kali.</li>
+
+<li>Tidak menjelaskan kedua metode perhitungan.</li>
+
+<li>Menyamakan dua perhitungan yang sebenarnya tidak ekuivalen.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal dapat dihitung dari
+dua sudut pandang yang berbeda,
+kemungkinan besar teknik
+<b>Double Counting</b>
+dapat digunakan.
+
+Biasanya cara pertama lebih mudah dipahami,
+sedangkan cara kedua menghasilkan persamaan
+yang mengarah ke jawaban.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Double Counting</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Menghitung objek yang sama dengan dua cara.</td>
+
+</tr>
+
+<tr>
+
+<td>Kelebihan</td>
+
+<td>Menghasilkan identitas dan rumus baru.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Graf, Kombinatorika, Olimpiade.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑥ Invariant</h1>
+
+<h2>📖 Apa itu Invariant?</h2>
+
+<p>
+
+<b>Invariant</b> adalah suatu besaran atau sifat yang
+<b>tetap tidak berubah</b> walaupun dilakukan
+serangkaian operasi tertentu.
+
+Teknik ini sangat penting dalam Olimpiade Matematika,
+karena sering digunakan untuk membuktikan bahwa
+suatu keadaan tidak mungkin dicapai.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah permainan.
+
+Setiap langkah pemain boleh memindahkan batu
+dengan aturan tertentu.
+
+Walaupun posisi batu berubah,
+ternyata jumlah batu yang berada pada petak hitam
+selalu tetap.
+
+Jumlah tersebut disebut sebagai
+<b>Invariant</b>.
+
+Dengan mengetahui invariant,
+kita dapat langsung menentukan
+apakah suatu keadaan akhir mungkin dicapai.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Ide Dasar Invariant</h2>
+
+<p>
+
+Langkah pertama adalah mencari
+suatu besaran yang tidak berubah.
+
+Besaran tersebut dapat berupa:
+
+</p>
+
+<ul>
+
+<li>Jumlah.</li>
+
+<li>Parity (genap-ganjil).</li>
+
+<li>Warna.</li>
+
+<li>Sisa pembagian (modulo).</li>
+
+<li>Banyak komponen.</li>
+
+<li>Nilai tertentu yang selalu konstan.</li>
+
+</ul>
+
+<p>
+
+Jika keadaan akhir memiliki invariant
+yang berbeda,
+maka keadaan tersebut mustahil dicapai.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Misalkan terdapat
+
+</p>
+
+<pre>
+
+20 koin
+
+</pre>
+
+<p>
+
+Pada setiap langkah,
+kita boleh membalik tepat dua koin.
+
+Apakah mungkin akhirnya
+tersisa tepat satu koin yang menghadap atas?
+
+</p>
+
+<h3>Analisis</h3>
+
+<p>
+
+Jumlah koin yang menghadap atas
+selalu berubah sebesar
+
+</p>
+
+<pre>
+
+0
+
+atau
+
+2
+
+</pre>
+
+<p>
+
+Sehingga parity jumlah koin
+tetap sama.
+
+Jika kondisi akhir memiliki parity berbeda,
+maka keadaan tersebut mustahil terjadi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Banyak permainan papan,
+operasi pada bilangan,
+serta soal kombinatorika
+dapat diselesaikan
+dengan menemukan invariant.
+
+Sering kali,
+begitu invariant ditemukan,
+seluruh soal menjadi jauh lebih sederhana.
+
+</p>
+
+</section><section class="section">
+
+<h2>🎯 Kapan Menggunakan Invariant?</h2>
+
+<ul>
+
+<li>Permainan papan.</li>
+
+<li>Operasi yang dilakukan berulang kali.</li>
+
+<li>Masalah perpindahan objek.</li>
+
+<li>Teori bilangan.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Graf.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap suatu besaran invariant padahal berubah.</li>
+
+<li>Tidak membuktikan mengapa invariant tetap.</li>
+
+<li>Salah memilih invariant.</li>
+
+<li>Melupakan kondisi awal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Saat melihat soal dengan operasi berulang,
+tanyakan pada diri sendiri:
+
+</p>
+
+<pre>
+
+"Apakah ada sesuatu yang
+tidak pernah berubah?"
+
+</pre>
+
+<p>
+
+Jika berhasil menemukannya,
+biasanya lebih dari separuh solusi
+sudah ditemukan.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Invariant</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Mencari besaran yang selalu tetap.</td>
+
+</tr>
+
+<tr>
+
+<td>Kegunaan</td>
+
+<td>Membuktikan suatu keadaan mungkin atau mustahil.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Permainan, Kombinatorika, Graf, Teori Bilangan.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑦ Monovariant</h1>
+
+<h2>📖 Apa itu Monovariant?</h2>
+
+<p>
+
+<b>Monovariant</b> adalah suatu besaran yang
+<b>selalu bergerak ke satu arah</b>,
+yaitu selalu bertambah atau selalu berkurang
+setiap kali suatu operasi dilakukan.
+
+Berbeda dengan <b>Invariant</b> yang nilainya tetap,
+Monovariant justru selalu berubah,
+tetapi perubahan tersebut memiliki arah yang konsisten.
+
+Teknik ini sering digunakan untuk membuktikan bahwa
+suatu proses pasti akan berhenti dan tidak mungkin berlangsung selamanya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah permainan
+di mana setiap langkah selalu mengurangi jumlah batu
+sebanyak satu.
+
+Karena jumlah batu terus berkurang,
+suatu saat batu akan habis.
+
+Proses tersebut tidak mungkin berlangsung tanpa akhir.
+
+Jumlah batu merupakan contoh Monovariant
+yang selalu menurun.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Ide Dasar Monovariant</h2>
+
+<p>
+
+Carilah suatu nilai yang:
+
+</p>
+
+<ul>
+
+<li>Selalu bertambah.</li>
+
+<li>Atau selalu berkurang.</li>
+
+<li>Tidak pernah kembali ke nilai sebelumnya.</li>
+
+</ul>
+
+<p>
+
+Jika nilai tersebut memiliki batas,
+maka proses pasti berhenti.
+
+Inilah prinsip utama Monovariant.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Dasar</h2>
+
+<p>
+
+Misalkan terdapat
+
+</p>
+
+<pre>
+
+50 batu
+
+</pre>
+
+<p>
+
+Setiap langkah,
+satu batu diambil.
+
+Banyak batu yang tersisa adalah Monovariant
+karena nilainya selalu berkurang.
+
+</p>
+
+<pre>
+
+50
+
+↓
+
+49
+
+↓
+
+48
+
+↓
+
+...
+
+↓
+
+0
+
+</pre>
+
+<p>
+
+Karena tidak mungkin kurang dari nol,
+maka proses pasti selesai.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Soal OSN</h2>
+
+<p>
+
+Banyak soal permainan dalam Olimpiade
+meminta kita membuktikan bahwa
+suatu permainan pasti berakhir.
+
+Daripada mencoba semua kemungkinan,
+cukup cari sebuah Monovariant.
+
+Jika nilainya selalu bergerak ke satu arah
+dan memiliki batas,
+maka permainan pasti berhenti.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Monovariant?</h2>
+
+<ul>
+
+<li>Permainan.</li>
+
+<li>Proses berulang.</li>
+
+<li>Algoritma.</li>
+
+<li>Kombinatorika.</li>
+
+<li>Optimasi.</li>
+
+<li>Pembuktian terminasi.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Memilih besaran yang kadang naik, kadang turun.</li>
+
+<li>Tidak memastikan adanya batas atas atau batas bawah.</li>
+
+<li>Mengira setiap besaran yang berubah adalah Monovariant.</li>
+
+<li>Tidak membuktikan arah perubahannya.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika sebuah soal menanyakan apakah
+suatu proses akan berhenti,
+selalu pertimbangkan penggunaan Monovariant.
+
+Carilah besaran yang terus bertambah
+atau terus berkurang,
+lalu tunjukkan bahwa besaran tersebut
+memiliki batas.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Monovariant</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Ide Utama</td>
+
+<td>Mencari besaran yang selalu naik atau selalu turun.</td>
+
+</tr>
+
+<tr>
+
+<td>Kegunaan</td>
+
+<td>Membuktikan proses pasti berhenti.</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi</td>
+
+<td>Permainan, Algoritma, Kombinatorika.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section><hr>
+
+<section class="section">
+
+<h1>🎉 Ringkasan Bab 5</h1>
+
+<p>
+
+Selamat!
+
+Kamu telah mempelajari tujuh teknik kombinatorial yang sangat penting
+dalam Olimpiade Matematika.
+
+Walaupun teknik-teknik ini terlihat sederhana,
+mereka sering menjadi kunci utama dalam menyelesaikan soal OSN,
+DLP, bahkan International Mathematical Olympiad (IMO).
+
+Semakin sering berlatih,
+semakin mudah mengenali teknik mana yang harus digunakan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Seluruh Materi</h2>
+
+<table>
+
+<tr>
+
+<th>Teknik</th>
+
+<th>Fungsi Utama</th>
+
+</tr>
+
+<tr>
+
+<td>Pigeonhole Principle</td>
+
+<td>Membuktikan bahwa suatu keadaan pasti terjadi.</td>
+
+</tr>
+
+<tr>
+
+<td>Parity</td>
+
+<td>Menganalisis genap dan ganjil.</td>
+
+</tr>
+
+<tr>
+
+<td>Coloring</td>
+
+<td>Menemukan pola menggunakan pewarnaan.</td>
+
+</tr>
+
+<tr>
+
+<td>Symmetry</td>
+
+<td>Menyederhanakan masalah dengan simetri.</td>
+
+</tr>
+
+<tr>
+
+<td>Double Counting</td>
+
+<td>Menghitung objek yang sama menggunakan dua cara.</td>
+
+</tr>
+
+<tr>
+
+<td>Invariant</td>
+
+<td>Mencari besaran yang tidak berubah.</td>
+
+</tr>
+
+<tr>
+
+<td>Monovariant</td>
+
+<td>Mencari besaran yang selalu naik atau turun.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Teknik Ini?</h2>
+
+<table>
+
+<tr>
+
+<th>Jika Soal...</th>
+
+<th>Gunakan</th>
+
+</tr>
+
+<tr>
+
+<td>Objek lebih banyak daripada kategori</td>
+
+<td>Pigeonhole Principle</td>
+
+</tr>
+
+<tr>
+
+<td>Membahas genap dan ganjil</td>
+
+<td>Parity</td>
+
+</tr>
+
+<tr>
+
+<td>Menggunakan papan atau pola warna</td>
+
+<td>Coloring</td>
+
+</tr>
+
+<tr>
+
+<td>Memiliki bentuk yang berulang</td>
+
+<td>Symmetry</td>
+
+</tr>
+
+<tr>
+
+<td>Dapat dihitung dengan dua cara</td>
+
+<td>Double Counting</td>
+
+</tr>
+
+<tr>
+
+<td>Ada sesuatu yang selalu tetap</td>
+
+<td>Invariant</td>
+
+</tr>
+
+<tr>
+
+<td>Ada nilai yang selalu naik atau turun</td>
+
+<td>Monovariant</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Tips Menghadapi Soal Olimpiade</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Jangan langsung menghitung. Carilah pola terlebih dahulu.</li>
+
+<li>Tuliskan informasi yang diketahui dengan rapi.</li>
+
+<li>Coba beberapa teknik jika cara pertama gagal.</li>
+
+<li>Perhatikan apakah ada simetri atau invariant.</li>
+
+<li>Biasakan membuat gambar atau tabel jika diperlukan.</li>
+
+<li>Latihan secara rutin jauh lebih efektif daripada menghafal.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📖 Materi Selanjutnya</h2>
+
+<p>
+
+Pada bab berikutnya,
+kamu akan mempelajari teknik yang lebih kuat lagi,
+yaitu <b>Prinsip Ekstrem & Descent</b>.
+
+Materi tersebut meliputi:
+
+</p>
+
+<ul>
+
+<li>Extremal Principle</li>
+
+<li>Extremal Principle + Pigeonhole Combination</li>
+
+<li>Infinite Descent</li>
+
+<li>Infinite Ascent</li>
+
+<li>Vieta Jumping</li>
+
+</ul>
+
+<p>
+
+Teknik-teknik tersebut sangat sering muncul pada soal
+OSN tingkat nasional maupun International Mathematical Olympiad (IMO).
+
+</p>
+
+</section>
+
+<hr>
+
+<div class="navigation">
+
+<a href="olimpiade4.html" class="btn">
+⬅ Bab Sebelumnya
+</a>
+
+<a href="olimpiade6.html" class="btn">
+Bab Selanjutnya ➜
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
