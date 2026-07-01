@@ -1,1 +1,1833 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 8 - Ketimpangan & Metode Probabilistik</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 8</h1>
+
+<h2>Ketimpangan & Metode Probabilistik</h2>
+
+<p>
+
+Bab ini membahas batas-batas penting dalam probabilitas:
+
+bagaimana kita bisa mengontrol peluang tanpa menghitung secara detail.
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+<a href="#markov">Markov</a>
+<a href="#chebyshev">Chebyshev</a>
+<a href="#probmethod">Probabilistic Method</a>
+
+</nav>
+
+<main>
+
+<section class="materi">
+
+<h1>Pengantar Ketimpangan dalam Probabilitas</h1>
+
+<p>
+
+Dalam banyak kasus, kita tidak bisa menghitung distribusi secara tepat.
+
+Sebagai gantinya, kita menggunakan <b>ketimpangan (inequality)</b> untuk memberikan batas atas atau bawah peluang.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Ketimpangan tidak memberikan nilai tepat, tetapi memberikan “jaminan batas”.
+
+</p>
+
+</div>
+
+</section>
+<section id="markov" class="materi">
+
+<h1>8.1 Markov Inequality</h1>
+
+<p>
+
+Markov Inequality adalah ketimpangan paling dasar dalam probabilitas.
+
+Ia memberikan batas atas peluang suatu variabel acak bernilai besar, hanya dari nilai harapannya.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika kita hanya tahu rata-rata (expected value), kita tetap bisa membatasi seberapa besar peluang nilai ekstrem terjadi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Syarat</h2>
+
+<ul>
+
+<li>X ≥ 0 (harus non-negatif)</li>
+<li>E(X) diketahui</li>
+
+</ul>
+
+<hr>
+
+<h2>Rumus Markov</h2>
+
+<p class="rumus">
+
+P(X ≥ a) ≤ E(X) / a
+
+</p>
+
+<p>
+
+untuk a > 0
+
+</p>
+
+<hr>
+
+<h2>Makna Intuitif</h2>
+
+<p>
+
+Jika rata-rata kecil, maka peluang nilai sangat besar harus kecil.
+
+Markov tidak peduli bentuk distribusi—hanya butuh mean.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Misalkan:
+
+</p>
+
+<p class="rumus">
+
+E(X) = 10
+
+</p>
+
+<p>
+
+Tentukan batas atas P(X ≥ 50)
+
+</p>
+
+<p class="rumus">
+
+P(X ≥ 50) ≤ 10 / 50 = 1/5
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban: ≤ 0.2</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Markov sering digunakan ketika informasi sangat terbatas:
+
+hanya mean yang diketahui.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Menganggap ini nilai tepat (padahal batas atas)</li>
+<li>Lupa syarat X ≥ 0</li>
+<li>Mengira berlaku untuk semua distribusi tanpa syarat</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section id="chebyshev" class="materi">
+
+<h1>8.2 Chebyshev Inequality</h1>
+
+<p>
+
+Chebyshev Inequality merupakan pengembangan dari Markov Inequality.
+
+Jika Markov hanya memanfaatkan <b>nilai harapan (mean)</b>, maka Chebyshev juga memanfaatkan <b>variansi</b>, sehingga menghasilkan batas yang jauh lebih kuat.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Variansi mengukur seberapa menyebar data dari rata-ratanya.
+
+Semakin kecil variansi, semakin sulit sebuah data berada jauh dari mean.
+
+Karena itu, peluang penyimpangan besar juga harus kecil.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Syarat Penggunaan</h2>
+
+<ul>
+
+<li>Variabel acak memiliki mean (μ).</li>
+<li>Variabel acak memiliki variansi hingga (σ²).</li>
+<li>Tidak perlu mengetahui bentuk distribusinya.</li>
+
+</ul>
+
+<p>
+
+Inilah kekuatan utama Chebyshev: berlaku untuk hampir semua distribusi yang memiliki mean dan variansi.
+
+</p>
+
+<hr>
+
+<h2>Rumus Chebyshev</h2>
+
+<p>
+
+Untuk setiap k > 0 berlaku:
+
+</p>
+
+<p class="rumus">
+
+P(|X − μ| ≥ kσ) ≤ 1 / k²
+
+</p>
+
+<p>
+
+Artinya, peluang sebuah data berada minimal k standar deviasi dari rata-rata tidak akan melebihi 1/k².
+
+</p>
+
+<hr>
+
+<h2>Makna Geometris</h2>
+
+<p>
+
+Chebyshev memberikan batas peluang bahwa data berada di luar interval:
+
+</p>
+
+<p class="rumus">
+
+[ μ − kσ , μ + kσ ]
+
+</p>
+
+<p>
+
+Semakin besar nilai k, semakin lebar interval tersebut, sehingga peluang data berada di luar interval menjadi semakin kecil.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Sebuah variabel acak memiliki:
+
+</p>
+
+<p class="rumus">
+
+μ = 100
+
+σ = 8
+
+</p>
+
+<p>
+
+Berapa batas atas peluang bahwa nilai menyimpang lebih dari 24 satuan dari rata-rata?
+
+</p>
+
+<h3>Langkah 1</h3>
+
+<p>
+
+Hitung nilai k.
+
+</p>
+
+<p class="rumus">
+
+k = 24 / 8 = 3
+
+</p>
+
+<h3>Langkah 2</h3>
+
+<p>
+
+Gunakan Chebyshev.
+
+</p>
+
+<p class="rumus">
+
+P(|X−100| ≥ 24)
+
+≤ 1/3²
+
+= 1/9
+
+≈ 0.111
+
+</p>
+
+<div class="jawaban">
+
+<b>Artinya peluang tersebut tidak mungkin melebihi 11,1%.</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Berapa minimal proporsi data yang berada dalam dua standar deviasi dari mean?
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p class="rumus">
+
+P(|X−μ| ≥ 2σ)
+
+≤ 1/4
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p class="rumus">
+
+P(|X−μ| < 2σ)
+
+≥ 1 − 1/4
+
+= 3/4
+
+</p>
+
+<div class="jawaban">
+
+<b>Sedikitnya 75% data berada dalam dua standar deviasi dari rata-rata.</b>
+
+</div>
+
+<hr>
+
+<h2>Tabel Penting (Wajib Hafal)</h2>
+
+<table>
+
+<tr>
+<th>k</th>
+<th>P(|X−μ| ≥ kσ)</th>
+<th>Minimal Data di Dalam Interval</th>
+</tr>
+
+<tr>
+<td>2</td>
+<td>≤ 1/4</td>
+<td>≥ 75%</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>≤ 1/9</td>
+<td>≥ 88.89%</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>≤ 1/16</td>
+<td>≥ 93.75%</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>≤ 1/25</td>
+<td>≥ 96%</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Markov vs Chebyshev</h2>
+
+<table>
+
+<tr>
+<th>Markov</th>
+<th>Chebyshev</th>
+</tr>
+
+<tr>
+<td>Memakai mean</td>
+<td>Memakai mean & variansi</td>
+</tr>
+
+<tr>
+<td>X harus ≥ 0</td>
+<td>Tidak perlu non-negatif</td>
+</tr>
+
+<tr>
+<td>Batas lebih kasar</td>
+<td>Batas lebih ketat</td>
+</tr>
+
+<tr>
+<td>P(X ≥ a)</td>
+<td>P(|X−μ| ≥ kσ)</td>
+</tr>
+
+</table>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<ul>
+
+<li>Menganggap hasil Chebyshev adalah peluang sebenarnya, padahal hanya batas atas.</li>
+
+<li>Lupa mengubah jarak menjadi kelipatan standar deviasi (menentukan nilai k).</li>
+
+<li>Menyamakan Chebyshev dengan aturan 68–95–99,7% pada distribusi normal. Chebyshev berlaku untuk semua distribusi, sehingga batasnya lebih konservatif.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section id="probmethod" class="materi">
+
+<h1>8.3 Probabilistic Method (Pengantar)</h1>
+
+<p>
+
+Sampai sekarang, probabilitas digunakan untuk menghitung peluang suatu kejadian.
+
+Namun, dalam <b>Probabilistic Method</b>, probabilitas digunakan dengan cara yang sangat berbeda.
+
+Tujuannya bukan mencari peluang, melainkan <b>membuktikan bahwa suatu objek pasti ada</b>, meskipun kita tidak pernah menunjukkan objek tersebut secara langsung.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Jika kita dapat membuktikan bahwa peluang suatu objek memiliki sifat tertentu lebih besar dari nol, maka objek tersebut <b>harus ada</b>.
+
+Ini merupakan salah satu ide paling elegan dalam matematika modern dan sangat sering muncul pada olimpiade tingkat internasional.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Metode Ini Dibutuhkan?</h2>
+
+<p>
+
+Pada banyak masalah kombinatorika, jumlah kemungkinan sangat besar sehingga mustahil diperiksa satu per satu.
+
+Sebagai contoh, bayangkan ada miliaran cara menyusun suatu objek. Daripada memeriksa semuanya, kita dapat memilih satu objek secara acak dan menganalisis peluang bahwa objek tersebut memenuhi syarat.
+
+Jika peluangnya positif, maka setidaknya ada satu objek yang memenuhi syarat tersebut.
+
+</p>
+
+<hr>
+
+<h2>Prinsip Dasar</h2>
+
+<div class="note">
+
+<h3>Prinsip Eksistensi</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<p class="rumus">
+
+P(A) > 0
+
+</p>
+
+<p>
+
+maka kejadian <b>A</b> tidak mungkin mustahil.
+
+Artinya, terdapat paling sedikit satu hasil yang memenuhi sifat A.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Sederhana</h2>
+
+<p>
+
+Misalkan terdapat 100 susunan berbeda dari suatu objek.
+
+Setelah dianalisis, peluang sebuah susunan memenuhi syarat tertentu adalah:
+
+</p>
+
+<p class="rumus">
+
+P(A)=0.08
+
+</p>
+
+<p>
+
+Karena peluang tersebut lebih besar dari nol, kita dapat menyimpulkan bahwa:
+
+</p>
+
+<div class="jawaban">
+
+<b>Pasti terdapat paling sedikit satu susunan yang memenuhi syarat tersebut.</b>
+
+</div>
+
+<p>
+
+Perhatikan bahwa kita tidak perlu mengetahui susunan mana yang memenuhi syarat.
+
+Keberadaannya sudah dijamin oleh probabilitas.
+
+</p>
+
+<hr>
+
+<h2>Mengapa Metode Ini Sangat Kuat?</h2>
+
+<ul>
+
+<li>Tidak perlu mencari solusi secara eksplisit.</li>
+
+<li>Dapat digunakan ketika jumlah kemungkinan sangat besar.</li>
+
+<li>Sering menghasilkan bukti yang jauh lebih singkat dibanding metode konstruktif.</li>
+
+<li>Menjadi dasar banyak penelitian modern di kombinatorika, teori graf, ilmu komputer, dan kriptografi.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Konseptual</h2>
+
+<p>
+
+Bayangkan sebuah kelas memiliki jutaan kemungkinan cara membagi siswa menjadi beberapa kelompok.
+
+Daripada memeriksa seluruh kemungkinan, kita memilih pembagian secara acak.
+
+Jika dapat dibuktikan bahwa peluang mendapatkan pembagian yang memenuhi syarat adalah positif, maka otomatis pembagian tersebut benar-benar ada.
+
+Inilah inti dari Probabilistic Method.
+
+</p>
+
+<hr>
+
+<h2>Perbedaan dengan Probabilitas Biasa</h2>
+
+<table>
+
+<tr>
+<th>Probabilitas Klasik</th>
+<th>Probabilistic Method</th>
+</tr>
+
+<tr>
+<td>Menghitung peluang suatu kejadian.</td>
+<td>Membuktikan keberadaan suatu objek.</td>
+</tr>
+
+<tr>
+<td>Hasil akhir berupa nilai peluang.</td>
+<td>Hasil akhir berupa bukti eksistensi.</td>
+</tr>
+
+<tr>
+<td>Fokus pada kejadian acak.</td>
+<td>Fokus pada objek matematika.</td>
+</tr>
+
+<tr>
+<td>Digunakan di statistika dan peluang.</td>
+<td>Banyak digunakan dalam kombinatorika dan teori graf.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<ul>
+
+<li>Mengira Probabilistic Method digunakan untuk memperkirakan peluang.</li>
+
+<li>Menganggap objek harus ditemukan secara eksplisit.</li>
+
+<li>Lupa bahwa syarat utamanya adalah menunjukkan peluangnya <b>lebih besar dari nol</b>.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Banyak soal olimpiade tidak meminta kamu menghitung probabilitas.
+
+Sebaliknya, soal meminta membuktikan bahwa suatu konfigurasi, pewarnaan, graf, atau susunan <b>pasti ada</b>.
+
+Pada saat itulah Probabilistic Method menjadi salah satu senjata paling ampuh.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>8.4 Linearity of Expectation dalam Probabilistic Method</h1>
+
+<p>
+
+Salah satu teknik paling kuat dalam <b>Probabilistic Method</b> adalah menggunakan
+<b>nilai harapan (Expected Value)</b>.
+
+Teknik ini terlihat sederhana, tetapi telah digunakan untuk menyelesaikan banyak
+masalah pada olimpiade matematika, teori graf, algoritma, hingga penelitian modern.
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Kunci</h3>
+
+<p>
+
+Daripada mencari suatu objek secara langsung, kita menghitung
+<b>rata-rata jumlah objek yang memiliki sifat tertentu</b>.
+
+Jika rata-ratanya lebih besar dari nol, maka minimal ada satu objek yang memenuhi sifat tersebut.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Linearity of Expectation</h2>
+
+<p>
+
+Misalkan terdapat variabel acak:
+
+</p>
+
+<p class="rumus">
+
+X₁, X₂, ..., Xₙ
+
+</p>
+
+<p>
+
+Maka nilai harapan jumlahnya adalah:
+
+</p>
+
+<p class="rumus">
+
+E(X₁ + X₂ + ... + Xₙ)
+
+=
+E(X₁) + E(X₂) + ... + E(Xₙ)
+
+</p>
+
+<div class="note">
+
+<h3>Fakta Sangat Penting</h3>
+
+<p>
+
+Hubungan di atas tetap berlaku meskipun variabel-variabel tersebut
+<b>tidak independen</b>.
+
+Inilah alasan mengapa teknik ini sangat sering digunakan dalam olimpiade.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Teknik Ini Sangat Kuat?</h2>
+
+<p>
+
+Menghitung distribusi lengkap suatu variabel acak sering kali sangat sulit.
+
+Sebaliknya, menghitung nilai harapan biasanya jauh lebih mudah.
+
+Oleh karena itu, banyak soal olimpiade diselesaikan tanpa pernah menghitung peluang secara langsung.
+
+</p>
+
+<hr>
+
+<h2>Variabel Indikator</h2>
+
+<p>
+
+Sering kali kita mendefinisikan variabel indikator:
+
+</p>
+
+<p class="rumus">
+
+I =
+1, jika suatu kejadian terjadi
+
+0, jika tidak terjadi
+
+</p>
+
+<p>
+
+Maka:
+
+</p>
+
+<p class="rumus">
+
+E(I) = P(I = 1)
+
+</p>
+
+<p>
+
+Artinya, nilai harapan indikator sama dengan peluang kejadian tersebut.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Sebuah dadu fair dilempar sekali.
+
+Misalkan:
+
+</p>
+
+<ul>
+
+<li>I = 1 jika muncul angka genap.</li>
+<li>I = 0 jika tidak.</li>
+</ul>
+
+<p>
+
+Karena peluang muncul angka genap adalah 3/6, maka:
+
+</p>
+
+<p class="rumus">
+
+E(I) = 1/2
+
+</p>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Misalkan terdapat 20 lampu.
+
+Setiap lampu menyala dengan peluang 0,8.
+
+Berapa banyak lampu yang diharapkan menyala?
+
+</p>
+
+<p>
+
+Misalkan Iᵢ adalah indikator lampu ke-i menyala.
+
+</p>
+
+<p class="rumus">
+
+E(Iᵢ)=0.8
+
+</p>
+
+<p>
+
+Sehingga:
+
+</p>
+
+<p class="rumus">
+
+E(I₁+...+I₂₀)
+
+=
+20 × 0.8
+
+=
+16
+
+</p>
+
+<div class="jawaban">
+
+<b>Rata-rata terdapat 16 lampu yang menyala.</b>
+
+</div>
+
+<hr>
+
+<h2>Menghubungkan dengan Probabilistic Method</h2>
+
+<p>
+
+Misalkan X menyatakan banyaknya objek "baik".
+
+Jika:
+
+</p>
+
+<p class="rumus">
+
+E(X) > 0
+
+</p>
+
+<p>
+
+maka tidak mungkin semua objek bernilai nol.
+
+Artinya:
+
+</p>
+
+<div class="jawaban">
+
+<b>Pasti ada minimal satu objek yang memiliki sifat yang diinginkan.</b>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Teknik Ini Sering Keluar di Olimpiade?</h2>
+
+<ul>
+
+<li>Tidak membutuhkan distribusi lengkap.</li>
+
+<li>Sering menghasilkan solusi yang jauh lebih pendek.</li>
+
+<li>Dapat digunakan pada graf, kombinatorika, geometri, hingga teori bilangan.</li>
+
+<li>Menjadi dasar berbagai pembuktian modern.</li>
+
+</ul>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<ul>
+
+<li>Mengira linearitas hanya berlaku untuk variabel independen.</li>
+
+<li>Menghitung distribusi lengkap padahal cukup menggunakan nilai harapan.</li>
+
+<li>Tidak memanfaatkan variabel indikator.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Banyak peserta olimpiade mencoba menghitung probabilitas secara langsung.
+
+Padahal, solusi resmi sering kali hanya menggunakan satu baris:
+
+</p>
+
+<p class="rumus">
+
+E(X)=ΣE(Iᵢ)
+
+</p>
+
+<p>
+
+Karena itu, teknik ini dikenal sebagai salah satu "senjata rahasia" dalam kombinatorika probabilistik.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>8.5 Aplikasi Probabilistic Method dalam Soal Olimpiade</h1>
+
+<p>
+
+Pada bagian ini, kita melihat bagaimana semua konsep sebelumnya digunakan untuk
+menyelesaikan masalah nyata dalam olimpiade matematika.
+
+Fokusnya bukan lagi teori, tetapi <b>cara berpikir untuk membuktikan eksistensi</b>.
+
+</p>
+
+<hr>
+
+<h2>Masalah Klasik 1 — Graf dan Edge</h2>
+
+<p>
+
+Misalkan terdapat graf lengkap dengan n simpul.
+
+Setiap sisi diberi warna merah atau biru secara acak.
+
+Tunjukkan bahwa selalu ada setidaknya satu warna yang memiliki banyak sisi.
+
+</p>
+
+<div class="note">
+
+<h3>Ide Solusi</h3>
+
+<p>
+
+Kita tidak perlu membangun graf secara eksplisit.
+
+Cukup gunakan nilai harapan jumlah sisi merah.
+
+</p>
+
+</div>
+
+<p class="rumus">
+
+E(red edges) = total edges × 1/2
+
+</p>
+
+<p>
+
+Karena total sisi tidak nol, maka nilai harapan juga tidak nol.
+
+Artinya, konfigurasi dengan jumlah sisi merah minimal sebesar nilai ini pasti ada.
+
+</p>
+
+<hr>
+
+<h2>Masalah Klasik 2 — Penempatan Acak</h2>
+
+<p>
+
+Misalkan kita menempatkan n objek ke dalam n kotak secara acak.
+
+Tentukan bahwa ada kemungkinan kotak yang berisi lebih dari satu objek.
+
+</p>
+
+<div class="note">
+
+<h3>Ide Solusi</h3>
+
+<p>
+
+Gunakan indikator:
+
+</p>
+
+<p class="rumus">
+
+Iᵢ = 1 jika kotak i kosong atau berisi lebih dari satu objek
+
+</p>
+
+<p>
+
+Dengan menghitung E(Iᵢ), kita bisa menunjukkan bahwa
+rata-rata pelanggaran aturan tidak nol.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Masalah Klasik 3 — Pewarnaan Graf</h2>
+
+<p>
+
+Misalkan setiap simpul graf diwarnai secara acak dengan dua warna.
+
+Tunjukkan bahwa ada pewarnaan yang menghasilkan jumlah edge “baik” cukup besar.
+
+</p>
+
+<p>
+
+Definisikan variabel indikator untuk setiap edge:
+
+</p>
+
+<p class="rumus">
+
+Iₑ = 1 jika kedua ujung edge memiliki warna yang sama
+
+</p>
+
+<p>
+
+Maka:
+
+</p>
+
+<p class="rumus">
+
+E(Iₑ) = 1/2
+
+</p>
+
+<p>
+
+Sehingga:
+
+</p>
+
+<p class="rumus">
+
+E(total edge baik) = m × 1/2
+
+</p>
+
+<p>
+
+Artinya, ada pewarnaan yang menghasilkan minimal setengah edge baik.
+
+</p>
+
+<hr>
+
+<h2>Strategi Umum Penyelesaian</h2>
+
+<div class="note">
+
+<ol>
+
+<li>Definisikan struktur acak (graf, warna, penempatan)</li>
+<li>Buat variabel indikator untuk properti yang diinginkan</li>
+<li>Hitung nilai harapan</li>
+<li>Gunakan fakta: E(X) > 0 → objek pasti ada</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Teknik Ini Sangat Kuat?</h2>
+
+<ul>
+
+<li>Tidak perlu mencari solusi eksplisit</li>
+<li>Cocok untuk struktur besar (graf, kombinatorika kompleks)</li>
+<li>Sering menghasilkan batas bawah yang optimal</li>
+<li>Digunakan dalam riset matematika modern</li>
+
+</ul>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<ul>
+
+<li>Mencoba mencari konfigurasi langsung</li>
+<li>Lupa mendefinisikan variabel indikator</li>
+<li>Tidak memanfaatkan linearitas ekspektasi</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Dalam banyak soal, jawaban sebenarnya bukan “cara menemukan objeknya”,
+tetapi “bukti bahwa objek itu tidak mungkin tidak ada”.
+
+Itulah kekuatan Probabilistic Method.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>8.6 Insight Lanjutan Probabilistic Method</h1>
+
+<p>
+
+Pada level lebih tinggi, Probabilistic Method tidak lagi sekadar menghitung nilai harapan.
+
+Teknik ini berubah menjadi alat untuk <b>membangun batas (bound) dan menemukan struktur optimal secara tidak langsung</b>.
+
+</p>
+
+<hr>
+
+<h2>Ide Besar</h2>
+
+<div class="note">
+
+<p>
+
+Dalam banyak soal, kita tidak mencari “nilai tepat”,
+tetapi mencari:
+
+<b>batas bawah atau batas atas terbaik yang mungkin ada</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Trik 1 — “Expected Value Trap”</h2>
+
+<p>
+
+Kadang kita memilih struktur acak, lalu menghitung nilai harapan dari sesuatu yang ingin dimaksimalkan.
+
+Jika:
+
+</p>
+
+<p class="rumus">
+
+E(X) ≥ k
+
+</p>
+
+<p>
+
+maka pasti ada konfigurasi dengan:
+
+</p>
+
+<p class="rumus">
+
+X ≥ k
+
+</p>
+
+<p>
+
+Ini disebut prinsip “ekspektasi menjamin eksistensi ekstrem”.
+
+</p>
+
+<hr>
+
+<h2>Trik 2 — Optimasi Tidak Langsung</h2>
+
+<p>
+
+Misalkan kita ingin memaksimalkan jumlah objek “baik”.
+
+Daripada mencari konfigurasi terbaik secara eksplisit, kita:
+
+</p>
+
+<ul>
+
+<li>membangun model acak</li>
+<li>menghitung E(X)</li>
+<li>menyimpulkan bahwa solusi optimal minimal sebesar E(X)</li>
+
+</ul>
+
+<hr>
+
+<h2>Trik 3 — Randomisasi untuk Struktur Sulit</h2>
+
+<p>
+
+Jika suatu masalah terlalu kompleks untuk disusun secara deterministik,
+kita gunakan pendekatan acak:
+
+</p>
+
+<div class="note">
+
+<ul>
+
+<li>bangun struktur secara acak</li>
+<li>ukur rata-rata perilaku</li>
+<li>ambil kesimpulan eksistensi</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Contoh Intuisi Tingkat Tinggi</h2>
+
+<p>
+
+Misalkan kita ingin membagi graf menjadi dua bagian agar jumlah edge antar bagian maksimal.
+
+Daripada mencoba semua pembagian:
+
+</p>
+
+<ul>
+
+<li>acak setiap simpul ke salah satu sisi</li>
+<li>hitung ekspektasi jumlah edge crossing</li>
+<li>simpulkan bahwa ada pembagian yang mencapai nilai tersebut</li>
+
+</ul>
+
+<hr>
+
+<h2>Prinsip Penting</h2>
+
+<div class="note">
+
+<p>
+
+Probabilistic Method tidak mencari solusi,
+tetapi membuktikan bahwa solusi “tidak mungkin lebih buruk dari rata-rata”.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kesalahan Lanjutan</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira semua hasil acak harus dibangun ulang secara eksplisit</li>
+<li>Tidak memahami bahwa “rata-rata” menyiratkan eksistensi</li>
+<li>Mengabaikan variabel indikator dalam struktur kompleks</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Mindset Olimpiade Tingkat Tinggi</h2>
+
+<div class="note">
+
+<p>
+
+Jika kamu bisa menunjukkan bahwa sesuatu terjadi “rata-rata cukup besar”,
+maka kamu sudah tidak perlu mencari contohnya secara langsung.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>8.x Peta Besar Ketimpangan & Probabilistic Method</h1>
+
+<p>
+
+Bagian ini menyatukan semua teknik yang sudah dipelajari menjadi satu struktur besar.
+
+Tujuannya agar kamu tidak hanya menghafal rumus, tetapi memahami <b>hubungan antar metode</b>.
+
+</p>
+
+<hr>
+
+<h2>Struktur Hierarki Besar</h2>
+
+<div class="note">
+
+<p>
+
+Ketiga konsep utama dalam bab ini membentuk tingkatan kekuatan:
+
+</p>
+
+<ul>
+
+<li>Markov → hanya pakai mean</li>
+<li>Chebyshev → pakai mean + variansi</li>
+<li>Probabilistic Method → pakai ekspektasi untuk membuktikan eksistensi</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>1. Markov Inequality (Level Dasar)</h2>
+
+<p>
+
+Digunakan ketika informasi sangat terbatas.
+
+</p>
+
+<p class="rumus">
+
+P(X ≥ a) ≤ E(X)/a
+
+</p>
+
+<p>
+
+Hanya butuh mean, tidak butuh bentuk distribusi.
+
+</p>
+
+<hr>
+
+<h2>2. Chebyshev Inequality (Level Menengah)</h2>
+
+<p>
+
+Menambahkan informasi variansi untuk mendapatkan batas lebih kuat.
+
+</p>
+
+<p class="rumus">
+
+P(|X − μ| ≥ kσ) ≤ 1/k²
+
+</p>
+
+<p>
+
+Mengontrol penyebaran data dari rata-rata.
+
+</p>
+
+<hr>
+
+<h2>3. Probabilistic Method (Level Eksistensi)</h2>
+
+<p>
+
+Tidak lagi menghitung peluang, tetapi membuktikan bahwa objek tertentu pasti ada.
+
+</p>
+
+<p class="rumus">
+
+Jika E(X) > 0 → objek dengan sifat tersebut pasti ada
+
+</p>
+
+<hr>
+
+<h2>Perbandingan Besar</h2>
+
+<table>
+
+<tr>
+<th>Metode</th>
+<th>Tujuan</th>
+<th>Informasi yang Dipakai</th>
+</tr>
+
+<tr>
+<td>Markov</td>
+<td>Batas peluang ekstrem</td>
+<td>Mean saja</td>
+</tr>
+
+<tr>
+<td>Chebyshev</td>
+<td>Batas penyimpangan</td>
+<td>Mean + Variansi</td>
+</tr>
+
+<tr>
+<td>Probabilistic Method</td>
+<td>Eksistensi objek</td>
+<td>Ekspektasi struktur</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Intuisi Besar</h2>
+
+<div class="note">
+
+<p>
+
+Semakin tinggi level metode, semakin sedikit kita butuh informasi detail,
+tetapi semakin kuat kesimpulan yang bisa diambil.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Konseptual</h2>
+
+<ul>
+
+<li>Markov → “seberapa besar kemungkinan ekstrem?”</li>
+<li>Chebyshev → “seberapa jauh dari rata-rata?”</li>
+<li>Probabilistic Method → “apakah objek itu pasti ada?”</li>
+
+</ul>
+
+<hr>
+
+<h2>Kesalahan Konseptual</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Menganggap ketiga metode ini saling menggantikan</li>
+<li>Tidak memahami bahwa Probabilistic Method bukan ketimpangan</li>
+<li>Mencoba menghitung distribusi saat cukup pakai bounding</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Mindset Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Dalam soal sulit, jangan langsung mencari nilai tepat.
+
+Tanyakan dulu:
+
+<b>“apakah cukup dengan batas atau eksistensi?”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>8.x Cheat Sheet Ketimpangan & Probabilistic Method</h1>
+
+<p>
+
+Bagian ini merangkum semua rumus dan strategi penting dalam bab ini untuk digunakan saat mengerjakan soal cepat.
+
+Fokusnya adalah <b>keputusan cepat, bukan derivasi</b>.
+
+</p>
+
+<hr>
+
+<h2>1. Markov Inequality</h2>
+
+<p class="rumus">
+
+P(X ≥ a) ≤ E(X) / a
+
+</p>
+
+<div class="note">
+
+<p>
+
+Gunakan ketika hanya diketahui mean dan X ≥ 0.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>2. Chebyshev Inequality</h2>
+
+<p class="rumus">
+
+P(|X − μ| ≥ kσ) ≤ 1 / k²
+
+</p>
+
+<div class="note">
+
+<p>
+
+Gunakan ketika mean dan variansi diketahui, tanpa asumsi distribusi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>3. Probabilistic Method</h2>
+
+<p class="rumus">
+
+Jika E(X) > 0 → objek dengan sifat tersebut pasti ada
+
+</p>
+
+<div class="note">
+
+<p>
+
+Gunakan untuk membuktikan eksistensi, bukan menghitung peluang.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>4. Linearity of Expectation (Pengingat)</h2>
+
+<p class="rumus">
+
+E(X₁ + X₂ + ... + Xₙ) = ΣE(Xᵢ)
+
+</p>
+
+<div class="note">
+
+<p>
+
+Tidak membutuhkan independensi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Strategi Cepat Pemilihan Metode</h2>
+
+<table>
+
+<tr>
+<th>Situasi</th>
+<th>Metode</th>
+</tr>
+
+<tr>
+<td>Hanya mean diketahui</td>
+<td>Markov</td>
+</tr>
+
+<tr>
+<td>Mean + variansi</td>
+<td>Chebyshev</td>
+</tr>
+
+<tr>
+<td>Eksistensi objek</td>
+<td>Probabilistic Method</td>
+</tr>
+
+<tr>
+<td>Jumlah struktur acak</td>
+<td>Linearity of Expectation</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Jebakan Umum Olimpiade</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Menggunakan Chebyshev padahal cukup Markov</li>
+<li>Mencoba mencari distribusi lengkap padahal cukup ekspektasi</li>
+<li>Mengira probabilistic method = menghitung peluang</li>
+<li>Lupa bahwa E(X) > 0 berarti eksistensi, bukan probabilitas akhir</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Mindset Cepat Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Dalam soal sulit, bukan kecepatan hitung yang penting,
+tetapi kemampuan memilih alat yang tepat.
+
+</p>
+
+<p>
+
+<b>“Kalau bisa dibatasi → pakai inequality.  
+Kalau bisa dibuktikan ada → pakai expectation.”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h1>Penutup Bab 8</h1>
+
+<p>
+
+Bab Ketimpangan & Metode Probabilistik mengajarkan bahwa dalam matematika tingkat tinggi,
+kita sering tidak membutuhkan jawaban tepat, tetapi cukup dengan <b>batas atau bukti keberadaan</b>.
+
+</p>
+
+<hr>
+
+<h2>Ringkasan Akhir</h2>
+
+<ul>
+
+<li>Markov → batas dengan mean saja</li>
+<li>Chebyshev → batas dengan mean + variansi</li>
+<li>Probabilistic Method → membuktikan eksistensi objek</li>
+<li>Linearity of Expectation → menghitung rata-rata struktur</li>
+
+</ul>
+
+<hr>
+
+<div class="note">
+
+<h3>Inti Besar Bab Ini</h3>
+
+<p>
+
+Semakin sedikit informasi yang kita butuhkan,
+semakin kuat metode yang kita gunakan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mindset Final</h2>
+
+<div class="warning">
+
+<p>
+
+Jika soal terlihat terlalu sulit untuk dihitung langsung,
+maka kemungkinan besar solusinya adalah:
+
+<b>tidak menghitung sama sekali</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Modul Probabilitas Olimpiade — Bab 8 Ketimpangan & Metode Probabilistik</p>
+
+</footer>
+
+<div class="navigation-buttons">
+
+<a href="peluang7.html" class="btn-home">⬅ Bab Sebelumnya</a>
+<a href="peluang9.html" class="btn-next">Bab Selanjutnya ➜</a>
+<a href="index.html" class="btn-home">🏠 Home</a>
+
+</div>
+
+</body>
+</html>
