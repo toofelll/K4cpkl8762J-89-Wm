@@ -1,1 +1,571 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kombinatorik Part 3 | Kombinasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔢 KOMBINATORIK</h1>
+
+<p>Part 3 • Kombinasi — Seni Memilih Tanpa Urutan</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Masalah yang Akan Kita Pecahkan</h2>
+
+<p>
+
+Bayangkan kamu punya <b>5 teman</b>: Andi, Budi, Caca, Dedi, dan Euis.
+Kamu ingin mengundang <b>3 orang</b> ke pesta. Pertanyaannya:
+<b>berapa banyak cara kamu bisa memilih 3 orang dari 5 temanmu itu?</b>
+
+</p>
+
+<p>
+
+Ini adalah pertanyaan yang sangat mendasar dalam kehidupan sehari-hari.
+Kita sering memilih—tim olahraga, panitia acara, menu makanan, baju yang akan dibawa liburan.
+Tapi berapa banyak cara memilihnya? Apakah kita perlu menulis semua kemungkinan satu per satu?
+
+</p>
+
+<p>
+
+Di sinilah <b>kombinasi</b> berperan. Kombinasi adalah cara matematis untuk menghitung
+<b>banyaknya cara memilih</b> beberapa objek dari sekumpulan objek,
+di mana <b>urutan tidak penting</b>. Artinya, memilih {Andi, Budi, Caca}
+sama saja dengan memilih {Caca, Andi, Budi}—karena orang-orangnya sama.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami apa itu kombinasi lewat contoh-contoh nyata yang mudah dibayangkan.</li>
+
+<li>Melihat dari mana rumus kombinasi berasal—bukan sekadar menghafal.</li>
+
+<li>Menguasai kapan menggunakan kombinasi (dan kapan bukan).</li>
+
+<li>Mempelajari kombinasi dengan pengulangan lewat teknik "bintang dan batang".</li>
+
+<li>Mengenal identitas-identitas kombinasi yang berguna.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: DARI MANA KOMBINASI BERASAL ==================== -->
+
+<div class="section">
+
+<h2>1. Dari Mana Rumus Kombinasi Berasal?</h2>
+
+<p>
+
+Mari kita kembali ke masalah di atas: <b>memilih 3 orang dari 5 teman</b>.
+Kita akan mencoba memecahkannya secara sistematis, langkah demi langkah,
+dan dari situ kita akan melihat polanya.
+
+</p>
+
+<hr>
+
+<h3>Langkah 1 — Kalau Urutan Dianggap Penting, Ada Berapa Cara?</h3>
+
+<p>
+
+Pertama, bayangkan kita memilih 3 orang dan <b>memberi mereka jabatan</b>:
+orang pertama yang terpilih jadi ketua, orang kedua jadi wakil, orang ketiga jadi sekretaris.
+Di sini <b>urutan pemilihan sangat penting</b>. Ini adalah <b>permutasi</b>.
+
+</p>
+
+<div class="example">
+
+<b>Cara memilih ketua, wakil, sekretaris dari 5 orang:</b><br><br>
+
+Posisi ketua: bisa siapa saja dari 5 orang. → <b>5 pilihan</b>.<br>
+
+Setelah ketua terpilih, posisi wakil: tinggal <b>4 orang</b> yang tersisa. → <b>4 pilihan</b>.<br>
+
+Setelah ketua dan wakil terpilih, posisi sekretaris: tinggal <b>3 orang</b>. → <b>3 pilihan</b>.<br><br>
+
+Total cara = 5 × 4 × 3 = <b>60 cara</b>.<br><br>
+
+Ini adalah <b>permutasi</b> 3 dari 5, ditulis P(5,3) = 60.
+
+</div>
+
+<p>
+
+<b>Tapi masalah kita bukan ini!</b> Kita tidak memberi jabatan. Kita cuma memilih
+3 orang sebagai <b>teman yang diundang</b>, tanpa jabatan.
+Jadi pemilihan {Andi, Budi, Caca} dan {Caca, Andi, Budi} adalah <b>hal yang sama</b>.
+
+</p>
+
+<hr>
+
+<h3>Langkah 2 — Menghilangkan Efek Urutan</h3>
+
+<p>
+
+Dalam 60 cara permutasi tadi, setiap kelompok 3 orang yang sama
+<b>dihitung berulang-ulang</b> karena urutannya berbeda-beda.
+Pertanyaannya: <b>berapa kali setiap kelompok yang sama dihitung?</b>
+
+</p>
+
+<div class="example">
+
+Ambil satu kelompok, misalnya {Andi, Budi, Caca}.<br><br>
+
+Dalam 60 permutasi tadi, kelompok ini muncul sebagai:<br>
+
+ABC (Andi ketua, Budi wakil, Caca sekretaris)<br>
+
+ACB (Andi ketua, Caca wakil, Budi sekretaris)<br>
+
+BAC (Budi ketua, Andi wakil, Caca sekretaris)<br>
+
+BCA (Budi ketua, Caca wakil, Andi sekretaris)<br>
+
+CAB (Caca ketua, Andi wakil, Budi sekretaris)<br>
+
+CBA (Caca ketua, Budi wakil, Andi sekretaris)<br><br>
+
+<b>6 kali!</b> Kelompok yang sama muncul 6 kali hanya karena urutannya dibolak-balik.<br><br>
+
+Kenapa 6? Karena 3 orang bisa disusun dalam 3! = 3 × 2 × 1 = 6 cara.
+
+</div>
+
+<p>
+
+<b>Inilah kunci utamanya:</b> Setiap kelompok 3 orang yang sama
+<b>selalu dihitung sebanyak 3! = 6 kali</b> dalam permutasi.
+Jadi, untuk mendapatkan banyaknya kelompok <b>tanpa peduli urutan</b>,
+kita tinggal membagi total permutasi dengan 6.
+
+</p>
+
+<div class="example">
+
+Banyak cara memilih 3 orang dari 5 (tanpa urutan):<br><br>
+
+= 60 / 6 = <b>10 cara</b>.<br><br>
+
+Kesepuluh cara itu adalah:<br>
+
+{Andi, Budi, Caca}, {Andi, Budi, Dedi}, {Andi, Budi, Euis},<br>
+
+{Andi, Caca, Dedi}, {Andi, Caca, Euis}, {Andi, Dedi, Euis},<br>
+
+{Budi, Caca, Dedi}, {Budi, Caca, Euis}, {Budi, Dedi, Euis},<br>
+
+{Caca, Dedi, Euis}.<br><br>
+
+Coba hitung: memang ada 10 kelompok. ✅
+
+</div>
+
+<hr>
+
+<h3>Langkah 3 — Generalisasi: Rumus Umum Kombinasi</h3>
+
+<p>
+
+Sekarang kita generalisasi. Kalau kita mau memilih <b>r orang dari n orang</b>:
+
+</p>
+
+<div class="example">
+
+<b>Permutasi</b> r dari n: P(n,r) = n × (n-1) × (n-2) × ... × (n-r+1) = n!/(n-r)!<br><br>
+
+Setiap kelompok r orang yang sama dihitung sebanyak <b>r!</b> kali dalam permutasi
+(karena r orang bisa disusun dalam r! cara berbeda).<br><br>
+
+Maka <b>kombinasi</b> = Permutasi / r!<br><br>
+
+C(n,r) = P(n,r) / r! = n! / (r! × (n-r)!)
+
+</div>
+
+<div class="summary">
+
+<b>Rumus Kombinasi:</b><br><br>
+
+C(n, r) = n! / (r! × (n-r)!)<br><br>
+
+Dibaca: "n choose r" — banyaknya cara memilih r objek dari n objek.
+
+</div>
+
+<p>
+
+<b>Intuisi yang bisa diingat:</b> Kombinasi = (pilih dan susun) / (cara menyusun ulang).
+Kita menghitung dulu seolah-olah urutan penting (permutasi), lalu kita "buang"
+efek urutan dengan membagi r!.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 2: KOMBINASI LEBIH DALAM ==================== -->
+
+<div class="section">
+
+<h2>2. Memahami Kombinasi Lebih Dalam — Banyak Contoh</h2>
+
+<h3>2.1 Contoh 1: Tim Delegasi</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dari 12 siswa, akan dipilih 4 orang untuk ikut lomba.
+Berapa banyak cara memilih?<br><br>
+
+<b>Apakah urutan penting?</b> Tidak. Yang penting 4 orangnya, bukan siapa yang dipilih duluan.
+Ini kombinasi.<br><br>
+
+n = 12, r = 4.<br>
+
+C(12,4) = 12!/(4!×8!) = (12×11×10×9)/(4×3×2×1) = 11880/24 = <b>495 cara</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Contoh 2: Kartu Poker</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dari 52 kartu remi, kamu dibagikan 5 kartu.
+Berapa banyak kemungkinan tangan (hand) yang bisa kamu dapat?<br><br>
+
+<b>Apakah urutan penting?</b> Tidak. Tangan {A♠, K♥, Q♦, J♣, 10♠} sama saja
+tanpa peduli urutan kartunya datang. Ini kombinasi.<br><br>
+
+C(52,5) = 52!/(5!×47!) = (52×51×50×49×48)/(5×4×3×2×1) = 311.875.200/120 = <b>2.598.960 cara</b>. ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Contoh 3: Memilih Soal Ujian</h3>
+
+<div class="example">
+
+<b>Soal:</b> Seorang guru membuat soal ujian: 10 soal tersedia, siswa harus mengerjakan 7 soal.
+Berapa banyak pilihan soal yang bisa diambil siswa?<br><br>
+
+n = 10, r = 7. C(10,7) = 10!/(7!×3!) = (10×9×8)/(3×2×1) = 720/6 = <b>120 cara</b>.<br><br>
+
+<b>Alternatif:</b> C(10,7) = C(10,3) — memilih 7 soal sama dengan memilih 3 soal yang <b>tidak</b> dikerjakan.
+C(10,3) = 10×9×8/6 = 120. Hasilnya sama! ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: KAPAN KOMBINASI, KAPAN PERMUTASI ==================== -->
+
+<div class="section">
+
+<h2>3. Cara Membedakan Kombinasi dan Permutasi — "Tes Tukar"</h2>
+
+<p>
+
+Ini adalah skill yang paling penting. Banyak orang salah pakai rumus
+karena tidak tahu kapan harus pakai kombinasi dan kapan harus pakai permutasi.
+Berikut cara paling sederhana untuk membedakannya:
+
+</p>
+
+<div class="summary">
+
+<b>"Tes Tukar":</b> Ambil dua objek dari pilihanmu. Tukar posisinya.
+Apakah hasilnya dianggap <b>berbeda</b> atau <b>sama</b>?<br><br>
+
+Jika <b>berbeda</b> → <b>Permutasi</b> (urutan penting).<br>
+
+Jika <b>sama</b> → <b>Kombinasi</b> (urutan tidak penting).
+
+</div>
+
+<div class="example">
+
+<b>Kasus 1:</b> Memilih 3 orang untuk jadi ketua, wakil, sekretaris.<br>
+
+Pilih {Andi, Budi, Caca}. Tukar Andi dan Caca: {Caca, Budi, Andi}.<br>
+
+Sekarang Caca jadi ketua, Andi jadi sekretaris. <b>Berbeda!</b> → <b>Permutasi</b>.<br><br>
+
+<b>Kasus 2:</b> Memilih 3 orang untuk diajak makan bareng.<br>
+
+Pilih {Andi, Budi, Caca}. Tukar Andi dan Caca: {Caca, Budi, Andi}.<br>
+
+Orang yang diajak tetap sama: Andi, Budi, Caca. <b>Sama!</b> → <b>Kombinasi</b>.
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: KOMBINASI DENGAN PENGULANGAN ==================== -->
+
+<div class="section">
+
+<h2>4. Kombinasi dengan Pengulangan — Kalau Boleh Ambil yang Sama Berkali-kali</h2>
+
+<p>
+
+Sejauh ini, kita memilih orang atau objek yang <b>berbeda semua</b>.
+Tapi bagaimana kalau kita memilih sesuatu yang <b>boleh sama</b>?
+Misalnya: memilih 3 buah dari 4 jenis buah. Kamu boleh ambil apel 3 kali,
+atau apel 2 + jeruk 1, dan seterusnya.
+
+</p>
+
+<hr>
+
+<h3>4.1 Masalah: Membeli Donat</h3>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah toko menjual 4 jenis donat: Coklat, Stroberi, Keju, Kacang.
+Kamu ingin membeli 6 donat. Boleh beli jenis yang sama berkali-kali.
+Berapa banyak cara memilih?<br><br>
+
+Kita tidak bisa pakai rumus kombinasi biasa karena jenis donat bisa diulang.
+Jadi kita perlu cara berpikir yang berbeda.
+
+</div>
+
+<hr>
+
+<h3>4.2 Teknik "Bintang dan Batang" (Stars and Bars)</h3>
+
+<p>
+
+Bayangkan 6 donat yang kamu beli sebagai <b>6 bintang (★)</b>.
+Sekarang kita perlu memisahkan bintang-bintang ini ke dalam 4 kelompok
+(4 jenis donat). Untuk memisahkan 4 kelompok, kita butuh <b>3 batang (|)</b>.
+
+</p>
+
+<div class="example">
+
+Total ada 6 bintang + 3 batang = <b>9 simbol</b>.<br><br>
+
+Beberapa contoh susunan:<br><br>
+
+★★ | ★★ | ★ | ★ → 2 coklat, 2 stroberi, 1 keju, 1 kacang.<br>
+
+★★★★★★ | | | → 6 coklat, 0 stroberi, 0 keju, 0 kacang.<br>
+
+| ★★★★★★ | | → 0 coklat, 6 stroberi, 0 keju, 0 kacang.<br>
+
+★★★ | | ★★★ | → 3 coklat, 0 stroberi, 3 keju, 0 kacang.<br><br>
+
+<b>Pertanyaannya sekarang:</b> Dari 9 posisi (untuk 9 simbol),
+berapa cara memilih 6 posisi untuk bintang (atau 3 posisi untuk batang)?<br><br>
+
+Kita pilih 6 posisi dari 9 untuk bintang: C(9,6) = 84.<br>
+
+Atau kita pilih 3 posisi dari 9 untuk batang: C(9,3) = 84.<br><br>
+
+<b>Jadi ada 84 cara berbeda untuk membeli 6 donat dari 4 jenis!</b> ✅
+
+</div>
+
+<hr>
+
+<h3>4.3 Rumus Umum Stars and Bars</h3>
+
+<div class="summary">
+
+Untuk memilih <b>r objek</b> dari <b>n jenis</b> (boleh ulang):<br><br>
+
+Bintang = r buah. Batang = (n-1) buah.<br>
+
+Total simbol = r + n - 1.<br><br>
+
+Banyak cara = <b>C(r + n - 1, r)</b> = C(r + n - 1, n - 1).
+
+</div>
+
+<div class="example">
+
+n = 4 (jenis donat), r = 6 (donat yang dibeli).<br>
+
+C(6+4-1, 6) = C(9,6) = <b>84</b>. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 5: IDENTITAS PENTING ==================== -->
+
+<div class="section">
+
+<h2>5. Identitas Kombinasi yang Membantu</h2>
+
+<h3>5.1 Memilih r = Memilih (n-r) untuk Tidak Dipilih</h3>
+
+<div class="summary">
+
+<b>C(n, r) = C(n, n-r)</b><br><br>
+
+Artinya: memilih 3 orang dari 10 untuk masuk tim,
+sama banyaknya dengan memilih 7 orang dari 10 untuk <b>tidak</b> masuk tim.
+Setiap pilihan "yang masuk" otomatis menentukan "yang tidak masuk".
+
+</div>
+
+<div class="example">
+
+C(10, 3) = 120. C(10, 7) = 120. Sama! ✅<br><br>
+
+Kalau r besar (misal r=98 dari n=100), hitung C(100,2) saja. Jauh lebih mudah.
+
+</div>
+
+<hr>
+
+<h3>5.2 Jumlah Semua Cara Memilih = 2ⁿ</h3>
+
+<div class="summary">
+
+<b>C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2ⁿ</b><br><br>
+
+Artinya: total banyaknya himpunan bagian dari n elemen adalah 2ⁿ.
+
+</div>
+
+<div class="example">
+
+Untuk n = 3, himpunan {A,B,C}:<br><br>
+
+0 elemen: {} → 1 cara = C(3,0)<br>
+
+1 elemen: {A}, {B}, {C} → 3 cara = C(3,1)<br>
+
+2 elemen: {A,B}, {A,C}, {B,C} → 3 cara = C(3,2)<br>
+
+3 elemen: {A,B,C} → 1 cara = C(3,3)<br><br>
+
+Total = 1+3+3+1 = 8 = 2³. ✅
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kombinatorik 3</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Kombinasi = memilih tanpa urutan.</b> {A,B} = {B,A}.</li>
+
+<li><b>Rumus:</b> C(n,r) = n!/(r!(n-r)!). Dari permutasi P(n,r) dibagi r!.</li>
+
+<li><b>Tes tukar:</b> Tukar dua objek. Hasil beda? → permutasi. Hasil sama? → kombinasi.</li>
+
+<li><b>Stars and Bars:</b> Untuk memilih dengan pengulangan. Bintang = objek, Batang = pemisah jenis. Rumus: C(r+n-1, r).</li>
+
+<li><b>C(n,r) = C(n, n-r):</b> Memilih = tidak memilih sisanya.</li>
+
+<li><b>Jumlah semua cara memilih = 2ⁿ:</b> Setiap elemen: masuk atau tidak → 2 pilihan → 2ⁿ.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Gambar atau daftar untuk n kecil.</b> Kalau ragu, coba dengan 3 atau 4 objek
+dan tulis semua kemungkinannya. Ini membantu memverifikasi apakah kamu
+harus pakai permutasi atau kombinasi.
+
+</li>
+
+<li>
+
+<b>Gunakan C(n, n-r) untuk hitung yang lebih kecil.</b> C(100,98) = C(100,2) = 4950.
+Jauh lebih cepat!
+
+</li>
+
+<li>
+
+<b>Stars and Bars: bintang dulu, batang kemudian.</b> Visualisasikan objek sebagai bintang,
+jenis sebagai kotak yang dipisah batang. Pilih posisi bintang atau batang—hasilnya sama.
+
+</li>
+
+<li>
+
+<b>Tes tukar selalu berhasil.</b> Ini adalah cara paling reliable untuk membedakan
+permutasi dan kombinasi. Jangan mengandalkan kata kunci soal—terkadang soal
+sengaja mengecoh.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kombinatorika2.html" class="btn">⬅ Kembali</a>
+
+<a href="kombinatorika.html" class="btn">📚 Daftar Kombinatorik</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kombinatorika4.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
