@@ -1,1 +1,694 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 8 - Algorithmic Thinking</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bab 8</h1>
+
+<h2>Algorithmic Thinking</h2>
+
+<p>
+
+Bab ini merupakan penutup dari seri
+Olimpiade Matematika.
+
+Pada bab-bab sebelumnya,
+kamu telah mempelajari berbagai teknik,
+seperti ketimpangan,
+pembuktian,
+prinsip ekstrem,
+Vieta Jumping,
+hingga Functional Equation.
+
+Namun,
+menguasai teknik saja belum cukup.
+
+Seorang peserta Olimpiade juga harus memiliki
+<b>Algorithmic Thinking</b>,
+yaitu kemampuan berpikir secara sistematis,
+terstruktur,
+dan efisien dalam menyelesaikan masalah.
+
+</p>
+
+<div class="note">
+
+<h3>Materi Bab Ini</h3>
+
+<ul>
+
+<li>① Apa itu Algorithmic Thinking?</li>
+
+<li>② Tahapan Pemecahan Masalah</li>
+
+<li>③ Memecah Masalah Besar</li>
+
+<li>④ Mengenali Pola</li>
+
+<li>⑤ Memilih Strategi</li>
+
+<li>⑥ Mengecek Kembali Solusi</li>
+
+<li>⑦ Contoh Soal Olimpiade</li>
+
+<li>⑧ Ringkasan Akhir</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<section class="section">
+
+<h1>① Apa itu Algorithmic Thinking?</h1>
+
+<h2>📖 Pengertian</h2>
+
+<p>
+
+Algorithmic Thinking adalah cara berpikir
+yang menyelesaikan suatu masalah
+melalui langkah-langkah yang logis,
+terurut,
+dan dapat diulang.
+
+Tujuannya bukan hanya memperoleh jawaban,
+tetapi juga memahami
+<b>mengapa</b>
+jawaban tersebut benar.
+
+Dalam Olimpiade Matematika,
+kemampuan ini sangat penting,
+karena banyak soal tidak dapat diselesaikan
+dengan satu rumus saja.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan kamu berada di dalam sebuah labirin.
+
+Ada dua cara untuk keluar.
+
+Cara pertama adalah berjalan secara acak
+hingga menemukan jalan keluar.
+
+Cara kedua adalah mengamati bentuk labirin,
+mencatat jalur yang sudah dilewati,
+kemudian memilih rute yang paling menjanjikan.
+
+Algorithmic Thinking menggunakan cara kedua.
+
+Kita tidak mencoba semua kemungkinan,
+tetapi memilih langkah yang paling efisien.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan</h2>
+
+<ul>
+
+<li>Menyelesaikan soal secara sistematis.</li>
+
+<li>Mengurangi kesalahan berpikir.</li>
+
+<li>Membuat pembuktian lebih terstruktur.</li>
+
+<li>Menghemat waktu saat lomba.</li>
+
+<li>Menemukan solusi yang elegan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan diminta mencari jumlah
+
+</p>
+
+<pre>
+
+1 + 2 + 3 + ... + 100
+
+</pre>
+
+<p>
+
+Cara biasa adalah menjumlahkan satu per satu.
+
+Namun dengan Algorithmic Thinking,
+kita mencari pola.
+
+Pasangkan bilangan pertama dengan terakhir.
+
+</p>
+
+<pre>
+
+1 + 100 = 101
+
+2 + 99 = 101
+
+3 + 98 = 101
+
+</pre>
+
+<p>
+
+Terdapat 50 pasangan,
+sehingga
+
+</p>
+
+<pre>
+
+50 × 101 = 5050
+
+</pre>
+
+<p>
+
+Solusi diperoleh jauh lebih cepat
+karena menemukan pola,
+bukan menghitung semuanya.
+
+</p>
+
+</section><section class="section">
+
+<h1>② Tahapan Pemecahan Masalah</h1>
+
+<h2>📖 Pola Umum Menyelesaikan Soal</h2>
+
+<p>
+
+Hampir semua soal Olimpiade dapat diselesaikan
+dengan pola berpikir berikut:
+
+</p>
+
+<pre>
+
+1. Pahami soal
+
+↓
+
+2. Identifikasi informasi penting
+
+↓
+
+3. Cari pola atau struktur
+
+↓
+
+4. Pilih teknik yang sesuai
+
+↓
+
+5. Eksekusi langkah solusi
+
+↓
+
+6. Periksa kembali jawaban
+
+</pre>
+
+<p>
+
+Langkah ini terlihat sederhana,
+tetapi sangat kuat jika dilakukan dengan benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Contoh Penerapan</h2>
+
+<p>
+
+Misalkan suatu soal meminta membuktikan bahwa
+tidak ada solusi bilangan bulat untuk suatu persamaan.
+
+Daripada langsung menghitung,
+kita bisa:
+
+</p>
+
+<ul>
+
+<li>Mencari bentuk ekstrem (terkecil atau terbesar).</li>
+
+<li>Mencoba substitusi sederhana.</li>
+
+<li>Menggunakan kontradiksi.</li>
+
+<li>Memeriksa sifat parity (ganjil-genap).</li>
+
+</ul>
+
+<p>
+
+Ini menunjukkan bahwa solusi tidak selalu langsung,
+tetapi melalui proses berpikir bertahap.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>③ Memecah Masalah Besar</h2>
+
+<p>
+
+Masalah Olimpiade sering terlihat sulit
+karena terlalu besar.
+
+Strategi utama adalah
+<b>memecah masalah menjadi bagian kecil</b>.
+
+</p>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>Pisahkan kasus (case analysis).</li>
+
+<li>Pecah menjadi bilangan kecil dan besar.</li>
+
+<li>Analisis satu variabel terlebih dahulu.</li>
+
+<li>Selesaikan bagian demi bagian.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>④ Mengenali Pola</h2>
+
+<p>
+
+Kemampuan paling penting dalam Algorithmic Thinking
+adalah mengenali pola.
+
+Beberapa pola umum:
+
+</p>
+
+<ul>
+
+<li>Simetri → gunakan substitusi x ↔ y</li>
+
+<li>Ekstrem → gunakan Extremal Principle</li>
+
+<li>Pengulangan → gunakan induksi</li>
+
+<li>Hubungan kuadrat → coba Vieta Jumping</li>
+
+<li>Penjumlahan → Functional Equation linear</li>
+
+</ul>
+
+<p>
+
+Semakin sering latihan,
+semakin cepat mengenali pola ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⑤ Memilih Strategi</h2>
+
+<p>
+
+Setelah pola dikenali,
+langkah berikutnya adalah memilih strategi.
+
+Tidak ada satu teknik yang selalu benar.
+
+Namun biasanya:
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Situasi</th>
+<th>Strategi</th>
+
+</tr>
+
+<tr>
+
+<td>Banyak objek</td>
+<td>Pigeonhole Principle</td>
+
+</tr>
+
+<tr>
+
+<td>Ekstrem nilai</td>
+<td>Extremal Principle</td>
+
+</tr>
+
+<tr>
+
+<td>Persamaan fungsi</td>
+<td>Functional Equation Techniques</td>
+
+</tr>
+
+<tr>
+
+<td>Bilangan bulat kompleks</td>
+<td>Vieta Jumping / Descent</td>
+
+</tr>
+
+<tr>
+
+<td>Ketaksamaan</td>
+<td>Inequality Techniques</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>⑥ Mengecek Kembali Solusi</h2>
+
+<p>
+
+Kesalahan paling umum dalam Olimpiade
+bukan salah teknik,
+tetapi lupa mengecek hasil akhir.
+
+Selalu pastikan:
+
+</p>
+
+<ul>
+
+<li>Apakah semua kasus sudah dibahas?</li>
+
+<li>Apakah solusi memenuhi syarat soal?</li>
+
+<li>Apakah tidak ada langkah yang salah?</li>
+
+<li>Apakah jawaban masuk akal?</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Tips Mental Olimpiade</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Jangan panik jika soal terlihat sulit.</li>
+<li>Mulai dari hal paling sederhana.</li>
+<li>Catat informasi kecil yang terlihat tidak penting.</li>
+<li>Jangan terpaku pada satu cara.</li>
+<li>Jika buntu, kembali ke definisi.</li>
+
+</ul>
+
+</div>
+
+</section><hr>
+
+<section class="section">
+
+<h1>⑧ Ringkasan Akhir & Penutup Modul</h1>
+
+<h2>📚 Ringkasan Seluruh Seri Olimpiade</h2>
+
+<p>
+
+Kamu telah menyelesaikan seluruh seri
+<b>Olimpiade Matematika</b>
+dari dasar hingga tingkat lanjut.
+
+Modul ini dirancang untuk membangun cara berpikir
+secara bertahap:
+
+</p>
+
+<ul>
+
+<li>Dasar pencacahan & kombinatorika</li>
+<li>Teori bilangan</li>
+<li>Peluang & statistik</li>
+<li>Ketimpangan</li>
+<li>Pembuktian lanjutan</li>
+<li>Functional Equation</li>
+<li>Algorithmic Thinking</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Alur Perkembangan Berpikir</h2>
+
+<p>
+
+Jika diringkas, perjalanan berpikirmu adalah:
+
+</p>
+
+<pre>
+
+1. Menghitung (Counting)
+
+↓
+
+2. Menganalisis bilangan (Number Theory)
+
+↓
+
+3. Mengelola ketidakpastian (Probability)
+
+↓
+
+4. Mengoptimalkan (Inequality)
+
+↓
+
+5. Membuktikan (Proof Techniques)
+
+↓
+
+6. Menganalisis fungsi (Functional Equation)
+
+↓
+
+7. Berpikir sistematis (Algorithmic Thinking)
+
+</pre>
+
+<p>
+
+Ini adalah jalur berpikir seorang
+<b>olympiad problem solver</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Apa yang Sebenarnya Dipelajari?</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Bukan hanya rumus.</li>
+<li>Bukan hanya teknik.</li>
+<li>Tetapi cara berpikir logis dan terstruktur.</li>
+
+</ul>
+
+<p>
+
+Matematika Olimpiade melatih kamu untuk:
+
+</p>
+
+<ul>
+
+<li>Melihat pola tersembunyi</li>
+<li>Membuat strategi</li>
+<li>Menyusun bukti</li>
+<li>Berpikir kreatif tapi tetap logis</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Filosofi Olimpiade</h2>
+
+<p>
+
+Dalam Olimpiade Matematika,
+jawaban bukanlah tujuan utama.
+
+Yang lebih penting adalah:
+
+</p>
+
+<pre>
+
+Proses berpikir yang benar → menuju solusi
+
+</pre>
+
+<p>
+
+Kadang jawaban salah masih bisa mendapat poin,
+tetapi cara berpikir yang salah
+tidak akan menghasilkan pemahaman.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🚀 Jalur Setelah Ini</h2>
+
+<p>
+
+Jika kamu ingin melanjutkan,
+maka level berikutnya adalah:
+
+</p>
+
+<ul>
+
+<li>IMO Shortlist Problems</li>
+<li>Advanced Inequalities (Karamata, Schur lanjutan)</li>
+<li>Graph Theory Olympiad</li>
+<li>Combinatorics Advanced (Polya, Burnside)</li>
+<li>Number Theory Lanjutan (LTE, Quadratic Residue)</li>
+
+</ul>
+
+<p>
+
+Itulah level yang mendekati
+kompetisi internasional sebenarnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Pesan Terakhir</h2>
+
+<div class="note">
+
+<p>
+
+Jika kamu merasa sulit,
+itu normal.
+
+Semua peserta Olimpiade juga pernah berada di titik yang sama.
+
+Yang membedakan bukan bakat,
+tetapi <b>konsistensi latihan dan cara berpikir</b>.
+
+</p>
+
+<p>
+
+Terus latihan, terus berpikir,
+dan jangan berhenti ketika menemui kesulitan.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<div class="navigation">
+
+<a href="olimpiade7.html" class="btn">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="index.html" class="btn">
+
+🏠 Kembali ke Beranda
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
