@@ -1,1 +1,530 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kombinatorika Part 5 | Prinsip Lanjutan Mencacah</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔢 KOMBINATORIKA</h1>
+
+<p>Part 5 • Prinsip Lanjutan Mencacah</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Ketika Logika Mengalahkan Perhitungan</h2>
+
+<p>
+
+Di bab-bab sebelumnya, kita menghitung dengan rumus: permutasi, kombinasi,
+Teorema Binomial. Semuanya melibatkan faktorial dan perkalian.
+Tapi ada masalah-masalah yang <b>tidak bisa diselesaikan dengan rumus</b>—
+masalah di mana kita tidak tahu angka pastinya, tapi kita bisa
+<b>membuktikan sesuatu pasti terjadi</b> hanya dengan logika.
+
+</p>
+
+<p>
+
+Di sinilah <b>prinsip-prinsip lanjutan</b> berperan. Prinsip-prinsip ini
+adalah "senjata rahasia" kombinatorik—alat-alat berpikir yang memungkinkan
+kita menyelesaikan soal tanpa menghitung eksplisit. Di bab ini, kita akan
+mempelajari: <b>Pigeonhole</b> (menjamin keberadaan), <b>Inklusi-Eksklusi</b>
+(menghitung gabungan yang tumpang tindih), dan <b>Double Counting</b>
+(membuktikan kesamaan dengan dua cara hitung).
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami Prinsip Pigeonhole (Rumah Merpati) dan aplikasinya yang mengejutkan.</li>
+
+<li>Menguasai Prinsip Inklusi-Eksklusi untuk menghitung gabungan himpunan yang tumpang tindih.</li>
+
+<li>Memahami Double Counting: menghitung dengan dua cara berbeda untuk membuktikan kesamaan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: PRINSIP PIGEONHOLE ==================== -->
+
+<div class="section">
+
+<h2>1. Prinsip Pigeonhole (Rumah Merpati) — Ide Sederhana, Akibat Dahsyat</h2>
+
+<div class="summary">
+
+<b>Prinsip Pigeonhole:</b><br><br>
+
+Jika <b>n+1</b> merpati dimasukkan ke dalam <b>n</b> rumah merpati,
+maka <b>pasti ada setidaknya satu rumah yang berisi minimal 2 merpati</b>.<br><br>
+
+Bentuk umum: Jika N objek ditempatkan ke dalam k kotak, dan N > k,
+maka pasti ada setidaknya satu kotak yang berisi minimal ⌈N/k⌉ objek.
+
+</div>
+
+<p>
+
+<b>Kenapa prinsip ini penting?</b> Karena kelihatannya terlalu sederhana—
+hampir seperti "ya iyalah". Tapi justru karena kesederhanaannya,
+prinsip ini sering tidak terpikirkan. Padahal, banyak soal sulit
+yang solusinya hanya dengan menyadari bahwa "pasti ada yang dobel".
+
+</p>
+
+<hr>
+
+<h3>1.1 Contoh Paling Sederhana — Ulang Tahun</h3>
+
+<div class="example">
+
+<b>Soal:</b> Di sebuah kelas ada 13 siswa. Buktikan bahwa minimal ada 2 siswa
+yang berulang tahun di bulan yang sama.<br><br>
+
+<b>Pikiran:</b> Ada 12 bulan dalam setahun. Ada 13 siswa.<br>
+
+Setiap siswa punya 1 bulan kelahiran (merpati = siswa, rumah = bulan).<br>
+
+13 siswa dimasukkan ke 12 bulan → pasti ada minimal 1 bulan yang punya 2 siswa atau lebih.<br><br>
+
+<b>Bukti:</b> Kalau setiap bulan maksimal 1 siswa, total siswa maksimal 12.
+Tapi kenyataannya ada 13. Kontradiksi! Jadi pasti ada bulan dengan minimal 2 siswa. ✅
+
+</div>
+
+<hr>
+
+<h3>1.2 Contoh: Kaos Kaki di Tempat Gelap</h3>
+
+<div class="example">
+
+<b>Soal:</b> Di dalam laci ada 10 kaos kaki hitam dan 10 kaos kaki putih.
+Kamu mengambil kaos kaki dalam keadaan gelap (tidak bisa melihat warna).
+Berapa minimal kaos kaki yang harus kamu ambil untuk <b>memastikan</b>
+mendapat sepasang kaos kaki yang warnanya sama?<br><br>
+
+<b>Analisis:</b> Ada 2 warna (2 "rumah merpati").<br>
+
+Kita ingin memastikan ada 2 kaos kaki dengan warna sama.<br>
+
+Dengan Pigeonhole: jika kita ambil 3 kaos kaki, pasti ada 2 yang warnanya sama
+(karena 3 > 2).<br><br>
+
+<b>Jawaban: 3 kaos kaki.</b><br><br>
+
+<b>Mengapa bukan 2?</b> Karena dengan 2 kaos kaki, kita mungkin dapat 1 hitam dan 1 putih
+(tidak sepasang). Dengan 3, tidak mungkin semuanya berbeda warna (hanya ada 2 warna),
+jadi pasti ada 2 yang sama. ✅
+
+</div>
+
+<hr>
+
+<h3>1.3 Contoh: Bilangan di Antara 1 Sampai 2n</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dari bilangan 1, 2, 3, ..., 2n, kita pilih n+1 bilangan secara acak.
+Buktikan bahwa di antara bilangan yang dipilih, pasti ada dua bilangan
+yang satu habis membagi yang lain.<br><br>
+
+<b>Strategi:</b> Tulis setiap bilangan dalam bentuk <b>2ᵏ × m</b>, di mana m adalah
+bilangan ganjil. Setiap bilangan bisa ditulis dengan cara unik seperti ini.<br><br>
+
+Contoh: 12 = 2² × 3 (m=3). 24 = 2³ × 3 (m=3). 7 = 2⁰ × 7 (m=7).<br><br>
+
+Sekarang, dari 1 sampai 2n, ada <b>n</b> bilangan ganjil (1, 3, 5, ..., 2n-1).
+Ini adalah "rumah merpati" kita—setiap bilangan ganjil adalah satu rumah.<br><br>
+
+Kita memilih n+1 bilangan. Masing-masing punya faktor ganjil m (antara 1 dan 2n-1).
+Ada n rumah, ada n+1 merpati → pasti ada 2 bilangan dengan <b>m yang sama</b>.<br><br>
+
+Misalkan dua bilangan itu adalah 2ᵃ × m dan 2ᵇ × m.<br>
+
+Jika a < b, maka 2ᵃ × m habis membagi 2ᵇ × m.<br>
+
+Jika b < a, maka 2ᵇ × m habis membagi 2ᵃ × m.<br><br>
+
+<b>Jadi pasti ada yang satu habis membagi yang lain!</b> ✅
+
+</div>
+
+<hr>
+
+<h3>1.4 Pigeonhole untuk Paritas Koordinat</h3>
+
+<div class="example">
+
+<b>Soal:</b> Buktikan bahwa di antara 5 titik dengan koordinat bilangan bulat,
+pasti ada 2 titik yang titik tengahnya juga memiliki koordinat bilangan bulat.<br><br>
+
+<b>Analisis:</b> Titik tengah ((x₁+x₂)/2, (y₁+y₂)/2). Agar koordinatnya bilangan bulat,
+x₁+x₂ harus genap, dan y₁+y₂ harus genap. Artinya, x₁ dan x₂ harus
+<b>sama-sama genap atau sama-sama ganjil</b> (paritasnya sama).<br><br>
+
+Untuk satu koordinat, ada 2 kemungkinan paritas: genap (G) atau ganjil (J).
+Untuk dua koordinat (x,y), ada 2×2 = 4 kemungkinan: (G,G), (G,J), (J,G), (J,J).<br><br>
+
+4 "rumah merpati" (kombinasi paritas). 5 titik (merpati).
+5 > 4 → pasti ada 2 titik di rumah yang sama → paritasnya sama → jumlahnya genap
+→ titik tengahnya bilangan bulat. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 2: INKLUSI-EKSKLUSI ==================== -->
+
+<div class="section">
+
+<h2>2. Prinsip Inklusi-Eksklusi — Menghitung Gabungan yang Tumpang Tindih</h2>
+
+<p>
+
+Masih ingat di Bab 1 kita belajar Prinsip Penjumlahan? Prinsip itu hanya
+berlaku kalau himpunan-himpunannya <b>saling lepas</b> (tidak tumpang tindih).
+Tapi bagaimana kalau himpunannya tumpang tindih? Inilah yang diselesaikan
+oleh <b>Prinsip Inklusi-Eksklusi</b>.
+
+</p>
+
+<div class="summary">
+
+<b>Untuk dua himpunan A dan B:</b><br><br>
+
+|A ∪ B| = |A| + |B| - |A ∩ B|<br><br>
+
+Artinya: jumlah anggota gabungan = jumlah anggota A + jumlah anggota B
+<b>dikurangi</b> anggota yang dobel (yang ada di kedua himpunan).<br><br>
+
+<b>Untuk tiga himpunan A, B, C:</b><br><br>
+
+|A ∪ B ∪ C| = |A| + |B| + |C| - |A∩B| - |A∩C| - |B∩C| + |A∩B∩C|
+
+</div>
+
+<p>
+
+<b>Mengapa rumusnya seperti itu? — Logika Menghindari Hitungan Ganda</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan tiga lingkaran yang saling tumpang tindih.<br><br>
+
+Kalau kita jumlahkan |A| + |B| + |C|, anggota yang ada di 2 himpunan
+dihitung <b>2 kali</b> (overcounting). Maka kita kurangi |A∩B|, |A∩C|, |B∩C|
+untuk mengoreksinya.<br><br>
+
+Tapi setelah dikurangi, anggota yang ada di <b>3 himpunan sekaligus</b>
+jadi tidak terhitung sama sekali! (Awalnya dihitung 3 kali, dikurangi 3 kali = 0).
+Maka kita tambahkan kembali |A∩B∩C|.<br><br>
+
+Inilah pola inklusi-eksklusi: <b>tambah, kurang, tambah, kurang, ...</b>
+bergantian.
+
+</div>
+
+<hr>
+
+<h3>2.1 Contoh: Siswa yang Ikut Klub</h3>
+
+<div class="example">
+
+<b>Soal:</b> Di sebuah sekolah ada 100 siswa. 60 siswa ikut klub Matematika.
+50 siswa ikut klub Fisika. 30 siswa ikut kedua klub. Berapa banyak siswa
+yang ikut <b>setidaknya satu</b> klub? Berapa yang <b>tidak ikut sama sekali</b>?<br><br>
+
+<b>Inklusi-Eksklusi:</b><br><br>
+
+|M ∪ F| = |M| + |F| - |M ∩ F|<br>
+
+= 60 + 50 - 30 = <b>80</b> siswa ikut setidaknya satu klub.<br><br>
+
+Yang tidak ikut sama sekali = Total - |M ∪ F| = 100 - 80 = <b>20</b> siswa. ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Contoh: Bilangan yang Habis Dibagi</h3>
+
+<div class="example">
+
+<b>Soal:</b> Berapa banyak bilangan dari 1 sampai 100 yang habis dibagi 2 <b>atau</b> habis dibagi 3?<br><br>
+
+A = himpunan bilangan habis dibagi 2: |A| = 100/2 = <b>50</b>.<br>
+
+B = himpunan bilangan habis dibagi 3: |B| = ⌊100/3⌋ = <b>33</b>.<br><br>
+
+A ∩ B = himpunan bilangan habis dibagi 6 (KPK dari 2 dan 3): |A∩B| = ⌊100/6⌋ = <b>16</b>.<br><br>
+
+|A ∪ B| = 50 + 33 - 16 = <b>67</b> bilangan. ✅
+
+</div>
+
+<hr>
+
+<h3>2.3 Contoh dengan Tiga Himpunan</h3>
+
+<div class="example">
+
+<b>Soal:</b> Dari 200 mahasiswa: 120 mengambil Matematika, 100 mengambil Fisika,
+80 mengambil Kimia, 50 mengambil Matematika dan Fisika, 40 mengambil Matematika dan Kimia,
+30 mengambil Fisika dan Kimia, 20 mengambil ketiganya. Berapa yang mengambil
+<b>setidaknya satu</b> mata kuliah?<br><br>
+
+|M ∪ F ∪ K| = 120 + 100 + 80 - 50 - 40 - 30 + 20<br>
+
+= 300 - 120 + 20 = <b>200</b> mahasiswa. ✅<br><br>
+
+Ternyata semua mahasiswa mengambil setidaknya satu mata kuliah!
+
+</div>
+
+<hr>
+
+<h3>2.4 Aplikasi: Menghitung Banyaknya Fungsi Surjektif</h3>
+
+<div class="example">
+
+<b>Soal:</b> Berapa banyak cara memetakan n bola berbeda ke k kotak berbeda
+sedemikian sehingga <b>setiap kotak terisi minimal 1 bola</b>?
+(Ini disebut banyaknya fungsi surjektif).<br><br>
+
+Rumusnya menggunakan Inklusi-Eksklusi:<br><br>
+
+Total cara tanpa syarat: kⁿ (setiap bola bebas ke kotak mana).<br>
+
+Kurangi cara di mana minimal 1 kotak kosong.<br><br>
+
+Hasilnya: Σ[i=0..k] (-1)ⁱ C(k, i) (k-i)ⁿ.<br><br>
+
+Untuk n=4 bola, k=3 kotak:<br>
+
+= C(3,0)×3⁴ - C(3,1)×2⁴ + C(3,2)×1⁴ - C(3,3)×0⁴<br>
+
+= 1×81 - 3×16 + 3×1 - 1×0<br>
+
+= 81 - 48 + 3 = <b>36</b> cara. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: DOUBLE COUNTING ==================== -->
+
+<div class="section">
+
+<h2>3. Double Counting — Menghitung Satu Hal dengan Dua Cara</h2>
+
+<div class="summary">
+
+<b>Double Counting</b> adalah teknik membuktikan kesamaan dengan
+<b>menghitung objek yang sama menggunakan dua cara berbeda</b>.
+Jika dua cara menghasilkan rumus yang berbeda, maka kedua rumus itu
+harus sama—dan ini membuktikan suatu identitas.<br><br>
+
+<b>Prinsip:</b> Jika kita menghitung himpunan yang sama dengan dua cara berbeda,
+hasilnya harus sama.
+
+</div>
+
+<p>
+
+<b>Mengapa ini powerful?</b> Karena kita bisa membuktikan identitas kombinatorik
+yang rumit tanpa manipulasi aljabar sama sekali—cukup dengan "cerita"
+tentang menghitung sesuatu.
+
+</p>
+
+<hr>
+
+<h3>3.1 Contoh Klasik: Membuktikan C(n,k) × k = C(n,1) × C(n-1, k-1)</h3>
+
+<div class="example">
+
+<b>Soal:</b> Buktikan bahwa k × C(n,k) = n × C(n-1, k-1).<br><br>
+
+<b>Cara 1 (Aljabar):</b><br>
+
+k × n!/(k!(n-k)!) = n × (n-1)!/((k-1)!(n-k)!)<br>
+
+Keduanya = n!/((k-1)!(n-k)!). Sama. Tapi ini tidak memberi intuisi.<br><br>
+
+<b>Cara 2 (Double Counting):</b> Hitung banyaknya cara memilih <b>sebuah panitia
+beranggotakan k orang dengan satu ketua</b> dari n orang.<br><br>
+
+<b>Metode A:</b> Pilih dulu k orang untuk jadi panitia: C(n,k) cara.
+Lalu pilih 1 ketua dari k orang itu: k cara. Total = <b>k × C(n,k)</b>.<br><br>
+
+<b>Metode B:</b> Pilih dulu 1 ketua dari n orang: n cara.
+Lalu pilih (k-1) anggota lain dari (n-1) sisanya: C(n-1, k-1) cara.
+Total = <b>n × C(n-1, k-1)</b>.<br><br>
+
+Kedua metode menghitung hal yang sama → k × C(n,k) = n × C(n-1, k-1). ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 Contoh: Membuktikan Identitas Pascal</h3>
+
+<div class="example">
+
+<b>Soal:</b> Buktikan C(n,k) = C(n-1, k-1) + C(n-1, k) dengan Double Counting.<br><br>
+
+<b>Cerita:</b> Hitung banyaknya cara memilih k orang dari n orang.<br><br>
+
+<b>Metode A:</b> Langsung pilih k dari n: <b>C(n,k)</b>.<br><br>
+
+<b>Metode B:</b> Fokus pada satu orang spesifik, sebut X.
+Ada dua kemungkinan:<br>
+
+- X terpilih → perlu pilih (k-1) dari (n-1) sisanya: C(n-1, k-1).<br>
+
+- X tidak terpilih → perlu pilih k dari (n-1) sisanya: C(n-1, k).<br>
+
+Total = <b>C(n-1, k-1) + C(n-1, k)</b>.<br><br>
+
+Keduanya menghitung hal yang sama → C(n,k) = C(n-1, k-1) + C(n-1, k). ✅
+
+</div>
+
+<hr>
+
+<h3>3.3 Contoh: Handshaking Lemma (Lemma Jabat Tangan)</h3>
+
+<div class="example">
+
+<b>Teorema:</b> Dalam suatu pesta, jumlah orang yang berjabat tangan
+sebanyak ganjil kali pasti <b>genap</b>.<br><br>
+
+<b>Bukti Double Counting:</b> Hitung total jabat tangan yang terjadi.<br><br>
+
+<b>Metode A:</b> Setiap jabat tangan melibatkan 2 tangan.
+Total "ujung tangan yang berjabat" = 2 × (jumlah jabat tangan) → <b>genap</b>.<br><br>
+
+<b>Metode B:</b> Jumlahkan derajat setiap orang (berapa kali dia berjabat tangan).
+Orang dengan derajat ganjil menyumbang bilangan ganjil.
+Orang dengan derajat genap menyumbang bilangan genap.<br><br>
+
+Agar totalnya genap (dari Metode A), jumlah orang dengan derajat ganjil
+harus <b>genap</b> (karena ganjil+ganjil = genap, ganjil+ganjil+ganjil = ganjil, dst.). ✅<br><br>
+
+Ini adalah bukti klasik dari <b>Handshaking Lemma</b> dalam Teori Graf.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kombinatorika 5</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Pigeonhole:</b> n+1 merpati ke n rumah → ada rumah dengan ≥2 merpati. Bentuk umum: ⌈N/k⌉.</li>
+
+<li><b>Inklusi-Eksklusi (2 himpunan):</b> |A∪B| = |A| + |B| - |A∩B|.</li>
+
+<li><b>Inklusi-Eksklusi (3 himpunan):</b> |A∪B∪C| = |A|+|B|+|C| - |A∩B|-|A∩C|-|B∩C| + |A∩B∩C|.</li>
+
+<li><b>Pola Inklusi-Eksklusi:</b> Tambah, kurang, tambah, kurang, ... bergantian.</li>
+
+<li><b>Double Counting:</b> Menghitung objek yang sama dengan dua cara berbeda → membuktikan identitas.</li>
+
+<li><b>Aplikasi:</b> Fungsi surjektif, Handshaking Lemma, identitas kombinasi.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Pigeonhole: cari "rumah" yang lebih sedikit dari "merpati".</b>
+Ini intinya. Begitu kamu temukan kategorinya, buktinya selesai.
+
+</li>
+
+<li>
+
+<b>Inklusi-Eksklusi: jangan lupa tanda bergantian.</b>
++ untuk 1 himpunan, - untuk 2 himpunan, + untuk 3 himpunan, dst.
+
+</li>
+
+<li>
+
+<b>Double Counting: pilih objek yang "netral" untuk dihitung.</b>
+Biasanya berupa panitia, tim, atau pasangan—sesuatu yang bisa dihitung
+dengan dua pendekatan berbeda.
+
+</li>
+
+<li>
+
+<b>Verifikasi dengan n kecil.</b> Untuk Inklusi-Eksklusi dan Double Counting,
+coba dengan n=3 atau n=4 untuk memastikan logikanya benar.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="kombinatorika4.html" class="btn">⬅ Kembali</a>
+
+<a href="kombinatorika.html" class="btn">📚 Daftar Kombinatorika</a>
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kombinatorika6.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
