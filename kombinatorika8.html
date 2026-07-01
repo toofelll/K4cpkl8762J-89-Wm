@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 8: Pengantar Teori Ramsey - Handbook Kombinatorika</title>
+    <link rel="stylesheet" href="css.style">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+
+    <!-- ==================== COVER BAB ==================== -->
+    <header class="chapter-header" id="bab8-header">
+        <div class="chapter-number">BAB 8</div>
+        <h1 class="chapter-title">Pengantar Teori Ramsey</h1>
+        <p class="chapter-subtitle">
+            <em>Keteraturan Tak Terelakkan dalam Kekacauan: Prinsip Pigeonhole yang Diperumum</em>
+        </p>
+        <div class="chapter-divider">
+            <span class="divider-symbol">&#9670;</span>
+        </div>
+    </header>
+
+    <!-- ==================== PEMBUKA BAB ==================== -->
+    <section class="chapter-opening" id="opening">
+        <p>
+            Teori Ramsey menjawab pertanyaan mendasar: <strong>seberapa besar suatu struktur harus 
+            ada agar keteraturan tertentu tak terelakkan muncul?</strong> Jika Anda mewarnai elemen-elemen 
+            suatu himpunan besar, dapatkah Anda menghindari terbentuknya sub-struktur monokromatik? 
+            Jawabannya seringkali <strong>tidak</strong>—keteraturan pasti muncul jika struktur cukup besar. 
+            Bab ini menyajikan fondasi Teori Ramsey: dari Prinsip Pigeonhole yang sederhana hingga 
+            Bilangan Ramsey klasik pada graf, lengkap dengan rumus, batas, dan alasan logis di baliknya.
+        </p>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 1: PRINSIP PIGEONHOLE SEBAGAI FONDASI                              -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-1-pigeonhole">
+        <h2 class="section-heading">1. Prinsip Pigeonhole: Fondasi Teori Ramsey</h2>
+
+        <h3>1.1 Rumus Dasar</h3>
+        <div class="theorem-box">
+            <h4>Prinsip Pigeonhole (Bentuk Sederhana)</h4>
+            <p>Jika $n$ objek ditempatkan ke dalam $m$ kotak dan $n > m$, maka setidaknya satu kotak berisi 
+            <strong>paling sedikit</strong> $\lceil n/m \rceil$ objek.</p>
+        </div>
+
+        <h4>Mengapa Prinsip Ini Benar?</h4>
+        <p>
+            Andaikan setiap kotak berisi paling banyak $\lceil n/m \rceil - 1$ objek. Karena ada $m$ kotak, 
+            total objek paling banyak $m \cdot (\lceil n/m \rceil - 1) < m \cdot (n/m) = n$, kontradiksi 
+            dengan total $n$ objek.
+        </p>
+
+        <h3>1.2 Bentuk Diperumum: Prinsip Pigeonhole dengan Kapasitas</h3>
+        <div class="theorem-box">
+            <h4>Prinsip Pigeonhole (Bentuk Diperumum)</h4>
+            <p>Jika $n$ objek ditempatkan ke dalam $m$ kotak, maka terdapat kotak ke-$i$ yang berisi 
+            setidaknya $a_i$ objek, dengan syarat:</p>
+            $$n > \sum_{i=1}^{m} (a_i - 1)$$
+            <p>atau ekuivalen, setidaknya satu kotak ke-$i$ berisi $\geq a_i$ objek jika rata-rata 
+            isi kotak melebihi $a_i - 1$.</p>
+        </div>
+
+        <h4>Mengapa Syarat Ini Berlaku?</h4>
+        <p>
+            Jika setiap kotak ke-$i$ berisi paling banyak $a_i - 1$, total objek $\leq \sum (a_i - 1)$. 
+            Kontraposisinya: jika total $> \sum (a_i - 1)$, maka setidaknya satu kotak melampaui 
+            batasnya. Ini adalah bentuk paling umum dari Pigeonhole Principle.
+        </p>
+
+        <h3>1.3 Prinsip Pigeonhole sebagai Ramsey $R(2, k)$</h3>
+        <p>
+            Teori Ramsey dimulai dari pengamatan bahwa Prinsip Pigeonhole adalah kasus paling 
+            sederhana dari Teorema Ramsey: jika kita mewarnai $k+1$ objek dengan 2 warna, 
+            pasti ada setidaknya 2 objek sewarna.
+        </p>
+        <p>
+            <strong>Verifikasi:</strong> $k+1$ objek, 2 warna. Jika setiap warna muncul $\leq 1$ kali, 
+            total $\leq 2$, kontradiksi untuk $k \geq 2$. Jadi ada warna yang muncul $\geq 2$ kali.
+        </p>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 2: BILANGAN RAMSEY KLASIK $R(s,t)$                                 -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-2-ramsey-klasik">
+        <h2 class="section-heading">2. Bilangan Ramsey Klasik $R(s,t)$</h2>
+
+        <h3>2.1 Definisi Formal</h3>
+        <p>
+            <strong>Bilangan Ramsey</strong> $R(s,t)$ adalah bilangan bulat terkecil $n$ sedemikian sehingga 
+            <strong>setiap</strong> graf dengan $n$ simpul pasti memuat salah satu dari:
+        </p>
+        <ul>
+            <li>Sebuah <strong>klik</strong> (subgraf lengkap) berukuran $s$, <strong>ATAU</strong></li>
+            <li>Sebuah <strong>himpunan bebas</strong> (independent set) berukuran $t$.</li>
+        </ul>
+        <p>
+            Ekuivalen dalam bahasa pewarnaan sisi: $R(s,t)$ adalah $n$ terkecil sehingga setiap 
+            pewarnaan sisi-sisi $K_n$ dengan dua warna (merah dan biru) pasti memuat $K_s$ merah 
+            atau $K_t$ biru.
+        </p>
+
+        <div class="theorem-box">
+            <h4>Teorema Ramsey (1930) — Versi Graf</h4>
+            <p>
+                Untuk setiap bilangan bulat $s, t \geq 2$, bilangan $R(s,t)$ terdefinisi (finite). 
+                Dengan kata lain, selalu ada bilangan $n$ yang cukup besar yang menjamin munculnya 
+                $K_s$ merah atau $K_t$ biru.
+            </p>
+        </div>
+
+        <h3>2.2 Nilai-Nilai yang Diketahui</h3>
+        <table>
+            <thead>
+                <tr><th>$R(s,t)$</th><th>$s=2$</th><th>$s=3$</th><th>$s=4$</th><th>$s=5$</th><th>$s=6$</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>$t=2$</strong></td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td><strong>$t=3$</strong></td><td>3</td><td>6</td><td>9</td><td>14</td><td>18</td></tr>
+                <tr><td><strong>$t=4$</strong></td><td>4</td><td>9</td><td>18</td><td>25</td><td>36–40</td></tr>
+                <tr><td><strong>$t=5$</strong></td><td>5</td><td>14</td><td>25</td><td>43–48</td><td>58–87</td></tr>
+                <tr><td><strong>$t=6$</strong></td><td>6</td><td>18</td><td>36–40</td><td>58–87</td><td>102–165</td></tr>
+            </tbody>
+        </table>
+        <p>
+            <strong>Catatan:</strong> Rentang seperti "36–40" berarti nilai pastinya tidak diketahui; 
+            hanya batas bawah dan atas yang terbukti. Bilangan Ramsey sulit dihitung secara eksak 
+            untuk parameter besar—ini adalah salah satu masalah terbuka terkenal dalam kombinatorika.
+        </p>
+
+        <h3>2.3 Kasus Dasar dan Simetri</h3>
+        <div class="theorem-box">
+            <h4>Sifat Dasar Bilangan Ramsey</h4>
+            <ul>
+                <li><strong>Simetri:</strong> $R(s,t) = R(t,s)$ (tukar warna merah dan biru).</li>
+                <li><strong>Kasus trivial:</strong> $R(1,t) = R(s,1) = 1$.</li>
+                <li><strong>Kasus $s=2$:</strong> $R(2,t) = t$.</li>
+                <li><strong>Kasus $t=2$:</strong> $R(s,2) = s$.</li>
+            </ul>
+        </div>
+
+        <h4>Mengapa $R(2,t) = t$?</h4>
+        <p>
+            $R(2,t)$: kita mencari graf dengan $n$ simpul yang pasti memuat $K_2$ (sebuah sisi) 
+            atau himpunan bebas $t$. Jika $n = t$, dua kemungkinan: graf memiliki sisi (maka ada 
+            $K_2$) atau graf tanpa sisi sama sekali (maka semua $t$ simpul adalah himpunan bebas). 
+            Jika $n < t$, ambil graf kosong dengan $t-1$ simpul: tidak ada sisi dan himpunan bebas 
+            hanya berukuran $t-1 < t$, jadi $n$ tidak cukup. Maka $R(2,t) = t$.
+        </p>
+
+        <h3>2.4 Relasi Rekurensi Ramsey</h3>
+        <div class="theorem-box">
+            <h4>Rekurensi Dasar Ramsey</h4>
+            $$R(s,t) \leq R(s-1,t) + R(s,t-1)$$
+            <p>untuk $s,t \geq 3$. Jika $R(s-1,t)$ dan $R(s,t-1)$ keduanya genap, maka:</p>
+            $$R(s,t) \leq R(s-1,t) + R(s,t-1) - 1$$
+        </div>
+
+        <h4>Mengapa Rekurensi Ini Berlaku?</h4>
+        <p>
+            Ambil graf $G$ dengan $n = R(s-1,t) + R(s,t-1)$ simpul. Pilih satu simpul sembarang $v$. 
+            Misalkan:
+        </p>
+        <ul>
+            <li>$A$ = himpunan tetangga $v$ (simpul yang terhubung ke $v$), $|A| = d(v)$.</li>
+            <li>$B$ = himpunan bukan-tetangga $v$ (simpul yang tidak terhubung ke $v$), $|B| = n - 1 - d(v)$.</li>
+        </ul>
+        <p>
+            Perhatikan bahwa $|A| + |B| = n-1 = R(s-1,t) + R(s,t-1) - 1$.
+        </p>
+        <p>
+            <strong>Klaim:</strong> $|A| \geq R(s-1,t)$ atau $|B| \geq R(s,t-1)$ (atau keduanya).
+        </p>
+        <p>
+            Jika tidak, $|A| \leq R(s-1,t)-1$ dan $|B| \leq R(s,t-1)-1$, maka 
+            $|A| + |B| \leq R(s-1,t) + R(s,t-1) - 2$, kontradiksi.
+        </p>
+        <p>
+            <strong>Kasus 1:</strong> $|A| \geq R(s-1,t)$. Subgraf yang diinduksi oleh $A$ pasti memuat 
+            $K_{s-1}$ atau himpunan bebas $t$. Jika ada $K_{s-1}$, bersama $v$ membentuk $K_s$. 
+            Jika ada himpunan bebas $t$, selesai.
+        </p>
+        <p>
+            <strong>Kasus 2:</strong> $|B| \geq R(s,t-1)$. Subgraf yang diinduksi oleh $B$ pasti memuat 
+            $K_s$ atau himpunan bebas $t-1$. Jika ada himpunan bebas $t-1$, bersama $v$ membentuk 
+            himpunan bebas $t$. Jika ada $K_s$, selesai.
+        </p>
+        <p>
+            Jadi $G$ selalu memuat $K_s$ atau himpunan bebas $t$, sehingga 
+            $R(s,t) \leq R(s-1,t) + R(s,t-1)$.
+        </p>
+
+        <div class="example-box">
+            <h4>Contoh: Membuktikan $R(3,3) \leq 6$</h4>
+            <p>
+                Gunakan rekurensi: $R(3,3) \leq R(2,3) + R(3,2) = 3 + 3 = 6$.
+            </p>
+            <p>
+                Karena $R(2,3)=3$ dan $R(3,2)=3$ keduanya ganjil, kita tidak bisa mengurangi 1.
+            </p>
+            <p>
+                Untuk membuktikan $R(3,3) = 6$ secara eksak, perlu ditunjukkan bahwa $n = 5$ 
+                tidak cukup, yaitu ada graf dengan 5 simpul tanpa $K_3$ dan tanpa himpunan bebas 3. 
+                Graf $C_5$ (siklus 5) adalah contohnya: tidak ada segitiga, dan himpunan bebas 
+                maksimum berukuran 2. Maka $R(3,3) > 5$, sehingga $R(3,3) = 6$.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 3: BATAS ATAS DAN BAWAH $R(s,t)$                                   -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-3-batas">
+        <h2 class="section-heading">3. Batas Atas dan Bawah Bilangan Ramsey</h2>
+
+        <h3>3.1 Batas Atas dari Rekurensi</h3>
+        <div class="theorem-box">
+            <h4>Batas Atas Kombinatorial</h4>
+            $$R(s,t) \leq \binom{s+t-2}{s-1}$$
+        </div>
+
+        <h4>Mengapa Batas Ini Berlaku?</h4>
+        <p>
+            Dari rekurensi $R(s,t) \leq R(s-1,t) + R(s,t-1)$, dengan induksi ganda:
+        </p>
+        <p>
+            Basis: $R(2,t) = t = \binom{t}{1}$ dan $R(s,2) = s = \binom{s}{1}$.
+        </p>
+        <p>
+            Induksi: asumsikan benar untuk $(s-1,t)$ dan $(s,t-1)$.
+        </p>
+        <p>
+            $$R(s,t) \leq \binom{s+t-3}{s-2} + \binom{s+t-3}{s-1} = \binom{s+t-2}{s-1}$$
+        </p>
+        <p>menggunakan identitas Pascal $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$.</p>
+
+        <div class="example-box">
+            <h4>Contoh Numerik</h4>
+            <p>$R(3,4) \leq \binom{3+4-2}{3-1} = \binom{5}{2} = 10$.</p>
+            <p>Nilai eksak $R(3,4) = 9$, jadi batas atas ini cukup dekat (10 vs 9).</p>
+            <p>$R(4,4) \leq \binom{4+4-2}{4-1} = \binom{6}{3} = 20$. Nilai eksak $R(4,4) = 18$.</p>
+        </div>
+
+        <h3>3.2 Batas Bawah Probabilistik (Erdős, 1947)</h3>
+        <div class="theorem-box">
+            <h4>Batas Bawah untuk Kasus Simetris $R(k,k)$</h4>
+            $$R(k,k) > 2^{k/2} \quad \text{untuk } k \geq 3$$
+            <p>Lebih tepatnya: $R(k,k) > \frac{k}{e\sqrt{2}} \cdot 2^{k/2}$.</p>
+        </div>
+
+        <h4>Mengapa Batas Ini Berlaku? (Metode Probabilistik)</h4>
+        <p>
+            <strong>Ide Erdős:</strong> Alih-alih membangun graf secara eksplisit untuk membuktikan 
+            batas bawah, gunakan argumen probabilistik. Warnai setiap sisi $K_n$ secara acak: 
+            merah dengan peluang $1/2$, biru dengan peluang $1/2$, secara independen.
+        </p>
+        <p>
+            <strong>Langkah 1:</strong> Peluang suatu subgraf $K_k$ tertentu seluruhnya merah adalah 
+            $(1/2)^{\binom{k}{2}}$, karena setiap dari $\binom{k}{2}$ sisi harus merah. Sama untuk biru.
+        </p>
+        <p>
+            <strong>Langkah 2:</strong> Peluang <strong>ada</strong> $K_k$ merah atau $K_k$ biru 
+            adalah $\leq$ jumlah peluang masing-masing subgraf $K_k$ (Union Bound):
+        </p>
+        <p>
+            $$\mathbb{P}(\text{ada } K_k \text{ monokromatik}) \leq \binom{n}{k} \cdot 2 \cdot (1/2)^{\binom{k}{2}}$$
+        </p>
+        <p>
+            <strong>Langkah 3:</strong> Jika peluang ini $< 1$, maka <strong>ada</strong> pewarnaan 
+            tanpa $K_k$ monokromatik, yang berarti $R(k,k) > n$.
+        </p>
+        <p>
+            <strong>Langkah 4:</strong> Estimasi $\binom{n}{k} \leq n^k / k!$. Syarat agar peluang $< 1$:
+        </p>
+        <p>$$\frac{n^k}{k!} \cdot 2 \cdot 2^{-\binom{k}{2}} < 1$$</p>
+        <p>Ambil logaritma dan aproksimasi $k! \approx (k/e)^k \sqrt{2\pi k}$. Untuk $k$ besar, diperoleh $n \approx 2^{k/2}$ sebagai batas bawah. Secara eksplisit, untuk $n = \lfloor 2^{k/2} \rfloor$, peluangnya $< 1$, jadi ada graf tanpa $K_k$ monokromatik.</p>
+
+        <div class="corollary-box">
+            <h4>Kesenjangan Terkenal</h4>
+            <p>Untuk $k$ besar:</p>
+            $$\sqrt{2}^{\,k} \leq R(k,k) \leq 4^{k}$$
+            <p>
+                Batas bawah $\approx 1.414^k$ dan batas atas $\approx 4^k$. Selisihnya eksponensial! 
+                Menentukan asimptotik $R(k,k)^{1/k}$ adalah masalah terbuka utama dalam kombinatorika.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 4: RAMSEY MULTI-WARNA                                              -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-4-multiwarna">
+        <h2 class="section-heading">4. Ramsey Multi-Warna $R(s_1, s_2, \dots, s_r)$</h2>
+
+        <h3>4.1 Definisi</h3>
+        <p>
+            <strong>Bilangan Ramsey $r$-warna</strong> $R(s_1, s_2, \dots, s_r)$ adalah bilangan bulat 
+            terkecil $n$ sedemikian sehingga setiap pewarnaan sisi-sisi $K_n$ dengan $r$ warna 
+            (warna $1, 2, \dots, r$) pasti memuat $K_{s_i}$ dalam warna $i$ untuk suatu $i$.
+        </p>
+
+        <h3>4.2 Rekurensi Multi-Warna</h3>
+        <div class="theorem-box">
+            <h4>Rekurensi untuk $r$ Warna</h4>
+            $$R(s_1, s_2, \dots, s_r) \leq 2 + \sum_{i=1}^{r} \big(R(s_1, \dots, s_i-1, \dots, s_r) - 1\big)$$
+        </div>
+
+        <h4>Mengapa Rekurensi Ini Berlaku?</h4>
+        <p>
+            Mirip dengan kasus 2-warna. Pilih satu simpul $v$. Partisi $n-1$ simpul lainnya ke dalam 
+            $r$ himpunan berdasarkan warna sisi ke $v$: $A_i$ = himpunan simpul yang terhubung ke $v$ 
+            dengan warna $i$. Jika $|A_i| \geq R(s_1, \dots, s_i-1, \dots, s_r)$ untuk suatu $i$, 
+            maka di dalam $A_i$ terdapat $K_{s_i-1}$ warna $i$ (yang bersama $v$ membentuk $K_{s_i}$) 
+            atau $K_{s_j}$ warna $j$ untuk $j \neq i$ (langsung selesai).
+        </p>
+        <p>
+            Syarat cukup: $n-1 \geq \sum_{i=1}^{r} (R(s_1, \dots, s_i-1, \dots, s_r) - 1)$, 
+            sehingga $n \geq 2 + \sum_{i=1}^{r} (R(\dots, s_i-1, \dots) - 1)$.
+        </p>
+
+        <h3>4.3 Contoh Penting: $R_k(3) = R(3, 3, \dots, 3)$</h3>
+        <p>
+            $R_k(3)$ adalah bilangan Ramsey terkecil untuk $k$ warna yang menjamin munculnya 
+            segitiga monokromatik.
+        </p>
+
+        <table>
+            <thead>
+                <tr><th>$k$ (jumlah warna)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$R_k(3)$</td><td>3</td><td>6</td><td>17</td><td>51–62</td><td>162–307</td></tr>
+            </tbody>
+        </table>
+
+        <p>
+            <strong>Verifikasi $R_3(3) = 17$:</strong> Greenwood dan Gleason (1955) membuktikan 
+            bahwa setiap pewarnaan 3-warna dari $K_{17}$ memuat segitiga monokromatik, dan 
+            ada pewarnaan $K_{16}$ tanpa segitiga monokromatik.
+        </p>
+
+        <h3>4.4 Batas Atas untuk Multi-Warna</h3>
+        <div class="theorem-box">
+            <h4>Batas Atas Eksponensial</h4>
+            $$R_k(3) \leq \lfloor e \cdot k! \rfloor + 1$$
+            <p>dan secara asimptotik: $R_k(3) \leq (1 + o(1)) \cdot e \cdot k!$</p>
+        </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 5: TEOREMA RAMSEY PADA HIMPUNAN                                    -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-5-hypergraph">
+        <h2 class="section-heading">5. Teorema Ramsey pada Hipergraf</h2>
+
+        <h3>5.1 Generalisasi ke $t$-Subset</h3>
+        <p>
+            Teorema Ramsey dapat diperumum dari graf (2-subset) ke $t$-subset (hipergraf seragam-$t$).
+        </p>
+
+        <div class="theorem-box">
+            <h4>Teorema Ramsey Umum (Simbol $R_t(s_1, \dots, s_r)$)</h4>
+            <p>
+                Misalkan $R_t(s_1, s_2, \dots, s_r)$ adalah bilangan terkecil $n$ sedemikian sehingga 
+                untuk setiap pewarnaan semua $t$-subset dari himpunan $n$ elemen dengan $r$ warna, 
+                terdapat subhimpunan $S$ berukuran $s_i$ yang <strong>semua $t$-subset-nya</strong> 
+                berwarna $i$, untuk suatu $i$.
+            </p>
+            <p>Untuk $t=1$, ini adalah Prinsip Pigeonhole.</p>
+            <p>Untuk $t=2$, ini adalah Bilangan Ramsey graf biasa $R(s_1, \dots, s_r)$.</p>
+        </div>
+
+        <h3>5.2 Rumus untuk $t=1$ (Pigeonhole)</h3>
+        <p>
+            $R_1(s_1, s_2, \dots, s_r) = (s_1 - 1) + (s_2 - 1) + \cdots + (s_r - 1) + 1$.
+        </p>
+        <p>
+            <strong>Mengapa?</strong> Jika $n = \sum (s_i - 1) + 1$, maka dengan Prinsip Pigeonhole 
+            diperumum, setidaknya satu warna $i$ muncul $\geq s_i$ kali pada elemen-elemen (1-subset).
+        </p>
+
+        <div class="example-box">
+            <h4>Contoh: $R_1(3, 3, 4) = (2) + (2) + (3) + 1 = 8$</h4>
+            <p>
+                Jika 8 bola diwarnai dengan 3 warna (merah, biru, hijau), maka pasti ada 3 bola 
+                merah, atau 3 bola biru, atau 4 bola hijau. Dengan 7 bola, bisa dihindari: 
+                2 merah, 2 biru, 3 hijau.
+            </p>
+        </div>
+
+        <h3>5.3 Eksistensi untuk $t \geq 3$</h3>
+        <p>
+            Teorema Ramsey menjamin $R_t(s_1, \dots, s_r)$ selalu finite untuk setiap $t \geq 1$, 
+            $r \geq 1$, dan $s_i \geq t$. Namun, nilai eksaknya sangat jarang diketahui untuk $t \geq 3$.
+        </p>
+        <p>
+            Salah satu hasil terkenal: $R_3(4,4) = 13$ (McKay dan Radziszowski, 1991).
+        </p>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 6: APLIKASI DAN CONTOH KONKRET                                     -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-6-aplikasi">
+        <h2 class="section-heading">6. Aplikasi dan Pola Pikir Ramsey</h2>
+
+        <h3>6.1 Teorema Happy Ending (Erdős–Szekeres, 1935)</h3>
+        <div class="theorem-box">
+            <h4>Teorema Happy Ending</h4>
+            <p>
+                Setiap himpunan 5 titik di bidang dengan posisi umum (tidak ada tiga yang segaris) 
+                pasti memuat 4 titik yang membentuk segi empat <strong>konveks</strong>.
+            </p>
+            <p>
+                Lebih umum: untuk setiap $m \geq 3$, terdapat bilangan $N(m)$ sehingga setiap 
+                himpunan $N(m)$ titik di bidang dengan posisi umum memuat $m$ titik yang membentuk 
+                segi-$m$ konveks.
+            </p>
+        </div>
+
+        <h4>Mengapa $N(4) = 5$?</h4>
+        <p>
+            Dari 5 titik, lihat semua segitiga yang bisa dibentuk. Jika salah satu segitiga memuat 
+            titik keempat di dalamnya, maka titik keempat tersebut bersama dua titik dari segitiga 
+            membentuk segitiga yang memuat titik kelima. Dengan analisis kasus, selalu dapat 
+            ditemukan 4 titik yang membentuk segi empat konveks. Untuk 4 titik, bisa disusun 
+            sebagai segitiga dengan satu titik di dalamnya, yang tidak memiliki segi empat konveks.
+        </p>
+        <p>
+            <strong>Koneksi ke Ramsey:</strong> $N(m) = R_3(m, m)$ untuk suatu varian geometrik 
+            dari Teorema Ramsey.
+        </p>
+
+        <h3>6.2 Teorema Schur (1916)</h3>
+        <div class="theorem-box">
+            <h4>Teorema Schur</h4>
+            <p>
+                Untuk setiap pewarnaan bilangan $\{1, 2, \dots, S(r)\}$ dengan $r$ warna, 
+                terdapat solusi untuk $x + y = z$ dengan $x, y, z$ sewarna (monokromatik).
+            </p>
+            <p>Bilangan Schur $S(r)$ adalah bilangan terkecil yang menjamin hal ini.</p>
+        </div>
+
+        <h4>Mengapa $S(r)$ Ada? (Koneksi ke Ramsey)</h4>
+        <p>
+            Warnai bilangan $\{1, 2, \dots, n\}$ dengan $r$ warna. Definisikan pewarnaan 
+            $r$-warna pada graf lengkap $K_n$: warna sisi $(i,j)$ dengan warna dari $|i-j|$. 
+            Untuk $n \geq R(\underbrace{3, 3, \dots, 3}_{r \text{ kali}})$, ada segitiga 
+            monokromatik dengan simpul $a < b < c$. Maka $x = b-a$, $y = c-b$, $z = c-a$ 
+            adalah bilangan sewarna yang memenuhi $x + y = z$, dan $S(r) \leq R_r(3) - 1$.
+        </p>
+
+        <table>
+            <thead>
+                <tr><th>$r$</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$S(r)$</td><td>2</td><td>5</td><td>14</td><td>45</td><td>161</td></tr>
+            </tbody>
+        </table>
+
+        <p>
+            <strong>Verifikasi $S(2) = 5$:</strong> $\{1,2,3,4,5\}$ diwarnai dengan 2 warna. 
+            Cek kasus: selalu ada $x+y=z$ monokromatik. Untuk $\{1,2,3,4\}$, pewarnaan 
+            $\{1,4\}$ merah, $\{2,3\}$ biru tidak memiliki solusi monokromatik, jadi $S(2) > 4$, 
+            sehingga $S(2) = 5$.
+        </p>
+
+        <h3>6.3 Prinsip Umum: "Complete Disorder is Impossible"</h3>
+        <p>
+            Motto Teori Ramsey: <strong>"Kekacauan total adalah mustahil."</strong> Dalam struktur 
+            yang cukup besar, keteraturan pasti muncul secara tak terelakkan. Ini bukan sekadar 
+            observasi filosofis, melainkan teorema matematika yang ketat.
+        </p>
+        <p>
+            Aplikasi modern Teori Ramsey meliputi:
+        </p>
+        <ul>
+            <li><strong>Ilmu Komputer:</strong> Lower bound untuk algoritma, teori kompleksitas, 
+                ekstraksi randomness.</li>
+            <li><strong>Teori Bilangan:</strong> Teorema Van der Waerden (progresi aritmetika 
+                monokromatik), Teorema Hindman.</li>
+            <li><strong>Geometri:</strong> Titik konveks, irisan himpunan.</li>
+            <li><strong>Logika:</strong> Model teori, ketidaklengkapan.</li>
+        </ul>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SEKSI 7: RINGKASAN RUMUS PENTING                                         -->
+    <!-- ======================================================================= -->
+    <section class="content-section" id="section-7-ringkasan">
+        <h2 class="section-heading">7. Ringkasan Rumus-Rumus Kunci Teori Ramsey</h2>
+
+        <div class="theorem-box">
+            <h4>Kompilasi Rumus Penting</h4>
+            <table>
+                <thead>
+                    <tr><th>Rumus</th><th>Deskripsi</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$R(s,2) = s$</td>
+                        <td>Kasus trivial: graf dengan $s$ simpul pasti punya $K_s$ atau himpunan bebas 2</td>
+                    </tr>
+                    <tr>
+                        <td>$R(2,t) = t$</td>
+                        <td>Simetris dengan di atas</td>
+                    </tr>
+                    <tr>
+                        <td>$R(3,3) = 6$</td>
+                        <td>Setiap $K_6$ yang diwarnai 2 warna punya segitiga monokromatik</td>
+                    </tr>
+                    <tr>
+                        <td>$R(3,4) = 9$</td>
+                        <td>Greenwood & Gleason, 1955</td>
+                    </tr>
+                    <tr>
+                        <td>$R(3,5) = 14$</td>
+                        <td>Greenwood & Gleason, 1955</td>
+                    </tr>
+                    <tr>
+                        <td>$R(4,4) = 18$</td>
+                        <td>Greenwood & Gleason, 1955</td>
+                    </tr>
+                    <tr>
+                        <td>$R(s,t) \leq R(s-1,t) + R(s,t-1)$</td>
+                        <td>Rekurensi dasar</td>
+                    </tr>
+                    <tr>
+                        <td>$R(s,t) \leq \binom{s+t-2}{s-1}$</td>
+                        <td>Batas atas kombinatorial</td>
+                    </tr>
+                    <tr>
+                        <td>$R(k,k) > 2^{k/2}$ untuk $k \geq 3$</td>
+                        <td>Batas bawah Erdős (metode probabilistik)</td>
+                    </tr>
+                    <tr>
+                        <td>$R_1(s_1, \dots, s_r) = \sum_{i=1}^{r} (s_i - 1) + 1$</td>
+                        <td>Ramsey $t=1$ = Prinsip Pigeonhole diperumum</td>
+                    </tr>
+                    <tr>
+                        <td>$R_3(3) = R(3,3,3) = 17$</td>
+                        <td>Ramsey 3-warna untuk segitiga</td>
+                    </tr>
+                    <tr>
+                        <td>$S(2) = 5$, $S(3) = 14$</td>
+                        <td>Bilangan Schur</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ==================== NAVIGASI ==================== -->
+    <section class="chapter-navigation" id="navigation">
+        <h2 class="section-heading">Navigasi Handbook</h2>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button nav-home">
+                <span class="nav-arrow">&#9664;&#9664;</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="kombinatorika7.html" class="nav-button nav-prev">
+                <span class="nav-arrow">&#9664;</span>
+                <span class="nav-label">Bab 7: Simetri & Pencacahan Pola</span>
+            </a>
+            <span class="nav-button nav-disabled">
+                <span class="nav-label">Bab 8 adalah bab terakhir</span>
+            </span>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER BAB ==================== -->
+    <footer class="chapter-footer" id="bab8-footer">
+        <div class="chapter-divider">
+            <span class="divider-symbol">&#9670;</span>
+        </div>
+        <p class="footer-text">Handbook Kombinatorika &mdash; Bab 8: Pengantar Teori Ramsey</p>
+    </footer>
+
+</body>
+</html>
