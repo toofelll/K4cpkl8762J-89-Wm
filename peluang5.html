@@ -1,1 +1,3247 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 5 - Variabel Acak & Ekspektasi</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 5</h1>
+
+<h2>Variabel Acak & Ekspektasi</h2>
+
+<p>
+
+Pada bab-bab sebelumnya kita telah mempelajari bagaimana menghitung peluang suatu kejadian.
+
+Namun, dalam banyak permasalahan kita tidak hanya ingin mengetahui apakah suatu kejadian terjadi atau tidak, melainkan juga ingin mengetahui <b>nilai numerik</b> yang dihasilkan oleh suatu percobaan acak.
+
+Sebagai contoh, ketika melempar sebuah dadu kita mungkin tidak tertarik pada kejadian "muncul sisi 4", tetapi lebih tertarik pada <b>angka yang muncul</b> sebagai sebuah nilai yang dapat dihitung.
+
+Konsep inilah yang melahirkan <b>Variabel Acak (Random Variable)</b>, salah satu konsep paling penting dalam teori peluang.
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="#variabel-acak">Variabel Acak</a>
+
+<a href="#diskrit">Diskrit</a>
+
+<a href="#kontinu">Kontinu</a>
+
+<a href="#pmf">PMF</a>
+
+<a href="#pdf">PDF</a>
+
+<a href="#cdf">CDF</a>
+
+<a href="#ekspektasi">Expected Value</a>
+
+<a href="#linearitas">Linearitas</a>
+
+<a href="#variansi">Variansi</a>
+
+<a href="#standar-deviasi">Standar Deviasi</a>
+
+</nav>
+
+<main>
+
+<section class="materi">
+
+<h1>Mengapa Variabel Acak Penting?</h1>
+
+<p>
+
+Teori peluang pada dasarnya membahas kemungkinan terjadinya suatu kejadian.
+
+Namun, dalam statistika, fisika, ekonomi, kecerdasan buatan, hingga machine learning, yang dianalisis bukan hanya kejadian, tetapi juga <b>nilai</b> yang dihasilkan oleh suatu percobaan acak.
+
+</p>
+
+<p>
+
+Misalnya,
+
+</p>
+
+<ul>
+
+<li>Berapa jumlah mata dadu yang muncul?</li>
+
+<li>Berapa banyak pelanggan yang datang hari ini?</li>
+
+<li>Berapa lama sebuah lampu akan bertahan sebelum rusak?</li>
+
+<li>Berapa keuntungan yang diperoleh suatu perusahaan besok?</li>
+
+</ul>
+
+<p>
+
+Semua pertanyaan tersebut menghasilkan suatu bilangan yang nilainya belum diketahui sebelum percobaan dilakukan.
+
+Nilai tersebut disebut <b>variabel acak</b>.
+
+</p>
+
+<div class="note">
+
+<h2>Ide Utama</h2>
+
+<p>
+
+Variabel acak bukanlah bilangan yang berubah-ubah secara acak.
+
+Yang bersifat acak adalah <b>hasil percobaannya</b>, sedangkan variabel acak hanyalah aturan yang mengubah setiap hasil percobaan menjadi sebuah bilangan.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="variabel-acak" class="materi">
+
+<h1>5.1 Variabel Acak (Random Variable)</h1>
+
+<p>
+
+Secara sederhana, variabel acak adalah fungsi yang memasangkan setiap titik sampel pada ruang sampel dengan sebuah bilangan real.
+
+Dalam teori peluang, variabel acak biasanya dinotasikan menggunakan huruf kapital seperti
+
+<b>X</b>,
+
+<b>Y</b>,
+
+atau
+
+<b>Z</b>.
+
+Sedangkan nilai yang dihasilkan dinotasikan dengan huruf kecil seperti
+
+<b>x</b>,
+
+<b>y</b>,
+
+atau
+
+<b>z</b>.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Variabel acak adalah suatu fungsi
+
+<b>X</b>
+
+yang memetakan setiap hasil percobaan acak pada ruang sampel
+
+<b>S</b>
+
+ke suatu bilangan real.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Sebuah dadu bersisi enam dilempar satu kali.
+
+Ruang sampelnya adalah
+
+</p>
+
+<p class="rumus">
+
+S = {1, 2, 3, 4, 5, 6}
+
+</p>
+
+<p>
+
+Misalkan kita mendefinisikan variabel acak
+
+<b>X</b>
+
+sebagai angka yang muncul pada dadu.
+
+Maka,
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Hasil Percobaan</th>
+
+<th>Nilai X</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>6</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Pada contoh ini, setiap hasil percobaan langsung dipetakan menjadi angka yang sama.
+
+Namun, variabel acak tidak harus selalu seperti itu.
+
+</p>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Sebuah koin dilempar sebanyak dua kali.
+
+Ruang sampelnya adalah
+
+</p>
+
+<p class="rumus">
+
+S = {AA, AG, GA, GG}
+
+</p>
+
+<p>
+
+Misalkan variabel acak
+
+<b>X</b>
+
+menyatakan banyaknya sisi angka (A) yang muncul.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Hasil</th>
+
+<th>X</th>
+
+</tr>
+
+<tr>
+
+<td>AA</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>AG</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>GA</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>GG</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa dua hasil percobaan yang berbeda dapat memiliki nilai variabel acak yang sama.
+
+Misalnya,
+
+<b>AG</b>
+
+dan
+
+<b>GA</b>
+
+keduanya menghasilkan
+
+<b>X = 1</b>.
+
+Inilah salah satu ciri penting variabel acak.
+
+</p>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<p>
+
+Banyak siswa menganggap variabel acak adalah hasil percobaan.
+
+Padahal yang benar,
+
+<b>hasil percobaan</b>
+
+dan
+
+<b>variabel acak</b>
+
+adalah dua konsep yang berbeda.
+
+Variabel acak hanyalah fungsi yang memberikan nilai numerik pada setiap hasil percobaan.
+
+</p>
+
+</div>
+
+</section>
+<section id="diskrit" class="materi">
+
+<h1>5.2 Variabel Acak Diskrit (Discrete Random Variable)</h1>
+
+<p>
+
+Tidak semua variabel acak memiliki sifat yang sama.
+
+Berdasarkan himpunan nilai yang mungkin dihasilkan, variabel acak dibedakan menjadi dua jenis utama, yaitu <b>variabel acak diskrit</b> dan <b>variabel acak kontinu</b>.
+
+Kita akan mempelajari variabel acak diskrit terlebih dahulu karena konsepnya lebih sederhana dan menjadi dasar bagi banyak distribusi peluang pada bab berikutnya.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Variabel acak diskrit adalah variabel acak yang nilai-nilainya berupa himpunan yang <b>terbatas</b> atau <b>dapat dihitung satu per satu (countable)</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ciri-Ciri Variabel Acak Diskrit</h2>
+
+<ul>
+
+<li>Nilainya dapat didaftarkan satu per satu.</li>
+
+<li>Biasanya berasal dari proses <b>menghitung (counting)</b>, bukan mengukur.</li>
+
+<li>Setiap nilai memiliki peluang tertentu.</li>
+
+<li>Jumlah seluruh peluangnya sama dengan 1.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh 1 — Lemparan Dadu</h2>
+
+<p>
+
+Misalkan variabel acak <b>X</b> menyatakan angka yang muncul ketika sebuah dadu fair dilempar satu kali.
+
+</p>
+
+<p>
+
+Kemungkinan nilai yang dapat diambil oleh <b>X</b> adalah
+
+</p>
+
+<p class="rumus">
+
+X = {1, 2, 3, 4, 5, 6}
+
+</p>
+
+<p>
+
+Karena nilai-nilai tersebut dapat dihitung satu per satu, maka <b>X</b> merupakan variabel acak diskrit.
+
+</p>
+
+<hr>
+
+<h2>Contoh 2 — Banyaknya Kepala</h2>
+
+<p>
+
+Sebuah koin dilempar tiga kali.
+
+Misalkan variabel acak <b>X</b> menyatakan banyaknya sisi kepala yang muncul.
+
+</p>
+
+<p>
+
+Nilai yang mungkin adalah
+
+</p>
+
+<p class="rumus">
+
+X = {0, 1, 2, 3}
+
+</p>
+
+<p>
+
+Walaupun hasil percobaannya ada delapan kemungkinan, nilai variabel acaknya hanya ada empat.
+
+</p>
+
+<div class="note">
+
+<h3>Insight</h3>
+
+<p>
+
+Inilah fungsi utama variabel acak, yaitu menyederhanakan ruang sampel yang besar menjadi sekumpulan nilai numerik yang lebih mudah dianalisis.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh 3 — Jumlah Mata Dua Dadu</h2>
+
+<p>
+
+Dua buah dadu dilempar secara bersamaan.
+
+Misalkan variabel acak <b>X</b> menyatakan jumlah kedua mata dadu.
+
+</p>
+
+<p>
+
+Nilai minimum yang mungkin adalah
+
+<b>2</b>,
+
+sedangkan nilai maksimum adalah
+
+<b>12</b>.
+
+</p>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p class="rumus">
+
+X = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+</p>
+
+<p>
+
+Walaupun ruang sampelnya memiliki 36 titik sampel, variabel acaknya hanya memiliki 11 kemungkinan nilai.
+
+</p>
+
+<hr>
+
+<h2>Variabel Acak Diskrit Berasal dari Proses Menghitung</h2>
+
+<p>
+
+Secara umum, variabel acak diskrit muncul ketika kita menghitung banyaknya suatu objek atau kejadian.
+
+Contohnya adalah:
+
+</p>
+
+<ul>
+
+<li>Banyak siswa yang hadir di kelas.</li>
+
+<li>Banyak mobil yang melewati jalan dalam satu menit.</li>
+
+<li>Banyak pelanggan yang datang ke toko.</li>
+
+<li>Banyak lampu yang rusak di sebuah pabrik.</li>
+
+<li>Banyak gol yang dicetak dalam pertandingan.</li>
+
+</ul>
+
+<p>
+
+Semua contoh tersebut menghasilkan bilangan bulat yang dapat dihitung satu per satu.
+
+</p>
+
+<hr>
+
+<h2>Bukan Variabel Acak Diskrit</h2>
+
+<p>
+
+Berikut merupakan contoh yang <b>bukan</b> variabel acak diskrit.
+
+</p>
+
+<ul>
+
+<li>Tinggi badan seseorang.</li>
+
+<li>Berat badan.</li>
+
+<li>Waktu yang dibutuhkan menyelesaikan lomba.</li>
+
+<li>Suhu udara.</li>
+
+</ul>
+
+<p>
+
+Nilai-nilai tersebut diperoleh melalui proses <b>pengukuran</b>, bukan perhitungan.
+
+Nilainya dapat berupa bilangan pecahan dengan ketelitian yang sangat tinggi.
+
+Variabel seperti ini akan dipelajari sebagai <b>variabel acak kontinu</b>.
+
+</p>
+
+<hr>
+
+<h2>Kesalahan yang Sering Terjadi</h2>
+
+<div class="warning">
+
+<p>
+
+Banyak siswa menganggap bahwa setiap variabel yang berbentuk angka pasti merupakan variabel acak diskrit.
+
+Hal tersebut tidak benar.
+
+Yang menentukan adalah <b>jumlah kemungkinan nilainya</b>, bukan sekadar apakah nilainya berupa bilangan bulat atau bukan.
+
+Misalnya, waktu tempuh dapat ditulis 5 detik, 5,2 detik, 5,21 detik, 5,213 detik, dan seterusnya.
+
+Karena kemungkinan nilainya tidak dapat dihitung satu per satu, maka waktu tempuh merupakan variabel acak kontinu.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Variabel acak diskrit memiliki nilai yang dapat dihitung satu per satu.</li>
+
+<li>Variabel acak diskrit biasanya berasal dari proses menghitung.</li>
+
+<li>Jumlah seluruh peluang pada variabel acak diskrit selalu sama dengan 1.</li>
+
+<li>Variabel acak diskrit menjadi dasar bagi distribusi Bernoulli, Binomial, Geometrik, Hipergeometrik, dan Poisson yang akan dipelajari pada Bab 6.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="kontinu" class="materi">
+
+<h1>5.3 Variabel Acak Kontinu (Continuous Random Variable)</h1>
+
+<p>
+
+Berbeda dengan variabel acak diskrit, variabel acak kontinu memiliki kemungkinan nilai yang sangat banyak, bahkan tak hingga dalam suatu interval.
+
+Variabel ini biasanya muncul dari proses <b>pengukuran</b>, bukan perhitungan.
+
+</p>
+<h2>Definisi Variabel Acak Kontinu</h2>
+
+<p>
+
+Variabel acak kontinu adalah variabel acak yang dapat mengambil nilai apa pun pada suatu interval bilangan real.
+
+Artinya, di antara dua nilai yang berbeda selalu terdapat kemungkinan nilai lain.
+
+Karena itu, himpunan nilai yang mungkin dimiliki variabel acak kontinu tidak dapat dihitung satu per satu.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Variabel acak kontinu adalah variabel acak yang memiliki himpunan nilai berupa suatu interval pada bilangan real.
+
+Variabel ini umumnya diperoleh melalui proses <b>pengukuran</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ciri-Ciri Variabel Acak Kontinu</h2>
+
+<ul>
+
+<li>Nilainya berada pada suatu interval.</li>
+
+<li>Jumlah kemungkinan nilainya tak hingga.</li>
+
+<li>Biasanya berasal dari proses pengukuran.</li>
+
+<li>Dimodelkan menggunakan fungsi kepadatan peluang (PDF).</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Variabel Acak Kontinu</h2>
+
+<table>
+
+<tr>
+
+<th>Variabel</th>
+
+<th>Contoh Nilai</th>
+
+</tr>
+
+<tr>
+
+<td>Tinggi badan</td>
+
+<td>168,2 cm; 168,25 cm; 168,251 cm; ...</td>
+
+</tr>
+
+<tr>
+
+<td>Berat badan</td>
+
+<td>55,8 kg; 55,82 kg; 55,821 kg; ...</td>
+
+</tr>
+
+<tr>
+
+<td>Waktu tempuh</td>
+
+<td>9,81 s; 9,812 s; 9,8124 s; ...</td>
+
+</tr>
+
+<tr>
+
+<td>Suhu udara</td>
+
+<td>29,4°C; 29,41°C; 29,412°C; ...</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semua contoh tersebut memiliki kemungkinan nilai yang sangat banyak sehingga tidak mungkin didaftarkan satu per satu.
+
+</p>
+
+<hr>
+
+<h2>Mengapa Peluang Tepat di Satu Titik Bernilai Nol?</h2>
+
+<p>
+
+Inilah konsep yang paling sering membingungkan ketika mempelajari variabel acak kontinu.
+
+Misalkan variabel acak <b>X</b> menyatakan tinggi badan seseorang.
+
+Pertanyaannya,
+
+berapa peluang seseorang memiliki tinggi badan <b>tepat 170,000000000 cm</b>?
+
+</p>
+
+<p>
+
+Jawabannya adalah
+
+</p>
+
+<p class="rumus">
+
+P(X = 170) = 0
+
+</p>
+
+<p>
+
+Hal ini bukan berarti tinggi 170 cm tidak mungkin terjadi.
+
+Yang dimaksud adalah peluang tepat pada <b>satu titik</b> dalam himpunan bilangan real sangat kecil sehingga secara matematis bernilai nol.
+
+</p>
+
+<div class="note">
+
+<h3>Ide Penting</h3>
+
+<p>
+
+Pada variabel acak kontinu, peluang hanya bermakna jika dihitung pada suatu <b>interval</b>, bukan pada satu titik.
+
+Sebagai contoh,
+
+</p>
+
+<p class="rumus">
+
+P(169 &lt; X &lt; 171)
+
+</p>
+
+<p>
+
+memiliki nilai yang dapat dihitung.
+
+Sedangkan
+
+</p>
+
+<p class="rumus">
+
+P(X = 170)
+
+</p>
+
+<p>
+
+selalu sama dengan nol.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Diskrit vs Kontinu</h2>
+
+<table>
+
+<tr>
+
+<th>Variabel Acak Diskrit</th>
+
+<th>Variabel Acak Kontinu</th>
+
+</tr>
+
+<tr>
+
+<td>Berasal dari proses menghitung.</td>
+
+<td>Berasal dari proses mengukur.</td>
+
+</tr>
+
+<tr>
+
+<td>Nilainya dapat dihitung satu per satu.</td>
+
+<td>Nilainya berupa interval bilangan real.</td>
+
+</tr>
+
+<tr>
+
+<td>Menggunakan PMF.</td>
+
+<td>Menggunakan PDF.</td>
+
+</tr>
+
+<tr>
+
+<td>P(X = x) dapat lebih dari nol.</td>
+
+<td>P(X = x) = 0 untuk setiap x.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<p>
+
+Jangan menganggap bahwa variabel kontinu hanya karena nilainya berupa bilangan desimal.
+
+Sebaliknya, jangan pula menganggap bahwa variabel diskrit selalu berupa bilangan bulat.
+
+Yang membedakan keduanya adalah apakah kemungkinan nilainya dapat dihitung satu per satu atau tidak.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Variabel acak kontinu memiliki kemungkinan nilai yang tak hingga pada suatu interval.</li>
+
+<li>Variabel kontinu berasal dari proses pengukuran.</li>
+
+<li>Peluang pada satu titik selalu bernilai nol.</li>
+
+<li>Peluang hanya dihitung pada suatu interval nilai.</li>
+
+<li>Variabel kontinu dimodelkan menggunakan Probability Density Function (PDF).</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="pmf" class="materi">
+
+<h1>5.4 Probability Mass Function (PMF)</h1>
+
+<p>
+
+Setelah memahami variabel acak diskrit, pertanyaan berikutnya adalah:
+
+<b>Bagaimana cara menyatakan peluang dari setiap nilai variabel acak tersebut?</b>
+
+Jawabannya adalah menggunakan <b>Probability Mass Function (PMF)</b> atau <b>Fungsi Massa Peluang</b>.
+
+PMF merupakan dasar bagi hampir seluruh distribusi diskrit yang akan dipelajari pada Bab 6, seperti Distribusi Bernoulli, Binomial, Geometrik, Hipergeometrik, dan Poisson.
+
+</p>
+<h2>Definisi Probability Mass Function (PMF)</h2>
+
+<p>
+
+Misalkan <b>X</b> adalah suatu variabel acak diskrit.
+
+Untuk setiap nilai yang mungkin diambil oleh <b>X</b>, terdapat suatu peluang tertentu.
+
+Fungsi yang memberikan peluang tersebut dinamakan
+<b>Probability Mass Function (PMF)</b>.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Probability Mass Function (PMF) adalah fungsi yang memetakan setiap nilai variabel acak diskrit ke peluang kemunculannya.
+
+</p>
+
+<p class="rumus">
+
+P(X = x) = p(x)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Sifat-Sifat PMF</h2>
+
+<p>
+
+Agar suatu fungsi dapat disebut sebagai PMF, fungsi tersebut harus memenuhi dua syarat penting.
+
+</p>
+
+<h3>1. Semua peluang tidak negatif</h3>
+
+<p class="rumus">
+
+P(X=x) ≥ 0
+
+</p>
+
+<p>
+
+Artinya, peluang tidak mungkin bernilai negatif.
+
+</p>
+
+<hr>
+
+<h3>2. Jumlah seluruh peluang sama dengan 1</h3>
+
+<p class="rumus">
+
+Σ P(X=x) = 1
+
+</p>
+
+<p>
+
+Karena salah satu nilai pasti akan terjadi, maka total peluang seluruh kemungkinan harus sama dengan satu.
+
+</p>
+
+<div class="warning">
+
+<h3>Catatan Penting</h3>
+
+<p>
+
+Jika jumlah seluruh peluang tidak sama dengan 1, maka fungsi tersebut bukan PMF yang valid.
+
+Begitu juga jika terdapat peluang yang bernilai negatif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Sebuah dadu fair dilempar satu kali.
+
+Misalkan variabel acak <b>X</b> menyatakan angka yang muncul.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>1/6</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Periksa syarat PMF.
+
+</p>
+
+<p class="rumus">
+
+1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 1
+
+</p>
+
+<p>
+
+Semua peluang bernilai positif dan jumlahnya sama dengan satu.
+
+Jadi tabel tersebut merupakan PMF yang sah.
+
+</p>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Suatu variabel acak memiliki tabel peluang berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>0,20</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>0,30</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>0,50</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Jumlah seluruh peluang adalah
+
+</p>
+
+<p class="rumus">
+
+0,20 + 0,30 + 0,50 = 1
+
+</p>
+
+<p>
+
+Karena kedua syarat PMF terpenuhi, maka fungsi tersebut valid.
+
+</p>
+
+<hr>
+
+<h2>Contoh Fungsi yang Bukan PMF</h2>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>0,40</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>0,50</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>0,30</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Jumlah peluangnya adalah
+
+</p>
+
+<p class="rumus">
+
+0,40 + 0,50 + 0,30 = 1,20
+
+</p>
+
+<p>
+
+Karena jumlah peluang lebih dari satu, tabel tersebut <b>bukan</b> PMF.
+
+</p>
+
+<hr>
+
+<h2>Makna PMF</h2>
+
+<p>
+
+PMF tidak hanya memberikan daftar peluang.
+
+PMF merupakan model matematis yang menggambarkan bagaimana peluang tersebar pada setiap nilai variabel acak diskrit.
+
+Melalui PMF kita dapat menghitung berbagai ukuran statistik seperti:
+
+</p>
+
+<ul>
+
+<li>Nilai harapan (Expected Value).</li>
+
+<li>Variansi.</li>
+
+<li>Standar deviasi.</li>
+
+<li>Peluang suatu kejadian tertentu.</li>
+
+</ul>
+
+<div class="note">
+
+<h3>Insight</h3>
+
+<p>
+
+Pada bab berikutnya, setiap distribusi diskrit seperti Bernoulli, Binomial, Geometrik, Hipergeometrik, dan Poisson pada dasarnya hanyalah PMF dengan rumus yang berbeda-beda.
+
+Dengan memahami PMF sekarang, kamu akan lebih mudah mempelajari seluruh distribusi tersebut.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan PMF</h2>
+
+<ul>
+
+<li>PMF hanya digunakan untuk variabel acak diskrit.</li>
+
+<li>PMF menyatakan peluang setiap nilai variabel acak.</li>
+
+<li>Seluruh peluang harus bernilai tidak negatif.</li>
+
+<li>Jumlah seluruh peluang harus sama dengan 1.</li>
+
+<li>PMF menjadi dasar seluruh distribusi peluang diskrit.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="pdf" class="materi">
+
+<h1>5.5 Probability Density Function (PDF)</h1>
+
+<p>
+
+Pada variabel acak kontinu, kita tidak dapat menggunakan PMF karena jumlah kemungkinan nilainya tidak terhingga.
+
+Sebagai gantinya digunakan <b>Probability Density Function (PDF)</b> atau <b>Fungsi Kepadatan Peluang</b>.
+
+Berbeda dengan PMF, PDF tidak memberikan peluang pada satu titik, melainkan menggambarkan <b>kepadatan peluang</b> pada setiap nilai sehingga peluang diperoleh dari luas daerah di bawah kurva PDF.
+
+</p>
+<h2>Definisi Probability Density Function (PDF)</h2>
+
+<p>
+
+Probability Density Function (PDF) adalah fungsi yang menggambarkan bagaimana peluang tersebar pada suatu variabel acak kontinu.
+
+Berbeda dengan PMF, nilai PDF pada suatu titik <b>bukanlah peluang</b>, melainkan kepadatan peluang.
+
+Peluang diperoleh dari <b>luas daerah di bawah kurva PDF</b>.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Jika <b>X</b> adalah variabel acak kontinu dengan fungsi kepadatan <b>f(x)</b>, maka peluang bahwa <b>X</b> berada pada interval <b>a</b> sampai <b>b</b> diberikan oleh luas daerah di bawah kurva PDF.
+
+</p>
+
+<p class="rumus">
+
+P(a ≤ X ≤ b)
+
+=
+
+Luas daerah di bawah kurva f(x)
+dari a sampai b.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mengapa PDF Tidak Langsung Menyatakan Peluang?</h2>
+
+<p>
+
+Pada variabel acak kontinu terdapat tak hingga banyaknya kemungkinan nilai.
+
+Jika setiap titik memiliki peluang tertentu yang lebih besar dari nol, maka jumlah seluruh peluang akan menjadi tak hingga, yang bertentangan dengan aturan peluang.
+
+Oleh karena itu, peluang tidak diberikan pada satu titik, tetapi pada suatu <b>interval</b>.
+
+</p>
+
+<div class="warning">
+
+<h3>Ingat!</h3>
+
+<p>
+
+Untuk variabel acak kontinu,
+
+</p>
+
+<p class="rumus">
+
+P(X = x) = 0
+
+</p>
+
+<p>
+
+sedangkan
+
+</p>
+
+<p class="rumus">
+
+P(a ≤ X ≤ b)
+
+>
+
+0
+
+</p>
+
+<p>
+
+apabila interval tersebut memiliki panjang lebih dari nol.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Sifat-Sifat PDF</h2>
+
+<h3>1. Nilai PDF Selalu Tidak Negatif</h3>
+
+<p class="rumus">
+
+f(x) ≥ 0
+
+</p>
+
+<p>
+
+Fungsi kepadatan tidak boleh bernilai negatif.
+
+</p>
+
+<hr>
+
+<h3>2. Luas Seluruh Kurva Sama Dengan 1</h3>
+
+<p>
+
+Seluruh peluang yang mungkin harus berjumlah satu.
+
+Karena peluang direpresentasikan oleh luas daerah, maka luas seluruh daerah di bawah kurva PDF harus sama dengan 1.
+
+</p>
+
+<hr>
+
+<h2>Ilustrasi PDF</h2>
+
+<pre>
+
+           ███
+        █████████
+      █████████████
+    █████████████████
+────────────────────────────
+
+Luas seluruh daerah = 1
+
+</pre>
+
+<p>
+
+Perhatikan bahwa yang penting bukan tinggi kurva, melainkan luas daerah di bawah kurva tersebut.
+
+</p>
+
+<hr>
+
+<h2>Contoh Konsep</h2>
+
+<p>
+
+Misalkan variabel acak <b>X</b> menyatakan tinggi badan siswa.
+
+Jika kita ingin mengetahui peluang tinggi badan berada antara 165 cm dan 170 cm, maka yang dihitung adalah luas daerah di bawah kurva PDF pada interval tersebut.
+
+Bukan tinggi kurvanya.
+
+</p>
+
+<hr>
+
+<h2>PMF vs PDF</h2>
+
+<table>
+
+<tr>
+
+<th>PMF</th>
+
+<th>PDF</th>
+
+</tr>
+
+<tr>
+
+<td>Digunakan pada variabel acak diskrit.</td>
+
+<td>Digunakan pada variabel acak kontinu.</td>
+
+</tr>
+
+<tr>
+
+<td>Memberikan peluang setiap nilai.</td>
+
+<td>Memberikan kepadatan peluang.</td>
+
+</tr>
+
+<tr>
+
+<td>P(X = x) dapat lebih dari nol.</td>
+
+<td>P(X = x) = 0.</td>
+
+</tr>
+
+<tr>
+
+<td>Jumlah seluruh peluang = 1.</td>
+
+<td>Luas seluruh kurva = 1.</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Kesalahan paling umum adalah menganggap bahwa nilai PDF merupakan peluang.
+
+Hal ini tidak benar.
+
+Nilai PDF hanyalah "kepadatan". Peluang selalu diperoleh dari <b>luas di bawah kurva</b>, bukan dari tinggi kurvanya.
+
+Memahami konsep ini akan sangat membantu ketika mempelajari Distribusi Normal dan Distribusi Eksponensial pada Bab 7.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan PDF</h2>
+
+<ul>
+
+<li>PDF digunakan untuk variabel acak kontinu.</li>
+
+<li>Nilai PDF bukan peluang.</li>
+
+<li>Peluang diperoleh dari luas daerah di bawah kurva.</li>
+
+<li>Luas seluruh kurva PDF selalu sama dengan 1.</li>
+
+<li>Peluang pada satu titik selalu bernilai nol.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="cdf" class="materi">
+
+<h1>5.6 Cumulative Distribution Function (CDF)</h1>
+
+<p>
+
+Baik PMF maupun PDF hanya memberikan peluang untuk nilai atau interval tertentu.
+
+Sering kali kita ingin mengetahui <b>peluang kumulatif</b>, yaitu peluang bahwa variabel acak bernilai kurang dari atau sama dengan suatu nilai tertentu.
+
+Untuk tujuan tersebut digunakan <b>Cumulative Distribution Function (CDF)</b> atau <b>Fungsi Distribusi Kumulatif</b>.
+
+CDF berlaku untuk <b>semua variabel acak</b>, baik diskrit maupun kontinu.
+
+</p>
+<h2>Definisi Cumulative Distribution Function (CDF)</h2>
+
+<p>
+
+Cumulative Distribution Function (CDF) menyatakan peluang bahwa suatu variabel acak memiliki nilai kurang dari atau sama dengan suatu nilai tertentu.
+
+Berbeda dengan PMF yang memberikan peluang pada satu nilai, dan PDF yang memberikan kepadatan peluang, CDF memberikan <b>peluang yang telah diakumulasikan</b> mulai dari nilai terkecil hingga suatu titik tertentu.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+CDF dari variabel acak <b>X</b> dinotasikan dengan
+
+<b>F(x)</b>
+
+dan didefinisikan sebagai
+
+</p>
+
+<p class="rumus">
+
+F(x) = P(X ≤ x)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Makna CDF</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<p class="rumus">
+
+F(5)=0,75
+
+</p>
+
+<p>
+
+Artinya,
+
+peluang bahwa variabel acak memiliki nilai kurang dari atau sama dengan 5 adalah sebesar 0,75 atau 75%.
+
+Dengan kata lain,
+
+75% peluang telah "terkumpul" hingga nilai tersebut.
+
+</p>
+
+<hr>
+
+<h2>Contoh Variabel Acak Diskrit</h2>
+
+<p>
+
+Misalkan sebuah dadu fair dilempar satu kali.
+
+Variabel acak <b>X</b> menyatakan angka yang muncul.
+
+Karena semua sisi memiliki peluang yang sama,
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>F(x)=P(X≤x)</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>1/6</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>2/6</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>3/6</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>4/6</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>5/6</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Terlihat bahwa nilai CDF selalu bertambah seiring bertambahnya nilai <b>x</b>.
+
+CDF tidak pernah berkurang.
+
+</p>
+
+<hr>
+
+<h2>Sifat-Sifat CDF</h2>
+
+<ul>
+
+<li>Nilai CDF selalu berada di antara 0 dan 1.</li>
+
+<li>CDF selalu monoton naik (tidak pernah menurun).</li>
+
+<li>Semakin besar nilai x, semakin besar atau sama dengan nilai CDF.</li>
+
+<li>Pada akhirnya CDF selalu mencapai nilai 1.</li>
+
+</ul>
+
+<hr>
+
+<h2>Grafik CDF</h2>
+
+<p>
+
+Untuk variabel acak diskrit, grafik CDF berbentuk tangga.
+
+</p>
+
+<pre>
+
+1 ┤                 ┌──────
+  │             ┌───┘
+  │         ┌───┘
+  │     ┌───┘
+  │ ┌───┘
+0 └────────────────────────► x
+
+</pre>
+
+<p>
+
+Setiap kenaikan menunjukkan adanya tambahan peluang dari suatu nilai variabel acak.
+
+</p>
+
+<hr>
+
+<h2>Hubungan PMF dan CDF</h2>
+
+<p>
+
+Pada variabel acak diskrit,
+
+CDF diperoleh dengan menjumlahkan seluruh peluang PMF hingga nilai yang diinginkan.
+
+</p>
+
+<p>
+
+Sebaliknya,
+
+PMF dapat diperoleh dari selisih dua nilai CDF yang berurutan.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>PMF</th>
+
+<th>CDF</th>
+
+</tr>
+
+<tr>
+
+<td>Memberikan peluang pada satu nilai.</td>
+
+<td>Memberikan peluang kumulatif.</td>
+
+</tr>
+
+<tr>
+
+<td>Tidak selalu bertambah.</td>
+
+<td>Selalu bertambah atau tetap.</td>
+
+</tr>
+
+<tr>
+
+<td>Jumlah seluruh peluang = 1.</td>
+
+<td>Nilai akhirnya = 1.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>CDF pada Variabel Acak Kontinu</h2>
+
+<p>
+
+Untuk variabel acak kontinu, konsepnya tetap sama.
+
+Perbedaannya, CDF diperoleh dari akumulasi luas di bawah kurva PDF mulai dari nilai terkecil hingga titik <b>x</b>.
+
+Dengan demikian, CDF selalu berbentuk kurva yang naik secara halus.
+
+</p>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+PMF, PDF, dan CDF sebenarnya saling berhubungan.
+
+PMF digunakan untuk variabel acak diskrit.
+
+PDF digunakan untuk variabel acak kontinu.
+
+Sedangkan CDF dapat digunakan pada keduanya.
+
+Inilah alasan mengapa CDF sering dianggap sebagai konsep distribusi peluang yang paling umum.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan CDF</h2>
+
+<ul>
+
+<li>CDF menyatakan peluang kumulatif.</li>
+
+<li>Rumus dasar CDF adalah F(x)=P(X≤x).</li>
+
+<li>CDF selalu bernilai antara 0 dan 1.</li>
+
+<li>CDF selalu meningkat atau tetap.</li>
+
+<li>CDF berlaku untuk variabel acak diskrit maupun kontinu.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="ekspektasi" class="materi">
+
+<h1>5.7 Nilai Harapan (Expected Value)</h1>
+
+<p>
+
+Setelah mengetahui bagaimana peluang suatu variabel acak didistribusikan, pertanyaan berikutnya adalah:
+
+<b>"Jika suatu percobaan dilakukan berkali-kali, nilai rata-rata apa yang akan diperoleh?"</b>
+
+Konsep inilah yang disebut <b>Nilai Harapan (Expected Value)</b> atau <b>Ekspektasi</b>.
+
+Expected Value merupakan salah satu konsep terpenting dalam teori peluang karena menjadi dasar bagi analisis risiko, ekonomi, machine learning, statistika, hingga kecerdasan buatan.
+
+</p>
+<h2>Apa Itu Nilai Harapan?</h2>
+
+<p>
+
+Istilah <b>Expected Value</b> sering disalahartikan sebagai nilai yang pasti akan muncul.
+
+Padahal, nilai harapan bukanlah hasil yang pasti diperoleh dalam satu percobaan.
+
+Nilai harapan adalah <b>rata-rata teoritis</b> yang akan didekati apabila suatu percobaan dilakukan berulang kali dalam jumlah yang sangat besar.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Nilai harapan (Expected Value) adalah rata-rata teoritis suatu variabel acak berdasarkan peluang dari setiap nilai yang mungkin.
+
+Nilai harapan sering dinotasikan dengan
+
+<b>E(X)</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah dadu fair dilempar jutaan kali.
+
+Walaupun hasil setiap lemparan bersifat acak, rata-rata seluruh hasil lemparan akan mendekati suatu nilai tertentu.
+
+Nilai inilah yang disebut <b>Expected Value</b>.
+
+Semakin banyak percobaan dilakukan, semakin dekat rata-rata hasil percobaan terhadap nilai harapan.
+
+</p>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<p>
+
+Jika nilai harapan sebuah dadu adalah 3,5, bukan berarti suatu lemparan akan menghasilkan angka 3,5.
+
+Bahkan angka 3,5 tidak mungkin muncul pada dadu.
+
+Nilai harapan adalah rata-rata teoritis, bukan hasil suatu percobaan tunggal.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Rumus Nilai Harapan Variabel Acak Diskrit</h2>
+
+<p>
+
+Jika variabel acak diskrit memiliki nilai
+
+<b>x₁, x₂, ..., xₙ</b>
+
+dengan peluang masing-masing
+
+<b>P(X=x)</b>,
+
+maka nilai harapannya adalah
+
+</p>
+
+<p class="rumus">
+
+E(X)
+
+=
+
+Σ x · P(X=x)
+
+</p>
+
+<p>
+
+Artinya, setiap nilai dikalikan dengan peluangnya, kemudian seluruh hasilnya dijumlahkan.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1 — Lemparan Dadu</h2>
+
+<p>
+
+Sebuah dadu fair dilempar satu kali.
+
+Hitung nilai harapan angka yang muncul.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Karena semua sisi memiliki peluang
+
+<b>1/6</b>,
+
+maka
+
+</p>
+
+<p class="rumus">
+
+E(X)
+
+=
+
+1(1/6)
+
++
+
+2(1/6)
+
++
+
+3(1/6)
+
++
+
+4(1/6)
+
++
+
+5(1/6)
+
++
+
+6(1/6)
+
+</p>
+
+<p class="rumus">
+
+=
+
+(1+2+3+4+5+6)/6
+
+=
+
+21/6
+
+=
+
+3,5
+
+</p>
+
+<div class="jawaban">
+
+<b>Nilai harapan lemparan dadu adalah 3,5.</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Misalkan sebuah variabel acak memiliki distribusi berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>0,2</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>0,5</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>0,3</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Hitung nilai harapannya.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+E(X)
+
+=
+
+0(0,2)
+
++
+
+1(0,5)
+
++
+
+2(0,3)
+
+</p>
+
+<p class="rumus">
+
+=
+
+0
+
++
+
+0,5
+
++
+
+0,6
+
+=
+
+1,1
+
+</p>
+
+<div class="jawaban">
+
+<b>E(X) = 1,1</b>
+
+</div>
+
+<hr>
+
+<h2>Makna Nilai Harapan</h2>
+
+<p>
+
+Semakin besar nilai harapan, semakin besar rata-rata hasil yang diperkirakan dalam jangka panjang.
+
+Karena itu, expected value banyak digunakan dalam:
+
+</p>
+
+<ul>
+
+<li>Permainan peluang.</li>
+
+<li>Analisis investasi.</li>
+
+<li>Asuransi.</li>
+
+<li>Ekonomi.</li>
+
+<li>Machine Learning.</li>
+
+<li>Pengambilan keputusan di bawah ketidakpastian.</li>
+
+</ul>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Dalam banyak soal olimpiade, langkah pertama yang dilakukan bukan menghitung peluang secara langsung, melainkan mendefinisikan variabel acak terlebih dahulu.
+
+Setelah itu, nilai harapan digunakan untuk memperoleh jawaban dengan cara yang jauh lebih sederhana dibanding menghitung setiap kemungkinan secara satu per satu.
+
+Inilah sebabnya Expected Value menjadi salah satu konsep paling kuat dalam teori peluang.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan Expected Value</h2>
+
+<ul>
+
+<li>Expected Value adalah rata-rata teoritis suatu variabel acak.</li>
+
+<li>Notasi yang digunakan adalah <b>E(X)</b>.</li>
+
+<li>Untuk variabel acak diskrit, rumusnya adalah <b>E(X)=Σx·P(X=x)</b>.</li>
+
+<li>Nilai harapan bukan hasil yang pasti muncul pada satu percobaan.</li>
+
+<li>Expected Value menjadi dasar bagi banyak teori peluang dan statistika.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="linearitas" class="materi">
+
+<h1>5.8 Linearitas Nilai Harapan (Linearity of Expectation)</h1>
+
+<p>
+
+Salah satu sifat paling kuat dari Expected Value adalah <b>linearitas</b>.
+
+Sifat ini memungkinkan kita menghitung nilai harapan dari jumlah beberapa variabel acak tanpa harus mengetahui apakah variabel-variabel tersebut saling independen atau tidak.
+
+Konsep ini sangat sering muncul dalam soal-soal olimpiade matematika dan teori peluang karena mampu menyederhanakan perhitungan yang tampak rumit.
+
+</p>
+<h2>Konsep Linearitas Nilai Harapan</h2>
+
+<p>
+
+Misalkan terdapat dua variabel acak, <b>X</b> dan <b>Y</b>.
+
+Kita ingin mengetahui nilai harapan dari jumlah keduanya.
+
+Secara mengejutkan, hasilnya sangat sederhana.
+
+</p>
+
+<div class="note">
+
+<h3>Teorema Linearitas</h3>
+
+<p class="rumus">
+
+E(X + Y) = E(X) + E(Y)
+
+</p>
+
+<p>
+
+Lebih umum lagi, untuk sejumlah variabel acak
+
+</p>
+
+<p class="rumus">
+
+E(X₁ + X₂ + ... + Xₙ)
+
+=
+
+E(X₁)+E(X₂)+...+E(Xₙ)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Sifat yang Sangat Penting</h2>
+
+<p>
+
+Linearitas nilai harapan <b>tidak memerlukan syarat independensi</b>.
+
+Artinya, meskipun variabel acak saling bergantung (dependen), sifat ini tetap berlaku.
+
+Inilah yang membuat linearitas menjadi salah satu alat paling kuat dalam teori peluang.
+
+</p>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<p>
+
+Banyak siswa mengira bahwa rumus
+
+<b>E(X+Y)=E(X)+E(Y)</b>
+
+hanya berlaku jika <b>X</b> dan <b>Y</b> independen.
+
+Anggapan tersebut keliru.
+
+Linearitas selalu berlaku selama nilai harapan masing-masing variabel ada (terdefinisi).
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Konstanta dan Nilai Harapan</h2>
+
+<p>
+
+Jika suatu variabel acak dikalikan dengan konstanta <b>c</b>, maka konstanta tersebut dapat dikeluarkan dari operator nilai harapan.
+
+</p>
+
+<p class="rumus">
+
+E(cX)=cE(X)
+
+</p>
+
+<p>
+
+Jika ditambah konstanta,
+
+</p>
+
+<p class="rumus">
+
+E(X+c)=E(X)+c
+
+</p>
+
+<p>
+
+Secara umum,
+
+</p>
+
+<p class="rumus">
+
+E(aX+b)=aE(X)+b
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Diketahui
+
+</p>
+
+<p class="rumus">
+
+E(X)=4
+
+</p>
+
+<p class="rumus">
+
+E(Y)=7
+
+</p>
+
+<p>
+
+Hitung
+
+<b>E(X+Y)</b>.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+E(X+Y)
+
+=
+
+E(X)+E(Y)
+
+</p>
+
+<p class="rumus">
+
+=
+
+4+7
+
+=
+
+11
+
+</p>
+
+<div class="jawaban">
+
+<b>E(X+Y)=11</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Jika
+
+</p>
+
+<p class="rumus">
+
+E(X)=8
+
+</p>
+
+<p>
+
+Hitung
+
+</p>
+
+<p class="rumus">
+
+E(5X−2)
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+E(5X−2)
+
+=
+
+5E(X)−2
+
+</p>
+
+<p class="rumus">
+
+=
+
+5(8)−2
+
+=
+
+38
+
+</p>
+
+<div class="jawaban">
+
+<b>E(5X−2)=38</b>
+
+</div>
+
+<hr>
+
+<h2>Aplikasi Olimpiade</h2>
+
+<p>
+
+Misalkan sebuah koin fair dilempar sebanyak 100 kali.
+
+Berapa nilai harapan banyaknya sisi angka yang muncul?
+
+</p>
+
+<p>
+
+Daripada membuat ruang sampel yang sangat besar, kita definisikan variabel indikator:
+
+</p>
+
+<ul>
+
+<li>X₁ = 1 jika lemparan pertama menghasilkan angka, 0 jika tidak.</li>
+<li>X₂ = 1 jika lemparan kedua menghasilkan angka, 0 jika tidak.</li>
+<li>...</li>
+<li>X₁₀₀ = 1 jika lemparan ke-100 menghasilkan angka, 0 jika tidak.</li>
+
+</ul>
+
+<p>
+
+Jumlah seluruh sisi angka adalah
+
+</p>
+
+<p class="rumus">
+
+X = X₁ + X₂ + ... + X₁₀₀
+
+</p>
+
+<p>
+
+Karena setiap lemparan memiliki peluang 1/2 menghasilkan angka,
+
+</p>
+
+<p class="rumus">
+
+E(Xᵢ)=1/2
+
+</p>
+
+<p>
+
+Dengan menggunakan linearitas,
+
+</p>
+
+<p class="rumus">
+
+E(X)
+
+=
+
+100 × (1/2)
+
+=
+
+50
+
+</p>
+
+<p>
+
+Tanpa linearitas, soal ini akan sangat sulit diselesaikan.
+
+Inilah alasan mengapa sifat ini sering menjadi "senjata utama" dalam penyelesaian soal olimpiade.
+
+</p>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Pada banyak soal tingkat lanjut, langkah pertama adalah memecah suatu besaran menjadi jumlah beberapa variabel indikator.
+
+Setelah itu, gunakan linearitas nilai harapan untuk memperoleh jawaban tanpa perlu menghitung seluruh kemungkinan yang sangat banyak.
+
+Teknik ini merupakan salah satu strategi paling elegan dalam teori peluang.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan Linearitas Nilai Harapan</h2>
+
+<ul>
+
+<li>E(X+Y)=E(X)+E(Y).</li>
+
+<li>E(aX+b)=aE(X)+b.</li>
+
+<li>Linearitas berlaku meskipun variabel acak tidak independen.</li>
+
+<li>Linearitas merupakan teknik penting dalam penyelesaian soal olimpiade.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="variansi" class="materi">
+
+<h1>5.9 Variansi Variabel Acak (Variance)</h1>
+
+<p>
+
+Nilai harapan hanya memberikan informasi mengenai posisi rata-rata suatu variabel acak.
+
+Namun, dua variabel acak dapat memiliki nilai harapan yang sama tetapi tingkat penyebaran yang sangat berbeda.
+
+Untuk mengukur seberapa jauh nilai-nilai suatu variabel acak menyebar dari nilai harapannya, digunakan ukuran yang disebut <b>Variansi (Variance)</b>.
+
+</p>
+<h2>Pengertian Variansi</h2>
+
+<p>
+
+Variansi merupakan ukuran yang menunjukkan seberapa jauh nilai-nilai suatu variabel acak menyebar dari nilai harapannya.
+
+Semakin besar variansi, semakin besar pula penyebaran data terhadap rata-ratanya.
+
+Sebaliknya, jika variansi kecil, maka nilai-nilai variabel acak cenderung berada dekat dengan nilai harapannya.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+Variansi adalah nilai harapan dari kuadrat selisih antara variabel acak dengan nilai harapannya.
+
+</p>
+
+<p class="rumus">
+
+Var(X)
+
+=
+
+E[(X − E(X))²]
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Harus Dikuadratkan?</h2>
+
+<p>
+
+Apabila penyimpangan dijumlahkan secara langsung, maka penyimpangan positif dan negatif akan saling menghilangkan sehingga hasilnya selalu nol.
+
+Dengan mengkuadratkan setiap penyimpangan:
+
+</p>
+
+<ul>
+
+<li>Semua penyimpangan menjadi bernilai positif atau nol.</li>
+
+<li>Penyimpangan yang besar memperoleh bobot lebih besar.</li>
+
+<li>Variansi benar-benar mencerminkan tingkat penyebaran data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Rumus Cepat Variansi</h2>
+
+<p>
+
+Walaupun definisi di atas sangat penting secara konsep, dalam praktik perhitungan biasanya digunakan rumus yang lebih efisien.
+
+</p>
+
+<div class="note">
+
+<h3>Rumus Praktis</h3>
+
+<p class="rumus">
+
+Var(X)
+
+=
+
+E(X²)
+
+−
+
+[E(X)]²
+
+</p>
+
+</div>
+
+<p>
+
+Rumus ini jauh lebih sering digunakan dalam statistika maupun olimpiade karena mengurangi jumlah perhitungan.
+
+</p>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Misalkan variabel acak memiliki distribusi berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>0,5</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>0,5</td>
+
+</tr>
+
+</table>
+
+<h3>Langkah 1 — Hitung Nilai Harapan</h3>
+
+<p class="rumus">
+
+E(X)
+
+=
+
+0(0,5)
+
++
+
+2(0,5)
+
+=
+
+1
+
+</p>
+
+<h3>Langkah 2 — Hitung E(X²)</h3>
+
+<p class="rumus">
+
+E(X²)
+
+=
+
+0²(0,5)
+
++
+
+2²(0,5)
+
+=
+
+2
+
+</p>
+
+<h3>Langkah 3 — Gunakan Rumus Cepat</h3>
+
+<p class="rumus">
+
+Var(X)
+
+=
+
+2
+
+−
+
+1²
+
+=
+
+1
+
+</p>
+
+<div class="jawaban">
+
+<b>Variansi = 1</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Variansi</h2>
+
+<table>
+
+<tr>
+
+<th>Variansi</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>Kecil</td>
+
+<td>Nilai variabel acak cenderung dekat dengan nilai harapan.</td>
+
+</tr>
+
+<tr>
+
+<td>Besar</td>
+
+<td>Nilai variabel acak tersebar jauh dari nilai harapan.</td>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>Semua nilai selalu sama (tidak ada penyebaran).</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Sifat-Sifat Variansi</h2>
+
+<ul>
+
+<li>Variansi tidak pernah bernilai negatif.</li>
+
+<li>Variansi sama dengan nol jika variabel acak selalu bernilai tetap.</li>
+
+<li>Semakin besar variansi, semakin besar penyebaran data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Pengaruh Transformasi Linear</h2>
+
+<p>
+
+Jika suatu konstanta ditambahkan pada variabel acak, variansinya tidak berubah.
+
+Sebaliknya, jika variabel acak dikalikan suatu konstanta, variansinya berubah sesuai kuadrat konstanta tersebut.
+
+</p>
+
+<p class="rumus">
+
+Var(X + c)
+
+=
+
+Var(X)
+
+</p>
+
+<p class="rumus">
+
+Var(cX)
+
+=
+
+c² Var(X)
+
+</p>
+
+<div class="warning">
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<p>
+
+Banyak siswa menulis
+
+<b>Var(cX)=cVar(X)</b>.
+
+Rumus tersebut salah.
+
+Yang benar adalah
+
+<b>Var(cX)=c²Var(X)</b>
+
+karena seluruh penyimpangan dikuadratkan.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Dalam soal olimpiade, variansi sering kali tidak dihitung menggunakan definisi langsung.
+
+Sebaliknya, peserta biasanya lebih cepat menggunakan rumus
+
+<b>Var(X)=E(X²)−[E(X)]²</b>
+
+karena jauh lebih efisien dan mengurangi risiko kesalahan hitung.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan Variansi</h2>
+
+<ul>
+
+<li>Variansi mengukur tingkat penyebaran terhadap nilai harapan.</li>
+
+<li>Rumus definisi: Var(X)=E[(X−E(X))²].</li>
+
+<li>Rumus praktis: Var(X)=E(X²)−[E(X)]².</li>
+
+<li>Variansi selalu bernilai tidak negatif.</li>
+
+<li>Var(X+c)=Var(X), sedangkan Var(cX)=c²Var(X).</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="standar-deviasi" class="materi">
+
+<h1>5.10 Standar Deviasi Variabel Acak (Standard Deviation)</h1>
+
+<p>
+
+Variansi memberikan ukuran penyebaran yang sangat berguna, tetapi satuannya berupa <b>kuadrat</b> dari satuan variabel acak.
+
+Agar ukuran penyebaran kembali memiliki satuan yang sama dengan variabel acaknya, digunakan <b>Standar Deviasi (Standard Deviation)</b>, yaitu akar kuadrat dari variansi.
+
+</p>
+<h2>Definisi Standar Deviasi</h2>
+
+<p>
+
+Standar deviasi adalah akar kuadrat dari variansi.
+
+Ukuran ini digunakan untuk mengukur penyebaran data dengan satuan yang sama seperti variabel aslinya.
+
+Dengan kata lain, standar deviasi memberikan interpretasi yang lebih “nyata” dibandingkan variansi.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p class="rumus">
+
+σ(X) = √Var(X)
+
+</p>
+
+<p>
+
+atau
+
+</p>
+
+<p class="rumus">
+
+σ = √Var(X)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Makna Standar Deviasi</h2>
+
+<p>
+
+Jika standar deviasi kecil, maka data cenderung berkumpul di sekitar nilai harapan.
+
+Jika standar deviasi besar, maka data menyebar jauh dari nilai harapan.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Standar Deviasi</th>
+<th>Interpretasi</th>
+
+</tr>
+
+<tr>
+
+<td>Kecil</td>
+<td>Data rapat di sekitar rata-rata</td>
+
+</tr>
+
+<tr>
+
+<td>Besar</td>
+<td>Data tersebar luas</td>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+<td>Semua nilai sama (tidak ada variasi)</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Contoh</h2>
+
+<p>
+
+Diketahui variansi suatu variabel acak adalah
+
+</p>
+
+<p class="rumus">
+
+Var(X) = 9
+
+</p>
+
+<p>
+
+Maka standar deviasinya adalah
+
+</p>
+
+<p class="rumus">
+
+σ = √9 = 3
+
+</p>
+
+<div class="jawaban">
+
+<b>Standar deviasi = 3</b>
+
+</div>
+
+<hr>
+
+<h2>Sifat Standar Deviasi</h2>
+
+<ul>
+
+<li>Standar deviasi selalu bernilai tidak negatif.</li>
+
+<li>Standar deviasi = 0 jika semua nilai variabel acak sama.</li>
+
+<li>Semakin besar standar deviasi, semakin besar penyebaran data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Hubungan Variansi dan Standar Deviasi</h2>
+
+<table>
+
+<tr>
+
+<th>Variansi</th>
+<th>Standar Deviasi</th>
+
+</tr>
+
+<tr>
+
+<td>Var(X)</td>
+<td>σ = √Var(X)</td>
+
+</tr>
+
+<tr>
+
+<td>Satuan kuadrat</td>
+<td>Satuan asli data</td>
+
+</tr>
+
+<tr>
+
+<td>Lebih sulit diinterpretasikan</td>
+<td>Lebih mudah dipahami</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<div class="warning">
+
+<h3>Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa mengira variansi dan standar deviasi sama.
+
+Padahal:
+
+variansi adalah ukuran penyebaran berbasis kuadrat,
+
+sedangkan standar deviasi adalah akar dari variansi yang kembali ke satuan asli data.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="note">
+
+<h3>Insight Olimpiade</h3>
+
+<p>
+
+Dalam soal olimpiade, standar deviasi sering tidak dihitung langsung.
+
+Biasanya peserta akan:
+
+</p>
+
+<ul>
+
+<li>Menghitung E(X)</li>
+<li>Menghitung E(X²)</li>
+<li>Mencari Var(X) = E(X²) − [E(X)]²</li>
+<li>Baru diakar untuk mendapatkan standar deviasi</li>
+</ul>
+
+<p>
+
+Strategi ini lebih cepat dan mengurangi kesalahan aljabar.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="summary">
+
+<h2>Ringkasan Bab 5</h2>
+
+<ul>
+
+<li>Variabel acak adalah fungsi dari ruang sampel ke bilangan real.</li>
+<li>Variabel diskrit memiliki nilai yang dapat dihitung satu per satu.</li>
+<li>Variabel kontinu memiliki nilai pada suatu interval.</li>
+<li>PMF digunakan untuk variabel diskrit.</li>
+<li>PDF digunakan untuk variabel kontinu.</li>
+<li>CDF menyatakan peluang kumulatif.</li>
+<li>Expected Value adalah rata-rata teoritis.</li>
+<li>Linearitas nilai harapan berlaku tanpa syarat independensi.</li>
+<li>Variansi mengukur penyebaran dari nilai harapan.</li>
+<li>Standar deviasi adalah akar dari variansi.</li>
+</ul>
+
+</div>
+
+<hr>
+
+<section class="latihan">
+
+<h2>Latihan Akhir Bab (Olimpiade)</h2>
+
+<ol>
+
+<li>
+Sebuah dadu fair dilempar satu kali. Tentukan E(X), Var(X), dan σ(X).
+</li>
+
+<li>
+Diketahui E(X)=5 dan E(X²)=30. Hitung variansi dan standar deviasi.
+</li>
+
+<li>
+Jika Var(X)=4, tentukan Var(3X+2).
+</li>
+
+<li>
+Jelaskan mengapa linearitas berlaku untuk E(X) tetapi tidak untuk Var(X).
+</li>
+
+<li>
+Sebuah koin dilempar 50 kali. Tentukan nilai harapan jumlah sisi gambar yang muncul.
+</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<div class="navigation-buttons">
+
+<a href="index.html" class="btn-home">🏠 Home</a>
+
+<a href="peluang6.html" class="btn-next">Bab Selanjutnya ➜</a>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Modul Probabilitas Olimpiade
+
+<br>
+
+Bab 5 — Variabel Acak & Ekspektasi
+
+</p>
+
+</footer>
+
+</body>
+</html>
