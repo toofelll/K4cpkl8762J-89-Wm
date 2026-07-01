@@ -1,1 +1,3736 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 7 - Functional Equation Techniques</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bab 7</h1>
+
+<h2>Functional Equation Techniques</h2>
+
+<p>
+
+Functional Equation (Persamaan Fungsi)
+merupakan salah satu materi yang paling menarik
+dalam Olimpiade Matematika.
+
+Berbeda dengan persamaan biasa yang mencari nilai variabel,
+Functional Equation mencari bentuk suatu fungsi
+yang memenuhi hubungan tertentu.
+
+Materi ini sering muncul pada
+OSN Nasional,
+International Mathematical Olympiad (IMO),
+hingga berbagai kompetisi matematika universitas.
+
+</p>
+
+<div class="note">
+
+<h3>Materi Bab Ini</h3>
+
+<ul>
+
+<li>① Pengertian Functional Equation</li>
+
+<li>② Jenis-Jenis Functional Equation</li>
+
+<li>③ Strategi Dasar Penyelesaian</li>
+
+<li>④ Substitusi Nilai Khusus</li>
+
+<li>⑤ Injektif & Surjektif</li>
+
+<li>⑥ Fungsi Genap & Ganjil</li>
+
+<li>⑦ Menebak Bentuk Fungsi</li>
+
+<li>⑧ Contoh Soal OSN</li>
+
+<li>⑨ Contoh Soal IMO</li>
+
+<li>⑩ Ringkasan & Tips</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<section class="section">
+
+<h1>① Pengertian Functional Equation</h1>
+
+<h2>📖 Apa itu Functional Equation?</h2>
+
+<p>
+
+Functional Equation adalah persamaan
+yang melibatkan suatu fungsi
+dan hubungan antar nilai fungsi tersebut.
+
+Tujuan utamanya bukan mencari nilai x,
+melainkan menentukan bentuk fungsi
+yang memenuhi persamaan.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Persamaan tersebut tidak meminta kita mencari x,
+melainkan mencari semua fungsi
+yang memenuhi hubungan tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📜 Sejarah Singkat</h2>
+
+<p>
+
+Functional Equation telah dipelajari sejak abad ke-19
+dan berkembang pesat dalam analisis matematika.
+
+Banyak matematikawan terkenal mengembangkan teori ini,
+karena persamaan fungsi muncul dalam
+aljabar, geometri, teori bilangan,
+probabilitas, hingga fisika.
+
+Saat ini,
+Functional Equation menjadi salah satu materi klasik
+dalam Olimpiade Matematika Internasional.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah mesin.
+
+Kita tidak mengetahui isi mesin tersebut.
+
+Yang diketahui hanyalah hubungan
+antara masukan dan keluarannya.
+
+Dengan mencoba berbagai masukan,
+kita berusaha menebak aturan kerja mesin.
+
+Begitulah cara berpikir dalam Functional Equation.
+
+Kita tidak mengetahui bentuk fungsi,
+tetapi mencoba menemukannya
+melalui hubungan yang diberikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+f(x)=2x+1
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(3)=7
+
+f(5)=11
+
+</pre>
+
+<p>
+
+Pada Functional Equation,
+biasanya bentuk fungsi seperti di atas
+belum diketahui.
+
+Yang diberikan hanyalah hubungan antar nilai fungsi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Mempelajari Functional Equation</h2>
+
+<ul>
+
+<li>Menentukan bentuk fungsi.</li>
+
+<li>Membuktikan fungsi tertentu.</li>
+
+<li>Mencari semua solusi fungsi.</li>
+
+<li>Melatih kreativitas berpikir.</li>
+
+<li>Menggabungkan berbagai teknik Olimpiade.</li>
+
+</ul>
+
+</section><section class="section">
+
+<h1>② Jenis-Jenis Functional Equation</h1>
+
+<h2>📖 Mengapa Perlu Mengenali Jenisnya?</h2>
+
+<p>
+
+Tidak semua Functional Equation diselesaikan
+dengan cara yang sama.
+
+Setiap soal memiliki pola tertentu,
+sehingga mengenali jenis soal
+akan mempermudah memilih strategi penyelesaian.
+
+Semakin sering berlatih,
+kamu akan semakin cepat mengenali pola tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Functional Equation Linear</h2>
+
+<p>
+
+Jenis ini merupakan yang paling sederhana.
+
+Hubungan antar fungsi masih berbentuk linear,
+sehingga biasanya dapat diselesaikan
+dengan substitusi sederhana.
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)+1
+
+</pre>
+
+<p>
+
+Banyak soal dasar OSN berasal dari tipe ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Functional Equation Multiplikatif</h2>
+
+<p>
+
+Pada tipe ini,
+fungsi berhubungan melalui operasi perkalian.
+
+</p>
+
+<pre>
+
+f(xy)=f(x)f(y)
+
+</pre>
+
+<p>
+
+Biasanya diperlukan analisis terhadap
+
+</p>
+
+<ul>
+
+<li>f(0)</li>
+
+<li>f(1)</li>
+
+<li>bilangan negatif</li>
+
+<li>bilangan pecahan</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>3. Functional Equation Komposisi</h2>
+
+<p>
+
+Fungsi muncul di dalam fungsi lainnya.
+
+</p>
+
+<pre>
+
+f(f(x))=x
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(f(x))=f(x)
+
+</pre>
+
+<p>
+
+Soal seperti ini sering memerlukan
+analisis sifat fungsi,
+misalnya apakah fungsi bersifat injektif
+atau surjektif.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Functional Equation Rekursif</h2>
+
+<p>
+
+Nilai fungsi bergantung
+pada nilai fungsi sebelumnya.
+
+</p>
+
+<pre>
+
+f(n)=f(n-1)+2
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(n+1)=2f(n)+1
+
+</pre>
+
+<p>
+
+Jenis ini banyak dijumpai
+pada soal kombinatorika
+dan teori bilangan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Functional Equation Simetris</h2>
+
+<p>
+
+Persamaan tetap berlaku
+walaupun variabel ditukar.
+
+</p>
+
+<pre>
+
+f(x+y)=f(y+x)
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(x,y)=f(y,x)
+
+</pre>
+
+<p>
+
+Simetri sering membantu
+mengurangi jumlah kasus
+yang harus diperiksa.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Functional Equation Campuran</h2>
+
+<p>
+
+Pada Olimpiade tingkat nasional
+hingga IMO,
+banyak soal menggabungkan
+beberapa jenis sekaligus.
+
+Misalnya terdapat operasi
+penjumlahan,
+perkalian,
+dan komposisi fungsi
+dalam satu persamaan.
+
+Soal seperti ini memerlukan
+beberapa teknik sekaligus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📊 Ringkasan Jenis Functional Equation</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+
+<th>Ciri Utama</th>
+
+</tr>
+
+<tr>
+
+<td>Linear</td>
+
+<td>Melibatkan penjumlahan atau pengurangan.</td>
+
+</tr>
+
+<tr>
+
+<td>Multiplikatif</td>
+
+<td>Melibatkan operasi perkalian.</td>
+
+</tr>
+
+<tr>
+
+<td>Komposisi</td>
+
+<td>Fungsi berada di dalam fungsi lain.</td>
+
+</tr>
+
+<tr>
+
+<td>Rekursif</td>
+
+<td>Nilai fungsi bergantung pada nilai sebelumnya.</td>
+
+</tr>
+
+<tr>
+
+<td>Simetris</td>
+
+<td>Tidak berubah ketika variabel ditukar.</td>
+
+</tr>
+
+<tr>
+
+<td>Campuran</td>
+
+<td>Menggabungkan beberapa jenis sekaligus.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Sebelum mulai menghitung,
+identifikasi terlebih dahulu
+jenis Functional Equation yang diberikan.
+
+Dengan mengetahui jenisnya,
+kamu dapat memilih strategi penyelesaian
+yang paling efektif.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>③ Strategi Dasar Penyelesaian</h1>
+
+<h2>📖 Mengapa Perlu Strategi?</h2>
+
+<p>
+
+Tidak ada rumus tunggal
+untuk menyelesaikan Functional Equation.
+
+Setiap soal memiliki karakteristik yang berbeda,
+sehingga kita harus memilih strategi
+yang paling sesuai.
+
+Semakin banyak strategi yang dikuasai,
+semakin mudah mengenali solusi suatu soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Strategi 1 — Memahami Domain dan Kodomain</h2>
+
+<p>
+
+Langkah pertama adalah membaca soal
+dengan teliti.
+
+Perhatikan:
+
+</p>
+
+<ul>
+
+<li>Apakah fungsi didefinisikan pada bilangan bulat?</li>
+
+<li>Bilangan real?</li>
+
+<li>Bilangan rasional?</li>
+
+<li>Bilangan asli?</li>
+
+</ul>
+
+<p>
+
+Perbedaan domain
+dapat mengubah cara penyelesaian secara drastis.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Strategi 2 — Perhatikan Bentuk Persamaan</h2>
+
+<p>
+
+Sebelum melakukan substitusi,
+amati bentuk persamaan.
+
+Contoh:
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+langsung menunjukkan
+bahwa fungsi memiliki sifat aditif.
+
+Sedangkan
+
+</p>
+
+<pre>
+
+f(xy)=f(x)f(y)
+
+</pre>
+
+<p>
+
+menunjukkan sifat multiplikatif.
+
+Dengan mengenali bentuknya,
+kita dapat memilih strategi yang tepat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Strategi 3 — Cari Pola</h2>
+
+<p>
+
+Perhatikan apakah persamaan memiliki:
+
+</p>
+
+<ul>
+
+<li>Simetri.</li>
+
+<li>Penjumlahan.</li>
+
+<li>Perkalian.</li>
+
+<li>Komposisi fungsi.</li>
+
+<li>Pangkat.</li>
+
+</ul>
+
+<p>
+
+Pola-pola tersebut sering menjadi petunjuk
+untuk langkah berikutnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Strategi 4 — Gunakan Nilai yang Mudah</h2>
+
+<p>
+
+Jika memungkinkan,
+mulailah dengan nilai yang sederhana.
+
+Misalnya:
+
+</p>
+
+<pre>
+
+x = 0
+
+x = 1
+
+y = 0
+
+y = 1
+
+</pre>
+
+<p>
+
+Nilai-nilai tersebut sering menghasilkan
+persamaan yang jauh lebih sederhana.
+
+Pada bab berikutnya,
+strategi ini akan dibahas secara khusus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Strategi 5 — Jangan Terburu-buru Menebak Fungsi</h2>
+
+<p>
+
+Banyak pemula langsung menebak bahwa
+
+</p>
+
+<pre>
+
+f(x)=x
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(x)=2x
+
+</pre>
+
+<p>
+
+Padahal,
+tebakan tersebut belum tentu benar.
+
+Selalu buktikan terlebih dahulu
+menggunakan hubungan yang diberikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Analisis Awal</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Sebelum menghitung,
+kita dapat menyimpulkan bahwa:
+
+</p>
+
+<ul>
+
+<li>Persamaan bersifat simetris terhadap x dan y.</li>
+
+<li>Penjumlahan menjadi operasi utama.</li>
+
+<li>Nilai x=0 kemungkinan akan sangat membantu.</li>
+
+<li>Fungsi mungkin memiliki sifat linear, tetapi harus dibuktikan.</li>
+
+</ul>
+
+<p>
+
+Langkah analisis seperti ini
+akan menghemat banyak waktu.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Langsung menghitung tanpa memahami bentuk persamaan.</li>
+
+<li>Terlalu cepat menebak bentuk fungsi.</li>
+
+<li>Mengabaikan domain fungsi.</li>
+
+<li>Tidak mencoba nilai-nilai sederhana.</li>
+
+<li>Tidak memanfaatkan simetri persamaan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Pada Olimpiade,
+langkah pertama bukan menghitung,
+melainkan <b>mengamati</b>.
+
+Luangkan waktu untuk mengenali pola,
+karena sering kali solusi muncul
+sebelum satu pun perhitungan dilakukan.
+
+Matematikawan berpengalaman biasanya
+menghabiskan lebih banyak waktu
+menganalisis soal daripada menghitungnya.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>④ Substitusi Nilai Khusus</h1>
+
+<h2>📖 Mengapa Substitusi Penting?</h2>
+
+<p>
+
+Pada Functional Equation, kita bebas memilih
+nilai variabel selama masih berada dalam domain fungsi.
+
+Dengan memilih nilai tertentu,
+persamaan sering menjadi jauh lebih sederhana,
+sehingga sifat fungsi dapat ditemukan.
+
+Karena alasan inilah,
+substitusi merupakan teknik pertama
+yang hampir selalu dicoba dalam Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Substitusi x = 0</h2>
+
+<p>
+
+Nilai nol sering menghasilkan bentuk persamaan
+yang sangat sederhana.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Substitusi
+
+</p>
+
+<pre>
+
+x = 0
+
+</pre>
+
+<p>
+
+menghasilkan
+
+</p>
+
+<pre>
+
+f(y)=f(0)+f(y)
+
+</pre>
+
+<p>
+
+Dari sini dapat disimpulkan bahwa
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+<p>
+
+Hasil ini sering menjadi langkah awal
+untuk menyelesaikan soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Substitusi y = 0</h2>
+
+<p>
+
+Selain x = 0,
+kita juga dapat mencoba
+
+</p>
+
+<pre>
+
+y = 0
+
+</pre>
+
+<p>
+
+Terkadang kedua substitusi menghasilkan
+informasi yang berbeda,
+terutama jika persamaan tidak simetris.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Substitusi x = y</h2>
+
+<p>
+
+Jika kedua variabel dibuat sama,
+sering muncul bentuk yang lebih sederhana.
+
+Contoh:
+
+</p>
+
+<pre>
+
+f(x+x)=f(x)+f(x)
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(2x)=2f(x)
+
+</pre>
+
+<p>
+
+Hubungan seperti ini sangat membantu
+untuk menemukan pola fungsi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Substitusi x = -y</h2>
+
+<p>
+
+Jika domain mencakup bilangan real
+atau bilangan bulat,
+substitusi
+
+</p>
+
+<pre>
+
+x=-y
+
+</pre>
+
+<p>
+
+sering menghasilkan
+
+</p>
+
+<pre>
+
+f(0)
+
+</pre>
+
+<p>
+
+yang biasanya sudah diketahui.
+
+Cara ini juga berguna
+untuk mencari hubungan antara
+
+</p>
+
+<pre>
+
+f(x)
+
+dan
+
+f(-x)
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>5. Substitusi x = 1 atau y = 1</h2>
+
+<p>
+
+Bilangan satu sering memiliki sifat khusus,
+terutama pada Functional Equation
+yang melibatkan perkalian.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+f(xy)=f(x)f(y)
+
+</pre>
+
+<p>
+
+Substitusi
+
+</p>
+
+<pre>
+
+x=1
+
+</pre>
+
+<p>
+
+memberikan hubungan yang melibatkan
+
+</p>
+
+<pre>
+
+f(1)
+
+</pre>
+
+<p>
+
+yang sering menjadi kunci penyelesaian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Substitusi x = y = 0</h2>
+
+<p>
+
+Jika kedua variabel dibuat nol sekaligus,
+sering kali kita memperoleh nilai awal fungsi.
+
+Contoh:
+
+</p>
+
+<pre>
+
+f(0)=2f(0)
+
+</pre>
+
+<p>
+
+yang langsung menghasilkan
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Analisis</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Langkah pertama yang dapat dilakukan adalah:
+
+</p>
+
+<ol>
+
+<li>Substitusi x = 0.</li>
+
+<li>Substitusi y = 0.</li>
+
+<li>Substitusi x = y.</li>
+
+<li>Substitusi x = -y.</li>
+
+</ol>
+
+<p>
+
+Empat langkah sederhana tersebut
+sering kali sudah cukup
+untuk menemukan bentuk fungsi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Melakukan substitusi yang tidak termasuk domain fungsi.</li>
+
+<li>Hanya mencoba satu nilai khusus lalu berhenti.</li>
+
+<li>Tidak memanfaatkan hasil substitusi sebelumnya.</li>
+
+<li>Mengabaikan hubungan yang muncul setelah substitusi.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Urutan substitusi yang paling sering digunakan adalah:
+
+</p>
+
+<pre>
+
+x = 0
+↓
+
+y = 0
+↓
+
+x = y
+↓
+
+x = -y
+↓
+
+x = 1
+
+</pre>
+
+<p>
+
+Urutan ini tidak selalu wajib,
+tetapi pada banyak soal Olimpiade
+langkah-langkah tersebut mampu membuka jalan
+menuju solusi.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>⑤ Injektif & Surjektif</h1>
+
+<h2>📖 Mengapa Injektif dan Surjektif Penting?</h2>
+
+<p>
+
+Dalam banyak soal Functional Equation,
+kita tidak langsung mencari bentuk fungsi.
+
+Langkah pertama justru adalah menentukan
+apakah fungsi tersebut bersifat
+<b>injektif</b> (satu-satu)
+atau <b>surjektif</b> (onto).
+
+Mengetahui sifat ini sering kali
+membuat pembuktian menjadi jauh lebih mudah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Fungsi Injektif</h2>
+
+<p>
+
+Suatu fungsi disebut <b>injektif</b>
+apabila setiap dua masukan yang berbeda
+selalu menghasilkan keluaran yang berbeda.
+
+Secara matematis,
+
+</p>
+
+<pre>
+
+f(a) = f(b)
+
+↓
+
+a = b
+
+</pre>
+
+<p>
+
+Artinya,
+jika dua nilai fungsi sama,
+maka nilai masukannya juga harus sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Fungsi Injektif</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+f(x)=2x+3
+
+</pre>
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+f(a)=f(b)
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+2a+3=2b+3
+
+</pre>
+
+<p>
+
+sehingga
+
+</p>
+
+<pre>
+
+a=b
+
+</pre>
+
+<p>
+
+Jadi fungsi tersebut bersifat injektif.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Fungsi Surjektif</h2>
+
+<p>
+
+Suatu fungsi disebut <b>surjektif</b>
+apabila setiap elemen pada kodomain
+memiliki sedikitnya satu pasangan
+di domain.
+
+Dengan kata lain,
+semua nilai keluaran dapat dicapai
+oleh fungsi tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Fungsi Surjektif</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+f(x)=x³
+
+</pre>
+
+<p>
+
+untuk domain dan kodomain bilangan real.
+
+Setiap bilangan real memiliki akar pangkat tiga,
+sehingga semua nilai pada kodomain
+dapat dicapai.
+
+Karena itu,
+fungsi tersebut bersifat surjektif.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Fungsi Bijektif</h2>
+
+<p>
+
+Jika suatu fungsi sekaligus
+bersifat injektif dan surjektif,
+maka fungsi tersebut disebut
+<b>bijektif</b>.
+
+Fungsi bijektif memiliki fungsi invers,
+yang sering dimanfaatkan
+dalam Functional Equation tingkat lanjut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Cara Membuktikan Fungsi Injektif</h2>
+
+<ol>
+
+<li>Andaikan <code>f(a)=f(b)</code>.</li>
+
+<li>Gunakan Functional Equation yang diberikan.</li>
+
+<li>Tunjukkan bahwa akibatnya <code>a=b</code>.</li>
+
+<li>Simpulkan bahwa fungsi bersifat injektif.</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Cara Membuktikan Fungsi Surjektif</h2>
+
+<ol>
+
+<li>Ambil sembarang nilai pada kodomain.</li>
+
+<li>Tunjukkan bahwa ada masukan yang menghasilkan nilai tersebut.</li>
+
+<li>Karena semua nilai dapat dicapai, fungsi bersifat surjektif.</li>
+
+</ol>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Mengapa Penting di Olimpiade?</h2>
+
+<p>
+
+Banyak soal Functional Equation
+mengandung bentuk seperti
+
+</p>
+
+<pre>
+
+f(a)=f(b)
+
+</pre>
+
+<p>
+
+Jika sebelumnya sudah dibuktikan
+bahwa fungsi bersifat injektif,
+maka kita dapat langsung menyimpulkan
+
+</p>
+
+<pre>
+
+a=b
+
+</pre>
+
+<p>
+
+Kesimpulan sederhana ini sering menjadi
+langkah utama menuju penyelesaian soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap fungsi pasti injektif tanpa pembuktian.</li>
+
+<li>Menganggap fungsi pasti memiliki invers.</li>
+
+<li>Keliru membedakan injektif dan surjektif.</li>
+
+<li>Menggunakan sifat yang belum dibuktikan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Saat menemukan bentuk
+
+</p>
+
+<pre>
+
+f(a)=f(b)
+
+</pre>
+
+<p>
+
+jangan langsung menyimpulkan
+
+</p>
+
+<pre>
+
+a=b
+
+</pre>
+
+<p>
+
+Kesimpulan tersebut hanya boleh digunakan
+jika fungsi telah dibuktikan bersifat injektif.
+
+Membuktikan injektivitas sering menjadi
+langkah pertama dalam banyak soal
+Functional Equation tingkat OSN dan IMO.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>⑥ Fungsi Genap & Fungsi Ganjil</h1>
+
+<h2>📖 Mengapa Perlu Dipelajari?</h2>
+
+<p>
+
+Pada banyak Functional Equation,
+kita akan mencoba mengganti
+
+</p>
+
+<pre>
+
+x → -x
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+y → -y
+
+</pre>
+
+<p>
+
+Tujuannya adalah mencari hubungan antara
+
+</p>
+
+<pre>
+
+f(x)
+
+dan
+
+f(-x)
+
+</pre>
+
+<p>
+
+Dari hubungan tersebut,
+kita sering dapat mengetahui apakah fungsi
+bersifat <b>genap</b>,
+<b>ganjil</b>,
+atau bukan keduanya.
+
+Mengetahui sifat ini dapat
+menyederhanakan pembuktian secara signifikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Fungsi Genap (Even Function)</h2>
+
+<p>
+
+Suatu fungsi disebut <b>genap</b>
+apabila memenuhi
+
+</p>
+
+<pre>
+
+f(-x)=f(x)
+
+</pre>
+
+<p>
+
+Artinya,
+nilai fungsi tetap sama
+meskipun tanda masukan dibalik.
+
+Secara grafik,
+fungsi genap simetris terhadap
+sumbu-Y.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Fungsi Genap</h2>
+
+<pre>
+
+f(x)=x²
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(-x)²=x²
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+f(-x)=f(x)
+
+</pre>
+
+<p>
+
+Sehingga fungsi tersebut adalah fungsi genap.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Fungsi Ganjil (Odd Function)</h2>
+
+<p>
+
+Suatu fungsi disebut <b>ganjil</b>
+apabila memenuhi
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+<p>
+
+Artinya,
+membalik tanda masukan
+akan membalik tanda keluaran.
+
+Grafik fungsi ganjil simetris
+terhadap titik asal (0,0).
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Fungsi Ganjil</h2>
+
+<pre>
+
+f(x)=x³
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+(-x)³=-x³
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+<p>
+
+Sehingga fungsi tersebut merupakan fungsi ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Fungsi yang Bukan Genap maupun Ganjil</h2>
+
+<p>
+
+Tidak semua fungsi memiliki salah satu sifat di atas.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+f(x)=x+1
+
+</pre>
+
+<p>
+
+memenuhi
+
+</p>
+
+<pre>
+
+f(-x)=1-x
+
+</pre>
+
+<p>
+
+Nilai tersebut tidak sama dengan
+
+</p>
+
+<pre>
+
+f(x)
+
+</pre>
+
+<p>
+
+maupun
+
+</p>
+
+<pre>
+
+-f(x)
+
+</pre>
+
+<p>
+
+Sehingga fungsi tersebut bukan fungsi genap
+dan juga bukan fungsi ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Cara Mengenali pada Functional Equation</h2>
+
+<p>
+
+Misalkan diberikan
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Lakukan substitusi
+
+</p>
+
+<pre>
+
+y=-x
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<pre>
+
+f(0)=f(x)+f(-x)
+
+</pre>
+
+<p>
+
+Apabila sebelumnya telah diketahui bahwa
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+<p>
+
+Artinya,
+fungsi tersebut adalah fungsi ganjil.
+
+Teknik ini sangat sering digunakan
+dalam soal Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Contoh Penerapan</h2>
+
+<p>
+
+Dalam banyak soal,
+setelah memperoleh hubungan
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+<p>
+
+kita dapat mengganti semua kemunculan
+<code>f(-x)</code>
+menjadi
+<code>-f(x)</code>.
+
+Hal ini membuat persamaan
+menjadi jauh lebih sederhana
+dan mempermudah langkah berikutnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap semua fungsi adalah genap atau ganjil.</li>
+
+<li>Tidak membuktikan hubungan <code>f(-x)</code> terlebih dahulu.</li>
+
+<li>Keliru membedakan fungsi genap dan fungsi ganjil.</li>
+
+<li>Menggunakan sifat simetri tanpa dasar.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Setelah memperoleh nilai
+
+</p>
+
+<pre>
+
+f(0)
+
+</pre>
+
+<p>
+
+cobalah selalu melakukan substitusi
+
+</p>
+
+<pre>
+
+y=-x
+
+</pre>
+
+<p>
+
+Langkah sederhana ini sering langsung
+menunjukkan apakah fungsi bersifat
+genap, ganjil,
+atau tidak keduanya.
+
+Ini adalah salah satu teknik
+yang paling sering digunakan
+dalam Functional Equation tingkat
+OSN maupun IMO.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>⑦ Menebak Bentuk Fungsi</h1>
+
+<h2>📖 Apa Maksud "Menebak"?</h2>
+
+<p>
+
+Dalam Functional Equation,
+kata <b>menebak</b> bukan berarti asal memilih bentuk fungsi.
+
+Yang dimaksud adalah membuat <b>dugaan (conjecture)</b>
+berdasarkan pola yang muncul,
+kemudian membuktikan bahwa dugaan tersebut benar.
+
+Oleh karena itu,
+setelah menemukan dugaan,
+kita tetap harus melakukan pembuktian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Mengapa Perlu Menebak?</h2>
+
+<p>
+
+Sering kali suatu Functional Equation
+memiliki pola yang mengarah
+pada bentuk fungsi tertentu.
+
+Dengan mengenali pola tersebut,
+kita dapat mempercepat proses penyelesaian.
+
+Namun ingat,
+dugaan hanyalah langkah awal,
+bukan jawaban akhir.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Dugaan Fungsi Konstan</h2>
+
+<p>
+
+Jika semua masukan menghasilkan
+nilai yang sama,
+maka kemungkinan fungsi berbentuk
+
+</p>
+
+<pre>
+
+f(x)=c
+
+</pre>
+
+<p>
+
+dengan
+<b>c</b>
+adalah suatu konstanta.
+
+Contoh:
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)
+
+</pre>
+
+<p>
+
+Persamaan tersebut menunjukkan
+bahwa perubahan nilai
+<b>x</b>
+tidak memengaruhi hasil fungsi.
+
+Hal ini mengarah pada dugaan
+bahwa fungsi merupakan fungsi konstan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Dugaan Fungsi Linear</h2>
+
+<p>
+
+Jika ditemukan hubungan seperti
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(2x)=2f(x)
+
+</pre>
+
+<p>
+
+maka kemungkinan fungsi berbentuk
+
+</p>
+
+<pre>
+
+f(x)=ax
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+f(x)=ax+b
+
+</pre>
+
+<p>
+
+Selanjutnya,
+dugaan tersebut harus diuji
+ke dalam Functional Equation.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Dugaan Fungsi Kuadrat</h2>
+
+<p>
+
+Apabila muncul banyak suku
+berpangkat dua,
+misalnya
+
+</p>
+
+<pre>
+
+x²
+
+xy
+
+y²
+
+</pre>
+
+<p>
+
+kemungkinan fungsi berbentuk
+
+</p>
+
+<pre>
+
+f(x)=ax²+bx+c
+
+</pre>
+
+<p>
+
+Kemudian koefisien
+<b>a</b>,
+<b>b</b>,
+dan
+<b>c</b>
+ditentukan menggunakan persamaan yang diberikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Dugaan Fungsi Eksponensial</h2>
+
+<p>
+
+Jika Functional Equation melibatkan
+perkalian pada variabel,
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)f(y)
+
+</pre>
+
+<p>
+
+maka sering kali fungsi
+berbentuk eksponensial,
+
+</p>
+
+<pre>
+
+f(x)=a^x
+
+</pre>
+
+<p>
+
+dengan syarat tertentu.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Analisis</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Setelah melakukan beberapa substitusi,
+diperoleh
+
+</p>
+
+<pre>
+
+f(0)=0
+
+f(-x)=-f(x)
+
+f(2x)=2f(x)
+
+</pre>
+
+<p>
+
+Hubungan-hubungan tersebut
+mengarah pada dugaan
+bahwa fungsi berbentuk linear.
+
+Langkah berikutnya adalah
+membuktikan dugaan tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menjadikan dugaan sebagai jawaban akhir tanpa pembuktian.</li>
+
+<li>Mengabaikan kemungkinan bentuk fungsi lain.</li>
+
+<li>Terlalu cepat menyimpulkan fungsi linear.</li>
+
+<li>Tidak memeriksa kembali dugaan ke Functional Equation.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Gunakan hasil-hasil yang telah diperoleh,
+seperti
+
+</p>
+
+<pre>
+
+f(0)
+
+f(-x)
+
+f(2x)
+
+</pre>
+
+<p>
+
+untuk mengenali pola fungsi.
+
+Semakin banyak hubungan yang diketahui,
+semakin mudah menentukan bentuk fungsi.
+
+Namun selalu ingat:
+
+</p>
+
+<pre>
+
+Dugaan → Uji → Buktikan
+
+</pre>
+
+<p>
+
+Jangan pernah berhenti pada tahap dugaan saja.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>⑧ Contoh Soal OSN</h1>
+
+<h2>📖 Mengapa Belajar dari Contoh?</h2>
+
+<p>
+
+Functional Equation tidak cukup dipahami hanya dengan membaca teori.
+
+Kemampuan menyelesaikan soal akan berkembang
+setelah melihat bagaimana setiap teknik digunakan
+secara bertahap.
+
+Oleh karena itu,
+kita mulai dari contoh yang sederhana
+sebelum menuju soal tingkat Olimpiade Internasional.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Contoh Soal 1</h2>
+
+<div class="example">
+
+<p>
+
+<b>Soal</b>
+
+</p>
+
+<p>
+
+Tentukan semua fungsi
+
+<b>f : ℝ → ℝ</b>
+
+yang memenuhi
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)
+
+</pre>
+
+<p>
+
+untuk setiap bilangan real
+
+<b>x</b>
+
+dan
+
+<b>y</b>.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 1 — Cari Nilai f(0)</h2>
+
+<p>
+
+Substitusikan
+
+</p>
+
+<pre>
+
+x=0
+
+y=0
+
+</pre>
+
+<p>
+
+ke dalam persamaan.
+
+Maka diperoleh
+
+</p>
+
+<pre>
+
+f(0)=f(0)+f(0)
+
+</pre>
+
+<p>
+
+Kurangkan kedua ruas dengan
+
+<b>f(0)</b>
+
+sehingga
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 2 — Cari Hubungan f(-x)</h2>
+
+<p>
+
+Sekarang pilih
+
+</p>
+
+<pre>
+
+y=-x
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+f(0)=f(x)+f(-x)
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+<p>
+
+Artinya,
+fungsi tersebut merupakan fungsi ganjil.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 3 — Cari Hubungan f(2x)</h2>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+y=x
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(2x)=2f(x)
+
+</pre>
+
+<p>
+
+Hubungan ini menunjukkan
+bahwa fungsi memiliki sifat linear
+terhadap penjumlahan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 4 — Dugaan Bentuk Fungsi</h2>
+
+<p>
+
+Dari hasil sebelumnya diperoleh
+
+</p>
+
+<ul>
+
+<li>f(0)=0</li>
+
+<li>f(-x)=-f(x)</li>
+
+<li>f(2x)=2f(x)</li>
+
+</ul>
+
+<p>
+
+Hubungan-hubungan tersebut mengarah pada dugaan
+
+</p>
+
+<pre>
+
+f(x)=ax
+
+</pre>
+
+<p>
+
+dengan
+
+<b>a</b>
+
+suatu konstanta.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 5 — Verifikasi</h2>
+
+<p>
+
+Uji dugaan tersebut.
+
+Misalkan
+
+</p>
+
+<pre>
+
+f(x)=ax
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(x+y)
+
+=a(x+y)
+
+=ax+ay
+
+=f(x)+f(y)
+
+</pre>
+
+<p>
+
+Persamaan terpenuhi.
+
+Dengan demikian,
+fungsi
+
+</p>
+
+<pre>
+
+f(x)=ax
+
+</pre>
+
+<p>
+
+merupakan solusi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>✅ Kesimpulan</h2>
+
+<div class="note">
+
+<p>
+
+Seluruh fungsi berbentuk
+
+</p>
+
+<pre>
+
+f(x)=ax
+
+</pre>
+
+<p>
+
+dengan
+
+<b>a</b>
+
+konstanta real
+memenuhi Functional Equation tersebut.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Pelajaran dari Contoh Ini</h2>
+
+<ul>
+
+<li>Mulailah dengan mencari nilai <code>f(0)</code>.</li>
+
+<li>Lanjutkan dengan mencari <code>f(-x)</code>.</li>
+
+<li>Gunakan substitusi <code>x=y</code>.</li>
+
+<li>Buat dugaan berdasarkan pola.</li>
+
+<li>Selalu lakukan verifikasi pada dugaan tersebut.</li>
+
+</ul>
+
+</section><section class="section">
+
+<h2>Contoh Soal 2</h2>
+
+<div class="example">
+
+<p>
+
+<b>Soal</b>
+
+</p>
+
+<p>
+
+Tentukan semua fungsi
+
+<b>f : ℝ → ℝ</b>
+
+yang memenuhi
+
+</p>
+
+<pre>
+
+f(xy)=f(x)f(y)
+
+</pre>
+
+<p>
+
+untuk setiap bilangan real
+
+<b>x</b>
+
+dan
+
+<b>y</b>.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 1 — Cari Nilai f(1)</h2>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+1 × 1 = 1
+
+</pre>
+
+<p>
+
+substitusikan
+
+</p>
+
+<pre>
+
+x = 1
+y = 1
+
+</pre>
+
+<p>
+
+Maka diperoleh
+
+</p>
+
+<pre>
+
+f(1)=f(1)²
+
+</pre>
+
+<p>
+
+Sehingga hanya ada dua kemungkinan,
+
+</p>
+
+<pre>
+
+f(1)=0
+
+atau
+
+f(1)=1
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 2 — Analisis Kasus</h2>
+
+<p>
+
+<b>Kasus 1:</b>
+
+Jika
+
+</p>
+
+<pre>
+
+f(1)=0
+
+</pre>
+
+<p>
+
+maka untuk setiap
+
+<b>x</b>,
+
+</p>
+
+<pre>
+
+f(x)
+
+=f(x·1)
+
+=f(x)f(1)
+
+=f(x)×0
+
+=0
+
+</pre>
+
+<p>
+
+Artinya,
+
+</p>
+
+<pre>
+
+f(x)=0
+
+</pre>
+
+<p>
+
+untuk semua nilai <b>x</b>.
+
+Ini disebut <b>fungsi nol</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 3 — Kasus Kedua</h2>
+
+<p>
+
+Sekarang anggap
+
+</p>
+
+<pre>
+
+f(1)=1
+
+</pre>
+
+<p>
+
+Kasus ini lebih menarik karena fungsi
+tidak selalu bernilai nol.
+
+Selanjutnya kita mencari sifat-sifat fungsi
+menggunakan substitusi lain.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 4 — Cari Nilai f(0)</h2>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+x = 0
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(0)
+
+=f(0·y)
+
+=f(0)f(y)
+
+</pre>
+
+<p>
+
+Persamaan ini berlaku untuk setiap
+
+<b>y</b>.
+
+Artinya terdapat dua kemungkinan:
+
+</p>
+
+<ul>
+
+<li><code>f(0)=0</code>, atau</li>
+<li><code>f(y)=1</code> untuk semua <b>y</b>.</li>
+
+</ul>
+
+<p>
+
+Kedua kemungkinan harus dianalisis
+sesuai dengan kondisi soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 5 — Cari Nilai f(-1)</h2>
+
+<p>
+
+Gunakan fakta bahwa
+
+</p>
+
+<pre>
+
+(-1)(-1)=1
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+f(-1)²=f(1)
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+f(1)=1
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+f(-1)=1
+
+atau
+
+f(-1)=-1
+
+</pre>
+
+<p>
+
+Informasi ini sering menjadi langkah penting
+dalam soal Functional Equation tingkat lanjut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Pelajaran dari Contoh Ini</h2>
+
+<ul>
+
+<li>Untuk persamaan perkalian, mulai dari mencari <code>f(1)</code>.</li>
+
+<li>Selanjutnya cari <code>f(0)</code>.</li>
+
+<li>Periksa nilai <code>f(-1)</code>.</li>
+
+<li>Lakukan analisis kasus jika muncul lebih dari satu kemungkinan.</li>
+
+<li>Jangan terburu-buru menyimpulkan bentuk fungsi.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips OSN</h3>
+
+<p>
+
+Jika Functional Equation melibatkan perkalian,
+urutan substitusi yang paling sering digunakan adalah:
+
+</p>
+
+<pre>
+
+(1,1)
+↓
+
+(x,1)
+↓
+
+(0,y)
+↓
+
+(-1,-1)
+↓
+
+(x,-1)
+
+</pre>
+
+<p>
+
+Urutan ini sering menghasilkan informasi penting
+yang dapat digunakan untuk menyelesaikan soal.
+
+</p>
+
+</div>
+
+</section><section class="section">
+
+<h1>⑨ Contoh Soal IMO</h1>
+
+<h2>📖 Pendahuluan</h2>
+
+<p>
+
+Pada tingkat Olimpiade Internasional (IMO),
+Functional Equation hampir tidak pernah dapat diselesaikan
+dengan satu trik saja.
+
+Biasanya diperlukan gabungan beberapa teknik,
+seperti:
+
+</p>
+
+<ul>
+
+<li>Substitusi nilai khusus.</li>
+
+<li>Membuktikan fungsi injektif.</li>
+
+<li>Mencari nilai <code>f(0)</code> dan <code>f(1)</code>.</li>
+
+<li>Mencari hubungan <code>f(-x)</code>.</li>
+
+<li>Mengenali pola fungsi.</li>
+
+<li>Membuktikan dugaan secara lengkap.</li>
+
+</ul>
+
+<p>
+
+Berikut adalah contoh soal bergaya IMO.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Contoh Soal IMO</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan semua fungsi
+
+<b>f : ℝ → ℝ</b>
+
+yang memenuhi
+
+</p>
+
+<pre>
+
+f(x+y)=f(x)+f(y)+2xy
+
+</pre>
+
+<p>
+
+untuk setiap bilangan real
+<b>x</b>
+dan
+<b>y</b>.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 1 — Cari Nilai f(0)</h2>
+
+<p>
+
+Substitusi
+
+</p>
+
+<pre>
+
+x=0
+y=0
+
+</pre>
+
+<p>
+
+diperoleh
+
+</p>
+
+<pre>
+
+f(0)=2f(0)
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+f(0)=0
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 2 — Cari Hubungan f(-x)</h2>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+y=-x
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+0=f(x)+f(-x)-2x²
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(-x)=2x²-f(x)
+
+</pre>
+
+<p>
+
+Hubungan ini akan digunakan
+pada langkah berikutnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 3 — Cari Nilai f(2x)</h2>
+
+<p>
+
+Ambil
+
+</p>
+
+<pre>
+
+y=x
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(2x)=2f(x)+2x²
+
+</pre>
+
+<p>
+
+Persamaan ini menunjukkan
+bahwa fungsi kemungkinan mengandung
+suku kuadrat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 4 — Membuat Dugaan</h2>
+
+<p>
+
+Karena terdapat suku
+
+</p>
+
+<pre>
+
+2xy
+
+</pre>
+
+<p>
+
+dugaan yang wajar adalah
+
+</p>
+
+<pre>
+
+f(x)=x²+ax
+
+</pre>
+
+<p>
+
+dengan
+<b>a</b>
+suatu konstanta real.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Langkah 5 — Verifikasi</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+f(x)=x²+ax
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+f(x+y)
+
+=(x+y)²+a(x+y)
+
+=x²+2xy+y²+ax+ay
+
+</pre>
+
+<p>
+
+Sedangkan
+
+</p>
+
+<pre>
+
+f(x)+f(y)+2xy
+
+=(x²+ax)+(y²+ay)+2xy
+
+=x²+2xy+y²+ax+ay
+
+</pre>
+
+<p>
+
+Kedua ruas sama,
+sehingga dugaan benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>✅ Jawaban</h2>
+
+<div class="note">
+
+<p>
+
+Semua fungsi yang memenuhi persamaan tersebut adalah
+
+</p>
+
+<pre>
+
+f(x)=x²+ax
+
+</pre>
+
+<p>
+
+dengan
+
+<b>a</b>
+
+merupakan konstanta real.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Pelajaran Penting</h2>
+
+<ul>
+
+<li>Selalu mulai dari mencari <code>f(0)</code>.</li>
+
+<li>Gunakan substitusi <code>y=-x</code> untuk memperoleh hubungan baru.</li>
+
+<li>Perhatikan apakah muncul suku kuadrat, linear, atau eksponensial.</li>
+
+<li>Buat dugaan berdasarkan pola yang muncul.</li>
+
+<li>Verifikasi dugaan dengan mensubstitusikannya kembali ke persamaan awal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h3>💡 Tips IMO</h3>
+
+<p>
+
+Pada soal IMO,
+langkah tersulit biasanya bukan menghitung,
+melainkan menemukan pola fungsi.
+
+Jika dugaan yang dibuat tepat,
+sisa pembuktian biasanya menjadi jauh lebih mudah.
+
+Karena itu,
+biasakan menganalisis bentuk persamaan
+sebelum melakukan perhitungan panjang.
+
+</p>
+
+</div>
+
+</section><hr>
+
+<section class="section">
+
+<h1>⑩ Ringkasan & Tips</h1>
+
+<h2>📚 Ringkasan Bab 7</h2>
+
+<p>
+
+Selamat!
+
+Kamu telah mempelajari dasar-dasar
+<b>Functional Equation Techniques</b>,
+salah satu materi yang paling sering muncul
+pada Olimpiade Matematika.
+
+Materi ini mengajarkan bahwa
+menyelesaikan Functional Equation
+bukan sekadar menghitung,
+melainkan mengenali pola,
+melakukan substitusi yang tepat,
+serta menyusun pembuktian yang logis.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📖 Ringkasan Materi</h2>
+
+<table>
+
+<tr>
+
+<th>Materi</th>
+
+<th>Inti Pembelajaran</th>
+
+</tr>
+
+<tr>
+
+<td>Pengertian</td>
+
+<td>Menentukan bentuk fungsi yang memenuhi suatu hubungan.</td>
+
+</tr>
+
+<tr>
+
+<td>Jenis Functional Equation</td>
+
+<td>Linear, Multiplikatif, Komposisi, Rekursif, Simetris, dan Campuran.</td>
+
+</tr>
+
+<tr>
+
+<td>Strategi Dasar</td>
+
+<td>Mengamati pola sebelum melakukan perhitungan.</td>
+
+</tr>
+
+<tr>
+
+<td>Substitusi Nilai Khusus</td>
+
+<td>Menggunakan x=0, y=0, x=y, x=-y, x=1, dan nilai penting lainnya.</td>
+
+</tr>
+
+<tr>
+
+<td>Injektif & Surjektif</td>
+
+<td>Mengenali sifat fungsi untuk mempermudah pembuktian.</td>
+
+</tr>
+
+<tr>
+
+<td>Fungsi Genap & Ganjil</td>
+
+<td>Mempelajari hubungan antara f(x) dan f(-x).</td>
+
+</tr>
+
+<tr>
+
+<td>Menebak Bentuk Fungsi</td>
+
+<td>Membuat dugaan berdasarkan pola, lalu membuktikannya.</td>
+
+</tr>
+
+<tr>
+
+<td>Contoh Soal</td>
+
+<td>Menerapkan seluruh teknik secara bertahap.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Urutan Penyelesaian Functional Equation</h2>
+
+<p>
+
+Ketika menghadapi soal baru,
+gunakan urutan berikut.
+
+</p>
+
+<pre>
+
+1. Pahami domain dan kodomain.
+
+↓
+
+2. Cari nilai f(0).
+
+↓
+
+3. Cari nilai f(1) jika diperlukan.
+
+↓
+
+4. Substitusi x=y.
+
+↓
+
+5. Substitusi y=-x.
+
+↓
+
+6. Analisis apakah fungsi injektif
+   atau surjektif.
+
+↓
+
+7. Cari pola.
+
+↓
+
+8. Buat dugaan bentuk fungsi.
+
+↓
+
+9. Buktikan dugaan.
+
+</pre>
+
+<p>
+
+Urutan ini tidak selalu wajib,
+namun sangat membantu
+untuk sebagian besar soal OSN.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🏆 Tips Menghadapi Olimpiade</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Jangan terburu-buru menghitung.</li>
+
+<li>Biasakan mencari <code>f(0)</code> terlebih dahulu.</li>
+
+<li>Gunakan substitusi sederhana sebelum mencoba ide yang rumit.</li>
+
+<li>Perhatikan simetri pada persamaan.</li>
+
+<li>Jika menemukan <code>f(a)=f(b)</code>, pikirkan apakah fungsi sudah terbukti injektif.</li>
+
+<li>Selalu verifikasi dugaan fungsi.</li>
+
+<li>Tuliskan pembuktian secara runtut dan jelas.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Pesan Penting</h2>
+
+<p>
+
+Functional Equation bukan tentang menghafal rumus.
+
+Keberhasilan menyelesaikan soal
+bergantung pada kemampuan mengenali pola,
+memilih strategi,
+dan menyusun pembuktian yang logis.
+
+Semakin banyak soal yang dikerjakan,
+semakin kuat intuisi matematis yang dimiliki.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📖 Materi Selanjutnya</h2>
+
+<p>
+
+Pada bab berikutnya,
+kamu akan mempelajari
+<b>Algorithmic Thinking</b>.
+
+Materi ini membahas cara berpikir sistematis
+dalam memecahkan masalah,
+mulai dari menyusun strategi,
+membagi masalah menjadi bagian kecil,
+hingga merancang solusi yang efisien.
+
+Kemampuan ini tidak hanya berguna
+untuk Olimpiade Matematika,
+tetapi juga sangat penting
+dalam informatika,
+pemrograman,
+dan penelitian ilmiah.
+
+</p>
+
+</section>
+
+<hr>
+
+<div class="navigation">
+
+<a href="olimpiade6.html" class="btn">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="olimpiade8.html" class="btn">
+
+Bab Selanjutnya ➜
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
