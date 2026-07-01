@@ -1,1 +1,1930 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Olimpiade 3 - Teknik Manipulasi Ketimpangan</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="hero">
+
+<h1>🏆 Olimpiade 3</h1>
+
+<h2>Teknik Manipulasi Ketimpangan</h2>
+
+<p class="subtitle">
+
+Pada bab ini kita akan mempelajari berbagai teknik yang digunakan
+untuk mengubah bentuk suatu ketimpangan agar menjadi lebih mudah
+dibuktikan. Teknik-teknik ini merupakan senjata utama dalam
+OSN Nasional hingga International Mathematical Olympiad (IMO).
+
+</p>
+
+</header>
+
+<section class="section">
+
+<h2>📖 Mengapa Perlu Manipulasi?</h2>
+
+<p>
+
+Banyak soal Olimpiade tidak dapat diselesaikan hanya dengan
+menghafal AM-GM, Cauchy, atau Schur.
+
+Sering kali bentuk soal harus diubah terlebih dahulu
+agar salah satu ketimpangan tersebut dapat diterapkan.
+
+</p>
+
+<p>
+
+Karena itu, kemampuan memanipulasi bentuk aljabar
+sama pentingnya dengan menguasai rumus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Bab</h2>
+
+<ul>
+
+<li>Mengenali bentuk soal.</li>
+
+<li>Menentukan teknik manipulasi yang tepat.</li>
+
+<li>Menyederhanakan bentuk ketimpangan.</li>
+
+<li>Menggabungkan beberapa metode sekaligus.</li>
+
+<li>Menyelesaikan soal OSN tingkat lanjut.</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>① Homogenization</h1>
+
+<h2>📖 Apa itu Homogenization?</h2>
+
+<p>
+
+<b>Homogenization</b> adalah teknik mengubah suatu ketimpangan
+agar setiap suku memiliki derajat yang sama.
+
+Dengan demikian, berbagai ketimpangan seperti
+AM-GM, Schur, atau Muirhead menjadi lebih mudah digunakan.
+
+</p>
+
+<p>
+
+Teknik ini merupakan salah satu teknik yang paling sering muncul
+dalam pembuktian Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Misalkan terdapat dua suku
+
+</p>
+
+<pre>
+
+a²
+
+dan
+
+b
+
+</pre>
+
+<p>
+
+Kedua suku tersebut memiliki derajat berbeda,
+sehingga sulit dibandingkan secara langsung.
+
+Dengan Homogenization, kita mengubahnya menjadi bentuk
+yang memiliki derajat sama sehingga lebih mudah dianalisis.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Contoh Ide Homogenization</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+a+b+c=1
+
+</pre>
+
+<p>
+
+Jika muncul konstanta
+
+</p>
+
+<pre>
+
+1
+
+</pre>
+
+<p>
+
+maka kita dapat menggantinya dengan
+
+</p>
+
+<pre>
+
+a+b+c
+
+</pre>
+
+<p>
+
+sehingga seluruh ekspresi memiliki derajat yang seragam.
+
+Inilah ide dasar Homogenization.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Homogenization?</h2>
+
+<ul>
+
+<li>Ada konstanta seperti 1.</li>
+
+<li>Derajat setiap suku berbeda.</li>
+
+<li>Diketahui a+b+c atau bentuk sejenis.</li>
+
+<li>Ingin menerapkan Schur atau Muirhead.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+a+b+c=1
+
+</pre>
+
+<p>
+
+dan akan dibuktikan suatu ketimpangan yang mengandung konstanta.
+
+Konstanta tersebut dapat diganti menjadi
+
+</p>
+
+<pre>
+
+a+b+c
+
+</pre>
+
+<p>
+
+sehingga semua suku mempunyai derajat yang sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Menghomogenkan tanpa informasi yang cukup.</li>
+
+<li>Salah menentukan derajat.</li>
+
+<li>Mengubah bentuk sehingga tidak lagi ekuivalen.</li>
+
+</ul>
+
+</section><section class="section">
+
+<h1>② Normalization</h1>
+
+<h2>📖 Apa itu Normalization?</h2>
+
+<p>
+
+<b>Normalization</b> adalah teknik menyederhanakan suatu masalah
+dengan mengubah variabel sehingga memenuhi suatu syarat tertentu.
+
+Tujuannya adalah membuat perhitungan lebih mudah tanpa
+mengubah sifat utama dari ketimpangan yang akan dibuktikan.
+
+</p>
+
+<p>
+
+Teknik ini sangat sering digunakan dalam OSN,
+IMO, dan berbagai pembuktian matematika tingkat lanjut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan kita memiliki tiga bilangan positif
+yang jumlahnya tidak diketahui.
+
+Daripada terus membawa bentuk yang rumit,
+kita dapat "menormalkan" ketiganya sehingga memenuhi syarat sederhana,
+misalnya jumlahnya menjadi 1.
+
+Dengan demikian, banyak rumus akan menjadi lebih singkat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📐 Bentuk Normalisasi yang Umum</h2>
+
+<p>
+
+Beberapa bentuk normalisasi yang paling sering digunakan adalah:
+
+</p>
+
+<table>
+
+<tr>
+<th>Sebelum</th>
+<th>Sesudah</th>
+</tr>
+
+<tr>
+<td>a+b+c=S</td>
+<td>a+b+c=1</td>
+</tr>
+
+<tr>
+<td>ab+bc+ca=K</td>
+<td>ab+bc+ca=1</td>
+</tr>
+
+<tr>
+<td>abc=T</td>
+<td>abc=1</td>
+</tr>
+
+</table>
+
+<p>
+
+Pemilihan bentuk normalisasi bergantung pada informasi
+yang diberikan dalam soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+a+b+c=15
+
+</pre>
+
+<p>
+
+Kita definisikan variabel baru:
+
+</p>
+
+<pre>
+
+x = a/15
+
+y = b/15
+
+z = c/15
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<pre>
+
+x+y+z=1
+
+</pre>
+
+<p>
+
+Sekarang pembuktian dapat dilakukan menggunakan
+variabel x, y, dan z yang lebih sederhana.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+abc=64
+
+</pre>
+
+<p>
+
+Definisikan
+
+</p>
+
+<pre>
+
+x=a/4
+
+y=b/4
+
+z=c/4
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+xyz=1
+
+</pre>
+
+<p>
+
+Bentuk ini jauh lebih mudah digunakan
+pada berbagai ketimpangan simetris.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Normalization?</h2>
+
+<ul>
+
+<li>Diketahui jumlah variabel.</li>
+
+<li>Diketahui hasil kali variabel.</li>
+
+<li>Diketahui jumlah pasangan hasil kali.</li>
+
+<li>Ketimpangan bersifat homogen.</li>
+
+<li>Ingin menyederhanakan bentuk soal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🔗 Hubungan dengan Homogenization</h2>
+
+<p>
+
+Homogenization dan Normalization sering digunakan
+secara bersamaan.
+
+Biasanya langkah penyelesaiannya adalah:
+
+</p>
+
+<pre>
+
+Homogenization
+
+↓
+
+Normalization
+
+↓
+
+AM-GM / Schur / Cauchy / Muirhead
+
+</pre>
+
+<p>
+
+Dengan urutan ini, bentuk soal menjadi jauh lebih mudah
+untuk dianalisis.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan Umum</h2>
+
+<ul>
+
+<li>Melakukan normalisasi pada ketimpangan yang tidak homogen.</li>
+
+<li>Lupa mengubah semua variabel secara konsisten.</li>
+
+<li>Menganggap semua soal dapat dinormalisasi.</li>
+
+<li>Salah memilih konstanta pembagi.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Normalization</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Tujuan</td>
+<td>Menyederhanakan variabel</td>
+</tr>
+
+<tr>
+<td>Teknik</td>
+<td>Mengubah skala variabel</td>
+</tr>
+
+<tr>
+<td>Sering Dipakai Bersama</td>
+<td>Homogenization</td>
+</tr>
+
+<tr>
+<td>Tingkat</td>
+<td>OSN Nasional hingga IMO</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>③ Substitution</h1>
+
+<p>
+
+Setelah mempelajari Homogenization dan Normalization, kita akan membahas <b>Substitution</b>. Teknik ini digunakan untuk mengganti variabel dengan bentuk lain yang lebih sederhana sehingga ketimpangan menjadi lebih mudah dibuktikan. Substitution merupakan salah satu teknik yang paling sering digunakan dalam soal-soal OSN dan IMO.
+
+</p>
+
+</section><section class="section">
+
+<h1>③ Substitution</h1>
+
+<h2>📖 Apa itu Substitution?</h2>
+
+<p>
+
+<b>Substitution</b> (Substitusi) adalah teknik mengganti suatu variabel
+dengan bentuk lain yang ekuivalen sehingga soal menjadi lebih mudah
+untuk dianalisis atau dibuktikan.
+
+</p>
+
+<p>
+
+Dalam Olimpiade Matematika, memilih substitusi yang tepat sering kali
+merupakan langkah paling penting sebelum menggunakan ketimpangan
+seperti AM-GM, Cauchy-Schwarz, atau Schur.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Misalkan terdapat sebuah pintu yang terlalu sempit untuk dilewati.
+
+Daripada memaksa melewatinya, kita mencari pintu lain yang lebih lebar.
+
+Begitu pula dalam matematika. Daripada langsung menyelesaikan bentuk
+yang rumit, kita mengubahnya menjadi bentuk yang lebih sederhana.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Substitusi</h2>
+
+<ul>
+
+<li>Menyederhanakan bentuk aljabar.</li>
+
+<li>Mengurangi jumlah variabel.</li>
+
+<li>Mengubah pecahan menjadi bentuk yang lebih mudah.</li>
+
+<li>Memenuhi syarat suatu ketimpangan.</li>
+
+<li>Mengungkap pola tersembunyi pada soal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Substitusi yang Paling Sering Digunakan</h2>
+
+<table>
+
+<tr>
+<th>Substitusi</th>
+<th>Kegunaan</th>
+</tr>
+
+<tr>
+<td>a=x+y</td>
+<td>Menghilangkan syarat segitiga.</td>
+</tr>
+
+<tr>
+<td>a=x/y</td>
+<td>Mengubah bentuk rasio.</td>
+</tr>
+
+<tr>
+<td>a=x/(y+z)</td>
+<td>Pecahan simetris.</td>
+</tr>
+
+<tr>
+<td>x²=t</td>
+<td>Mengurangi pangkat.</td>
+</tr>
+
+<tr>
+<td>a=kr</td>
+<td>Normalisasi.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1 : Substitusi a=x+y</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+a+b>c
+
+a+c>b
+
+b+c>a
+
+</pre>
+
+<p>
+
+Daripada menggunakan tiga syarat tersebut secara langsung,
+kita dapat menuliskan
+
+</p>
+
+<pre>
+
+a=x+y
+
+b=y+z
+
+c=z+x
+
+</pre>
+
+<p>
+
+dengan
+
+</p>
+
+<pre>
+
+x,y,z>0
+
+</pre>
+
+<p>
+
+Sekarang syarat segitiga otomatis terpenuhi sehingga
+perhitungan menjadi jauh lebih mudah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2 : Substitusi Rasio</h2>
+
+<p>
+
+Misalkan terdapat bentuk
+
+</p>
+
+<pre>
+
+a/b
+
+</pre>
+
+<p>
+
+Kita dapat mendefinisikan
+
+</p>
+
+<pre>
+
+a=bx
+
+</pre>
+
+<p>
+
+sehingga
+
+</p>
+
+<pre>
+
+a/b=x
+
+</pre>
+
+<p>
+
+Dengan demikian bentuk pecahan berubah menjadi
+variabel tunggal yang lebih sederhana.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 3 : Mengurangi Pangkat</h2>
+
+<p>
+
+Misalkan muncul bentuk
+
+</p>
+
+<pre>
+
+x⁴+5x²+6
+
+</pre>
+
+<p>
+
+Gunakan substitusi
+
+</p>
+
+<pre>
+
+t=x²
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<pre>
+
+t²+5t+6
+
+</pre>
+
+<p>
+
+yang jauh lebih mudah difaktorkan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Substitusi?</h2>
+
+<ul>
+
+<li>Bentuk aljabar terlalu rumit.</li>
+
+<li>Terdapat syarat khusus seperti sisi segitiga.</li>
+
+<li>Banyak pecahan yang memiliki pola sama.</li>
+
+<li>Ada pangkat tinggi yang dapat disederhanakan.</li>
+
+<li>Ingin menerapkan ketimpangan tertentu.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Substitusi tidak ekuivalen dengan soal awal.</li>
+
+<li>Lupa mengubah semua variabel.</li>
+
+<li>Tidak memperhatikan syarat variabel positif.</li>
+
+<li>Memilih substitusi yang justru membuat soal lebih rumit.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Substitusi</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Tujuan</td>
+<td>Menyederhanakan bentuk soal</td>
+</tr>
+
+<tr>
+<td>Kelebihan</td>
+<td>Mengungkap pola tersembunyi</td>
+</tr>
+
+<tr>
+<td>Sering Digunakan Bersama</td>
+<td>Homogenization & Normalization</td>
+</tr>
+
+<tr>
+<td>Tingkat</td>
+<td>OSN hingga IMO</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>④ Transformation</h1>
+
+<p>
+
+Tidak semua soal dapat diselesaikan hanya dengan substitusi. Pada beberapa soal, kita perlu <b>mengubah bentuk aljabar</b> tanpa mengganti variabel. Teknik inilah yang disebut <b>Transformation</b>, dan akan menjadi pembahasan pada bagian berikutnya.
+
+</p>
+
+</section><section class="section">
+
+<h1>④ Transformation</h1>
+
+<h2>📖 Apa itu Transformation?</h2>
+
+<p>
+
+<b>Transformation</b> (Transformasi) adalah teknik mengubah bentuk
+suatu ekspresi matematika menjadi bentuk lain yang ekuivalen,
+tanpa mengubah nilai atau kebenarannya.
+
+Tujuannya adalah membuat ekspresi lebih sederhana atau
+lebih mudah dikenali sehingga dapat diterapkan ketimpangan
+atau teorema tertentu.
+
+</p>
+
+<p>
+
+Transformation merupakan salah satu teknik yang paling sering
+digunakan dalam Olimpiade Matematika karena banyak soal
+tidak dapat diselesaikan dalam bentuk aslinya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan sebuah puzzle yang sulit dikenali.
+
+Jika potongan-potongannya diputar atau disusun ulang,
+gambar akhirnya tetap sama tetapi menjadi jauh lebih mudah dipahami.
+
+Begitu pula dalam matematika.
+Kita tidak mengubah makna ekspresi,
+melainkan hanya mengubah bentuknya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Transformation</h2>
+
+<ul>
+
+<li>Menyederhanakan bentuk aljabar.</li>
+
+<li>Menampilkan pola yang tersembunyi.</li>
+
+<li>Mempermudah penggunaan ketimpangan.</li>
+
+<li>Mengurangi bentuk pecahan yang rumit.</li>
+
+<li>Mengubah bentuk agar dapat difaktorkan.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Teknik Transformation yang Sering Digunakan</h2>
+
+<table>
+
+<tr>
+<th>Teknik</th>
+<th>Kegunaan</th>
+</tr>
+
+<tr>
+<td>Faktorisasi</td>
+<td>Mengubah bentuk menjadi hasil kali.</td>
+</tr>
+
+<tr>
+<td>Ekspansi</td>
+<td>Membuka tanda kurung.</td>
+</tr>
+
+<tr>
+<td>Menyusun ulang suku</td>
+<td>Mencari pola tersembunyi.</td>
+</tr>
+
+<tr>
+<td>Melengkapkan kuadrat</td>
+<td>Membentuk kuadrat sempurna.</td>
+</tr>
+
+<tr>
+<td>Memisahkan pecahan</td>
+<td>Menyederhanakan ekspresi rasional.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1 : Faktorisasi</h2>
+
+<p>
+
+Misalkan terdapat bentuk
+
+</p>
+
+<pre>
+
+a²-b²
+
+</pre>
+
+<p>
+
+Kita ubah menjadi
+
+</p>
+
+<pre>
+
+(a-b)(a+b)
+
+</pre>
+
+<p>
+
+Bentuk hasil kali sering kali lebih mudah digunakan
+dalam pembuktian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2 : Melengkapkan Kuadrat</h2>
+
+<p>
+
+Misalkan terdapat bentuk
+
+</p>
+
+<pre>
+
+x²+6x+5
+
+</pre>
+
+<p>
+
+Kita ubah menjadi
+
+</p>
+
+<pre>
+
+(x+3)²-4
+
+</pre>
+
+<p>
+
+Sekarang sifat kuadrat sempurna dapat digunakan
+untuk menentukan nilai minimum.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 3 : Menyusun Ulang</h2>
+
+<p>
+
+Misalkan terdapat bentuk
+
+</p>
+
+<pre>
+
+ab+ac+bc
+
+</pre>
+
+<p>
+
+Kadang lebih mudah ditulis sebagai
+
+</p>
+
+<pre>
+
+a(b+c)+bc
+
+</pre>
+
+<p>
+
+atau bentuk lain sesuai kebutuhan soal.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Transformation?</h2>
+
+<ul>
+
+<li>Tidak terlihat pola ketimpangan.</li>
+
+<li>Bentuk sulit difaktorkan.</li>
+
+<li>Terdapat banyak tanda kurung.</li>
+
+<li>Ekspresi dapat disusun ulang menjadi bentuk yang lebih sederhana.</li>
+
+<li>Ingin menerapkan AM-GM, Cauchy, atau Schur.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Mengubah bentuk yang tidak ekuivalen.</li>
+
+<li>Salah melakukan faktorisasi.</li>
+
+<li>Lupa memperhatikan domain variabel.</li>
+
+<li>Membuat bentuk baru yang justru lebih rumit.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Transformation</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Tujuan</td>
+<td>Mengubah bentuk tanpa mengubah nilai.</td>
+</tr>
+
+<tr>
+<td>Teknik</td>
+<td>Faktorisasi, ekspansi, melengkapkan kuadrat, penyusunan ulang.</td>
+</tr>
+
+<tr>
+<td>Kegunaan</td>
+<td>Menampilkan pola tersembunyi.</td>
+</tr>
+
+<tr>
+<td>Tingkat</td>
+<td>OSN hingga IMO.</td>
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑤ Bounding</h1>
+
+<p>
+
+Pada bagian berikutnya kita akan mempelajari <b>Bounding</b>, yaitu teknik menentukan batas atas atau batas bawah suatu ekspresi. Teknik ini sangat sering muncul dalam soal OSN karena banyak pembuktian dimulai dengan mencari nilai maksimum atau minimum suatu bentuk aljabar.
+
+</p>
+
+</section><section class="section">
+
+<h1>⑤ Bounding</h1>
+
+<h2>📖 Apa itu Bounding?</h2>
+
+<p>
+
+<b>Bounding</b> adalah teknik menentukan
+<b>batas bawah (Lower Bound)</b> atau
+<b>batas atas (Upper Bound)</b> dari suatu ekspresi matematika.
+
+Daripada mencari nilai tepat suatu ekspresi yang rumit,
+kita cukup mencari nilai yang pasti lebih kecil atau lebih besar darinya.
+
+Teknik ini merupakan salah satu teknik paling penting
+dalam pembuktian ketimpangan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan tinggi sebuah gedung belum diketahui.
+
+Meskipun tidak tahu tinggi pastinya,
+kita mungkin tahu bahwa gedung tersebut
+lebih tinggi dari 20 meter tetapi lebih rendah dari 50 meter.
+
+Dalam matematika, ide yang sama digunakan
+untuk membatasi nilai suatu ekspresi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📌 Jenis Bounding</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>Lower Bound</td>
+
+<td>Nilai minimum yang pasti tidak dilampaui ke bawah.</td>
+
+</tr>
+
+<tr>
+
+<td>Upper Bound</td>
+
+<td>Nilai maksimum yang pasti tidak dilampaui ke atas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 1 : Lower Bound</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+x²
+
+</pre>
+
+<p>
+
+untuk setiap bilangan real.
+
+Karena kuadrat selalu tidak negatif, maka
+
+</p>
+
+<pre>
+
+x² ≥ 0
+
+</pre>
+
+<p>
+
+Artinya,
+
+<b>0 adalah lower bound</b> dari x².
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh 2 : Upper Bound</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+0 ≤ x ≤ 5
+
+</pre>
+
+<p>
+
+Maka jelas berlaku
+
+</p>
+
+<pre>
+
+x ≤ 5
+
+</pre>
+
+<p>
+
+Bilangan 5 merupakan salah satu
+upper bound dari x.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Bounding Menggunakan AM-GM</h2>
+
+<p>
+
+Misalkan terdapat ekspresi
+
+</p>
+
+<pre>
+
+a+b
+
+</pre>
+
+<p>
+
+dengan
+
+</p>
+
+<pre>
+
+ab = 9
+
+</pre>
+
+<p>
+
+Berdasarkan AM-GM,
+
+</p>
+
+<pre>
+
+a+b ≥ 2√ab
+
+</pre>
+
+<pre>
+
+=2√9
+
+=6
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<pre>
+
+a+b ≥ 6
+
+</pre>
+
+<p>
+
+Artinya, 6 merupakan batas bawah dari jumlah tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Bounding Menggunakan Cauchy</h2>
+
+<p>
+
+Cauchy-Schwarz juga sering digunakan
+untuk memperoleh batas atas maupun batas bawah.
+
+Misalnya, ketika muncul jumlah kuadrat atau hasil kali,
+Cauchy dapat memberikan pembatas yang kuat
+tanpa harus menghitung nilai tepatnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Kapan Menggunakan Bounding?</h2>
+
+<ul>
+
+<li>Diminta mencari nilai maksimum.</li>
+
+<li>Diminta mencari nilai minimum.</li>
+
+<li>Ekspresi terlalu rumit untuk dihitung langsung.</li>
+
+<li>Muncul kata "paling besar" atau "paling kecil".</li>
+
+<li>Sebagai langkah awal sebelum menerapkan ketimpangan lain.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menggunakan batas yang terlalu lemah sehingga tidak membantu.</li>
+
+<li>Salah menentukan apakah diperlukan batas atas atau batas bawah.</li>
+
+<li>Lupa memeriksa syarat variabel.</li>
+
+<li>Menganggap suatu bound selalu merupakan nilai optimum.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Saat membaca soal, biasakan bertanya:
+
+</p>
+
+<ul>
+
+<li>Apakah aku perlu mencari batas bawah?</li>
+
+<li>Apakah aku perlu mencari batas atas?</li>
+
+<li>Apakah AM-GM cukup?</li>
+
+<li>Apakah Cauchy memberikan bound yang lebih baik?</li>
+
+<li>Apakah Schur atau Jensen dapat menghasilkan bound yang lebih kuat?</li>
+
+</ul>
+
+<p>
+
+Kebiasaan ini akan mempercepat proses memilih metode
+yang tepat saat mengerjakan soal Olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Bounding</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Tujuan</td>
+
+<td>Mencari batas atas atau batas bawah.</td>
+
+</tr>
+
+<tr>
+
+<td>Metode Umum</td>
+
+<td>AM-GM, Cauchy, Jensen, Schur, Hölder.</td>
+
+</tr>
+
+<tr>
+
+<td>Kegunaan</td>
+
+<td>Pembuktian ketimpangan dan optimasi.</td>
+
+</tr>
+
+<tr>
+
+<td>Tingkat</td>
+
+<td>OSN, IMO, Universitas.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section class="section">
+
+<h1>⑥ Smoothing / Mixing Variables</h1>
+
+<p>
+
+Sebagai penutup Bab 3, kita akan mempelajari salah satu teknik paling elegan dalam Olimpiade Matematika, yaitu <b>Smoothing (Mixing Variables)</b>. Teknik ini digunakan untuk menunjukkan bahwa suatu ekspresi menjadi lebih besar atau lebih kecil ketika dua variabel dibuat semakin mendekati sama. Teknik ini banyak muncul pada soal IMO dan merupakan salah satu metode favorit dalam pembuktian ketimpangan tingkat tinggi.
+
+</p>
+
+</section><section class="section">
+
+<h1>⑥ Smoothing / Mixing Variables</h1>
+
+<h2>📖 Apa itu Smoothing?</h2>
+
+<p>
+
+<b>Smoothing</b> (atau <b>Mixing Variables</b>) adalah teknik
+mengubah dua variabel agar nilainya semakin mendekati sama,
+sementara syarat utama pada soal tetap dipertahankan.
+
+Tujuannya adalah mempermudah analisis suatu ketimpangan
+dan menemukan nilai maksimum atau minimum dari suatu ekspresi.
+
+</p>
+
+<p>
+
+Teknik ini banyak digunakan pada soal OSN tingkat nasional,
+IMO, dan berbagai kompetisi matematika internasional.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 Intuisi</h2>
+
+<p>
+
+Bayangkan kamu memiliki dua gelas.
+
+Gelas pertama berisi 9 liter air,
+gelas kedua berisi 1 liter air.
+
+Jika sebagian air dipindahkan dari gelas pertama ke gelas kedua,
+maka isi kedua gelas menjadi lebih seimbang.
+
+Dalam banyak ketimpangan,
+ekspresi justru menjadi lebih mudah dianalisis
+ketika variabel-variabel dibuat lebih seimbang.
+
+Inilah ide utama dari teknik Smoothing.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Tujuan Smoothing</h2>
+
+<ul>
+
+<li>Menyederhanakan bentuk ketimpangan.</li>
+
+<li>Mengurangi perbedaan antar variabel.</li>
+
+<li>Mencari nilai maksimum atau minimum.</li>
+
+<li>Membantu pembuktian menggunakan Jensen, Schur, atau AM-GM.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>📝 Contoh Sederhana</h2>
+
+<p>
+
+Misalkan diketahui
+
+</p>
+
+<pre>
+
+a+b=10
+
+</pre>
+
+<p>
+
+Bandingkan dua keadaan berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>a</th>
+
+<th>b</th>
+
+<th>ab</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>9</td>
+
+<td>9</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>5</td>
+
+<td>25</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Terlihat bahwa ketika kedua variabel menjadi lebih seimbang,
+hasil kali <b>ab</b> menjadi lebih besar.
+
+Fenomena inilah yang sering dimanfaatkan dalam pembuktian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>💡 Kapan Menggunakan Smoothing?</h2>
+
+<ul>
+
+<li>Jumlah variabel tetap.</li>
+
+<li>Terdapat ekspresi simetris.</li>
+
+<li>Mencari nilai ekstrem (maksimum atau minimum).</li>
+
+<li>Variabel dapat dibuat lebih mendekati sama tanpa melanggar syarat soal.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>🔗 Hubungan dengan Ketimpangan Lain</h2>
+
+<p>
+
+Smoothing sering dipadukan dengan berbagai ketimpangan lain.
+
+</p>
+
+<pre>
+
+Smoothing
+      │
+      ├──► AM-GM
+      ├──► Jensen
+      ├──► Schur
+      ├──► Muirhead
+      └──► Bounding
+
+</pre>
+
+<p>
+
+Teknik ini jarang digunakan sendirian.
+Biasanya Smoothing hanya menjadi langkah awal
+sebelum menerapkan ketimpangan lain.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⚠ Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Mengubah variabel sehingga syarat soal tidak lagi terpenuhi.</li>
+
+<li>Menganggap setiap fungsi akan membaik setelah dilakukan smoothing.</li>
+
+<li>Tidak memeriksa apakah ekspresi benar-benar simetris.</li>
+
+<li>Langsung menggunakan smoothing tanpa alasan yang jelas.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>💎 Tips OSN</h2>
+
+<div class="note">
+
+<p>
+
+Jika suatu soal memiliki ekspresi simetris dan syarat seperti
+<b>a+b+c</b> tetap, cobalah berpikir:
+
+</p>
+
+<ul>
+
+<li>Apa yang terjadi jika dua variabel dibuat sama?</li>
+
+<li>Apakah ekspresi bertambah atau berkurang?</li>
+
+<li>Apakah bentuknya menjadi lebih mudah dianalisis?</li>
+
+</ul>
+
+<p>
+
+Pertanyaan-pertanyaan tersebut sering menjadi petunjuk
+untuk menggunakan teknik Smoothing.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📚 Ringkasan Bab 3</h2>
+
+<table>
+
+<tr>
+<th>Teknik</th>
+<th>Kegunaan</th>
+</tr>
+
+<tr>
+<td>Homogenization</td>
+<td>Menyamakan derajat setiap suku.</td>
+</tr>
+
+<tr>
+<td>Normalization</td>
+<td>Menyederhanakan variabel dengan mengubah skala.</td>
+</tr>
+
+<tr>
+<td>Substitution</td>
+<td>Mengganti variabel agar bentuk lebih sederhana.</td>
+</tr>
+
+<tr>
+<td>Transformation</td>
+<td>Mengubah bentuk aljabar tanpa mengubah nilainya.</td>
+</tr>
+
+<tr>
+<td>Bounding</td>
+<td>Mencari batas atas atau batas bawah suatu ekspresi.</td>
+</tr>
+
+<tr>
+<td>Smoothing</td>
+<td>Membuat variabel lebih seimbang untuk mempermudah pembuktian.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Target Setelah Bab 3</h2>
+
+<ul>
+
+<li>Mampu mengenali teknik manipulasi yang tepat untuk suatu soal.</li>
+
+<li>Memahami kapan menggunakan Homogenization dan Normalization.</li>
+
+<li>Menggunakan Substitution secara efektif.</li>
+
+<li>Mengubah bentuk aljabar melalui Transformation.</li>
+
+<li>Menentukan batas atas atau batas bawah dengan Bounding.</li>
+
+<li>Menerapkan Smoothing pada soal ketimpangan tingkat lanjut.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>✏ Latihan Bab 3</h2>
+
+<ol>
+
+<li>Tentukan teknik manipulasi yang paling tepat untuk beberapa contoh soal sederhana.</li>
+
+<li>Ubah sebuah ketimpangan menjadi bentuk homogen.</li>
+
+<li>Lakukan normalisasi pada ekspresi dengan syarat \(a+b+c=12\).</li>
+
+<li>Gunakan substitusi <code>a=x+y</code> pada syarat segitiga.</li>
+
+<li>Tentukan batas bawah suatu ekspresi menggunakan AM-GM.</li>
+
+<li>Jelaskan mengapa smoothing dapat membantu mencari nilai maksimum atau minimum.</li>
+
+</ol>
+
+</section>
+
+<div class="button-group">
+
+<a href="olimpiade2.html" class="btn">
+⬅ Bab Sebelumnya
+</a>
+
+<a href="olimpiade4.html" class="btn">
+Lanjut ke Bab 4 ➜
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
