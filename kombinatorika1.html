@@ -1,1 +1,542 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kombinatorik Part 1 | Aturan Dasar Mencacah</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    .section { background: #1a2740; position: relative; z-index: 1; }
+    .container { background: #0f1a2e; }
+    body { background: #0f1a2e; }
+</style>
+
+</head>
+
+<body style="background-color: #0f1a2e;">
+
+<div class="container" style="background-color: #0f1a2e;">
+
+<div class="hero">
+
+<h1>🔢 KOMBINATORIK</h1>
+
+<p>Part 1 • Aturan Dasar Mencacah</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Pendahuluan — Seni Menghitung Tanpa Menghitung</h2>
+
+<p>
+
+Bayangkan kamu diminta menghitung berapa banyak cara memilih 3 siswa dari 30 siswa
+untuk menjadi ketua, wakil, dan sekretaris. Kamu bisa menulis semua kemungkinan:
+(Andi, Budi, Caca), (Andi, Budi, Dedi), ... tapi itu akan sangat panjang.
+
+</p>
+
+<p>
+
+<b>Kombinatorik</b> adalah seni <b>menghitung tanpa menghitung satu per satu</b>.
+Dengan aturan-aturan tertentu, kita bisa mengetahui jumlah kemungkinan
+tanpa perlu mendaftar semuanya. Ini bukan cuma trik matematika—
+kombinatorik adalah dasar dari probabilitas, statistika, kriptografi,
+ilmu komputer, dan bahkan fisika statistik.
+
+</p>
+
+<p>
+
+Di bab pertama ini, kita akan mempelajari <b>fondasi paling fundamental</b>:
+bagaimana menjumlahkan dan mengalikan kemungkinan, serta apa itu faktorial.
+Ini adalah "alfabet" kombinatorik—setiap perhitungan yang lebih kompleks
+akan kembali ke prinsip-prinsip ini.
+
+</p>
+
+<div class="note">
+
+<b>Tujuan Bab</b>
+
+<ul>
+
+<li>Memahami aturan pencacahan sebagai cara sistematis menghitung kemungkinan.</li>
+
+<li>Menguasai Prinsip Penjumlahan: kapan menjumlahkan pilihan.</li>
+
+<li>Menguasai Prinsip Perkalian: kapan mengalikan pilihan.</li>
+
+<li>Memahami faktorial sebagai cara singkat menulis perkalian menurun.</li>
+
+<li>Mampu membedakan situasi "dan" (perkalian) vs "atau" (penjumlahan).</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 1: ATURAN PENCACAHAN ==================== -->
+
+<div class="section">
+
+<h2>1. Aturan Pencacahan — Menghitung Kemungkinan Secara Sistematis</h2>
+
+<div class="summary">
+
+<b>Aturan pencacahan (counting principle)</b> adalah metode sistematis
+untuk menghitung banyaknya kemungkinan hasil dari suatu percobaan
+atau kejadian, <b>tanpa harus mendaftar satu per satu</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa kita butuh aturan pencacahan?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu memiliki 3 kemeja (merah, biru, putih) dan 2 celana (hitam, coklat).
+Berapa banyak kombinasi pakaian yang bisa kamu pakai?<br><br>
+
+Kamu bisa mendaftar: (merah, hitam), (merah, coklat), (biru, hitam),
+(biru, coklat), (putih, hitam), (putih, coklat). Total <b>6</b> kombinasi.<br><br>
+
+Tapi bagaimana kalau kamu punya 20 kemeja dan 15 celana?
+Mendaftar satu per satu akan sangat tidak efisien.
+Di sinilah aturan pencacahan berperan.
+
+</div>
+
+<p>
+
+<b>Dua prinsip fundamental dalam pencacahan:</b>
+
+</p>
+
+<div class="summary">
+
+<b>1. Prinsip Penjumlahan (Addition Principle):</b> Jika ada A cara melakukan hal 1
+<b>ATAU</b> B cara melakukan hal 2 (dan keduanya tidak bisa terjadi bersamaan),
+maka total cara = <b>A + B</b>.<br><br>
+
+<b>2. Prinsip Perkalian (Multiplication Principle):</b> Jika ada A cara melakukan hal 1
+<b>DAN</b> B cara melakukan hal 2 (keduanya dilakukan berurutan),
+maka total cara = <b>A × B</b>.
+
+</div>
+
+<p>
+
+<b>Kata kunci:</b> "ATAU" → jumlahkan. "DAN" → kalikan.
+Ini adalah aturan paling dasar yang akan terus dipakai di seluruh kombinatorik.
+
+</p>
+
+</div>
+
+<!-- ==================== MATERI 2: PRINSIP PENJUMLAHAN ==================== -->
+
+<div class="section">
+
+<h2>2. Prinsip Penjumlahan — Ketika Pilihan Saling Eksklusif</h2>
+
+<div class="summary">
+
+<b>Prinsip Penjumlahan:</b><br><br>
+
+Jika suatu tugas bisa diselesaikan dengan <b>m</b> cara dari kategori pertama
+<b>ATAU</b> <b>n</b> cara dari kategori kedua, dan <b>tidak ada cara yang
+termasuk kedua kategori sekaligus</b> (saling lepas/mutually exclusive),
+maka total cara menyelesaikan tugas tersebut = <b>m + n</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa prinsip ini benar?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan kamu punya dua kotak. Kotak A berisi 3 bola (merah, biru, hijau).
+Kotak B berisi 4 bola (kuning, ungu, oranye, pink).<br><br>
+
+Kamu diminta mengambil <b>satu bola</b> dari <b>salah satu</b> kotak.
+Berapa banyak pilihan bola yang bisa kamu ambil?<br><br>
+
+Kamu bisa mengambil dari Kotak A (3 pilihan) <b>ATAU</b> dari Kotak B (4 pilihan).
+Kedua himpunan pilihan tidak ada yang sama (tidak mungkin bola yang sama
+berada di kedua kotak sekaligus).<br><br>
+
+Total pilihan = 3 + 4 = <b>7</b>. ✅<br><br>
+
+Ini masuk akal: kamu cukup menjumlahkan karena kamu hanya memilih salah satu.
+Kamu tidak melakukan keduanya sekaligus.
+
+</div>
+
+<hr>
+
+<h3>2.1 Prinsip Penjumlahan untuk Banyak Kategori</h3>
+
+<div class="summary">
+
+Prinsip penjumlahan bisa diperluas ke <b>k</b> kategori yang saling lepas:<br><br>
+
+Total = n₁ + n₂ + n₃ + ... + nₖ
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah restoran menawarkan 4 jenis steak, 3 jenis pasta, dan 5 jenis salad.
+Berapa banyak pilihan makanan utama?<br><br>
+
+Steak (4) <b>ATAU</b> Pasta (3) <b>ATAU</b> Salad (5).<br>
+
+Total = 4 + 3 + 5 = <b>12</b> pilihan. ✅
+
+</div>
+
+<hr>
+
+<h3>2.2 Syarat Penting: Saling Lepas (Mutually Exclusive)</h3>
+
+<div class="example">
+
+<b>Hati-hati!</b> Prinsip penjumlahan hanya berlaku jika kategori-kategorinya
+<b>tidak tumpang tindih</b> (saling lepas).<br><br>
+
+Jika ada siswa yang ikut klub Matematika <b>DAN</b> juga klub Fisika,
+kamu tidak bisa langsung menjumlahkan jumlah anggota kedua klub
+untuk mendapatkan total siswa yang ikut setidaknya satu klub.
+Kamu harus mengurangkan yang dobel (ini akan dibahas di Inklusi-Eksklusi, Bab 3).
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 3: PRINSIP PERKALIAN ==================== -->
+
+<div class="section">
+
+<h2>3. Prinsip Perkalian — Ketika Pilihan Berurutan</h2>
+
+<div class="summary">
+
+<b>Prinsip Perkalian (Fundamental Counting Principle):</b><br><br>
+
+Jika suatu tugas terdiri dari <b>dua langkah berurutan</b>,
+langkah pertama bisa dilakukan dengan <b>m</b> cara, dan
+langkah kedua bisa dilakukan dengan <b>n</b> cara (untuk setiap cara langkah pertama),
+maka total cara menyelesaikan tugas = <b>m × n</b>.
+
+</div>
+
+<p>
+
+<b>Mengapa dikali, bukan dijumlah?</b>
+
+</p>
+
+<div class="example">
+
+Kembali ke contoh kemeja dan celana: 3 kemeja, 2 celana.<br><br>
+
+Untuk <b>setiap</b> kemeja yang kamu pilih, ada <b>2 pilihan celana</b>.
+Ini bukan situasi "pilih kemeja ATAU celana", tapi "pilih kemeja DAN celana".<br><br>
+
+Kemeja merah → bisa dengan celana hitam ATAU coklat (2 cara).<br>
+
+Kemeja biru → bisa dengan celana hitam ATAU coklat (2 cara).<br>
+
+Kemeja putih → bisa dengan celana hitam ATAU coklat (2 cara).<br><br>
+
+Total = 2 + 2 + 2 = 6 = <b>3 × 2</b>. ✅<br><br>
+
+Perkalian adalah penjumlahan berulang! 3 × 2 = 2 + 2 + 2.
+
+</div>
+
+<p>
+
+<b>Diagram Pohon (Tree Diagram):</b> Cara visual memahami prinsip perkalian.
+Dari setiap pilihan pertama (kemeja), bercabang ke pilihan kedua (celana).
+Jumlah total "daun" di ujung = hasil perkalian.
+
+</p>
+
+<hr>
+
+<h3>3.1 Prinsip Perkalian untuk Banyak Langkah</h3>
+
+<div class="summary">
+
+Prinsip perkalian bisa diperluas ke <b>k</b> langkah berurutan:<br><br>
+
+Total = n₁ × n₂ × n₃ × ... × nₖ
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah password terdiri dari 3 digit. Digit pertama harus huruf vokal
+(a, e, i, o, u). Digit kedua harus angka ganjil (1, 3, 5, 7, 9).
+Digit ketiga harus simbol (@, #, $). Berapa banyak password yang mungkin?<br><br>
+
+Langkah 1 (pilih vokal): 5 cara.<br>
+
+Langkah 2 (pilih ganjil): 5 cara.<br>
+
+Langkah 3 (pilih simbol): 3 cara.<br><br>
+
+Total = 5 × 5 × 3 = <b>75</b> password. ✅
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Dari kota A ke kota B ada 3 jalan. Dari kota B ke kota C ada 4 jalan.
+Berapa banyak cara pergi dari A ke C melewati B?<br><br>
+
+A → B: 3 cara. B → C: 4 cara.<br>
+
+Total = 3 × 4 = <b>12</b> rute. ✅
+
+</div>
+
+<hr>
+
+<h3>3.2 "DAN" vs "ATAU" — Kunci Memilih Operasi</h3>
+
+<div class="summary">
+
+| Situasi | Operasi | Contoh |
+|---|---|---|
+| Pilih salah satu dari beberapa kategori (saling lepas) | <b>Jumlah (+)</b> | Pilih steak ATAU pasta ATAU salad |
+| Lakukan langkah 1 DAN langkah 2 DAN langkah 3 (berurutan) | <b>Kali (×)</b> | Pilih kemeja DAN celana DAN sepatu |
+| Keduanya bisa terjadi bersamaan (tidak lepas) | <b>Inklusi-Eksklusi</b> | Bab 3 nanti! |
+
+</div>
+
+<div class="example">
+
+<b>Soal:</b> Sebuah menu terdiri dari 1 appetizer (4 pilihan), 1 main course (6 pilihan),
+DAN 1 dessert (3 pilihan). Berapa banyak kombinasi menu?<br><br>
+
+Ini "DAN" → kali: 4 × 6 × 3 = <b>72</b> kombinasi. ✅<br><br>
+
+<b>Soal:</b> Dari menu yang sama, berapa banyak cara memilih 1 item saja
+(boleh appetizer ATAU main course ATAU dessert)?<br><br>
+
+Ini "ATAU" → jumlah: 4 + 6 + 3 = <b>13</b> cara. ✅
+
+</div>
+
+</div>
+
+<!-- ==================== MATERI 4: FAKTORIAL ==================== -->
+
+<div class="section">
+
+<h2>4. Faktorial — Perkalian Menurun</h2>
+
+<div class="summary">
+
+<b>Faktorial</b> dari bilangan bulat positif n, ditulis <b>n!</b>, adalah hasil kali
+semua bilangan bulat positif dari 1 sampai n.<br><br>
+
+n! = n × (n-1) × (n-2) × ... × 3 × 2 × 1<br><br>
+
+<b>Kasus khusus:</b> 0! = 1 (berdasarkan definisi, agar konsisten dengan rumus-rumus kombinatorik).
+
+</div>
+
+<p>
+
+<b>Mengapa 0! = 1?</b>
+
+</p>
+
+<div class="example">
+
+Bayangkan faktorial sebagai banyaknya cara menyusun n objek berbeda.<br><br>
+
+1! = 1 (1 objek hanya bisa disusun dengan 1 cara).<br>
+
+2! = 2×1 = 2 (2 objek bisa disusun dengan 2 cara: AB atau BA).<br>
+
+3! = 3×2×1 = 6 (3 objek: ABC, ACB, BAC, BCA, CAB, CBA).<br><br>
+
+0! berarti banyaknya cara menyusun 0 objek. Hanya ada <b>satu</b> cara:
+tidak melakukan apa-apa (susunan kosong). Jadi 0! = 1.<br><br>
+
+<b>Secara aljabar:</b> Rumus kombinasi dan permutasi akan konsisten
+jika 0! = 1. Ini adalah definisi yang dibuat agar matematikanya "mulus".
+
+</div>
+
+<hr>
+
+<h3>4.1 Menghitung Faktorial</h3>
+
+<div class="example">
+
+1! = <b>1</b><br>
+
+2! = 2 × 1 = <b>2</b><br>
+
+3! = 3 × 2 × 1 = <b>6</b><br>
+
+4! = 4 × 3 × 2 × 1 = <b>24</b><br>
+
+5! = 5 × 4 × 3 × 2 × 1 = <b>120</b><br>
+
+6! = 720<br>
+
+7! = 5040<br>
+
+8! = 40320<br>
+
+10! = <b>3.628.800</b> (sudah jutaan!)<br><br>
+
+Faktorial tumbuh <b>sangat cepat</b>. 20! sudah mencapai 2,4 × 10¹⁸.
+
+</div>
+
+<hr>
+
+<h3>4.2 Faktorial sebagai Banyaknya Susunan (Permutasi n Objek)</h3>
+
+<div class="example">
+
+<b>Soal:</b> Ada 5 buku berbeda. Berapa banyak cara menyusunnya di rak?<br><br>
+
+Tempat pertama: 5 pilihan (buku mana saja).<br>
+
+Tempat kedua: 4 pilihan (sisa buku).<br>
+
+Tempat ketiga: 3 pilihan.<br>
+
+Tempat keempat: 2 pilihan.<br>
+
+Tempat kelima: 1 pilihan.<br><br>
+
+Total = 5 × 4 × 3 × 2 × 1 = 5! = <b>120</b> cara. ✅<br><br>
+
+Ini adalah <b>permutasi n objek berbeda</b>—akan dibahas lebih dalam di Bab 2.
+
+</div>
+
+<hr>
+
+<h3>4.3 Menyederhanakan Ekspresi dengan Faktorial</h3>
+
+<div class="example">
+
+<b>8! / 6!</b> = (8×7×6×5×4×3×2×1) / (6×5×4×3×2×1) = 8×7 = <b>56</b>.<br><br>
+
+<b>n! / (n-2)!</b> = n × (n-1) × (n-2)! / (n-2)! = <b>n(n-1)</b>.<br><br>
+
+Ini akan sangat berguna di bab Permutasi & Kombinasi nanti.
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Ringkasan Cepat Kombinatorik 1</h2>
+
+<div class="summary">
+
+<ul>
+
+<li><b>Aturan pencacahan:</b> Metode sistematis menghitung kemungkinan tanpa mendaftar satu per satu.</li>
+
+<li><b>Prinsip Penjumlahan:</b> "ATAU" → jumlahkan. Kategori harus saling lepas.</li>
+
+<li><b>Prinsip Perkalian:</b> "DAN" → kalikan. Langkah-langkah berurutan.</li>
+
+<li><b>Faktorial n!:</b> n × (n-1) × ... × 2 × 1. Banyaknya cara menyusun n objek berbeda.</li>
+
+<li><b>0! = 1:</b> Definisi agar rumus kombinatorik konsisten.</li>
+
+<li><b>Kunci:</b> "DAN" = kali, "ATAU" = jumlah.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>✨ Tips & Trik</h2>
+
+<ul>
+
+<li>
+
+<b>Baca soal dengan teliti: "DAN" atau "ATAU"?</b> Ini menentukan apakah kamu mengalikan
+atau menjumlahkan. Kesalahan paling umum adalah tertukar antara keduanya.
+
+</li>
+
+<li>
+
+<b>Gambar diagram pohon untuk visualisasi.</b> Untuk masalah kecil, diagram pohon
+membantu memastikan kamu tidak melewatkan atau menghitung ganda.
+
+</li>
+
+<li>
+
+<b>Faktorial tumbuh sangat cepat.</b> 10! sudah jutaan. Jangan mencoba menghitung
+20! secara manual—gunakan kalkulator atau sederhanakan dulu.
+
+</li>
+
+<li>
+
+<b>Sederhanakan faktorial sebelum menghitung.</b> 100!/98! = 100×99 = 9900.
+Jauh lebih mudah daripada menghitung 100! dan 98! terpisah.
+
+</li>
+
+<li>
+
+<b>Prinsip perkalian = penjumlahan berulang.</b> 3×2 = 2+2+2. Ini membantu memahami
+kenapa kita mengalikan, bukan menjumlahkan.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="navigation">
+
+<a href="index.html" class="btn">🏠 Home</a>
+
+<a href="kombinatorik.html" class="btn">📚 Daftar Kombinatorik</a>
+
+<a href="kombinatorika2.html" class="btn">Lanjut ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
