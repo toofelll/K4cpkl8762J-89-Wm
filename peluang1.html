@@ -1,1 +1,4070 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handbook Matematika - Peluang (Bagian 1)</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Handbook Matematika - Teori Peluang dari Dasar hingga Advanced">
+    <meta name="author" content="ChatGPT">
+</head>
+
+<body>
+
+<header class="hero">
+
+    <h1>📘 Handbook Matematika</h1>
+
+    <h2>TEORI PELUANG</h2>
+
+    <p>
+        Dari Konsep Dasar hingga Problem Solving Tingkat Lanjut
+    </p>
+
+    <p>
+        Handbook ini disusun bukan hanya untuk menghafal rumus, tetapi untuk
+        membangun cara berpikir matematis. Setiap konsep akan dijelaskan mulai
+        dari intuisi, definisi formal, contoh sederhana, hingga penerapan pada
+        berbagai permasalahan yang lebih kompleks.
+    </p>
+
+</header>
+
+<hr>
+
+<nav id="daftar-isi">
+
+<h2>📚 Daftar Isi</h2>
+
+<ol>
+
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+
+<li><a href="#mengapa-belajar-peluang">Mengapa Belajar Peluang?</a></li>
+
+<li><a href="#sejarah">Sejarah Singkat Teori Peluang</a></li>
+
+<li><a href="#cara-menggunakan">Cara Menggunakan Handbook</a></li>
+
+<li><a href="#bab1">BAB 1 - Dasar-Dasar Peluang</a>
+
+<ul>
+
+<li><a href="#ruang-sampel">Ruang Sampel</a></li>
+
+<li><a href="#titik-sampel">Titik Sampel</a></li>
+
+<li><a href="#kejadian">Kejadian</a></li>
+
+<li><a href="#jenis-kejadian">Jenis-Jenis Kejadian</a></li>
+
+<li><a href="#aksioma">Aksioma Peluang</a></li>
+
+<li><a href="#sifat">Sifat-Sifat Peluang</a></li>
+
+</ul>
+
+</li>
+
+<li><a href="#bab2">BAB 2 - Operasi dan Aturan Peluang</a></li>
+
+</ol>
+
+</nav>
+
+<hr>
+
+<section id="pendahuluan">
+
+<h2>Pendahuluan</h2>
+
+<p>
+
+Bayangkan kamu sedang melempar sebuah koin.
+
+Apakah kamu bisa memastikan hasilnya akan selalu gambar?
+
+Tentu tidak.
+
+Bagaimana jika kamu melempar sebuah dadu?
+
+Bisakah kamu menjamin akan muncul angka enam?
+
+Jawabannya juga tidak.
+
+Namun meskipun kita tidak dapat memastikan hasil suatu percobaan,
+kita masih dapat mengukur <strong>seberapa besar kemungkinan</strong>
+suatu hasil akan muncul.
+
+Di sinilah teori peluang lahir.
+
+</p>
+
+<p>
+
+Teori peluang merupakan cabang matematika yang mempelajari
+ketidakpastian (uncertainty).
+
+Melalui teori ini kita belajar bagaimana mengubah sesuatu yang
+terlihat acak menjadi sesuatu yang dapat dianalisis secara matematis.
+
+Peluang digunakan dalam hampir seluruh bidang ilmu pengetahuan.
+
+Mulai dari kecerdasan buatan, statistik, ilmu komputer,
+ekonomi, fisika, biologi, hingga prediksi cuaca dan analisis risiko.
+
+</p>
+
+<p>
+
+Salah satu kesalahan terbesar ketika mempelajari peluang adalah
+menganggap materi ini hanyalah kumpulan rumus.
+
+Padahal, inti dari teori peluang bukanlah rumus.
+
+Intinya adalah bagaimana kita membangun suatu model matematika
+untuk menggambarkan sebuah fenomena acak.
+
+Jika model yang kita bangun benar,
+maka rumus hanyalah konsekuensi logis dari model tersebut.
+
+</p>
+
+<aside>
+
+<h3>💡 Insight</h3>
+
+<p>
+
+Matematikawan jarang bertanya,
+
+<b>"Rumus apa yang harus dipakai?"</b>
+
+Sebaliknya mereka bertanya,
+
+<b>"Bagaimana cara memodelkan masalah ini?"</b>
+
+Jika modelnya benar,
+maka penyelesaiannya biasanya akan muncul dengan sendirinya.
+
+</p>
+
+</aside>
+
+</section>
+
+<hr>
+
+<section id="mengapa-belajar-peluang">
+
+<h2>Mengapa Belajar Peluang?</h2>
+
+<p>
+
+Dalam kehidupan nyata,
+banyak kejadian tidak dapat diprediksi secara pasti.
+
+Misalnya,
+
+</p>
+
+<ul>
+
+<li>Apakah besok akan turun hujan?</li>
+
+<li>Siapa yang memenangkan pertandingan?</li>
+
+<li>Apakah sebuah mesin akan rusak bulan depan?</li>
+
+<li>Apakah pasien akan sembuh setelah diberikan obat tertentu?</li>
+
+<li>Berapa kemungkinan sebuah email adalah spam?</li>
+
+<li>Bagaimana AI memprediksi kata berikutnya?</li>
+
+</ul>
+
+<p>
+
+Semua pertanyaan tersebut memiliki satu kesamaan,
+yaitu tidak ada jawaban pasti.
+
+Yang dapat dilakukan hanyalah memperkirakan kemungkinan
+berdasarkan informasi yang tersedia.
+
+Itulah fungsi utama teori peluang.
+
+</p>
+
+<h3>Beberapa Contoh Penerapan</h3>
+
+<table>
+
+<tr>
+
+<th>Bidang</th>
+
+<th>Penerapan</th>
+
+</tr>
+
+<tr>
+
+<td>Kedokteran</td>
+
+<td>Mengukur efektivitas obat dan diagnosis penyakit.</td>
+
+</tr>
+
+<tr>
+
+<td>Keuangan</td>
+
+<td>Menghitung risiko investasi.</td>
+
+</tr>
+
+<tr>
+
+<td>Data Science</td>
+
+<td>Machine Learning dan Artificial Intelligence.</td>
+
+</tr>
+
+<tr>
+
+<td>Game</td>
+
+<td>Perhitungan loot, critical hit, matchmaking.</td>
+
+</tr>
+
+<tr>
+
+<td>Kriptografi</td>
+
+<td>Keamanan sistem digital.</td>
+
+</tr>
+
+<tr>
+
+<td>Statistika</td>
+
+<td>Inferensi dan pengambilan keputusan.</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section id="sejarah">
+
+<h2>Sejarah Singkat Teori Peluang</h2>
+
+<p>
+
+Banyak orang mengira teori peluang berkembang dari laboratorium.
+
+Faktanya, teori peluang justru lahir dari meja perjudian.
+
+Pada abad ke-17,
+para penjudi di Eropa sering berdebat mengenai peluang menang
+dalam permainan dadu dan kartu.
+
+Permasalahan tersebut kemudian dibahas oleh dua matematikawan terkenal,
+yaitu <b>Blaise Pascal</b> dan <b>Pierre de Fermat</b>.
+
+Surat-menyurat mereka dianggap sebagai salah satu awal lahirnya
+teori peluang modern.
+
+</p>
+
+<p>
+
+Setelah itu,
+banyak matematikawan lain seperti Bernoulli,
+Laplace,
+Kolmogorov,
+hingga Andrey Markov
+mengembangkan teori peluang menjadi cabang matematika yang sangat kuat.
+
+Saat ini,
+peluang menjadi fondasi utama statistika,
+machine learning,
+dan berbagai algoritma modern.
+
+</p>
+
+</section>
+
+<hr>
+
+<section id="cara-menggunakan">
+
+<h2>Cara Menggunakan Handbook Ini</h2>
+
+<p>
+
+Handbook ini tidak dirancang untuk dibaca dengan cepat.
+
+Luangkan waktu memahami setiap konsep.
+
+Jika menemui contoh soal,
+cobalah berhenti sejenak dan pikirkan penyelesaiannya
+sebelum membaca pembahasan.
+
+Cara ini jauh lebih efektif dibanding langsung melihat jawaban.
+
+</p>
+
+<ol>
+
+<li>Pahami intuisi terlebih dahulu.</li>
+
+<li>Baca definisi formal.</li>
+
+<li>Perhatikan contoh.</li>
+
+<li>Kerjakan latihan.</li>
+
+<li>Pelajari pembahasan.</li>
+
+<li>Ulangi hingga benar-benar paham.</li>
+
+</ol>
+
+<blockquote>
+
+<b>Jangan menghafal rumus.</b>
+
+Pahami alasan mengapa rumus tersebut benar.
+
+Orang yang memahami konsep dapat menemukan rumus.
+
+Sebaliknya,
+orang yang hanya menghafal rumus sering kesulitan
+ketika soal sedikit dimodifikasi.
+
+</blockquote>
+
+</section>
+
+<hr>
+
+<section id="bab1">
+
+<h1>BAB 1</h1>
+
+<h2>Dasar-Dasar Peluang</h2>
+
+<p>
+
+Sebelum menghitung peluang,
+kita harus memahami "objek" yang sedang dihitung.
+
+Ibarat ingin menghitung luas bangunan,
+kita harus mengetahui bentuk bangunannya terlebih dahulu.
+
+Begitu pula dalam peluang.
+
+Kita harus mengetahui semua kemungkinan hasil yang dapat muncul.
+
+Konsep inilah yang disebut sebagai <b>Ruang Sampel</b>.
+
+</p>
+
+</section>
+
+<hr>
+
+<section id="ruang-sampel">
+
+<h2>1.1 Ruang Sampel (Sample Space)</h2>
+
+<p>
+
+Ruang sampel merupakan konsep paling mendasar dalam teori peluang.
+
+Hampir seluruh pembahasan setelah bab ini akan menggunakan konsep ruang sampel.
+
+Karena itu,
+pemahaman yang baik mengenai ruang sampel akan sangat membantu
+ketika mempelajari materi-materi berikutnya.
+
+</p>
+
+<h3>Apa itu Ruang Sampel?</h3>
+
+<p>
+
+Misalkan kita melempar sebuah dadu.
+
+Sebelum dadu menyentuh meja,
+kita belum mengetahui angka berapa yang akan muncul.
+
+Namun kita tahu bahwa hasilnya pasti salah satu dari
+
+{1,2,3,4,5,6}.
+
+Kumpulan seluruh hasil yang mungkin terjadi tersebut dinamakan
+<b>ruang sampel</b>.
+
+</p>
+
+<div class="definition">
+
+<h3>Definisi</h3>
+
+<p>
+
+<b>Ruang Sampel</b> adalah himpunan yang memuat
+<b>seluruh kemungkinan hasil</b>
+dari suatu percobaan acak.
+
+Biasanya dilambangkan dengan huruf
+
+<b>S</b>
+
+atau
+
+<b>Ω (Omega)</b>.
+
+</p>
+
+</div>
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Percobaan:
+
+Melempar satu buah koin.
+
+</p>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+S = {Gambar, Angka}
+
+</pre>
+
+<p>
+
+Karena hanya ada dua kemungkinan hasil.
+
+</p>
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Percobaan:
+
+Melempar satu buah dadu.
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Semua angka memiliki peluang muncul,
+sehingga semuanya harus dimasukkan ke dalam ruang sampel.
+
+</p>
+
+<aside>
+
+<h3>Catatan Penting</h3>
+
+<p>
+
+Kesalahan yang paling sering dilakukan pemula adalah
+lupa memasukkan salah satu kemungkinan hasil.
+
+Akibatnya,
+seluruh perhitungan peluang setelahnya menjadi salah.
+
+Sebelum mulai menghitung peluang,
+biasakan bertanya:
+
+<b>"Apakah semua kemungkinan hasil sudah saya tuliskan?"</b>
+
+</p>
+
+</aside>
+
+<!-- LANJUT BAGIAN 2 --><h3>Mengapa Ruang Sampel Sangat Penting?</h3>
+
+<p>
+
+Dalam teori peluang, seluruh perhitungan selalu dimulai dari ruang
+sampel. Jika ruang sampel salah, maka semua peluang yang dihitung
+setelahnya juga akan salah.
+
+Bayangkan kamu ingin menghitung persentase siswa yang lulus ujian.
+Pertama-tama kamu harus mengetahui <strong>berapa jumlah seluruh
+siswa</strong>. Tanpa mengetahui keseluruhan data, persentase yang
+dihitung tidak akan bermakna.
+
+Prinsip yang sama berlaku pada teori peluang. Ruang sampel berperan
+sebagai "alam semesta" tempat seluruh kejadian berada.
+
+</p>
+
+<hr>
+
+<h3>Eksperimen Acak</h3>
+
+<p>
+
+Sebelum membahas ruang sampel lebih jauh, kita perlu memahami istilah
+<strong>eksperimen acak (random experiment)</strong>.
+
+Eksperimen acak adalah suatu percobaan yang hasil akhirnya belum dapat
+dipastikan sebelum percobaan dilakukan, meskipun prosedurnya selalu
+sama.
+
+</p>
+
+<h4>Contoh Eksperimen Acak</h4>
+
+<table>
+
+<tr>
+<th>Percobaan</th>
+<th>Apakah Acak?</th>
+<th>Alasan</th>
+</tr>
+
+<tr>
+<td>Melempar sebuah koin</td>
+<td>Ya</td>
+<td>Belum diketahui sisi mana yang muncul.</td>
+</tr>
+
+<tr>
+<td>Melempar sebuah dadu</td>
+<td>Ya</td>
+<td>Belum diketahui angka yang keluar.</td>
+</tr>
+
+<tr>
+<td>Mengambil satu kartu dari satu set kartu remi</td>
+<td>Ya</td>
+<td>Kartu yang terambil tidak dapat dipastikan sebelumnya.</td>
+</tr>
+
+<tr>
+<td>Menghitung 5 + 7</td>
+<td>Tidak</td>
+<td>Hasilnya selalu sama, yaitu 12.</td>
+</tr>
+
+<tr>
+<td>Mengukur panjang meja dengan penggaris</td>
+<td>Tidak</td>
+<td>Nilainya sudah tetap.</td>
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa suatu eksperimen disebut acak bukan karena
+dilakukan secara sembarangan, melainkan karena hasil akhirnya belum
+dapat dipastikan sebelum percobaan selesai.
+
+</p>
+
+<hr>
+
+<h3>Notasi Ruang Sampel</h3>
+
+<p>
+
+Dalam matematika, ruang sampel biasanya dilambangkan dengan huruf
+<strong>S</strong> atau simbol Yunani <strong>Ω</strong> (Omega).
+
+Contoh:
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Artinya himpunan semua hasil yang mungkin terdiri dari enam anggota,
+yaitu angka 1 sampai 6.
+
+</p>
+
+<p>
+
+Seluruh anggota ruang sampel disebut sebagai <strong>titik
+sampel</strong>, yang akan dipelajari pada subbab berikutnya.
+
+</p>
+
+<hr>
+
+<h3>Karakteristik Ruang Sampel</h3>
+
+<p>
+
+Suatu ruang sampel yang baik harus memenuhi beberapa syarat berikut.
+
+</p>
+
+<ul>
+
+<li>Memuat seluruh kemungkinan hasil.</li>
+
+<li>Tidak ada hasil yang terlewat.</li>
+
+<li>Tidak ada hasil yang ditulis lebih dari satu kali.</li>
+
+<li>Setiap hasil saling berbeda.</li>
+
+<li>Ditulis secara sistematis agar mudah dianalisis.</li>
+
+</ul>
+
+<p>
+
+Lima syarat tersebut terlihat sederhana, tetapi sangat penting ketika
+menghadapi soal-soal yang lebih rumit.
+
+</p>
+
+<hr>
+
+<h3>Contoh Penyusunan Ruang Sampel</h3>
+
+<h4>Contoh 1 — Lempar Satu Koin</h4>
+
+<p>
+
+Kemungkinan hasil:
+
+</p>
+
+<pre>
+
+S = {A, G}
+
+</pre>
+
+<p>
+
+A melambangkan Angka, sedangkan G melambangkan Gambar.
+
+</p>
+
+<hr>
+
+<h4>Contoh 2 — Lempar Dua Koin</h4>
+
+<p>
+
+Banyak siswa mengira ruang sampelnya hanya
+
+</p>
+
+<pre>
+
+{AA, AG, GG}
+
+</pre>
+
+<p>
+
+Ini adalah kesalahan.
+
+Mengapa?
+
+Karena hasil AG berbeda dengan GA.
+
+Pada AG, koin pertama menghasilkan Angka dan koin kedua Gambar.
+
+Sedangkan pada GA, urutannya terbalik.
+
+Urutan merupakan bagian dari hasil percobaan sehingga keduanya harus
+dibedakan.
+
+</p>
+
+<p>
+
+Ruang sampel yang benar adalah
+
+</p>
+
+<pre>
+
+S = {AA, AG, GA, GG}
+
+</pre>
+
+<p>
+
+Jumlah anggota ruang sampel = 4.
+
+</p>
+
+<hr>
+
+<h4>Contoh 3 — Lempar Dua Dadu</h4>
+
+<p>
+
+Setiap hasil ditulis sebagai pasangan terurut.
+
+</p>
+
+<pre>
+
+(1,1)
+(1,2)
+(1,3)
+...
+(6,5)
+(6,6)
+
+</pre>
+
+<p>
+
+Total anggota ruang sampel adalah
+
+</p>
+
+<pre>
+
+6 × 6 = 36
+
+</pre>
+
+<p>
+
+Mengapa dikalikan?
+
+Karena setiap hasil pada dadu pertama dapat dipasangkan dengan enam
+kemungkinan hasil pada dadu kedua.
+
+Konsep ini nantinya berkembang menjadi <strong>aturan
+perkalian</strong>.
+
+</p>
+
+<hr>
+
+<h3>Visualisasi Ruang Sampel</h3>
+
+<p>
+
+Sering kali ruang sampel lebih mudah dipahami jika divisualisasikan.
+
+Misalnya dua buah koin.
+
+</p>
+
+<pre>
+
+          Koin 2
+
+         A      G
+
+Koin 1
+
+A       AA     AG
+
+G       GA     GG
+
+</pre>
+
+<p>
+
+Tabel sederhana seperti ini membantu kita memastikan tidak ada hasil
+yang terlewat.
+
+</p>
+
+<hr>
+
+<h3>Kesalahan yang Sering Dilakukan</h3>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 1</h4>
+
+<p>
+
+Tidak menuliskan semua kemungkinan hasil.
+
+</p>
+
+</div>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 2</h4>
+
+<p>
+
+Menganggap dua hasil yang berbeda sebagai hasil yang sama.
+
+Misalnya AG dianggap sama dengan GA.
+
+Padahal urutannya berbeda.
+
+</p>
+
+</div>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 3</h4>
+
+<p>
+
+Langsung menghitung peluang tanpa membuat ruang sampel.
+
+Akibatnya banyak kasus yang terlewat.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Problem Solving</h3>
+
+<div class="insight">
+
+<p>
+
+Ketika menghadapi soal peluang, jangan terburu-buru mencari rumus.
+
+Biasakan bertanya tiga hal berikut.
+
+</p>
+
+<ol>
+
+<li>Apa eksperimen acaknya?</li>
+
+<li>Apa seluruh kemungkinan hasilnya?</li>
+
+<li>Apakah ruang sampel sudah lengkap?</li>
+
+</ol>
+
+<p>
+
+Jika tiga pertanyaan tersebut sudah terjawab, maka lebih dari separuh
+pekerjaan biasanya telah selesai.
+
+Banyak soal olimpiade yang tampak sulit sebenarnya hanya membutuhkan
+kemampuan menyusun ruang sampel secara cermat.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal 1</h3>
+
+<p>
+
+Sebuah dadu dilempar satu kali.
+
+Tentukan ruang sampelnya.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Semua hasil yang mungkin muncul adalah angka 1 sampai 6.
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Jumlah anggota ruang sampel = 6.
+
+</p>
+
+</details>
+
+<hr>
+
+<h3>Contoh Soal 2</h3>
+
+<p>
+
+Sebuah koin dilempar tiga kali.
+
+Tentukan ruang sampelnya.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Setiap lemparan memiliki dua kemungkinan.
+
+Total hasil adalah
+
+</p>
+
+<pre>
+
+2 × 2 × 2 = 8
+
+</pre>
+
+<p>
+
+Ruang sampelnya adalah
+
+</p>
+
+<pre>
+
+S = {
+AAA,
+AAG,
+AGA,
+AGG,
+GAA,
+GAG,
+GGA,
+GGG
+}
+
+</pre>
+
+</details>
+
+<hr>
+
+<h3>Latihan Mandiri</h3>
+
+<ol>
+
+<li>Tuliskan ruang sampel ketika dua buah dadu dilempar bersamaan.</li>
+
+<li>Tuliskan ruang sampel ketika satu koin dan satu dadu dilempar bersamaan.</li>
+
+<li>Berapa banyak anggota ruang sampel jika empat koin dilempar?</li>
+
+<li>Mengapa ruang sampel harus memuat semua kemungkinan hasil?</li>
+
+<li>Jelaskan dengan kata-katamu sendiri apa yang dimaksud dengan ruang sampel.</li>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<strong>Checkpoint Bab 1</strong>
+
+<p>
+
+Jika kamu sudah mampu menyusun ruang sampel dengan benar untuk berbagai
+percobaan, maka fondasi teori peluangmu sudah mulai terbentuk.
+
+Pada subbab berikutnya kita akan mempelajari anggota-anggota dari ruang
+sampel tersebut, yang disebut <strong>Titik Sampel</strong>.
+
+</p>
+
+</blockquote>
+
+<hr>
+
+<section id="titik-sampel">
+
+<h2>1.2 Titik Sampel (Sample Point)</h2>
+
+<p>
+
+Setelah memahami bahwa ruang sampel merupakan himpunan dari seluruh hasil
+yang mungkin, sekarang muncul pertanyaan yang sangat alami:
+
+<strong>"Kalau ruang sampel adalah himpunannya, lalu apa nama setiap anggota
+di dalam himpunan tersebut?"</strong>
+
+Jawabannya adalah <strong>titik sampel</strong>.
+
+</p>
+
+<!-- LANJUT BAGIAN 3 --><h3>Memahami Konsep Titik Sampel</h3>
+
+<p>
+
+Misalkan kita melakukan satu kali pelemparan dadu.
+
+Ruang sampelnya adalah
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Perhatikan bahwa ruang sampel merupakan sebuah himpunan yang berisi enam
+anggota.
+
+Setiap angka di dalam himpunan tersebut disebut sebagai
+<strong>titik sampel</strong>.
+
+Dengan kata lain,
+
+angka 1 adalah titik sampel.
+
+Angka 2 adalah titik sampel.
+
+Begitu pula angka 3, 4, 5, dan 6.
+
+</p>
+
+<div class="definition">
+
+<h3>Definisi Titik Sampel</h3>
+
+<p>
+
+<b>Titik Sampel</b> adalah setiap hasil tunggal yang mungkin muncul
+dari suatu percobaan acak.
+
+Seluruh titik sampel akan membentuk sebuah ruang sampel.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Hubungan Ruang Sampel dan Titik Sampel</h3>
+
+<p>
+
+Hubungan keduanya dapat dianalogikan sebagai berikut.
+
+</p>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Analogi</th>
+</tr>
+
+<tr>
+<td>Ruang Sampel</td>
+<td>Sebuah perpustakaan.</td>
+</tr>
+
+<tr>
+<td>Titik Sampel</td>
+<td>Satu buah buku di dalam perpustakaan.</td>
+</tr>
+
+</table>
+
+<p>
+
+Tanpa buku, perpustakaan tidak memiliki isi.
+
+Sebaliknya, kumpulan banyak buku akan membentuk sebuah perpustakaan.
+
+Begitu pula ruang sampel.
+
+Ruang sampel terbentuk dari kumpulan titik sampel.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Percobaan:
+
+Melempar satu buah koin.
+
+</p>
+
+<pre>
+
+S = {A, G}
+
+</pre>
+
+<p>
+
+Maka terdapat dua titik sampel yaitu
+
+</p>
+
+<ul>
+
+<li>A (Angka)</li>
+
+<li>G (Gambar)</li>
+
+</ul>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Percobaan:
+
+Mengambil satu kartu dari satu set kartu remi.
+
+</p>
+
+<p>
+
+Setiap kartu merupakan satu titik sampel.
+
+Karena terdapat 52 kartu berbeda, maka terdapat 52 titik sampel.
+
+</p>
+
+<hr>
+
+<h3>Contoh 3</h3>
+
+<p>
+
+Percobaan:
+
+Melempar dua buah dadu.
+
+</p>
+
+<p>
+
+Salah satu titik sampelnya adalah
+
+</p>
+
+<pre>
+
+(2,5)
+
+</pre>
+
+<p>
+
+Artinya,
+
+dadu pertama menghasilkan angka 2,
+
+sedangkan dadu kedua menghasilkan angka 5.
+
+</p>
+
+<p>
+
+Pasangan
+
+</p>
+
+<pre>
+
+(5,2)
+
+</pre>
+
+<p>
+
+merupakan titik sampel yang berbeda.
+
+Urutan tetap harus diperhatikan.
+
+</p>
+
+<hr>
+
+<h3>Visualisasi Titik Sampel</h3>
+
+<pre>
+
+Ruang Sampel
+
+S = {
+
+(1,1),
+
+(1,2),
+
+(1,3),
+
+...
+
+(6,6)
+
+}
+
+</pre>
+
+<p>
+
+Setiap pasangan di atas merupakan satu titik sampel.
+
+Seluruh pasangan tersebut membentuk ruang sampel.
+
+</p>
+
+<hr>
+
+<h3>Cara Mengidentifikasi Titik Sampel</h3>
+
+<p>
+
+Ada cara sederhana untuk mengetahui apakah sesuatu merupakan titik
+sampel atau bukan.
+
+Tanyakan pada diri sendiri.
+
+</p>
+
+<blockquote>
+
+"Apakah hasil tersebut merupakan satu hasil tunggal yang mungkin terjadi?"
+
+</blockquote>
+
+<p>
+
+Jika jawabannya "ya", maka hasil tersebut adalah titik sampel.
+
+Jika masih terdiri dari beberapa kemungkinan sekaligus, maka itu bukan
+titik sampel.
+
+</p>
+
+<hr>
+
+<h3>Contoh Identifikasi</h3>
+
+<table>
+
+<tr>
+<th>Pernyataan</th>
+<th>Titik Sampel?</th>
+<th>Alasan</th>
+</tr>
+
+<tr>
+<td>Angka 4 pada pelemparan dadu</td>
+<td>✔ Ya</td>
+<td>Satu hasil tunggal.</td>
+</tr>
+
+<tr>
+<td>Bilangan genap</td>
+<td>✖ Tidak</td>
+<td>Terdiri dari beberapa hasil.</td>
+</tr>
+
+<tr>
+<td>Gambar pada pelemparan koin</td>
+<td>✔ Ya</td>
+<td>Satu hasil.</td>
+</tr>
+
+<tr>
+<td>Angka lebih dari 3</td>
+<td>✖ Tidak</td>
+<td>Masih terdiri dari beberapa kemungkinan.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Insight Matematis</h3>
+
+<div class="insight">
+
+<p>
+
+Banyak siswa sering tertukar antara titik sampel dan kejadian.
+
+Penyebabnya sederhana.
+
+Keduanya memang sama-sama berhubungan dengan hasil percobaan.
+
+Perbedaannya adalah sebagai berikut.
+
+</p>
+
+<ul>
+
+<li>Titik sampel hanya terdiri dari satu hasil.</li>
+
+<li>Kejadian dapat terdiri dari satu atau lebih titik sampel.</li>
+
+</ul>
+
+<p>
+
+Memahami perbedaan ini akan membuat materi peluang jauh lebih mudah.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Berpikir</h3>
+
+<p>
+
+Misalkan sebuah dadu dilempar.
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Apakah "angka genap" merupakan titik sampel?
+
+Jawabannya tidak.
+
+Mengapa?
+
+Karena "angka genap" terdiri dari tiga hasil sekaligus.
+
+</p>
+
+<pre>
+
+{2,4,6}
+
+</pre>
+
+<p>
+
+Jadi,
+
+"angka genap" bukan titik sampel.
+
+Ia merupakan sebuah <strong>kejadian</strong>.
+
+</p>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 1</h4>
+
+<p>
+
+Menganggap himpunan
+
+</p>
+
+<pre>
+
+{2,4,6}
+
+</pre>
+
+<p>
+
+sebagai titik sampel.
+
+Padahal himpunan tersebut berisi tiga titik sampel.
+
+</p>
+
+</div>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 2</h4>
+
+<p>
+
+Mengabaikan urutan.
+
+Pada pelemparan dua dadu,
+
+</p>
+
+<pre>
+
+(2,5)
+
+≠
+
+(5,2)
+
+</pre>
+
+<p>
+
+Keduanya merupakan dua titik sampel yang berbeda.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal</h3>
+
+<p>
+
+Sebuah koin dilempar dua kali.
+
+Tuliskan seluruh titik sampel.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Ruang sampel adalah
+
+</p>
+
+<pre>
+
+S = {
+
+AA,
+
+AG,
+
+GA,
+
+GG
+
+}
+
+</pre>
+
+<p>
+
+Keempat hasil tersebut merupakan titik sampel.
+
+Jumlah titik sampel = 4.
+
+</p>
+
+</details>
+
+<hr>
+
+<h3>Latihan</h3>
+
+<ol>
+
+<li>Tentukan titik sampel ketika sebuah dadu dilempar satu kali.</li>
+
+<li>Pada pelemparan dua dadu, apakah (3,6) merupakan titik sampel?</li>
+
+<li>Apakah "angka ganjil" merupakan titik sampel? Jelaskan.</li>
+
+<li>Jika sebuah kartu diambil dari satu set kartu remi, apa yang dimaksud titik sampelnya?</li>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<b>Checkpoint</b>
+
+<p>
+
+Sekarang kita telah mengetahui bahwa ruang sampel merupakan kumpulan
+seluruh hasil yang mungkin, sedangkan setiap hasil tunggal di dalamnya
+disebut titik sampel.
+
+Lalu bagaimana jika kita hanya tertarik pada sebagian titik sampel saja?
+
+Misalnya hanya hasil dadu yang genap, atau hanya kartu hati, atau hanya
+muncul minimal satu gambar?
+
+Konsep inilah yang disebut sebagai <strong>Kejadian (Event)</strong>,
+yang akan menjadi inti pembahasan berikutnya.
+
+</p>
+
+</blockquote>
+
+<hr>
+
+<section id="kejadian">
+
+<h2>1.3 Kejadian (Event)</h2>
+
+<p>
+
+Dalam kehidupan nyata, kita hampir tidak pernah tertarik pada semua hasil
+yang mungkin terjadi.
+
+Ketika melempar dadu, misalnya, kita mungkin hanya ingin mengetahui
+peluang munculnya angka genap.
+
+Ketika mengambil kartu, kita mungkin hanya peduli apakah kartu tersebut
+berwarna merah.
+
+Artinya, perhatian kita hanya tertuju pada sebagian anggota ruang sampel.
+
+Himpunan hasil yang menjadi perhatian inilah yang dinamakan
+<strong>kejadian (event)</strong>.
+
+</p>
+
+<!-- LANJUT BAGIAN 4 --><h3>Memahami Konsep Kejadian</h3>
+
+<p>
+
+Misalkan sebuah dadu dilempar satu kali.
+
+Ruang sampelnya adalah
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Sekarang misalkan kita hanya ingin mengetahui peluang munculnya
+bilangan genap.
+
+Kita tidak lagi memperhatikan seluruh anggota ruang sampel,
+melainkan hanya tiga hasil berikut.
+
+</p>
+
+<pre>
+
+A = {2,4,6}
+
+</pre>
+
+<p>
+
+Himpunan A di atas disebut sebagai <strong>kejadian (event)</strong>.
+
+Dengan kata lain, kejadian merupakan sekumpulan titik sampel
+yang memenuhi syarat tertentu.
+
+</p>
+
+<div class="definition">
+
+<h3>Definisi Kejadian</h3>
+
+<p>
+
+<b>Kejadian (Event)</b> adalah himpunan yang terdiri atas satu atau
+lebih titik sampel dari suatu ruang sampel.
+
+Biasanya kejadian dilambangkan dengan huruf kapital seperti
+<b>A</b>, <b>B</b>, <b>C</b>, dan seterusnya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Hubungan Ruang Sampel, Titik Sampel, dan Kejadian</h3>
+
+<p>
+
+Agar tidak tertukar, perhatikan hubungan ketiga konsep berikut.
+
+</p>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Penjelasan</th>
+<th>Contoh</th>
+</tr>
+
+<tr>
+<td>Ruang Sampel</td>
+<td>Semua kemungkinan hasil.</td>
+<td>{1,2,3,4,5,6}</td>
+</tr>
+
+<tr>
+<td>Titik Sampel</td>
+<td>Satu hasil tunggal.</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Kejadian</td>
+<td>Kumpulan satu atau lebih titik sampel.</td>
+<td>{2,4,6}</td>
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa setiap titik sampel selalu berada di dalam ruang
+sampel, sedangkan suatu kejadian merupakan himpunan bagian (subset)
+dari ruang sampel.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Percobaan:
+
+Melempar sebuah dadu.
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Misalkan:
+
+</p>
+
+<pre>
+
+A = muncul angka genap
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+A = {2,4,6}
+
+</pre>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Percobaan:
+
+Melempar sebuah dadu.
+
+Misalkan kejadian B adalah muncul angka lebih dari 4.
+
+</p>
+
+<pre>
+
+B = {5,6}
+
+</pre>
+
+<p>
+
+Kejadian tersebut hanya terdiri dari dua titik sampel.
+
+</p>
+
+<hr>
+
+<h3>Contoh 3</h3>
+
+<p>
+
+Percobaan:
+
+Melempar dua buah koin.
+
+</p>
+
+<pre>
+
+S = {AA, AG, GA, GG}
+
+</pre>
+
+<p>
+
+Misalkan kita ingin mengetahui kejadian muncul minimal satu gambar.
+
+</p>
+
+<pre>
+
+C = {AG, GA, GG}
+
+</pre>
+
+<p>
+
+AA tidak termasuk karena tidak memiliki gambar sama sekali.
+
+</p>
+
+<hr>
+
+<h3>Visualisasi Kejadian</h3>
+
+<p>
+
+Bayangkan ruang sampel sebagai sebuah kotak besar.
+
+Di dalam kotak tersebut terdapat seluruh titik sampel.
+
+Kejadian hanyalah sebagian isi dari kotak tersebut.
+
+</p>
+
+<pre>
+
++--------------------------------+
+
+      Ruang Sampel (S)
+
+   1   2   3   4   5   6
+
+      [2 4 6]
+
+      Kejadian A
+
++--------------------------------+
+
+</pre>
+
+<p>
+
+Visualisasi sederhana ini akan sangat membantu ketika nanti kita
+mempelajari operasi himpunan seperti irisan, gabungan,
+dan komplemen.
+
+</p>
+
+<hr>
+
+<h3>Kejadian Tidak Selalu Banyak Anggota</h3>
+
+<p>
+
+Banyak siswa mengira sebuah kejadian harus memiliki banyak hasil.
+
+Padahal tidak.
+
+Sebuah kejadian juga dapat hanya memiliki satu titik sampel.
+
+</p>
+
+<p>
+
+Misalnya,
+
+</p>
+
+<pre>
+
+A = {6}
+
+</pre>
+
+<p>
+
+Kejadian tersebut berarti "muncul angka enam".
+
+Walaupun hanya terdiri dari satu titik sampel,
+ia tetap disebut kejadian.
+
+</p>
+
+<hr>
+
+<h3>Kejadian Bisa Sama Dengan Ruang Sampel</h3>
+
+<p>
+
+Perhatikan kejadian berikut.
+
+</p>
+
+<pre>
+
+A = muncul angka kurang dari 7
+
+</pre>
+
+<p>
+
+Karena seluruh angka pada dadu memang kurang dari 7, maka
+
+</p>
+
+<pre>
+
+A = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+yang berarti
+
+</p>
+
+<pre>
+
+A = S
+
+</pre>
+
+<p>
+
+Dalam kasus ini, kejadian tersebut selalu terjadi.
+
+Peluangnya nanti akan bernilai 1.
+
+</p>
+
+<hr>
+
+<h3>Kejadian Kosong</h3>
+
+<p>
+
+Sekarang perhatikan kejadian berikut.
+
+</p>
+
+<pre>
+
+A = muncul angka 9
+
+</pre>
+
+<p>
+
+Pada dadu biasa, angka 9 tidak mungkin muncul.
+
+Artinya tidak ada satu pun titik sampel yang memenuhi syarat tersebut.
+
+Secara matematis ditulis
+
+</p>
+
+<pre>
+
+A = ∅
+
+</pre>
+
+<p>
+
+Himpunan kosong ini dinamakan <strong>kejadian mustahil</strong>.
+
+Peluangnya bernilai nol.
+
+</p>
+
+<hr>
+
+<h3>Insight Problem Solving</h3>
+
+<div class="insight">
+
+<h4>💡 Cara Berpikir Matematikawan</h4>
+
+<p>
+
+Saat membaca soal peluang, jangan langsung mencari rumus.
+
+Pertama-tama lakukan langkah berikut.
+
+</p>
+
+<ol>
+
+<li>Tentukan ruang sampelnya.</li>
+
+<li>Tentukan syarat kejadian.</li>
+
+<li>Ambil semua titik sampel yang memenuhi syarat.</li>
+
+<li>Barulah hitung peluangnya.</li>
+
+</ol>
+
+<p>
+
+Urutan berpikir ini akan membuatmu jauh lebih jarang melakukan
+kesalahan dibanding langsung memasukkan angka ke rumus.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal 1</h3>
+
+<p>
+
+Sebuah dadu dilempar satu kali.
+
+Tuliskan kejadian muncul bilangan prima.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Bilangan prima pada dadu adalah
+
+2, 3, dan 5.
+
+Maka
+
+</p>
+
+<pre>
+
+A = {2,3,5}
+
+</pre>
+
+</details>
+
+<hr>
+
+<h3>Contoh Soal 2</h3>
+
+<p>
+
+Sebuah dadu dilempar.
+
+Tuliskan kejadian muncul angka lebih dari 2 tetapi kurang dari 6.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<pre>
+
+A = {3,4,5}
+
+</pre>
+
+<p>
+
+Semua titik sampel tersebut memenuhi syarat soal.
+
+</p>
+
+</details>
+
+<hr>
+
+<h3>Contoh Soal 3</h3>
+
+<p>
+
+Dua buah koin dilempar.
+
+Tuliskan kejadian muncul tepat satu gambar.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Ruang sampel
+
+</p>
+
+<pre>
+
+S = {AA,AG,GA,GG}
+
+</pre>
+
+<p>
+
+Yang memiliki tepat satu gambar adalah
+
+</p>
+
+<pre>
+
+A = {AG,GA}
+
+</pre>
+
+</details>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 1</h4>
+
+<p>
+
+Menuliskan kejadian yang bukan merupakan bagian dari ruang sampel.
+
+Misalnya menambahkan angka 8 pada pelemparan dadu.
+
+</p>
+
+</div>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 2</h4>
+
+<p>
+
+Tidak membaca syarat soal dengan teliti.
+
+Misalnya soal meminta "lebih dari 2",
+tetapi siswa justru memasukkan angka 2.
+
+</p>
+
+</div>
+
+<div class="warning">
+
+<h4>❌ Kesalahan 3</h4>
+
+<p>
+
+Lupa bahwa satu kejadian dapat terdiri dari banyak titik sampel.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Latihan Mandiri</h3>
+
+<ol>
+
+<li>Pada pelemparan dadu, tuliskan kejadian muncul bilangan ganjil.</li>
+
+<li>Pada pelemparan dadu, tuliskan kejadian muncul angka kurang dari 5.</li>
+
+<li>Pada pelemparan dua koin, tuliskan kejadian muncul minimal satu angka.</li>
+
+<li>Pada pelemparan dua dadu, tuliskan kejadian jumlah kedua dadu sama dengan 8.</li>
+
+<li>Apakah himpunan kosong merupakan suatu kejadian? Jelaskan.</li>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<b>Checkpoint</b>
+
+<p>
+
+Sekarang kita telah memahami bahwa suatu kejadian merupakan
+sekumpulan titik sampel yang memenuhi syarat tertentu.
+
+Namun ternyata tidak semua kejadian memiliki sifat yang sama.
+
+Ada kejadian yang pasti terjadi.
+
+Ada yang mustahil terjadi.
+
+Ada pula dua kejadian yang dapat terjadi bersamaan,
+sementara yang lain tidak mungkin terjadi secara bersamaan.
+
+Perbedaan inilah yang akan dipelajari pada subbab berikutnya,
+yaitu <strong>Jenis-Jenis Kejadian</strong>.
+
+</p>
+
+</blockquote>
+
+<hr>
+
+<section id="jenis-kejadian">
+
+<h2>1.4 Jenis-Jenis Kejadian</h2>
+
+<p>
+
+Dalam teori peluang, tidak cukup hanya mengetahui apa itu kejadian.
+
+Kita juga perlu memahami hubungan antar kejadian.
+
+Pemahaman ini akan menjadi dasar ketika mempelajari operasi peluang,
+peluang gabungan, peluang irisan, hingga peluang bersyarat pada bab-bab
+berikutnya.
+
+Mari kita mulai dari jenis kejadian yang paling sederhana.
+
+</p>
+
+<!-- LANJUT BAGIAN 5 --><hr>
+
+<h3>1.4.1 Kejadian Sederhana (Simple Event)</h3>
+
+<p>
+
+Jenis kejadian pertama yang akan kita pelajari adalah
+<strong>kejadian sederhana</strong>.
+
+Sesuai namanya, kejadian ini merupakan bentuk paling sederhana dari
+sebuah kejadian karena hanya terdiri dari <strong>satu titik sampel
+saja</strong>.
+
+</p>
+
+<div class="definition">
+
+<h4>Definisi</h4>
+
+<p>
+
+Kejadian sederhana adalah kejadian yang hanya memiliki
+<strong>satu titik sampel</strong>.
+
+</p>
+
+</div>
+
+<h4>Contoh</h4>
+
+<p>
+
+Sebuah dadu dilempar satu kali.
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Misalkan kejadian
+
+</p>
+
+<pre>
+
+A = muncul angka 4
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+A = {4}
+
+</pre>
+
+<p>
+
+Karena hanya memiliki satu anggota, maka A merupakan kejadian sederhana.
+
+</p>
+
+<hr>
+
+<h3>1.4.2 Kejadian Majemuk (Compound Event)</h3>
+
+<p>
+
+Berbeda dengan kejadian sederhana, kejadian majemuk terdiri atas
+lebih dari satu titik sampel.
+
+Sebagian besar soal peluang yang akan kamu temui nantinya merupakan
+kejadian majemuk.
+
+</p>
+
+<div class="definition">
+
+<h4>Definisi</h4>
+
+<p>
+
+Kejadian majemuk adalah kejadian yang terdiri dari
+<strong>dua atau lebih titik sampel</strong>.
+
+</p>
+
+</div>
+
+<h4>Contoh</h4>
+
+<pre>
+
+B = muncul angka genap
+
+B = {2,4,6}
+
+</pre>
+
+<p>
+
+Karena memiliki tiga titik sampel, maka B merupakan kejadian majemuk.
+
+</p>
+
+<hr>
+
+<h3>Perbandingan</h3>
+
+<table>
+
+<tr>
+<th>Kejadian</th>
+<th>Jenis</th>
+</tr>
+
+<tr>
+<td>{5}</td>
+<td>Sederhana</td>
+</tr>
+
+<tr>
+<td>{1,3,5}</td>
+<td>Majemuk</td>
+</tr>
+
+<tr>
+<td>{2,4}</td>
+<td>Majemuk</td>
+</tr>
+
+<tr>
+<td>{6}</td>
+<td>Sederhana</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>1.4.3 Kejadian Pasti (Certain Event)</h3>
+
+<p>
+
+Bayangkan seseorang bertanya,
+
+</p>
+
+<blockquote>
+
+"Berapa peluang muncul angka kurang dari 10 ketika sebuah dadu
+dilempar?"
+
+</blockquote>
+
+<p>
+
+Karena semua angka pada dadu memang kurang dari 10,
+maka kejadian tersebut pasti terjadi.
+
+</p>
+
+<div class="definition">
+
+<h4>Definisi</h4>
+
+<p>
+
+Kejadian pasti adalah kejadian yang memuat
+<strong>seluruh anggota ruang sampel</strong>.
+
+</p>
+
+</div>
+
+<p>
+
+Secara matematis,
+
+</p>
+
+<pre>
+
+A = S
+
+</pre>
+
+<p>
+
+Karena kejadian tersebut selalu terjadi,
+maka nanti akan berlaku
+
+</p>
+
+<pre>
+
+P(A) = 1
+
+</pre>
+
+<hr>
+
+<h4>Contoh</h4>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+A = muncul angka kurang dari 7
+
+</pre>
+
+<p>
+
+Karena semua anggota ruang sampel memenuhi syarat,
+
+</p>
+
+<pre>
+
+A = S
+
+</pre>
+
+<p>
+
+Sehingga A merupakan kejadian pasti.
+
+</p>
+
+<hr>
+
+<h3>1.4.4 Kejadian Mustahil (Impossible Event)</h3>
+
+<p>
+
+Sekarang perhatikan pertanyaan berikut.
+
+</p>
+
+<blockquote>
+
+"Berapa peluang muncul angka 9 ketika melempar dadu biasa?"
+
+</blockquote>
+
+<p>
+
+Jawabannya tentu tidak mungkin.
+
+Tidak ada satu pun titik sampel yang memenuhi syarat tersebut.
+
+</p>
+
+<div class="definition">
+
+<h4>Definisi</h4>
+
+<p>
+
+Kejadian mustahil adalah kejadian yang
+<strong>tidak memiliki titik sampel sama sekali</strong>.
+
+</p>
+
+</div>
+
+<p>
+
+Ditulis dengan simbol
+
+</p>
+
+<pre>
+
+∅
+
+</pre>
+
+<p>
+
+atau himpunan kosong.
+
+Peluangnya bernilai
+
+</p>
+
+<pre>
+
+P(A)=0
+
+</pre>
+
+<hr>
+
+<h4>Contoh</h4>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+A = muncul angka 10
+
+</pre>
+
+<p>
+
+Karena angka 10 tidak berada dalam ruang sampel,
+
+</p>
+
+<pre>
+
+A = ∅
+
+</pre>
+
+<p>
+
+Maka A merupakan kejadian mustahil.
+
+</p>
+
+<hr>
+
+<h3>1.4.5 Kejadian Saling Lepas (Mutually Exclusive Event)</h3>
+
+<p>
+
+Dua kejadian dikatakan saling lepas apabila
+keduanya tidak mungkin terjadi secara bersamaan.
+
+Artinya,
+kedua kejadian tersebut tidak memiliki anggota yang sama.
+
+</p>
+
+<div class="definition">
+
+<h4>Definisi</h4>
+
+<p>
+
+Dua kejadian A dan B disebut saling lepas apabila
+
+</p>
+
+<pre>
+
+A ∩ B = ∅
+
+</pre>
+
+</div>
+
+<h4>Contoh</h4>
+
+<p>
+
+Pada pelemparan sebuah dadu,
+
+</p>
+
+<pre>
+
+A = muncul bilangan genap
+
+A = {2,4,6}
+
+</pre>
+
+<pre>
+
+B = muncul bilangan ganjil
+
+B = {1,3,5}
+
+</pre>
+
+<p>
+
+Tidak ada anggota yang sama.
+
+Maka
+
+</p>
+
+<pre>
+
+A ∩ B = ∅
+
+</pre>
+
+<p>
+
+Sehingga A dan B saling lepas.
+
+</p>
+
+<hr>
+
+<h3>1.4.6 Kejadian Tidak Saling Lepas</h3>
+
+<p>
+
+Tidak semua kejadian saling lepas.
+
+Ada kejadian yang memiliki anggota bersama.
+
+</p>
+
+<h4>Contoh</h4>
+
+<pre>
+
+A = bilangan genap
+
+A = {2,4,6}
+
+</pre>
+
+<pre>
+
+B = bilangan lebih dari 3
+
+B = {4,5,6}
+
+</pre>
+
+<p>
+
+Perhatikan bahwa kedua kejadian sama-sama memiliki
+
+</p>
+
+<pre>
+
+{4,6}
+
+</pre>
+
+<p>
+
+Artinya
+
+</p>
+
+<pre>
+
+A ∩ B = {4,6}
+
+</pre>
+
+<p>
+
+Karena irisan tidak kosong,
+kedua kejadian tersebut tidak saling lepas.
+
+</p>
+
+<hr>
+
+<div class="insight">
+
+<h3>💡 Insight Problem Solving</h3>
+
+<p>
+
+Banyak siswa langsung menggunakan rumus penjumlahan peluang
+tanpa mengecek apakah dua kejadian saling lepas atau tidak.
+
+Padahal inilah sumber kesalahan yang paling sering terjadi.
+
+Sebelum menggunakan rumus,
+biasakan bertanya:
+
+</p>
+
+<ol>
+
+<li>Apakah kedua kejadian memiliki anggota yang sama?</li>
+
+<li>Apakah keduanya dapat terjadi bersamaan?</li>
+
+<li>Apakah irisannya kosong?</li>
+
+</ol>
+
+<p>
+
+Jika jawaban pertanyaan terakhir adalah "ya",
+maka kedua kejadian saling lepas.
+
+Jika tidak,
+gunakan rumus penjumlahan umum yang akan dipelajari pada Bab 2.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Latihan Pemahaman</h3>
+
+<ol>
+
+<li>Tentukan apakah kejadian berikut merupakan kejadian sederhana atau majemuk.</li>
+
+<ul>
+<li>{3}</li>
+<li>{1,2}</li>
+<li>{2,4,6}</li>
+<li>{5}</li>
+</ul>
+
+<li>Pada pelemparan sebuah dadu, apakah kejadian "angka ganjil" dan "angka prima" saling lepas? Jelaskan.</li>
+
+<li>Berikan satu contoh kejadian pasti dan satu contoh kejadian mustahil pada pelemparan sebuah koin.</li>
+
+<li>Pada pelemparan sebuah dadu, tentukan apakah kejadian berikut saling lepas.</li>
+
+<ul>
+<li>Bilangan kurang dari 4</li>
+<li>Bilangan genap</li>
+</ul>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<b>Catatan Penting</b>
+
+<p>
+
+Hingga bagian ini kita telah mengenal objek-objek utama dalam teori peluang:
+
+</p>
+
+<ul>
+
+<li>Ruang Sampel</li>
+
+<li>Titik Sampel</li>
+
+<li>Kejadian</li>
+
+<li>Jenis-Jenis Kejadian</li>
+
+</ul>
+
+<p>
+
+Namun masih ada satu pertanyaan besar yang belum terjawab.
+
+<strong>Bagaimana cara mengukur "besar kemungkinan" suatu kejadian?</strong>
+
+Untuk menjawab pertanyaan tersebut, kita memerlukan fondasi matematis
+yang disebut <strong>Aksioma Peluang</strong>. Dari aksioma inilah
+seluruh rumus peluang modern diturunkan.
+
+</p>
+
+</blockquote>
+
+<hr>
+
+<section id="aksioma">
+
+<h2>1.5 Aksioma Peluang</h2>
+
+<p>
+
+Pada subbab sebelumnya kita telah mempelajari apa yang dimaksud dengan
+kejadian. Sekarang saatnya kita mempelajari aturan dasar yang menjadi
+landasan seluruh teori peluang modern.
+
+</p>
+
+<!-- LANJUT BAGIAN 6 --><h3>Mengapa Diperlukan Aksioma?</h3>
+
+<p>
+
+Dalam matematika, hampir setiap cabang ilmu dibangun di atas
+<strong>aksioma</strong>. Aksioma adalah pernyataan dasar yang diterima
+kebenarannya tanpa perlu dibuktikan terlebih dahulu. Dari aksioma inilah
+berbagai definisi, sifat, dan teorema dapat diturunkan secara logis.
+
+</p>
+
+<p>
+
+Bayangkan sebuah bangunan bertingkat. Pondasinya harus kokoh agar seluruh
+bangunan dapat berdiri dengan baik. Begitu pula dalam teori peluang.
+Tanpa aksioma, rumus-rumus peluang hanyalah sekumpulan aturan yang
+terlihat acak. Dengan adanya aksioma, setiap rumus memiliki dasar yang
+jelas dan dapat dipertanggungjawabkan secara matematis.
+
+</p>
+
+<aside>
+
+<h3>💡 Insight</h3>
+
+<p>
+
+Sebagian besar rumus yang akan kamu pelajari pada bab-bab berikutnya
+<strong>bukan rumus baru</strong>, melainkan hasil penurunan dari tiga
+aksioma peluang. Oleh karena itu, memahami aksioma jauh lebih penting
+daripada menghafal rumus.
+
+</p>
+
+</aside>
+
+<hr>
+
+<h3>Aksioma Peluang Menurut Kolmogorov</h3>
+
+<p>
+
+Pada tahun 1933, matematikawan Rusia
+<strong>Andrey Kolmogorov</strong> memperkenalkan tiga aksioma yang
+menjadi fondasi teori peluang modern. Hampir seluruh buku peluang yang
+digunakan di universitas maupun penelitian ilmiah menggunakan aksioma
+ini sebagai dasar.
+
+</p>
+
+<hr>
+
+<h3>Aksioma 1 — Nilai Peluang Selalu Tidak Negatif</h3>
+
+<div class="definition">
+
+<p>
+
+Untuk setiap kejadian <strong>A</strong>, berlaku
+
+</p>
+
+<pre>
+
+P(A) ≥ 0
+
+</pre>
+
+</div>
+
+<p>
+
+Artinya, peluang suatu kejadian tidak pernah bernilai negatif.
+
+Kita mungkin menemukan peluang bernilai nol, tetapi tidak akan pernah
+menemukan peluang -0,2 atau -5.
+
+</p>
+
+<h4>Contoh</h4>
+
+<table>
+
+<tr>
+<th>Peluang</th>
+<th>Valid?</th>
+</tr>
+
+<tr>
+<td>0,25</td>
+<td>✔ Ya</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>✔ Ya</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>✔ Ya</td>
+</tr>
+
+<tr>
+<td>-0,5</td>
+<td>✖ Tidak</td>
+</tr>
+
+</table>
+
+<p>
+
+Mengapa tidak boleh negatif?
+
+Karena peluang menyatakan tingkat kemungkinan terjadinya suatu
+kejadian. Tidak masuk akal jika tingkat kemungkinan bernilai kurang dari
+nol.
+
+</p>
+
+<hr>
+
+<h3>Aksioma 2 — Peluang Ruang Sampel Sama dengan Satu</h3>
+
+<div class="definition">
+
+<pre>
+
+P(S) = 1
+
+</pre>
+
+</div>
+
+<p>
+
+Ruang sampel memuat seluruh kemungkinan hasil yang dapat terjadi.
+
+Karena salah satu hasil di dalam ruang sampel pasti muncul setelah
+percobaan dilakukan, maka peluang ruang sampel selalu sama dengan satu.
+
+</p>
+
+<h4>Contoh</h4>
+
+<p>
+
+Pada pelemparan sebuah dadu,
+
+</p>
+
+<pre>
+
+S = {1,2,3,4,5,6}
+
+</pre>
+
+<p>
+
+Cepat atau lambat pasti akan muncul salah satu angka tersebut.
+
+Tidak mungkin muncul angka di luar ruang sampel.
+
+Karena itulah
+
+</p>
+
+<pre>
+
+P(S)=1
+
+</pre>
+
+<hr>
+
+<h3>Aksioma 3 — Penjumlahan Peluang Kejadian Saling Lepas</h3>
+
+<div class="definition">
+
+<p>
+
+Jika dua kejadian A dan B saling lepas, maka
+
+</p>
+
+<pre>
+
+P(A ∪ B)=P(A)+P(B)
+
+</pre>
+
+</div>
+
+<p>
+
+Aksioma ini menyatakan bahwa apabila dua kejadian tidak mungkin terjadi
+secara bersamaan, maka peluang munculnya salah satu di antaranya cukup
+dengan menjumlahkan peluang masing-masing.
+
+</p>
+
+<h4>Contoh</h4>
+
+<p>
+
+Pada pelemparan dadu,
+
+</p>
+
+<pre>
+
+A = muncul angka 1
+
+B = muncul angka 6
+
+</pre>
+
+<p>
+
+Kedua kejadian tersebut saling lepas.
+
+Maka
+
+</p>
+
+<pre>
+
+P(A ∪ B)
+
+= P(A)+P(B)
+
+= 1/6 + 1/6
+
+= 2/6
+
+= 1/3
+
+</pre>
+
+<hr>
+
+<h3>Mengapa Harus Saling Lepas?</h3>
+
+<p>
+
+Perhatikan dua kejadian berikut.
+
+</p>
+
+<pre>
+
+A = bilangan genap
+
+B = bilangan lebih dari 3
+
+</pre>
+
+<p>
+
+Kedua kejadian memiliki anggota bersama, yaitu
+
+</p>
+
+<pre>
+
+{4,6}
+
+</pre>
+
+<p>
+
+Jika kita langsung menjumlahkan peluang A dan peluang B,
+maka anggota 4 dan 6 akan dihitung dua kali.
+
+Akibatnya hasil menjadi terlalu besar.
+
+Inilah alasan mengapa aksioma ketiga hanya berlaku untuk kejadian yang
+saling lepas.
+
+</p>
+
+<aside>
+
+<h3>⚠ Kesalahan Umum</h3>
+
+<p>
+
+Banyak siswa langsung menggunakan
+
+</p>
+
+<pre>
+
+P(A ∪ B)=P(A)+P(B)
+
+</pre>
+
+<p>
+
+tanpa memeriksa apakah kedua kejadian saling lepas.
+
+Kesalahan sederhana ini sering menyebabkan jawaban akhir keliru.
+
+</p>
+
+</aside>
+
+<hr>
+
+<h3>Makna Nilai Peluang</h3>
+
+<p>
+
+Berdasarkan ketiga aksioma tersebut, kita dapat menyimpulkan bahwa setiap
+peluang selalu berada di antara 0 dan 1.
+
+</p>
+
+<table>
+
+<tr>
+<th>Nilai</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Kejadian mustahil.</td>
+</tr>
+
+<tr>
+<td>0 &lt; P(A) &lt; 1</td>
+<td>Kejadian mungkin terjadi.</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Kejadian pasti.</td>
+</tr>
+
+</table>
+
+<p>
+
+Semakin mendekati 1, semakin besar kemungkinan kejadian tersebut
+terjadi.
+
+Sebaliknya, semakin mendekati 0, semakin kecil kemungkinan terjadinya.
+
+</p>
+
+<hr>
+
+<h3>Contoh Berpikir</h3>
+
+<p>
+
+Misalkan peluang hujan hari ini adalah
+
+</p>
+
+<pre>
+
+P(Hujan)=0,8
+
+</pre>
+
+<p>
+
+Artinya bukan berarti hujan akan turun selama 80% dari waktu.
+
+Yang dimaksud adalah tingkat keyakinan bahwa hujan akan terjadi cukup
+tinggi, yaitu sekitar 80%.
+
+Peluang bukan jaminan, melainkan ukuran kemungkinan.
+
+</p>
+
+<hr>
+
+<h3>Latihan</h3>
+
+<ol>
+
+<li>Mengapa peluang tidak boleh bernilai negatif?</li>
+
+<li>Jelaskan mengapa peluang ruang sampel selalu sama dengan satu.</li>
+
+<li>Apakah nilai peluang 1,2 mungkin terjadi? Jelaskan.</li>
+
+<li>Apakah nilai peluang -0,1 mungkin terjadi? Jelaskan.</li>
+
+<li>Mengapa aksioma ketiga hanya berlaku untuk kejadian saling lepas?</li>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<b>Checkpoint</b>
+
+<p>
+
+Dengan memahami tiga aksioma peluang, kita telah memiliki fondasi yang
+cukup untuk menurunkan berbagai sifat peluang. Pada subbab berikutnya,
+kita akan melihat bagaimana tiga aksioma sederhana tersebut melahirkan
+berbagai aturan yang sangat sering digunakan dalam penyelesaian soal.
+
+</p>
+
+</blockquote>
+
+<hr>
+
+<section id="sifat">
+
+<h2>1.6 Sifat-Sifat Peluang</h2>
+
+<p>
+
+Jika aksioma merupakan pondasi sebuah bangunan, maka sifat-sifat peluang
+adalah dinding dan kerangka yang dibangun di atas pondasi tersebut.
+Seluruh sifat berikut dapat diturunkan dari tiga aksioma yang telah kita
+pelajari sebelumnya.
+
+</p>
+
+<!-- LANJUT BAGIAN 7 --><h3>Sifat-Sifat Peluang</h3>
+
+<p>
+
+Setelah mempelajari tiga aksioma peluang, sekarang kita akan melihat
+berbagai sifat penting yang diturunkan dari aksioma tersebut. Dalam
+praktiknya, sifat-sifat ini jauh lebih sering digunakan dibandingkan
+aksiomanya secara langsung.
+
+</p>
+
+<p>
+
+Ingatlah bahwa seluruh sifat berikut bukan muncul begitu saja,
+melainkan merupakan konsekuensi logis dari aksioma peluang yang telah
+dipelajari sebelumnya.
+
+</p>
+
+<hr>
+
+<section>
+
+<h3>1. Peluang Selalu Berada di Antara 0 dan 1</h3>
+
+<div class="definition">
+
+<p>
+
+Untuk setiap kejadian <strong>A</strong>, selalu berlaku
+
+</p>
+
+<pre>
+
+0 ≤ P(A) ≤ 1
+
+</pre>
+
+</div>
+
+<p>
+
+Artinya, peluang tidak pernah bernilai negatif dan tidak pernah lebih
+besar dari satu.
+
+</p>
+
+<h4>Contoh</h4>
+
+<table>
+
+<tr>
+
+<th>Nilai Peluang</th>
+
+<th>Valid?</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>0,35</td>
+
+<td>✔</td>
+
+<td>Benar</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>✔</td>
+
+<td>Kejadian pasti</td>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>✔</td>
+
+<td>Kejadian mustahil</td>
+
+</tr>
+
+<tr>
+
+<td>1,2</td>
+
+<td>✖</td>
+
+<td>Tidak mungkin</td>
+
+</tr>
+
+<tr>
+
+<td>-0,4</td>
+
+<td>✖</td>
+
+<td>Tidak mungkin</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>2. Peluang Kejadian Mustahil</h3>
+
+<p>
+
+Jika suatu kejadian tidak memiliki satu pun titik sampel, maka kejadian
+tersebut disebut kejadian mustahil.
+
+</p>
+
+<pre>
+
+P(∅)=0
+
+</pre>
+
+<p>
+
+Sebagai contoh, peluang muncul angka 8 pada sebuah dadu biasa adalah
+nol karena hasil tersebut tidak mungkin terjadi.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>3. Peluang Kejadian Pasti</h3>
+
+<p>
+
+Jika suatu kejadian sama dengan ruang sampel, maka kejadian tersebut
+selalu terjadi.
+
+</p>
+
+<pre>
+
+P(S)=1
+
+</pre>
+
+<p>
+
+Misalnya ketika melempar dadu, kejadian "muncul angka kurang dari 7"
+pasti terjadi karena semua anggota ruang sampel memenuhi syarat.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>4. Peluang Komplemen</h3>
+
+<p>
+
+Misalkan A adalah suatu kejadian.
+
+Komplemen dari A dilambangkan dengan
+
+</p>
+
+<pre>
+
+A'
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+Aᶜ
+
+</pre>
+
+<p>
+
+Komplemen berarti semua hasil yang <strong>tidak termasuk</strong>
+ke dalam kejadian A.
+
+</p>
+
+<div class="definition">
+
+<pre>
+
+P(A') = 1 - P(A)
+
+</pre>
+
+</div>
+
+<h4>Contoh</h4>
+
+<p>
+
+Jika peluang hujan hari ini adalah
+
+</p>
+
+<pre>
+
+P(H)=0,65
+
+</pre>
+
+<p>
+
+maka peluang tidak hujan adalah
+
+</p>
+
+<pre>
+
+P(H')
+
+=1-0,65
+
+=0,35
+
+</pre>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>5. Semakin Banyak Anggota Kejadian, Semakin Besar Peluangnya</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A={2}
+
+B={2,4,6}
+
+</pre>
+
+<p>
+
+Kejadian B memiliki lebih banyak titik sampel dibandingkan A.
+
+Karena jumlah kemungkinan yang mendukung B lebih banyak, maka peluang
+B juga lebih besar.
+
+</p>
+
+<p>
+
+Prinsip sederhana ini sering digunakan ketika memperkirakan jawaban
+tanpa melakukan perhitungan panjang.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>6. Jika A Merupakan Bagian dari B</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A ⊂ B
+
+</pre>
+
+<p>
+
+Artinya setiap anggota A juga merupakan anggota B.
+
+Maka berlaku
+
+</p>
+
+<pre>
+
+P(A) ≤ P(B)
+
+</pre>
+
+<h4>Contoh</h4>
+
+<pre>
+
+A={6}
+
+B={4,5,6}
+
+</pre>
+
+<p>
+
+Karena setiap anggota A berada di dalam B, maka peluang A tidak mungkin
+lebih besar daripada peluang B.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h3>Contoh Soal</h3>
+
+<p>
+
+Sebuah dadu dilempar satu kali.
+
+Tentukan peluang tidak muncul angka ganjil.
+
+</p>
+
+<details>
+
+<summary><strong>Lihat Pembahasan</strong></summary>
+
+<p>
+
+Kejadian muncul angka ganjil adalah
+
+</p>
+
+<pre>
+
+A={1,3,5}
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+P(A)=3/6=1/2
+
+</pre>
+
+<p>
+
+Maka peluang tidak muncul angka ganjil
+
+</p>
+
+<pre>
+
+P(A')
+
+=1-P(A)
+
+=1-1/2
+
+=1/2
+
+</pre>
+
+</details>
+
+</section>
+
+<hr>
+
+<div class="insight">
+
+<h3>💡 Tips Olimpiade</h3>
+
+<p>
+
+Dalam banyak soal olimpiade, menghitung peluang suatu kejadian secara
+langsung sering kali sulit.
+
+Sebaliknya, menghitung peluang komplemennya justru jauh lebih mudah.
+
+Jika menemui soal seperti:
+
+</p>
+
+<ul>
+
+<li>Minimal satu...</li>
+
+<li>Tidak ada yang...</li>
+
+<li>Paling sedikit...</li>
+
+</ul>
+
+<p>
+
+cobalah pikirkan apakah menggunakan peluang komplemen akan membuat
+perhitungan menjadi lebih sederhana.
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="warning">
+
+<h3>⚠ Kesalahan yang Sering Terjadi</h3>
+
+<ul>
+
+<li>Menganggap peluang dapat lebih dari satu.</li>
+
+<li>Lupa bahwa kejadian pasti memiliki peluang satu.</li>
+
+<li>Salah menghitung peluang komplemen.</li>
+
+<li>Menggunakan rumus tanpa memahami makna kejadian.</li>
+
+<li>Langsung memasukkan angka ke rumus tanpa menentukan ruang sampel.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<section id="ringkasan">
+
+<h2>Ringkasan Bab 1</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Inti Pembahasan</th>
+
+</tr>
+
+<tr>
+
+<td>Ruang Sampel</td>
+
+<td>Himpunan seluruh kemungkinan hasil.</td>
+
+</tr>
+
+<tr>
+
+<td>Titik Sampel</td>
+
+<td>Setiap hasil tunggal dalam ruang sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Kejadian</td>
+
+<td>Himpunan bagian dari ruang sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Kejadian Pasti</td>
+
+<td>Peluangnya sama dengan 1.</td>
+
+</tr>
+
+<tr>
+
+<td>Kejadian Mustahil</td>
+
+<td>Peluangnya sama dengan 0.</td>
+
+</tr>
+
+<tr>
+
+<td>Aksioma Peluang</td>
+
+<td>Landasan seluruh teori peluang modern.</td>
+
+</tr>
+
+<tr>
+
+<td>Komplemen</td>
+
+<td>P(A') = 1 − P(A).</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+<section id="latihan-komprehensif">
+
+<h2>Latihan Komprehensif Bab 1</h2>
+
+<p>
+
+Kerjakan soal-soal berikut tanpa melihat pembahasan terlebih dahulu.
+
+Fokuslah pada proses berpikir, bukan hanya jawaban akhir.
+
+</p>
+
+<ol>
+
+<li>
+Tuliskan ruang sampel pelemparan dua buah koin.
+</li>
+
+<li>
+Tuliskan kejadian muncul tepat satu gambar.
+</li>
+
+<li>
+Tuliskan kejadian muncul minimal satu angka.
+</li>
+
+<li>
+Pada pelemparan sebuah dadu, tentukan kejadian muncul bilangan prima.
+</li>
+
+<li>
+Jelaskan perbedaan ruang sampel, titik sampel, dan kejadian.
+</li>
+
+<li>
+Apa yang dimaksud dengan kejadian mustahil?
+</li>
+
+<li>
+Mengapa peluang tidak pernah bernilai negatif?
+</li>
+
+<li>
+Jika peluang suatu kejadian adalah 0,27, berapakah peluang komplemennya?
+</li>
+
+<li>
+Mengapa peluang ruang sampel selalu sama dengan satu?
+</li>
+
+<li>
+Berikan contoh satu kejadian sederhana dan satu kejadian majemuk pada pelemparan dadu.
+</li>
+
+</ol>
+
+<hr>
+
+<blockquote>
+
+<h3>📖 Akhir Bab 1</h3>
+
+<p>
+
+Selamat! Kini kamu telah menguasai fondasi teori peluang. Seluruh konsep
+yang dipelajari pada bab ini akan terus digunakan pada bab-bab
+selanjutnya. Pastikan kamu benar-benar memahami ruang sampel, kejadian,
+dan aksioma peluang sebelum melanjutkan, karena materi berikutnya akan
+mengembangkan konsep-konsep tersebut menjadi teknik perhitungan peluang
+yang lebih kompleks.
+
+</p>
+
+</blockquote>
+
+<!-- ========================= -->
+<!-- LANJUT KE BAGIAN 7B -->
+<!-- (Soal HOTS, Pembahasan, Tombol Home & Next, lalu </body></html>) -->
+<!-- ========================= --><hr>
+
+<section id="soal-hots">
+
+<h2>🔥 Soal HOTS Bab 1</h2>
+
+<p>
+Soal berikut dirancang untuk melatih cara berpikir tingkat lanjut.
+Jangan langsung menggunakan rumus — pahami dulu ruang sampel dan struktur kejadian.
+</p>
+
+<ol>
+
+<li>
+Sebuah dadu dilempar dua kali. Tentukan peluang jumlah kedua mata dadu sama dengan 7.
+</li>
+
+<li>
+Dua koin dilempar bersamaan. Berapa peluang muncul <b>paling sedikit satu gambar</b>?
+</li>
+
+<li>
+Sebuah dadu dilempar satu kali. Tentukan peluang muncul angka genap atau bilangan prima.
+</li>
+
+<li>
+Dua dadu dilempar. Tentukan peluang kedua angka yang muncul berbeda.
+</li>
+
+<li>
+Sebuah koin dilempar tiga kali. Tentukan peluang tepat dua kali muncul gambar.
+</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<section id="pembahasan-hots">
+
+<h2>📝 Pembahasan HOTS (Ringkas & Konseptual)</h2>
+
+<details>
+
+<summary><strong>1. Jumlah dua dadu = 7</strong></summary>
+
+<p>
+Ruang sampel: 36 kemungkinan.
+</p>
+
+<p>
+Pasangan yang jumlahnya 7:
+</p>
+
+<pre>
+(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)
+</pre>
+
+<p>
+Jumlah kejadian = 6
+</p>
+
+<pre>
+P = 6/36 = 1/6
+</pre>
+
+</details>
+
+<hr>
+
+<details>
+
+<summary><strong>2. Minimal satu gambar (2 koin)</strong></summary>
+
+<p>
+Lebih mudah pakai komplemen.
+</p>
+
+<p>
+Komplemen: tidak ada gambar = AA
+</p>
+
+<pre>
+P(AA) = 1/4
+</pre>
+
+<p>
+Maka:
+</p>
+
+<pre>
+P(minimal 1 gambar) = 1 - 1/4 = 3/4
+</pre>
+
+</details>
+
+<hr>
+
+<details>
+
+<summary><strong>3. Genap atau prima (dadu)</strong></summary>
+
+<p>
+S = {1,2,3,4,5,6}
+</p>
+
+<p>
+Genap = {2,4,6}
+Prima = {2,3,5}
+</p>
+
+<p>
+Gabungan:
+</p>
+
+<pre>
+{2,3,4,5,6}
+</pre>
+
+<p>
+Jumlah = 5
+</p>
+
+<pre>
+P = 5/6
+</pre>
+
+</details>
+
+<hr>
+
+<details>
+
+<summary><strong>4. Dua dadu berbeda</strong></summary>
+
+<p>
+Total = 36
+</p>
+
+<p>
+Sama = 6 (1,1) ... (6,6)
+</p>
+
+<p>
+Berbeda = 36 - 6 = 30
+</p>
+
+<pre>
+P = 30/36 = 5/6
+</pre>
+
+</details>
+
+<hr>
+
+<details>
+
+<summary><strong>5. Tiga koin, tepat 2 gambar</strong></summary>
+
+<p>
+Ruang sampel = 8
+</p>
+
+<p>
+Kejadian:
+</p>
+
+<pre>
+GGA, GAG, AGG
+</pre>
+
+<p>
+Jumlah = 3
+</p>
+
+<pre>
+P = 3/8
+</pre>
+
+</details>
+
+</section>
+
+<hr>
+
+<section id="penutup">
+
+<h2>🎯 Penutup Bab 1</h2>
+
+<p>
+Bab ini adalah fondasi utama seluruh teori peluang.
+Jika kamu benar-benar memahami:
+</p>
+
+<ul>
+<li>Ruang sampel</li>
+<li>Titik sampel</li>
+<li>Kejadian</li>
+<li>Aksioma peluang</li>
+<li>Sifat-sifat peluang</li>
+</ul>
+
+<p>
+maka bab-bab selanjutnya akan jauh lebih mudah dipahami.
+</p>
+
+<p>
+Ingat: dalam peluang, kekuatan utama bukan rumus —
+tetapi <b>cara memodelkan masalah</b>.
+</p>
+
+</section>
+
+<hr>
+
+<div class="navigation-buttons">
+
+<a href="index.html" class="btn">🏠 Kembali ke Home</a>
+
+<a href="peluang2.html" class="btn">➡️ Lanjut ke Bab 2</a>
+
+</div>
+
+<!-- PENUTUP FILE HTML -->
+
+</body>
+</html>
