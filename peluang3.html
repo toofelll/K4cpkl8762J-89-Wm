@@ -1,1 +1,3303 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3 - Ukuran Pemusatan Data</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 3</h1>
+
+<h2>Ukuran Pemusatan Data</h2>
+
+<p>
+Pada bab ini kita akan mempelajari bagaimana menentukan
+nilai yang paling mewakili suatu kumpulan data.
+Materi ini merupakan dasar dari statistika,
+machine learning,
+data science,
+hingga penelitian ilmiah.
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="#mean">Mean</a>
+
+<a href="#median">Median</a>
+
+<a href="#modus">Modus</a>
+
+<a href="#kuartil">Kuartil</a>
+
+<a href="#desil">Desil</a>
+
+<a href="#persentil">Persentil</a>
+
+</nav>
+
+<main>
+
+<section class="materi">
+
+<h2>Mengapa Ukuran Pemusatan Data Penting?</h2>
+
+<p>
+
+Bayangkan terdapat data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+10, 12, 13, 15, 15, 17, 18
+
+</div>
+
+<p>
+
+Jika seseorang bertanya,
+
+<b>"Berapa nilai yang mewakili data tersebut?"</b>
+
+apakah kita harus menyebutkan seluruh datanya?
+
+Tentu tidak.
+
+Kita membutuhkan sebuah nilai yang mampu
+mewakili keseluruhan data.
+
+Nilai inilah yang dinamakan
+<b>ukuran pemusatan data.</b>
+
+</p>
+
+<p>
+
+Dalam statistika terdapat beberapa ukuran pemusatan data.
+
+</p>
+
+<ul>
+
+<li>Mean (Rata-rata)</li>
+
+<li>Median (Nilai Tengah)</li>
+
+<li>Modus (Nilai yang paling sering muncul)</li>
+
+</ul>
+
+<p>
+
+Masing-masing mempunyai kelebihan
+dan kekurangan.
+
+Tidak ada satu ukuran yang selalu terbaik.
+
+Seorang ahli statistika harus mengetahui
+kapan suatu ukuran lebih tepat digunakan.
+
+</p>
+
+</section>
+
+<section id="mean">
+
+<h1>3.1 Mean (Rata-rata)</h1>
+
+<h2>Apa itu Mean?</h2>
+
+<p>
+
+Mean merupakan ukuran pemusatan data
+yang paling terkenal.
+
+Sebagian besar orang mengenalnya
+sebagai <b>rata-rata.</b>
+
+Namun dalam matematika,
+mean jauh lebih dari sekadar
+menjumlahkan data lalu membaginya.
+
+Mean memiliki makna geometris,
+statistis,
+bahkan fisika.
+
+</p>
+
+<div class="note">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Mean dapat dianggap sebagai
+<b>titik keseimbangan</b>
+(balance point)
+dari seluruh data.
+
+Konsep ini sangat penting
+karena banyak sifat matematika
+berasal dari ide keseimbangan tersebut.
+
+</p>
+
+</div>
+
+<h2>Definisi</h2>
+
+<p>
+
+Misalkan terdapat data
+
+</p>
+
+<p>
+
+x₁, x₂, x₃, ..., xₙ
+
+</p>
+
+<p>
+
+Maka mean didefinisikan sebagai
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{x_1+x_2+x_3+\cdots+x_n}{n}
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li>\(\bar{x}\) = Mean</li>
+
+<li>\(n\) = Banyak data</li>
+
+<li>\(x_i\) = Data ke-i</li>
+
+</ul>
+
+<h2>Mengapa Rumus Mean Berbentuk Seperti Itu?</h2>
+
+<p>
+
+Pertanyaan ini jauh lebih penting
+daripada sekadar menghafal rumus.
+
+Bayangkan terdapat tiga anak
+yang memiliki uang
+
+</p>
+
+<ul>
+
+<li>A = Rp20.000</li>
+
+<li>B = Rp30.000</li>
+
+<li>C = Rp40.000</li>
+
+</ul>
+
+<p>
+
+Total uang mereka adalah
+
+</p>
+
+<p>
+
+20.000 + 30.000 + 40.000 = 90.000
+
+</p>
+
+<p>
+
+Jika seluruh uang tersebut dibagi sama rata,
+setiap anak memperoleh
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{90.000}{3}
+=
+30.000
+\]
+
+</p>
+
+<p>
+
+Nilai Rp30.000 inilah yang disebut
+<b>mean.</b>
+
+Dengan kata lain,
+mean merupakan hasil pembagian total
+nilai kepada seluruh anggota secara merata.
+
+</p>
+
+<div class="info">
+
+<b>Kesimpulan</b>
+
+<p>
+
+Mean adalah hasil pemerataan
+seluruh data sehingga setiap data
+dianggap mempunyai kontribusi yang sama.
+
+</p>
+
+</div><section class="materi">
+
+<h2>Mean sebagai Titik Keseimbangan Data</h2>
+
+<p>
+
+Banyak siswa menganggap mean hanyalah
+hasil penjumlahan yang dibagi banyak data.
+
+Padahal makna sebenarnya jauh lebih dalam.
+
+Mean merupakan <b>titik keseimbangan (balance point)</b>
+dari seluruh data.
+
+</p>
+
+<p>
+
+Bayangkan setiap nilai merupakan sebuah benda
+yang diletakkan pada sebuah papan.
+
+Jika papan tersebut ingin seimbang,
+maka titik tumpunya berada tepat di posisi mean.
+
+Semakin jauh suatu data dari mean,
+semakin besar pengaruhnya terhadap keseimbangan.
+
+</p>
+
+<div class="note">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Konsep keseimbangan inilah yang menjadi alasan
+mengapa mean digunakan pada statistika,
+fisika, machine learning,
+hingga kecerdasan buatan.
+
+</p>
+
+</div>
+
+<h2>Sifat-Sifat Mean</h2>
+
+<h3>1. Mean selalu berada di antara data minimum dan maksimum.</h3>
+
+<p>
+
+Misalkan data
+
+</p>
+
+<div class="contoh-data">
+
+5, 8, 9, 12, 16
+
+</div>
+
+<p>
+
+Mean tidak mungkin bernilai 20
+atau bernilai -5.
+
+Mean selalu berada di dalam rentang data.
+
+</p>
+
+<hr>
+
+<h3>2. Mean menggunakan seluruh data.</h3>
+
+<p>
+
+Berbeda dengan median atau modus,
+mean memperhatikan setiap nilai.
+
+Karena itu perubahan satu data saja
+dapat mengubah nilai mean.
+
+</p>
+
+<hr>
+
+<h3>3. Mean sangat sensitif terhadap nilai ekstrem (Outlier).</h3>
+
+<p>
+
+Perhatikan dua kumpulan data berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Data A</th>
+
+<th>Data B</th>
+
+</tr>
+
+<tr>
+
+<td>10,11,12,13,14</td>
+
+<td>10,11,12,13,100</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Pada Data A
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+12
+\]
+
+</p>
+
+<p>
+
+Pada Data B
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+29.2
+\]
+
+</p>
+
+<p>
+
+Padahal hanya satu angka yang berubah.
+
+Hal ini menunjukkan bahwa mean
+sangat dipengaruhi oleh data ekstrem.
+
+</p>
+
+<div class="warning">
+
+<b>Catatan Penting</b>
+
+<p>
+
+Jika suatu data mengandung banyak outlier,
+mean sering kali bukan ukuran pemusatan
+yang terbaik.
+
+Dalam kondisi seperti ini,
+median biasanya lebih representatif.
+
+</p>
+
+</div>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Hitung mean dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+4,6,8,10,12
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Jumlah seluruh data
+
+</p>
+
+<p>
+
+4+6+8+10+12=40
+
+</p>
+
+<p>
+
+Banyak data
+
+</p>
+
+<p>
+
+5
+
+</p>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{40}{5}
+=
+8
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Mean data tersebut adalah
+<b>8</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<p>
+
+Hitung mean data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+12,15,18,20,25,30
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Jumlah data
+
+</p>
+
+<p>
+
+12+15+18+20+25+30=120
+
+</p>
+
+<p>
+
+Banyak data
+
+</p>
+
+<p>
+
+6
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{120}{6}
+=
+20
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Mean data adalah
+
+<b>20</b>
+
+</p>
+
+</div>
+
+<h2>Contoh Olimpiade 1</h2>
+
+<p>
+
+Suatu kelas memiliki rata-rata nilai
+75.
+
+Jika terdapat 20 siswa,
+berapakah jumlah seluruh nilai siswa?
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Diketahui
+
+</p>
+
+<ul>
+
+<li>Mean = 75</li>
+
+<li>Banyak siswa = 20</li>
+
+</ul>
+
+<p>
+
+Karena
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{\Sigma x}{n}
+\]
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p class="rumus">
+
+\[
+\Sigma x
+=
+75
+\times
+20
+=
+1500
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Jumlah seluruh nilai siswa adalah
+
+<b>1500</b>
+
+</p>
+
+</div>
+
+</section><section class="materi">
+
+<h2>Pembuktian Sifat Mean</h2>
+
+<p>
+
+Pada bagian sebelumnya kita mengetahui bahwa mean merupakan
+titik keseimbangan data.
+
+Sekarang kita akan membuktikan salah satu sifat
+terpenting mean.
+
+</p>
+
+<div class="theorem">
+
+<h3>Teorema</h3>
+
+<p>
+
+Jumlah seluruh penyimpangan data terhadap mean
+selalu sama dengan nol.
+
+</p>
+
+<p class="rumus">
+
+\[
+\sum_{i=1}^{n}(x_i-\bar{x})=0
+\]
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Mulai dari definisi.
+
+</p>
+
+<p class="rumus">
+
+\[
+\sum(x_i-\bar{x})
+=
+\sum x_i
+-
+\sum \bar{x}
+\]
+
+</p>
+
+<p>
+
+Karena mean merupakan konstanta,
+maka
+
+</p>
+
+<p class="rumus">
+
+\[
+\sum \bar{x}
+=
+n\bar{x}
+\]
+
+</p>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p class="rumus">
+
+\[
+\sum(x_i-\bar{x})
+=
+\sum x_i
+-
+n\bar{x}
+\]
+
+</p>
+
+<p>
+
+Namun berdasarkan definisi mean
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{\sum x_i}{n}
+\]
+
+</p>
+
+<p>
+
+Kalikan kedua ruas dengan n.
+
+</p>
+
+<p class="rumus">
+
+\[
+n\bar{x}
+=
+\sum x_i
+\]
+
+</p>
+
+<p>
+
+Substitusikan ke persamaan sebelumnya.
+
+</p>
+
+<p class="rumus">
+
+\[
+\sum(x_i-\bar{x})
+=
+\sum x_i
+-
+\sum x_i
+=
+0
+\]
+
+</p>
+
+<div class="info">
+
+<b>Kesimpulan</b>
+
+<p>
+
+Inilah alasan mean disebut sebagai
+<b>titik keseimbangan data</b>.
+
+Jumlah seluruh penyimpangan di sebelah kiri
+selalu sama dengan jumlah penyimpangan di sebelah kanan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Pembuktian dengan Angka</h2>
+
+<p>
+
+Misalkan data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+2, 4, 6, 8, 10
+
+</div>
+
+<p>
+
+Mean data tersebut adalah
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}=6
+\]
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Data</th>
+<th>Penyimpangan</th>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+<td>-4</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+<td>-2</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>10</td>
+<td>4</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Jumlah penyimpangan
+
+</p>
+
+<p>
+
+-4 + (-2) + 0 + 2 + 4 = 0
+
+</p>
+
+<div class="note">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Sifat ini sangat penting karena menjadi dasar
+perhitungan variansi, standar deviasi,
+regresi linear,
+hingga machine learning.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mean Tertimbang (Weighted Mean)</h2>
+
+<p>
+
+Pada beberapa kasus,
+setiap data tidak memiliki bobot yang sama.
+
+Misalnya nilai ujian akhir
+lebih penting dibanding tugas harian.
+
+Dalam kondisi seperti ini,
+digunakan <b>mean tertimbang</b>.
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{\sum w_i x_i}
+{\sum w_i}
+\]
+
+</p>
+
+<p>
+
+dengan
+
+</p>
+
+<ul>
+
+<li>\(x_i\) = nilai data</li>
+<li>\(w_i\) = bobot data</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Mean Tertimbang</h2>
+
+<p>
+
+Nilai seorang siswa sebagai berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Komponen</th>
+<th>Nilai</th>
+<th>Bobot</th>
+
+</tr>
+
+<tr>
+
+<td>Tugas</td>
+<td>80</td>
+<td>20%</td>
+
+</tr>
+
+<tr>
+
+<td>UTS</td>
+<td>75</td>
+<td>30%</td>
+
+</tr>
+
+<tr>
+
+<td>UAS</td>
+<td>90</td>
+<td>50%</td>
+
+</tr>
+
+</table>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+80(0.2)
++
+75(0.3)
++
+90(0.5)
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+=
+16
++
+22.5
++
+45
+=
+83.5
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Nilai akhir siswa adalah
+
+<b>83,5</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mean Data Berkelompok</h2>
+
+<p>
+
+Apabila data sudah disusun
+ke dalam tabel distribusi frekuensi,
+maka mean tidak dapat dihitung
+dengan cara biasa.
+
+Setiap kelas diwakili
+oleh titik tengah kelas.
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{\sum f_i x_i}
+{\sum f_i}
+\]
+
+</p>
+
+<p>
+
+dengan
+
+</p>
+
+<ul>
+
+<li>\(f_i\) = frekuensi kelas</li>
+<li>\(x_i\) = titik tengah kelas</li>
+
+</ul>
+
+<div class="note">
+
+<b>Catatan</b>
+
+<p>
+
+Materi mean data berkelompok
+akan lebih sering muncul
+pada statistika SMA,
+analisis data,
+dan olimpiade statistika.
+
+</p>
+
+</div>
+
+</section><section id="mean-lanjutan" class="materi">
+
+<h2>Contoh Mean Data Berkelompok</h2>
+
+<p>
+Perhatikan tabel distribusi frekuensi berikut.
+</p>
+
+<table>
+
+<tr>
+<th>Interval Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>40 - 49</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>50 - 59</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>60 - 69</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>70 - 79</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>80 - 89</td>
+<td>5</td>
+</tr>
+
+</table>
+
+<p>
+
+Langkah pertama adalah menentukan titik tengah
+setiap interval.
+
+</p>
+
+<table>
+
+<tr>
+<th>Interval</th>
+<th>Frekuensi</th>
+<th>Titik Tengah</th>
+<th>f × x</th>
+</tr>
+
+<tr>
+<td>40 - 49</td>
+<td>3</td>
+<td>44,5</td>
+<td>133,5</td>
+</tr>
+
+<tr>
+<td>50 - 59</td>
+<td>6</td>
+<td>54,5</td>
+<td>327</td>
+</tr>
+
+<tr>
+<td>60 - 69</td>
+<td>10</td>
+<td>64,5</td>
+<td>645</td>
+</tr>
+
+<tr>
+<td>70 - 79</td>
+<td>8</td>
+<td>74,5</td>
+<td>596</td>
+</tr>
+
+<tr>
+<td>80 - 89</td>
+<td>5</td>
+<td>84,5</td>
+<td>422,5</td>
+</tr>
+
+<tr>
+<th>Jumlah</th>
+<th>32</th>
+<th>-</th>
+<th>2124</th>
+</tr>
+
+</table>
+
+<p>
+
+Maka mean data adalah
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+\frac{2124}{32}
+=
+66,375
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Mean data berkelompok tersebut
+adalah <b>66,375</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Pengaruh Outlier terhadap Mean</h2>
+
+<p>
+
+Salah satu kelemahan terbesar mean adalah
+sangat sensitif terhadap <i>outlier</i>,
+yaitu data yang nilainya sangat jauh
+dibandingkan data lainnya.
+
+</p>
+
+<h3>Contoh</h3>
+
+<div class="contoh-data">
+
+20, 21, 22, 23, 24
+
+</div>
+
+<p>
+
+Mean
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+22
+\]
+
+</p>
+
+<p>
+
+Sekarang ubah satu data menjadi
+
+</p>
+
+<div class="contoh-data">
+
+20, 21, 22, 23, 100
+
+</div>
+
+<p>
+
+Mean menjadi
+
+</p>
+
+<p class="rumus">
+
+\[
+\bar{x}
+=
+37,2
+\]
+
+</p>
+
+<p>
+
+Padahal empat data lainnya
+tidak berubah sama sekali.
+
+Hal ini menunjukkan bahwa
+mean mudah dipengaruhi oleh
+nilai ekstrem.
+
+</p>
+
+<div class="warning">
+
+<b>Perhatian</b>
+
+<p>
+
+Jika suatu data memiliki banyak outlier,
+median biasanya menjadi ukuran pemusatan
+yang lebih baik daripada mean.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kapan Mean Sebaiknya Digunakan?</h2>
+
+<ul>
+
+<li>Semua data berbentuk numerik.</li>
+
+<li>Tidak terdapat outlier yang ekstrem.</li>
+
+<li>Seluruh data memiliki bobot yang sama.</li>
+
+<li>Distribusi data relatif simetris.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kapan Mean Tidak Tepat Digunakan?</h2>
+
+<ul>
+
+<li>Distribusi sangat miring (Skewed).</li>
+
+<li>Banyak outlier.</li>
+
+<li>Data berupa kategori.</li>
+
+<li>Data ordinal.</li>
+
+</ul>
+
+<hr>
+
+<div class="note">
+
+<h2>Insight Olimpiade</h2>
+
+<p>
+
+Banyak soal olimpiade tidak meminta
+menghitung mean secara langsung.
+
+Sebaliknya,
+mereka memberikan informasi
+tentang perubahan mean,
+kemudian meminta kita menentukan
+nilai yang hilang.
+
+Oleh karena itu,
+lebih penting memahami konsep
+daripada menghafal rumus.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Contoh Olimpiade</h2>
+
+<p>
+
+Rata-rata nilai delapan siswa adalah
+72.
+
+Setelah seorang siswa baru bergabung,
+rata-rata menjadi 74.
+
+Berapakah nilai siswa yang baru?
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Jumlah nilai awal
+
+</p>
+
+<p class="rumus">
+
+\[
+8 \times 72 = 576
+\]
+
+</p>
+
+<p>
+
+Jumlah nilai setelah bertambah satu siswa
+
+</p>
+
+<p class="rumus">
+
+\[
+9 \times 74 = 666
+\]
+
+</p>
+
+<p>
+
+Nilai siswa baru
+
+</p>
+
+<p class="rumus">
+
+\[
+666-576=90
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Jawaban :</b>
+
+<p>
+
+Nilai siswa yang baru adalah
+
+<b>90</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Latihan Mandiri</h2>
+
+<ol>
+
+<li>
+Hitung mean data berikut.
+
+<div class="contoh-data">
+
+12, 15, 18, 20, 25
+
+</div>
+</li>
+
+<li>
+
+Rata-rata lima bilangan adalah 48.
+Empat bilangan pertama adalah
+
+40, 45, 50, dan 55.
+
+Tentukan bilangan kelima.
+
+</li>
+
+<li>
+
+Suatu kelas mempunyai rata-rata
+70.
+
+Setelah ditambah dua siswa,
+rata-ratanya menjadi 71.
+
+Jelaskan apakah informasi tersebut
+cukup untuk menentukan nilai kedua siswa baru.
+
+</li>
+
+</ol>
+
+<div class="summary">
+
+<h2>Ringkasan Mean</h2>
+
+<ul>
+
+<li>Mean merupakan ukuran pemusatan data yang paling umum.</li>
+
+<li>Mean memperhatikan seluruh data.</li>
+
+<li>Mean adalah titik keseimbangan data.</li>
+
+<li>Jumlah penyimpangan terhadap mean selalu nol.</li>
+
+<li>Mean sensitif terhadap outlier.</li>
+
+<li>Mean dapat digunakan untuk data tunggal,
+berkelompok, maupun data berbobot.</li>
+
+</ul>
+
+</div>
+
+</section><section id="median" class="materi">
+
+<h1>3.2 Median (Nilai Tengah)</h1>
+
+<p>
+
+Setelah mempelajari mean, sekarang kita akan membahas ukuran pemusatan data yang kedua, yaitu <b>median</b>.
+
+Median adalah nilai yang membagi data yang telah diurutkan menjadi dua bagian yang sama besar. Sebanyak 50% data berada di sebelah kiri median dan 50% data berada di sebelah kanan median.
+
+</p>
+
+<div class="note">
+
+<h3>Mengapa Median Penting?</h3>
+
+<p>
+
+Tidak semua kumpulan data cocok dianalisis menggunakan mean. Apabila terdapat nilai yang sangat besar atau sangat kecil (outlier), mean dapat berubah secara drastis. Median justru tetap stabil sehingga sering digunakan dalam dunia nyata, seperti analisis pendapatan masyarakat, harga rumah, dan nilai ujian.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Langkah Menentukan Median</h2>
+
+<ol>
+
+<li>Urutkan seluruh data dari yang terkecil ke terbesar.</li>
+
+<li>Hitung banyaknya data (<b>n</b>).</li>
+
+<li>Tentukan posisi median sesuai jumlah data.</li>
+
+</ol>
+
+<hr>
+
+<h2>Kasus 1 : Banyak Data Ganjil</h2>
+
+<p>
+
+Jika banyak data ganjil, median adalah data yang tepat berada di tengah.
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Posisi Median}
+=
+\frac{n+1}{2}
+\]
+
+</p>
+
+<h3>Contoh</h3>
+
+<div class="contoh-data">
+
+4, 6, 8, 10, 12
+
+</div>
+
+<p>
+
+Jumlah data = 5
+
+</p>
+
+<p>
+
+Posisi median
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{5+1}{2}=3
+\]
+
+</p>
+
+<p>
+
+Data ke-3 adalah 8.
+
+</p>
+
+<div class="jawaban">
+
+<b>Median = 8</b>
+
+</div>
+
+<hr>
+
+<h2>Kasus 2 : Banyak Data Genap</h2>
+
+<p>
+
+Jika jumlah data genap, maka terdapat dua data yang berada di tengah.
+
+Median diperoleh dengan mengambil rata-rata kedua data tersebut.
+
+</p>
+
+<p class="rumus">
+
+\[
+\text{Median}
+=
+\frac{x_{\frac n2}+x_{\frac n2+1}}2
+\]
+
+</p>
+
+<h3>Contoh</h3>
+
+<div class="contoh-data">
+
+2, 5, 8, 10, 15, 20
+
+</div>
+
+<p>
+
+Jumlah data = 6
+
+</p>
+
+<p>
+
+Dua data tengah adalah
+
+8 dan 10.
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{8+10}{2}=9
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Median = 9</b>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Data Harus Diurutkan?</h2>
+
+<p>
+
+Median bergantung pada posisi data, bukan pada besar kecilnya nilai rata-rata.
+
+Apabila data tidak diurutkan, kita tidak dapat mengetahui nilai yang benar-benar berada di tengah.
+
+</p>
+
+<h3>Contoh</h3>
+
+<div class="contoh-data">
+
+15, 7, 20, 9, 11
+
+</div>
+
+<p>
+
+Data tersebut harus diurutkan menjadi
+
+</p>
+
+<div class="contoh-data">
+
+7, 9, 11, 15, 20
+
+</div>
+
+<p>
+
+Sehingga median adalah
+
+<b>11</b>.
+
+</p>
+
+<hr>
+
+<h2>Contoh Soal</h2>
+
+<p>
+
+Tentukan median dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+18, 12, 10, 25, 30, 22, 15
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Urutkan data terlebih dahulu.
+
+</p>
+
+<div class="contoh-data">
+
+10, 12, 15, 18, 22, 25, 30
+
+</div>
+
+<p>
+
+Jumlah data = 7
+
+</p>
+
+<p>
+
+Posisi median
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{7+1}{2}=4
+\]
+
+</p>
+
+<p>
+
+Data ke-4 adalah
+
+<b>18</b>
+
+</p>
+
+<div class="jawaban">
+
+<b>Median = 18</b>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Median</h2>
+
+<ul>
+
+<li>Tidak mudah dipengaruhi outlier.</li>
+
+<li>Mudah dihitung.</li>
+
+<li>Cocok untuk data yang tidak simetris.</li>
+
+<li>Banyak digunakan dalam penelitian sosial dan ekonomi.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Median</h2>
+
+<ul>
+
+<li>Tidak menggunakan seluruh informasi pada data.</li>
+
+<li>Tidak cocok untuk beberapa analisis matematika lanjutan.</li>
+
+<li>Kurang sensitif terhadap perubahan data.</li>
+
+</ul>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Median adalah nilai tengah data yang telah diurutkan.</li>
+
+<li>Data harus diurutkan terlebih dahulu.</li>
+
+<li>Jika jumlah data ganjil, median adalah data yang berada tepat di tengah.</li>
+
+<li>Jika jumlah data genap, median adalah rata-rata dua data tengah.</li>
+
+<li>Median lebih tahan terhadap outlier dibanding mean.</li>
+
+</ul>
+
+</div>
+
+</section><section id="modus" class="materi">
+
+<h1>3.3 Modus (Mode)</h1>
+
+<p>
+
+Selain <b>mean</b> dan <b>median</b>, terdapat ukuran pemusatan data yang ketiga yaitu <b>modus</b>. Berbeda dengan mean yang memperhatikan seluruh data dan median yang memperhatikan posisi data, modus hanya memperhatikan <b>frekuensi kemunculan</b> setiap nilai.
+
+</p>
+
+<div class="note">
+
+<h3>Definisi</h3>
+
+<p>
+
+<b>Modus</b> adalah nilai yang paling sering muncul dalam suatu kumpulan data.
+
+Apabila suatu nilai muncul lebih banyak dibandingkan nilai lainnya, maka nilai tersebut disebut modus.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Mengapa Modus Penting?</h2>
+
+<p>
+
+Dalam kehidupan sehari-hari, sering kali kita ingin mengetahui nilai yang paling umum atau paling sering muncul.
+
+Sebagai contoh:
+
+</p>
+
+<ul>
+
+<li>Ukuran baju yang paling banyak terjual.</li>
+
+<li>Warna mobil yang paling banyak dibeli.</li>
+
+<li>Nilai ujian yang paling sering diperoleh siswa.</li>
+
+<li>Produk yang paling banyak diminati pelanggan.</li>
+
+</ul>
+
+<p>
+
+Pada kondisi seperti ini, modus lebih bermanfaat dibandingkan mean maupun median.
+
+</p>
+
+<hr>
+
+<h2>Cara Menentukan Modus</h2>
+
+<ol>
+
+<li>Hitung frekuensi kemunculan setiap data.</li>
+
+<li>Bandingkan semua frekuensi.</li>
+
+<li>Nilai dengan frekuensi terbesar merupakan modus.</li>
+
+</ol>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<div class="contoh-data">
+
+5, 7, 8, 7, 6, 7, 9
+
+</div>
+
+<p>
+
+Frekuensi setiap nilai:
+
+</p>
+
+<table>
+
+<tr>
+<th>Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>5</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<div class="jawaban">
+
+<b>Modus = 7</b>
+
+</div>
+
+<hr>
+
+<h2>Contoh 2</h2>
+
+<div class="contoh-data">
+
+2, 2, 4, 5, 5, 7
+
+</div>
+
+<p>
+
+Frekuensi terbesar dimiliki oleh angka 2 dan 5.
+
+</p>
+
+<div class="jawaban">
+
+<b>Modus = 2 dan 5</b>
+
+</div>
+
+<p>
+
+Data seperti ini disebut <b>bimodal</b> karena memiliki dua modus.
+
+</p>
+
+<hr>
+
+<h2>Jenis-Jenis Modus</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>Unimodal</td>
+<td>Memiliki satu modus.</td>
+
+</tr>
+
+<tr>
+
+<td>Bimodal</td>
+<td>Memiliki dua modus.</td>
+
+</tr>
+
+<tr>
+
+<td>Multimodal</td>
+<td>Memiliki lebih dari dua modus.</td>
+
+</tr>
+
+<tr>
+
+<td>Tidak Memiliki Modus</td>
+<td>Semua data muncul dengan frekuensi yang sama.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Contoh Tidak Memiliki Modus</h2>
+
+<div class="contoh-data">
+
+1, 2, 3, 4, 5
+
+</div>
+
+<p>
+
+Setiap nilai hanya muncul satu kali.
+
+Tidak ada nilai yang frekuensinya paling besar.
+
+</p>
+
+<div class="jawaban">
+
+<b>Kesimpulan:</b> Data tersebut tidak memiliki modus.
+
+</div>
+
+<hr>
+
+<h2>Modus Data Berkelompok</h2>
+
+<p>
+
+Untuk data berkelompok, modus tidak dapat ditentukan hanya dengan melihat frekuensi.
+
+Pertama, tentukan <b>kelas modus</b>, yaitu kelas yang memiliki frekuensi terbesar.
+
+Kemudian gunakan rumus berikut.
+
+</p>
+
+<p class="rumus">
+
+\[
+Mo=L+\frac{d_1}{d_1+d_2}\times p
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li><b>L</b> = tepi bawah kelas modus</li>
+
+<li><b>d₁</b> = selisih frekuensi kelas modus dengan kelas sebelumnya</li>
+
+<li><b>d₂</b> = selisih frekuensi kelas modus dengan kelas sesudahnya</li>
+
+<li><b>p</b> = panjang kelas</li>
+
+</ul>
+
+<div class="warning">
+
+<b>Catatan</b>
+
+<p>
+
+Rumus modus data berkelompok umumnya dipelajari pada statistika SMA dan analisis data. Untuk data tunggal, cukup mencari nilai yang paling sering muncul.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Modus</h2>
+
+<ul>
+
+<li>Mudah ditentukan.</li>
+
+<li>Dapat digunakan untuk data kategori.</li>
+
+<li>Tidak dipengaruhi nilai ekstrem.</li>
+
+<li>Menunjukkan nilai yang paling sering muncul.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Modus</h2>
+
+<ul>
+
+<li>Tidak selalu ada.</li>
+
+<li>Dapat memiliki lebih dari satu nilai.</li>
+
+<li>Tidak menggunakan seluruh informasi pada data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Soal</h2>
+
+<p>
+
+Tentukan modus dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+12, 15, 18, 12, 20, 15, 12, 18, 12
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<table>
+
+<tr>
+<th>Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>12</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<div class="jawaban">
+
+<b>Modus = 12</b>
+
+</div>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Modus adalah nilai yang paling sering muncul.</li>
+
+<li>Suatu data dapat memiliki satu, dua, lebih dari dua, atau bahkan tidak memiliki modus.</li>
+
+<li>Modus tidak dipengaruhi oleh outlier.</li>
+
+<li>Modus sangat berguna untuk mengetahui nilai yang paling dominan dalam suatu kumpulan data.</li>
+
+</ul>
+
+</div>
+
+</section><section id="kuartil" class="materi">
+
+<h1>3.4 Kuartil (Quartile)</h1>
+
+<p>
+
+Setelah mempelajari <b>mean</b>, <b>median</b>, dan <b>modus</b>, kita akan mempelajari ukuran letak yang sangat penting dalam statistika, yaitu <b>kuartil</b>.
+
+Kuartil membagi data yang telah diurutkan menjadi <b>empat bagian yang sama banyak</b>. Setiap bagian memuat sekitar 25% dari seluruh data.
+
+</p>
+
+<div class="note">
+
+<h3>Konsep Dasar</h3>
+
+<p>
+
+Bayangkan terdapat 100 data yang telah diurutkan dari yang terkecil hingga terbesar.
+
+Kuartil akan membaginya menjadi empat kelompok.
+
+</p>
+
+<pre>
+
+25%      25%      25%      25%
+
+|---------|---------|---------|
+
+Min       Q1       Q2       Q3      Maks
+
+</pre>
+
+<p>
+
+Q2 merupakan median sehingga membagi data menjadi dua bagian yang sama besar.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Macam-Macam Kuartil</h2>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Nama</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>Q₁</td>
+<td>Kuartil Bawah</td>
+<td>25% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>Q₂</td>
+<td>Kuartil Tengah</td>
+<td>Sama dengan median.</td>
+</tr>
+
+<tr>
+<td>Q₃</td>
+<td>Kuartil Atas</td>
+<td>75% data berada di bawahnya.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Syarat Menentukan Kuartil</h2>
+
+<p>
+
+Sebelum menentukan kuartil, seluruh data <b>wajib diurutkan</b> dari nilai terkecil hingga terbesar.
+
+Jika data belum diurutkan, maka posisi kuartil akan salah.
+
+</p>
+
+<hr>
+
+<h2>Posisi Kuartil</h2>
+
+<p>
+
+Untuk data tunggal, posisi kuartil dapat dihitung menggunakan rumus berikut.
+
+</p>
+
+<p class="rumus">
+
+\[
+Q_1=\frac{n+1}{4}
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+Q_2=\frac{2(n+1)}{4}
+\]
+
+</p>
+
+<p class="rumus">
+
+\[
+Q_3=\frac{3(n+1)}{4}
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li>n = banyak data</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Tentukan kuartil dari data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+2, 4, 6, 8, 10, 12, 14, 16, 18
+
+</div>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Jumlah data
+
+</p>
+
+<p>
+
+n = 9
+
+</p>
+
+<p>
+
+Posisi Q₁
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{9+1}{4}=2,5
+\]
+
+</p>
+
+<p>
+
+Q₁ berada di antara data ke-2 dan ke-3.
+
+</p>
+
+<p>
+
+Q₁
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{4+6}{2}=5
+\]
+
+</p>
+
+<p>
+
+Posisi Q₂
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{2(10)}4=5
+\]
+
+</p>
+
+<p>
+
+Q₂ = data ke-5 = 10
+
+</p>
+
+<p>
+
+Posisi Q₃
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{3(10)}4=7,5
+\]
+
+</p>
+
+<p>
+
+Q₃ berada di antara data ke-7 dan ke-8.
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{14+16}{2}=15
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>Hasil</b>
+
+<ul>
+
+<li>Q₁ = 5</li>
+
+<li>Q₂ = 10</li>
+
+<li>Q₃ = 15</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Interquartile Range (IQR)</h2>
+
+<p>
+
+Selain menentukan kuartil, statistika juga mengenal <b>Interquartile Range (IQR)</b>.
+
+IQR adalah selisih antara kuartil atas dan kuartil bawah.
+
+</p>
+
+<p class="rumus">
+
+\[
+IQR=Q_3-Q_1
+\]
+
+</p>
+
+<p>
+
+IQR menunjukkan seberapa lebar penyebaran 50% data yang berada di tengah.
+
+Semakin besar IQR, semakin besar pula variasi data.
+
+</p>
+
+<h3>Contoh</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<ul>
+
+<li>Q₁ = 15</li>
+
+<li>Q₃ = 27</li>
+
+</ul>
+
+<p>
+
+Maka
+
+</p>
+
+<p class="rumus">
+
+\[
+IQR=27-15=12
+\]
+
+</p>
+
+<div class="jawaban">
+
+<b>IQR = 12</b>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Kuartil</h2>
+
+<ul>
+
+<li>Tidak mudah dipengaruhi outlier.</li>
+
+<li>Menunjukkan posisi relatif suatu data.</li>
+
+<li>Berguna untuk membuat Box Plot.</li>
+
+<li>Sering digunakan dalam analisis data dan penelitian.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Kuartil</h2>
+
+<ul>
+
+<li>Tidak memperhatikan seluruh nilai data.</li>
+
+<li>Kurang tepat untuk beberapa analisis matematis tertentu.</li>
+
+</ul>
+
+<hr>
+
+<h2>Latihan</h2>
+
+<ol>
+
+<li>Tentukan Q₁, Q₂, dan Q₃ dari data berikut.
+
+<div class="contoh-data">
+
+3, 5, 8, 10, 12, 15, 18, 20, 22
+
+</div>
+
+</li>
+
+<li>
+
+Jika diketahui
+
+Q₁ = 25
+
+dan
+
+Q₃ = 42,
+
+tentukan nilai IQR.
+
+</li>
+
+</ol>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Kuartil membagi data menjadi empat bagian yang sama.</li>
+
+<li>Q₁ adalah kuartil bawah.</li>
+
+<li>Q₂ sama dengan median.</li>
+
+<li>Q₃ adalah kuartil atas.</li>
+
+<li>IQR = Q₃ − Q₁ digunakan untuk mengukur penyebaran data.</li>
+
+</ul>
+
+</div>
+
+</section><section id="desil" class="materi">
+
+<h1>3.5 Desil (Decile)</h1>
+
+<p>
+
+Setelah mempelajari kuartil yang membagi data menjadi
+<b>4 bagian yang sama besar</b>, sekarang kita akan mempelajari
+<b>desil</b>.
+
+Desil adalah ukuran letak yang membagi data yang telah
+diurutkan menjadi <b>10 bagian yang sama besar</b>.
+Artinya setiap bagian mewakili sekitar <b>10%</b> dari seluruh data.
+
+</p>
+
+<div class="note">
+
+<h3>Konsep Desil</h3>
+
+<p>
+
+Misalkan terdapat 100 data yang telah diurutkan dari
+nilai terkecil hingga terbesar.
+
+Desil akan membaginya menjadi sepuluh kelompok yang sama banyak.
+
+</p>
+
+<pre>
+
+10% 10% 10% 10% 10% 10% 10% 10% 10% 10%
+
+|----|----|----|----|----|----|----|----|----|
+
+D1   D2   D3   D4   D5   D6   D7   D8   D9
+
+</pre>
+
+<p>
+
+Semakin besar nilai desil, semakin besar pula posisi
+data tersebut di dalam kumpulan data.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Macam-Macam Desil</h2>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Arti</th>
+</tr>
+
+<tr>
+<td>D₁</td>
+<td>10% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₂</td>
+<td>20% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₃</td>
+<td>30% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₄</td>
+<td>40% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₅</td>
+<td>50% data berada di bawahnya (sama dengan median).</td>
+</tr>
+
+<tr>
+<td>D₆</td>
+<td>60% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₇</td>
+<td>70% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₈</td>
+<td>80% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>D₉</td>
+<td>90% data berada di bawahnya.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Rumus Posisi Desil</h2>
+
+<p>
+
+Untuk data tunggal, posisi desil dihitung menggunakan rumus
+
+</p>
+
+<p class="rumus">
+
+\[
+D_k=\frac{k(n+1)}{10}
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li><b>k</b> = nomor desil (1 sampai 9).</li>
+
+<li><b>n</b> = banyak data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Diketahui data berikut.
+
+</p>
+
+<div class="contoh-data">
+
+2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+
+</div>
+
+<p>
+
+Tentukan posisi D₄.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p>
+
+Banyak data
+
+</p>
+
+<p>
+
+n = 10
+
+</p>
+
+<p>
+
+Posisi D₄
+
+</p>
+
+<p class="rumus">
+
+\[
+\frac{4(10+1)}{10}
+=
+4,4
+\]
+
+</p>
+
+<p>
+
+Artinya D₄ berada di antara data ke-4 dan data ke-5.
+
+</p>
+
+<div class="jawaban">
+
+<b>Posisi D₄ = 4,4</b>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Desil dengan Median</h2>
+
+<p>
+
+Karena median membagi data menjadi dua bagian yang sama,
+maka median sama dengan desil kelima.
+
+</p>
+
+<p class="rumus">
+
+\[
+D_5 = Median
+\]
+
+</p>
+
+<p>
+
+Hubungan ini memudahkan kita memahami bahwa
+desil merupakan pengembangan dari konsep median.
+
+</p>
+
+<hr>
+
+<h2>Kelebihan Desil</h2>
+
+<ul>
+
+<li>Menunjukkan posisi relatif suatu data.</li>
+
+<li>Membagi data menjadi bagian yang lebih rinci dibanding kuartil.</li>
+
+<li>Sering digunakan dalam analisis pendidikan dan ekonomi.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Desil</h2>
+
+<ul>
+
+<li>Harus mengurutkan data terlebih dahulu.</li>
+
+<li>Kurang tepat digunakan jika jumlah data sangat sedikit.</li>
+
+<li>Perhitungan dapat melibatkan interpolasi.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Penerapan</h2>
+
+<p>
+
+Sebuah sekolah mengumumkan bahwa seorang siswa
+berada pada <b>Desil ke-8</b>.
+
+Artinya nilai siswa tersebut lebih tinggi
+daripada sekitar <b>80%</b> siswa lainnya.
+
+Hanya sekitar <b>20%</b> siswa yang memiliki
+nilai lebih tinggi.
+
+</p>
+
+<div class="info">
+
+<b>Interpretasi</b>
+
+<p>
+
+Semakin tinggi nilai desil seseorang,
+semakin tinggi pula posisinya dibandingkan
+anggota kelompok yang lain.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Latihan</h2>
+
+<ol>
+
+<li>Tentukan posisi D₂ jika banyak data adalah 25.</li>
+
+<li>Tentukan posisi D₇ jika banyak data adalah 40.</li>
+
+<li>Jelaskan makna seseorang yang berada pada D₉.</li>
+
+</ol>
+
+<div class="summary">
+
+<h2>Ringkasan</h2>
+
+<ul>
+
+<li>Desil membagi data menjadi 10 bagian yang sama.</li>
+
+<li>Terdapat 9 desil, yaitu D₁ hingga D₉.</li>
+
+<li>D₅ sama dengan median.</li>
+
+<li>Semakin besar nomor desil, semakin tinggi posisi data.</li>
+
+<li>Desil banyak digunakan dalam analisis hasil ujian dan penelitian.</li>
+
+</ul>
+
+</div>
+
+</section><section id="persentil" class="materi">
+
+<h1>3.6 Persentil (Percentile)</h1>
+
+<p>
+
+Persentil merupakan ukuran letak yang membagi data yang telah
+diurutkan menjadi <b>100 bagian yang sama besar</b>.
+Setiap bagian mewakili sekitar <b>1%</b> dari seluruh data.
+
+Persentil memberikan informasi yang jauh lebih rinci dibandingkan
+kuartil maupun desil, sehingga sering digunakan dalam dunia pendidikan,
+kesehatan, psikologi, ekonomi, dan penelitian ilmiah.
+
+</p>
+
+<div class="note">
+
+<h3>Konsep Persentil</h3>
+
+<p>
+
+Misalkan terdapat 1000 data yang telah diurutkan.
+
+Persentil membagi data tersebut menjadi
+100 kelompok yang sama besar.
+
+Sebagai contoh,
+
+</p>
+
+<ul>
+
+<li>P<sub>25</sub> berarti sekitar 25% data berada di bawah nilai tersebut.</li>
+
+<li>P<sub>50</sub> sama dengan median.</li>
+
+<li>P<sub>75</sub> sama dengan kuartil ketiga.</li>
+
+<li>P<sub>90</sub> berarti sekitar 90% data berada di bawah nilai tersebut.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Kuartil, Desil, dan Persentil</h2>
+
+<table>
+
+<tr>
+<th>Ukuran</th>
+<th>Hubungan</th>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>P<sub>50</sub></td>
+</tr>
+
+<tr>
+<td>Q₁</td>
+<td>P<sub>25</sub></td>
+</tr>
+
+<tr>
+<td>Q₂</td>
+<td>P<sub>50</sub></td>
+</tr>
+
+<tr>
+<td>Q₃</td>
+<td>P<sub>75</sub></td>
+</tr>
+
+<tr>
+<td>D₁</td>
+<td>P<sub>10</sub></td>
+</tr>
+
+<tr>
+<td>D₅</td>
+<td>P<sub>50</sub></td>
+</tr>
+
+<tr>
+<td>D₉</td>
+<td>P<sub>90</sub></td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Rumus Posisi Persentil</h2>
+
+<p>
+
+Untuk data tunggal, posisi persentil dapat dihitung menggunakan
+
+</p>
+
+<p class="rumus">
+
+\[
+P_k=\frac{k(n+1)}{100}
+\]
+
+</p>
+
+<p>
+
+Keterangan:
+
+</p>
+
+<ul>
+
+<li><b>k</b> = nomor persentil (1–99).</li>
+
+<li><b>n</b> = banyak data.</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh 1</h2>
+
+<p>
+
+Suatu data terdiri atas 40 nilai.
+
+Tentukan posisi P<sub>30</sub>.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<p class="rumus">
+
+\[
+P_{30}
+=
+\frac{30(40+1)}{100}
+=
+12,3
+\]
+
+</p>
+
+<p>
+
+Artinya P<sub>30</sub> berada di antara data ke-12 dan data ke-13.
+
+</p>
+
+<div class="jawaban">
+
+<b>Posisi P<sub>30</sub> = 12,3</b>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Persentil</h2>
+
+<p>
+
+Persentil tidak menunjukkan nilai rata-rata,
+melainkan menunjukkan <b>posisi</b> suatu data
+dibandingkan dengan data lainnya.
+
+</p>
+
+<p>
+
+Misalnya seorang siswa memperoleh nilai
+pada persentil ke-95.
+
+Artinya nilai siswa tersebut lebih tinggi
+daripada sekitar 95% peserta lainnya.
+
+Hanya sekitar 5% peserta yang memiliki nilai
+lebih tinggi.
+
+</p>
+
+<hr>
+
+<h2>Penerapan Persentil</h2>
+
+<ul>
+
+<li>Menentukan peringkat nilai ujian nasional.</li>
+
+<li>Mengukur pertumbuhan tinggi dan berat badan anak.</li>
+
+<li>Seleksi beasiswa.</li>
+
+<li>Analisis hasil tes psikologi.</li>
+
+<li>Evaluasi performa atlet.</li>
+
+<li>Analisis data penelitian.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kelebihan Persentil</h2>
+
+<ul>
+
+<li>Memberikan informasi posisi data secara sangat rinci.</li>
+
+<li>Mudah dibandingkan antar kelompok.</li>
+
+<li>Banyak digunakan dalam penelitian ilmiah.</li>
+
+<li>Cocok untuk jumlah data yang besar.</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Persentil</h2>
+
+<ul>
+
+<li>Perhitungan lebih panjang dibanding median.</li>
+
+<li>Memerlukan data yang telah diurutkan.</li>
+
+<li>Pada beberapa kasus diperlukan interpolasi.</li>
+
+</ul>
+
+<hr>
+
+<h2>Latihan</h2>
+
+<ol>
+
+<li>Tentukan posisi P<sub>40</sub> jika terdapat 50 data.</li>
+
+<li>Tentukan posisi P<sub>85</sub> jika terdapat 80 data.</li>
+
+<li>Jelaskan arti seorang siswa yang berada pada persentil ke-97.</li>
+
+</ol>
+
+<hr>
+
+<section class="ringkasan-bab">
+
+<h1>Ringkasan Bab 3</h1>
+
+<table>
+
+<tr>
+<th>Ukuran</th>
+<th>Fungsi</th>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Rata-rata seluruh data.</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Nilai yang berada tepat di tengah data.</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Nilai yang paling sering muncul.</td>
+</tr>
+
+<tr>
+<td>Kuartil</td>
+<td>Membagi data menjadi 4 bagian.</td>
+</tr>
+
+<tr>
+<td>Desil</td>
+<td>Membagi data menjadi 10 bagian.</td>
+</tr>
+
+<tr>
+<td>Persentil</td>
+<td>Membagi data menjadi 100 bagian.</td>
+</tr>
+
+</table>
+
+<p>
+
+Pada bab ini kita telah mempelajari berbagai ukuran pemusatan dan ukuran letak data. Masing-masing memiliki kegunaan yang berbeda sesuai karakteristik data yang dianalisis. Pemahaman yang baik terhadap materi ini menjadi dasar untuk mempelajari penyebaran data, distribusi data, dan statistika inferensial pada bab-bab berikutnya.
+
+</p>
+
+</section>
+
+<hr>
+
+<section class="latihan-bab">
+
+<h2>Latihan Akhir Bab</h2>
+
+<ol>
+
+<li>Tentukan mean, median, dan modus dari data:
+8, 10, 12, 12, 15, 18, 20.</li>
+
+<li>Tentukan Q₁, Q₂, dan Q₃ dari data:
+5, 7, 8, 10, 12, 15, 18, 20, 22.</li>
+
+<li>Tentukan posisi D₆ jika banyak data adalah 35.</li>
+
+<li>Tentukan posisi P₇₅ jika banyak data adalah 60.</li>
+
+<li>Jelaskan perbedaan antara mean, median, dan modus beserta contoh penggunaannya.</li>
+
+</ol>
+
+</section>
+
+<hr>
+
+<div class="navigation-buttons">
+
+<a href="index.html" class="btn-home">
+🏠 Kembali ke Home
+</a>
+
+<a href="peluang4.html" class="btn-next">
+Bab Selanjutnya ➜
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+
+© 2026 Modul Statistika Interaktif<br>
+Disusun untuk pembelajaran matematika dan statistika.
+
+</p>
+
+</footer>
+
+</body>
+</html>
