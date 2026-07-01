@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bab 9 - Topik Lanjutan Probabilitas</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>Bab 9</h1>
+
+<h2>Topik Lanjutan (Random Walk, Martingale, Monte Carlo)</h2>
+
+<p>
+
+Bab ini masuk ke level lanjutan probabilitas:
+bukan lagi hanya menghitung peluang statis,
+tetapi memahami <b>proses acak yang bergerak di waktu</b>.
+
+Di sini kita mulai masuk ke cara berpikir yang dipakai di riset matematika, fisika, dan algoritma modern.
+
+</p>
+
+</header>
+
+<nav class="bab-nav">
+
+<a href="index.html">🏠 Home</a>
+<a href="#randomwalk">Random Walk</a>
+<a href="#martingale">Martingale</a>
+<a href="#montecarlo">Monte Carlo</a>
+
+</nav>
+
+<main>
+
+<section class="materi">
+
+<h1>Pengantar Besar Bab 9</h1>
+
+<p>
+
+Sampai Bab 8, kita membahas:
+- distribusi
+- ekspektasi
+- ketimpangan
+- eksistensi
+
+Sekarang kita naik level:
+
+<b>kita mempelajari bagaimana sistem acak berevolusi langkah demi langkah.</b>
+
+</p>
+
+<div class="note">
+
+<h3>Intuisi Besar</h3>
+
+<p>
+
+Probabilitas bukan hanya “berapa peluang kejadian”,
+tetapi juga:
+
+<b>bagaimana keadaan berubah seiring waktu ketika semuanya acak.</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h1 id="randomwalk">9.1 Random Walk (Fondasi Proses Acak)</h1>
+
+<p>
+
+Random Walk adalah model paling dasar dari proses acak dinamis.
+
+Sebuah sistem bergerak langkah demi langkah, di mana setiap langkah ditentukan secara acak.
+
+</p>
+
+<div class="note">
+
+<h3>Gambaran Intuitif</h3>
+
+<p>
+
+Bayangkan seseorang berdiri di garis bilangan.
+
+Setiap detik dia melakukan salah satu:
+
+</p>
+
+<ul>
+
+<li>melangkah ke kanan (+1)</li>
+<li>melangkah ke kiri (-1)</li>
+
+</ul>
+
+<p>
+
+Semua keputusan bersifat acak dan independen.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Definisi Matematis Random Walk Sederhana</h2>
+
+<p>
+
+Kita definisikan posisi pada langkah ke-n:
+
+</p>
+
+<p class="rumus">
+
+Xₙ = Xₙ₋₁ + Sₙ
+
+</p>
+
+<p>
+
+dengan:
+
+</p>
+
+<p class="rumus">
+
+Sₙ ∈ {+1, -1}, P(+1)=P(-1)=1/2
+
+</p>
+
+<hr>
+
+<h2>Struktur Proses</h2>
+
+<ul>
+
+<li>Setiap langkah independen</li>
+<li>Tidak ada “ingatan” dari langkah sebelumnya</li>
+<li>Proses sepenuhnya acak</li>
+
+</ul>
+
+<hr>
+
+<h2>Interpretasi Penting</h2>
+
+<div class="note">
+
+<p>
+
+Random Walk adalah model dasar untuk banyak sistem nyata:
+
+- pergerakan partikel (fisika)
+- harga saham (ekonomi)
+- error akumulasi (statistika)
+- jalur acak dalam graf (informatika)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kenapa Random Walk Penting?</h2>
+
+<p>
+
+Karena ini adalah contoh pertama kita dari:
+
+<b>probabilitas yang “hidup dalam waktu”</b>.
+
+Bukan satu kejadian, tetapi rangkaian kejadian yang saling berhubungan.
+
+</p>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h2>9.1 Random Walk — Sifat Matematis Dasar</h2>
+
+<p>
+
+Setelah memahami definisi Random Walk, sekarang kita masuk ke inti matematisnya:
+bagaimana posisi sistem berubah secara statistik ketika langkah bertambah banyak.
+
+</p>
+
+<hr>
+
+<h2>Model Ulang</h2>
+
+<p class="rumus">
+
+Xₙ = S₁ + S₂ + ... + Sₙ
+
+</p>
+
+<p>
+
+dengan:
+
+</p>
+
+<p class="rumus">
+
+Sᵢ ∈ {+1, -1},  P(+1)=P(-1)=1/2
+
+</p>
+
+<hr>
+
+<h2>1. Nilai Harapan (Mean)</h2>
+
+<p>
+
+Karena setiap langkah simetris:
+
+</p>
+
+<p class="rumus">
+
+E(Sᵢ) = 0
+
+</p>
+
+<p>
+
+maka:
+
+</p>
+
+<p class="rumus">
+
+E(Xₙ) = E(S₁ + ... + Sₙ) = 0
+
+</p>
+
+<div class="note">
+
+<p>
+
+Artinya:
+secara rata-rata, posisi Random Walk tetap di titik awal.
+
+Tidak ada drift ke kanan atau kiri.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>2. Variansi</h2>
+
+<p>
+
+Karena setiap langkah independen:
+
+</p>
+
+<p class="rumus">
+
+Var(Xₙ) = Var(S₁ + ... + Sₙ)
+
+= n · Var(S₁)
+
+</p>
+
+<p>
+
+Karena:
+
+</p>
+
+<p class="rumus">
+
+Var(S₁) = 1
+
+</p>
+
+<p>
+
+maka:
+
+</p>
+
+<p class="rumus">
+
+Var(Xₙ) = n
+
+</p>
+
+<hr>
+
+<h2>3. Skala Penyebaran (Root n Law)</h2>
+
+<div class="note">
+
+<p>
+
+Standar deviasi:
+
+</p>
+
+<p class="rumus">
+
+σ = √Var(Xₙ) = √n
+
+</p>
+
+<p>
+
+Artinya posisi “tipikal” Random Walk berada sekitar:
+
+</p>
+
+<p class="rumus">
+
+± √n dari titik awal
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Intuisi Penting</h2>
+
+<p>
+
+Ini adalah hasil yang sangat penting:
+
+</p>
+
+<ul>
+
+<li>Mean tetap 0</li>
+<li>Variansi tumbuh linear (n)</li>
+<li>Jarak tipikal tumbuh sublinear (√n)</li>
+
+</ul>
+
+<hr>
+
+<h2>Konsekuensi Besar</h2>
+
+<div class="note">
+
+<p>
+
+Random Walk tidak menyebar secara cepat.
+
+Meskipun langkahnya terus bertambah, “penyebarannya” jauh lebih lambat dari linear growth.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Interpretasi Fisik</h2>
+
+<ul>
+
+<li>Partikel acak tidak langsung menjauh jauh</li>
+<li>Fluktuasi besar jarang terjadi</li>
+<li>Sistem tetap “terikat” di sekitar pusat</li>
+
+</ul>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira jarak tumbuh linear (n)</li>
+<li>Mengira posisi selalu kembali ke nol</li>
+<li>Mengabaikan peran variansi dalam penyebaran</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h2>9.2 Martingale — Konsep “Permainan Adil”</h2>
+
+<p>
+
+Martingale adalah konsep dalam probabilitas yang menggambarkan proses acak
+di mana <b>tidak ada keuntungan jangka panjang</b>.
+
+Secara sederhana, ini adalah model dari “permainan yang adil”.
+
+</p>
+
+<hr>
+
+<h2>Intuisi Utama</h2>
+
+<div class="note">
+
+<p>
+
+Bayangkan kamu bermain permainan:
+
+- Jika menang → +1
+- Jika kalah → -1
+- Peluang sama
+
+</p>
+
+<p>
+
+Tidak peduli strategi apa yang kamu pakai, secara rata-rata
+nilai yang kamu miliki di masa depan tetap sama dengan sekarang.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Definisi Intuitif Martingale</h2>
+
+<p>
+
+Sebuah proses acak Xₙ disebut Martingale jika:
+
+</p>
+
+<p class="rumus">
+
+E(Xₙ₊₁ | Xₙ, Xₙ₋₁, ..., X₀) = Xₙ
+
+</p>
+
+<hr>
+
+<h2>Makna Kondisional</h2>
+
+<p>
+
+Artinya:
+
+</p>
+
+<ul>
+
+<li>Walaupun kita tahu semua sejarah sebelumnya</li>
+<li>Prediksi terbaik masa depan tetap nilai saat ini</li>
+<li>Tidak ada “trik” untuk mengalahkan sistem</li>
+
+</ul>
+
+<hr>
+
+<h2>Contoh Sederhana Martingale</h2>
+
+<p>
+
+Misalkan:
+
+</p>
+
+<ul>
+
+<li>Xₙ = posisi setelah n langkah</li>
+<li>Setiap langkah +1 atau -1 dengan peluang 1/2</li>
+
+</ul>
+
+<p>
+
+Maka:
+
+</p>
+
+<p class="rumus">
+
+E(Xₙ₊₁ | Xₙ) = Xₙ
+
+</p>
+
+<div class="note">
+
+<p>
+
+Ini adalah Random Walk yang paling sederhana — dan sekaligus contoh Martingale.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Intuisi Penting</h2>
+
+<div class="note">
+
+<p>
+
+Martingale berarti:
+
+<b>tidak ada drift (tidak ada arah keuntungan atau kerugian)</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Makna “Fair Game”</h2>
+
+<ul>
+
+<li>Permainan tidak bisa dimanipulasi secara statistik</li>
+<li>Tidak ada strategi yang menguntungkan jangka panjang</li>
+<li>Ekspektasi selalu tetap</li>
+
+</ul>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Mengira Martingale = Random Walk biasa tanpa memahami kondisi ekspektasi</li>
+<li>Mengira selalu kembali ke nol</li>
+<li>Mengabaikan conditional expectation</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h2>9.3 Monte Carlo — Simulasi Probabilistik</h2>
+
+<p>
+
+Monte Carlo adalah metode di mana kita menggunakan <b>acak berulang</b>
+untuk memperkirakan nilai matematis yang sulit dihitung secara langsung.
+
+Alih-alih menyelesaikan rumus kompleks, kita “meniru proses acak” berkali-kali.
+
+</p>
+
+<hr>
+
+<h2>Intuisi Utama</h2>
+
+<div class="note">
+
+<p>
+
+Daripada menghitung sesuatu secara eksak,
+kita melakukan percobaan acak dalam jumlah besar,
+lalu mengambil rata-ratanya.
+
+</p>
+
+<p>
+
+<b>Semakin banyak simulasi → semakin akurat hasilnya.</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ide Dasar Monte Carlo</h2>
+
+<p class="rumus">
+
+Estimasi ≈ (hasil percobaan acak berulang) / (jumlah percobaan)
+
+</p>
+
+<hr>
+
+<h2>Contoh Intuisi: Estimasi π</h2>
+
+<p>
+
+Misalkan kita punya persegi dengan lingkaran di dalamnya.
+
+Kita:
+
+</p>
+
+<ul>
+
+<li>menembakkan titik secara acak</li>
+<li>menghitung berapa yang masuk lingkaran</li>
+<li>membandingkan dengan total titik</li>
+
+</ul>
+
+<p>
+
+Rasio tersebut mendekati:
+
+</p>
+
+<p class="rumus">
+
+π / 4
+
+</p>
+
+<div class="note">
+
+<p>
+
+Sehingga:
+
+</p>
+
+<p class="rumus">
+
+π ≈ 4 × (titik dalam lingkaran / total titik)
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kenapa Ini Bekerja?</h2>
+
+<p>
+
+Monte Carlo bekerja karena:
+
+</p>
+
+<ul>
+
+<li>Hukum Bilangan Besar</li>
+<li>rata-rata sampel → nilai ekspektasi</li>
+<li>random sampling merepresentasikan distribusi</li>
+
+</ul>
+
+<hr>
+
+<h2>Hubungan dengan Probabilitas</h2>
+
+<div class="note">
+
+<p>
+
+Monte Carlo pada dasarnya adalah:
+
+<b>ekspektasi yang dihitung lewat simulasi, bukan rumus</b>
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Kelebihan Monte Carlo</h2>
+
+<ul>
+
+<li>bisa digunakan untuk masalah yang tidak bisa diselesaikan analitik</li>
+<li>fleksibel untuk dimensi tinggi</li>
+<li>sangat digunakan di fisika, AI, dan ekonomi</li>
+
+</ul>
+
+<hr>
+
+<h2>Kekurangan Monte Carlo</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>hasil hanya pendekatan (approximation)</li>
+<li>butuh banyak percobaan untuk akurasi tinggi</li>
+<li>bergantung pada kualitas random generator</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Intuisi OSN Level</h2>
+
+<div class="note">
+
+<p>
+
+Monte Carlo bukan sekadar “simulasi komputer”,
+tetapi cara berpikir:
+
+<b>“jika sulit dihitung, jadikan acak lalu rata-ratakan”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h2>9.x Hubungan Tiga Konsep Besar</h2>
+
+<p>
+
+Pada bagian ini kita menyatukan tiga ide besar:
+
+<b>Random Walk</b>, <b>Martingale</b>, dan <b>Monte Carlo</b>.
+
+Ketiganya sering terlihat berbeda, tetapi sebenarnya berada dalam satu kerangka besar:
+<b>proses acak dan cara kita menganalisisnya</b>.
+
+</p>
+
+<hr>
+
+<h2>1. Random Walk → Model Gerak Acak</h2>
+
+<div class="note">
+
+<p>
+
+Random Walk adalah <b>objek</b> yang kita amati.
+
+Ia mendeskripsikan bagaimana suatu nilai berubah langkah demi langkah secara acak.
+
+</p>
+
+<p class="rumus">
+
+Xₙ = Xₙ₋₁ + Sₙ
+
+</p>
+
+<p>
+
+Ini adalah “mesin dasar” dari banyak sistem acak.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>2. Martingale → Sifat Ekspektasi</h2>
+
+<div class="note">
+
+<p>
+
+Martingale adalah <b>cara kita memahami struktur Random Walk</b>.
+
+Ia menjawab:
+
+<b>apakah proses ini punya bias atau tidak?</b>
+
+</p>
+
+<p class="rumus">
+
+E(Xₙ₊₁ | informasi masa lalu) = Xₙ
+
+</p>
+
+<p>
+
+Artinya: tidak ada keuntungan tersembunyi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>3. Monte Carlo → Cara Menghitung</h2>
+
+<div class="note">
+
+<p>
+
+Monte Carlo bukan model, tetapi <b>metode komputasi</b>.
+
+Ia digunakan untuk memperkirakan sesuatu dengan simulasi acak.
+
+</p>
+
+<p>
+
+Jika Random Walk adalah sistemnya, maka Monte Carlo adalah cara “mengukur” sistem tersebut.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Perbandingan Inti</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Peran</th>
+<th>Fokus</th>
+</tr>
+
+<tr>
+<td>Random Walk</td>
+<td>Model</td>
+<td>Pergerakan acak</td>
+</tr>
+
+<tr>
+<td>Martingale</td>
+<td>Properti</td>
+<td>Ekspektasi tidak berubah</td>
+</tr>
+
+<tr>
+<td>Monte Carlo</td>
+<td>Metode</td>
+<td>Estimasi lewat simulasi</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>Intuisi Besar</h2>
+
+<div class="note">
+
+<p>
+
+Ketiganya bisa dipandang sebagai satu sistem:
+
+</p>
+
+<ul>
+
+<li>Random Walk → apa yang terjadi</li>
+<li>Martingale → bagaimana rata-rata bereaksi</li>
+<li>Monte Carlo → bagaimana kita mengukurnya</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Hubungan Konseptual</h2>
+
+<p>
+
+Sebuah Random Walk bisa sekaligus:
+
+</p>
+
+<ul>
+
+<li>Martingale (jika tidak ada drift)</li>
+<li>objek simulasi Monte Carlo</li>
+
+</ul>
+
+<p>
+
+Artinya, satu sistem bisa memiliki tiga perspektif berbeda.
+
+</p>
+
+<hr>
+
+<h2>Kesalahan Umum</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>Menganggap ketiga konsep ini tidak berhubungan</li>
+<li>Mengira Monte Carlo adalah teori distribusi</li>
+<li>Tidak memahami bahwa Martingale adalah sifat, bukan model</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Mindset Tingkat Lanjut</h2>
+
+<div class="note">
+
+<p>
+
+Dalam probabilitas modern, kita tidak hanya bertanya:
+
+“apa hasilnya?”
+
+tetapi:
+
+<b>“bagaimana sistem ini berevolusi, apakah bias, dan bagaimana kita mengukurnya?”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+<section class="materi">
+
+<h2>Penutup Bab 9</h2>
+
+<p>
+
+Bab ini memperkenalkan tiga pilar penting dalam probabilitas lanjutan:
+
+Random Walk sebagai model proses acak,
+Martingale sebagai struktur ekspektasi,
+dan Monte Carlo sebagai metode simulasi.
+
+Ketiganya menjadi dasar untuk memahami probabilitas modern pada level lanjutan,
+baik di matematika, fisika, maupun ilmu komputer.
+
+</p>
+
+<hr>
+
+<h2>Ringkasan Besar</h2>
+
+<ul>
+
+<li><b>Random Walk</b> → sistem bergerak secara acak dari waktu ke waktu</li>
+<li><b>Martingale</b> → proses tanpa bias (fair game dalam ekspektasi)</li>
+<li><b>Monte Carlo</b> → pendekatan numerik melalui simulasi acak</li>
+
+</ul>
+
+<hr>
+
+<h2>Intuisi Akhir</h2>
+
+<div class="note">
+
+<p>
+
+Probabilitas tingkat lanjut tidak lagi hanya tentang menghitung peluang,
+tetapi tentang memahami bagaimana ketidakpastian berkembang,
+stabil, dan dapat diperkirakan melalui struktur matematis.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Roadmap Setelah Ini</h2>
+
+<div class="warning">
+
+<p>
+
+Jika Bab 9 adalah pintu masuk ke probabilitas lanjutan,
+maka tahap berikutnya adalah:
+
+</p>
+
+<ul>
+
+<li>proses stokastik lebih dalam</li>
+<li>teori martingale lanjutan (optional stopping theorem)</li>
+<li>Markov chain</li>
+<li>stochastic simulation tingkat tinggi</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Penutup Mindset</h2>
+
+<div class="note">
+
+<p>
+
+Dalam probabilitas tingkat tinggi, pertanyaan penting bukan lagi:
+
+“berapa peluangnya?”
+
+tetapi:
+
+<b>“bagaimana sistem ini berperilaku secara jangka panjang?”</b>
+
+</p>
+
+</div>
+
+<hr>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Modul Probabilitas Olimpiade — Bab 9 Topik Lanjutan</p>
+
+</footer>
+
+<div class="navigation-buttons">
+
+<a href="peluang8.html">⬅ Bab Sebelumnya</a>
+<a href="index.html">🏠 Home</a>
+
+</div>
+
+</body>
+</html>
