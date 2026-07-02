@@ -1,1 +1,4002 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trigonometri Bab 4 - Grafik & Transformasi</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+margin:0;
+line-height:1.8;
+color:#222;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+
+.section{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h1{
+color:#0d47a1;
+}
+
+h2{
+color:#1565c0;
+margin-top:20px;
+}
+
+.note{
+background:#e3f2fd;
+border-left:6px solid #1976d2;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+.example{
+background:#fff8e1;
+border-left:6px solid #f9a825;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+pre{
+background:#f2f2f2;
+padding:15px;
+border-radius:8px;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#1976d2;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+.navigation{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#1976d2;
+color:white;
+padding:12px 18px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="section">
+
+<h1>Bab 4 — Grafik & Transformasi Trigonometri</h1>
+
+<p>
+
+Pada bab-bab sebelumnya,
+kita mempelajari nilai
+fungsi trigonometri.
+
+Sekarang kita akan melihat
+bagaimana nilai tersebut
+berubah ketika sudut terus bertambah.
+
+Hasilnya bukan garis lurus,
+melainkan sebuah pola
+yang disebut
+
+<b>gelombang.</b>
+
+</p>
+
+<p>
+
+Gelombang inilah
+yang digunakan untuk menjelaskan
+
+</p>
+
+<ul>
+
+<li>Suara.</li>
+
+<li>Cahaya.</li>
+
+<li>Gelombang laut.</li>
+
+<li>Listrik AC.</li>
+
+<li>Getaran pegas.</li>
+
+<li>Gempa bumi.</li>
+
+<li>Gelombang elektromagnetik.</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Grafik Fungsi?</h2>
+
+<p>
+
+Grafik fungsi adalah
+gambar yang menunjukkan
+hubungan antara
+
+</p>
+
+<pre>
+
+x
+
+dan
+
+y
+
+</pre>
+
+<p>
+
+Pada trigonometri,
+
+biasanya digunakan
+
+</p>
+
+<pre>
+
+x = sudut
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+y = sin x
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+y = cos x
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+y = tan x
+
+</pre>
+
+<p>
+
+Sehingga setiap sudut
+memiliki tinggi tertentu
+yang kemudian digambar
+menjadi sebuah kurva.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Grafik Sinus Berbentuk Gelombang?</h2>
+
+<p>
+
+Masih ingat Unit Circle?
+
+Ketika sebuah titik
+berputar mengelilingi lingkaran,
+
+koordinat vertikalnya
+
+</p>
+
+<pre>
+
+y = sin θ
+
+</pre>
+
+<p>
+
+terus berubah.
+
+Kadang naik.
+
+Kadang turun.
+
+Kadang nol.
+
+Jika perubahan tersebut
+digambar terhadap sudut,
+
+maka terbentuklah
+gelombang sinus.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Unit Circle
+
+↓
+
+Koordinat y berubah
+
+↓
+
+Nilai sin berubah
+
+↓
+
+Terbentuk Grafik Sinus
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3. Grafik Dasar Fungsi Sinus</h2>
+
+<p>
+
+Fungsi paling dasar adalah
+
+</p>
+
+<pre>
+
+y = sin x
+
+</pre>
+
+<p>
+
+Grafiknya melewati titik-titik penting berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>sin x</th>
+
+</tr>
+
+<tr>
+
+<td>0°</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>90°</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>270°</td>
+
+<td>-1</td>
+
+</tr>
+
+<tr>
+
+<td>360°</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Kemudian pola tersebut
+akan terus berulang
+setiap
+
+</p>
+
+<pre>
+
+360°
+
+</pre>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 2 : Grafik Cosinus --><section class="section">
+
+<h2>4. Grafik Dasar Fungsi Cosinus</h2>
+
+<p>
+
+Fungsi kedua yang paling penting adalah
+
+</p>
+
+<pre>
+
+y = cos x
+
+</pre>
+
+<p>
+
+Berbeda dengan sinus,
+grafik cosinus dimulai dari
+nilai maksimum.
+
+Hal ini karena
+
+</p>
+
+<pre>
+
+cos 0°
+
+=
+
+1
+
+</pre>
+
+<p>
+
+Artinya,
+ketika sudut masih
+
+</p>
+
+<pre>
+
+0°
+
+</pre>
+
+<p>
+
+grafik sudah berada
+di titik paling atas.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>cos x</th>
+
+</tr>
+
+<tr>
+
+<td>0°</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>90°</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+
+<td>-1</td>
+
+</tr>
+
+<tr>
+
+<td>270°</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>360°</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Sama seperti sinus,
+grafik cosinus juga
+memiliki periode
+
+</p>
+
+<pre>
+
+360°
+
+atau
+
+2π
+
+</pre>
+
+<p>
+
+sehingga bentuk gelombangnya
+akan terus berulang.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Perbedaan Grafik Sinus dan Cosinus</h2>
+
+<p>
+
+Walaupun bentuknya sama,
+grafik sinus dan cosinus
+tidak dimulai dari titik yang sama.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Sinus</th>
+
+<th>Cosinus</th>
+
+</tr>
+
+<tr>
+
+<td>Dimulai dari 0</td>
+
+<td>Dimulai dari 1</td>
+
+</tr>
+
+<tr>
+
+<td>Naik ke maksimum</td>
+
+<td>Turun dari maksimum</td>
+
+</tr>
+
+<tr>
+
+<td>y = sin x</td>
+
+<td>y = cos x</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<p>
+
+Hubungan keduanya dapat ditulis sebagai
+
+</p>
+
+<pre>
+
+cos x
+
+=
+
+sin(x+90°)
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+sin x
+
+=
+
+cos(90°-x)
+
+</pre>
+
+<p>
+
+Artinya,
+grafik cosinus sebenarnya
+adalah grafik sinus
+yang digeser.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6. Grafik Dasar Fungsi Tangen</h2>
+
+<p>
+
+Grafik tangen sangat berbeda
+dengan sinus maupun cosinus.
+
+Fungsi dasarnya adalah
+
+</p>
+
+<pre>
+
+y = tan x
+
+</pre>
+
+<p>
+
+Nilai-nilai pentingnya ialah
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>tan x</th>
+
+</tr>
+
+<tr>
+
+<td>0°</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>45°</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>90°</td>
+
+<td>Tidak Terdefinisi</td>
+
+</tr>
+
+<tr>
+
+<td>135°</td>
+
+<td>-1</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa
+
+</p>
+
+<pre>
+
+tan90°
+
+</pre>
+
+<p>
+
+tidak memiliki nilai.
+
+Mengapa?
+
+Karena
+
+</p>
+
+<pre>
+
+tan x
+
+=
+
+sin x
+
+──────
+
+cos x
+
+</pre>
+
+<p>
+
+Sedangkan
+
+</p>
+
+<pre>
+
+cos90°
+
+=
+
+0
+
+</pre>
+
+<p>
+
+Sehingga terjadi pembagian
+dengan nol.
+
+Akibatnya,
+grafik memiliki
+garis tegak yang disebut
+
+<b>asimtot vertikal.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>7. Periode Grafik</h2>
+
+<p>
+
+Grafik trigonometri
+akan selalu berulang.
+
+Perulangan tersebut disebut
+
+<b>periode.</b>
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Periode</th>
+
+</tr>
+
+<tr>
+
+<td>Sin</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Cos</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Tan</td>
+
+<td>180° atau π</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Mengapa tangen
+hanya memiliki periode
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+tan(x+180°)
+
+=
+
+tan x
+
+</pre>
+
+<p>
+
+Sedangkan sinus
+dan cosinus
+baru kembali ke nilai semula
+setelah satu putaran penuh.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Peserta Olimpiade hampir tidak pernah
+menghafal bentuk grafik.
+
+Mereka membangun grafik
+langsung dari
+
+</p>
+
+<ul>
+
+<li>Nilai sudut istimewa.</li>
+<li>Periode fungsi.</li>
+<li>Titik maksimum.</li>
+<li>Titik minimum.</li>
+<li>Titik potong sumbu-x.</li>
+
+</ul>
+
+<p>
+
+Dengan mengetahui lima informasi tersebut,
+grafik dapat digambar
+dengan cepat dan akurat
+tanpa perlu menghafal bentuknya.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 3 : Transformasi Grafik -->
+```<section class="section">
+
+<h2>8. Transformasi Grafik Trigonometri</h2>
+
+<p>
+
+Setelah memahami grafik dasar,
+langkah berikutnya adalah mempelajari
+<b>transformasi grafik</b>.
+
+Transformasi berarti
+mengubah bentuk atau posisi grafik
+tanpa mengubah sifat dasar fungsinya.
+
+</p>
+
+<p>
+
+Dalam Olimpiade Matematika,
+peserta jarang diminta menggambar grafik.
+Sebaliknya,
+mereka diminta menganalisis
+bagaimana grafik berubah
+ketika suatu konstanta ditambahkan,
+dikalikan,
+atau dikurangi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>9. Bentuk Umum Fungsi Trigonometri</h2>
+
+<p>
+
+Hampir semua grafik trigonometri
+dapat ditulis dalam bentuk
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A sin(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A cos(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+Keempat konstanta tersebut
+memiliki tugas yang berbeda.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Konstanta</th>
+
+<th>Fungsi</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>Mengubah amplitudo</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>Mengubah periode</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>Menggeser grafik ke kiri atau kanan (fase)</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>Menggeser grafik ke atas atau bawah</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>10. Pergeseran Vertikal</h2>
+
+<p>
+
+Perhatikan fungsi
+
+</p>
+
+<pre>
+
+y = sin x
+
+</pre>
+
+<p>
+
+Kemudian ubah menjadi
+
+</p>
+
+<pre>
+
+y = sin x + 2
+
+</pre>
+
+<p>
+
+Apa yang terjadi?
+
+</p>
+
+<p>
+
+Seluruh grafik
+bergeser ke atas
+sejauh
+
+</p>
+
+<pre>
+
+2 satuan
+
+</pre>
+
+<p>
+
+Bentuk gelombangnya
+tetap sama.
+
+Yang berubah
+hanya posisinya.
+
+</p>
+
+<div class="example">
+
+<pre>
+
+y = sin x + 5
+
+</pre>
+
+<p>
+
+Grafik naik
+5 satuan.
+
+</p>
+
+</div>
+
+<p>
+
+Sebaliknya,
+
+</p>
+
+<pre>
+
+y = sin x - 3
+
+</pre>
+
+<p>
+
+akan menggeser grafik
+3 satuan ke bawah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>11. Mengapa Grafik Tidak Berubah Bentuk?</h2>
+
+<p>
+
+Karena angka
+
+</p>
+
+<pre>
+
++2
+
+</pre>
+
+<p>
+
+ditambahkan setelah
+nilai sinus selesai dihitung.
+
+Misalnya,
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>sin x</th>
+
+<th>sin x + 2</th>
+
+</tr>
+
+<tr>
+
+<td>0°</td>
+
+<td>0</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>90°</td>
+
+<td>1</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+
+<td>0</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>270°</td>
+
+<td>-1</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa
+seluruh titik naik
+dengan jumlah yang sama.
+
+Inilah sebabnya
+gelombang tetap sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>12. Refleksi terhadap Sumbu-x</h2>
+
+<p>
+
+Sekarang perhatikan fungsi
+
+</p>
+
+<pre>
+
+y = -sin x
+
+</pre>
+
+<p>
+
+Tanda negatif
+berada di depan fungsi.
+
+Akibatnya,
+
+seluruh nilai positif
+menjadi negatif,
+dan seluruh nilai negatif
+menjadi positif.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin90°
+
+=
+
+1
+
+</pre>
+
+<p>
+
+berubah menjadi
+
+</p>
+
+<pre>
+
+-1
+
+</pre>
+
+</div>
+
+<p>
+
+Grafik menjadi
+terbalik terhadap sumbu-x.
+
+Transformasi ini disebut
+
+<b>refleksi (reflection)</b>.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>13. Contoh Soal</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan perubahan grafik dari
+
+</p>
+
+<pre>
+
+y = cos x - 4
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<ul>
+
+<li>Bentuk grafik tetap cosinus.</li>
+
+<li>Tidak ada perubahan amplitudo.</li>
+
+<li>Tidak ada perubahan periode.</li>
+
+<li>Grafik bergeser ke bawah 4 satuan.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Saat melihat bentuk
+
+</p>
+
+<pre>
+
+y = f(x) + k
+
+</pre>
+
+<p>
+
+jangan menghitung satu per satu.
+
+Langsung simpulkan bahwa
+seluruh grafik bergeser
+ke atas atau ke bawah
+sebanyak
+
+<b>k</b> satuan.
+
+Peserta Olimpiade
+selalu menganalisis
+perubahan grafik
+melalui bentuk persamaan,
+bukan dengan menggambar
+dari awal.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 4 : Amplitudo --><section class="section">
+
+<h2>14. Amplitudo</h2>
+
+<p>
+
+Salah satu konsep terpenting
+dalam grafik trigonometri adalah
+
+<b>amplitudo</b>.
+
+Amplitudo menyatakan
+seberapa tinggi dan seberapa rendah
+gelombang menyimpang
+dari garis tengahnya.
+
+</p>
+
+<p>
+
+Secara sederhana,
+
+amplitudo dapat dianggap sebagai
+<b>tinggi gelombang.</b>
+
+Semakin besar amplitudo,
+semakin tinggi puncak gelombang
+dan semakin dalam lembahnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>15. Bentuk Umum Amplitudo</h2>
+
+<p>
+
+Perhatikan fungsi berikut.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A sin x
+
+</pre>
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A cos x
+
+</pre>
+
+</div>
+
+<p>
+
+Konstanta
+
+</p>
+
+<pre>
+
+A
+
+</pre>
+
+<p>
+
+disebut
+
+<b>amplitudo</b>.
+
+Namun yang digunakan adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Amplitudo = |A|
+
+</pre>
+
+</div>
+
+<p>
+
+Artinya,
+
+yang diperhatikan adalah
+nilai mutlaknya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>16. Mengapa Menggunakan Nilai Mutlak?</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+y = -5 sin x
+
+</pre>
+
+<p>
+
+Walaupun
+
+</p>
+
+<pre>
+
+A = -5
+
+</pre>
+
+<p>
+
+gelombangnya tetap memiliki
+tinggi
+
+</p>
+
+<pre>
+
+5
+
+</pre>
+
+<p>
+
+Tanda negatif
+hanya membalik grafik
+terhadap sumbu-x.
+
+Tinggi gelombangnya
+tetap
+
+</p>
+
+<pre>
+
+5
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>17. Contoh Perubahan Amplitudo</h2>
+
+<table>
+
+<tr>
+
+<th>Persamaan</th>
+
+<th>Amplitudo</th>
+
+</tr>
+
+<tr>
+
+<td>y = sin x</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>y = 2 sin x</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>y = 5 sin x</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>y = -3 sin x</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>y = 0,5 sin x</td>
+
+<td>0,5</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semakin besar amplitudo,
+
+semakin tinggi
+gelombangnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>18. Pengaruh Amplitudo terhadap Grafik</h2>
+
+<p>
+
+Misalkan grafik dasar adalah
+
+</p>
+
+<pre>
+
+y = sin x
+
+</pre>
+
+<p>
+
+Nilai maksimumnya
+
+</p>
+
+<pre>
+
+1
+
+</pre>
+
+<p>
+
+dan minimumnya
+
+</p>
+
+<pre>
+
+-1
+
+</pre>
+
+<p>
+
+Jika menjadi
+
+</p>
+
+<pre>
+
+y = 3 sin x
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Grafik Lama</th>
+
+<th>Grafik Baru</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>-1</td>
+
+<td>-3</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semua nilai dikalikan tiga.
+
+Karena itu
+gelombangnya menjadi
+lebih tinggi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>19. Hubungan dengan Dunia Nyata</h2>
+
+<p>
+
+Amplitudo memiliki banyak
+aplikasi nyata.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Fenomena</th>
+
+<th>Makna Amplitudo</th>
+
+</tr>
+
+<tr>
+
+<td>Gelombang Laut</td>
+
+<td>Tinggi ombak</td>
+
+</tr>
+
+<tr>
+
+<td>Suara</td>
+
+<td>Keras suara</td>
+
+</tr>
+
+<tr>
+
+<td>Listrik AC</td>
+
+<td>Tegangan maksimum</td>
+
+</tr>
+
+<tr>
+
+<td>Gempa</td>
+
+<td>Kekuatan getaran</td>
+
+</tr>
+
+<tr>
+
+<td>Getaran Pegas</td>
+
+<td>Jarak simpangan terbesar</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semakin besar amplitudo,
+semakin besar energi
+gelombang tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>20. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan amplitudo dari
+
+</p>
+
+<pre>
+
+y = -7 cos x
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<pre>
+
+A = -7
+
+</pre>
+
+<p>
+
+Gunakan nilai mutlak.
+
+</p>
+
+<pre>
+
+|A| = 7
+
+</pre>
+
+<p>
+
+Jadi amplitudonya adalah
+
+</p>
+
+<pre>
+
+7
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>21. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui fungsi
+
+</p>
+
+<pre>
+
+y = 4 sin x - 2
+
+</pre>
+
+<p>
+
+Tentukan
+
+</p>
+
+<ul>
+
+<li>Amplitudo</li>
+<li>Nilai maksimum</li>
+<li>Nilai minimum</li>
+
+</ul>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<p>
+
+Amplitudo
+
+</p>
+
+<pre>
+
+4
+
+</pre>
+
+<p>
+
+Garis tengah
+
+</p>
+
+<pre>
+
+y = -2
+
+</pre>
+
+<p>
+
+Maksimum
+
+</p>
+
+<pre>
+
+-2 + 4 = 2
+
+</pre>
+
+<p>
+
+Minimum
+
+</p>
+
+<pre>
+
+-2 - 4 = -6
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>22. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap amplitudo boleh bernilai negatif.</li>
+
+<li>Lupa menggunakan nilai mutlak pada A.</li>
+
+<li>Mengira konstanta D memengaruhi amplitudo.</li>
+
+<li>Mengira amplitudo mengubah periode.</li>
+
+<li>Tidak membedakan amplitudo dengan nilai maksimum.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Jika melihat bentuk
+
+</p>
+
+<pre>
+
+y = A sin(Bx+C)+D
+
+</pre>
+
+<p>
+
+jangan langsung menghitung.
+
+Selalu identifikasi secara berurutan:
+
+</p>
+
+<ol>
+
+<li>Amplitudo = |A|</li>
+
+<li>Periode = 360°/|B| (atau 2π/|B|)</li>
+
+<li>Pergeseran fase = -C/B</li>
+
+<li>Pergeseran vertikal = D</li>
+
+</ol>
+
+<p>
+
+Empat langkah ini merupakan "checklist"
+yang hampir selalu digunakan
+dalam soal grafik trigonometri tingkat Olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 5 : Periode --><section class="section">
+
+<h2>23. Periode (Period)</h2>
+
+<p>
+
+Selain amplitudo,
+konsep yang sangat penting dalam grafik trigonometri adalah
+
+<b>periode</b>.
+
+</p>
+
+<p>
+
+Jika amplitudo menjelaskan
+<b>seberapa tinggi gelombang</b>,
+
+maka periode menjelaskan
+
+<b>berapa panjang satu gelombang penuh.</b>
+
+</p>
+
+<p>
+
+Bayangkan ombak di laut.
+
+Setelah satu ombak selesai,
+akan muncul ombak berikutnya
+dengan bentuk yang sama.
+
+Jarak antara dua puncak berturut-turut
+itulah yang disebut periode.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>24. Definisi Periode</h2>
+
+<p>
+
+Periode adalah
+jarak terkecil pada sumbu-x
+yang membuat grafik
+kembali ke bentuk semula.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Periode = Panjang satu siklus penuh
+
+</pre>
+
+</div>
+
+<p>
+
+Misalnya grafik sinus.
+
+</p>
+
+<pre>
+
+0°
+
+↓
+
+360°
+
+</pre>
+
+<p>
+
+Grafik telah menyelesaikan
+satu gelombang penuh.
+
+Maka periodenya adalah
+
+</p>
+
+<pre>
+
+360°
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+2π radian
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>25. Periode Fungsi Dasar</h2>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Periode</th>
+
+</tr>
+
+<tr>
+
+<td>sin x</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>cos x</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>tan x</td>
+
+<td>180° atau π</td>
+
+</tr>
+
+<tr>
+
+<td>cot x</td>
+
+<td>180° atau π</td>
+
+</tr>
+
+<tr>
+
+<td>sec x</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>csc x</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>26. Mengapa Tan Memiliki Periode Lebih Pendek?</h2>
+
+<p>
+
+Masih ingat identitas periodik?
+
+</p>
+
+<pre>
+
+tan(x+180°)
+
+=
+
+tan x
+
+</pre>
+
+<p>
+
+Artinya,
+
+setelah diputar
+setengah lingkaran,
+
+nilai tangen sudah kembali
+ke nilai semula.
+
+Sedangkan sinus
+dan cosinus
+baru kembali setelah
+satu putaran penuh.
+
+Karena itu,
+
+periode tan
+hanya setengah
+periode sinus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>27. Pengaruh Konstanta B</h2>
+
+<p>
+
+Sekarang perhatikan bentuk umum.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A sin(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+Konstanta
+
+</p>
+
+<pre>
+
+B
+
+</pre>
+
+<p>
+
+mengubah periode grafik.
+
+Semakin besar nilai
+
+</p>
+
+<pre>
+
+B
+
+</pre>
+
+<p>
+
+maka grafik menjadi
+semakin rapat.
+
+Sebaliknya,
+
+jika
+
+</p>
+
+<pre>
+
+B
+
+</pre>
+
+<p>
+
+lebih kecil,
+
+gelombang menjadi
+lebih lebar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>28. Rumus Periode</h2>
+
+<p>
+
+Untuk fungsi sinus
+dan cosinus,
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Periode
+
+=
+
+360°
+
+────────
+
+|B|
+
+</pre>
+
+</div>
+
+<p>
+
+atau dalam radian
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Periode
+
+=
+
+2π
+
+──────
+
+|B|
+
+</pre>
+
+</div>
+
+<p>
+
+Sedangkan untuk
+tangen dan cotangen,
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Periode
+
+=
+
+180°
+
+────────
+
+|B|
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>29. Contoh Menghitung Periode</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan periode dari
+
+</p>
+
+<pre>
+
+y = sin(2x)
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<pre>
+
+B = 2
+
+</pre>
+
+<pre>
+
+Periode
+
+=
+
+360°
+
+────
+
+2
+
+</pre>
+
+<pre>
+
+=
+
+180°
+
+</pre>
+
+<p>
+
+Artinya,
+
+grafik selesai
+satu gelombang penuh
+hanya dalam
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>30. Contoh Kedua</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan periode
+
+</p>
+
+<pre>
+
+y = cos(4x)
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<pre>
+
+360°
+
+────
+
+4
+
+=
+
+90°
+
+</pre>
+
+<p>
+
+Jadi grafik
+mengulang setiap
+
+</p>
+
+<pre>
+
+90°
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>31. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+y = 5 sin(πx)
+
+</pre>
+
+<p>
+
+Gunakan rumus dalam radian.
+
+</p>
+
+<pre>
+
+B = π
+
+</pre>
+
+<pre>
+
+Periode
+
+=
+
+2π
+
+────
+
+π
+
+</pre>
+
+<pre>
+
+=
+
+2
+
+</pre>
+
+<p>
+
+Artinya,
+
+grafik mengulang
+setiap
+
+</p>
+
+<pre>
+
+2 satuan x
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>32. Intuisi Periode</h2>
+
+<p>
+
+Bayangkan sebuah pegas
+yang bergerak naik turun.
+
+Jika satu getaran selesai
+dalam waktu
+
+</p>
+
+<pre>
+
+2 detik
+
+</pre>
+
+<p>
+
+maka periodenya adalah
+
+</p>
+
+<pre>
+
+2 detik
+
+</pre>
+
+<p>
+
+Grafik trigonometri
+bekerja dengan prinsip yang sama.
+
+Hanya saja,
+yang diukur bukan waktu,
+melainkan perubahan sudut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>33. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menggunakan 360° untuk fungsi tan.</li>
+
+<li>Lupa menggunakan nilai mutlak |B|.</li>
+
+<li>Tertukar antara amplitudo dan periode.</li>
+
+<li>Menggunakan rumus radian pada soal derajat.</li>
+
+<li>Mengira konstanta D memengaruhi periode.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Peserta Olimpiade biasanya
+langsung melihat nilai
+
+<b>B</b>
+
+sebelum melakukan apa pun.
+
+Mengapa?
+
+Karena nilai
+
+<b>B</b>
+
+langsung menentukan
+kerapatan grafik.
+
+Semakin besar
+
+<b>B</b>,
+
+semakin rapat gelombang.
+
+Semakin kecil
+
+<b>B</b>,
+
+semakin renggang gelombang.
+
+Kemampuan mengenali hal ini
+akan sangat membantu
+saat menganalisis grafik
+tanpa perlu menggambarnya.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 6 : Pergeseran Fase (Phase Shift) --><section class="section">
+
+<h2>34. Pergeseran Fase (Phase Shift)</h2>
+
+<p>
+
+Setelah memahami amplitudo dan periode,
+sekarang kita mempelajari
+transformasi yang paling sering
+membingungkan siswa,
+
+yaitu
+
+<b>Pergeseran Fase (Phase Shift).</b>
+
+</p>
+
+<p>
+
+Pergeseran fase berarti
+
+<b>grafik digeser ke kiri atau ke kanan
+pada sumbu-x</b>
+
+tanpa mengubah bentuk dasarnya.
+
+</p>
+
+<p>
+
+Pada Olimpiade,
+kemampuan menentukan
+pergeseran fase jauh lebih penting
+daripada sekadar menggambar grafik.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>35. Bentuk Umum Pergeseran Fase</h2>
+
+<p>
+
+Perhatikan fungsi berikut.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A sin(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+Konstanta
+
+</p>
+
+<pre>
+
+C
+
+</pre>
+
+<p>
+
+menentukan
+pergeseran fase.
+
+Besarnya pergeseran dihitung menggunakan
+
+</p>
+
+<div class="note">
+
+<pre>
+
+Pergeseran Fase
+
+=
+
+−C
+
+────
+
+B
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan baik-baik,
+
+rumus tersebut memiliki
+<b>tanda negatif</b>.
+
+Banyak siswa salah
+karena lupa tanda ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>36. Mengapa Ada Tanda Negatif?</h2>
+
+<p>
+
+Misalkan fungsi
+
+</p>
+
+<pre>
+
+y = sin(x + 30°)
+
+</pre>
+
+<p>
+
+Agar bagian dalam sinus sama dengan nol,
+
+</p>
+
+<pre>
+
+x + 30° = 0
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+x = -30°
+
+</pre>
+
+<p>
+
+Artinya,
+
+grafik mulai
+30° lebih awal.
+
+Jadi grafik bergeser
+
+<b>ke kiri</b>.
+
+</p>
+
+<p>
+
+Inilah alasan
+mengapa tanda pada rumus
+menjadi negatif.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>37. Aturan Cepat Pergeseran</h2>
+
+<table>
+
+<tr>
+
+<th>Bentuk Persamaan</th>
+
+<th>Grafik Bergeser</th>
+
+</tr>
+
+<tr>
+
+<td>y = sin(x + a)</td>
+
+<td>Ke kiri a</td>
+
+</tr>
+
+<tr>
+
+<td>y = sin(x − a)</td>
+
+<td>Ke kanan a</td>
+
+</tr>
+
+<tr>
+
+<td>y = cos(x + a)</td>
+
+<td>Ke kiri a</td>
+
+</tr>
+
+<tr>
+
+<td>y = cos(x − a)</td>
+
+<td>Ke kanan a</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>38. Contoh Sederhana</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+y = sin(x − 60°)
+
+</pre>
+
+<p>
+
+Karena terdapat
+
+</p>
+
+<pre>
+
+−60°
+
+</pre>
+
+<p>
+
+di dalam kurung,
+
+maka grafik bergeser
+
+</p>
+
+<pre>
+
+60°
+
+ke kanan.
+
+</pre>
+
+<p>
+
+Bentuk gelombangnya
+tetap sama.
+
+Yang berubah
+hanya posisi awalnya.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>39. Contoh Kedua</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+y = cos(x + 45°)
+
+</pre>
+
+<p>
+
+Grafik bergeser
+
+</p>
+
+<pre>
+
+45°
+
+ke kiri.
+
+</pre>
+
+<p>
+
+Nilai maksimum
+yang semula berada di
+
+</p>
+
+<pre>
+
+0°
+
+</pre>
+
+<p>
+
+berpindah menjadi
+
+</p>
+
+<pre>
+
+−45°
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>40. Jika Ada Konstanta B</h2>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+y = sin(2x − 60°)
+
+</pre>
+
+<p>
+
+Gunakan rumus.
+
+</p>
+
+<pre>
+
+Shift
+
+=
+
+−C
+
+────
+
+B
+
+</pre>
+
+<pre>
+
+=
+
+−(−60°)
+
+────────
+
+2
+
+</pre>
+
+<pre>
+
+=
+
+30°
+
+</pre>
+
+<p>
+
+Artinya,
+
+grafik bergeser
+
+</p>
+
+<pre>
+
+30°
+
+ke kanan.
+
+</pre>
+
+<p>
+
+Perhatikan bahwa
+yang digeser bukan
+
+</p>
+
+<pre>
+
+60°
+
+</pre>
+
+<p>
+
+melainkan
+
+</p>
+
+<pre>
+
+30°
+
+</pre>
+
+<p>
+
+karena harus dibagi
+dengan nilai
+
+</p>
+
+<pre>
+
+B
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>41. Hubungan dengan Unit Circle</h2>
+
+<p>
+
+Pada Unit Circle,
+
+grafik sinus dimulai
+dari titik
+
+</p>
+
+<pre>
+
+(1,0)
+
+</pre>
+
+<p>
+
+Jika seluruh sudut
+ditambah
+
+</p>
+
+<pre>
+
+30°
+
+</pre>
+
+<p>
+
+maka seluruh titik
+akan mulai lebih awal.
+
+Akibatnya,
+
+grafik tampak
+bergeser ke kiri.
+
+Jadi,
+
+pergeseran fase
+bukan sekadar rumus,
+
+melainkan akibat
+perubahan sudut awal
+pada Lingkaran Satuan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>42. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Tentukan transformasi grafik
+
+</p>
+
+<pre>
+
+y = 2 sin(3x + 90°) − 1
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<ul>
+
+<li>Amplitudo = 2</li>
+
+<li>Periode = 360° / 3 = 120°</li>
+
+<li>Pergeseran fase = −90° / 3 = −30° → geser 30° ke kiri</li>
+
+<li>Pergeseran vertikal = turun 1 satuan</li>
+
+</ul>
+
+<p>
+
+Dengan empat informasi tersebut,
+grafik dapat digambar
+tanpa menghitung banyak titik.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>43. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap tanda "+" berarti geser ke kanan.</li>
+
+<li>Lupa membagi dengan nilai B.</li>
+
+<li>Lupa menggunakan tanda negatif pada rumus.</li>
+
+<li>Mengira fase memengaruhi amplitudo.</li>
+
+<li>Menghafal aturan tanpa memahami asalnya.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Dalam soal Olimpiade,
+persamaan grafik hampir selalu dianalisis
+dengan urutan berikut:
+
+</p>
+
+<ol>
+
+<li>Amplitudo</li>
+<li>Periode</li>
+<li>Pergeseran fase</li>
+<li>Pergeseran vertikal</li>
+
+</ol>
+
+<p>
+
+Jika empat informasi ini sudah diketahui,
+maka hampir seluruh karakteristik grafik
+sudah dapat ditentukan
+bahkan tanpa menggambarnya.
+
+Inilah teknik yang umum digunakan
+dalam analisis fungsi trigonometri tingkat lanjut.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 7 : Pemodelan Gelombang -->
+```<section class="section">
+
+<h2>44. Pemodelan Gelombang (Wave Modeling)</h2>
+
+<p>
+
+Inilah salah satu aplikasi terbesar
+trigonometri.
+
+Semua gelombang periodik di alam,
+mulai dari suara,
+cahaya,
+gelombang laut,
+hingga listrik AC,
+dapat dimodelkan menggunakan
+fungsi sinus atau cosinus.
+
+</p>
+
+<p>
+
+Karena itu,
+trigonometri menjadi dasar
+dalam fisika,
+teknik,
+astronomi,
+robotika,
+bahkan kecerdasan buatan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>45. Mengapa Menggunakan Sinus dan Cosinus?</h2>
+
+<p>
+
+Gelombang memiliki sifat:
+
+</p>
+
+<ul>
+
+<li>Naik secara perlahan.</li>
+
+<li>Mencapai titik maksimum.</li>
+
+<li>Turun kembali.</li>
+
+<li>Mencapai titik minimum.</li>
+
+<li>Mengulang pola yang sama.</li>
+
+</ul>
+
+<p>
+
+Persis seperti grafik
+
+</p>
+
+<pre>
+
+y = sin x
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+y = cos x
+
+</pre>
+
+<p>
+
+Karena itulah,
+fungsi sinus dan cosinus
+menjadi model matematika
+yang paling alami
+untuk gelombang.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>46. Bentuk Umum Persamaan Gelombang</h2>
+
+<p>
+
+Sebagian besar gelombang
+dapat ditulis sebagai
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A sin(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="note">
+
+<pre>
+
+y = A cos(Bx + C) + D
+
+</pre>
+
+</div>
+
+<p>
+
+Setiap konstanta memiliki arti fisik.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Konstanta</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>Amplitudo (tinggi gelombang)</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>Frekuensi / periode gelombang</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>Fase awal</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>Posisi garis tengah</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>47. Contoh Gelombang Laut</h2>
+
+<p>
+
+Misalkan tinggi ombak
+terhadap permukaan laut
+dimodelkan oleh
+
+</p>
+
+<pre>
+
+y = 2 sin x
+
+</pre>
+
+<p>
+
+Artinya
+
+</p>
+
+<ul>
+
+<li>Tinggi maksimum = 2 meter.</li>
+
+<li>Kedalaman minimum = -2 meter.</li>
+
+<li>Permukaan laut berada di y = 0.</li>
+
+</ul>
+
+<p>
+
+Jika amplitudo diperbesar,
+
+</p>
+
+<pre>
+
+y = 5 sin x
+
+</pre>
+
+<p>
+
+berarti ombak menjadi
+lebih tinggi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>48. Contoh Gelombang Suara</h2>
+
+<p>
+
+Gelombang suara
+juga dimodelkan
+dengan fungsi sinus.
+
+</p>
+
+<p>
+
+Semakin besar amplitudo,
+
+semakin keras suara.
+
+</p>
+
+<p>
+
+Semakin besar frekuensi,
+
+semakin tinggi nada.
+
+</p>
+
+<div class="note">
+
+<p>
+
+Keras suara
+⇢ Amplitudo
+
+</p>
+
+<p>
+
+Tinggi nada
+⇢ Frekuensi
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>49. Contoh Listrik AC</h2>
+
+<p>
+
+Arus bolak-balik (Alternating Current)
+di rumah kita
+tidak bernilai tetap.
+
+Tegangannya berubah-ubah
+mengikuti grafik sinus.
+
+</p>
+
+<p>
+
+Contoh sederhana:
+
+</p>
+
+<pre>
+
+V(t)
+
+=
+
+220 sin(100πt)
+
+</pre>
+
+<p>
+
+Persamaan tersebut
+menjelaskan bagaimana
+tegangan berubah
+setiap saat.
+
+</p>
+
+<p>
+
+Inilah alasan
+mengapa seluruh insinyur listrik
+mempelajari trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>50. Contoh Gerak Pegas</h2>
+
+<p>
+
+Jika sebuah pegas ditarik
+kemudian dilepas,
+
+gerakannya akan naik turun.
+
+Posisinya dapat dimodelkan dengan
+
+</p>
+
+<pre>
+
+x(t)
+
+=
+
+A cos(ωt)
+
+</pre>
+
+<p>
+
+Semakin besar
+
+</p>
+
+<pre>
+
+A
+
+</pre>
+
+<p>
+
+semakin jauh pegas bergerak.
+
+Semakin besar
+
+</p>
+
+<pre>
+
+ω
+
+</pre>
+
+<p>
+
+semakin cepat getarannya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>51. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Gelombang memiliki persamaan
+
+</p>
+
+<pre>
+
+y = 4 sin x
+
+</pre>
+
+<p>
+
+Tentukan amplitudonya.
+
+</p>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<pre>
+
+A = 4
+
+</pre>
+
+<p>
+
+Jadi tinggi maksimum
+gelombang dari garis tengah
+adalah
+
+</p>
+
+<pre>
+
+4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>52. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Sebuah gelombang dimodelkan oleh
+
+</p>
+
+<pre>
+
+y = 3 sin(2x - 60°) + 5
+
+</pre>
+
+<p>
+
+Tentukan karakteristiknya.
+
+</p>
+
+<ul>
+
+<li>Amplitudo = 3</li>
+
+<li>Periode = 360° ÷ 2 = 180°</li>
+
+<li>Pergeseran fase = 30° ke kanan</li>
+
+<li>Garis tengah = y = 5</li>
+
+<li>Nilai maksimum = 8</li>
+
+<li>Nilai minimum = 2</li>
+
+</ul>
+
+<p>
+
+Tanpa menggambar grafik,
+seluruh sifat gelombang
+sudah dapat diketahui.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>53. Hubungan Trigonometri dan Fisika</h2>
+
+<p>
+
+Semakin tinggi jenjang matematika,
+semakin sering trigonometri digunakan.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Bidang</th>
+
+<th>Penggunaan</th>
+
+</tr>
+
+<tr>
+
+<td>Fisika</td>
+
+<td>Gelombang dan getaran</td>
+
+</tr>
+
+<tr>
+
+<td>Astronomi</td>
+
+<td>Orbit planet</td>
+
+</tr>
+
+<tr>
+
+<td>Teknik Sipil</td>
+
+<td>Analisis getaran bangunan</td>
+
+</tr>
+
+<tr>
+
+<td>Teknik Elektro</td>
+
+<td>Listrik AC</td>
+
+</tr>
+
+<tr>
+
+<td>Robotika</td>
+
+<td>Gerakan lengan robot</td>
+
+</tr>
+
+<tr>
+
+<td>Grafika Komputer</td>
+
+<td>Animasi dan simulasi</td>
+
+</tr>
+
+<tr>
+
+<td>AI & Machine Learning</td>
+
+<td>Pemrosesan sinyal dan Fourier</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>54. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap semua gelombang memiliki amplitudo yang sama.</li>
+
+<li>Mengira frekuensi sama dengan amplitudo.</li>
+
+<li>Lupa bahwa garis tengah dapat bergeser ke atas atau ke bawah.</li>
+
+<li>Menganggap semua gelombang dimulai dari titik nol.</li>
+
+<li>Tidak menghubungkan persamaan dengan fenomena fisika.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Dalam Olimpiade, soal grafik sering tidak meminta kamu menggambar kurva.
+
+Sebaliknya, kamu diminta menentukan sifat-sifat grafik hanya dari persamaannya.
+
+Biasakan setiap melihat persamaan
+
+</p>
+
+<pre>
+
+y = A sin(Bx + C) + D
+
+</pre>
+
+<p>
+
+langsung identifikasi:
+
+</p>
+
+<ol>
+
+<li>Amplitudo = |A|</li>
+<li>Periode</li>
+<li>Pergeseran fase</li>
+<li>Garis tengah</li>
+<li>Nilai maksimum</li>
+<li>Nilai minimum</li>
+
+</ol>
+
+<p>
+
+Jika enam informasi ini sudah diperoleh, maka sekitar <b>90% analisis grafik</b> telah selesai tanpa perlu menggambar satu pun kurva.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Ringkasan Bab 4</h2>
+
+<ul>
+
+<li>✅ Grafik Fungsi Sinus</li>
+<li>✅ Grafik Fungsi Cosinus</li>
+<li>✅ Grafik Fungsi Tangen</li>
+<li>✅ Transformasi Grafik</li>
+<li>✅ Pergeseran Vertikal</li>
+<li>✅ Refleksi Grafik</li>
+<li>✅ Amplitudo</li>
+<li>✅ Periode</li>
+<li>✅ Pergeseran Fase</li>
+<li>✅ Pemodelan Gelombang</li>
+</ul>
+
+<p>
+
+Bab selanjutnya akan membahas materi yang sangat penting dalam Olimpiade Matematika, yaitu <b>Rumus-Rumus Sudut</b>, meliputi rumus jumlah sudut, selisih sudut, sudut rangkap, sudut setengah, hingga sudut tiga kali.
+
+</p>
+
+</section>
+
+<div class="navigation">
+<a href="trigonometri3.html" class="btn">⬅ Bab Sebelumnya</a>
+<a href="trigonometri5.html" class="btn">Bab Berikutnya ➜</a>
+</div>
+
+</div>
+
+</body>
+</html>
