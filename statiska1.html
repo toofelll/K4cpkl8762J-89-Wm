@@ -1,1 +1,2636 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handbook Matematika - Statistika 1</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    body{
+      background:#f5f7fb;
+      color:#222;
+      line-height:1.7;
+    }
+
+    header{
+      background:#2563eb;
+      color:white;
+      padding:40px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:2.3rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      opacity:.95;
+    }
+
+    nav{
+      background:white;
+      padding:15px;
+      position:sticky;
+      top:0;
+      border-bottom:1px solid #ddd;
+      z-index:99;
+    }
+
+    nav ul{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      list-style:none;
+      justify-content:center;
+    }
+
+    nav a{
+      color:#2563eb;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:30px 20px;
+    }
+
+    section{
+      background:white;
+      margin-bottom:25px;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+    }
+
+    h2{
+      color:#2563eb;
+      margin-bottom:15px;
+    }
+
+    h3{
+      margin-top:25px;
+      margin-bottom:10px;
+      color:#1d4ed8;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+    }
+
+    th,td{
+      border:1px solid #ccc;
+      padding:10px;
+      text-align:center;
+    }
+
+    th{
+      background:#2563eb;
+      color:white;
+    }
+
+    .rumus{
+      background:#eef4ff;
+      border-left:6px solid #2563eb;
+      padding:15px;
+      margin:15px 0;
+      overflow:auto;
+    }
+
+    .contoh{
+      background:#f9fafb;
+      border-left:6px solid #16a34a;
+      padding:15px;
+      margin:18px 0;
+    }
+
+    .latihan{
+      background:#fff8e7;
+      border-left:6px solid orange;
+      padding:15px;
+      margin-top:20px;
+    }
+
+    code{
+      color:#c2185b;
+      font-weight:bold;
+    }
+
+    ul{
+      margin-left:22px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Handbook Matematika</h1>
+  <p>Bab Statistika 1</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#pengertian">Pengertian</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#penyajian">Penyajian Data</a></li>
+    <li><a href="#contoh">Contoh</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="pengertian">
+
+<h2>1. Pengertian Statistika</h2>
+
+<p>
+Statistika merupakan cabang ilmu matematika yang mempelajari cara mengumpulkan,
+mengolah, menyajikan, menganalisis, dan menarik kesimpulan dari data.
+</p>
+
+<p>
+Dalam kehidupan sehari-hari statistika digunakan di berbagai bidang seperti
+pendidikan, ekonomi, kesehatan, teknologi, olahraga, pemerintahan,
+hingga penelitian ilmiah.
+</p>
+
+<div class="contoh">
+<h3>Contoh Penggunaan</h3>
+
+<ul>
+<li>Menentukan rata-rata nilai ujian siswa.</li>
+<li>Menghitung jumlah penduduk.</li>
+<li>Menganalisis hasil survei.</li>
+<li>Mengetahui tingkat penjualan.</li>
+<li>Memprediksi cuaca.</li>
+</ul>
+
+</div>
+
+<h3>Tujuan Statistika</h3>
+
+<ul>
+<li>Mengumpulkan data.</li>
+<li>Mengelompokkan data.</li>
+<li>Menyajikan data.</li>
+<li>Menganalisis data.</li>
+<li>Menarik kesimpulan.</li>
+</ul>
+
+</section>
+
+<section id="data">
+
+<h2>2. Pengertian Data</h2>
+
+<p>
+Data adalah sekumpulan fakta atau informasi yang diperoleh melalui
+pengamatan, penelitian, maupun survei.
+</p>
+
+<h3>Berdasarkan Sifatnya</h3>
+
+<table>
+
+<tr>
+<th>Jenis</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Data Kualitatif</td>
+<td>Data berupa kategori atau sifat.</td>
+</tr>
+
+<tr>
+<td>Data Kuantitatif</td>
+<td>Data berupa angka.</td>
+</tr>
+
+</table>
+
+<h3>Data Kualitatif</h3>
+
+<p>
+Data kualitatif tidak berbentuk bilangan.
+Contohnya warna, jenis kelamin,
+agama, jurusan sekolah, pekerjaan, dan sebagainya.
+</p>
+
+<h3>Data Kuantitatif</h3>
+
+<p>
+Data kuantitatif berbentuk angka sehingga dapat dilakukan
+perhitungan matematika.
+</p>
+
+<table>
+
+<tr>
+<th>Jenis</th>
+<th>Contoh</th>
+</tr>
+
+<tr>
+<td>Diskrit</td>
+<td>Jumlah siswa.</td>
+</tr>
+
+<tr>
+<td>Kontinu</td>
+<td>Tinggi badan.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Data Diskrit</h3>
+
+<ul>
+<li>20 siswa.</li>
+<li>35 buku.</li>
+<li>12 mobil.</li>
+<li>5 komputer.</li>
+</ul>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh Data Kontinu</h3>
+
+<ul>
+<li>165,5 cm.</li>
+<li>48,2 kg.</li>
+<li>37,8°C.</li>
+<li>2,35 liter.</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="penyajian">
+
+<h2>3. Penyajian Data</h2>
+
+<p>
+Setelah data diperoleh, data perlu disusun agar mudah dipahami.
+</p>
+
+<h3>Bentuk Penyajian Data</h3>
+
+<ul>
+
+<li>Tabel.</li>
+
+<li>Diagram Batang.</li>
+
+<li>Diagram Garis.</li>
+
+<li>Diagram Lingkaran.</li>
+
+<li>Piktogram.</li>
+
+</ul>
+
+<h3>Tabel</h3>
+
+<table>
+
+<tr>
+
+<th>Nama</th>
+
+<th>Nilai</th>
+
+</tr>
+
+<tr>
+
+<td>Andi</td>
+
+<td>85</td>
+
+</tr>
+
+<tr>
+
+<td>Budi</td>
+
+<td>90</td>
+
+</tr>
+
+<tr>
+
+<td>Citra</td>
+
+<td>78</td>
+
+</tr>
+
+<tr>
+
+<td>Dina</td>
+
+<td>88</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Kelebihan Tabel</h3>
+
+<ul>
+
+<li>Mudah dibaca.</li>
+
+<li>Mudah dibandingkan.</li>
+
+<li>Data tersusun rapi.</li>
+
+<li>Cocok untuk banyak angka.</li>
+
+</ul>
+
+</div>
+
+<section id="contoh">
+
+<h2>4. Contoh Soal Dasar</h2>
+
+<p>
+Perhatikan data berikut.
+</p>
+
+<div class="rumus">
+
+8, 7, 6, 8, 9, 10, 7, 8, 9, 8
+
+</div>
+
+<p>
+Data tersebut merupakan data kuantitatif karena seluruh nilainya berupa angka.
+</p>
+
+<div class="latihan">
+
+<h3>Latihan 1</h3>
+
+<p>
+Sebutkan apakah berikut termasuk data kualitatif atau kuantitatif.
+</p>
+
+<ol>
+
+<li>Warna favorit siswa.</li>
+
+<li>Umur siswa.</li>
+
+<li>Jenis kendaraan.</li>
+
+<li>Tinggi badan.</li>
+
+</ol>
+
+</div><section>
+
+<h2>5. Populasi dan Sampel</h2>
+
+<p>
+Dalam statistika dikenal dua istilah penting yaitu populasi dan sampel.
+Keduanya sering digunakan dalam penelitian maupun survei.
+</p>
+
+<h3>Populasi</h3>
+
+<p>
+Populasi adalah seluruh objek, individu, atau data yang menjadi sasaran
+penelitian.
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Populasi</h3>
+
+<ul>
+<li>Seluruh siswa di sebuah sekolah.</li>
+<li>Semua penduduk dalam suatu desa.</li>
+<li>Seluruh kendaraan yang diproduksi sebuah pabrik.</li>
+<li>Semua buku di perpustakaan.</li>
+</ul>
+
+</div>
+
+<h3>Sampel</h3>
+
+<p>
+Sampel adalah sebagian anggota populasi yang dipilih untuk mewakili
+populasi tersebut.
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Sampel</h3>
+
+<ul>
+<li>50 siswa dari 800 siswa sekolah.</li>
+<li>100 penduduk dari satu kelurahan.</li>
+<li>25 kendaraan yang dipilih secara acak.</li>
+<li>40 buku dari seluruh koleksi perpustakaan.</li>
+</ul>
+
+</div>
+
+<table>
+
+<tr>
+<th>Populasi</th>
+<th>Sampel</th>
+</tr>
+
+<tr>
+<td>Seluruh objek penelitian</td>
+<td>Sebagian objek penelitian</td>
+</tr>
+
+<tr>
+<td>Jumlah lebih banyak</td>
+<td>Jumlah lebih sedikit</td>
+</tr>
+
+<tr>
+<td>Mewakili keseluruhan</td>
+<td>Mewakili populasi</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>6. Cara Mengumpulkan Data</h2>
+
+<p>
+Pengumpulan data merupakan langkah awal dalam statistika. Data harus
+dikumpulkan dengan cara yang tepat agar hasil penelitian dapat dipercaya.
+</p>
+
+<h3>Observasi</h3>
+
+<p>
+Observasi dilakukan dengan cara mengamati secara langsung objek yang akan
+diteliti.
+</p>
+
+<div class="contoh">
+
+Contoh:
+Mengamati jumlah kendaraan yang melewati jalan raya selama satu jam.
+
+</div>
+
+<h3>Wawancara</h3>
+
+<p>
+Wawancara dilakukan dengan memberikan pertanyaan secara langsung kepada
+narasumber.
+</p>
+
+<div class="contoh">
+
+Contoh:
+Guru mewawancarai siswa mengenai kebiasaan belajar.
+
+</div>
+
+<h3>Angket atau Kuesioner</h3>
+
+<p>
+Kuesioner berisi daftar pertanyaan yang harus diisi oleh responden.
+</p>
+
+<div class="contoh">
+
+Contoh:
+Survei kepuasan pelanggan menggunakan formulir online.
+
+</div>
+
+<h3>Dokumentasi</h3>
+
+<p>
+Dokumentasi dilakukan dengan mengambil data dari arsip, laporan, buku,
+atau dokumen yang sudah tersedia.
+</p>
+
+</section>
+
+<section>
+
+<h2>7. Data Tunggal</h2>
+
+<p>
+Data tunggal adalah data yang belum dikelompokkan ke dalam interval kelas.
+Data biasanya masih ditampilkan satu per satu.
+</p>
+
+<div class="rumus">
+
+12, 15, 16, 18, 19, 20, 22, 23, 24, 25
+
+</div>
+
+<p>
+Karena belum dikelompokkan, setiap nilai masih terlihat secara langsung.
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Data Nilai</h3>
+
+<table>
+
+<tr>
+<th>No</th>
+<th>Nilai</th>
+</tr>
+
+<tr><td>1</td><td>75</td></tr>
+<tr><td>2</td><td>80</td></tr>
+<tr><td>3</td><td>90</td></tr>
+<tr><td>4</td><td>85</td></tr>
+<tr><td>5</td><td>95</td></tr>
+<tr><td>6</td><td>88</td></tr>
+<tr><td>7</td><td>76</td></tr>
+<tr><td>8</td><td>92</td></tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>8. Data Kelompok</h2>
+
+<p>
+Data kelompok adalah data yang telah disusun ke dalam beberapa interval
+kelas sehingga lebih mudah dianalisis apabila jumlah data sangat banyak.
+</p>
+
+<table>
+
+<tr>
+<th>Interval</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>40–49</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>50–59</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>60–69</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>70–79</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>80–89</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>90–99</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<p>
+Interval kelas digunakan agar data yang sangat banyak dapat diringkas
+menjadi lebih sederhana.
+</p>
+
+<div class="latihan">
+
+<h3>Latihan 2</h3>
+
+<ol>
+
+<li>Jelaskan pengertian populasi.</li>
+<li>Jelaskan pengertian sampel.</li>
+<li>Sebutkan empat cara pengumpulan data.</li>
+<li>Apa perbedaan data tunggal dan data kelompok?</li>
+
+</ol>
+
+</div><section>
+
+<h2>9. Frekuensi</h2>
+
+<p>
+Frekuensi adalah banyaknya suatu data muncul dalam sekumpulan data.
+Semakin sering suatu nilai muncul maka frekuensinya semakin besar.
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Data</h3>
+
+<p>
+6, 7, 8, 8, 8, 9, 10, 10, 8, 7, 6, 8
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>6</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>2</td>
+</tr>
+
+</table>
+
+<p>
+Pada tabel di atas, nilai 8 mempunyai frekuensi paling besar karena
+muncul sebanyak lima kali.
+</p>
+
+</section>
+
+<section>
+
+<h2>10. Distribusi Frekuensi</h2>
+
+<p>
+Distribusi frekuensi adalah penyajian data dalam bentuk tabel yang
+menunjukkan banyaknya data pada setiap nilai atau interval kelas.
+</p>
+
+<table>
+
+<tr>
+<th>Interval Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>50–59</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>60–69</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>70–79</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>80–89</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>90–99</td>
+<td>3</td>
+</tr>
+
+</table>
+
+<h3>Manfaat Distribusi Frekuensi</h3>
+
+<ul>
+
+<li>Memudahkan membaca data.</li>
+
+<li>Mempermudah proses analisis.</li>
+
+<li>Menampilkan penyebaran data.</li>
+
+<li>Menghemat ruang penyajian.</li>
+
+<li>Membantu pembuatan diagram.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>11. Diagram Batang</h2>
+
+<p>
+Diagram batang digunakan untuk membandingkan jumlah pada beberapa kategori.
+Panjang batang menunjukkan besar data.
+</p>
+
+<div class="contoh">
+
+<table>
+
+<tr>
+<th>Kelas</th>
+<th>Jumlah Siswa</th>
+</tr>
+
+<tr>
+<td>VII A</td>
+<td>32</td>
+</tr>
+
+<tr>
+<td>VII B</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>VII C</td>
+<td>34</td>
+</tr>
+
+<tr>
+<td>VII D</td>
+<td>31</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Semakin tinggi batang, semakin besar nilai data yang diwakili.
+</p>
+
+</section>
+
+<section>
+
+<h2>12. Diagram Garis</h2>
+
+<p>
+Diagram garis digunakan untuk menunjukkan perubahan data dari waktu ke
+waktu sehingga mudah melihat kenaikan atau penurunan.
+</p>
+
+<table>
+
+<tr>
+<th>Bulan</th>
+<th>Penjualan</th>
+</tr>
+
+<tr>
+<td>Januari</td>
+<td>120</td>
+</tr>
+
+<tr>
+<td>Februari</td>
+<td>135</td>
+</tr>
+
+<tr>
+<td>Maret</td>
+<td>150</td>
+</tr>
+
+<tr>
+<td>April</td>
+<td>145</td>
+</tr>
+
+<tr>
+<td>Mei</td>
+<td>170</td>
+</tr>
+
+</table>
+
+<p>
+Data tersebut apabila dibuat diagram garis akan memperlihatkan perubahan
+penjualan setiap bulan.
+</p>
+
+</section>
+
+<section>
+
+<h2>13. Diagram Lingkaran</h2>
+
+<p>
+Diagram lingkaran digunakan untuk menunjukkan perbandingan bagian terhadap
+keseluruhan dalam bentuk persentase atau sudut.
+</p>
+
+<div class="rumus">
+
+Jumlah Sudut =
+
+<br><br>
+
+(Bagian ÷ Total) × 360°
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<table>
+
+<tr>
+<th>Kategori</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>A</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>50</td>
+</tr>
+
+</table>
+
+<p>
+
+Total = 100
+
+</p>
+
+<p>
+
+Sudut A = (20 ÷ 100) × 360° = 72°
+
+</p>
+
+<p>
+
+Sudut B = (30 ÷ 100) × 360° = 108°
+
+</p>
+
+<p>
+
+Sudut C = (50 ÷ 100) × 360° = 180°
+
+</p>
+
+</div>
+
+<div class="latihan">
+
+<h3>Latihan 3</h3>
+
+<ol>
+
+<li>Apa yang dimaksud frekuensi?</li>
+
+<li>Sebutkan manfaat distribusi frekuensi.</li>
+
+<li>Kapan diagram batang lebih tepat digunakan?</li>
+
+<li>Kapan diagram garis digunakan?</li>
+
+<li>Tuliskan rumus mencari sudut pada diagram lingkaran.</li>
+
+</ol>
+
+</div>
+
+</section><section>
+
+<h2>14. Ukuran Pemusatan Data</h2>
+
+<p>
+Ukuran pemusatan data adalah ukuran yang digunakan untuk menentukan nilai
+yang mewakili sekumpulan data. Tiga ukuran pemusatan yang paling sering
+digunakan adalah rata-rata (mean), median, dan modus.
+</p>
+
+<ul>
+<li>Mean (Rata-rata)</li>
+<li>Median (Nilai Tengah)</li>
+<li>Modus (Nilai yang Paling Sering Muncul)</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>15. Mean (Rata-rata)</h2>
+
+<p>
+Mean adalah jumlah seluruh data dibagi banyaknya data.
+</p>
+
+<div class="rumus">
+
+Mean = Jumlah seluruh data ÷ Banyak data
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 1</h3>
+
+<p>
+Data:
+70, 75, 80, 85, 90
+</p>
+
+<p>
+Jumlah data = 70 + 75 + 80 + 85 + 90 = 400
+</p>
+
+<p>
+Banyak data = 5
+</p>
+
+<p>
+Mean = 400 ÷ 5 = 80
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 2</h3>
+
+<p>
+Data:
+5, 7, 8, 10
+</p>
+
+<p>
+Jumlah = 30
+</p>
+
+<p>
+Mean = 30 ÷ 4 = 7,5
+</p>
+
+</div>
+
+<h3>Langkah Menghitung Mean</h3>
+
+<ol>
+
+<li>Jumlahkan semua data.</li>
+
+<li>Hitung banyak data.</li>
+
+<li>Bagi jumlah data dengan banyak data.</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>16. Median</h2>
+
+<p>
+Median adalah nilai yang berada tepat di tengah setelah data diurutkan
+dari yang terkecil hingga terbesar.
+</p>
+
+<h3>Jumlah Data Ganjil</h3>
+
+<div class="contoh">
+
+<p>
+Data:
+3, 5, 7, 9, 11
+</p>
+
+<p>
+Median = 7
+</p>
+
+</div>
+
+<h3>Jumlah Data Genap</h3>
+
+<div class="contoh">
+
+<p>
+Data:
+2, 4, 6, 8
+</p>
+
+<p>
+Median = (4 + 6) ÷ 2 = 5
+</p>
+
+</div>
+
+<h3>Langkah Menentukan Median</h3>
+
+<ol>
+
+<li>Urutkan data.</li>
+
+<li>Hitung banyak data.</li>
+
+<li>Tentukan nilai tengah.</li>
+
+<li>Jika jumlah data genap, hitung rata-rata dua nilai tengah.</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>17. Modus</h2>
+
+<p>
+Modus adalah nilai yang memiliki frekuensi paling banyak atau paling sering
+muncul.
+</p>
+
+<div class="contoh">
+
+<h3>Contoh 1</h3>
+
+<p>
+Data:
+2, 4, 4, 5, 6
+</p>
+
+<p>
+Modus = 4
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 2</h3>
+
+<p>
+Data:
+8, 8, 8, 9, 10, 10
+</p>
+
+<p>
+Modus = 8
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 3</h3>
+
+<p>
+Data:
+1, 2, 3, 4, 5
+</p>
+
+<p>
+Tidak memiliki modus karena semua nilai muncul satu kali.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>18. Perbandingan Mean, Median, dan Modus</h2>
+
+<table>
+
+<tr>
+<th>Ukuran</th>
+<th>Pengertian</th>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Jumlah seluruh data dibagi banyak data.</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Nilai tengah setelah data diurutkan.</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Nilai yang paling sering muncul.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Lengkap</h3>
+
+<p>
+Data:
+5, 6, 6, 7, 8, 8, 8, 10
+</p>
+
+<p>
+Mean = (5 + 6 + 6 + 7 + 8 + 8 + 8 + 10) ÷ 8 = 58 ÷ 8 = 7,25
+</p>
+
+<p>
+Median = (7 + 8) ÷ 2 = 7,5
+</p>
+
+<p>
+Modus = 8
+</p>
+
+</div>
+
+<div class="latihan">
+
+<h3>Latihan 4</h3>
+
+<ol>
+
+<li>Tentukan mean dari data: 10, 20, 30, 40, 50.</li>
+
+<li>Tentukan median dari data: 3, 5, 7, 9, 11.</li>
+
+<li>Tentukan median dari data: 4, 6, 8, 10.</li>
+
+<li>Tentukan modus dari data: 6, 7, 7, 8, 9, 7.</li>
+
+<li>Tentukan mean, median, dan modus dari data:
+2, 3, 3, 4, 5, 6, 6, 6.</li>
+
+</ol>
+
+</div>
+
+</section><section>
+
+<h2>19. Jangkauan (Range)</h2>
+
+<p>
+Jangkauan atau <i>range</i> adalah selisih antara nilai terbesar dan nilai
+terkecil dalam suatu kumpulan data.
+</p>
+
+<div class="rumus">
+
+Range = Nilai Terbesar − Nilai Terkecil
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 1</h3>
+
+<p>
+Data:
+12, 15, 18, 20, 25
+</p>
+
+<p>
+Nilai terbesar = 25
+</p>
+
+<p>
+Nilai terkecil = 12
+</p>
+
+<p>
+Range = 25 − 12 = 13
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 2</h3>
+
+<p>
+Data:
+5, 8, 10, 14, 18, 21
+</p>
+
+<p>
+Range = 21 − 5 = 16
+</p>
+
+</div>
+
+<h3>Kegunaan Range</h3>
+
+<ul>
+
+<li>Mengetahui penyebaran data.</li>
+
+<li>Membandingkan dua kelompok data.</li>
+
+<li>Menentukan panjang interval kelas.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>20. Kuartil</h2>
+
+<p>
+Kuartil adalah nilai yang membagi data yang telah diurutkan menjadi empat
+bagian sama banyak.
+</p>
+
+<table>
+
+<tr>
+<th>Kuartil</th>
+<th>Keterangan</th>
+</tr>
+
+<tr>
+<td>Q₁</td>
+<td>Kuartil bawah.</td>
+</tr>
+
+<tr>
+<td>Q₂</td>
+<td>Median.</td>
+</tr>
+
+<tr>
+<td>Q₃</td>
+<td>Kuartil atas.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+Data:
+2, 4, 6, 8, 10, 12, 14, 16
+</p>
+
+<p>
+Q₂ = (8 + 10) ÷ 2 = 9
+</p>
+
+<p>
+Q₁ = (4 + 6) ÷ 2 = 5
+</p>
+
+<p>
+Q₃ = (12 + 14) ÷ 2 = 13
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>21. Desil</h2>
+
+<p>
+Desil adalah ukuran letak yang membagi data menjadi sepuluh bagian yang
+sama besar.
+</p>
+
+<ul>
+
+<li>D₁ sampai D₉.</li>
+
+<li>Digunakan untuk analisis data yang lebih rinci.</li>
+
+<li>Sering digunakan dalam penelitian.</li>
+
+</ul>
+
+<p>
+Semakin besar nomor desil, semakin besar pula posisi data tersebut dalam
+urutan data.
+</p>
+
+</section>
+
+<section>
+
+<h2>22. Persentil</h2>
+
+<p>
+Persentil adalah ukuran letak yang membagi data menjadi seratus bagian
+yang sama besar.
+</p>
+
+<table>
+
+<tr>
+<th>Persentil</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>P25</td>
+<td>25% data berada di bawahnya.</td>
+</tr>
+
+<tr>
+<td>P50</td>
+<td>Sama dengan median.</td>
+</tr>
+
+<tr>
+<td>P75</td>
+<td>75% data berada di bawahnya.</td>
+</tr>
+
+</table>
+
+<p>
+Persentil banyak digunakan pada hasil ujian, tes kemampuan, dan penilaian
+prestasi.
+</p>
+
+</section>
+
+<section>
+
+<h2>23. Ringkasan Materi</h2>
+
+<table>
+
+<tr>
+<th>Materi</th>
+<th>Inti Pembahasan</th>
+</tr>
+
+<tr>
+<td>Statistika</td>
+<td>Ilmu tentang pengumpulan dan pengolahan data.</td>
+</tr>
+
+<tr>
+<td>Data</td>
+<td>Fakta atau informasi.</td>
+</tr>
+
+<tr>
+<td>Populasi</td>
+<td>Seluruh objek penelitian.</td>
+</tr>
+
+<tr>
+<td>Sampel</td>
+<td>Sebagian objek penelitian.</td>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Rata-rata data.</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Nilai tengah.</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Nilai paling sering muncul.</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Selisih nilai terbesar dan terkecil.</td>
+</tr>
+
+<tr>
+<td>Kuartil</td>
+<td>Membagi data menjadi empat bagian.</td>
+</tr>
+
+<tr>
+<td>Desil</td>
+<td>Membagi data menjadi sepuluh bagian.</td>
+</tr>
+
+<tr>
+<td>Persentil</td>
+<td>Membagi data menjadi seratus bagian.</td>
+</tr>
+
+</table>
+
+<div class="latihan">
+
+<h3>Latihan 5</h3>
+
+<ol>
+
+<li>Hitung range dari data: 15, 20, 22, 28, 35.</li>
+
+<li>Sebutkan pengertian kuartil.</li>
+
+<li>Apa perbedaan desil dan persentil?</li>
+
+<li>Jelaskan kegunaan range.</li>
+
+<li>Tentukan mean, median, modus, dan range dari data:
+5, 7, 8, 8, 9, 10, 10, 10.</li>
+
+</ol>
+
+</div>
+
+</section><section>
+
+<h2>24. Frekuensi Relatif</h2>
+
+<p>
+Frekuensi relatif adalah perbandingan antara frekuensi suatu data dengan
+jumlah seluruh data. Frekuensi relatif biasanya dinyatakan dalam bentuk
+pecahan, desimal, atau persentase.
+</p>
+
+<div class="rumus">
+
+Frekuensi Relatif = Frekuensi ÷ Jumlah Data
+
+</div>
+
+<div class="rumus">
+
+Persentase =
+
+<br><br>
+
+(Frekuensi ÷ Jumlah Data) × 100%
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<table>
+
+<tr>
+<th>Nilai</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>70</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>80</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>90</td>
+<td>7</td>
+</tr>
+
+</table>
+
+<p>
+Jumlah seluruh data = 20
+</p>
+
+<p>
+Frekuensi relatif nilai 80 = 8 ÷ 20 = 0,4 = 40%
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>25. Frekuensi Kumulatif</h2>
+
+<p>
+Frekuensi kumulatif adalah jumlah frekuensi yang dihitung secara
+bertahap dari kelas pertama hingga kelas terakhir.
+</p>
+
+<table>
+
+<tr>
+<th>Interval</th>
+<th>Frekuensi</th>
+<th>Frekuensi Kumulatif</th>
+</tr>
+
+<tr>
+<td>40–49</td>
+<td>2</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>50–59</td>
+<td>5</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>60–69</td>
+<td>8</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td>70–79</td>
+<td>6</td>
+<td>21</td>
+</tr>
+
+<tr>
+<td>80–89</td>
+<td>4</td>
+<td>25</td>
+</tr>
+
+</table>
+
+<p>
+Nilai frekuensi kumulatif selalu bertambah hingga mencapai jumlah seluruh
+data.
+</p>
+
+</section>
+
+<section>
+
+<h2>26. Tabel Distribusi Frekuensi Lengkap</h2>
+
+<table>
+
+<tr>
+<th>Interval</th>
+<th>Turus</th>
+<th>Frekuensi</th>
+</tr>
+
+<tr>
+<td>50–59</td>
+<td>|||</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>60–69</td>
+<td>||||| ||</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>70–79</td>
+<td>||||| ||||</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>80–89</td>
+<td>||||| |</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>90–99</td>
+<td>||||</td>
+<td>4</td>
+</tr>
+
+</table>
+
+<p>
+Turus digunakan untuk memudahkan pencatatan frekuensi ketika proses
+pengumpulan data berlangsung.
+</p>
+
+</section>
+
+<section>
+
+<h2>27. Membaca Tabel Statistik</h2>
+
+<p>
+Kemampuan membaca tabel sangat penting agar informasi yang terdapat di
+dalam data dapat dipahami dengan benar.
+</p>
+
+<div class="contoh">
+
+<table>
+
+<tr>
+<th>Kelas</th>
+<th>Jumlah Siswa</th>
+</tr>
+
+<tr>
+<td>VII A</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>VII B</td>
+<td>28</td>
+</tr>
+
+<tr>
+<td>VII C</td>
+<td>35</td>
+</tr>
+
+<tr>
+<td>VII D</td>
+<td>32</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Dari tabel tersebut dapat diketahui bahwa kelas VII C memiliki jumlah
+siswa terbanyak, sedangkan kelas VII B memiliki jumlah siswa paling
+sedikit.
+</p>
+
+<h3>Hal yang Dapat Dianalisis</h3>
+
+<ul>
+
+<li>Nilai terbesar.</li>
+
+<li>Nilai terkecil.</li>
+
+<li>Jumlah keseluruhan.</li>
+
+<li>Perbandingan antar data.</li>
+
+<li>Selisih setiap kategori.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>28. Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Tidak mengurutkan data sebelum mencari median.</li>
+
+<li>Salah menjumlahkan seluruh data saat mencari mean.</li>
+
+<li>Menganggap semua data memiliki modus.</li>
+
+<li>Salah menentukan nilai terbesar dan terkecil saat menghitung range.</li>
+
+<li>Salah menghitung jumlah frekuensi.</li>
+
+<li>Tidak memperhatikan satuan data.</li>
+
+<li>Keliru membaca interval kelas.</li>
+
+</ul>
+
+<div class="latihan">
+
+<h3>Latihan 6</h3>
+
+<ol>
+
+<li>Hitung frekuensi relatif jika frekuensi suatu data adalah 12 dan jumlah data 60.</li>
+
+<li>Buat frekuensi kumulatif dari frekuensi berikut: 3, 5, 7, 4, 6.</li>
+
+<li>Jelaskan fungsi turus pada tabel distribusi frekuensi.</li>
+
+<li>Sebutkan tiga kesalahan yang sering terjadi saat mengolah data statistik.</li>
+
+<li>Mengapa data harus disajikan dalam bentuk tabel atau diagram?</li>
+
+</ol>
+
+</div>
+
+</section><section>
+
+<h2>29. Diagram Batang Horizontal</h2>
+
+<p>
+Diagram batang horizontal menggunakan batang yang memanjang ke samping.
+Diagram ini cocok digunakan apabila nama kategori cukup panjang sehingga
+lebih mudah dibaca.
+</p>
+
+<div class="contoh">
+
+<table>
+
+<tr>
+<th>Ekstrakurikuler</th>
+<th>Jumlah Siswa</th>
+</tr>
+
+<tr>
+<td>Pramuka</td>
+<td>40</td>
+</tr>
+
+<tr>
+<td>PMR</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>Paskibra</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Futsal</td>
+<td>36</td>
+</tr>
+
+<tr>
+<td>Basket</td>
+<td>28</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Batang yang paling panjang menunjukkan jumlah anggota terbanyak.
+</p>
+
+</section>
+
+<section>
+
+<h2>30. Diagram Ganda</h2>
+
+<p>
+Diagram ganda digunakan untuk membandingkan dua kelompok data atau lebih
+dalam kategori yang sama.
+</p>
+
+<div class="contoh">
+
+<table>
+
+<tr>
+<th>Bulan</th>
+<th>Produk A</th>
+<th>Produk B</th>
+</tr>
+
+<tr>
+<td>Januari</td>
+<td>80</td>
+<td>75</td>
+</tr>
+
+<tr>
+<td>Februari</td>
+<td>90</td>
+<td>88</td>
+</tr>
+
+<tr>
+<td>Maret</td>
+<td>95</td>
+<td>92</td>
+</tr>
+
+<tr>
+<td>April</td>
+<td>100</td>
+<td>97</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Diagram ganda memudahkan kita melihat perbandingan perkembangan dua data
+secara bersamaan.
+</p>
+
+</section>
+
+<section>
+
+<h2>31. Piktogram</h2>
+
+<p>
+Piktogram adalah penyajian data menggunakan gambar atau simbol tertentu.
+Setiap gambar mewakili sejumlah objek.
+</p>
+
+<div class="contoh">
+
+<p>
+Keterangan:
+</p>
+
+<p>
+★ = 5 siswa
+</p>
+
+<table>
+
+<tr>
+<th>Kelas</th>
+<th>Simbol</th>
+</tr>
+
+<tr>
+<td>VII A</td>
+<td>★★★★★★</td>
+</tr>
+
+<tr>
+<td>VII B</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>VII C</td>
+<td>★★★★★★★</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Jika satu simbol mewakili lima siswa, maka enam simbol berarti tiga puluh
+siswa.
+</p>
+
+</section>
+
+<section>
+
+<h2>32. Menafsirkan Diagram</h2>
+
+<p>
+Setelah data disajikan dalam bentuk diagram, langkah berikutnya adalah
+menafsirkan informasi yang terdapat pada diagram tersebut.
+</p>
+
+<h3>Hal yang Dapat Dicari</h3>
+
+<ul>
+
+<li>Data terbesar.</li>
+
+<li>Data terkecil.</li>
+
+<li>Jumlah seluruh data.</li>
+
+<li>Selisih antar kategori.</li>
+
+<li>Kenaikan atau penurunan data.</li>
+
+<li>Persentase suatu bagian.</li>
+
+</ul>
+
+<div class="contoh">
+
+<h3>Contoh Pertanyaan</h3>
+
+<ol>
+
+<li>Kategori mana yang memiliki nilai tertinggi?</li>
+
+<li>Berapa selisih kategori A dan B?</li>
+
+<li>Berapa jumlah seluruh data?</li>
+
+<li>Kategori mana yang paling sedikit?</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>33. Soal Campuran</h2>
+
+<div class="latihan">
+
+<ol>
+
+<li>
+Data berikut:
+8, 10, 9, 8, 7, 8, 6, 10, 9, 8.
+Tentukan mean, median, modus, dan range.
+</li>
+
+<li>
+Jelaskan perbedaan data kualitatif dan data kuantitatif.
+</li>
+
+<li>
+Sebutkan tiga contoh penggunaan statistika dalam kehidupan sehari-hari.
+</li>
+
+<li>
+Mengapa median harus dicari setelah data diurutkan?
+</li>
+
+<li>
+Apa fungsi diagram lingkaran?
+</li>
+
+<li>
+Hitung persentase jika frekuensi suatu data adalah 18 dari total 60 data.
+</li>
+
+<li>
+Apa yang dimaksud frekuensi kumulatif?
+</li>
+
+<li>
+Jelaskan perbedaan populasi dan sampel beserta contohnya.
+</li>
+
+<li>
+Mengapa tabel distribusi frekuensi mempermudah analisis data?
+</li>
+
+<li>
+Sebutkan lima bentuk penyajian data yang telah dipelajari.
+</li>
+
+</ol>
+
+</div>
+
+</section><section>
+
+<h2>34. Pembahasan Soal Campuran</h2>
+
+<h3>Nomor 1</h3>
+
+<p>
+Data:
+6, 7, 8, 8, 8, 8, 9, 9, 10, 10
+</p>
+
+<p>
+Jumlah data = 83
+</p>
+
+<p>
+Banyak data = 10
+</p>
+
+<p>
+Mean = 83 ÷ 10 = 8,3
+</p>
+
+<p>
+Median = (8 + 8) ÷ 2 = 8
+</p>
+
+<p>
+Modus = 8
+</p>
+
+<p>
+Range = 10 − 6 = 4
+</p>
+
+<h3>Nomor 2</h3>
+
+<p>
+Data kualitatif adalah data yang berbentuk kategori atau sifat, sedangkan
+data kuantitatif adalah data yang berbentuk angka sehingga dapat dihitung.
+</p>
+
+<h3>Nomor 3</h3>
+
+<ul>
+
+<li>Menghitung rata-rata nilai siswa.</li>
+
+<li>Mengetahui jumlah penduduk.</li>
+
+<li>Menganalisis hasil survei.</li>
+
+<li>Menentukan penjualan produk.</li>
+
+<li>Menghitung jumlah pasien rumah sakit.</li>
+
+</ul>
+
+<h3>Nomor 4</h3>
+
+<p>
+Median harus dicari setelah data diurutkan agar nilai tengah dapat
+ditentukan dengan benar.
+</p>
+
+<h3>Nomor 5</h3>
+
+<p>
+Diagram lingkaran digunakan untuk menunjukkan perbandingan bagian terhadap
+keseluruhan dalam bentuk persentase atau sudut.
+</p>
+
+<h3>Nomor 6</h3>
+
+<p>
+Persentase = (18 ÷ 60) × 100% = 30%
+</p>
+
+<h3>Nomor 7</h3>
+
+<p>
+Frekuensi kumulatif adalah jumlah frekuensi yang dihitung secara
+bertahap dari kelas pertama hingga kelas terakhir.
+</p>
+
+<h3>Nomor 8</h3>
+
+<p>
+Populasi adalah seluruh objek penelitian, sedangkan sampel adalah sebagian
+objek yang mewakili populasi.
+</p>
+
+<h3>Nomor 9</h3>
+
+<p>
+Distribusi frekuensi mempermudah membaca, membandingkan, dan menganalisis
+data dalam jumlah banyak.
+</p>
+
+<h3>Nomor 10</h3>
+
+<ul>
+
+<li>Tabel.</li>
+
+<li>Diagram Batang.</li>
+
+<li>Diagram Garis.</li>
+
+<li>Diagram Lingkaran.</li>
+
+<li>Piktogram.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>35. Tips Mengerjakan Soal Statistika</h2>
+
+<ul>
+
+<li>Baca soal dengan teliti.</li>
+
+<li>Urutkan data terlebih dahulu jika diperlukan.</li>
+
+<li>Hitung jumlah data dengan cermat.</li>
+
+<li>Gunakan rumus yang sesuai.</li>
+
+<li>Periksa kembali hasil perhitungan.</li>
+
+<li>Tuliskan satuan jika ada.</li>
+
+<li>Jangan terburu-buru menghitung.</li>
+
+<li>Pastikan semua data sudah digunakan.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>36. Rangkuman Akhir</h2>
+
+<p>
+Statistika mempelajari cara mengumpulkan, mengolah, menyajikan,
+menganalisis, dan menarik kesimpulan dari data.
+</p>
+
+<p>
+Data dapat berupa data kualitatif maupun data kuantitatif. Dalam penelitian
+terdapat populasi sebagai keseluruhan objek dan sampel sebagai sebagian
+objek yang mewakili populasi.
+</p>
+
+<p>
+Penyajian data dapat dilakukan menggunakan tabel, diagram batang, diagram
+garis, diagram lingkaran, maupun piktogram agar informasi lebih mudah
+dipahami.
+</p>
+
+<p>
+Ukuran pemusatan data terdiri atas mean, median, dan modus, sedangkan
+ukuran penyebaran sederhana yang dipelajari adalah range.
+</p>
+
+<p>
+Selain itu terdapat ukuran letak seperti kuartil, desil, dan persentil
+yang digunakan untuk membagi data menjadi beberapa bagian tertentu.
+</p>
+
+<p>
+Dengan memahami seluruh materi pada bab ini, diharapkan pembaca mampu
+mengolah data sederhana serta menyelesaikan berbagai soal statistika dasar.
+</p>
+
+</section><section>
+
+<h2>37. Glosarium</h2>
+
+<table>
+
+<tr>
+<th>Istilah</th>
+<th>Pengertian</th>
+</tr>
+
+<tr>
+<td>Statistika</td>
+<td>Ilmu yang mempelajari pengumpulan, pengolahan, penyajian, analisis, dan penarikan kesimpulan dari data.</td>
+</tr>
+
+<tr>
+<td>Data</td>
+<td>Sekumpulan fakta atau informasi.</td>
+</tr>
+
+<tr>
+<td>Populasi</td>
+<td>Seluruh objek yang menjadi sasaran penelitian.</td>
+</tr>
+
+<tr>
+<td>Sampel</td>
+<td>Sebagian anggota populasi yang mewakili populasi.</td>
+</tr>
+
+<tr>
+<td>Frekuensi</td>
+<td>Banyaknya suatu nilai muncul.</td>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Rata-rata hitung.</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Nilai tengah setelah data diurutkan.</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Nilai yang paling sering muncul.</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Selisih nilai terbesar dan nilai terkecil.</td>
+</tr>
+
+<tr>
+<td>Kuartil</td>
+<td>Pembagi data menjadi empat bagian.</td>
+</tr>
+
+<tr>
+<td>Desil</td>
+<td>Pembagi data menjadi sepuluh bagian.</td>
+</tr>
+
+<tr>
+<td>Persentil</td>
+<td>Pembagi data menjadi seratus bagian.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>38. Rumus-Rumus Penting</h2>
+
+<div class="rumus">
+
+<p><strong>Mean</strong></p>
+
+<p>Mean = Jumlah seluruh data ÷ Banyak data</p>
+
+</div>
+
+<div class="rumus">
+
+<p><strong>Range</strong></p>
+
+<p>Range = Nilai Terbesar − Nilai Terkecil</p>
+
+</div>
+
+<div class="rumus">
+
+<p><strong>Frekuensi Relatif</strong></p>
+
+<p>Frekuensi ÷ Jumlah Data</p>
+
+</div>
+
+<div class="rumus">
+
+<p><strong>Persentase</strong></p>
+
+<p>(Bagian ÷ Total) × 100%</p>
+
+</div>
+
+<div class="rumus">
+
+<p><strong>Sudut Diagram Lingkaran</strong></p>
+
+<p>(Bagian ÷ Total) × 360°</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>39. Latihan Akhir Bab</h2>
+
+<ol>
+
+<li>Tentukan mean dari data:
+12, 15, 18, 20, 25.</li>
+
+<li>Tentukan median dari data:
+5, 7, 8, 10, 12, 15.</li>
+
+<li>Tentukan modus dari data:
+4, 5, 5, 6, 7, 5, 8.</li>
+
+<li>Hitung range dari data:
+18, 22, 25, 31, 40.</li>
+
+<li>Jelaskan perbedaan populasi dan sampel.</li>
+
+<li>Sebutkan lima manfaat statistika.</li>
+
+<li>Apa fungsi diagram garis?</li>
+
+<li>Apa fungsi diagram batang?</li>
+
+<li>Apa fungsi diagram lingkaran?</li>
+
+<li>Apa fungsi piktogram?</li>
+
+<li>Jelaskan pengertian frekuensi.</li>
+
+<li>Jelaskan pengertian frekuensi relatif.</li>
+
+<li>Jelaskan pengertian frekuensi kumulatif.</li>
+
+<li>Sebutkan tiga contoh data kualitatif.</li>
+
+<li>Sebutkan tiga contoh data kuantitatif.</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>40. Kuis Singkat</h2>
+
+<table>
+
+<tr>
+<th>No</th>
+<th>Pernyataan</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Median adalah nilai tengah setelah data diurutkan.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Mean disebut juga rata-rata.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Modus adalah nilai yang paling sering muncul.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Range merupakan selisih nilai terbesar dan terkecil.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Diagram garis digunakan melihat perubahan data dari waktu ke waktu.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Piktogram menggunakan simbol atau gambar.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Kuartil membagi data menjadi empat bagian.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Desil membagi data menjadi sepuluh bagian.</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Persentil membagi data menjadi seratus bagian.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Statistika digunakan dalam berbagai bidang kehidupan.</td>
+</tr>
+
+</table>
+
+</section><section>
+
+<h2>41. Evaluasi Akhir Bab</h2>
+
+<p>
+Jawablah pertanyaan berikut dengan tepat.
+</p>
+
+<ol>
+
+<li>
+Nilai ulangan 10 siswa adalah:
+70, 75, 80, 80, 85, 90, 90, 90, 95, 100.
+Hitung mean, median, modus, dan range.
+</li>
+
+<li>
+Apa yang dimaksud dengan data kuantitatif? Berikan tiga contoh.
+</li>
+
+<li>
+Apa yang dimaksud dengan data kualitatif? Berikan tiga contoh.
+</li>
+
+<li>
+Jelaskan perbedaan populasi dan sampel menggunakan contoh sederhana.
+</li>
+
+<li>
+Mengapa penyajian data dalam bentuk diagram lebih mudah dipahami?
+</li>
+
+<li>
+Sebutkan lima manfaat mempelajari statistika.
+</li>
+
+<li>
+Jelaskan langkah-langkah mencari median.
+</li>
+
+<li>
+Jelaskan langkah-langkah mencari mean.
+</li>
+
+<li>
+Apa yang dimaksud frekuensi relatif?
+</li>
+
+<li>
+Apa yang dimaksud frekuensi kumulatif?
+</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>42. Ringkasan Rumus Cepat</h2>
+
+<table>
+
+<tr>
+<th>Materi</th>
+<th>Rumus</th>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Jumlah seluruh data ÷ Banyak data</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Nilai tengah setelah data diurutkan</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Nilai dengan frekuensi terbesar</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Nilai terbesar − Nilai terkecil</td>
+</tr>
+
+<tr>
+<td>Frekuensi Relatif</td>
+<td>Frekuensi ÷ Jumlah data</td>
+</tr>
+
+<tr>
+<td>Persentase</td>
+<td>(Bagian ÷ Total) × 100%</td>
+</tr>
+
+<tr>
+<td>Sudut Diagram Lingkaran</td>
+<td>(Bagian ÷ Total) × 360°</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>43. Pesan Penutup Bab</h2>
+
+<p>
+Statistika merupakan salah satu materi matematika yang sangat dekat dengan
+kehidupan sehari-hari. Hampir semua informasi yang disajikan dalam bentuk
+angka memerlukan konsep statistika agar dapat dipahami dengan benar.
+</p>
+
+<p>
+Kemampuan mengolah data, menghitung rata-rata, menentukan nilai tengah,
+mencari nilai yang paling sering muncul, serta membaca tabel dan diagram
+akan sangat membantu dalam kegiatan belajar maupun pekerjaan di masa
+mendatang.
+</p>
+
+<p>
+Teruslah berlatih menggunakan berbagai bentuk soal agar semakin terbiasa
+melakukan perhitungan dan analisis data secara cepat dan tepat.
+</p>
+
+</section><section>
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px;">
+
+<a href="index.html"
+style="
+background:#16a34a;
+color:white;
+padding:12px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+">
+🏠 Kembali ke Home
+</a>
+
+<a href="statistika2.html"
+style="
+background:#2563eb;
+color:white;
+padding:12px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+">
+➡ Lanjut ke Statistika 2
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
