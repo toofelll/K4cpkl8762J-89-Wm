@@ -1,1 +1,2993 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Matematika - statiska6</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f8fc;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.4rem;
+margin-bottom:12px;
+}
+
+nav{
+position:sticky;
+top:0;
+background:white;
+border-bottom:1px solid #ddd;
+padding:14px;
+z-index:999;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-weight:bold;
+color:#1e40af;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+section{
+background:white;
+margin-bottom:28px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+h2{
+color:#1e3a8a;
+margin-bottom:18px;
+}
+
+h3{
+margin-top:24px;
+margin-bottom:10px;
+color:#2563eb;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:18px 0;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#1e3a8a;
+color:white;
+}
+
+.rumus{
+background:#eef4ff;
+border-left:6px solid #2563eb;
+padding:18px;
+margin:18px 0;
+}
+
+.contoh{
+background:#eefcf5;
+border-left:6px solid #16a34a;
+padding:18px;
+margin:18px 0;
+}
+
+.visual{
+background:#fafafa;
+border:2px dashed #bbb;
+padding:20px;
+margin:20px 0;
+text-align:center;
+}
+
+.catatan{
+background:#fff8e6;
+border-left:6px solid orange;
+padding:18px;
+margin:18px 0;
+}
+
+.olimpiade{
+background:#f4e8ff;
+border-left:6px solid #7c3aed;
+padding:18px;
+margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Handbook Matematika</h1>
+
+<p>
+
+Bab 6 — Variabel Acak & Distribusi Probabilitas
+
+</p>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#pengantar">Pengantar</a></li>
+<li><a href="#variabel">Variabel Acak</a></li>
+<li><a href="#diskrit">Diskrit</a></li>
+<li><a href="#kontinu">Kontinu</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section id="pengantar">
+
+<h2>1. Pendahuluan</h2>
+
+<p>
+
+Setelah mempelajari peluang pada bab sebelumnya, kita akan melangkah ke
+konsep yang lebih tinggi, yaitu <strong>variabel acak</strong>. Konsep ini
+menjadi dasar hampir seluruh statistika modern, termasuk distribusi
+probabilitas, inferensi statistika, machine learning, ilmu aktuaria,
+hingga kecerdasan buatan.
+
+</p>
+
+<p>
+
+Jika peluang membahas <em>kemungkinan suatu kejadian</em>, maka variabel
+acak membahas <em>nilai numerik</em> yang dihasilkan oleh suatu percobaan
+acak.
+
+</p>
+
+<div class="visual">
+
+<h3>Alur Konsep</h3>
+
+<p>
+
+Eksperimen Acak
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Ruang Sampel
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Kejadian
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Variabel Acak
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Distribusi Probabilitas
+
+</p>
+
+</div>
+
+<p>
+
+Dengan adanya variabel acak, setiap hasil percobaan dapat dinyatakan dalam
+bentuk angka sehingga dapat dianalisis menggunakan berbagai metode
+statistika.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Kesalahan terbesar siswa adalah menganggap variabel acak sama dengan
+variabel pada aljabar. Padahal keduanya memiliki makna yang berbeda.
+Variabel acak merupakan fungsi yang memetakan setiap hasil eksperimen ke
+sebuah nilai numerik.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="variabel">
+
+<h2>2. Variabel Acak (Random Variable)</h2>
+
+<p>
+
+Variabel acak adalah fungsi yang memberikan sebuah nilai numerik kepada
+setiap titik sampel pada suatu ruang sampel.
+
+</p>
+
+<p>
+
+Biasanya variabel acak dilambangkan dengan huruf kapital seperti
+
+<strong>X</strong>,
+
+<strong>Y</strong>, atau
+
+<strong>Z</strong>.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin dilempar dua kali.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Hasil</th>
+
+<th>Jumlah Gambar (X)</th>
+
+</tr>
+
+<tr>
+
+<td>AA</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>AG</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>GA</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>GG</td>
+
+<td>2</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<p>
+
+Perhatikan bahwa yang menjadi variabel acak bukan hasil "AA" atau "GG",
+melainkan jumlah gambar yang diperoleh.
+
+</p>
+
+<div class="catatan">
+
+<strong>Intuisi</strong>
+
+<p>
+
+Variabel acak mengubah hasil eksperimen yang bersifat kualitatif menjadi
+nilai kuantitatif sehingga dapat dihitung rata-rata, variansi, maupun
+distribusinya.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="diskrit">
+
+<h2>3. Variabel Acak Diskrit</h2>
+
+<p>
+
+Variabel acak diskrit adalah variabel acak yang nilai-nilainya dapat
+dihitung satu per satu.
+
+</p>
+
+<p>
+
+Nilai tersebut biasanya berupa bilangan bulat hasil proses menghitung.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Variabel Acak Diskrit</h3>
+
+<ul>
+
+<li>Jumlah siswa dalam kelas.</li>
+
+<li>Jumlah mobil yang melewati jalan.</li>
+
+<li>Jumlah kepala saat melempar lima koin.</li>
+
+<li>Jumlah pelanggan yang datang ke toko.</li>
+
+<li>Jumlah gol dalam pertandingan.</li>
+
+</ul>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Variabel</th>
+
+<th>Jenis</th>
+
+</tr>
+
+<tr>
+
+<td>Jumlah anak</td>
+
+<td>Diskrit</td>
+
+</tr>
+
+<tr>
+
+<td>Jumlah buku</td>
+
+<td>Diskrit</td>
+
+</tr>
+
+<tr>
+
+<td>Jumlah kendaraan</td>
+
+<td>Diskrit</td>
+
+</tr>
+
+<tr>
+
+<td>Jumlah pelanggan</td>
+
+<td>Diskrit</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section id="kontinu">
+
+<h2>4. Variabel Acak Kontinu</h2>
+
+<p>
+
+Variabel acak kontinu adalah variabel yang dapat mengambil
+<strong>nilai pada suatu interval</strong>, termasuk nilai desimal.
+
+</p>
+
+<p>
+
+Variabel kontinu biasanya berasal dari proses pengukuran, bukan proses
+menghitung.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Variabel Kontinu</h3>
+
+<ul>
+
+<li>Tinggi badan.</li>
+
+<li>Berat badan.</li>
+
+<li>Suhu udara.</li>
+
+<li>Waktu tempuh.</li>
+
+<li>Kecepatan kendaraan.</li>
+
+</ul>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Variabel</th>
+
+<th>Jenis</th>
+
+</tr>
+
+<tr>
+
+<td>Tinggi badan</td>
+
+<td>Kontinu</td>
+
+</tr>
+
+<tr>
+
+<td>Berat badan</td>
+
+<td>Kontinu</td>
+
+</tr>
+
+<tr>
+
+<td>Temperatur</td>
+
+<td>Kontinu</td>
+
+</tr>
+
+<tr>
+
+<td>Jarak</td>
+
+<td>Kontinu</td>
+
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Perbandingan</h3>
+
+<table>
+
+<tr>
+
+<th>Diskrit</th>
+
+<th>Kontinu</th>
+
+</tr>
+
+<tr>
+
+<td>Menghitung</td>
+
+<td>Mengukur</td>
+
+</tr>
+
+<tr>
+
+<td>0,1,2,3,...</td>
+
+<td>2,31 ; 5,82 ; 10,45 ...</td>
+
+</tr>
+
+<tr>
+
+<td>Nilai terpisah</td>
+
+<td>Nilai berada pada interval</td>
+
+</tr>
+
+</table>
+
+</div><section id="pmf">
+
+<h2>5. Fungsi Peluang (Probability Mass Function / PMF)</h2>
+
+<p>
+
+Untuk variabel acak diskrit, setiap nilai memiliki peluang tertentu.
+Hubungan antara nilai variabel acak dan peluangnya disebut
+<strong>Probability Mass Function (PMF)</strong> atau
+<strong>Fungsi Massa Peluang</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Notasi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X = x)
+
+</p>
+
+</div>
+
+<p>
+
+Artinya adalah peluang bahwa variabel acak <strong>X</strong> bernilai
+tepat <strong>x</strong>.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin dilempar dua kali.
+
+Variabel acak X menyatakan banyaknya sisi gambar yang muncul.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Nilai X</th>
+
+<th>P(X=x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>1/4</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>2/4</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1/4</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="catatan">
+
+<strong>Sifat PMF</strong>
+
+<ul>
+
+<li>Semua peluang bernilai antara 0 dan 1.</li>
+
+<li>Jumlah seluruh peluang selalu sama dengan 1.</li>
+
+</ul>
+
+</div>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+ΣP(X=x)=1
+
+</p>
+
+</div>
+
+</section>
+
+<section id="cdf">
+
+<h2>6. Fungsi Distribusi Kumulatif (Cumulative Distribution Function)</h2>
+
+<p>
+
+Jika PMF memberikan peluang tepat pada suatu nilai, maka
+<strong>Cumulative Distribution Function (CDF)</strong>
+memberikan peluang bahwa variabel acak bernilai
+<strong>kurang dari atau sama dengan</strong> suatu nilai tertentu.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+F(x)=P(X≤x)
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Gunakan tabel PMF sebelumnya.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+
+<th>F(x)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>1/4</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>3/4</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<p>
+
+Perhatikan bahwa nilai CDF selalu meningkat hingga akhirnya mencapai 1.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+CDF
+
+1.0 |                     █
+
+0.8 |                 ████
+
+0.6 |             ███
+
+0.4 |         ██
+
+0.2 |     █
+
+0.0 +---------------------------->
+
+      0      1       2
+
+</pre>
+
+</div>
+
+</section>
+
+<section id="expected-value">
+
+<h2>7. Nilai Harapan (Expected Value)</h2>
+
+<p>
+
+Nilai harapan adalah rata-rata teoritis dari suatu variabel acak apabila
+percobaan dilakukan dalam jumlah yang sangat banyak.
+
+</p>
+
+<p>
+
+Meskipun disebut "harapan", nilainya tidak selalu merupakan hasil yang
+benar-benar muncul dalam satu percobaan.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Nilai Harapan</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+E(X)=Σx·P(X=x)
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Gunakan distribusi berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>X</th>
+
+<th>P(X)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>1/4</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>2/4</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1/4</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Perhitungan:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+E(X)
+
+=
+
+0×1/4
+
++
+
+1×2/4
+
++
+
+2×1/4
+
+</p>
+
+<p>
+
+=1
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, rata-rata jumlah gambar dari dua kali pelemparan koin adalah 1.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Nilai harapan bukan berarti hasil yang pasti muncul. Nilai tersebut
+merupakan rata-rata teoritis apabila eksperimen diulang sangat banyak
+kali.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="expected-properties">
+
+<h2>8. Sifat-Sifat Nilai Harapan</h2>
+
+<p>
+
+Nilai harapan memiliki beberapa sifat penting yang sering digunakan dalam
+pembuktian maupun penyelesaian soal olimpiade.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Sifat</th>
+
+<th>Rumus</th>
+
+</tr>
+
+<tr>
+
+<td>Konstanta</td>
+
+<td>E(c)=c</td>
+
+</tr>
+
+<tr>
+
+<td>Perkalian Konstanta</td>
+
+<td>E(cX)=cE(X)</td>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan</td>
+
+<td>E(X+Y)=E(X)+E(Y)</td>
+
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Fakta Penting</strong>
+
+<p>
+
+Sifat linearitas nilai harapan tetap berlaku meskipun X dan Y tidak
+independen. Hal ini menjadikan nilai harapan sebagai salah satu konsep
+paling kuat dalam teori probabilitas.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Ringkasan</h3>
+
+<p>
+
+Distribusi Peluang
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Kalikan setiap nilai dengan peluangnya
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Jumlahkan seluruh hasil
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Nilai Harapan (Expected Value)
+
+</p>
+
+</div>
+
+</section><section id="variansi">
+
+<h2>9. Variansi Variabel Acak (Variance)</h2>
+
+<p>
+
+Nilai harapan hanya menunjukkan pusat distribusi. Namun, dua variabel
+acak dapat memiliki nilai harapan yang sama tetapi tingkat penyebaran
+yang berbeda. Untuk mengukur besar kecilnya penyebaran tersebut digunakan
+<strong>variansi</strong>.
+
+</p>
+
+<p>
+
+Semakin besar variansi, semakin menyebar nilai-nilai variabel acak dari
+nilai harapannya.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Variansi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Var(X)=E[(X−μ)<sup>2</sup>]
+
+</p>
+
+</div>
+
+<p>
+
+Dalam praktik, rumus yang lebih sering digunakan adalah
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+Var(X)=E(X<sup>2</sup>)−[E(X)]<sup>2</sup>
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<table>
+
+<tr>
+
+<th>X</th>
+
+<th>P(X)</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>1/4</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>2/4</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1/4</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Dari pembahasan sebelumnya diperoleh
+
+</p>
+
+<p>
+
+E(X)=1
+
+</p>
+
+<p>
+
+Hitung terlebih dahulu E(X²)
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+E(X²)
+
+=
+
+0²(1/4)
+
++
+
+1²(2/4)
+
++
+
+2²(1/4)
+
+</p>
+
+<p>
+
+=0+0,5+1
+
+</p>
+
+<p>
+
+=1,5
+
+</p>
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Var(X)
+
+=
+
+1,5−1²
+
+</p>
+
+<p>
+
+=0,5
+
+</p>
+
+</div>
+
+</div>
+
+<div class="catatan">
+
+<strong>Interpretasi</strong>
+
+<p>
+
+Variansi tidak memiliki satuan yang sama dengan data karena nilainya
+merupakan kuadrat dari satuan asli.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="standar-deviasi">
+
+<h2>10. Standar Deviasi Variabel Acak</h2>
+
+<p>
+
+Standar deviasi merupakan akar kuadrat dari variansi sehingga kembali
+memiliki satuan yang sama dengan variabel acak.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+σ=√Var(X)
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<p>
+
+Var(X)=0,5
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+σ=√0,5≈0,707
+
+</p>
+
+</div>
+
+</div>
+
+<div class="visual">
+
+<h3>Makna Standar Deviasi</h3>
+
+<p>
+
+Standar Deviasi Kecil
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Data Berkumpul Dekat Mean
+
+</p>
+
+<p>
+
+──────────────────────────────</p>
+
+<p>
+
+Standar Deviasi Besar
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Data Menyebar Jauh dari Mean
+
+</p>
+
+</div>
+
+</section>
+
+<section id="binomial">
+
+<h2>11. Distribusi Binomial</h2>
+
+<p>
+
+Distribusi binomial merupakan distribusi peluang diskrit yang digunakan
+untuk menghitung peluang banyaknya keberhasilan dalam sejumlah percobaan
+yang identik dan saling independen.
+
+</p>
+
+<h3>Syarat Distribusi Binomial</h3>
+
+<ul>
+
+<li>Jumlah percobaan tetap (n).</li>
+
+<li>Setiap percobaan hanya memiliki dua kemungkinan hasil (berhasil atau gagal).</li>
+
+<li>Peluang keberhasilan tetap.</li>
+
+<li>Setiap percobaan saling independen.</li>
+
+</ul>
+
+<div class="rumus">
+
+<h3>Rumus Distribusi Binomial</h3>
+
+<p style="font-size:20px;text-align:center;">
+
+P(X=x)
+
+=
+
+C(n,x)
+
+p<sup>x</sup>
+
+(1−p)<sup>n−x</sup>
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Arti</th>
+
+</tr>
+
+<tr>
+
+<td>n</td>
+
+<td>Jumlah percobaan.</td>
+
+</tr>
+
+<tr>
+
+<td>x</td>
+
+<td>Jumlah keberhasilan.</td>
+
+</tr>
+
+<tr>
+
+<td>p</td>
+
+<td>Peluang berhasil.</td>
+
+</tr>
+
+<tr>
+
+<td>1-p</td>
+
+<td>Peluang gagal.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin dilempar sebanyak 5 kali.
+
+Hitung peluang muncul tepat 3 gambar.
+
+</p>
+
+<p>
+
+Diketahui
+
+</p>
+
+<p>
+
+n=5
+
+</p>
+
+<p>
+
+x=3
+
+</p>
+
+<p>
+
+p=1/2
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(X=3)
+
+=
+
+C(5,3)
+
+(1/2)<sup>3</sup>
+
+(1/2)<sup>2</sup>
+
+</p>
+
+<p>
+
+=
+
+10
+
+×
+
+1/32
+
+</p>
+
+<p>
+
+=
+
+10/32
+
+=
+
+5/16
+
+</p>
+
+</div>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Sebagian besar soal pelemparan koin, benar-salah, atau sukses-gagal dapat
+langsung dimodelkan menggunakan distribusi binomial.
+
+</p>
+
+</div>
+
+</section><section id="geometrik">
+
+<h2>12. Distribusi Geometrik (Geometric Distribution)</h2>
+
+<p>
+
+Distribusi geometrik digunakan untuk menghitung peluang bahwa
+<strong>keberhasilan pertama</strong> terjadi pada percobaan ke-x.
+
+</p>
+
+<p>
+
+Berbeda dengan distribusi binomial yang menghitung banyaknya keberhasilan,
+distribusi geometrik berfokus pada
+<strong>kapan keberhasilan pertama terjadi</strong>.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+Percobaan :
+
+✗  ✗  ✗  ✓
+
+1  2  3  4
+
+Keberhasilan pertama terjadi
+pada percobaan ke-4
+
+</pre>
+
+</div>
+
+<div class="rumus">
+
+<h3>Rumus Distribusi Geometrik</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X=x)
+
+=
+
+(1-p)<sup>x-1</sup>
+
+×
+
 p
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>x</td>
+
+<td>Percobaan saat sukses pertama.</td>
+
+</tr>
+
+<tr>
+
+<td>p</td>
+
+<td>Peluang sukses.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Peluang menjawab benar sebuah soal adalah 0,4.
+
+Berapa peluang jawaban benar pertama muncul pada percobaan ke-3?
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(X=3)
+
+=
+
+(0,6)<sup>2</sup>
+
+×
+
+0,4
+
+</p>
+
+<p>
+
+=
+
+0,144
+
+</p>
+
+</div>
+
+</div>
+
+<div class="catatan">
+
+<strong>Ingat</strong>
+
+<p>
+
+Distribusi geometrik selalu berbicara tentang
+<strong>keberhasilan pertama</strong>.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="poisson">
+
+<h2>13. Distribusi Poisson (Poisson Distribution)</h2>
+
+<p>
+
+Distribusi Poisson digunakan untuk menghitung banyaknya kejadian yang
+terjadi dalam suatu interval waktu, luas, panjang, atau wilayah tertentu.
+
+</p>
+
+<p>
+
+Distribusi ini sangat sering digunakan pada bidang telekomunikasi,
+antrian, industri, epidemiologi, dan analisis lalu lintas.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Penerapan</h3>
+
+<ul>
+
+<li>Jumlah pelanggan yang datang setiap jam.</li>
+
+<li>Jumlah kecelakaan dalam satu bulan.</li>
+
+<li>Jumlah email masuk setiap menit.</li>
+
+<li>Jumlah panggilan ke call center.</li>
+
+<li>Jumlah cacat pada lembar produksi.</li>
+
+</ul>
+
+</div>
+
+<div class="rumus">
+
+<h3>Rumus Distribusi Poisson</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X=x)
+
+=
+
+(e<sup>-λ</sup>
+
+λ<sup>x</sup>)
+
+/
+
+x!
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>λ</td>
+
+<td>Rata-rata kejadian.</td>
+
+</tr>
+
+<tr>
+
+<td>x</td>
+
+<td>Banyak kejadian.</td>
+
+</tr>
+
+<tr>
+
+<td>e</td>
+
+<td>Bilangan Euler (≈2,71828).</td>
+
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Hubungan dengan Binomial</h3>
+
+<p>
+
+Jika jumlah percobaan sangat besar dan peluang sukses sangat kecil,
+distribusi binomial dapat didekati menggunakan distribusi Poisson dengan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+λ=np
+
+</p>
+
+</div>
+
+</section>
+
+<section id="uniform">
+
+<h2>14. Distribusi Uniform (Uniform Distribution)</h2>
+
+<p>
+
+Distribusi uniform terjadi apabila
+<strong>setiap nilai dalam suatu interval memiliki peluang yang sama
+besar</strong>.
+
+</p>
+
+<p>
+
+Contoh paling sederhana adalah bilangan acak yang dipilih secara merata
+pada suatu selang.
+
+</p>
+
+<div class="visual">
+
+<h3>Kurva Uniform</h3>
+
+<pre>
+
+f(x)
+
+│
+
+│ ███████████████████
+
+│ ███████████████████
+
+│ ███████████████████
+
+└──────────────────────────► x
+
+ a                      b
+
+</pre>
+
+</div>
+
+<div class="rumus">
+
+<h3>Fungsi Kepadatan</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+f(x)
+
+=
+
+1/(b-a)
+
+</p>
+
+<p style="text-align:center;">
+
+untuk a ≤ x ≤ b
+
+</p>
+
+</div>
+
+<p>
+
+Di luar interval tersebut, peluang bernilai nol.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah bilangan dipilih secara acak dari interval [0,10].
+
+</p>
+
+<p>
+
+Karena seluruh titik memiliki peluang yang sama, distribusinya merupakan
+distribusi uniform.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="normal">
+
+<h2>15. Distribusi Normal (Normal Distribution)</h2>
+
+<p>
+
+Distribusi normal merupakan distribusi probabilitas kontinu yang paling
+penting dalam statistika.
+
+</p>
+
+<p>
+
+Banyak fenomena alam maupun sosial mengikuti distribusi ini, misalnya
+tinggi badan, berat badan, tekanan darah, kesalahan pengukuran, hingga
+nilai ujian dalam populasi besar.
+
+</p>
+
+<div class="visual">
+
+<h3>Kurva Normal</h3>
+
+<pre>
+
+f(x)
+
+│
+
+│                 ██
+
+│              ███████
+
+│           ███████████
+
+│        ███████████████
+
+│     ███████████████████
+
+└────────────────────────────────► x
+
+      μ
+
+</pre>
+
+</div>
+
+<h3>Sifat Distribusi Normal</h3>
+
+<ul>
+
+<li>Berbentuk lonceng (bell-shaped).</li>
+
+<li>Simetris terhadap mean.</li>
+
+<li>Mean = Median = Modus.</li>
+
+<li>Luas seluruh kurva sama dengan 1.</li>
+
+<li>Ekor kurva memanjang tak hingga tetapi tidak pernah menyentuh sumbu x.</li>
+
+</ul>
+
+<div class="rumus">
+
+<h3>Parameter Distribusi Normal</h3>
+
+<p>
+
+Mean = μ
+
+</p>
+
+<p>
+
+Standar Deviasi = σ
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Mengapa Distribusi Normal Penting?</strong>
+
+<p>
+
+Distribusi normal menjadi dasar bagi banyak metode statistika modern,
+termasuk interval kepercayaan, uji hipotesis, regresi, dan Teorema Limit
+Pusat yang akan dipelajari pada bab berikutnya.
+
+</p>
+
+</div>
+
+</section><section id="aturan-empiris">
+
+<h2>16. Aturan Empiris (68–95–99,7 Rule)</h2>
+
+<p>
+
+Salah satu sifat paling penting dari distribusi normal adalah adanya
+aturan empiris atau <strong>Empirical Rule</strong>. Aturan ini
+menjelaskan bahwa sebagian besar data berada di sekitar nilai rata-rata
+(mean).
+
+</p>
+
+<p>
+
+Semakin jauh suatu data dari mean, semakin kecil peluang kemunculannya.
+
+</p>
+
+<div class="visual">
+
+<h3>Kurva Normal dan Aturan Empiris</h3>
+
+<pre>
+
+             μ
+
+             │
+
+      -3σ -2σ -1σ 0 +1σ +2σ +3σ
+
+        │   │   │ │  │   │   │
+
+      ▂▃▄▅▆▇████████▇▆▅▄▃▂
+
+</pre>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Interval</th>
+
+<th>Persentase Data</th>
+
+</tr>
+
+<tr>
+
+<td>μ ± 1σ</td>
+
+<td>≈ 68%</td>
+
+</tr>
+
+<tr>
+
+<td>μ ± 2σ</td>
+
+<td>≈ 95%</td>
+
+</tr>
+
+<tr>
+
+<td>μ ± 3σ</td>
+
+<td>≈ 99,7%</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Suatu ujian memiliki rata-rata nilai 70 dengan standar deviasi 5.
+
+</p>
+
+<p>
+
+Menurut aturan empiris:
+
+</p>
+
+<ul>
+
+<li>Sekitar 68% siswa memperoleh nilai antara 65 sampai 75.</li>
+
+<li>Sekitar 95% siswa memperoleh nilai antara 60 sampai 80.</li>
+
+<li>Sekitar 99,7% siswa memperoleh nilai antara 55 sampai 85.</li>
+
+</ul>
+
+</div>
+
+<div class="catatan">
+
+<strong>Catatan Penting</strong>
+
+<p>
+
+Aturan empiris hanya berlaku apabila data mengikuti distribusi normal
+atau sangat mendekati distribusi normal.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="zscore-normal">
+
+<h2>17. Standardisasi (Z-Score pada Distribusi Normal)</h2>
+
+<p>
+
+Sering kali kita ingin membandingkan dua data yang berasal dari distribusi
+berbeda. Untuk itu digunakan proses <strong>standardisasi</strong> dengan
+mengubah data menjadi <strong>Z-Score</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Z-Score</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Z = (X − μ) / σ
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Arti</th>
+
+</tr>
+
+<tr>
+
+<td>X</td>
+
+<td>Nilai yang diamati.</td>
+
+</tr>
+
+<tr>
+
+<td>μ</td>
+
+<td>Mean populasi.</td>
+
+</tr>
+
+<tr>
+
+<td>σ</td>
+
+<td>Standar deviasi populasi.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Rata-rata nilai ujian adalah 75 dengan standar deviasi 8.
+
+Seorang siswa memperoleh nilai 91.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Z
+
+=
+
+(91−75)/8
+
+</p>
+
+<p>
+
+=
+
+16/8
+
+</p>
+
+<p>
+
+=
+
+2
+
+</p>
+
+</div>
+
+<p>
+
+Artinya nilai siswa tersebut berada dua standar deviasi di atas rata-rata.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Interpretasi Z-Score</h3>
+
+<table>
+
+<tr>
+
+<th>Z</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>Tepat di rata-rata.</td>
+
+</tr>
+
+<tr>
+
+<td>Positif</td>
+
+<td>Di atas rata-rata.</td>
+
+</tr>
+
+<tr>
+
+<td>Negatif</td>
+
+<td>Di bawah rata-rata.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Setelah data diubah menjadi Z-Score, seluruh distribusi normal dapat
+dibandingkan menggunakan tabel distribusi normal baku. Teknik ini akan
+sangat sering digunakan pada bab inferensi statistika.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="pendekatan-binomial">
+
+<h2>18. Pendekatan Binomial ke Distribusi Normal</h2>
+
+<p>
+
+Ketika jumlah percobaan dalam distribusi binomial sangat besar, bentuk
+distribusinya akan semakin menyerupai distribusi normal. Oleh karena itu,
+perhitungan binomial dapat didekati menggunakan distribusi normal.
+
+</p>
+
+<p>
+
+Pendekatan ini sangat berguna karena menghitung peluang binomial dengan
+nilai n yang besar sering kali tidak praktis.
+
+</p>
+
+<div class="rumus">
+
+<h3>Syarat Pendekatan</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+np ≥ 5
+
+</p>
+
+<p style="font-size:22px;text-align:center;">
+
+n(1−p) ≥ 5
+
+</p>
+
+</div>
+
+<p>
+
+Jika kedua syarat tersebut terpenuhi, distribusi binomial umumnya sudah
+cukup baik didekati oleh distribusi normal.
+
+</p>
+
+<div class="rumus">
+
+<h3>Parameter Distribusi Normal Pendekatan</h3>
+
+<p>
+
+Mean (μ) = np
+
+</p>
+
+<p>
+
+Standar Deviasi (σ) = √[np(1−p)]
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin adil dilempar sebanyak 100 kali.
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p>
+
+np = 100 × 0,5 = 50
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p>
+
+n(1−p) = 50
+
+</p>
+
+<p>
+
+maka distribusi binomial tersebut dapat didekati menggunakan distribusi
+normal.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Mengapa Pendekatan Ini Berhasil?</strong>
+
+<p>
+
+Semakin banyak percobaan dilakukan, distribusi binomial menjadi semakin
+halus dan simetris. Fenomena inilah yang menjadi salah satu konsekuensi
+dari Teorema Limit Pusat (Central Limit Theorem), yang akan dipelajari
+secara khusus pada bab berikutnya.
+
+</p>
+
+</div>
+
+</section><section id="analisis-lengkap">
+
+<h2>19. Contoh Analisis Lengkap</h2>
+
+<p>
+
+Pada bagian ini kita menggabungkan konsep variabel acak, distribusi
+peluang, nilai harapan, variansi, dan standar deviasi dalam satu contoh
+utuh.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Kasus</h3>
+
+<p>
+
+Sebuah koin adil dilempar sebanyak dua kali.
+
+Variabel acak <strong>X</strong> menyatakan banyaknya sisi gambar yang
+muncul.
+
+</p>
+
+<table>
+
+<tr>
+<th>Hasil</th>
+<th>X</th>
+<th>Peluang</th>
+</tr>
+
+<tr>
+<td>AA</td>
+<td>0</td>
+<td>1/4</td>
+</tr>
+
+<tr>
+<td>AG</td>
+<td>1</td>
+<td>1/4</td>
+</tr>
+
+<tr>
+<td>GA</td>
+<td>1</td>
+<td>1/4</td>
+</tr>
+
+<tr>
+<td>GG</td>
+<td>2</td>
+<td>1/4</td>
+</tr>
+
+</table>
+
+<h3>Langkah 1 — Bentuk Distribusi Peluang</h3>
+
+<table>
+
+<tr>
+<th>X</th>
+<th>P(X=x)</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1/4</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>2/4</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>1/4</td>
+</tr>
+
+</table>
+
+<h3>Langkah 2 — Hitung Nilai Harapan</h3>
+
+<div class="rumus">
+
+<p>
+
+E(X)
+
+=
+
+0(1/4)
+
++
+
+1(2/4)
+
++
+
+2(1/4)
+
+=
+
+1
+
+</p>
+
+</div>
+
+<h3>Langkah 3 — Hitung Variansi</h3>
+
+<div class="rumus">
+
+<p>
+
+E(X²)
+
+=
+
+0²(1/4)
+
++
+
+1²(2/4)
+
++
+
+2²(1/4)
+
+=
+
+1,5
+
+</p>
+
+<p>
+
+Var(X)
+
+=
+
+1,5−1²
+
+=
+
+0,5
+
+</p>
+
+</div>
+
+<h3>Langkah 4 — Standar Deviasi</h3>
+
+<div class="rumus">
+
+<p>
+
+σ
+
+=
+
+√0,5
+
+≈
+
+0,707
+
+</p>
+
+</div>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Pelajaran Penting</h3>
+
+<p>
+
+Dalam olimpiade matematika, jangan langsung memasukkan angka ke rumus.
+Susun terlebih dahulu distribusi peluangnya, kemudian hitung nilai
+harapan, variansi, dan standar deviasi secara sistematis.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="kesalahan">
+
+<h2>20. Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap variabel acak sama dengan variabel aljabar.</li>
+
+<li>Tidak memastikan apakah variabel bersifat diskrit atau kontinu.</li>
+
+<li>Jumlah seluruh peluang tidak sama dengan 1.</li>
+
+<li>Salah menghitung nilai harapan karena lupa mengalikan dengan peluang.</li>
+
+<li>Tertukar antara variansi dan standar deviasi.</li>
+
+<li>Menggunakan distribusi binomial padahal syaratnya tidak terpenuhi.</li>
+
+<li>Menggunakan distribusi geometrik untuk menghitung banyaknya sukses, padahal distribusi tersebut menghitung sukses pertama.</li>
+
+<li>Lupa bahwa distribusi Poisson menggunakan parameter λ.</li>
+
+<li>Menganggap semua data selalu berdistribusi normal.</li>
+
+<li>Salah mengartikan nilai Z-Score.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Saran</strong>
+
+<p>
+
+Sebelum menentukan rumus, identifikasi terlebih dahulu jenis variabel
+acak dan distribusi yang paling sesuai dengan situasi pada soal.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ringkasan">
+
+<h2>21. Ringkasan Bab</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Inti Materi</th>
+</tr>
+
+<tr>
+<td>Variabel Acak</td>
+<td>Fungsi yang memetakan hasil eksperimen menjadi nilai numerik.</td>
+</tr>
+
+<tr>
+<td>Diskrit</td>
+<td>Nilai dapat dihitung satu per satu.</td>
+</tr>
+
+<tr>
+<td>Kontinu</td>
+<td>Nilai berada pada suatu interval.</td>
+</tr>
+
+<tr>
+<td>PMF</td>
+<td>Peluang untuk setiap nilai variabel acak diskrit.</td>
+</tr>
+
+<tr>
+<td>CDF</td>
+<td>Peluang kumulatif hingga suatu nilai tertentu.</td>
+</tr>
+
+<tr>
+<td>Expected Value</td>
+<td>Rata-rata teoritis.</td>
+</tr>
+
+<tr>
+<td>Variance</td>
+<td>Ukuran penyebaran terhadap mean.</td>
+</tr>
+
+<tr>
+<td>Standard Deviation</td>
+<td>Akar kuadrat dari variansi.</td>
+</tr>
+
+<tr>
+<td>Binomial</td>
+<td>Jumlah keberhasilan.</td>
+</tr>
+
+<tr>
+<td>Geometrik</td>
+<td>Sukses pertama.</td>
+</tr>
+
+<tr>
+<td>Poisson</td>
+<td>Banyak kejadian dalam interval.</td>
+</tr>
+
+<tr>
+<td>Uniform</td>
+<td>Semua nilai memiliki peluang sama.</td>
+</tr>
+
+<tr>
+<td>Normal</td>
+<td>Distribusi kontinu berbentuk lonceng.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="glosarium">
+
+<h2>22. Glosarium</h2>
+
+<table>
+
+<tr>
+<th>Istilah</th>
+<th>Pengertian</th>
+</tr>
+
+<tr>
+<td>Random Variable</td>
+<td>Variabel acak.</td>
+</tr>
+
+<tr>
+<td>PMF</td>
+<td>Probability Mass Function.</td>
+</tr>
+
+<tr>
+<td>CDF</td>
+<td>Cumulative Distribution Function.</td>
+</tr>
+
+<tr>
+<td>Expected Value</td>
+<td>Nilai harapan.</td>
+</tr>
+
+<tr>
+<td>Variance</td>
+<td>Variansi.</td>
+</tr>
+
+<tr>
+<td>Standard Deviation</td>
+<td>Standar deviasi.</td>
+</tr>
+
+<tr>
+<td>Distribution</td>
+<td>Sebaran peluang suatu variabel acak.</td>
+</tr>
+
+<tr>
+<td>Parameter</td>
+<td>Besaran yang menentukan bentuk distribusi.</td>
+</tr>
+
+</table>
+
+</section><section id="rumus-penting">
+
+<h2>23. Ringkasan Rumus Penting</h2>
+
+<p>
+
+Bagian ini merangkum seluruh rumus utama pada bab Variabel Acak &
+Distribusi. Kuasai konsep di balik setiap rumus agar tidak hanya
+menghafal bentuk matematisnya.
+
+</p>
+
+<div class="rumus">
+
+<h3>Nilai Harapan</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+E(X)=ΣxP(X=x)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Variansi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Var(X)=E(X²)−[E(X)]²
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Standar Deviasi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+σ=√Var(X)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Distribusi Binomial</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X=x)=C(n,x)p<sup>x</sup>(1-p)<sup>n-x</sup>
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Distribusi Geometrik</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X=x)=(1-p)<sup>x-1</sup>p
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Distribusi Poisson</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+P(X=x)=
+(e<sup>-λ</sup>λ<sup>x</sup>)/x!
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Distribusi Uniform</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+f(x)=1/(b-a)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Z-Score</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Z=(X−μ)/σ
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Tips Menghafal</strong>
+
+<p>
+
+Kelompokkan rumus berdasarkan jenis distribusinya. Cara ini jauh lebih
+efektif dibanding menghafal seluruh rumus sekaligus.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="latihan">
+
+<h2>24. Latihan Akhir Bab</h2>
+
+<ol>
+
+<li>Jelaskan perbedaan variabel acak diskrit dan kontinu beserta masing-masing dua contohnya.</li>
+
+<li>Tentukan nilai harapan dari distribusi: X={0,1,2} dengan peluang {0,2 ; 0,5 ; 0,3}.</li>
+
+<li>Hitung variansi dari distribusi pada soal nomor 2.</li>
+
+<li>Sebuah koin dilempar 6 kali. Tentukan peluang muncul tepat 4 gambar menggunakan distribusi binomial.</li>
+
+<li>Peluang sukses suatu percobaan adalah 0,25. Hitung peluang sukses pertama terjadi pada percobaan ke-5.</li>
+
+<li>Suatu rata-rata kedatangan pelanggan adalah 3 orang per jam. Distribusi apa yang paling sesuai digunakan?</li>
+
+<li>Mengapa distribusi normal menjadi distribusi yang paling banyak digunakan dalam statistika?</li>
+
+<li>Hitung nilai Z-Score jika μ=70, σ=8, dan X=86.</li>
+
+<li>Jelaskan makna aturan empiris 68–95–99,7.</li>
+
+<li>Kapan distribusi binomial dapat didekati menggunakan distribusi normal?</li>
+
+</ol>
+
+<div class="olimpiade">
+
+<h3>Tantangan Analitis</h3>
+
+<p>
+
+Buktikan bahwa jumlah seluruh peluang pada distribusi binomial selalu
+bernilai 1 dengan menggunakan Teorema Binomial.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="evaluasi">
+
+<h2>25. Evaluasi Olimpiade</h2>
+
+<p>
+
+Kerjakan soal berikut tanpa melihat pembahasan sebelumnya.
+
+</p>
+
+<ol>
+
+<li>
+
+Suatu perusahaan memproduksi barang dengan peluang cacat sebesar 2%.
+Hitung peluang tepat 3 barang cacat dari 100 barang menggunakan distribusi
+yang paling sesuai.
+
+</li>
+
+<li>
+
+Sebuah mesin memiliki peluang berhasil 0,9 pada setiap percobaan.
+Hitung peluang keberhasilan pertama terjadi pada percobaan ke-4.
+
+</li>
+
+<li>
+
+Variabel acak X memiliki distribusi:
+
+<table>
+
+<tr>
+<th>X</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+
+<tr>
+<td>P(X)</td>
+<td>0,1</td>
+<td>0,2</td>
+<td>0,4</td>
+<td>0,3</td>
+</tr>
+
+</table>
+
+Hitung nilai harapan, variansi, dan standar deviasinya.
+
+</li>
+
+<li>
+
+Jelaskan mengapa distribusi Poisson sering digunakan sebagai pendekatan
+untuk distribusi binomial ketika peluang sukses sangat kecil.
+
+</li>
+
+<li>
+
+Suatu nilai ujian mengikuti distribusi normal dengan rata-rata 75 dan
+standar deviasi 10. Tentukan interpretasi nilai Z-Score untuk siswa yang
+memperoleh nilai 95.
+
+</li>
+
+</ol>
+
+</section>
+
+<section id="navigasi">
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;">
+
+<a href="index.html"
+style="background:#16a34a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Home
+
+</a>
+
+<a href="statiska7.html"
+style="background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+➡ Lanjut ke statiska7.html
+
+</a>
+
+</div>
+
+<p style="margin-top:30px;text-align:center;">
+
+<strong>Bab Selanjutnya:</strong><br>
+
+Distribusi Sampling, Standard Error, Central Limit Theorem (CLT), dan
+konsep-konsep dasar yang menjadi fondasi inferensi statistika modern.
+
+</p>
+
+</section>
+
+</main>
+
+</body>
+</html>
