@@ -1,1 +1,1674 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Matematika - statiska8</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#222;
+line-height:1.9;
+}
+
+header{
+background:linear-gradient(135deg,#0f172a,#1d4ed8);
+color:white;
+padding:60px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.6rem;
+margin-bottom:15px;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+section{
+background:white;
+margin-bottom:30px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+h2{
+color:#1e3a8a;
+margin-bottom:18px;
+}
+
+h3{
+margin:18px 0 10px;
+color:#2563eb;
+}
+
+.rumus{
+background:#eef4ff;
+border-left:6px solid #2563eb;
+padding:18px;
+margin:20px 0;
+}
+
+.contoh{
+background:#eefcf3;
+border-left:6px solid #16a34a;
+padding:18px;
+margin:20px 0;
+}
+
+.visual{
+background:#fafafa;
+border:2px dashed #bdbdbd;
+padding:18px;
+margin:20px 0;
+}
+
+.catatan{
+background:#fff7df;
+border-left:6px solid orange;
+padding:18px;
+margin:20px 0;
+}
+
+.olimpiade{
+background:#f3e8ff;
+border-left:6px solid #7c3aed;
+padding:18px;
+margin:20px 0;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:20px 0;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Handbook Matematika</h1>
+
+<p>
+
+Bab 8 — Inferensi Statistika (Estimasi Parameter)
+
+</p>
+
+</header>
+
+<main>
+
+<section id="pengantar">
+
+<h2>1. Apa Itu Inferensi Statistika?</h2>
+
+<p>
+
+Pada bab sebelumnya kita mempelajari bahwa statistik sampel memiliki
+distribusi sampling. Sekarang muncul pertanyaan yang jauh lebih penting.
+
+</p>
+
+<p>
+
+<strong>Bagaimana memperoleh informasi mengenai populasi apabila kita
+hanya memiliki sampel?</strong>
+
+</p>
+
+<p>
+
+Inilah tujuan utama <strong>inferensi statistika</strong>.
+
+Inferensi statistika adalah cabang statistika yang menggunakan informasi
+dari sampel untuk menarik kesimpulan mengenai parameter populasi.
+
+</p>
+
+<div class="visual">
+
+<h3>Alur Inferensi</h3>
+
+<pre>
+
+Populasi
+
+(Tidak diketahui)
+
+       │
+
+Ambil Sampel Acak
+
+       │
+
+Hitung Statistik Sampel
+
+       │
+
+Gunakan Teori Probabilitas
+
+       │
+
+Estimasi Parameter Populasi
+
+</pre>
+
+</div>
+
+<p>
+
+Inferensi berbeda dengan statistika deskriptif.
+
+Statistika deskriptif hanya menggambarkan data yang dimiliki.
+
+Inferensi statistika berusaha menjawab kondisi populasi yang tidak
+diamati secara langsung.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Sudut Pandang Olimpiade</h3>
+
+<p>
+
+Seluruh pengujian hipotesis, interval kepercayaan, regresi, ANOVA,
+hingga machine learning statistik pada dasarnya merupakan aplikasi dari
+inferensi statistika.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="parameter">
+
+<h2>2. Parameter dan Statistik</h2>
+
+<p>
+
+Salah satu konsep yang paling sering membingungkan adalah perbedaan
+antara <strong>parameter</strong> dan <strong>statistik</strong>.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Parameter</th>
+
+<th>Statistik</th>
+
+</tr>
+
+<tr>
+
+<td>Menggambarkan populasi.</td>
+
+<td>Menggambarkan sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Nilainya tetap tetapi biasanya tidak diketahui.</td>
+
+<td>Nilainya berubah tergantung sampel yang diperoleh.</td>
+
+</tr>
+
+<tr>
+
+<td>Ditulis dengan huruf Yunani.</td>
+
+<td>Ditulis dengan huruf Latin.</td>
+
+</tr>
+
+</table>
+
+<h3>Contoh Parameter</h3>
+
+<ul>
+
+<li>μ = rata-rata populasi.</li>
+
+<li>σ = standar deviasi populasi.</li>
+
+<li>p = proporsi populasi.</li>
+
+</ul>
+
+<h3>Contoh Statistik</h3>
+
+<ul>
+
+<li>x̄ = rata-rata sampel.</li>
+
+<li>s = standar deviasi sampel.</li>
+
+<li>p̂ = proporsi sampel.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Inti Konsep</strong>
+
+<p>
+
+Kita tidak mengetahui parameter populasi secara langsung.
+
+Yang kita miliki hanyalah statistik sampel.
+
+Melalui inferensi, statistik sampel digunakan sebagai dasar untuk
+memperkirakan parameter populasi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="estimasi">
+
+<h2>3. Konsep Estimasi Parameter</h2>
+
+<p>
+
+Estimasi parameter adalah proses memperkirakan nilai parameter populasi
+berdasarkan informasi dari sampel.
+
+</p>
+
+<p>
+
+Karena sampel dipilih secara acak, hasil estimasi hampir tidak pernah
+persis sama dengan parameter sebenarnya.
+
+Oleh karena itu, estimasi selalu mengandung ketidakpastian.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+Parameter Populasi
+
+      ?
+
+      ▲
+
+      │
+
+Estimasi dari Sampel
+
+      x̄
+
+</pre>
+
+</div>
+
+<p>
+
+Semakin besar ukuran sampel dan semakin kecil variasi data,
+umumnya estimasi akan semakin akurat.
+
+</p>
+
+<div class="rumus">
+
+<h3>Tujuan Estimasi</h3>
+
+<p style="text-align:center;font-size:22px;">
+
+Statistik Sampel
+
+≈
+
+Parameter Populasi
+
+</p>
+
+</div>
+
+</section><section id="point-estimation">
+
+<h2>4. Estimasi Titik (Point Estimation)</h2>
+
+<p>
+
+Bentuk estimasi yang paling sederhana adalah <strong>estimasi titik</strong>
+(<em>point estimation</em>). Pada metode ini, kita menggunakan satu nilai
+tunggal dari sampel untuk memperkirakan parameter populasi.
+
+</p>
+
+<p>
+
+Sebagai contoh, rata-rata sampel <strong>x̄</strong> digunakan sebagai
+penduga bagi rata-rata populasi <strong>μ</strong>. Demikian pula,
+proporsi sampel <strong>p̂</strong> digunakan sebagai penduga proporsi
+populasi <strong>p</strong>.
+
+</p>
+
+<div class="visual">
+
+<h3>Konsep Estimasi Titik</h3>
+
+<pre>
+
+Parameter Populasi
+
+      μ = ?
+
+        ▲
+
+        │
+
+      x̄ = 72,8
+
+(Satu nilai penduga)
+
+</pre>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Dari sampel 100 siswa diperoleh rata-rata nilai matematika sebesar
+78,4.
+
+</p>
+
+<p>
+
+Maka estimasi titik untuk rata-rata seluruh siswa adalah
+
+<strong>μ ≈ 78,4</strong>.
+
+</p>
+
+<p>
+
+Namun kita tidak dapat mengatakan bahwa rata-rata populasi benar-benar
+78,4 karena nilai tersebut hanya diperoleh dari satu sampel.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kelemahan Estimasi Titik</strong>
+
+<p>
+
+Estimasi titik hanya menghasilkan satu angka dan tidak memberikan
+informasi mengenai tingkat ketidakpastian atau kemungkinan kesalahan
+estimasi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="good-estimator">
+
+<h2>5. Sifat-Sifat Estimator yang Baik</h2>
+
+<p>
+
+Tidak semua statistik sampel merupakan estimator yang baik. Dalam teori
+statistika, sebuah estimator ideal memiliki beberapa sifat penting.
+
+</p>
+
+<h3>1. Tidak Bias (Unbiased)</h3>
+
+<p>
+
+Suatu estimator disebut tidak bias apabila nilai harapan estimator sama
+dengan parameter yang diestimasi.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+E(Estimator)=Parameter
+
+</p>
+
+</div>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+<p style="text-align:center;">
+
+E(x̄)=μ
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, jika proses pengambilan sampel diulang sangat banyak kali,
+rata-rata seluruh nilai x̄ akan sama dengan μ.
+
+</p>
+
+<h3>2. Konsisten (Consistent)</h3>
+
+<p>
+
+Estimator disebut konsisten apabila nilainya semakin mendekati parameter
+populasi ketika ukuran sampel semakin besar.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+n kecil
+
+↓
+
+Estimasi masih bervariasi
+
+↓
+
+n besar
+
+↓
+
+Estimasi semakin stabil
+
+↓
+
+Mendekati Parameter
+
+</pre>
+
+</div>
+
+<h3>3. Efisien (Efficient)</h3>
+
+<p>
+
+Jika terdapat dua estimator yang sama-sama tidak bias, estimator dengan
+variansi lebih kecil dianggap lebih efisien karena memberikan estimasi
+yang lebih stabil.
+
+</p>
+
+<h3>4. Cukup (Sufficient)</h3>
+
+<p>
+
+Estimator cukup apabila seluruh informasi mengenai parameter telah
+terkandung di dalam estimator tersebut tanpa memerlukan informasi
+tambahan dari sampel.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Empat sifat di atas merupakan dasar teori estimasi modern dan sering
+muncul dalam statistika tingkat universitas maupun olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="sampling-error">
+
+<h2>6. Sampling Error (Galat Sampling)</h2>
+
+<p>
+
+Karena kita hanya mengamati sebagian populasi, hampir selalu terdapat
+perbedaan antara statistik sampel dan parameter populasi.
+
+Perbedaan inilah yang disebut <strong>sampling error</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Konsep</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Sampling Error
+
+=
+
+Statistik Sampel
+
+−
+
+Parameter Populasi
+
+</p>
+
+</div>
+
+<p>
+
+Sampling error bukanlah kesalahan dalam perhitungan, melainkan akibat
+alami dari proses pengambilan sampel.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Misalkan rata-rata tinggi seluruh siswa di sebuah sekolah adalah
+165 cm.
+
+Sebuah sampel acak menghasilkan rata-rata 166,3 cm.
+
+</p>
+
+<p>
+
+Sampling error = 166,3 − 165 = 1,3 cm.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Perlu Diperhatikan</strong>
+
+<p>
+
+Sampling error dapat diperkecil dengan memperbesar ukuran sampel dan
+menggunakan teknik pengambilan sampel yang benar, tetapi tidak dapat
+dihilangkan sepenuhnya.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="confidence">
+
+<h2>7. Mengapa Dibutuhkan Interval Kepercayaan?</h2>
+
+<p>
+
+Bayangkan dua peneliti memperoleh estimasi rata-rata populasi sebesar
+75 dari dua sampel yang berbeda.
+
+Walaupun nilai estimasinya sama, tingkat keyakinan terhadap estimasi
+tersebut belum tentu sama.
+
+</p>
+
+<p>
+
+Inilah alasan mengapa statistika tidak hanya menggunakan estimasi titik,
+tetapi juga <strong>interval kepercayaan (confidence interval)</strong>.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Estimasi Titik
+
+μ ≈ 75
+
+↓
+
+Masih Terlalu Pasti
+
+↓
+
+Interval Kepercayaan
+
+72,8 ≤ μ ≤ 77,2
+
+</pre>
+
+</div>
+
+<p>
+
+Interval kepercayaan memberikan rentang nilai yang diperkirakan memuat
+parameter populasi dengan tingkat keyakinan tertentu.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Intuisi Penting</h3>
+
+<p>
+
+Dalam statistika modern, kita hampir tidak pernah mengatakan
+"parameter pasti bernilai sekian". Yang kita lakukan adalah menyatakan
+bahwa parameter kemungkinan besar berada dalam suatu interval yang
+dibangun berdasarkan teori probabilitas.
+
+</p>
+
+</div>
+
+</section><section id="confidence-interval">
+
+<h2>8. Interval Kepercayaan (Confidence Interval)</h2>
+
+<p>
+
+Interval kepercayaan (<strong>Confidence Interval</strong>) adalah suatu
+rentang nilai yang dibangun dari data sampel dan diperkirakan memuat
+parameter populasi dengan tingkat keyakinan tertentu.
+
+</p>
+
+<p>
+
+Berbeda dengan estimasi titik yang hanya menghasilkan satu angka,
+interval kepercayaan memberikan dua batas, yaitu batas bawah dan batas
+atas. Hal ini membuat estimasi menjadi lebih informatif karena
+memperhitungkan ketidakpastian akibat sampling.
+
+</p>
+
+<div class="visual">
+
+<h3>Gagasan Dasar</h3>
+
+<pre>
+
+Parameter Populasi
+
+        μ
+
+        │
+
+────────────────────────────
+
+      [ Interval ]
+
+65,2             69,8
+
+</pre>
+
+</div>
+
+<p>
+
+Semakin sempit interval, semakin teliti estimasi yang diperoleh.
+Sebaliknya, interval yang terlalu lebar menunjukkan bahwa estimasi masih
+mengandung ketidakpastian yang besar.
+
+</p>
+
+</section>
+
+<section id="confidence-level">
+
+<h2>9. Tingkat Kepercayaan (Confidence Level)</h2>
+
+<p>
+
+Salah satu konsep yang paling sering disalahpahami adalah
+<strong>tingkat kepercayaan</strong>.
+
+Misalnya digunakan tingkat kepercayaan sebesar <strong>95%</strong>.
+
+</p>
+
+<p>
+
+Artinya bukan bahwa peluang parameter berada di dalam interval tersebut
+adalah 95%. Parameter populasi bersifat tetap; yang berubah adalah
+interval yang dihasilkan dari setiap sampel.
+
+</p>
+
+<p>
+
+Interpretasi yang benar adalah:
+
+</p>
+
+<div class="catatan">
+
+<p>
+
+Jika proses pengambilan sampel diulang berkali-kali dan setiap kali
+dibangun interval kepercayaan 95%, maka sekitar 95% interval tersebut
+akan memuat parameter populasi yang sebenarnya.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+Sampel 1  ──────── μ ──────── ✔
+
+Sampel 2      ─────────────── ✔
+
+Sampel 3 ────────            ✘
+
+Sampel 4   ───────── μ ───── ✔
+
+Sampel 5 ─────────────── μ ─ ✔
+
+≈95% interval menangkap μ
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Kesalahan interpretasi confidence interval merupakan salah satu
+kesalahan konsep yang paling sering muncul pada mahasiswa statistika.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ci-mean-known">
+
+<h2>10. Interval Kepercayaan untuk Mean (σ Diketahui)</h2>
+
+<p>
+
+Apabila standar deviasi populasi diketahui dan ukuran sampel cukup besar,
+interval kepercayaan untuk mean dibangun menggunakan distribusi normal
+(Z).
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+x̄ ± Z × (σ/√n)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>x̄</td>
+<td>Rata-rata sampel.</td>
+</tr>
+
+<tr>
+<td>Z</td>
+<td>Nilai kritis distribusi normal.</td>
+</tr>
+
+<tr>
+<td>σ</td>
+<td>Standar deviasi populasi.</td>
+</tr>
+
+<tr>
+<td>n</td>
+<td>Ukuran sampel.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Diketahui:
+
+</p>
+
+<ul>
+
+<li>x̄ = 80</li>
+
+<li>σ = 12</li>
+
+<li>n = 36</li>
+
+<li>Confidence Level = 95%</li>
+
+</ul>
+
+<p>
+
+Nilai Z untuk 95% adalah sekitar 1,96.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+SE = 12 / √36 = 2
+
+</p>
+
+<p>
+
+Margin Error = 1,96 × 2 = 3,92
+
+</p>
+
+<p>
+
+CI = 80 ± 3,92
+
+</p>
+
+<p>
+
+(76,08 ; 83,92)
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasinya adalah estimasi rata-rata populasi berada pada interval
+76,08 hingga 83,92 dengan tingkat kepercayaan 95%.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="margin-error">
+
+<h2>11. Margin of Error</h2>
+
+<p>
+
+Komponen paling penting dalam interval kepercayaan adalah
+<strong>Margin of Error (MoE)</strong>.
+
+Margin of Error menyatakan seberapa jauh estimasi dapat menyimpang dari
+parameter populasi.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Margin of Error
+
+=
+
+Nilai Kritis
+
+×
+
+Standard Error
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<pre>
+
+      x̄
+
+       │
+
+───────┼───────
+
+← MoE → ← MoE →
+
+</pre>
+
+</div>
+
+<p>
+
+Margin of Error akan menjadi lebih kecil apabila:
+
+</p>
+
+<ul>
+
+<li>Ukuran sampel bertambah.</li>
+
+<li>Variasi data lebih kecil.</li>
+
+<li>Tingkat kepercayaan diturunkan.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Hubungan Penting</strong>
+
+<p>
+
+Semakin tinggi tingkat kepercayaan, semakin lebar interval kepercayaan.
+Sebaliknya, semakin sempit interval yang diinginkan, semakin besar ukuran
+sampel yang diperlukan.
+
+</p>
+
+</div>
+
+</section><section id="confidence-t">
+
+<h2>12. Interval Kepercayaan Menggunakan Distribusi t</h2>
+
+<p>
+
+Pada pembahasan sebelumnya kita menggunakan distribusi normal (Z) dengan
+asumsi bahwa <strong>standar deviasi populasi (σ) diketahui</strong>.
+Namun pada kenyataannya, kondisi tersebut hampir tidak pernah terjadi.
+Dalam penelitian nyata, nilai σ umumnya tidak diketahui sehingga harus
+diperkirakan menggunakan standar deviasi sampel (<strong>s</strong>).
+
+</p>
+
+<p>
+
+Ketika σ tidak diketahui, distribusi normal tidak lagi tepat digunakan.
+Sebagai gantinya digunakan <strong>Distribusi t (Student's t-Distribution)</strong>
+yang diperkenalkan oleh <strong>William Sealy Gosset</strong> dengan nama
+samaran <em>Student</em>.
+
+</p>
+
+<div class="visual">
+
+<h3>Perbandingan Kurva</h3>
+
+<pre>
+
+Distribusi t
+
+        ▂▃▄▅▆████▆▅▄▃▂
+      (ekor lebih tebal)
+
+Distribusi Normal
+
+         ▃▄▅█████▅▄▃
+
+</pre>
+
+</div>
+
+<p>
+
+Distribusi t memiliki bentuk yang mirip distribusi normal, tetapi ekornya
+lebih tebal (<em>heavier tails</em>). Hal ini mencerminkan adanya
+ketidakpastian tambahan karena σ tidak diketahui.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Interval Kepercayaan Mean</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+x̄ ± t × (s/√n)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Digunakan Saat</th>
+<th>Distribusi</th>
+</tr>
+
+<tr>
+<td>σ diketahui</td>
+<td>Z</td>
+</tr>
+
+<tr>
+<td>σ tidak diketahui</td>
+<td>t</td>
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Dalam praktik statistik modern, distribusi t jauh lebih sering digunakan
+daripada distribusi Z karena standar deviasi populasi hampir tidak pernah
+diketahui secara pasti.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="degrees-freedom">
+
+<h2>13. Derajat Kebebasan (Degrees of Freedom)</h2>
+
+<p>
+
+Distribusi t tidak hanya bergantung pada ukuran sampel, tetapi juga pada
+<strong>derajat kebebasan</strong> atau
+<strong>degrees of freedom (df)</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+df = n − 1
+
+</p>
+
+</div>
+
+<p>
+
+Mengapa dikurangi satu?
+
+Karena ketika rata-rata sampel telah ditentukan, hanya
+<strong>n − 1</strong> data yang dapat berubah secara bebas.
+Nilai terakhir otomatis ditentukan agar rata-rata tetap sama.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Intuitif</h3>
+
+<p>
+
+Misalkan terdapat tiga data dengan rata-rata 10.
+
+</p>
+
+<p>
+
+Jika dua data pertama adalah 8 dan 12, maka data ketiga harus bernilai
+10 agar rata-ratanya tetap 10.
+
+</p>
+
+<p>
+
+Artinya hanya dua data yang benar-benar bebas berubah.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+df = 3 − 1 = 2
+
+</p>
+
+</div>
+
+</div>
+
+<div class="catatan">
+
+<strong>Pengaruh Derajat Kebebasan</strong>
+
+<p>
+
+Semakin besar derajat kebebasan, distribusi t akan semakin mendekati
+distribusi normal.
+
+Bahkan ketika df sangat besar, keduanya hampir tidak dapat dibedakan.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="critical-value">
+
+<h2>14. Nilai Kritis (Critical Value)</h2>
+
+<p>
+
+Dalam membangun interval kepercayaan, diperlukan suatu nilai batas yang
+disebut <strong>nilai kritis</strong>. Nilai inilah yang menentukan lebar
+interval kepercayaan.
+
+</p>
+
+<p>
+
+Nilai kritis bergantung pada dua hal:
+
+</p>
+
+<ul>
+
+<li>Tingkat kepercayaan (90%, 95%, 99%, dan sebagainya).</li>
+
+<li>Jenis distribusi yang digunakan (Z atau t).</li>
+
+</ul>
+
+<table>
+
+<tr>
+<th>Confidence Level</th>
+<th>Z Kritis</th>
+</tr>
+
+<tr>
+<td>90%</td>
+<td>1,645</td>
+</tr>
+
+<tr>
+<td>95%</td>
+<td>1,960</td>
+</tr>
+
+<tr>
+<td>99%</td>
+<td>2,576</td>
+</tr>
+
+</table>
+
+<p>
+
+Untuk distribusi t, nilai kritis diperoleh dari tabel distribusi t sesuai
+dengan derajat kebebasan yang dimiliki.
+
+</p>
+
+<div class="visual">
+
+<h3>Daerah Kepercayaan 95%</h3>
+
+<pre>
+
+        2.5%     95%      2.5%
+
+─────────|──────────────|─────────
+
+      -1.96            +1.96
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Pemahaman Konsep</h3>
+
+<p>
+
+Nilai kritis bukanlah peluang, melainkan titik batas pada distribusi
+probabilitas yang memisahkan daerah penerimaan dan daerah di luar tingkat
+kepercayaan yang dipilih.
+
+</p>
+
+</div>
+
+</section><section id="interval-proporsi">
+
+<h2>15. Interval Kepercayaan untuk Proporsi</h2>
+
+<p>
+
+Selain mean, parameter populasi lain yang sering diestimasi adalah
+<strong>proporsi (p)</strong>. Dalam kasus ini kita menggunakan proporsi
+sampel <strong>p̂</strong> sebagai estimator.
+
+</p>
+
+<p>
+
+Distribusi sampling proporsi dapat didekati dengan distribusi normal
+ketika ukuran sampel cukup besar, sehingga interval kepercayaan dapat
+dibentuk dengan pendekatan Z.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Interval Kepercayaan Proporsi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+p̂ ± Z × √[p̂(1 − p̂)/n]
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Dari 400 responden, 260 menyatakan setuju terhadap suatu kebijakan.
+
+</p>
+
+<p>
+
+Hitung interval kepercayaan 95% untuk proporsi populasi.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+p̂ = 260/400 = 0,65
+
+</p>
+
+<p>
+
+SE = √[0,65 × 0,35 / 400]
+
+</p>
+
+<p>
+
+SE = √[0,2275 / 400] = √0,00056875 ≈ 0,0238
+
+</p>
+
+<p>
+
+Margin Error = 1,96 × 0,0238 ≈ 0,0467
+
+</p>
+
+<p>
+
+CI = 0,65 ± 0,0467
+
+</p>
+
+<p>
+
+(0,603 ; 0,697)
+
+</p>
+
+</div>
+
+</div>
+
+<div class="catatan">
+
+<strong>Interpretasi</strong>
+
+<p>
+
+Kita dapat menyimpulkan bahwa proporsi populasi yang setuju berada di
+antara 60,3% hingga 69,7% dengan tingkat kepercayaan 95%.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ukuran-sampel-ci">
+
+<h2>16. Penentuan Ukuran Sampel</h2>
+
+<p>
+
+Salah satu aplikasi penting dari interval kepercayaan adalah menentukan
+berapa besar sampel yang diperlukan untuk mencapai tingkat ketelitian
+tertentu.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Ukuran Sampel (Mean)</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+n = (Z × σ / E)²
+
+</p>
+
+</div>
+
+<p>
+
+Dimana:
+
+</p>
+
+<ul>
+
+<li>Z = nilai kritis</li>
+
+<li>σ = standar deviasi populasi</li>
+
+<li>E = margin of error yang diinginkan</li>
+
+</ul>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Diketahui σ = 20, margin error yang diinginkan E = 4, dan tingkat
+kepercayaan 95%.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+n = (1,96 × 20 / 4)²
+
+</p>
+
+<p>
+
+n = (9,8)² = 96,04 ≈ 97
+
+</p>
+
+</div>
+
+<p>
+
+Artinya diperlukan minimal 97 sampel untuk mencapai ketelitian tersebut.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Makna Penting</strong>
+
+<p>
+
+Semakin kecil margin error yang diinginkan, semakin besar ukuran sampel
+yang diperlukan. Hubungan ini bersifat kuadrat, sehingga peningkatan
+ketelitian membutuhkan tambahan sampel yang signifikan.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="interpretasi-ci">
+
+<h2>17. Interpretasi Lanjutan Confidence Interval</h2>
+
+<p>
+
+Interpretasi confidence interval sering disalahpahami. Banyak yang
+menganggap bahwa parameter populasi “berubah-ubah berada dalam interval”.
+
+Padahal hal tersebut tidak benar.
+
+</p>
+
+<div class="catatan">
+
+<p>
+
+Yang benar adalah: interval yang berubah-ubah tergantung sampel, bukan
+parameternya.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Ilustrasi Konsep Benar</h3>
+
+<pre>
+
+Sampel 1 → [ 72 ───── 78 ] ✔
+
+Sampel 2 → [ 70 ───── 76 ] ✔
+
+Sampel 3 → [ 68 ─── 74 ]   ✘
+
+Sampel 4 → [ 71 ───── 77 ] ✔
+
+Parameter μ = tetap
+
+</pre>
+
+</div>
+
+<p>
+
+Setiap kali kita mengambil sampel baru, interval yang terbentuk akan
+berbeda, tetapi parameter populasi tetap konstan.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Intuisi Olimpiade</h3>
+
+<p>
+
+Confidence interval adalah cara formal untuk menyatakan ketidakpastian
+estimasi dalam bentuk matematis yang dapat diukur secara probabilistik.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ringkasan">
+
+<h2>18. Ringkasan Bab</h2>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Inti Pemahaman</th>
+</tr>
+
+<tr>
+<td>Estimasi Titik</td>
+<td>Satu nilai untuk menduga parameter.</td>
+</tr>
+
+<tr>
+<td>Interval Kepercayaan</td>
+<td>Rentang nilai untuk parameter.</td>
+</tr>
+
+<tr>
+<td>Confidence Level</td>
+<td>Tingkat keberhasilan metode, bukan peluang parameter.</td>
+</tr>
+
+<tr>
+<td>Margin of Error</td>
+<td>Batas ketidakpastian estimasi.</td>
+</tr>
+
+<tr>
+<td>Distribusi t</td>
+<td>Digunakan saat σ tidak diketahui.</td>
+</tr>
+
+<tr>
+<td>Derajat Kebebasan</td>
+<td>Menentukan bentuk distribusi t.</td>
+</tr>
+
+<tr>
+<td>Proporsi</td>
+<td>Parameter berbentuk persentase.</td>
+</tr>
+
+<tr>
+<td>Ukuran Sampel</td>
+<td>Menentukan ketelitian estimasi.</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="navigasi">
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;">
+
+<a href="statiska7.html"
+style="background:#16a34a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="index.html"
+style="background:#0f172a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Home
+
+</a>
+
+<a href="statiska9.html"
+style="background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+➡ Lanjut ke statiska9.html
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
