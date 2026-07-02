@@ -1,1 +1,3198 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TB 4 - Aritmetika Modulo</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#1565c0,#1e88e5);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header h2{
+font-size:30px;
+}
+
+header p{
+margin-top:10px;
+font-size:18px;
+opacity:.9;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:25px 0;
+border-radius:18px;
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.definition{
+background:#e3f2fd;
+border-left:6px solid #1565c0;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.theorem{
+background:#fff8e1;
+border-left:6px solid #f9a825;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.example{
+background:#e8f5e9;
+border-left:6px solid #43a047;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.tip{
+background:#fff3e0;
+border-left:6px solid #ef6c00;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#1565c0;
+color:white;
+}
+
+h2{
+color:#1565c0;
+margin-bottom:15px;
+}
+
+h3{
+margin-top:25px;
+color:#1565c0;
+}
+
+p{
+margin:12px 0;
+text-align:justify;
+}
+
+ul,ol{
+margin-left:25px;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+nav a{
+text-decoration:none;
+background:#1565c0;
+color:white;
+padding:12px 22px;
+border-radius:10px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#0d47a1;
+}
+
+footer{
+margin-top:60px;
+background:#1565c0;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Bab 4</h1>
+
+<h2>Aritmetika Modulo</h2>
+
+<p>Handbook Teori Bilangan Olimpiade Matematika</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Pendahuluan</h2>
+
+<p>
+
+Aritmetika modulo merupakan salah satu konsep paling penting dalam teori
+bilangan. Hampir seluruh teorema klasik seperti Teorema Fermat Kecil,
+Teorema Euler, Chinese Remainder Theorem, hingga berbagai algoritma
+kriptografi modern dibangun di atas konsep modulo.
+
+</p>
+
+<p>
+
+Ide dasarnya sangat sederhana, yaitu memperhatikan <b>sisa pembagian</b>.
+Namun dari konsep sederhana tersebut lahir berbagai teori yang sangat
+kuat untuk menyelesaikan persoalan yang tampaknya rumit.
+
+</p>
+
+<p>
+
+Dalam Olimpiade Matematika, penggunaan modulo sering menjadi langkah
+pertama untuk menyederhanakan persoalan. Bilangan yang sangat besar,
+pangkat yang sangat tinggi, maupun pola bilangan dapat dianalisis
+dengan jauh lebih mudah menggunakan aritmetika modulo.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Jika Bab 3 mengajarkan kita bagaimana membedah sebuah bilangan melalui
+faktorisasi prima, maka Bab 4 mengajarkan bagaimana melihat hubungan
+antarbilangan melalui sisa pembagiannya.
+
+</p>
+
+<p>
+
+Sebagian besar soal teori bilangan tingkat OSN Nasional bahkan IMO
+akan menggunakan konsep kongruensi dalam proses penyelesaiannya.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>4.1 Kongruensi</h2>
+
+<p>
+
+Konsep dasar dalam aritmetika modulo adalah <b>kongruensi</b>.
+Dua bilangan dikatakan kongruen terhadap suatu modulus apabila
+keduanya mempunyai sisa pembagian yang sama.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi</b>
+
+<p>
+
+Misalkan a dan b merupakan bilangan bulat, sedangkan n merupakan
+bilangan bulat positif.
+
+Kita mengatakan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ b (mod n)
+
+</p>
+
+<p>
+
+apabila
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+n | (a − b).
+
+</p>
+
+<p>
+
+Artinya, selisih antara a dan b habis dibagi oleh n.
+
+</p>
+
+</div>
+
+<h3>Makna Kongruensi</h3>
+
+<p>
+
+Pernyataan
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n)
+
+</p>
+
+<p>
+
+berarti bahwa a dan b memiliki sisa pembagian yang sama ketika dibagi
+oleh n.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+<th>Modulus</th>
+<th>Sisa</th>
+
+</tr>
+
+<tr>
+
+<td>17</td>
+<td>5</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>32</td>
+<td>5</td>
+<td>2</td>
+
+</tr>
+
+</table>
+
+<p style="text-align:center;font-size:22px;">
+
+17 ≡ 32 (mod 5)
+
+</p>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<p style="text-align:center">
+
+41 ≡ 6 (mod 7)
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+41 − 6 = 35
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+7 | 35,
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+41 ≡ 6 (mod 7).
+
+</p>
+
+</div>
+
+<h3>Contoh 2</h3>
+
+<div class="example">
+
+<p>
+
+Apakah
+
+</p>
+
+<p style="text-align:center">
+
+18 ≡ 5 (mod 4)?
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+18 − 5 = 13
+
+</p>
+
+<p>
+
+dan 4 tidak membagi 13, maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+18 ≢ 5 (mod 4).
+
+</p>
+
+</div>
+
+<h3>Interpretasi pada Jam</h3>
+
+<p>
+
+Bayangkan sebuah jam yang memiliki 12 angka.
+
+Setelah pukul 12, jarum kembali ke angka 1.
+
+Karena itu,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+15 ≡ 3 (mod 12)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+27 ≡ 3 (mod 12).
+
+</p>
+
+<p>
+
+Ketiga bilangan tersebut berada pada posisi yang sama dalam sistem
+modulo 12.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Ketika melihat bilangan yang sangat besar dalam soal OSN, jangan buru-
+buru menghitung nilainya.
+
+Sering kali yang benar-benar diperlukan hanyalah sisa pembagiannya.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4.2 Aritmetika Modulo</h2>
+
+<p>
+
+Setelah memahami konsep kongruensi, langkah berikutnya adalah
+mempelajari bagaimana melakukan operasi hitung pada bilangan yang
+kongruen. Inilah yang disebut <b>aritmetika modulo</b>.
+
+</p>
+
+<p>
+
+Salah satu keunggulan terbesar aritmetika modulo adalah kita dapat
+menyederhanakan perhitungan yang sangat besar tanpa mengubah hasil
+akhir modulo tersebut.
+
+</p>
+
+<hr>
+
+<h3>Prinsip Dasar</h3>
+
+<div class="definition">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ b (mod n)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+c ≡ d (mod n),
+
+</p>
+
+<p>
+
+maka berbagai operasi aritmetika dapat dilakukan langsung pada kedua
+ruas tanpa mengubah hubungan kongruensinya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Penjumlahan Modulo</h3>
+
+<div class="theorem">
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ b (mod n)
+
+</p>
+
+<p style="text-align:center">
+
+dan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+c ≡ d (mod n)
+
+</p>
+
+<p>
+
+mengakibatkan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a + c ≡ b + d (mod n).
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+n | (a − b)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+n | (c − d),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+(a − b) + (c − d)
+= (a + c) − (b + d)
+
+</p>
+
+<p>
+
+juga habis dibagi oleh n.
+
+Dengan demikian,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a + c ≡ b + d (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<div class="example">
+
+<b>Contoh</b>
+
+<p>
+
+Hitung
+
+</p>
+
+<p style="text-align:center">
+
+18 + 27 (mod 5)
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+18 ≡ 3 (mod 5)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+27 ≡ 2 (mod 5),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+18 + 27 ≡ 3 + 2 ≡ 5 ≡ 0 (mod 5).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Pengurangan Modulo</h3>
+
+<div class="theorem">
+
+<p style="text-align:center;font-size:22px;">
+
+a − c ≡ b − d (mod n).
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<p style="text-align:center">
+
+52 − 17 (mod 7)
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+52 ≡ 3
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+17 ≡ 3
+
+</p>
+
+<p>
+
+(mod 7), maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+52 − 17 ≡ 3 − 3 ≡ 0 (mod 7).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Perkalian Modulo</h3>
+
+<div class="theorem">
+
+<p style="text-align:center;font-size:22px;">
+
+ac ≡ bd (mod n).
+
+</p>
+
+</div>
+
+<h3>Pembuktian Singkat</h3>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+c ≡ d,
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+ac − bd
+
+= a(c−d)+d(a−b).
+
+</p>
+
+<p>
+
+Kedua suku di ruas kanan habis dibagi n, sehingga
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+ac ≡ bd (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<p style="text-align:center">
+
+19 × 23 (mod 6)
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+19 ≡ 1
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+23 ≡ 5
+
+</p>
+
+<p>
+
+(mod 6), maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+19 × 23 ≡ 1 × 5 ≡ 5 (mod 6).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Pangkat Modulo</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n),
+
+</p>
+
+<p>
+
+maka untuk setiap bilangan bulat positif k berlaku
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a<sup>k</sup> ≡ b<sup>k</sup> (mod n).
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Hitung sisa pembagian
+
+</p>
+
+<p style="text-align:center">
+
+13⁴ (mod 5)
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+13 ≡ 3 (mod 5),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+13⁴ ≡ 3⁴
+
+= 81
+
+≡ 1 (mod 5).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Tabel Ringkasan Operasi</h3>
+
+<table>
+
+<tr>
+
+<th>Operasi</th>
+
+<th>Aturan</th>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan</td>
+
+<td>(a+b) mod n</td>
+
+</tr>
+
+<tr>
+
+<td>Pengurangan</td>
+
+<td>(a−b) mod n</td>
+
+</tr>
+
+<tr>
+
+<td>Perkalian</td>
+
+<td>(ab) mod n</td>
+
+</tr>
+
+<tr>
+
+<td>Pangkat</td>
+
+<td>(a<sup>k</sup>) mod n</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Mengira pembagian modulo selalu boleh dilakukan.
+
+Padahal pembagian hanya dapat dilakukan jika pembaginya memiliki
+<b>invers modulo</b>, yang akan dipelajari pada Subbab 4.5.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menghitung bilangan yang sangat besar terlebih dahulu baru mengambil
+modulonya.
+
+Cara yang benar adalah menyederhanakan modulo pada setiap langkah.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Lupa mengubah hasil negatif menjadi representasi modulo yang sesuai.
+
+Sebagai contoh,
+
+</p>
+
+<p style="text-align:center">
+
+−2 ≡ 5 (mod 7).
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Keahlian paling penting dalam aritmetika modulo bukanlah menghitung
+cepat, tetapi <b>menyederhanakan lebih awal</b>.
+
+Peserta OSN yang berpengalaman hampir selalu mengurangi bilangan ke
+dalam modulo terlebih dahulu sebelum melakukan operasi lainnya.
+
+Dengan cara ini, perhitungan menjadi jauh lebih singkat dan peluang
+kesalahan juga berkurang.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4.3 Sifat-Sifat Kongruensi</h2>
+
+<p>
+
+Pada subbab sebelumnya kita telah mempelajari bahwa operasi penjumlahan,
+pengurangan, perkalian, dan perpangkatan dapat dilakukan pada kongruensi.
+Pada subbab ini kita akan membahas sifat-sifat dasar kongruensi yang
+menjadi fondasi hampir seluruh pembuktian dalam aritmetika modulo.
+
+</p>
+
+<p>
+
+Banyak soal Olimpiade tidak meminta kita menghitung suatu sisa secara
+langsung, tetapi membuktikan bahwa dua bilangan saling kongruen.
+Oleh karena itu, memahami sifat-sifat kongruensi jauh lebih penting
+daripada sekadar menghafal rumus.
+
+</p>
+
+<hr>
+
+<h3>Teorema 4.1 (Sifat Refleksif)</h3>
+
+<div class="theorem">
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ a (mod n)
+
+</p>
+
+<p>
+
+untuk setiap bilangan bulat a dan n > 0.
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+a − a = 0
+
+</p>
+
+<p>
+
+dan setiap bilangan bulat positif membagi nol, maka
+
+</p>
+
+<p style="text-align:center">
+
+n | 0.
+
+</p>
+
+<p>
+
+Jadi,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ a (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Teorema 4.2 (Sifat Simetris)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+b ≡ a (mod n).
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+n | (a − b),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+b − a = −(a − b).
+
+</p>
+
+<p>
+
+Jika suatu bilangan habis membagi x, maka ia juga habis membagi −x.
+
+Jadi,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+b ≡ a (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Teorema 4.3 (Sifat Transitif)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+b ≡ c (mod n),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ c (mod n).
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+n | (a − b)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+n | (b − c),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+(a − b) + (b − c)
+= a − c.
+
+</p>
+
+<p>
+
+Sehingga
+
+</p>
+
+<p style="text-align:center">
+
+n | (a − c).
+
+</p>
+
+<p>
+
+Dengan demikian,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ c (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Teorema 4.4 (Penjumlahan dan Pengurangan)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+c ≡ d (mod n),
+
+</p>
+
+<p>
+
+maka berlaku
+
+</p>
+
+<p style="text-align:center">
+
+a + c ≡ b + d (mod n)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+a − c ≡ b − d (mod n).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Teorema 4.5 (Perkalian)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n),
+
+</p>
+
+<p>
+
+maka untuk setiap bilangan bulat c berlaku
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+ac ≡ bc (mod n).
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+17 ≡ 5 (mod 12),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+17 × 9 ≡ 5 × 9 (mod 12).
+
+</p>
+
+<p>
+
+Artinya,
+
+</p>
+
+<p style="text-align:center">
+
+153 ≡ 45 (mod 12).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Teorema 4.6 (Perpangkatan)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+a ≡ b (mod n),
+
+</p>
+
+<p>
+
+maka untuk setiap bilangan bulat positif k,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a<sup>k</sup> ≡ b<sup>k</sup> (mod n).
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+11 ≡ 3 (mod 8),
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center">
+
+11⁵ ≡ 3⁵ (mod 8).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Teorema 4.7 (Pembatalan atau Cancellation Law)</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+ac ≡ bc (mod n)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+FPB(c,n)=1,
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a ≡ b (mod n).
+
+</p>
+
+</div>
+
+<p>
+
+Syarat FPB(c,n)=1 sangat penting. Tanpa syarat ini,
+pembatalan belum tentu berlaku.
+
+</p>
+
+<div class="example">
+
+<p>
+
+Misalkan
+
+</p>
+
+<p style="text-align:center">
+
+2×2 ≡ 6×2 (mod 8).
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+4 ≡ 12 ≡ 4 (mod 8),
+
+</p>
+
+<p>
+
+pernyataan tersebut benar.
+
+Namun,
+
+</p>
+
+<p style="text-align:center">
+
+2 ≢ 6 (mod 8),
+
+</p>
+
+<p>
+
+karena FPB(2,8)=2 ≠ 1.
+
+Jadi pembatalan tidak boleh dilakukan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Ringkasan Sifat-Sifat Kongruensi</h3>
+
+<table>
+
+<tr>
+
+<th>Sifat</th>
+
+<th>Pernyataan</th>
+
+</tr>
+
+<tr>
+
+<td>Refleksif</td>
+
+<td>a ≡ a (mod n)</td>
+
+</tr>
+
+<tr>
+
+<td>Simetris</td>
+
+<td>a ≡ b ⇒ b ≡ a</td>
+
+</tr>
+
+<tr>
+
+<td>Transitif</td>
+
+<td>a ≡ b dan b ≡ c ⇒ a ≡ c</td>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan</td>
+
+<td>a+c ≡ b+d</td>
+
+</tr>
+
+<tr>
+
+<td>Pengurangan</td>
+
+<td>a−c ≡ b−d</td>
+
+</tr>
+
+<tr>
+
+<td>Perkalian</td>
+
+<td>ac ≡ bc</td>
+
+</tr>
+
+<tr>
+
+<td>Pangkat</td>
+
+<td>aᵏ ≡ bᵏ</td>
+
+</tr>
+
+<tr>
+
+<td>Pembatalan</td>
+
+<td>Hanya jika FPB(c,n)=1</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Kesalahan yang paling sering dilakukan peserta OSN adalah langsung
+"mencoret" suatu faktor pada kongruensi, seperti pada persamaan biasa.
+
+Padahal, pembatalan dalam modulo hanya sah apabila faktor yang dicoret
+relatif prima terhadap modulusnya.
+
+Memahami syarat ini akan menghindarkanmu dari banyak kesalahan
+pembuktian pada bab-bab berikutnya, terutama saat mempelajari
+<b>Invers Modulo</b>, <b>Teorema Fermat Kecil</b>, dan
+<b>Chinese Remainder Theorem</b>.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4.4 Persamaan Kongruensi Linear</h2>
+
+<p>
+
+Salah satu aplikasi terpenting dari kongruensi adalah menyelesaikan
+<b>persamaan kongruensi linear</b>. Materi ini sering muncul dalam
+Olimpiade Matematika karena menjadi dasar bagi <b>Invers Modulo</b>,
+<b>Chinese Remainder Theorem (CRT)</b>, dan berbagai algoritma teori
+bilangan.
+
+</p>
+
+<p>
+
+Bentuk umum persamaan kongruensi linear adalah
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+ax ≡ b (mod n),
+
+</p>
+
+<p>
+
+dengan a, b, dan n merupakan bilangan bulat, sedangkan x adalah
+variabel yang ingin dicari.
+
+</p>
+
+<hr>
+
+<h3>Contoh Sederhana</h3>
+
+<div class="example">
+
+<p>
+
+Tentukan semua solusi dari
+
+</p>
+
+<p style="text-align:center">
+
+x ≡ 4 (mod 7).</p>
+
+<p>
+
+Artinya, x memiliki sisa 4 ketika dibagi 7.
+
+Beberapa solusi adalah
+
+</p>
+
+<p style="text-align:center">
+
+..., −10, −3, 4, 11, 18, 25, ...
+
+</p>
+
+<p>
+
+Secara umum,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+x = 4 + 7k, &nbsp; k ∈ ℤ.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kapan Persamaan Memiliki Solusi?</h3>
+
+<div class="theorem">
+
+<p>
+
+Persamaan
+
+</p>
+
+<p style="text-align:center">
+
+ax ≡ b (mod n)
+
+</p>
+
+<p>
+
+memiliki solusi jika dan hanya jika
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+FPB(a,n) | b.
+
+</p>
+
+</div>
+
+<h3>Pembuktian Singkat</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<p style="text-align:center">
+
+d = FPB(a,n).
+
+</p>
+
+<p>
+
+Jika terdapat solusi x, maka
+
+</p>
+
+<p style="text-align:center">
+
+ax - b = kn
+
+</p>
+
+<p>
+
+untuk suatu bilangan bulat k.
+
+Karena d membagi a dan n, maka d juga harus membagi b.
+
+Sebaliknya, jika d membagi b, maka solusi dapat dibangun menggunakan
+Algoritma Euclid Diperluas.
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Kasus 1 — FPB(a,n)=1</h3>
+
+<div class="definition">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+FPB(a,n)=1,
+
+</p>
+
+<p>
+
+maka persamaan memiliki <b>tepat satu solusi modulo n</b>.
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Selesaikan
+
+</p>
+
+<p style="text-align:center">
+
+3x ≡ 2 (mod 7).
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+FPB(3,7)=1,
+
+</p>
+
+<p>
+
+solusi tunggal pasti ada.
+
+Coba semua residu modulo 7:
+
+</p>
+
+<table>
+
+<tr>
+<th>x</th>
+<th>3x mod 7</th>
+</tr>
+
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>3</td></tr>
+<tr><td>2</td><td>6</td></tr>
+<tr><td>3</td><td>2 ✓</td></tr>
+<tr><td>4</td><td>5</td></tr>
+<tr><td>5</td><td>1</td></tr>
+<tr><td>6</td><td>4</td></tr>
+
+</table>
+
+<p>
+
+Jadi,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+x ≡ 3 (mod 7).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kasus 2 — FPB(a,n) > 1</h3>
+
+<div class="example">
+
+<p>
+
+Selesaikan
+
+</p>
+
+<p style="text-align:center">
+
+4x ≡ 6 (mod 10).
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+FPB(4,10)=2
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+2 | 6,
+
+</p>
+
+<p>
+
+maka persamaan mempunyai solusi.
+
+Membagi semua suku dengan 2 diperoleh
+
+</p>
+
+<p style="text-align:center">
+
+2x ≡ 3 (mod 5).
+
+</p>
+
+<p>
+
+Sekarang FPB(2,5)=1.
+
+Coba nilai modulo 5:
+
+</p>
+
+<p style="text-align:center">
+
+x ≡ 4 (mod 5).
+
+</p>
+
+<p>
+
+Dalam modulo 10, solusi yang diperoleh adalah
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+x ≡ 4 (mod 10)
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+x ≡ 9 (mod 10).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kasus Tanpa Solusi</h3>
+
+<div class="example">
+
+<p>
+
+Perhatikan persamaan
+
+</p>
+
+<p style="text-align:center">
+
+6x ≡ 5 (mod 9).
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+FPB(6,9)=3,
+
+</p>
+
+<p>
+
+tetapi
+
+</p>
+
+<p style="text-align:center">
+
+3 ∤ 5,
+
+</p>
+
+<p>
+
+maka persamaan ini <b>tidak mempunyai solusi</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Algoritma Menyelesaikan Persamaan Linear Modulo</h3>
+
+<ol>
+
+<li>Hitung d = FPB(a,n).</li>
+
+<li>Periksa apakah d membagi b.</li>
+
+<li>Jika tidak, maka tidak ada solusi.</li>
+
+<li>Jika ya, sederhanakan persamaan dengan membagi semua suku oleh d.</li>
+
+<li>Gunakan invers modulo atau Algoritma Euclid Diperluas untuk memperoleh solusi.</li>
+
+</ol>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Langsung membagi kedua ruas oleh a tanpa memastikan bahwa a memiliki
+invers modulo.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Tidak memeriksa syarat
+
+</p>
+
+<p style="text-align:center">
+
+FPB(a,n) | b.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menganggap setiap persamaan kongruensi selalu memiliki tepat satu solusi.
+
+Padahal jumlah solusi bergantung pada FPB(a,n).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Sebelum mencoba menghitung apa pun, biasakan selalu melihat
+<b>FPB(a,n)</b>. Dalam banyak soal OSN, informasi ini saja sudah cukup
+untuk menentukan apakah persamaan memiliki solusi, berapa banyak
+solusinya, bahkan tanpa menghitung nilai x secara eksplisit.
+
+</p>
+
+<p>
+
+Subbab berikutnya akan membahas <b>Invers Modulo</b>, yaitu alat yang
+memungkinkan kita "membagi" dalam aritmetika modulo ketika syaratnya
+terpenuhi.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4.5.5 Sistem Residu</h2>
+
+<p>
+
+Setelah mempelajari konsep kongruensi dan invers modulo, kita akan
+membahas <b>sistem residu</b>. Konsep ini sangat penting karena menjadi
+fondasi bagi <b>Teorema Euler</b>, <b>Teorema Fermat Kecil</b>, dan
+<b>Chinese Remainder Theorem (CRT)</b>.
+
+</p>
+
+<p>
+
+Secara sederhana, sistem residu adalah sekumpulan bilangan yang
+mewakili seluruh kemungkinan sisa pembagian terhadap suatu modulus.
+
+</p>
+
+<hr>
+
+<h3>Intuisi</h3>
+
+<p>
+
+Ketika suatu bilangan dibagi oleh 5, hanya ada lima kemungkinan sisa,
+yaitu
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+0, 1, 2, 3, dan 4.
+
+</p>
+
+<p>
+
+Berapapun besar bilangannya, sisanya pasti salah satu dari kelima
+bilangan tersebut.
+
+Misalnya,
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+<th>Sisa modulo 5</th>
+
+</tr>
+
+<tr>
+
+<td>12</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>27</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>102</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>1007</td>
+<td>2</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semua bilangan tersebut kongruen modulo 5.
+
+</p>
+
+<hr>
+
+<h3>Definisi Sistem Residu Lengkap</h3>
+
+<div class="definition">
+
+<p>
+
+Suatu <b>Sistem Residu Lengkap (Complete Residue System/CRS)</b>
+modulo n adalah sekumpulan tepat n bilangan bulat yang masing-masing
+mewakili satu kelas kongruensi yang berbeda modulo n.
+
+</p>
+
+</div>
+
+<p>
+
+Sistem residu lengkap yang paling sering digunakan adalah
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+{0,1,2,...,n−1}
+
+</p>
+
+<p>
+
+Namun himpunan lain juga dapat menjadi sistem residu lengkap selama
+setiap kelas kongruensi muncul tepat satu kali.
+
+</p>
+
+<hr>
+
+<h3>Contoh</h3>
+
+<div class="example">
+
+<p>
+
+Berikut merupakan sistem residu lengkap modulo 6.
+
+</p>
+
+<p style="text-align:center">
+
+{0,1,2,3,4,5}
+
+</p>
+
+<p>
+
+Himpunan berikut juga merupakan sistem residu lengkap modulo 6.
+
+</p>
+
+<p style="text-align:center">
+
+{6,7,8,9,10,11}
+
+</p>
+
+<p>
+
+Sebab
+
+</p>
+
+<p style="text-align:center">
+
+6≡0,
+
+7≡1,
+
+8≡2,
+
+9≡3,
+
+10≡4,
+
+11≡5
+
+(mod 6).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Sistem Residu Terkecil (Least Residue System)</h3>
+
+<div class="definition">
+
+<p>
+
+Sistem residu terkecil adalah sistem residu lengkap yang menggunakan
+bilangan-bilangan terkecil, yaitu
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+0,1,2,...,n−1.
+
+</p>
+
+<p>
+
+Inilah sistem residu yang hampir selalu digunakan dalam teori bilangan
+dan pemrograman kompetitif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Sistem Residu Tereduksi</h3>
+
+<div class="definition">
+
+<p>
+
+Suatu <b>Sistem Residu Tereduksi (Reduced Residue System/RRS)</b>
+modulo n adalah himpunan semua bilangan dalam sistem residu lengkap
+yang relatif prima terhadap n.
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+Untuk modulo 10,
+
+</p>
+
+<p style="text-align:center">
+
+{0,1,2,3,4,5,6,7,8,9}
+
+</p>
+
+<p>
+
+merupakan sistem residu lengkap.
+
+Bilangan yang relatif prima terhadap 10 adalah
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+{1,3,7,9}
+
+</p>
+
+<p>
+
+Himpunan tersebut merupakan sistem residu tereduksi modulo 10.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Hubungan dengan Fungsi Totien Euler</h3>
+
+<div class="theorem">
+
+<p>
+
+Banyak anggota sistem residu tereduksi modulo n sama dengan nilai
+fungsi Totien Euler.
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+|RRS(n)| = φ(n)
+
+</p>
+
+</div>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<p style="text-align:center">
+
+φ(10)=4
+
+</p>
+
+<p>
+
+karena hanya terdapat empat bilangan yang relatif prima terhadap 10,
+yaitu
+
+</p>
+
+<p style="text-align:center">
+
+1,3,7,9.
+
+</p>
+
+<hr>
+
+<h3>Sifat Penting</h3>
+
+<div class="theorem">
+
+<ul>
+
+<li>Setiap bilangan bulat kongruen dengan tepat satu anggota sistem residu lengkap.</li>
+
+<li>Setiap kelas kongruensi hanya muncul satu kali.</li>
+
+<li>Sistem residu tereduksi hanya berisi bilangan yang relatif prima terhadap modulus.</li>
+
+<li>Jumlah anggota sistem residu tereduksi sama dengan φ(n).</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal Olimpiade</h3>
+
+<div class="example">
+
+<p>
+
+Tuliskan sistem residu tereduksi modulo 12.
+
+</p>
+
+<p>
+
+Bilangan yang relatif prima terhadap 12 adalah
+
+</p>
+
+<p style="text-align:center">
+
+1,5,7,11.
+
+</p>
+
+<p>
+
+Jadi,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+RRS(12)={1,5,7,11}.
+
+</p>
+
+<p>
+
+Karena terdapat empat anggota,
+
+</p>
+
+<p style="text-align:center">
+
+φ(12)=4.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Menganggap sistem residu harus selalu berupa
+{0,1,...,n−1}. Padahal himpunan lain juga dapat menjadi sistem residu
+lengkap selama setiap kelas kongruensi muncul tepat satu kali.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menyamakan sistem residu lengkap dengan sistem residu tereduksi.
+
+Keduanya berbeda. Sistem residu tereduksi hanya memuat bilangan yang
+relatif prima terhadap modulus.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Lupa bahwa banyak anggota sistem residu tereduksi adalah φ(n), bukan n.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Sistem residu mungkin tampak hanya sebagai definisi himpunan, tetapi
+konsep ini merupakan "panggung utama" bagi Teorema Euler dan Chinese
+Remainder Theorem.
+
+Ketika memasuki bab berikutnya, hampir semua pembuktian akan
+menggunakan fakta bahwa setiap kelas kongruensi mempunyai tepat satu
+wakil dalam suatu sistem residu.
+
+</p>
+
+<p>
+
+Memahami konsep ini sekarang akan membuat Teorema Euler dan CRT terasa
+jauh lebih alami.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4.5 Invers Modulo</h2>
+
+<p>
+
+Dalam aritmetika biasa, untuk menyelesaikan persamaan
+
+</p>
+
+<p style="text-align:center">
+
+3x = 6,
+
+</p>
+
+<p>
+
+kita cukup membagi kedua ruas dengan 3 sehingga diperoleh
+<b>x = 2</b>.
+
+Namun, pada aritmetika modulo, operasi pembagian tidak selalu dapat
+dilakukan. Sebagai gantinya, kita menggunakan konsep yang disebut
+<b>invers modulo</b>.
+
+</p>
+
+<hr>
+
+<h3>Definisi</h3>
+
+<div class="definition">
+
+<p>
+
+Misalkan a dan n adalah bilangan bulat dengan n > 1.
+
+Bilangan bulat x disebut <b>invers modulo</b> dari a modulo n apabila
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+ax ≡ 1 (mod n).
+
+</p>
+
+<p>
+
+Invers modulo dari a biasanya ditulis sebagai
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+a<sup>−1</sup> (mod n).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kapan Invers Modulo Ada?</h3>
+
+<div class="theorem">
+
+<p>
+
+Suatu bilangan a memiliki invers modulo n jika dan hanya jika
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+FPB(a,n)=1.
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Jika terdapat invers x sehingga
+
+</p>
+
+<p style="text-align:center">
+
+ax ≡ 1 (mod n),
+
+</p>
+
+<p>
+
+maka terdapat bilangan bulat k sehingga
+
+</p>
+
+<p style="text-align:center">
+
+ax - kn = 1.
+
+</p>
+
+<p>
+
+Persamaan tersebut merupakan bentuk
+<b>Identitas Bézout</b>, yang hanya mungkin terjadi jika
+
+</p>
+
+<p style="text-align:center">
+
+FPB(a,n)=1.
+
+</p>
+
+<p>
+
+Sebaliknya, jika FPB(a,n)=1, maka berdasarkan Algoritma Euclid
+Diperluas terdapat bilangan bulat x dan y yang memenuhi
+
+</p>
+
+<p style="text-align:center">
+
+ax + ny = 1,
+
+</p>
+
+<p>
+
+sehingga
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+ax ≡ 1 (mod n).
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+<p>
+
+Carilah invers modulo dari 3 modulo 7.
+
+</p>
+
+<p>
+
+Kita mencari x sehingga
+
+</p>
+
+<p style="text-align:center">
+
+3x ≡ 1 (mod 7).
+
+</p>
+
+<table>
+
+<tr>
+
+<th>x</th>
+<th>3x mod 7</th>
+
+</tr>
+
+<tr><td>1</td><td>3</td></tr>
+<tr><td>2</td><td>6</td></tr>
+<tr><td>3</td><td>2</td></tr>
+<tr><td>4</td><td>5</td></tr>
+<tr><td>5</td><td>1 ✓</td></tr>
+
+</table>
+
+<p>
+
+Maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+3<sup>−1</sup> ≡ 5 (mod 7).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="example">
+
+<p>
+
+Apakah 6 mempunyai invers modulo 15?
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+FPB(6,15)=3 ≠ 1,
+
+</p>
+
+<p>
+
+maka tidak ada bilangan bulat x yang memenuhi
+
+</p>
+
+<p style="text-align:center">
+
+6x ≡ 1 (mod 15).
+
+</p>
+
+<p>
+
+Jadi, 6 tidak memiliki invers modulo 15.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Menyelesaikan Persamaan dengan Invers Modulo</h3>
+
+<p>
+
+Misalkan akan diselesaikan
+
+</p>
+
+<p style="text-align:center">
+
+5x ≡ 4 (mod 9).
+
+</p>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+FPB(5,9)=1,
+
+</p>
+
+<p>
+
+maka invers modulo dari 5 ada.
+
+Diperoleh
+
+</p>
+
+<p style="text-align:center">
+
+5<sup>−1</sup> ≡ 2 (mod 9),
+
+</p>
+
+<p>
+
+sebab
+
+</p>
+
+<p style="text-align:center">
+
+5 × 2 = 10 ≡ 1 (mod 9).
+
+</p>
+
+<p>
+
+Kalikan kedua ruas dengan 2.
+
+</p>
+
+<p style="text-align:center">
+
+x ≡ 2 × 4
+
+≡ 8 (mod 9).
+
+</p>
+
+<p>
+
+Jadi,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+x ≡ 8 (mod 9).
+
+</p>
+
+<hr>
+
+<h3>Cara Menentukan Invers Modulo</h3>
+
+<div class="definition">
+
+<ol>
+
+<li>Mencoba semua residu (hanya untuk bilangan kecil).</li>
+
+<li>Menggunakan Algoritma Euclid Diperluas.</li>
+
+<li>Menggunakan Teorema Fermat Kecil jika modulus adalah bilangan prima.</li>
+
+<li>Menggunakan Teorema Euler untuk modulus umum.</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h3>Tabel Invers Modulo 7</h3>
+
+<table>
+
+<tr>
+
+<th>a</th>
+<th>a⁻¹ (mod 7)</th>
+
+</tr>
+
+<tr><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>3</td><td>5</td></tr>
+<tr><td>4</td><td>2</td></tr>
+<tr><td>5</td><td>3</td></tr>
+<tr><td>6</td><td>6</td></tr>
+
+</table>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Langsung membagi kedua ruas persamaan modulo tanpa memastikan bahwa
+pembagi memiliki invers modulo.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Lupa memeriksa apakah
+
+</p>
+
+<p style="text-align:center">
+
+FPB(a,n)=1.
+
+</p>
+
+<p>
+
+Jika syarat ini tidak terpenuhi, invers modulo tidak ada.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menganggap invers modulo sama dengan kebalikan pecahan biasa.
+
+Padahal invers modulo selalu dihitung terhadap suatu modulus tertentu.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Invers modulo merupakan "operasi pembagian" dalam dunia kongruensi.
+
+Menguasai konsep ini akan mempermudah pemahaman terhadap
+<b>Chinese Remainder Theorem</b>, <b>Teorema Fermat Kecil</b>,
+<b>Teorema Euler</b>, serta hampir seluruh teknik lanjutan dalam teori
+bilangan.
+
+</p>
+
+<p>
+
+Banyak peserta Olimpiade menghafal rumus invers modulo, tetapi lupa
+bahwa syarat keberadaannya jauh lebih penting daripada cara
+menghitungnya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h2>Ringkasan Bab 4</h2>
+
+<div class="theorem">
+
+<ul>
+
+<li>Modulo mempelajari sisa pembagian suatu bilangan.</li>
+
+<li>Kongruensi menyatakan bahwa dua bilangan memiliki sisa pembagian yang sama.</li>
+
+<li>Operasi penjumlahan, pengurangan, perkalian, dan perpangkatan tetap berlaku dalam modulo.</li>
+
+<li>Persamaan kongruensi linear dapat diselesaikan menggunakan FPB dan invers modulo.</li>
+
+<li>Invers modulo hanya ada jika FPB(a,n)=1.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Penutup Bab 4</h2>
+
+<div class="definition">
+
+<p>
+
+Bab berikutnya akan membahas beberapa teorema klasik yang menjadi
+puncak dari materi aritmetika modulo, yaitu:
+
+</p>
+
+<ul>
+
+<li>Chinese Remainder Theorem (CRT)</li>
+
+<li>Teorema Fermat Kecil</li>
+
+<li>Teorema Euler</li>
+
+<li>Fungsi Totien Euler</li>
+
+<li>Teorema Wilson</li>
+
+</ul>
+
+<p>
+
+Kelima konsep tersebut merupakan inti dari teori bilangan klasik dan
+sering muncul dalam soal Olimpiade Matematika tingkat nasional maupun
+internasional.
+
+</p>
+
+</div>
+
+<nav>
+
+<a href="tb3.html">⬅ Bab Sebelumnya</a>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="tb5.html">Bab Berikutnya ➜</a>
+
+</nav>
+
+</div>
+
+</div>
+
+<footer>
+
+<p><strong>Handbook Teori Bilangan Olimpiade Matematika</strong></p>
+
+<p>© 2026 • Bab 4: Aritmetika Modulo</p>
+
+</footer>
+
+</body>
+</html>
