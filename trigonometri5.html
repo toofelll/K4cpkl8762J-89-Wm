@@ -1,1 +1,4322 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trigonometri Bab 5 - Rumus-Rumus Sudut</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+margin:0;
+line-height:1.8;
+color:#222;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+
+.section{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h1{
+color:#0d47a1;
+}
+
+h2{
+color:#1565c0;
+margin-top:20px;
+}
+
+.note{
+background:#e3f2fd;
+border-left:6px solid #1976d2;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+.example{
+background:#fff8e1;
+border-left:6px solid #f9a825;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+pre{
+background:#f2f2f2;
+padding:15px;
+border-radius:8px;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#1976d2;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+.navigation{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#1976d2;
+color:white;
+padding:12px 18px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="section">
+
+<h1>Bab 5 — Rumus-Rumus Sudut</h1>
+
+<p>
+
+Selamat.
+
+Jika kamu sudah memahami Bab 1 sampai Bab 4,
+maka fondasi trigonometri sudah selesai.
+
+Bab ini merupakan awal dari
+<b>trigonometri tingkat lanjut</b>.
+
+Di sinilah sebagian besar soal
+OSK, OSN, KSN, hingga IMO
+mulai bermain.
+
+</p>
+
+<p>
+
+Mengapa?
+
+Karena hampir semua identitas,
+persamaan,
+integral,
+bahkan bilangan kompleks
+dibangun dari rumus-rumus pada bab ini.
+
+</p>
+
+<p>
+
+Target kita bukan sekadar menghafal rumus.
+
+Target kita adalah memahami
+
+<b>dari mana rumus tersebut berasal,
+mengapa benar,
+dan kapan harus digunakan.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Apa yang Akan Dipelajari?</h2>
+
+<table>
+
+<tr>
+
+<th>Materi</th>
+
+<th>Kegunaan</th>
+
+</tr>
+
+<tr>
+
+<td>Rumus Jumlah Sudut</td>
+
+<td>Menghitung sin(a+b), cos(a+b), tan(a+b)</td>
+
+</tr>
+
+<tr>
+
+<td>Rumus Selisih Sudut</td>
+
+<td>Menghitung sin(a−b), cos(a−b), tan(a−b)</td>
+
+</tr>
+
+<tr>
+
+<td>Sudut Rangkap</td>
+
+<td>Mengubah sudut menjadi 2A</td>
+
+</tr>
+
+<tr>
+
+<td>Sudut Setengah</td>
+
+<td>Mengubah sudut menjadi A/2</td>
+
+</tr>
+
+<tr>
+
+<td>Sudut Tiga Kali</td>
+
+<td>Menyelesaikan persamaan tingkat lanjut</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>Mengapa Bab Ini Sangat Penting?</h2>
+
+<p>
+
+Misalkan kita mengetahui
+
+</p>
+
+<pre>
+
+sin 30°
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+sin 45°
+
+</pre>
+
+<p>
+
+Bagaimana menghitung
+
+</p>
+
+<pre>
+
+sin 75°
+
+</pre>
+
+<p>
+
+Padahal
+
+</p>
+
+<pre>
+
+75°
+
+</pre>
+
+<p>
+
+bukan sudut istimewa.
+
+Jawabannya adalah
+
+</p>
+
+<pre>
+
+75°
+
+=
+
+30° + 45°
+
+</pre>
+
+<p>
+
+Kemudian gunakan
+
+<b>Rumus Jumlah Sudut.</b>
+
+</p>
+
+<p>
+
+Inilah alasan
+mengapa bab ini menjadi
+salah satu materi terpenting
+dalam seluruh trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Peserta Olimpiade tidak menghafal
+nilai sin 75°, cos 15°, tan 105°, dan sebagainya.
+
+Mereka cukup menghafal
+<b>rumus jumlah dan selisih sudut</b>,
+lalu membangun sendiri nilai-nilai tersebut
+dalam beberapa langkah.
+
+Dengan satu rumus,
+kamu bisa memperoleh
+ratusan nilai trigonometri yang berbeda.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 1 : Rumus Jumlah Sudut --><section class="section">
+
+<h2>1. Rumus Jumlah Sudut (Angle Addition Formula)</h2>
+
+<p>
+
+Rumus Jumlah Sudut adalah
+rumus yang digunakan
+untuk menghitung nilai trigonometri
+dari penjumlahan dua sudut.
+
+</p>
+
+<p>
+
+Misalnya,
+
+</p>
+
+<pre>
+
+15°
+
+75°
+
+105°
+
+165°
+
+</pre>
+
+<p>
+
+Semua sudut tersebut
+bukan sudut istimewa.
+
+Namun,
+
+kita dapat menuliskannya sebagai
+
+</p>
+
+<pre>
+
+15°
+
+=
+
+45° − 30°
+
+</pre>
+
+<pre>
+
+75°
+
+=
+
+45° + 30°
+
+</pre>
+
+<pre>
+
+105°
+
+=
+
+60° + 45°
+
+</pre>
+
+<pre>
+
+165°
+
+=
+
+120° + 45°
+
+</pre>
+
+<p>
+
+Dengan demikian,
+nilai sinus,
+cosinus,
+dan tangen
+dapat dihitung menggunakan
+Rumus Jumlah Sudut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Rumus Ini Ada?</h2>
+
+<p>
+
+Pertanyaan yang bagus adalah,
+
+mengapa
+
+</p>
+
+<pre>
+
+sin(A+B)
+
+</pre>
+
+<p>
+
+tidak sama dengan
+
+</p>
+
+<pre>
+
+sinA + sinB
+
+</pre>
+
+<p>
+
+Jawabannya karena
+fungsi trigonometri
+<b>bukan fungsi linear.</b>
+
+Artinya,
+
+</p>
+
+<pre>
+
+f(a+b)
+
+≠
+
+f(a)+f(b)
+
+</pre>
+
+<p>
+
+Berbeda dengan operasi penjumlahan biasa,
+perubahan sudut menyebabkan
+perubahan koordinat pada Lingkaran Satuan,
+sehingga muncul hubungan yang lebih kompleks.
+
+</p>
+
+<p>
+
+Rumus jumlah sudut sebenarnya berasal dari
+<b>rotasi vektor pada bidang koordinat</b>.
+Di tingkat universitas,
+rumus ini dibuktikan menggunakan matriks rotasi.
+
+Namun untuk SMA dan Olimpiade,
+kita fokus memahami cara menggunakannya terlebih dahulu.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Rumus Jumlah Sudut Sinus</h2>
+
+<p>
+
+Rumus pertama adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(A+B)
+
+=
+
+sinA cosB
+
++
+
+cosA sinB
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan polanya.
+
+</p>
+
+<ul>
+
+<li>Sin dikali Cos.</li>
+
+<li>Ditambah Cos dikali Sin.</li>
+
+</ul>
+
+<p>
+
+Banyak siswa menghafalnya sebagai
+
+</p>
+
+<pre>
+
+SC + CS
+
+</pre>
+
+<p>
+
+Agar lebih mudah diingat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Rumus Jumlah Sudut Cosinus</h2>
+
+<p>
+
+Rumus kedua adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos(A+B)
+
+=
+
+cosA cosB
+
+−
+
+sinA sinB
+
+</pre>
+
+</div>
+
+<p>
+
+Polanya berbeda dengan sinus.
+
+</p>
+
+<ul>
+
+<li>Cos × Cos.</li>
+
+<li>Dikurangi Sin × Sin.</li>
+
+</ul>
+
+<p>
+
+Cara cepat mengingatnya adalah
+
+</p>
+
+<pre>
+
+CC − SS
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>5. Rumus Jumlah Sudut Tangen</h2>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+tan
+
+=
+
+sin
+
+────
+
+cos
+
+</pre>
+
+<p>
+
+maka rumus tangen
+diturunkan dari rumus sinus
+dan cosinus.
+
+Hasil akhirnya adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan(A+B)
+
+=
+
+tanA + tanB
+
+────────────────
+
+1 − tanA tanB
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan penyebutnya.
+
+</p>
+
+<pre>
+
+1 − tanA tanB
+
+</pre>
+
+<p>
+
+Inilah bagian yang paling sering
+tertukar dengan rumus selisih sudut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Cara Mengingat Ketiga Rumus</h2>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Pola</th>
+
+</tr>
+
+<tr>
+
+<td>Sin(A+B)</td>
+
+<td>SC + CS</td>
+
+</tr>
+
+<tr>
+
+<td>Cos(A+B)</td>
+
+<td>CC − SS</td>
+
+</tr>
+
+<tr>
+
+<td>Tan(A+B)</td>
+
+<td>(T+T)/(1−TT)</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Pola sederhana ini jauh lebih mudah
+daripada menghafal seluruh rumus sekaligus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin75°
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+75°
+
+=
+
+45° + 30°
+
+</pre>
+
+<p>
+
+Gunakan rumus jumlah sudut.
+
+</p>
+
+<pre>
+
+sin75°
+
+=
+
+sin45 cos30
+
++
+
+cos45 sin30
+
+</pre>
+
+<p>
+
+Substitusi nilai sudut istimewa.
+
+</p>
+
+<pre>
+
+=
+
+(√2/2)(√3/2)
+
++
+
+(√2/2)(1/2)
+
+</pre>
+
+<pre>
+
+=
+
+√6 + √2
+
+──────────
+
+4
+
+</pre>
+
+<p>
+
+Inilah nilai eksak
+
+</p>
+
+<pre>
+
+sin75°
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos75°
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+75°
+
+=
+
+45° + 30°
+
+</pre>
+
+<pre>
+
+cos75°
+
+=
+
+cos45 cos30
+
+−
+
+sin45 sin30
+
+</pre>
+
+<pre>
+
+=
+
+(√2/2)(√3/2)
+
+−
+
+(√2/2)(1/2)
+
+</pre>
+
+<pre>
+
+=
+
+√6 − √2
+
+──────────
+
+4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+tan75°
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+75°
+
+=
+
+45° + 30°
+
+</pre>
+
+<pre>
+
+tan75°
+
+=
+
+1 + 1/√3
+
+────────────
+
+1 − 1/√3
+
+</pre>
+
+<p>
+
+Kalikan pembilang dan penyebut
+dengan
+
+</p>
+
+<pre>
+
+√3
+
+</pre>
+
+<pre>
+
+=
+
+√3 + 1
+
+────────
+
+√3 − 1
+
+</pre>
+
+<p>
+
+Rasionalkan penyebut.
+
+</p>
+
+<pre>
+
+=
+
+2 + √3
+
+</pre>
+
+<p>
+
+Nilai ini sering muncul
+pada soal Olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap sin(A+B)=sinA+sinB.</li>
+
+<li>Tertukar tanda pada rumus cos(A+B).</li>
+
+<li>Salah menulis penyebut rumus tan(A+B).</li>
+
+<li>Lupa menyederhanakan bentuk akar.</li>
+
+<li>Tidak mengenali bahwa suatu sudut dapat dipecah menjadi jumlah dua sudut istimewa.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Daripada menghafal nilai
+
+</p>
+
+<pre>
+
+15°, 75°, 105°, 165°
+
+</pre>
+
+<p>
+
+hafalkan satu rumus jumlah sudut.
+
+Dengan rumus ini,
+kamu bisa membangun sendiri
+semua nilai tersebut hanya dalam beberapa langkah.
+
+Inilah cara berpikir yang digunakan
+peserta OSN dan IMO:
+<b>membangun jawaban dari konsep,
+bukan menghafal hasil.</b>
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 2 : Rumus Selisih Sudut --><section class="section">
+
+<h2>11. Rumus Selisih Sudut (Angle Difference Formula)</h2>
+
+<p>
+
+Jika sebelumnya kita mempelajari
+rumus untuk
+
+</p>
+
+<pre>
+
+A + B
+
+</pre>
+
+<p>
+
+maka sekarang kita akan mempelajari
+
+</p>
+
+<pre>
+
+A - B
+
+</pre>
+
+<p>
+
+Rumus selisih sudut
+digunakan ketika suatu sudut
+dapat ditulis sebagai
+<b>pengurangan dua sudut yang diketahui.</b>
+
+</p>
+
+<p>
+
+Contohnya,
+
+</p>
+
+<pre>
+
+15°
+
+=
+
+45° - 30°
+
+</pre>
+
+<pre>
+
+105°
+
+=
+
+150° - 45°
+
+</pre>
+
+<pre>
+
+165°
+
+=
+
+180° - 15°
+
+</pre>
+
+<p>
+
+Rumus ini sangat sering digunakan
+bersama rumus jumlah sudut.
+
+Bahkan pada banyak soal Olimpiade,
+keduanya dipakai secara bersamaan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>12. Mengapa Rumus Selisih Ada?</h2>
+
+<p>
+
+Perhatikan bahwa
+
+</p>
+
+<pre>
+
+A - B
+
+=
+
+A + (-B)
+
+</pre>
+
+<p>
+
+Karena kita sudah mengetahui
+rumus jumlah sudut,
+
+maka rumus selisih sebenarnya
+dapat diperoleh dengan
+menggunakan identitas
+
+</p>
+
+<pre>
+
+sin(-x) = -sin x
+
+</pre>
+
+<pre>
+
+cos(-x) = cos x
+
+</pre>
+
+<pre>
+
+tan(-x) = -tan x
+
+</pre>
+
+<p>
+
+Artinya,
+rumus selisih bukan rumus baru,
+melainkan hasil pengembangan
+dari rumus jumlah sudut.
+
+Inilah salah satu alasan
+mengapa identitas trigonometri
+dipelajari terlebih dahulu.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>13. Rumus Selisih Sudut Sinus</h2>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+sin(A-B)
+
+=
+
+sin(A+(-B))
+
+</pre>
+
+<p>
+
+Hasilnya adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(A-B)
+
+=
+
+sinA cosB
+
+-
+
+cosA sinB
+
+</pre>
+
+</div>
+
+<p>
+
+Bandingkan dengan rumus jumlah sudut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Jumlah</th>
+
+<th>Selisih</th>
+
+</tr>
+
+<tr>
+
+<td>SC + CS</td>
+
+<td>SC − CS</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Hanya tanda tengahnya yang berubah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>14. Rumus Selisih Sudut Cosinus</h2>
+
+<p>
+
+Sekarang cosinus.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos(A-B)
+
+=
+
+cosA cosB
+
++
+
+sinA sinB
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan lagi perbedaannya.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Jumlah</th>
+
+<th>Selisih</th>
+
+</tr>
+
+<tr>
+
+<td>CC − SS</td>
+
+<td>CC + SS</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Sekali lagi,
+yang berubah hanyalah
+tanda di tengah.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>15. Rumus Selisih Sudut Tangen</h2>
+
+<p>
+
+Dengan cara yang sama,
+diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan(A-B)
+
+=
+
+tanA - tanB
+
+────────────────
+
+1 + tanA tanB
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan penyebutnya.
+
+</p>
+
+<pre>
+
+1 + tanA tanB
+
+</pre>
+
+<p>
+
+Ini merupakan kebalikan
+dari rumus jumlah sudut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>16. Ringkasan Perbandingan</h2>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Jumlah</th>
+
+<th>Selisih</th>
+
+</tr>
+
+<tr>
+
+<td>Sin</td>
+
+<td>SC + CS</td>
+
+<td>SC − CS</td>
+
+</tr>
+
+<tr>
+
+<td>Cos</td>
+
+<td>CC − SS</td>
+
+<td>CC + SS</td>
+
+</tr>
+
+<tr>
+
+<td>Tan</td>
+
+<td>(T+T)/(1−TT)</td>
+
+<td>(T−T)/(1+TT)</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan pola yang sangat indah.
+
+Setiap tanda pada rumus jumlah
+akan berubah
+menjadi kebalikannya
+pada rumus selisih.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>17. Cara Mengingat Tanpa Menghafal</h2>
+
+<div class="note">
+
+<p>
+
+Gunakan aturan berikut.
+
+</p>
+
+<ul>
+
+<li>Jika soal memakai <b>+</b>, gunakan tanda atas.</li>
+<li>Jika soal memakai <b>−</b>, semua tanda di rumus ikut berubah.</li>
+</ul>
+
+<table>
+
+<tr>
+
+<th>Operasi</th>
+
+<th>Tanda Tengah</th>
+
+<th>Penyebut Tan</th>
+
+</tr>
+
+<tr>
+
+<td>A + B</td>
+
+<td>+</td>
+
+<td>1 − TT</td>
+
+</tr>
+
+<tr>
+
+<td>A − B</td>
+
+<td>−</td>
+
+<td>1 + TT</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>18. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin15°
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+15°
+
+=
+
+45° - 30°
+
+</pre>
+
+<p>
+
+Gunakan rumus selisih.
+
+</p>
+
+<pre>
+
+sin15°
+
+=
+
+sin45 cos30
+
+-
+
+cos45 sin30
+
+</pre>
+
+<pre>
+
+=
+
+(√2/2)(√3/2)
+
+-
+
+(√2/2)(1/2)
+
+</pre>
+
+<pre>
+
+=
+
+√6 - √2
+
+──────────
+
+4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>19. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos15°
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+15°
+
+=
+
+45° - 30°
+
+</pre>
+
+<pre>
+
+cos15°
+
+=
+
+cos45 cos30
+
++
+
+sin45 sin30
+
+</pre>
+
+<pre>
+
+=
+
+(√2/2)(√3/2)
+
++
+
+(√2/2)(1/2)
+
+</pre>
+
+<pre>
+
+=
+
+√6 + √2
+
+──────────
+
+4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>20. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+tan15°
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+15°
+
+=
+
+45° - 30°
+
+</pre>
+
+<pre>
+
+tan15°
+
+=
+
+1 - 1/√3
+
+────────────
+
+1 + 1/√3
+
+</pre>
+
+<p>
+
+Kalikan pembilang dan penyebut
+dengan
+
+</p>
+
+<pre>
+
+√3
+
+</pre>
+
+<pre>
+
+=
+
+√3 - 1
+
+────────
+
+√3 + 1
+
+</pre>
+
+<p>
+
+Rasionalkan penyebut.
+
+</p>
+
+<pre>
+
+=
+
+2 - √3
+
+</pre>
+
+<p>
+
+Nilai ini juga sangat sering
+muncul pada soal OSN.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>21. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Tertukar antara rumus jumlah dan selisih.</li>
+
+<li>Lupa bahwa cos(A−B) menggunakan tanda <b>+</b>.</li>
+
+<li>Salah menulis penyebut rumus tan(A−B).</li>
+
+<li>Tidak menyederhanakan bentuk akar setelah perhitungan.</li>
+
+<li>Menghafal rumus tanpa memahami polanya.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Jangan hafalkan enam rumus sekaligus.
+
+Cukup hafalkan tiga rumus jumlah sudut.
+
+Kemudian gunakan identitas
+
+</p>
+
+<pre>
+
+A - B = A + (-B)
+
+</pre>
+
+<p>
+
+beserta sifat
+
+</p>
+
+<pre>
+
+sin(-x)
+
+cos(-x)
+
+tan(-x)
+
+</pre>
+
+<p>
+
+Maka seluruh rumus selisih
+dapat diturunkan sendiri
+dalam waktu kurang dari satu menit.
+
+Kemampuan menurunkan rumus
+jauh lebih berharga
+daripada sekadar menghafalnya.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 3 : Rumus Sudut Rangkap (Double Angle Formula) --><section class="section">
+
+<h2>22. Rumus Sudut Rangkap (Double Angle Formula)</h2>
+
+<p>
+
+Setelah mempelajari
+rumus jumlah dan selisih sudut,
+
+kita akan menemukan
+salah satu rumus
+yang paling sering muncul
+dalam Olimpiade Matematika,
+yaitu
+
+<b>Rumus Sudut Rangkap.</b>
+
+</p>
+
+<p>
+
+Sudut rangkap berarti
+
+</p>
+
+<pre>
+
+2A
+
+</pre>
+
+<p>
+
+atau dua kali suatu sudut.
+
+Misalnya
+
+</p>
+
+<pre>
+
+20° → 40°
+
+35° → 70°
+
+45° → 90°
+
+60° → 120°
+
+</pre>
+
+<p>
+
+Rumus ini sangat penting
+karena mampu mengubah
+persamaan yang rumit
+menjadi lebih sederhana.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>23. Dari Mana Rumus Sudut Rangkap Berasal?</h2>
+
+<p>
+
+Hal menariknya,
+rumus sudut rangkap
+<b>bukan rumus baru.</b>
+
+Ia berasal langsung dari
+Rumus Jumlah Sudut.
+
+</p>
+
+<p>
+
+Perhatikan bahwa
+
+</p>
+
+<pre>
+
+2A
+
+=
+
+A + A
+
+</pre>
+
+<p>
+
+Artinya,
+
+cukup gunakan rumus
+
+</p>
+
+<pre>
+
+sin(A+B)
+
+</pre>
+
+<p>
+
+lalu ganti
+
+</p>
+
+<pre>
+
+B = A
+
+</pre>
+
+<p>
+
+Maka seluruh rumus sudut rangkap
+akan muncul secara otomatis.
+
+</p>
+
+<p>
+
+Inilah cara berpikir
+yang digunakan dalam Olimpiade:
+<b>menurunkan rumus dari konsep,
+bukan menghafalnya.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>24. Rumus Sudut Rangkap Sinus</h2>
+
+<p>
+
+Gunakan rumus
+
+</p>
+
+<pre>
+
+sin(A+B)
+
+=
+
+sinA cosB
+
++
+
+cosA sinB
+
+</pre>
+
+<p>
+
+Kemudian pilih
+
+</p>
+
+<pre>
+
+B = A
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin2A
+
+=
+
+2 sinA cosA
+
+</pre>
+
+</div>
+
+<p>
+
+Ini adalah rumus
+yang paling sederhana
+dan paling sering digunakan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>25. Rumus Sudut Rangkap Cosinus</h2>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+cos(A+B)
+
+=
+
+cosA cosB
+
+-
+
+sinA sinB
+
+</pre>
+
+<p>
+
+Dengan
+
+</p>
+
+<pre>
+
+B = A
+
+</pre>
+
+<p>
+
+diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos2A
+
+=
+
+cos²A
+
+-
+
+sin²A
+
+</pre>
+
+</div>
+
+<p>
+
+Namun rumus ini
+dapat diubah lagi
+menggunakan Identitas Pythagoras.
+
+Akibatnya,
+cosinus memiliki
+<b>tiga bentuk yang ekuivalen.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>26. Tiga Bentuk Rumus Cos 2A</h2>
+
+<div class="note">
+
+<pre>
+
+cos2A
+
+=
+
+cos²A
+
+-
+
+sin²A
+
+</pre>
+
+<br>
+
+<pre>
+
+cos2A
+
+=
+
+2cos²A
+
+-
+
+1
+
+</pre>
+
+<br>
+
+<pre>
+
+cos2A
+
+=
+
+1
+
+-
+
+2sin²A
+
+</pre>
+
+</div>
+
+<p>
+
+Ketiga rumus tersebut
+sama persis.
+
+Perbedaannya hanya
+bergantung pada
+bentuk soal yang diberikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>27. Mengapa Ada Tiga Bentuk?</h2>
+
+<p>
+
+Gunakan Identitas Pythagoras.
+
+</p>
+
+<pre>
+
+sin²A
+
++
+
+cos²A
+
+=
+
+1
+
+</pre>
+
+<p>
+
+Jika ingin menghilangkan
+
+</p>
+
+<pre>
+
+sin²A
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+sin²A
+
+=
+
+1
+
+-
+
+cos²A
+
+</pre>
+
+<p>
+
+Substitusikan ke rumus pertama.
+
+Hasilnya
+
+</p>
+
+<pre>
+
+cos2A
+
+=
+
+2cos²A
+
+-
+
+1
+
+</pre>
+
+<p>
+
+Sebaliknya,
+jika ingin menghilangkan
+
+</p>
+
+<pre>
+
+cos²A
+
+</pre>
+
+<p>
+
+akan diperoleh
+
+</p>
+
+<pre>
+
+cos2A
+
+=
+
+1
+
+-
+
+2sin²A
+
+</pre>
+
+<p>
+
+Inilah alasan
+mengapa cosinus
+memiliki tiga bentuk.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>28. Rumus Sudut Rangkap Tangen</h2>
+
+<p>
+
+Gunakan rumus jumlah sudut
+untuk tangen.
+
+Karena
+
+</p>
+
+<pre>
+
+2A = A + A
+
+</pre>
+
+<p>
+
+maka diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan2A
+
+=
+
+2tanA
+
+────────────
+
+1-tan²A
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan penyebutnya.
+
+Jika
+
+</p>
+
+<pre>
+
+tan²A = 1
+
+</pre>
+
+<p>
+
+maka penyebut menjadi nol,
+sehingga tan2A
+tidak terdefinisi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>29. Kapan Menggunakan Bentuk yang Mana?</h2>
+
+<table>
+
+<tr>
+
+<th>Situasi</th>
+
+<th>Gunakan</th>
+
+</tr>
+
+<tr>
+
+<td>Soal mengandung sin dan cos</td>
+
+<td>cos²A−sin²A</td>
+
+</tr>
+
+<tr>
+
+<td>Hanya ada cos</td>
+
+<td>2cos²A−1</td>
+
+</tr>
+
+<tr>
+
+<td>Hanya ada sin</td>
+
+<td>1−2sin²A</td>
+
+</tr>
+
+<tr>
+
+<td>Persamaan tan</td>
+
+<td>tan2A</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Memilih bentuk yang tepat
+akan membuat penyelesaian
+jauh lebih singkat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>30. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+sinA = 3/5
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+cosA = 4/5
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin2A
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+sin2A
+
+=
+
+2sinAcosA
+
+</pre>
+
+<pre>
+
+=
+
+2
+
+×
+
+3/5
+
+×
+
+4/5
+
+</pre>
+
+<pre>
+
+=
+
+24/25
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>31. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+cosA
+
+=
+
+5/13
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos2A
+
+</pre>
+
+<p>
+
+Gunakan bentuk
+
+</p>
+
+<pre>
+
+2cos²A-1
+
+</pre>
+
+<pre>
+
+=
+
+2
+
+×
+
+25/169
+
+-
+
+1
+
+</pre>
+
+<pre>
+
+=
+
+50/169
+
+-
+
+169/169
+
+</pre>
+
+<pre>
+
+=
+
+-119/169
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>32. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+1 + cos2A
+
+=
+
+2cos²A
+
+</pre>
+
+<p>
+
+Gunakan salah satu bentuk
+rumus sudut rangkap.
+
+</p>
+
+<pre>
+
+cos2A
+
+=
+
+2cos²A
+
+-
+
+1
+
+</pre>
+
+<p>
+
+Tambahkan
+
+</p>
+
+<pre>
+
+1
+
+</pre>
+
+<p>
+
+ke kedua ruas.
+
+</p>
+
+<pre>
+
+1 + cos2A
+
+=
+
+2cos²A
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>33. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Mengira sin²2A berarti sin(4A).</li>
+
+<li>Lupa bahwa cos2A memiliki tiga bentuk.</li>
+
+<li>Salah memilih bentuk sehingga perhitungan menjadi panjang.</li>
+
+<li>Tertukar antara tan²A dan tan2A.</li>
+
+<li>Menghafal tanpa mengetahui asal rumusnya.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Dalam soal OSN,
+rumus sudut rangkap hampir selalu muncul
+bersama Identitas Pythagoras.
+
+Karena itu,
+jangan hanya menghafal tiga bentuk
+rumus cos2A.
+
+Pahami bagaimana satu bentuk
+dapat diubah menjadi bentuk lainnya.
+
+Kemampuan memilih bentuk yang tepat
+sering menjadi pembeda
+antara solusi 10 langkah
+dan solusi 3 langkah.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 4 : Rumus Sudut Setengah (Half Angle Formula) --><section class="section">
+
+<h2>34. Rumus Sudut Setengah (Half Angle Formula)</h2>
+
+<p>
+
+Jika rumus sebelumnya
+mengubah sudut
+
+</p>
+
+<pre>
+
+A → 2A
+
+</pre>
+
+<p>
+
+maka sekarang kita melakukan
+kebalikannya.
+
+Kita ingin mencari nilai
+
+</p>
+
+<pre>
+
+A/2
+
+</pre>
+
+<p>
+
+atau <b>setengah sudut</b>.
+
+</p>
+
+<p>
+
+Materi ini termasuk
+materi favorit pada
+OSK, OSN, hingga seleksi perguruan tinggi
+karena banyak identitas rumit
+dapat disederhanakan
+menggunakan rumus ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>35. Dari Mana Rumus Sudut Setengah Berasal?</h2>
+
+<p>
+
+Rumus sudut setengah
+sebenarnya berasal dari
+rumus sudut rangkap.
+
+Misalnya,
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos2A
+
+=
+
+1
+
+-
+
+2sin²A
+
+</pre>
+
+</div>
+
+<p>
+
+Kemudian kita ubah
+agar mendapatkan
+
+</p>
+
+<pre>
+
+sin²A
+
+</pre>
+
+<p>
+
+Hasilnya
+
+</p>
+
+<pre>
+
+sin²A
+
+=
+
+1-cos2A
+
+──────────
+
+2
+
+</pre>
+
+<p>
+
+Sekarang ganti
+
+</p>
+
+<pre>
+
+2A
+
+→
+
+A
+
+</pre>
+
+<p>
+
+Maka muncullah
+rumus sudut setengah.
+
+</p>
+
+<p>
+
+Artinya,
+rumus ini bukan rumus baru,
+tetapi hasil manipulasi
+rumus sudut rangkap.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>36. Rumus Sinus Sudut Setengah</h2>
+
+<div class="note">
+
+<pre>
+
+          ___________
+
+         ╱ 1-cosA
+
+sin(A/2)=√─────────
+
+            2
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+          ___________
+
+         ╱ 1-cosA
+
+sin(A/2)=±√─────────
+
+            2
+
+</pre>
+
+</div>
+
+<p>
+
+Mengapa ada tanda
+
+</p>
+
+<pre>
+
+±
+
+</pre>
+
+<p>
+
+Karena akar kuadrat
+memiliki dua kemungkinan.
+
+Tanda yang dipilih
+ditentukan oleh kuadran
+tempat sudut
+
+</p>
+
+<pre>
+
+A/2
+
+</pre>
+
+<p>
+
+berada.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>37. Rumus Cosinus Sudut Setengah</h2>
+
+<div class="note">
+
+<pre>
+
+          ___________
+
+         ╱ 1+cosA
+
+cos(A/2)=√─────────
+
+            2
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+          ___________
+
+         ╱ 1+cosA
+
+cos(A/2)=±√─────────
+
+            2
+
+</pre>
+
+</div>
+
+<p>
+
+Sama seperti sinus,
+pemilihan tanda
+bergantung pada kuadran.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>38. Rumus Tangen Sudut Setengah</h2>
+
+<p>
+
+Untuk tangen,
+terdapat tiga bentuk
+yang semuanya ekuivalen.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan(A/2)
+
+=
+
+sinA
+
+────────
+
+1+cosA
+
+</pre>
+
+<br>
+
+<pre>
+
+tan(A/2)
+
+=
+
+1-cosA
+
+────────
+
+sinA
+
+</pre>
+
+<br>
+
+<pre>
+
+           ___________
+
+          ╱ 1-cosA
+
+tan(A/2)=±√─────────
+
+             1+cosA
+
+</pre>
+
+</div>
+
+<p>
+
+Pada Olimpiade,
+dua bentuk pertama
+lebih sering digunakan
+karena tidak melibatkan akar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>39. Mengapa Ada Banyak Bentuk?</h2>
+
+<p>
+
+Karena setiap bentuk
+lebih cocok
+untuk jenis soal tertentu.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Kondisi Soal</th>
+
+<th>Gunakan</th>
+
+</tr>
+
+<tr>
+
+<td>Diketahui cosA</td>
+
+<td>Rumus akar</td>
+
+</tr>
+
+<tr>
+
+<td>Diketahui sinA</td>
+
+<td>sin/(1+cos)</td>
+
+</tr>
+
+<tr>
+
+<td>Ingin menghilangkan cos</td>
+
+<td>(1-cos)/sin</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Peserta Olimpiade
+selalu memilih bentuk
+yang menghasilkan
+perhitungan paling singkat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>40. Menentukan Tanda ±</h2>
+
+<p>
+
+Ini adalah bagian
+yang paling sering salah.
+
+</p>
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+A = 240°
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+A/2
+
+=
+
+120°
+
+</pre>
+
+<p>
+
+Sudut
+
+</p>
+
+<pre>
+
+120°
+
+</pre>
+
+<p>
+
+berada di Kuadran II.
+
+Di kuadran tersebut
+
+</p>
+
+<ul>
+
+<li>Sin positif.</li>
+<li>Cos negatif.</li>
+<li>Tan negatif.</li>
+</ul>
+
+<p>
+
+Maka tanda
+dipilih sesuai
+dengan aturan kuadran.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>41. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin30°
+
+</pre>
+
+<p>
+
+menggunakan
+rumus sudut setengah.
+
+Karena
+
+</p>
+
+<pre>
+
+30°
+
+=
+
+60°/2
+
+</pre>
+
+<p>
+
+Gunakan rumus.
+
+</p>
+
+<pre>
+
+           ___________
+
+          ╱1-cos60°
+
+√──────────────
+
+        2
+
+</pre>
+
+<pre>
+
+          _______
+
+         ╱1-1/2
+
+=√──────────
+
+        2
+
+</pre>
+
+<pre>
+
+=√1/4
+
+=1/2
+
+</pre>
+
+<p>
+
+Hasilnya sama
+dengan nilai sudut istimewa.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>42. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+cosA
+
+=
+
+3/5
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+0°<A<180°
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos(A/2)
+
+</pre>
+
+<p>
+
+Gunakan rumus.
+
+</p>
+
+<pre>
+
+          ___________
+
+         ╱1+3/5
+
+√────────────
+
+       2
+
+</pre>
+
+<pre>
+
+=√4/5
+
+</pre>
+
+<pre>
+
+=2/√5
+
+</pre>
+
+<p>
+
+Rasionalkan.
+
+</p>
+
+<pre>
+
+=2√5/5
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>43. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+1-cosA
+
+────────
+
+sinA
+
+=
+
+tan(A/2)
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+1-cos²A
+
+=
+
+sin²A
+
+</pre>
+
+<p>
+
+serta
+rumus sudut setengah.
+
+Melalui manipulasi aljabar,
+kedua ruas
+akan menjadi identik.
+
+</p>
+
+<p>
+
+Soal seperti ini
+sering muncul
+dalam pembuktian identitas.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>44. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Lupa menentukan tanda ± berdasarkan kuadran.</li>
+
+<li>Menghafal rumus tanpa mengetahui asalnya.</li>
+
+<li>Salah memilih bentuk rumus.</li>
+
+<li>Tidak merasionalkan penyebut jika diperlukan.</li>
+
+<li>Menganggap semua hasil akar bernilai positif.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Dalam soal identitas trigonometri,
+rumus sudut setengah hampir selalu dipasangkan
+dengan Identitas Pythagoras
+dan rumus sudut rangkap.
+
+Jangan menghafal rumus secara terpisah.
+
+Pahami bahwa semuanya saling terhubung.
+
+Jika kamu memahami hubungan antar rumus,
+maka ketika lupa satu rumus,
+kamu dapat menurunkannya kembali
+hanya dalam beberapa langkah.
+
+Itulah cara berpikir seorang matematikawan.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 5 : Rumus Sudut Tiga Kali (Triple Angle Formula) --><section class="section">
+
+<h2>45. Rumus Sudut Tiga Kali (Triple Angle Formula)</h2>
+
+<p>
+
+Kita telah mempelajari
+
+</p>
+
+<pre>
+
+A
+
+↓
+
+2A
+
+</pre>
+
+<p>
+
+Sekarang kita akan mempelajari
+
+</p>
+
+<pre>
+
+3A
+
+</pre>
+
+<p>
+
+atau
+
+<b>Sudut Tiga Kali (Triple Angle).</b>
+
+</p>
+
+<p>
+
+Rumus ini sering muncul
+pada soal Olimpiade,
+terutama pada pembuktian identitas,
+persamaan trigonometri,
+hingga bilangan kompleks.
+
+</p>
+
+<p>
+
+Walaupun terlihat sulit,
+rumus ini sebenarnya berasal
+dari Rumus Jumlah Sudut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>46. Dari Mana Rumus Sudut Tiga Kali Berasal?</h2>
+
+<p>
+
+Perhatikan bahwa
+
+</p>
+
+<pre>
+
+3A
+
+=
+
+2A + A
+
+</pre>
+
+<p>
+
+Artinya,
+
+kita cukup menggunakan
+
+</p>
+
+<pre>
+
+sin(2A+A)
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+cos(2A+A)
+
+</pre>
+
+<p>
+
+Kemudian mengganti
+
+</p>
+
+<pre>
+
+sin2A
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+cos2A
+
+</pre>
+
+<p>
+
+dengan rumus sudut rangkap.
+
+Melalui penyederhanaan,
+akan diperoleh rumus-rumus berikut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>47. Rumus Sinus Sudut Tiga Kali</h2>
+
+<div class="note">
+
+<pre>
+
+sin3A
+
+=
+
+3sinA
+
+-
+
+4sin³A
+
+</pre>
+
+</div>
+
+<p>
+
+Rumus ini
+sering digunakan
+untuk mengubah
+persamaan kubik
+menjadi bentuk trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>48. Rumus Cosinus Sudut Tiga Kali</h2>
+
+<div class="note">
+
+<pre>
+
+cos3A
+
+=
+
+4cos³A
+
+-
+
+3cosA
+
+</pre>
+
+</div>
+
+<p>
+
+Rumus ini
+terkenal karena
+muncul dalam
+Teorema De Moivre,
+Bilangan Kompleks,
+hingga Polinomial Chebyshev.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>49. Rumus Tangen Sudut Tiga Kali</h2>
+
+<div class="note">
+
+<pre>
+
+             3tanA-tan³A
+
+tan3A
+
+=
+
+────────────────────
+
+        1-3tan²A
+
+</pre>
+
+</div>
+
+<p>
+
+Rumus ini
+lebih jarang digunakan
+dibanding sinus dan cosinus,
+tetapi sering muncul
+dalam soal persamaan trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>50. Pola yang Menarik</h2>
+
+<p>
+
+Perhatikan kedua rumus berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Sin</th>
+
+<th>Cos</th>
+
+</tr>
+
+<tr>
+
+<td>3sinA−4sin³A</td>
+
+<td>4cos³A−3cosA</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Terlihat bahwa
+koefisien
+
+</p>
+
+<pre>
+
+3
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+4
+
+</pre>
+
+<p>
+
+selalu muncul.
+
+Pola ini
+bukan kebetulan.
+
+Ia berasal dari
+ekspansi aljabar
+saat menurunkan rumus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>51. Kapan Rumus Ini Digunakan?</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis Soal</th>
+
+<th>Gunakan</th>
+
+</tr>
+
+<tr>
+
+<td>Pembuktian identitas</td>
+
+<td>Sin3A / Cos3A</td>
+
+</tr>
+
+<tr>
+
+<td>Persamaan trigonometri</td>
+
+<td>Tan3A</td>
+
+</tr>
+
+<tr>
+
+<td>Bilangan kompleks</td>
+
+<td>Cos3A</td>
+
+</tr>
+
+<tr>
+
+<td>De Moivre</td>
+
+<td>Cos3A dan Sin3A</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>52. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+sinA
+
+=
+
+1/2
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin3A
+
+</pre>
+
+<p>
+
+Gunakan rumus.
+
+</p>
+
+<pre>
+
+=
+
+3(1/2)
+
+-
+
+4(1/2)³
+
+</pre>
+
+<pre>
+
+=
+
+3/2
+
+-
+
+4/8
+
+</pre>
+
+<pre>
+
+=
+
+3/2
+
+-
+
+1/2
+
+</pre>
+
+<pre>
+
+=
+
+1
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>53. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+cosA
+
+=
+
+1/2
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos3A
+
+</pre>
+
+<p>
+
+Gunakan rumus.
+
+</p>
+
+<pre>
+
+=
+
+4(1/2)³
+
+-
+
+3(1/2)
+
+</pre>
+
+<pre>
+
+=
+
+4/8
+
+-
+
+3/2
+
+</pre>
+
+<pre>
+
+=
+
+1/2
+
+-
+
+3/2
+
+</pre>
+
+<pre>
+
+=
+
+-1
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>54. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+cos3A
+
+=
+
+cosA(4cos²A-3)
+
+</pre>
+
+<p>
+
+Gunakan rumus
+
+</p>
+
+<pre>
+
+cos3A
+
+=
+
+4cos³A
+
+-
+
+3cosA
+
+</pre>
+
+<p>
+
+Kemudian
+faktorkan
+
+</p>
+
+<pre>
+
+cosA
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+cos3A
+
+=
+
+cosA
+
+(
+
+4cos²A-3
+
+)
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>55. Hubungan dengan Bilangan Kompleks</h2>
+
+<p>
+
+Di tingkat lanjut,
+rumus sudut tiga kali
+tidak lagi diturunkan
+menggunakan identitas trigonometri.
+
+Melainkan menggunakan
+
+</p>
+
+<pre>
+
+(cosA+isinA)³
+
+</pre>
+
+<p>
+
+melalui
+
+<b>Rumus De Moivre.</b>
+
+</p>
+
+<p>
+
+Karena itu,
+Bab 9 nanti
+akan memperlihatkan
+bahwa seluruh rumus
+sudut tiga kali
+muncul secara otomatis
+dari bilangan kompleks.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>56. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Tertukar antara rumus sudut rangkap dan sudut tiga kali.</li>
+
+<li>Salah menuliskan pangkat tiga.</li>
+
+<li>Menganggap sin3A = 3sinA.</li>
+
+<li>Lupa memfaktorkan pada soal pembuktian.</li>
+
+<li>Menggunakan rumus yang tidak sesuai dengan jenis soal.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Rumus sudut tiga kali
+tidak terlalu sering digunakan
+pada soal sekolah biasa.
+
+Namun di Olimpiade,
+rumus ini muncul
+dalam soal yang menghubungkan
+trigonometri,
+polinomial,
+dan bilangan kompleks.
+
+Daripada menghafal,
+pahami bahwa
+
+</p>
+
+<pre>
+
+3A
+
+=
+
+2A+A
+
+</pre>
+
+<p>
+
+Sehingga jika suatu saat lupa,
+kamu dapat menurunkannya kembali
+menggunakan Rumus Jumlah Sudut
+dan Rumus Sudut Rangkap.
+
+Kemampuan menurunkan rumus
+adalah ciri khas
+peserta Olimpiade tingkat tinggi.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Ringkasan Bab 5</h2>
+
+<ul>
+
+<li>✅ Rumus Jumlah Sudut</li>
+<li>✅ Rumus Selisih Sudut</li>
+<li>✅ Rumus Sudut Rangkap</li>
+<li>✅ Rumus Sudut Setengah</li>
+<li>✅ Rumus Sudut Tiga Kali</li>
+</ul>
+
+<p>
+
+Seluruh rumus pada bab ini menjadi fondasi untuk Bab 6, yaitu <b>Rumus Perkalian ke Penjumlahan</b> dan <b>Penjumlahan ke Perkalian</b>, yang banyak digunakan dalam identitas trigonometri, integral, deret Fourier, dan pembuktian tingkat Olimpiade.
+
+</p>
+
+</section>
+
+<div class="navigation">
+<a href="trigonometri4.html" class="btn">⬅ Bab Sebelumnya</a>
+<a href="trigonometri6.html" class="btn">Bab Berikutnya ➜</a>
+</div>
+
+</div>
+
+</body>
+</html>
