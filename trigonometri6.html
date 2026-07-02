@@ -1,1 +1,1877 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trigonometri Bab 6 - Rumus Perkalian dan Penjumlahan</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+margin:0;
+line-height:1.8;
+color:#222;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+
+.section{
+background:#fff;
+padding:25px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h1{
+color:#0d47a1;
+}
+
+h2{
+color:#1565c0;
+}
+
+.note{
+background:#e3f2fd;
+border-left:6px solid #1976d2;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+.example{
+background:#fff8e1;
+border-left:6px solid #f9a825;
+padding:18px;
+border-radius:8px;
+margin:18px 0;
+}
+
+pre{
+background:#f3f3f3;
+padding:15px;
+border-radius:8px;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#1976d2;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+.navigation{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#1976d2;
+color:white;
+padding:12px 18px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="section">
+
+<h1>Bab 6 — Rumus Perkalian dan Penjumlahan</h1>
+
+<p>
+
+Pada bab sebelumnya kita belajar
+rumus jumlah sudut,
+selisih sudut,
+sudut rangkap,
+hingga sudut tiga kali.
+
+Sekarang kita akan mempelajari
+teknik yang lebih tinggi,
+yaitu mengubah
+hasil kali fungsi trigonometri
+menjadi penjumlahan,
+dan sebaliknya.
+
+</p>
+
+<p>
+
+Materi ini terlihat sederhana,
+tetapi merupakan salah satu alat
+yang paling sering digunakan
+dalam Olimpiade Matematika,
+Fisika,
+Integral,
+hingga Analisis Fourier.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Mengapa Materi Ini Penting?</h2>
+
+<p>
+
+Misalkan kita menemukan bentuk
+
+</p>
+
+<pre>
+
+sinA cosB
+
+</pre>
+
+<p>
+
+Bentuk ini sulit dihitung
+atau diintegralkan secara langsung.
+
+Namun,
+dengan rumus
+Perkalian ke Penjumlahan,
+kita dapat mengubahnya menjadi
+
+</p>
+
+<pre>
+
+sin(A+B)
+
+dan
+
+sin(A-B)
+
+</pre>
+
+<p>
+
+yang jauh lebih mudah
+untuk dianalisis.
+
+</p>
+
+<p>
+
+Sebaliknya,
+dua fungsi sinus
+yang dijumlahkan
+juga dapat diubah
+menjadi satu perkalian.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Apa yang Akan Dipelajari?</h2>
+
+<table>
+
+<tr>
+
+<th>Materi</th>
+
+<th>Fungsi</th>
+
+</tr>
+
+<tr>
+
+<td>Perkalian → Penjumlahan</td>
+
+<td>Mengubah hasil kali menjadi jumlah</td>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan → Perkalian</td>
+
+<td>Mengubah jumlah menjadi hasil kali</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi Integral</td>
+
+<td>Menyederhanakan bentuk integral</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi Identitas</td>
+
+<td>Menyederhanakan pembuktian</td>
+
+</tr>
+
+<tr>
+
+<td>Aplikasi Olimpiade</td>
+
+<td>Manipulasi bentuk trigonometri</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>Dari Mana Rumus Ini Berasal?</h2>
+
+<p>
+
+Semua rumus pada bab ini
+berasal dari
+Rumus Jumlah Sudut
+dan Rumus Selisih Sudut.
+
+Artinya,
+tidak ada rumus baru.
+
+Seluruhnya hanya hasil
+penjumlahan,
+pengurangan,
+dan manipulasi aljabar
+dari rumus-rumus yang telah kita pelajari.
+
+</p>
+
+<div class="note">
+
+<p>
+
+Jika kamu benar-benar memahami
+Bab 5,
+
+maka Bab 6 hanyalah
+konsekuensi logisnya.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 1 : Rumus Perkalian ke Penjumlahan -->
+
+```<section class="section">
+
+<h2>1. Rumus Perkalian ke Penjumlahan (Product to Sum)</h2>
+
+<p>
+
+Rumus ini digunakan untuk mengubah
+<b>hasil kali fungsi trigonometri</b>
+menjadi bentuk penjumlahan atau pengurangan.
+
+</p>
+
+<p>
+
+Bentuk seperti ini sering muncul:
+
+</p>
+
+<pre>
+
+sinA cosB
+
+cosA cosB
+
+sinA sinB
+
+</pre>
+
+<p>
+
+Bentuk perkalian seperti ini
+tidak mudah disederhanakan langsung,
+maka kita ubah menjadi bentuk yang lebih sederhana.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Rumus Ini Ada?</h2>
+
+<p>
+
+Rumus ini berasal dari
+penjumlahan dan selisih sudut:
+
+</p>
+
+<pre>
+
+sin(A+B), sin(A-B)
+
+cos(A+B), cos(A-B)
+
+</pre>
+
+<p>
+
+Jika kita jumlahkan atau kurangkan
+kedua rumus tersebut,
+maka bentuk perkalian akan muncul secara otomatis.
+
+</p>
+
+<p>
+
+Inilah alasan mengapa
+semua rumus product-to-sum
+sebenarnya hanya “hasil manipulasi”
+dari rumus dasar Bab 5.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Rumus Sin × Cos</h2>
+
+<div class="note">
+
+<pre>
+
+sinA cosB
+
+=
+
+1/2 [ sin(A+B) + sin(A−B) ]
+
+</pre>
+
+</div>
+
+<p>
+
+Ini adalah rumus paling penting
+dalam kategori ini.
+
+</p>
+
+<p>
+
+Pola yang harus diingat:
+
+</p>
+
+<pre>
+
+sin cos → sin + sin
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>4. Rumus Cos × Cos</h2>
+
+<div class="note">
+
+<pre>
+
+cosA cosB
+
+=
+
+1/2 [ cos(A+B) + cos(A−B) ]
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan:
+
+</p>
+
+<ul>
+
+<li>Tetap cos di hasil akhir</li>
+<li>Tanda menjadi plus</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>5. Rumus Sin × Sin</h2>
+
+<div class="note">
+
+<pre>
+
+sinA sinB
+
+=
+
+1/2 [ cos(A−B) − cos(A+B) ]
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan hal penting:
+
+</p>
+
+<ul>
+
+<li>Hasil berubah menjadi cos</li>
+<li>Tanda menjadi “minus” di tengah</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>6. Ringkasan Pola Cepat</h2>
+
+<table>
+
+<tr>
+
+<th>Bentuk</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>sinA cosB</td>
+
+<td>sin(A+B) + sin(A−B)</td>
+
+</tr>
+
+<tr>
+
+<td>cosA cosB</td>
+
+<td>cos(A+B) + cos(A−B)</td>
+
+</tr>
+
+<tr>
+
+<td>sinA sinB</td>
+
+<td>cos(A−B) − cos(A+B)</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Semua hasil selalu dibagi
+
+</p>
+
+<pre>
+
+2
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung bentuk sederhana:
+
+</p>
+
+<pre>
+
+sin x cos x
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+sinA cosB
+
+=
+
+1/2 [ sin(A+B) + sin(A−B) ]
+
+</pre>
+
+<p>
+
+Karena A = B = x:
+
+</p>
+
+<pre>
+
+=
+
+1/2 [ sin(2x) + sin(0) ]
+
+</pre>
+
+<pre>
+
+sin(0) = 0
+
+</pre>
+
+<pre>
+
+=
+
+1/2 sin(2x)
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Sederhanakan:
+
+</p>
+
+<pre>
+
+cos(3x) cos(x)
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+cosA cosB
+
+=
+
+1/2 [ cos(A+B) + cos(A−B) ]
+
+</pre>
+
+<pre>
+
+=
+
+1/2 [ cos(4x) + cos(2x) ]
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan identitas:
+
+</p>
+
+<pre>
+
+sinA sinB + cosA cosB = cos(A−B)
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+cos(A−B)
+
+=
+
+cosA cosB + sinA sinB
+</pre>
+
+<p>
+
+Tukar urutan:
+
+</p>
+
+<pre>
+
+sinA sinB + cosA cosB
+=
+cos(A−B)
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Lupa faktor 1/2</li>
+<li>Salah tanda pada sin×sin</li>
+<li>Mengira hasil tetap berbentuk perkalian</li>
+<li>Tertukar antara sin dan cos hasil akhir</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Jangan menghafal rumus satu per satu.
+
+Ingat satu prinsip:
+
+</p>
+
+<pre>
+
+Rumus ini berasal dari penjumlahan dan selisih sudut.
+
+</pre>
+
+<p>
+
+Jika kamu lupa,
+cukup kembali ke:
+
+</p>
+
+<ul>
+
+<li>sin(A+B)</li>
+<li>cos(A+B)</li>
+<li>sin(A−B)</li>
+<li>cos(A−B)</li>
+</ul>
+
+<p>
+
+Lalu jumlahkan atau kurangkan kembali.
+
+Itulah cara berpikir seorang peserta Olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 2 : Penjumlahan ke Perkalian --><section class="section">
+
+<h2>11. Penjumlahan ke Perkalian (Sum to Product)</h2>
+
+<p>
+
+Sekarang kita melakukan kebalikan dari bagian sebelumnya.
+
+Jika sebelumnya:
+
+</p>
+
+<pre>
+
+perkalian → penjumlahan
+
+</pre>
+
+<p>
+
+maka sekarang:
+
+</p>
+
+<pre>
+
+penjumlahan → perkalian
+
+</pre>
+
+<p>
+
+Rumus ini sangat penting
+untuk menyederhanakan ekspresi,
+menyelesaikan persamaan,
+dan digunakan dalam banyak soal Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>12. Mengapa Rumus Ini Penting?</h2>
+
+<p>
+
+Bentuk seperti ini sering muncul:
+
+</p>
+
+<pre>
+
+sinA + sinB
+
+cosA + cosB
+
+sinA − sinB
+
+cosA − cosB
+
+</pre>
+
+<p>
+
+Bentuk penjumlahan seperti ini
+bisa diubah menjadi perkalian
+yang lebih mudah difaktorkan
+atau diselesaikan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>13. Rumus Sinus Jumlah</h2>
+
+<div class="note">
+
+<pre>
+
+sinA + sinB
+
+=
+
+2 sin((A+B)/2) cos((A−B)/2)
+
+</pre>
+
+</div>
+
+<p>
+
+Pola penting:
+
+</p>
+
+<pre>
+
+sin + sin → sin × cos
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>14. Rumus Sinus Selisih</h2>
+
+<div class="note">
+
+<pre>
+
+sinA − sinB
+
+=
+
+2 cos((A+B)/2) sin((A−B)/2)
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan:
+
+</p>
+
+<ul>
+
+<li>Tanda berubah posisi</li>
+<li>Sin dan cos saling bertukar tempat</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>15. Rumus Cosinus Jumlah</h2>
+
+<div class="note">
+
+<pre>
+
+cosA + cosB
+
+=
+
+2 cos((A+B)/2) cos((A−B)/2)
+
+</pre>
+
+</div>
+
+<p>
+
+Hasil tetap berupa cos × cos.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>16. Rumus Cosinus Selisih</h2>
+
+<div class="note">
+
+<pre>
+
+cosA − cosB
+
+=
+
+−2 sin((A+B)/2) sin((A−B)/2)
+
+</pre>
+
+</div>
+
+<p>
+
+Perhatikan tanda negatif di depan.
+
+Ini sering menjadi sumber kesalahan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>17. Ringkasan Pola Cepat</h2>
+
+<table>
+
+<tr>
+
+<th>Bentuk</th>
+<th>Hasil</th>
+</tr>
+
+<tr>
+<td>sin + sin</td>
+<td>sin × cos</td>
+</tr>
+
+<tr>
+<td>sin − sin</td>
+<td>cos × sin</td>
+</tr>
+
+<tr>
+<td>cos + cos</td>
+<td>cos × cos</td>
+</tr>
+
+<tr>
+<td>cos − cos</td>
+<td>− sin × sin</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>18. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Sederhanakan:
+
+</p>
+
+<pre>
+
+sin x + sin 3x
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+= 2 sin((x+3x)/2) cos((x−3x)/2)
+
+</pre>
+
+<pre>
+
+= 2 sin(2x) cos(−x)
+
+</pre>
+
+<p>
+
+Karena:
+
+</p>
+
+<pre>
+
+cos(−x) = cos x
+
+</pre>
+
+<p>
+
+maka:
+
+</p>
+
+<pre>
+
+= 2 sin(2x) cos x
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>19. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Sederhanakan:
+
+</p>
+
+<pre>
+
+cos 5x + cos x
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+= 2 cos((5x+x)/2) cos((5x−x)/2)
+
+</pre>
+
+<pre>
+
+= 2 cos(3x) cos(2x)
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>20. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan identitas:
+
+</p>
+
+<pre>
+
+sinA − sinB = 2 cos((A+B)/2) sin((A−B)/2)
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+sinA = sin((A+B)/2 + (A−B)/2)
+</pre>
+
+<pre>
+
+sinB = sin((A+B)/2 − (A−B)/2)
+</pre>
+
+<p>
+
+Kemudian gunakan
+rumus jumlah dan selisih sudut.
+
+Hasil akhirnya akan sama.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>21. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Lupa membagi sudut menjadi (A+B)/2</li>
+<li>Salah tanda pada cosA − cosB</li>
+<li>Tertukar antara sin dan cos</li>
+<li>Tidak menyederhanakan cos(−x)</li>
+<li>Menghafal tanpa memahami pola</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Jangan hafalkan 4 rumus ini secara terpisah.
+
+Ingat satu ide utama:
+
+</p>
+
+<pre>
+
+Semua berasal dari rumus jumlah dan selisih sudut.
+
+</pre>
+
+<p>
+
+Jika kamu lupa,
+cukup kembali ke:
+
+</p>
+
+<ul>
+
+<li>sin(A+B)</li>
+<li>cos(A+B)</li>
+<li>sin(A−B)</li>
+<li>cos(A−B)</li>
+</ul>
+
+<p>
+
+Lalu lakukan penjumlahan atau pengurangan kembali.
+
+Inilah cara paling aman
+saat menghadapi soal OSK/OSN.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 3 : Aplikasi (Integral & Olimpiade) --><section class="section">
+
+<h2>22. Aplikasi Rumus Perkalian & Penjumlahan</h2>
+
+<p>
+
+Sekarang kita masuk ke bagian paling penting:
+
+<b>kenapa semua rumus ini dipelajari?</b>
+
+Jawabannya: karena dipakai di banyak soal Olimpiade.
+
+</p>
+
+<p>
+
+Rumus product-to-sum dan sum-to-product
+bukan sekadar identitas,
+tetapi alat untuk:
+
+</p>
+
+<ul>
+
+<li>Menyederhanakan ekspresi panjang</li>
+<li>Menyelesaikan persamaan trigonometri</li>
+<li>Menghitung integral</li>
+<li>Menganalisis pola gelombang</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>23. Aplikasi 1: Menyederhanakan Ekspresi</h2>
+
+<div class="example">
+
+<p>
+
+Sederhanakan:
+
+</p>
+
+<pre>
+
+sin 7x − sin 3x
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+sinA − sinB
+
+=
+
+2 cos((A+B)/2) sin((A−B)/2)
+
+</pre>
+
+<p>
+
+Substitusi:
+
+</p>
+
+<pre>
+
+= 2 cos(5x) sin(2x)
+
+</pre>
+
+<p>
+
+Ekspresi panjang berubah menjadi
+lebih sederhana dan terfaktorkan.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>24. Aplikasi 2: Menyelesaikan Persamaan</h2>
+
+<div class="example">
+
+<p>
+
+Selesaikan:
+
+</p>
+
+<pre>
+
+sin x + sin 3x = 0
+
+</pre>
+
+<p>
+
+Gunakan rumus:
+
+</p>
+
+<pre>
+
+sinA + sinB
+
+=
+
+2 sin((A+B)/2) cos((A−B)/2)
+
+</pre>
+
+<p>
+
+Maka:
+
+</p>
+
+<pre>
+
+2 sin(2x) cos(−x) = 0
+
+</pre>
+
+<p>
+
+Karena cos(−x) = cos x:
+
+</p>
+
+<pre>
+
+2 sin(2x) cos x = 0
+
+</pre>
+
+<p>
+
+Maka solusi:
+
+</p>
+
+<pre>
+
+sin(2x) = 0  atau  cos x = 0
+</pre>
+
+<p>
+
+Persamaan jauh lebih mudah diselesaikan.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>25. Aplikasi 3: Integral Trigonometri</h2>
+
+<p>
+
+Dalam kalkulus,
+bentuk seperti ini sering muncul:
+
+</p>
+
+<pre>
+
+∫ sin x cos x dx
+
+</pre>
+
+<p>
+
+Gunakan product-to-sum:
+
+</p>
+
+<pre>
+
+sin x cos x = 1/2 sin(2x)
+</pre>
+
+<p>
+
+Maka integral menjadi:
+
+</p>
+
+<pre>
+
+∫ 1/2 sin(2x) dx
+</pre>
+
+<p>
+
+Lebih mudah dihitung dibanding bentuk awal.
+
+</p>
+
+<p>
+
+Inilah alasan
+mengapa trigonometri
+sangat penting di universitas.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>26. Aplikasi 4: Gelombang & Fisika</h2>
+
+<p>
+
+Dalam fisika,
+dua gelombang sering dijumlahkan:
+
+</p>
+
+<pre>
+
+sin x + sin 2x
+</pre>
+
+<p>
+
+Dengan sum-to-product:
+
+</p>
+
+<pre>
+
+= 2 sin(3x/2) cos(x/2)
+</pre>
+
+<p>
+
+Hasil ini digunakan untuk:
+
+</p>
+
+<ul>
+
+<li>Interferensi gelombang</li>
+<li>Suara (akustik)</li>
+<li>Cahaya (optik)</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2>27. Aplikasi 5: Identitas Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan:
+
+</p>
+
+<pre>
+
+sin x + sin(60°−x) + sin(60°+x)
+
+= 2 sin 60° cos x + sin x
+</pre>
+
+<p>
+
+Gunakan sum-to-product dua kali,
+lalu sederhanakan.
+
+Soal seperti ini sering muncul
+pada OSN tingkat lanjut.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>28. Pola Penting yang Harus Diingat</h2>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+<th>Hasil</th>
+</tr>
+
+<tr>
+
+<td>Produk → Jumlah</td>
+<td>sin(A±B), cos(A±B)</td>
+</tr>
+
+<tr>
+
+<td>Jumlah → Produk</td>
+<td>sin((A+B)/2), cos((A−B)/2)</td>
+</tr>
+
+</table>
+
+<p>
+
+Intinya:
+
+</p>
+
+<pre>
+
+Produk → Pecah jadi sudut
+
+Jumlah → Gabungkan jadi faktor
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>29. Kesalahan Fatal yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Lupa faktor 1/2 pada product-to-sum</li>
+<li>Salah membagi sudut pada sum-to-product</li>
+<li>Tidak menyederhanakan cos(−x)</li>
+<li>Tukar posisi sin dan cos</li>
+<li>Menghafal tanpa memahami asal rumus</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Jika kamu hanya menghafal rumus,
+kamu akan mudah lupa saat tekanan tinggi.
+
+Tapi jika kamu memahami bahwa:
+
+</p>
+
+<pre>
+
+semua berasal dari sin(A±B) dan cos(A±B)
+
+</pre>
+
+<p>
+
+maka kamu bisa menurunkan kembali semua rumus
+dalam waktu singkat.
+
+Ini adalah ciri khas peserta Olimpiade:
+
+<b>bukan penghafal, tapi pembangun rumus.</b>
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bab 7 : Persamaan & Pertidaksamaan Trigonometri --><section class="section">
+
+<h2>30. Penutup Bab 6 — Inti Strategi Olimpiade</h2>
+
+<p>
+
+Bab 6 sebenarnya bukan tentang rumus baru.
+
+Ini adalah bab tentang
+
+<b>transformasi bentuk</b>.
+
+</p>
+
+<p>
+
+Jika Bab 5 memberi kamu “alat dasar sudut”,
+maka Bab 6 memberi kamu
+
+<b>cara mengubah bentuk yang sulit menjadi bentuk yang bisa dihitung.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>31. Cara Berpikir yang Harus Kamu Kuasai</h2>
+
+<div class="note">
+
+<p>
+
+Dalam Olimpiade, kamu tidak diminta menghitung langsung.
+
+Kamu diminta mengubah bentuk.
+
+</p>
+
+<pre>
+
+sinA cosB  →  sin(A+B), sin(A−B)
+
+sinA + sinB →  sin((A+B)/2), cos((A−B)/2)
+
+</pre>
+
+<p>
+
+Inilah inti dari bab ini:
+
+<b>ubah bentuk sebelum menyelesaikan.</b>
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>32. Hubungan Besar Semua Rumus</h2>
+
+<table>
+
+<tr>
+<th>Bab</th>
+<th>Fungsi</th>
+</tr>
+
+<tr>
+<td>Bab 5</td>
+<td>Membentuk identitas sudut</td>
+</tr>
+
+<tr>
+<td>Bab 6</td>
+<td>Mengubah bentuk fungsi</td>
+</tr>
+
+</table>
+
+<p>
+
+Artinya:
+
+</p>
+
+<pre>
+
+Bab 5 → sumber rumus
+
+Bab 6 → manipulasi rumus
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>33. Strategi OSN Level Tinggi</h2>
+
+<p>
+
+Peserta Olimpiade tidak pernah langsung mengerjakan bentuk seperti:
+
+</p>
+
+<pre>
+
+sin 7x − sin 3x + cos 5x cos x
+</pre>
+
+<p>
+
+Mereka selalu melakukan langkah ini:
+
+</p>
+
+<ol>
+
+<li>Ubah ke bentuk jumlah atau produk</li>
+<li>Sederhanakan struktur</li>
+<li>Baru lakukan perhitungan</li>
+
+</ol>
+
+<p>
+
+Inilah perbedaan utama
+antara soal biasa dan soal Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>34. Kesalahan Besar yang Harus Dihindari</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menghafal tanpa memahami asal rumus</li>
+<li>Langsung substitusi tanpa transformasi</li>
+<li>Tidak melihat pola bentuk</li>
+<li>Melewatkan faktor 1/2</li>
+<li>Salah memilih rumus (product vs sum)</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>35. Mindset Seorang Peserta Olimpiade</h2>
+
+<div class="note">
+
+<p>
+
+Jika kamu ingin naik level,
+ubah cara berpikir:
+
+</p>
+
+<pre>
+
+❌ “Saya harus ingat rumus ini”
+
+✔ “Saya bisa menurunkan rumus ini kapan saja”
+
+</pre>
+
+<p>
+
+Peserta OSN tidak lebih pintar karena hafalan,
+tetapi karena mereka bisa membangun ulang konsep.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>36. Rangkuman Bab 6</h2>
+
+<ul>
+
+<li>✔ Product to Sum</li>
+<li>✔ Sum to Product</li>
+<li>✔ Aplikasi Integral</li>
+<li>✔ Aplikasi Persamaan</li>
+<li>✔ Aplikasi Gelombang</li>
+<li>✔ Aplikasi Olimpiade</li>
+</ul>
+
+<p>
+
+Dengan ini,
+Bab 6 selesai sepenuhnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🚀 Lanjut ke Bab 7</h2>
+
+<p>
+
+Bab berikutnya adalah:
+
+<b>Persamaan & Pertidaksamaan Trigonometri</b>
+
+Ini adalah bab yang jauh lebih sulit,
+karena kamu akan mulai masuk ke:
+
+</p>
+
+<ul>
+
+<li>Substitusi trigonometri</li>
+<li>Faktorisasi trig</li>
+<li>Persamaan homogen</li>
+<li>Weierstrass substitution</li>
+
+</ul>
+
+<p>
+
+Di sinilah soal OSN mulai terasa “olimpiade sesungguhnya”.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="navigation">
+
+<a href="trigonometri5.html" class="btn">⬅ Bab Sebelumnya</a>
+<a href="trigonometri7.html" class="btn">Bab Berikutnya ➜</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
