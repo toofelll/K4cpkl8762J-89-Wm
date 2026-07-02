@@ -1,1 +1,5879 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trigonometri Bab 3 - Identitas Trigonometri</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+color:#222;
+margin:0;
+line-height:1.8;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+
+.section{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h1{
+color:#0d47a1;
+}
+
+h2{
+color:#1565c0;
+margin-top:25px;
+}
+
+pre{
+background:#f1f1f1;
+padding:15px;
+border-radius:8px;
+overflow:auto;
+}
+
+.note{
+background:#e3f2fd;
+padding:18px;
+border-left:6px solid #1976d2;
+border-radius:8px;
+margin:20px 0;
+}
+
+.example{
+background:#fff8e1;
+padding:18px;
+border-left:6px solid #f9a825;
+border-radius:8px;
+margin:20px 0;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#1976d2;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+.navigation{
+display:flex;
+justify-content:space-between;
+margin-top:35px;
+}
+
+.btn{
+background:#1976d2;
+color:white;
+padding:12px 18px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#0d47a1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="section">
+
+<h1>Bab 3 — Identitas Trigonometri</h1>
+
+<p>
+
+Setelah mempelajari
+fungsi-fungsi trigonometri,
+muncul pertanyaan yang sangat penting.
+
+</p>
+
+<pre>
+
+Mengapa
+
+sin²θ + cos²θ = 1 ?
+
+Mengapa
+
+tanθ = sinθ/cosθ ?
+
+Mengapa
+
+1 + tan²θ = sec²θ ?
+
+Apakah rumus-rumus itu
+hanya hasil hafalan?
+
+</pre>
+
+<p>
+
+Jawabannya adalah
+
+<b>tidak.</b>
+
+Seluruh identitas trigonometri
+berasal dari definisi,
+Teorema Pythagoras,
+dan Lingkaran Satuan.
+
+Tidak ada satu pun
+yang muncul secara tiba-tiba.
+
+</p>
+
+<p>
+
+Pada bab ini,
+kita akan membuktikan
+setiap identitas
+langkah demi langkah
+hingga benar-benar memahami
+asal-usulnya.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Identitas Trigonometri?</h2>
+
+<p>
+
+Kata
+
+<b>identitas</b>
+
+berasal dari kata
+yang berarti
+
+<b>"selalu benar".</b>
+
+Artinya,
+
+suatu identitas
+akan tetap benar
+untuk semua nilai sudut
+yang memenuhi syarat.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+2(x+3)
+
+=
+
+2x+6
+
+</pre>
+
+</div>
+
+<p>
+
+Persamaan tersebut
+selalu benar
+untuk semua nilai x.
+
+Karena selalu benar,
+maka ia merupakan
+
+<b>identitas aljabar.</b>
+
+</p>
+
+<p>
+
+Begitu pula pada trigonometri.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin²θ
+
++
+
+cos²θ
+
+=
+
+1
+
+</pre>
+
+</div>
+
+<p>
+
+Persamaan tersebut
+benar untuk semua sudut θ
+(selama fungsi-fungsinya terdefinisi).
+
+Karena selalu benar,
+maka disebut
+
+<b>Identitas Trigonometri.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Identitas Berbeda dengan Persamaan</h2>
+
+<p>
+
+Banyak siswa
+menganggap identitas
+sama dengan persamaan.
+
+Padahal keduanya berbeda.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Persamaan</th>
+
+<th>Identitas</th>
+
+</tr>
+
+<tr>
+
+<td>x²=9</td>
+
+<td>sin²θ+cos²θ=1</td>
+
+</tr>
+
+<tr>
+
+<td>Hanya benar untuk x tertentu</td>
+
+<td>Benar untuk semua θ</td>
+
+</tr>
+
+<tr>
+
+<td>Mencari solusi</td>
+
+<td>Membuktikan kebenaran</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+x²=9
+
+</pre>
+
+<p>
+
+hanya benar jika
+
+</p>
+
+<pre>
+
+x=3
+
+atau
+
+x=-3
+
+</pre>
+
+<p>
+
+Sedangkan
+
+</p>
+
+<pre>
+
+sin²θ+cos²θ=1
+
+</pre>
+
+<p>
+
+tetap benar
+untuk
+
+0°,
+30°,
+45°,
+120°,
+300°,
+bahkan
+100000°.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Mengapa Identitas Sangat Penting?</h2>
+
+<p>
+
+Dalam Olimpiade Matematika,
+
+identitas bukan sekadar rumus.
+
+Identitas adalah
+
+<b>alat utama</b>
+
+untuk mengubah suatu bentuk
+menjadi bentuk lain
+yang lebih mudah dihitung.
+
+</p>
+
+<div class="example">
+
+<p>
+
+Misalnya diberikan
+
+</p>
+
+<pre>
+
+1−sin²θ
+
+</pre>
+
+<p>
+
+Daripada menghitung
+langsung,
+
+peserta Olimpiade
+langsung mengenali bahwa
+
+</p>
+
+<pre>
+
+sin²θ+cos²θ=1
+
+</pre>
+
+<p>
+
+sehingga
+
+</p>
+
+<pre>
+
+1−sin²θ
+
+=
+
+cos²θ
+
+</pre>
+
+<p>
+
+Perhitungan menjadi
+jauh lebih sederhana.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4. Filosofi Identitas</h2>
+
+<p>
+
+Dalam matematika,
+dua bentuk yang berbeda
+belum tentu memiliki
+nilai yang berbeda.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+√8
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+2√2
+
+</pre>
+
+<p>
+
+terlihat berbeda,
+namun nilainya sama.
+
+Begitu pula
+
+</p>
+
+<pre>
+
+tanθ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+sinθ/cosθ
+
+</pre>
+
+<p>
+
+Keduanya hanyalah
+dua cara berbeda
+untuk menuliskan
+nilai yang sama.
+
+Inilah inti dari
+Identitas Trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Kesalahan terbesar
+pemula adalah
+menghafal identitas.
+
+Peserta Olimpiade
+tidak menghafal.
+
+Mereka memahami
+asal-usul setiap identitas.
+
+Jika suatu hari lupa rumus,
+
+mereka dapat
+menurunkannya kembali
+dari definisi dasar.
+
+Kemampuan seperti inilah
+yang membedakan
+antara menghafal matematika
+dan memahami matematika.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 2 : Identitas Dasar Trigonometri --><section class="section">
+
+<h1>② Identitas Dasar Trigonometri</h1>
+
+<p>
+
+Seluruh identitas trigonometri
+berasal dari beberapa hubungan dasar
+yang telah kita pelajari pada bab sebelumnya.
+
+Hubungan-hubungan ini bukan dibuat
+secara sembarangan,
+melainkan merupakan konsekuensi langsung
+dari definisi sinus, cosinus,
+tangen, serta Lingkaran Satuan.
+
+</p>
+
+<p>
+
+Karena seluruh identitas lain
+diturunkan dari bagian ini,
+maka identitas dasar disebut sebagai
+
+<b>pondasi seluruh trigonometri.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Mengingat Kembali Definisi Dasar</h2>
+
+<p>
+
+Misalkan terdapat segitiga siku-siku
+dengan sudut θ.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin θ
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<pre>
+
+cos θ
+
+=
+
+Samping
+
+────────
+
+Miring
+
+</pre>
+
+<pre>
+
+tan θ
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+</div>
+
+<p>
+
+Seluruh identitas pada bab ini
+akan diturunkan dari
+tiga definisi sederhana tersebut.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Kita Bisa Menurunkan Identitas?</h2>
+
+<p>
+
+Dalam matematika,
+
+dua bentuk yang berbeda
+boleh saling menggantikan
+
+<b>jika nilainya sama.</b>
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+1/2
+
+=
+
+0,5
+
+</pre>
+
+<p>
+
+Walaupun bentuknya berbeda,
+nilainya identik.
+
+Begitu pula
+
+</p>
+
+<pre>
+
+tan θ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Keduanya hanyalah
+dua penulisan berbeda
+untuk nilai yang sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Identitas Dasar Pertama</h2>
+
+<p>
+
+Gunakan definisi sinus
+dan cosinus.
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<pre>
+
+cos θ
+
+=
+
+Samping
+
+────────
+
+Miring
+
+</pre>
+
+<p>
+
+Sekarang lakukan pembagian.
+
+</p>
+
+<pre>
+
+sin θ
+
+────────
+
+cos θ
+
+</pre>
+
+<pre>
+
+=
+
+Depan/Miring
+
+────────────────
+
+Samping/Miring
+
+</pre>
+
+<p>
+
+Karena penyebutnya sama,
+yaitu
+
+<b>Miring</b>,
+
+maka dapat dicoret.
+
+</p>
+
+<pre>
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Dan bentuk tersebut adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+</div>
+
+<p>
+
+Inilah identitas dasar pertama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Pembuktian Menggunakan Aljabar</h2>
+
+<p>
+
+Cara lain yang sering dipakai
+pada Olimpiade adalah
+menggunakan manipulasi aljabar.
+
+</p>
+
+<p>
+
+Mulai dari ruas kanan.
+
+</p>
+
+<pre>
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Substitusi definisi.
+
+</p>
+
+<pre>
+
+Depan/Miring
+
+────────────────
+
+Samping/Miring
+
+</pre>
+
+<p>
+
+Kalikan dengan kebalikan.
+
+</p>
+
+<pre>
+
+Depan
+
+──────
+
+Miring
+
+×
+
+Miring
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Miring saling habis.
+
+</p>
+
+<pre>
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+=
+
+tan θ
+
+</pre>
+
+<p>
+
+Karena ruas kiri sama dengan ruas kanan,
+identitas terbukti.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Mengapa Pembuktian Lebih Penting daripada Hafalan?</h2>
+
+<p>
+
+Bayangkan suatu hari
+kamu lupa rumus
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+sin θ / cos θ
+
+</pre>
+
+<p>
+
+Jika kamu hanya menghafal,
+maka soal akan berhenti.
+
+Namun jika memahami asalnya,
+cukup kembali ke definisi.
+
+Dalam waktu kurang dari
+30 detik,
+rumus tersebut dapat diturunkan kembali.
+
+Inilah pola pikir
+yang digunakan peserta Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+4/5
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+cos θ
+
+=
+
+3/5
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+tan θ
+
+</pre>
+
+<p>
+
+Gunakan identitas dasar.
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<pre>
+
+=
+
+4/5
+
+────
+
+3/5
+
+</pre>
+
+<pre>
+
+=
+
+4
+
+──
+
+3
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+tan θ × cos θ
+
+</pre>
+
+<p>
+
+Pembuktian.
+
+</p>
+
+<p>
+
+Mulai dari ruas kanan.
+
+</p>
+
+<pre>
+
+tan θ × cos θ
+
+</pre>
+
+<p>
+
+Gunakan identitas dasar.
+
+</p>
+
+<pre>
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+×
+
+cos θ
+
+</pre>
+
+<p>
+
+Cosinus saling habis.
+
+</p>
+
+<pre>
+
+=
+
+sin θ
+
+</pre>
+
+<p>
+
+Ruas kiri sama dengan ruas kanan.
+
+Terbukti.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Mengapa Identitas Ini Sangat Sering Digunakan?</h2>
+
+<p>
+
+Karena pada banyak soal,
+nilai tangen tidak diketahui,
+tetapi nilai sinus dan cosinus diketahui.
+
+Atau sebaliknya.
+
+Identitas ini memungkinkan kita
+berpindah dari satu fungsi
+ke fungsi lainnya
+dengan mudah.
+
+Hampir seluruh materi
+persamaan trigonometri,
+identitas,
+hingga kalkulus
+menggunakan hubungan ini.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>9. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menghafal tanpa mengetahui pembuktian.</li>
+
+<li>Menulis tan θ = cos θ / sin θ.</li>
+
+<li>Lupa bahwa pembagian pecahan harus dikalikan dengan kebalikannya.</li>
+
+<li>Mencampur identitas dengan persamaan.</li>
+
+<li>Tidak membiasakan memulai pembuktian dari salah satu ruas.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Saat diminta membuktikan identitas,
+jangan pernah langsung mengubah
+kedua ruas sekaligus.
+
+Ubah
+
+<b>satu ruas saja</b>,
+biasanya ruas yang lebih rumit,
+hingga bentuknya sama
+dengan ruas lainnya.
+
+Teknik sederhana ini
+merupakan salah satu kebiasaan
+peserta Olimpiade Matematika
+dan akan terus digunakan
+pada seluruh pembuktian identitas
+di bab-bab berikutnya.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 3 : Identitas Pythagoras --><section class="section">
+
+<h1>③ Identitas Pythagoras</h1>
+
+<p>
+
+Di antara seluruh identitas trigonometri,
+
+terdapat satu identitas
+yang paling penting.
+
+Bahkan hampir semua rumus
+yang akan dipelajari nanti
+berasal dari identitas ini.
+
+Identitas tersebut adalah
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin²θ + cos²θ = 1
+
+</pre>
+
+</div>
+
+<p>
+
+Sebagian besar siswa
+langsung menghafalnya.
+
+Padahal,
+rumus ini sebenarnya
+berasal langsung dari
+
+<b>Teorema Pythagoras.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Mengingat Kembali Teorema Pythagoras</h2>
+
+<p>
+
+Pada segitiga siku-siku,
+
+Teorema Pythagoras menyatakan bahwa
+
+</p>
+
+<div class="note">
+
+<pre>
+
+(Miring)²
+
+=
+
+(Depan)²
+
++
+
+(Samping)²
+
+</pre>
+
+</div>
+
+<p>
+
+Jika ditulis menggunakan notasi umum,
+
+</p>
+
+<pre>
+
+c² = a² + b²
+
+</pre>
+
+<p>
+
+Hubungan sederhana inilah
+yang nantinya berubah menjadi
+identitas trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Menurunkan Identitas Pythagoras</h2>
+
+<p>
+
+Mulailah dari
+
+</p>
+
+<pre>
+
+Miring²
+
+=
+
+Depan²
+
++
+
+Samping²
+
+</pre>
+
+<p>
+
+Kemudian bagi seluruh ruas
+dengan
+
+</p>
+
+<pre>
+
+(Miring)²
+
+</pre>
+
+<p>
+
+Mengapa dibagi dengan
+miring²?
+
+Karena kita ingin menghasilkan
+perbandingan sinus dan cosinus.
+
+</p>
+
+<pre>
+
+Miring²          Depan²          Samping²
+
+──────── = ───────────── + ─────────────
+
+Miring²          Miring²          Miring²
+
+</pre>
+
+<p>
+
+Ruas kiri menjadi
+
+</p>
+
+<pre>
+
+1
+
+</pre>
+
+<p>
+
+Sedangkan ruas kanan menjadi
+
+</p>
+
+<pre>
+
+(
+
+Depan
+
+──────
+
+Miring
+
+)²
+
++
+
+(
+
+Samping
+
+────────
+
+Miring
+
+)²
+
+</pre>
+
+<p>
+
+Gunakan definisi sinus
+dan cosinus.
+
+</p>
+
+<pre>
+
+sin²θ
+
++
+
+cos²θ
+
+=
+
+1
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin²θ + cos²θ = 1
+
+</pre>
+
+</div>
+
+<p>
+
+Inilah asal-usul identitas
+Pythagoras.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Mengapa Disebut Identitas Pythagoras?</h2>
+
+<p>
+
+Karena seluruh pembuktiannya
+berasal dari
+
+</p>
+
+<pre>
+
+a²+b²=c²
+
+</pre>
+
+<p>
+
+Tidak ada rumus baru.
+
+Tidak ada hafalan.
+
+Yang berubah hanyalah
+cara menuliskan
+panjang sisi menjadi
+fungsi trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Bentuk Turunan Pertama</h2>
+
+<p>
+
+Dari identitas
+
+</p>
+
+<pre>
+
+sin²θ + cos²θ = 1
+
+</pre>
+
+<p>
+
+Kurangkan kedua ruas
+dengan
+
+</p>
+
+<pre>
+
+sin²θ
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos²θ
+
+=
+
+1−sin²θ
+
+</pre>
+
+</div>
+
+<p>
+
+Bentuk ini sangat sering
+muncul pada soal Olimpiade.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Bentuk Turunan Kedua</h2>
+
+<p>
+
+Kurangkan kedua ruas
+dengan
+
+</p>
+
+<pre>
+
+cos²θ
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin²θ
+
+=
+
+1−cos²θ
+
+</pre>
+
+</div>
+
+<p>
+
+Kini kita memiliki
+tiga bentuk identitas
+yang sebenarnya ekuivalen.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Mengapa Bentuk Turunan Penting?</h2>
+
+<p>
+
+Pada banyak soal,
+
+yang diketahui hanya
+sinus.
+
+Sedangkan yang dicari
+adalah cosinus.
+
+Daripada menggambar segitiga lagi,
+
+cukup gunakan identitas
+Pythagoras.
+
+</p>
+
+<div class="example">
+
+<p>
+
+Misalkan
+
+</p>
+
+<pre>
+
+sinθ
+
+=
+
+3/5
+
+</pre>
+
+<p>
+
+Carilah
+
+</p>
+
+<pre>
+
+cos²θ
+
+</pre>
+
+<p>
+
+Gunakan
+
+</p>
+
+<pre>
+
+cos²θ
+
+=
+
+1−sin²θ
+
+</pre>
+
+<pre>
+
+=
+
+1−(3/5)²
+
+</pre>
+
+<pre>
+
+=
+
+1−9/25
+
+</pre>
+
+<pre>
+
+=
+
+16/25
+
+</pre>
+
+<p>
+
+Jika diketahui kuadrannya,
+maka cosθ dapat langsung dicari.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+sinθ
+
+=
+
+5/13
+
+</pre>
+
+<p>
+
+dan θ berada di Kuadran I.
+
+Tentukan
+
+</p>
+
+<pre>
+
+cosθ
+
+</pre>
+
+<p>
+
+Penyelesaian.
+
+</p>
+
+<pre>
+
+cos²θ
+
+=
+
+1−sin²θ
+
+</pre>
+
+<pre>
+
+=
+
+1−25/169
+
+</pre>
+
+<pre>
+
+=
+
+144/169
+
+</pre>
+
+<pre>
+
+cosθ
+
+=
+
+12/13
+
+</pre>
+
+<p>
+
+Karena Kuadran I,
+cosinus bernilai positif.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Hubungan dengan Lingkaran Satuan</h2>
+
+<p>
+
+Masih ingat bahwa
+setiap titik pada Unit Circle
+memenuhi persamaan
+
+</p>
+
+<pre>
+
+x²+y²=1
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+x=cosθ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+y=sinθ
+
+</pre>
+
+<p>
+
+maka
+
+</p>
+
+<pre>
+
+cos²θ+sin²θ=1
+
+</pre>
+
+<p>
+
+Artinya,
+
+Identitas Pythagoras
+dapat dibuktikan
+dengan
+
+</p>
+
+<ul>
+
+<li>Teorema Pythagoras.</li>
+
+<li>Lingkaran Satuan.</li>
+
+</ul>
+
+<p>
+
+Dua pendekatan berbeda,
+namun menghasilkan
+rumus yang sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>9. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menulis sin²θ + cos²θ = 2.</li>
+
+<li>Lupa bahwa yang dipangkatkan adalah nilai fungsi, bukan sudutnya.</li>
+
+<li>Menganggap sin²θ = (sinθ) × 2.</li>
+
+<li>Lupa menentukan tanda positif atau negatif saat mengambil akar.</li>
+
+<li>Tidak memperhatikan kuadran ketika mencari cosθ atau sinθ.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Bagi peserta Olimpiade,
+
+identitas ini adalah
+"pisau serbaguna."
+
+Saat menemui bentuk
+
+</p>
+
+<pre>
+
+1−sin²θ
+
+</pre>
+
+<p>
+
+pikiranmu harus langsung berubah menjadi
+
+</p>
+
+<pre>
+
+cos²θ
+
+</pre>
+
+<p>
+
+Begitu pula sebaliknya.
+
+Semakin cepat kamu mengenali
+perubahan ini,
+semakin cepat pula
+menyelesaikan soal-soal identitas,
+persamaan trigonometri,
+hingga kalkulus.
+
+Inilah salah satu refleks
+yang dimiliki hampir semua
+peraih medali Olimpiade Matematika.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 4 : Identitas Kebalikan (Reciprocal Identities) --><section class="section">
+
+<h1>④ Identitas Kebalikan (Reciprocal Identities)</h1>
+
+<p>
+
+Setelah memahami sinus, cosinus,
+dan tangen,
+muncul tiga fungsi trigonometri lainnya,
+yaitu
+
+</p>
+
+<ul>
+
+<li>Cosecan (csc)</li>
+<li>Secan (sec)</li>
+<li>Cotangen (cot)</li>
+
+</ul>
+
+<p>
+
+Ketiga fungsi tersebut
+sebenarnya bukan fungsi baru.
+
+Mereka hanyalah
+
+<b>kebalikan (reciprocal)</b>
+
+dari fungsi yang sudah kita pelajari.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Kebalikan?</h2>
+
+<p>
+
+Dalam matematika,
+
+kebalikan suatu bilangan
+adalah
+
+</p>
+
+<pre>
+
+1
+
+──
+
+x
+
+</pre>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+2
+
+↔
+
+1/2
+
+</pre>
+
+<pre>
+
+5
+
+↔
+
+1/5
+
+</pre>
+
+<pre>
+
+8/3
+
+↔
+
+3/8
+
+</pre>
+
+<p>
+
+Prinsip yang sama
+berlaku pada fungsi trigonometri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Identitas Kebalikan Sinus</h2>
+
+<p>
+
+Definisi sinus adalah
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<p>
+
+Balik pecahannya.
+
+</p>
+
+<pre>
+
+Miring
+
+──────
+
+Depan
+
+</pre>
+
+<p>
+
+Bentuk tersebut dinamakan
+
+</p>
+
+<div class="note">
+
+<pre>
+
+csc θ
+
+=
+
+1
+
+──────
+
+sin θ
+
+</pre>
+
+</div>
+
+<p>
+
+Cosecan berarti
+
+<b>kebalikan sinus.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Identitas Kebalikan Cosinus</h2>
+
+<p>
+
+Cosinus didefinisikan sebagai
+
+</p>
+
+<pre>
+
+cos θ
+
+=
+
+Samping
+
+────────
+
+Miring
+
+</pre>
+
+<p>
+
+Balik pecahannya.
+
+</p>
+
+<pre>
+
+Miring
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Maka diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sec θ
+
+=
+
+1
+
+──────
+
+cos θ
+
+</pre>
+
+</div>
+
+<p>
+
+Secan adalah
+
+<b>kebalikan cosinus.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>4. Identitas Kebalikan Tangen</h2>
+
+<p>
+
+Tangen adalah
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Balik pecahannya.
+
+</p>
+
+<pre>
+
+Samping
+
+────────
+
+Depan
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cot θ
+
+=
+
+1
+
+──────
+
+tan θ
+
+</pre>
+
+</div>
+
+<p>
+
+Cotangen adalah
+
+<b>kebalikan tangen.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Ringkasan Identitas Kebalikan</h2>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Identitas</th>
+
+</tr>
+
+<tr>
+
+<td>Cosecan</td>
+
+<td>csc θ = 1 / sin θ</td>
+
+</tr>
+
+<tr>
+
+<td>Secan</td>
+
+<td>sec θ = 1 / cos θ</td>
+
+</tr>
+
+<tr>
+
+<td>Cotangen</td>
+
+<td>cot θ = 1 / tan θ</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>6. Mengapa Disebut Reciprocal Identity?</h2>
+
+<p>
+
+Karena hubungan tersebut
+selalu berbentuk
+
+</p>
+
+<pre>
+
+Fungsi
+
+=
+
+1
+
+────────
+
+Fungsi lainnya
+
+</pre>
+
+<p>
+
+Hubungan ini selalu benar
+untuk semua sudut
+yang membuat penyebutnya
+tidak sama dengan nol.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+sec90°
+
+</pre>
+
+<p>
+
+tidak terdefinisi karena
+
+</p>
+
+<pre>
+
+cos90° = 0
+
+</pre>
+
+<p>
+
+sehingga terjadi pembagian dengan nol.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>7. Pembuktian Identitas Kebalikan</h2>
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+sin θ × csc θ = 1
+
+</pre>
+
+<p>
+
+Gunakan definisi.
+
+</p>
+
+<pre>
+
+=
+
+sin θ ×
+
+1
+
+──────
+
+sin θ
+
+</pre>
+
+<p>
+
+Sederhanakan.
+
+</p>
+
+<pre>
+
+= 1
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+<p>
+
+Dengan cara yang sama,
+
+</p>
+
+<pre>
+
+cos θ × sec θ = 1
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+tan θ × cot θ = 1
+
+</pre>
+
+<p>
+
+juga selalu benar.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Jika
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+4/5
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+csc θ
+
+</pre>
+
+<p>
+
+Gunakan identitas kebalikan.
+
+</p>
+
+<pre>
+
+csc θ
+
+=
+
+1
+
+────
+
+4/5
+
+</pre>
+
+<pre>
+
+=
+
+5/4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+sec θ
+
+=
+
+13/12
+
+</pre>
+
+<p>
+
+Carilah
+
+</p>
+
+<pre>
+
+cos θ
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+sec θ
+
+=
+
+1
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+cos θ
+
+=
+
+12/13
+
+</pre>
+
+<p>
+
+Jika kuadran belum diketahui,
+hasilnya dapat berupa
+
+</p>
+
+<pre>
+
+±12/13
+
+</pre>
+
+<p>
+
+karena tanda bergantung
+pada posisi sudut.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap sec = 1 − cos.</li>
+
+<li>Menganggap csc = 1 − sin.</li>
+
+<li>Lupa bahwa reciprocal berarti kebalikan, bukan dikurangi 1.</li>
+
+<li>Tidak memperhatikan pembagian dengan nol.</li>
+
+<li>Lupa bahwa tanda positif atau negatif dipengaruhi kuadran.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Saat melihat fungsi
+
+</p>
+
+<pre>
+
+sec
+
+csc
+
+cot
+
+</pre>
+
+<p>
+
+biasakan langsung mengubahnya menjadi
+
+</p>
+
+<pre>
+
+1/cos
+
+1/sin
+
+1/tan
+
+</pre>
+
+<p>
+
+Langkah sederhana ini sering membuat
+pembuktian identitas menjadi jauh lebih mudah.
+
+Pada tingkat Olimpiade,
+peserta hampir selalu mengubah fungsi-fungsi
+kebalikan ke bentuk dasar terlebih dahulu,
+karena bentuk dasar lebih mudah dimanipulasi.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 5 : Identitas Hasil Bagi (Quotient Identities) --><section class="section">
+
+<h1>⑤ Identitas Hasil Bagi (Quotient Identities)</h1>
+
+<p>
+
+Pada bagian sebelumnya kita telah mempelajari
+identitas kebalikan.
+
+Sekarang kita akan mempelajari
+identitas yang menyatakan bahwa
+suatu fungsi trigonometri
+dapat diperoleh dari hasil pembagian
+dua fungsi lainnya.
+
+</p>
+
+<p>
+
+Identitas ini dinamakan
+
+<b>Quotient Identity</b>
+
+karena berasal dari kata
+
+<b>quotient</b>
+
+yang berarti
+
+<b>hasil bagi.</b>
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Dua Identitas Hasil Bagi</h2>
+
+<p>
+
+Terdapat dua identitas utama.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<br>
+
+<pre>
+
+cot θ
+
+=
+
+cos θ
+
+──────
+
+sin θ
+
+</pre>
+
+</div>
+
+<p>
+
+Kedua identitas tersebut
+akan sangat sering digunakan
+dalam pembuktian identitas,
+persamaan trigonometri,
+hingga kalkulus.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Pembuktian Identitas Tan θ</h2>
+
+<p>
+
+Mulailah dari definisi.
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<pre>
+
+cos θ
+
+=
+
+Samping
+
+────────
+
+Miring
+
+</pre>
+
+<p>
+
+Kemudian lakukan pembagian.
+
+</p>
+
+<pre>
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<pre>
+
+=
+
+Depan/Miring
+
+────────────────
+
+Samping/Miring
+
+</pre>
+
+<p>
+
+Penyebut
+
+</p>
+
+<pre>
+
+Miring
+
+</pre>
+
+<p>
+
+saling menghilangkan.
+
+</p>
+
+<pre>
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Menurut definisi,
+
+</p>
+
+<pre>
+
+Depan
+
+────────
+
+Samping
+
+=
+
+tan θ
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3. Pembuktian Identitas Cot θ</h2>
+
+<p>
+
+Sekarang lakukan hal yang sama.
+
+</p>
+
+<pre>
+
+cos θ
+
+──────
+
+sin θ
+
+</pre>
+
+<pre>
+
+=
+
+Samping/Miring
+
+────────────────
+
+Depan/Miring
+
+</pre>
+
+<p>
+
+Miring kembali saling menghilangkan.
+
+</p>
+
+<pre>
+
+=
+
+Samping
+
+────────
+
+Depan
+
+</pre>
+
+<p>
+
+Menurut definisi,
+
+</p>
+
+<pre>
+
+Samping
+
+────────
+
+Depan
+
+=
+
+cot θ
+
+</pre>
+
+<p>
+
+Maka terbukti
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cot θ
+
+=
+
+cos θ
+
+──────
+
+sin θ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4. Hubungan dengan Identitas Kebalikan</h2>
+
+<p>
+
+Identitas hasil bagi
+berhubungan erat
+dengan identitas kebalikan.
+
+Sebagai contoh,
+
+</p>
+
+<pre>
+
+cot θ
+
+=
+
+1
+
+──────
+
+tan θ
+
+</pre>
+
+<p>
+
+Kemudian gunakan
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+cot θ
+
+=
+
+1
+
+──────────
+
+sin/cos
+
+</pre>
+
+<pre>
+
+=
+
+cos
+
+──────
+
+sin
+
+</pre>
+
+<p>
+
+Hasilnya sama.
+
+Artinya,
+
+semua identitas tersebut
+saling terhubung.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>5. Mengapa Identitas Ini Penting?</h2>
+
+<p>
+
+Dalam banyak soal,
+nilai tangen tidak diketahui,
+tetapi nilai sinus
+dan cosinus diketahui.
+
+Daripada mencari segitiga baru,
+cukup gunakan
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Perhitungan menjadi jauh lebih cepat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>6. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+sin θ
+
+=
+
+3/5
+
+</pre>
+
+<pre>
+
+cos θ
+
+=
+
+4/5
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+tan θ
+
+</pre>
+
+<p>
+
+Gunakan identitas hasil bagi.
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+3/5
+
+────
+
+4/5
+
+</pre>
+
+<pre>
+
+=
+
+3
+
+──
+
+4
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Soal Menengah</h2>
+
+<div class="example">
+
+<p>
+
+Diketahui
+
+</p>
+
+<pre>
+
+tan θ
+
+=
+
+5
+
+──
+
+12
+
+</pre>
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cot θ
+
+</pre>
+
+<p>
+
+Gunakan identitas kebalikan.
+
+</p>
+
+<pre>
+
+cot θ
+
+=
+
+1
+
+──────
+
+tan θ
+
+</pre>
+
+<pre>
+
+=
+
+12
+
+────
+
+5
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Buktikan bahwa
+
+</p>
+
+<pre>
+
+tan θ × cos θ
+
+=
+
+sin θ
+
+</pre>
+
+<p>
+
+Pembuktian.
+
+</p>
+
+<pre>
+
+tan θ × cos θ
+
+</pre>
+
+<p>
+
+Gunakan identitas hasil bagi.
+
+</p>
+
+<pre>
+
+=
+
+sin θ
+
+──────
+
+cos θ
+
+×
+
+cos θ
+
+</pre>
+
+<p>
+
+Cosinus saling menghilangkan.
+
+</p>
+
+<pre>
+
+=
+
+sin θ
+
+</pre>
+
+<p>
+
+Terbukti.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menulis tan θ = cos θ / sin θ.</li>
+
+<li>Tertukar antara tan dan cot.</li>
+
+<li>Lupa menyederhanakan pecahan.</li>
+
+<li>Tidak memperhatikan bahwa cos θ tidak boleh bernilai nol saat menggunakan tan θ = sin θ / cos θ.</li>
+
+<li>Menghafal tanpa memahami asal-usul identitas.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Dalam pembuktian identitas,
+fungsi
+
+</p>
+
+<pre>
+
+tan θ
+
+</pre>
+
+<p>
+
+hampir selalu diubah menjadi
+
+</p>
+
+<pre>
+
+sin θ
+
+──────
+
+cos θ
+
+</pre>
+
+<p>
+
+Begitu pula
+
+</p>
+
+<pre>
+
+cot θ
+
+</pre>
+
+<p>
+
+diubah menjadi
+
+</p>
+
+<pre>
+
+cos θ
+
+──────
+
+sin θ
+
+</pre>
+
+<p>
+
+Mengubah semua fungsi ke bentuk
+<b>sin</b> dan <b>cos</b>
+akan membuat hampir seluruh pembuktian
+menjadi jauh lebih mudah.
+
+Inilah salah satu teknik dasar
+yang digunakan dalam Olimpiade Matematika.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 6 : Identitas Simetri --><section class="section">
+
+<h1>⑥ Identitas Simetri (Symmetry Identities)</h1>
+
+<p>
+
+Salah satu keindahan trigonometri adalah
+adanya <b>simetri</b>.
+
+Simetri berarti suatu bentuk
+tetap memiliki hubungan tertentu
+setelah dipantulkan,
+diputar,
+atau diberi tanda negatif.
+
+</p>
+
+<p>
+
+Identitas simetri sangat penting
+karena memungkinkan kita
+mengubah sudut besar,
+sudut negatif,
+atau sudut yang tampak rumit
+menjadi sudut yang lebih sederhana.
+
+</p>
+
+<p>
+
+Materi ini sering muncul
+pada soal Olimpiade
+karena dapat menyederhanakan
+perhitungan secara drastis.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Simetri?</h2>
+
+<p>
+
+Dalam geometri,
+simetri berarti suatu bangun
+tetap memiliki hubungan tertentu
+setelah dicerminkan.
+
+Hal yang sama berlaku
+pada Lingkaran Satuan.
+
+Jika sebuah titik dipantulkan
+terhadap sumbu tertentu,
+maka koordinatnya berubah
+menurut aturan tertentu.
+
+Karena
+
+</p>
+
+<pre>
+
+x = cos θ
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+y = sin θ
+
+</pre>
+
+<p>
+
+maka perubahan koordinat
+akan menghasilkan identitas simetri.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Simetri Terhadap Titik Asal</h2>
+
+<p>
+
+Misalkan sudut diubah menjadi
+
+</p>
+
+<pre>
+
+−θ
+
+</pre>
+
+<p>
+
+Pada Lingkaran Satuan,
+titik dipantulkan terhadap sumbu-x.
+
+Koordinat berubah menjadi
+
+</p>
+
+<pre>
+
+(x,-y)
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+x = cos θ
+
+</pre>
+
+<p>
+
+tetap,
+
+sedangkan
+
+</p>
+
+<pre>
+
+y = sin θ
+
+</pre>
+
+<p>
+
+berubah tanda,
+
+maka diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(-θ)
+
+=
+
+-sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(-θ)
+
+=
+
+cosθ
+
+</pre>
+
+<br>
+
+<pre>
+
+tan(-θ)
+
+=
+
+-tanθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3. Fungsi Ganjil dan Fungsi Genap</h2>
+
+<p>
+
+Dari identitas sebelumnya,
+kita dapat mengelompokkan
+fungsi trigonometri menjadi dua.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Fungsi Genap</th>
+
+<th>Fungsi Ganjil</th>
+
+</tr>
+
+<tr>
+
+<td>cos</td>
+
+<td>sin</td>
+
+</tr>
+
+<tr>
+
+<td>sec</td>
+
+<td>tan</td>
+
+</tr>
+
+<tr>
+
+<td></td>
+
+<td>cot</td>
+
+</tr>
+
+<tr>
+
+<td></td>
+
+<td>csc</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Fungsi genap memenuhi
+
+</p>
+
+<pre>
+
+f(-x)=f(x)
+
+</pre>
+
+<p>
+
+Sedangkan fungsi ganjil memenuhi
+
+</p>
+
+<pre>
+
+f(-x)=-f(x)
+
+</pre>
+
+</section>
+
+<section class="section">
+
+<h2>4. Simetri terhadap Sumbu-y</h2>
+
+<p>
+
+Sekarang perhatikan sudut
+
+</p>
+
+<pre>
+
+180°-θ
+
+</pre>
+
+<p>
+
+Pada Lingkaran Satuan,
+titik dipantulkan terhadap sumbu-y.
+
+Koordinat berubah menjadi
+
+</p>
+
+<pre>
+
+(-x,y)
+
+</pre>
+
+<p>
+
+Akibatnya
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(180°-θ)
+
+=
+
+sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(180°-θ)
+
+=
+
+-cosθ
+
+</pre>
+
+<br>
+
+<pre>
+
+tan(180°-θ)
+
+=
+
+-tanθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5. Simetri terhadap Titik (180°+θ)</h2>
+
+<p>
+
+Jika sudut diputar
+sebesar
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+<p>
+
+maka titik berpindah
+ke sisi yang berlawanan.
+
+Koordinat berubah menjadi
+
+</p>
+
+<pre>
+
+(-x,-y)
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(180°+θ)
+
+=
+
+-sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(180°+θ)
+
+=
+
+-cosθ
+
+</pre>
+
+<br>
+
+<pre>
+
+tan(180°+θ)
+
+=
+
+tanθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6. Simetri terhadap Sumbu-x</h2>
+
+<p>
+
+Sekarang gunakan
+
+</p>
+
+<pre>
+
+360°-θ
+
+</pre>
+
+<p>
+
+Koordinat berubah menjadi
+
+</p>
+
+<pre>
+
+(x,-y)
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(360°-θ)
+
+=
+
+-sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(360°-θ)
+
+=
+
+cosθ
+
+</pre>
+
+<br>
+
+<pre>
+
+tan(360°-θ)
+
+=
+
+-tanθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7. Ringkasan Identitas Simetri</h2>
+
+<table>
+
+<tr>
+
+<th>Identitas</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>sin(-θ)</td>
+
+<td>-sinθ</td>
+
+</tr>
+
+<tr>
+
+<td>cos(-θ)</td>
+
+<td>cosθ</td>
+
+</tr>
+
+<tr>
+
+<td>tan(-θ)</td>
+
+<td>-tanθ</td>
+
+</tr>
+
+<tr>
+
+<td>sin(180°-θ)</td>
+
+<td>sinθ</td>
+
+</tr>
+
+<tr>
+
+<td>cos(180°-θ)</td>
+
+<td>-cosθ</td>
+
+</tr>
+
+<tr>
+
+<td>tan(180°-θ)</td>
+
+<td>-tanθ</td>
+
+</tr>
+
+<tr>
+
+<td>sin(180°+θ)</td>
+
+<td>-sinθ</td>
+
+</tr>
+
+<tr>
+
+<td>cos(180°+θ)</td>
+
+<td>-cosθ</td>
+
+</tr>
+
+<tr>
+
+<td>tan(180°+θ)</td>
+
+<td>tanθ</td>
+
+</tr>
+
+<tr>
+
+<td>sin(360°-θ)</td>
+
+<td>-sinθ</td>
+
+</tr>
+
+<tr>
+
+<td>cos(360°-θ)</td>
+
+<td>cosθ</td>
+
+</tr>
+
+<tr>
+
+<td>tan(360°-θ)</td>
+
+<td>-tanθ</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin(-30°)
+
+</pre>
+
+<p>
+
+Gunakan identitas
+
+</p>
+
+<pre>
+
+sin(-θ)
+
+=
+
+-sinθ
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+=
+
+-1/2
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos(180°-45°)
+
+</pre>
+
+<p>
+
+Gunakan identitas simetri.
+
+</p>
+
+<pre>
+
+=
+
+-cos45°
+
+</pre>
+
+<pre>
+
+=
+
+-√2/2
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap cos(-θ) = -cosθ.</li>
+
+<li>Tertukar antara 180°−θ dan 180°+θ.</li>
+
+<li>Menghafal tanpa memahami perubahan koordinat pada Unit Circle.</li>
+
+<li>Lupa bahwa tan merupakan fungsi ganjil.</li>
+
+<li>Tidak memanfaatkan identitas simetri untuk menyederhanakan soal.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Peserta Olimpiade hampir tidak pernah
+menghafal semua identitas simetri.
+
+Mereka cukup membayangkan
+<b>Lingkaran Satuan</b>.
+
+Dengan mengetahui bagaimana
+koordinat berubah ketika dipantulkan
+atau diputar,
+seluruh identitas simetri
+dapat diperoleh kembali
+dalam hitungan detik.
+
+Itulah alasan mengapa
+pemahaman Unit Circle
+sangat penting dalam trigonometri tingkat lanjut.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 7 : Identitas Kofungsi --><section class="section">
+
+<h1>⑦ Identitas Kofungsi (Cofunction Identities)</h1>
+
+<p>
+
+Pada bagian sebelumnya kita mempelajari
+identitas simetri yang berasal dari
+pencerminan dan rotasi pada Lingkaran Satuan.
+
+Sekarang kita akan mempelajari
+hubungan yang sangat menarik,
+yaitu hubungan antara dua sudut
+yang jumlahnya selalu
+
+</p>
+
+<pre>
+
+90°
+
+</pre>
+
+<p>
+
+Hubungan ini dinamakan
+
+<b>Identitas Kofungsi.</b>
+
+</p>
+
+<p>
+
+Materi ini sering muncul
+dalam pembuktian identitas,
+geometri,
+hingga Olimpiade Matematika.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Kofungsi?</h2>
+
+<p>
+
+Kata
+
+<b>co</b>
+
+berarti
+
+<b>pelengkap.</b>
+
+Dua sudut disebut saling melengkapi
+apabila jumlahnya
+
+</p>
+
+<pre>
+
+90°
+
+</pre>
+
+<p>
+
+Misalnya
+
+</p>
+
+<pre>
+
+20° + 70° = 90°
+
+</pre>
+
+<pre>
+
+35° + 55° = 90°
+
+</pre>
+
+<pre>
+
+15° + 75° = 90°
+
+</pre>
+
+<p>
+
+Karena kedua sudut saling melengkapi,
+fungsi trigonometrinya
+juga saling berhubungan.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Bisa Terjadi?</h2>
+
+<p>
+
+Perhatikan sebuah segitiga siku-siku.
+
+Jumlah seluruh sudut adalah
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+<p>
+
+Karena satu sudut bernilai
+
+</p>
+
+<pre>
+
+90°
+
+</pre>
+
+<p>
+
+maka dua sudut lainnya memenuhi
+
+</p>
+
+<pre>
+
+A + B = 90°
+
+</pre>
+
+<p>
+
+Artinya,
+
+jika salah satu sudut membesar,
+sudut lainnya otomatis mengecil.
+
+Akibatnya,
+
+sisi depan pada sudut pertama
+menjadi sisi samping
+pada sudut kedua.
+
+Inilah asal-usul
+Identitas Kofungsi.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Pembuktian Sin dan Cos</h2>
+
+<p>
+
+Misalkan terdapat dua sudut
+
+</p>
+
+<pre>
+
+A
+
+dan
+
+90°−A
+
+</pre>
+
+<p>
+
+Pada sudut A,
+
+</p>
+
+<pre>
+
+sinA
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<p>
+
+Sedangkan pada sudut
+
+</p>
+
+<pre>
+
+90°−A
+
+</pre>
+
+<p>
+
+sisi depan berubah menjadi
+sisi samping.
+
+Sehingga
+
+</p>
+
+<pre>
+
+cos(90°−A)
+
+=
+
+Depan
+
+──────
+
+Miring
+
+</pre>
+
+<p>
+
+yang sama persis dengan
+
+</p>
+
+<pre>
+
+sinA
+
+</pre>
+
+<p>
+
+Maka terbukti
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(90°−θ)
+
+=
+
+cosθ
+
+</pre>
+
+</div>
+
+<p>
+
+Begitu pula
+
+</p>
+
+<div class="note">
+
+<pre>
+
+cos(90°−θ)
+
+=
+
+sinθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4. Pembuktian Tan dan Cot</h2>
+
+<p>
+
+Gunakan definisi.
+
+</p>
+
+<pre>
+
+tanθ
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+Pada sudut pelengkap,
+
+kedua sisi bertukar posisi.
+
+Maka
+
+</p>
+
+<pre>
+
+cot(90°−θ)
+
+=
+
+Depan
+
+────────
+
+Samping
+
+</pre>
+
+<p>
+
+yang sama dengan
+
+</p>
+
+<pre>
+
+tanθ
+
+</pre>
+
+<p>
+
+Sehingga diperoleh
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan(90°−θ)
+
+=
+
+cotθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cot(90°−θ)
+
+=
+
+tanθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5. Pembuktian Sec dan Csc</h2>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+sec
+
+=
+
+1/cos
+
+</pre>
+
+<p>
+
+dan
+
+</p>
+
+<pre>
+
+csc
+
+=
+
+1/sin
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+sec(90°−θ)
+
+</pre>
+
+<pre>
+
+=
+
+1
+
+────────────
+
+cos(90°−θ)
+
+</pre>
+
+<p>
+
+Gunakan identitas sebelumnya.
+
+</p>
+
+<pre>
+
+=
+
+1
+
+──────
+
+sinθ
+
+</pre>
+
+<pre>
+
+=
+
+cscθ
+
+</pre>
+
+<p>
+
+Dengan cara yang sama
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sec(90°−θ)
+
+=
+
+cscθ
+
+</pre>
+
+<br>
+
+<pre>
+
+csc(90°−θ)
+
+=
+
+secθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6. Ringkasan Identitas Kofungsi</h2>
+
+<table>
+
+<tr>
+
+<th>Identitas</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>sin(90°−θ)</td>
+
+<td>cosθ</td>
+
+</tr>
+
+<tr>
+
+<td>cos(90°−θ)</td>
+
+<td>sinθ</td>
+
+</tr>
+
+<tr>
+
+<td>tan(90°−θ)</td>
+
+<td>cotθ</td>
+
+</tr>
+
+<tr>
+
+<td>cot(90°−θ)</td>
+
+<td>tanθ</td>
+
+</tr>
+
+<tr>
+
+<td>sec(90°−θ)</td>
+
+<td>cscθ</td>
+
+</tr>
+
+<tr>
+
+<td>csc(90°−θ)</td>
+
+<td>secθ</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>7. Cara Mudah Mengingat</h2>
+
+<div class="note">
+
+<p>
+
+Setiap kali melihat
+
+</p>
+
+<pre>
+
+90°−θ
+
+</pre>
+
+<p>
+
+langsung ubah fungsi menjadi
+"pasangannya."
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Pasangan</th>
+
+</tr>
+
+<tr>
+
+<td>Sin</td>
+
+<td>Cos</td>
+
+</tr>
+
+<tr>
+
+<td>Cos</td>
+
+<td>Sin</td>
+
+</tr>
+
+<tr>
+
+<td>Tan</td>
+
+<td>Cot</td>
+
+</tr>
+
+<tr>
+
+<td>Cot</td>
+
+<td>Tan</td>
+
+</tr>
+
+<tr>
+
+<td>Sec</td>
+
+<td>Csc</td>
+
+</tr>
+
+<tr>
+
+<td>Csc</td>
+
+<td>Sec</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+sin60°
+
+</pre>
+
+<p>
+
+Karena
+
+</p>
+
+<pre>
+
+60°
+
+=
+
+90°−30°
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+sin60°
+
+=
+
+cos30°
+
+</pre>
+
+<pre>
+
+=
+
+√3/2
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Contoh Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Sederhanakan
+
+</p>
+
+<pre>
+
+sin(90°−A)
+
++
+
+cos(90°−A)
+
+</pre>
+
+<p>
+
+Gunakan identitas kofungsi.
+
+</p>
+
+<pre>
+
+=
+
+cosA
+
++
+
+sinA
+
+</pre>
+
+<p>
+
+Bentuk ini jauh lebih sederhana
+dan sering menjadi langkah awal
+dalam pembuktian identitas Olimpiade.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap sin(90°−θ)=sinθ.</li>
+
+<li>Lupa bahwa semua fungsi berubah menjadi pasangannya.</li>
+
+<li>Tertukar antara kofungsi dan identitas simetri.</li>
+
+<li>Tidak memahami bahwa identitas ini berasal dari segitiga siku-siku.</li>
+
+<li>Menghafal tanpa memahami pembuktiannya.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Identitas kofungsi merupakan salah satu
+cara tercepat menyederhanakan soal.
+
+Saat melihat bentuk
+
+</p>
+
+<pre>
+
+90°−θ
+
+</pre>
+
+<p>
+
+peserta Olimpiade langsung
+mengubah fungsi ke pasangan kofungsinya,
+bukan menghitung nilai sudut terlebih dahulu.
+
+Refleks sederhana ini
+sering menghemat banyak langkah
+dalam pembuktian identitas
+dan penyelesaian soal trigonometri tingkat lanjut.
+
+</p>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Lanjut Bagian 8 : Identitas Periodik --><section class="section">
+
+<h1>⑧ Identitas Periodik (Periodicity Identities)</h1>
+
+<p>
+
+Salah satu sifat paling unik dari fungsi trigonometri adalah
+bahwa nilainya akan <b>berulang secara teratur</b>.
+
+Fenomena inilah yang dinamakan
+<b>periodisitas (periodicity)</b>.
+
+</p>
+
+<p>
+
+Karena sifat inilah,
+trigonometri digunakan untuk
+mempelajari gelombang,
+getaran,
+bunyi,
+arus listrik AC,
+orbit planet,
+hingga mekanika kuantum.
+
+</p>
+
+<p>
+
+Pada tingkat Olimpiade,
+identitas periodik sering digunakan
+untuk menyederhanakan sudut yang sangat besar,
+bahkan mencapai jutaan derajat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>1. Apa Itu Periode?</h2>
+
+<p>
+
+Periode adalah
+jarak terkecil yang harus ditempuh
+agar suatu fungsi kembali
+ke nilai semula.
+
+</p>
+
+<p>
+
+Sebagai contoh,
+jarum jam kembali ke posisi awal
+setelah
+
+</p>
+
+<pre>
+
+12 jam
+
+</pre>
+
+<p>
+
+Sehingga periode jarum jam adalah
+
+</p>
+
+<pre>
+
+12
+
+</pre>
+
+<p>
+
+Begitu pula fungsi trigonometri.
+
+Setelah diputar sejauh tertentu,
+nilainya kembali sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>2. Mengapa Nilai Trigonometri Berulang?</h2>
+
+<p>
+
+Semua fungsi trigonometri
+berasal dari Lingkaran Satuan.
+
+Setelah satu putaran penuh,
+
+</p>
+
+<pre>
+
+360°
+
+</pre>
+
+<p>
+
+atau
+
+</p>
+
+<pre>
+
+2π radian
+
+</pre>
+
+<p>
+
+titik kembali ke posisi semula.
+
+Karena koordinat titik kembali sama,
+maka nilai sinus,
+cosinus,
+dan fungsi lainnya
+juga kembali sama.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>3. Identitas Periodik Sinus dan Cosinus</h2>
+
+<p>
+
+Setelah satu putaran penuh,
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(θ+360°)
+
+=
+
+sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(θ+360°)
+
+=
+
+cosθ
+
+</pre>
+
+</div>
+
+<p>
+
+Dalam radian,
+
+</p>
+
+<div class="note">
+
+<pre>
+
+sin(θ+2π)
+
+=
+
+sinθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cos(θ+2π)
+
+=
+
+cosθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4. Mengapa Tan Memiliki Periode Berbeda?</h2>
+
+<p>
+
+Tangen merupakan hasil bagi
+
+</p>
+
+<pre>
+
+tanθ
+
+=
+
+sinθ
+
+──────
+
+cosθ
+
+</pre>
+
+<p>
+
+Setelah diputar
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+<p>
+
+sinus dan cosinus
+sama-sama berubah tanda.
+
+</p>
+
+<pre>
+
+(-sin)
+
+────────
+
+(-cos)
+
+</pre>
+
+<p>
+
+Tanda negatif saling menghilangkan.
+
+Akibatnya,
+
+nilai tangen sudah kembali
+setelah setengah putaran.
+
+</p>
+
+<div class="note">
+
+<pre>
+
+tan(θ+180°)
+
+=
+
+tanθ
+
+</pre>
+
+<br>
+
+<pre>
+
+cot(θ+180°)
+
+=
+
+cotθ
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5. Ringkasan Periode</h2>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+
+<th>Periode</th>
+
+</tr>
+
+<tr>
+
+<td>Sin</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Cos</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Sec</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Csc</td>
+
+<td>360° atau 2π</td>
+
+</tr>
+
+<tr>
+
+<td>Tan</td>
+
+<td>180° atau π</td>
+
+</tr>
+
+<tr>
+
+<td>Cot</td>
+
+<td>180° atau π</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="section">
+
+<h2>6. Mengurangi Sudut Sangat Besar</h2>
+
+<p>
+
+Misalkan kita ingin menghitung
+
+</p>
+
+<pre>
+
+sin 1110°
+
+</pre>
+
+<p>
+
+Daripada menghafal,
+kurangi dengan kelipatan
+
+</p>
+
+<pre>
+
+360°
+
+</pre>
+
+<pre>
+
+1110°
+
+−720°
+
+=
+
+390°
+
+</pre>
+
+<pre>
+
+390°
+
+−360°
+
+=
+
+30°
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+sin1110°
+
+=
+
+sin30°
+
+=
+
+1/2
+
+</pre>
+
+<p>
+
+Cara ini jauh lebih cepat.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>7. Contoh Soal Dasar</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+cos750°
+
+</pre>
+
+<p>
+
+Kurangi dengan
+
+</p>
+
+<pre>
+
+720°
+
+</pre>
+
+<pre>
+
+750°
+
+−720°
+
+=
+
+30°
+
+</pre>
+
+<p>
+
+Maka
+
+</p>
+
+<pre>
+
+cos750°
+
+=
+
+cos30°
+
+=
+
+√3/2
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>8. Contoh Soal Olimpiade</h2>
+
+<div class="example">
+
+<p>
+
+Hitung
+
+</p>
+
+<pre>
+
+tan2025°
+
+</pre>
+
+<p>
+
+Karena periode tan adalah
+
+</p>
+
+<pre>
+
+180°
+
+</pre>
+
+<p>
+
+Kurangi dengan
+
+</p>
+
+<pre>
+
+11 × 180°
+
+=
+
+1980°
+
+</pre>
+
+<pre>
+
+2025°
+
+−1980°
+
+=
+
+45°
+
+</pre>
+
+<p>
+
+Sehingga
+
+</p>
+
+<pre>
+
+tan2025°
+
+=
+
+tan45°
+
+=
+
+1
+
+</pre>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>9. Hubungan dengan Grafik</h2>
+
+<p>
+
+Nanti pada Bab Grafik Trigonometri,
+kita akan melihat bahwa
+gelombang sinus
+terus mengulang bentuk yang sama.
+
+Penyebabnya adalah
+identitas periodik.
+
+Tanpa konsep periode,
+grafik sinus dan cosinus
+tidak akan berbentuk gelombang.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>10. Kesalahan yang Sering Terjadi</h2>
+
+<div class="note">
+
+<ul>
+
+<li>Menganggap semua fungsi memiliki periode 360°.</li>
+
+<li>Lupa bahwa tan dan cot berperiode 180°.</li>
+
+<li>Tidak mengurangi sudut ke sudut terkecil terlebih dahulu.</li>
+
+<li>Menggunakan periode radian saat soal menggunakan derajat.</li>
+
+<li>Tidak memperhatikan tanda fungsi setelah reduksi sudut.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="note">
+
+<h2>🏆 Tips Olimpiade</h2>
+
+<p>
+
+Saat melihat sudut seperti
+
+</p>
+
+<pre>
+
+1440°
+
+5040°
+
+100000°
+
+2025°
+
+</pre>
+
+<p>
+
+jangan panik.
+
+Peserta Olimpiade tidak pernah
+menghitung langsung.
+
+Mereka segera mengurangi sudut tersebut
+menggunakan periode fungsi
+hingga berubah menjadi
+sudut istimewa.
+
+Refleks sederhana ini
+merupakan salah satu teknik tercepat
+dalam menyelesaikan soal trigonometri.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🎯 Ringkasan Bab 3</h2>
+
+<p>
+
+Pada bab ini kita telah mempelajari seluruh identitas dasar trigonometri yang menjadi fondasi materi selanjutnya.
+
+</p>
+
+<ul>
+
+<li>✅ Identitas Dasar</li>
+<li>✅ Identitas Pythagoras</li>
+<li>✅ Identitas Kebalikan (Reciprocal)</li>
+<li>✅ Identitas Hasil Bagi (Quotient)</li>
+<li>✅ Identitas Simetri</li>
+<li>✅ Identitas Kofungsi</li>
+<li>✅ Identitas Periodik</li>
+</ul>
+
+<p>
+
+Pada <b>Bab 4</b>, kita akan mempelajari bagaimana fungsi-fungsi tersebut membentuk grafik, bagaimana amplitudo, periode, dan pergeseran fase memengaruhi bentuk grafik, serta bagaimana trigonometri digunakan untuk memodelkan gelombang di dunia nyata.
+
+</p>
+
+</section>
+
+<div class="navigation">
+<a href="trigonometri2.html" class="btn">⬅ Bab Sebelumnya</a>
+<a href="trigonometri4.html" class="btn">Bab Berikutnya ➜</a>
+</div>
