@@ -1,1 +1,2919 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Matematika - statiska5</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#0f766e,#0891b2);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.3rem;
+margin-bottom:10px;
+}
+
+nav{
+position:sticky;
+top:0;
+background:white;
+padding:15px;
+border-bottom:1px solid #ddd;
+z-index:999;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-weight:bold;
+color:#0f766e;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+section{
+background:white;
+padding:30px;
+margin-bottom:28px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+h2{
+color:#0f766e;
+margin-bottom:16px;
+}
+
+h3{
+margin-top:24px;
+margin-bottom:10px;
+color:#0c8599;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:18px 0;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#0f766e;
+color:white;
+}
+
+.rumus{
+background:#eefcfb;
+border-left:6px solid #0f766e;
+padding:18px;
+margin:18px 0;
+}
+
+.visual{
+background:#fafafa;
+border:2px dashed #bbb;
+padding:20px;
+margin:20px 0;
+text-align:center;
+}
+
+.contoh{
+background:#eefdf4;
+border-left:6px solid #16a34a;
+padding:18px;
+margin:18px 0;
+}
+
+.catatan{
+background:#fff9e8;
+border-left:6px solid orange;
+padding:18px;
+margin:18px 0;
+}
+
+.olimpiade{
+background:#f3e8ff;
+border-left:6px solid #7c3aed;
+padding:18px;
+margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Handbook Matematika</h1>
+
+<p>
+
+Bab 5 — Dasar-Dasar Peluang (Probability)
+
+</p>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#pendahuluan">Pengantar</a></li>
+
+<li><a href="#eksperimen">Eksperimen</a></li>
+
+<li><a href="#ruangsampel">Ruang Sampel</a></li>
+
+<li><a href="#kejadian">Kejadian</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section id="pendahuluan">
+
+<h2>1. Pengantar Peluang</h2>
+
+<p>
+
+Peluang (<em>Probability</em>) adalah cabang matematika yang mempelajari
+kemungkinan terjadinya suatu peristiwa. Hampir semua keputusan yang dibuat
+dalam kehidupan sehari-hari sebenarnya melibatkan konsep peluang, baik
+disadari maupun tidak.
+
+</p>
+
+<p>
+
+Misalnya ketika seseorang mengatakan "besok kemungkinan hujan",
+"peluang tim favorit menang cukup besar", atau "kemungkinan lulus ujian
+mencapai 90%". Semua pernyataan tersebut menggunakan konsep peluang.
+
+</p>
+
+<div class="visual">
+
+<h3>Contoh Penerapan Peluang</h3>
+
+<table>
+
+<tr>
+
+<th>Bidang</th>
+
+<th>Penggunaan Peluang</th>
+
+</tr>
+
+<tr>
+
+<td>Kesehatan</td>
+
+<td>Memprediksi keberhasilan pengobatan.</td>
+
+</tr>
+
+<tr>
+
+<td>Ekonomi</td>
+
+<td>Analisis risiko investasi.</td>
+
+</tr>
+
+<tr>
+
+<td>Asuransi</td>
+
+<td>Menghitung risiko kerugian.</td>
+
+</tr>
+
+<tr>
+
+<td>Olahraga</td>
+
+<td>Prediksi hasil pertandingan.</td>
+
+</tr>
+
+<tr>
+
+<td>Kecerdasan Buatan</td>
+
+<td>Machine Learning dan Prediksi Data.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<p>
+
+Peluang menjadi dasar hampir seluruh statistika modern. Distribusi
+peluang, inferensi statistika, machine learning, hingga analisis data
+semuanya dibangun di atas konsep peluang.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Olimpiade</h3>
+
+<p>
+
+Dalam olimpiade matematika, peluang hampir selalu dipadukan dengan
+kombinatorika. Oleh karena itu, memahami konsep dasar jauh lebih penting
+daripada sekadar menghafal rumus.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>2. Mengapa Peluang Penting?</h2>
+
+<p>
+
+Di dunia nyata, kita hampir tidak pernah mengetahui masa depan secara
+pasti. Yang dapat dilakukan hanyalah memperkirakan seberapa besar
+kemungkinan suatu kejadian akan terjadi.
+
+</p>
+
+<p>
+
+Matematika peluang menyediakan cara yang sistematis untuk mengukur
+ketidakpastian tersebut menggunakan angka antara 0 dan 1.
+
+</p>
+
+<div class="visual">
+
+<h3>Makna Nilai Peluang</h3>
+
+<p>
+
+0 ─────────────── 0,5 ─────────────── 1
+
+</p>
+
+<p>
+
+Mustahil &nbsp;&nbsp;&nbsp;&nbsp; Mungkin &nbsp;&nbsp;&nbsp;&nbsp; Pasti
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Nilai Peluang</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>Kejadian mustahil.</td>
+
+</tr>
+
+<tr>
+
+<td>0,25</td>
+
+<td>Kemungkinan kecil.</td>
+
+</tr>
+
+<tr>
+
+<td>0,50</td>
+
+<td>Peluang seimbang.</td>
+
+</tr>
+
+<tr>
+
+<td>0,75</td>
+
+<td>Kemungkinan besar.</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>Kejadian pasti.</td>
+
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Hal Penting</strong>
+
+<p>
+
+Nilai peluang tidak mungkin lebih kecil dari 0 maupun lebih besar dari 1.
+
+Dengan kata lain,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+0 ≤ P(A) ≤ 1
+
+</p>
+
+</div>
+
+</section>
+
+<section id="eksperimen">
+
+<h2>3. Eksperimen Acak (Random Experiment)</h2>
+
+<p>
+
+Eksperimen acak adalah suatu percobaan yang hasil akhirnya belum dapat
+dipastikan sebelum percobaan dilakukan, meskipun prosedurnya selalu sama.
+
+</p>
+
+<p>
+
+Contohnya, ketika sebuah dadu dilempar, kita mengetahui bahwa hasilnya
+pasti salah satu dari angka 1 sampai 6. Akan tetapi, kita tidak pernah
+tahu angka mana yang akan muncul sebelum dadu berhenti.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Eksperimen Acak</h3>
+
+<ul>
+
+<li>Melempar satu koin.</li>
+
+<li>Melempar dua dadu.</li>
+
+<li>Mengambil satu kartu remi.</li>
+
+<li>Mengambil bola dari dalam kotak.</li>
+
+<li>Memilih satu siswa secara acak.</li>
+
+</ul>
+
+</div>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<p>
+
+Percobaan → Hasil Belum Diketahui → Hasil Muncul → Analisis Peluang
+
+</p>
+
+</div>
+
+<p>
+
+Seluruh konsep peluang selalu diawali oleh sebuah eksperimen acak.
+
+</p>
+
+</section><section id="ruangsampel">
+
+<h2>4. Ruang Sampel (Sample Space)</h2>
+
+<p>
+
+Setiap eksperimen acak memiliki sekumpulan hasil yang mungkin terjadi.
+Himpunan seluruh hasil yang mungkin tersebut disebut
+<strong>ruang sampel</strong> (<em>Sample Space</em>) dan biasanya
+dilambangkan dengan huruf <strong>S</strong> atau <strong>Ω</strong>.
+
+</p>
+
+<p>
+
+Tanpa mengetahui ruang sampel, kita tidak dapat menghitung peluang suatu
+kejadian. Oleh karena itu, menentukan ruang sampel merupakan langkah
+pertama dalam hampir semua soal peluang.
+
+</p>
+
+<div class="visual">
+
+<h3>Konsep Dasar</h3>
+
+<p>
+
+Eksperimen Acak
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Daftar Seluruh Hasil yang Mungkin
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Ruang Sampel (S)
+
+</p>
+
+</div>
+
+<h3>Contoh 1 — Melempar Satu Koin</h3>
+
+<div class="contoh">
+
+<p>
+
+Kemungkinan hasil:
+
+</p>
+
+<p style="font-size:20px;">
+
+S = {Angka, Gambar}
+
+</p>
+
+<p>
+
+Banyak anggota ruang sampel = 2
+
+</p>
+
+</div>
+
+<h3>Contoh 2 — Melempar Satu Dadu</h3>
+
+<div class="contoh">
+
+<p>
+
+S = {1, 2, 3, 4, 5, 6}
+
+</p>
+
+<p>
+
+n(S) = 6
+
+</p>
+
+</div>
+
+<h3>Contoh 3 — Dua Koin</h3>
+
+<div class="visual">
+
+<table>
+
+<tr>
+
+<th>Koin 1</th>
+
+<th>Koin 2</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>A</td>
+
+<td>(A,A)</td>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>G</td>
+
+<td>(A,G)</td>
+
+</tr>
+
+<tr>
+
+<td>G</td>
+
+<td>A</td>
+
+<td>(G,A)</td>
+
+</tr>
+
+<tr>
+
+<td>G</td>
+
+<td>G</td>
+
+<td>(G,G)</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<p>
+
+Sehingga,
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:20px;">
+
+S = {(A,A), (A,G), (G,A), (G,G)}
+
+</p>
+
+<p>
+
+n(S) = 4
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Olimpiade</h3>
+
+<p>
+
+Pada soal yang lebih sulit, ruang sampel sering kali terlalu besar untuk
+dituliskan satu per satu. Dalam kasus tersebut, gunakan prinsip
+pencacahan atau kombinatorika untuk menentukan banyak anggota ruang
+sampel tanpa menuliskan seluruh elemennya.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="titik-sampel">
+
+<h2>5. Titik Sampel (Sample Point)</h2>
+
+<p>
+
+Setiap anggota dari ruang sampel disebut
+<strong>titik sampel</strong>.
+
+</p>
+
+<p>
+
+Dengan kata lain, jika ruang sampel merupakan himpunan seluruh hasil yang
+mungkin, maka titik sampel adalah satu hasil tertentu yang terdapat di
+dalam himpunan tersebut.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Jika sebuah dadu dilempar,
+
+</p>
+
+<p>
+
+S = {1, 2, 3, 4, 5, 6}
+
+</p>
+
+<p>
+
+Masing-masing angka
+
+<strong>1</strong>,
+<strong>2</strong>,
+<strong>3</strong>,
+<strong>4</strong>,
+<strong>5</strong>, dan
+<strong>6</strong>
+
+merupakan titik sampel.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<pre>
+
+        Ruang Sampel
+
+┌──────────────────────────┐
+
+  1   2   3   4   5   6
+
+└──────────────────────────┘
+
+Setiap angka = Titik Sampel
+
+</pre>
+
+</div>
+
+<p>
+
+Memahami titik sampel akan mempermudah ketika mempelajari kejadian
+(event), karena sebuah kejadian merupakan kumpulan dari beberapa titik
+sampel.
+
+</p>
+
+</section>
+
+<section id="kejadian">
+
+<h2>6. Kejadian (Event)</h2>
+
+<p>
+
+Dalam teori peluang, suatu
+<strong>kejadian (event)</strong>
+adalah himpunan bagian dari ruang sampel.
+
+</p>
+
+<p>
+
+Artinya, sebuah kejadian dapat terdiri atas satu titik sampel ataupun
+beberapa titik sampel sekaligus.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Misalkan sebuah dadu dilempar.
+
+</p>
+
+<p>
+
+Ruang sampel:
+
+</p>
+
+<p>
+
+S = {1,2,3,4,5,6}
+
+</p>
+
+<p>
+
+Kejadian muncul bilangan genap:
+
+</p>
+
+<p>
+
+A = {2,4,6}
+
+</p>
+
+<p>
+
+Kejadian muncul bilangan ganjil:
+
+</p>
+
+<p>
+
+B = {1,3,5}
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<pre>
+
+S = {1 2 3 4 5 6}
+
+A = {2 4 6}
+
+B = {1 3 5}
+
+</pre>
+
+</div>
+
+<p>
+
+Karena A dan B merupakan bagian dari ruang sampel S, maka keduanya disebut
+kejadian.
+
+</p>
+
+<h3>Notasi yang Sering Digunakan</h3>
+
+<table>
+
+<tr>
+
+<th>Notasi</th>
+
+<th>Arti</th>
+
+</tr>
+
+<tr>
+
+<td>S atau Ω</td>
+
+<td>Ruang Sampel</td>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>Kejadian A</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>Kejadian B</td>
+
+</tr>
+
+<tr>
+
+<td>P(A)</td>
+
+<td>Peluang terjadinya kejadian A</td>
+
+</tr>
+
+<tr>
+
+<td>n(A)</td>
+
+<td>Banyak anggota kejadian A</td>
+
+</tr>
+
+<tr>
+
+<td>n(S)</td>
+
+<td>Banyak anggota ruang sampel</td>
+
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Intuisi Penting</strong>
+
+<p>
+
+Dalam hampir semua soal peluang, proses berpikir yang benar adalah:
+
+</p>
+
+<p>
+
+Eksperimen → Ruang Sampel → Kejadian → Hitung Peluang
+
+</p>
+
+<p>
+
+Banyak siswa langsung menggunakan rumus tanpa terlebih dahulu menentukan
+ruang sampel dan kejadian, sehingga mudah melakukan kesalahan.
+
+</p>
+
+</div>
+
+</section><section id="jenis-kejadian">
+
+<h2>7. Jenis-Jenis Kejadian (Types of Events)</h2>
+
+<p>
+
+Tidak semua kejadian memiliki sifat yang sama. Dalam teori peluang,
+terdapat beberapa jenis kejadian yang harus dipahami karena masing-masing
+memiliki aturan perhitungan yang berbeda.
+
+</p>
+
+<h3>1. Kejadian Sederhana (Simple Event)</h3>
+
+<p>
+
+Kejadian sederhana adalah kejadian yang hanya terdiri atas
+<strong>satu titik sampel</strong>.
+
+</p>
+
+<div class="contoh">
+
+<p>
+
+Dadu dilempar satu kali.
+
+</p>
+
+<p>
+
+A = {4}
+
+</p>
+
+<p>
+
+Artinya hanya angka 4 yang dianggap berhasil.
+
+</p>
+
+</div>
+
+<h3>2. Kejadian Majemuk (Compound Event)</h3>
+
+<p>
+
+Kejadian majemuk terdiri atas lebih dari satu titik sampel.
+
+</p>
+
+<div class="contoh">
+
+<p>
+
+Misalkan
+
+</p>
+
+<p>
+
+A = {2,4,6}
+
+</p>
+
+<p>
+
+Kejadian muncul bilangan genap merupakan kejadian majemuk.
+
+</p>
+
+</div>
+
+<h3>3. Kejadian Mustahil</h3>
+
+<p>
+
+Merupakan kejadian yang tidak mungkin terjadi sehingga peluangnya sama
+dengan nol.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:20px;">
+
+P(A) = 0
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<p>
+
+Muncul angka 7 saat melempar satu dadu biasa.
+
+</p>
+
+</div>
+
+<h3>4. Kejadian Pasti</h3>
+
+<p>
+
+Merupakan kejadian yang selalu terjadi.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:20px;">
+
+P(A) = 1
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<p>
+
+Saat melempar dadu, pasti muncul salah satu angka dari 1 sampai 6.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Spektrum Peluang</h3>
+
+<p>
+
+0 ──────────────── 1
+
+</p>
+
+<p>
+
+Mustahil &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pasti
+
+</p>
+
+</div>
+
+</section>
+
+<section id="peluang-klasik">
+
+<h2>8. Peluang Klasik (Classical Probability)</h2>
+
+<p>
+
+Peluang klasik digunakan apabila seluruh hasil pada ruang sampel memiliki
+kesempatan muncul yang sama besar (<em>equally likely</em>).
+
+</p>
+
+<p>
+
+Inilah rumus peluang yang paling sering digunakan pada tingkat sekolah
+hingga olimpiade dasar.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Peluang</h3>
+
+<p style="font-size:24px;">
+
+P(A) = n(A) / n(S)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Arti</th>
+
+</tr>
+
+<tr>
+
+<td>P(A)</td>
+
+<td>Peluang kejadian A.</td>
+
+</tr>
+
+<tr>
+
+<td>n(A)</td>
+
+<td>Banyak anggota kejadian A.</td>
+
+</tr>
+
+<tr>
+
+<td>n(S)</td>
+
+<td>Banyak anggota ruang sampel.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Sebuah dadu dilempar sekali.
+
+</p>
+
+<p>
+
+Hitung peluang muncul angka 2.
+
+</p>
+
+<p>
+
+Ruang sampel:
+
+</p>
+
+<p>
+
+S = {1,2,3,4,5,6}
+
+</p>
+
+<p>
+
+Kejadian A = {2}
+
+</p>
+
+<p>
+
+n(A)=1
+
+</p>
+
+<p>
+
+n(S)=6
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(A)=1/6
+
+</p>
+
+</div>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Hitung peluang muncul bilangan genap.
+
+</p>
+
+<p>
+
+A={2,4,6}
+
+</p>
+
+<p>
+
+n(A)=3
+
+</p>
+
+<p>
+
+n(S)=6
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(A)=3/6=1/2
+
+</p>
+
+</div>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kesalahan Umum</strong>
+
+<p>
+
+Banyak siswa salah menentukan banyak anggota kejadian. Jangan menghitung
+angka yang tidak termasuk dalam kejadian tersebut.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="peluang-empiris">
+
+<h2>9. Peluang Empiris (Experimental Probability)</h2>
+
+<p>
+
+Tidak semua peluang dihitung menggunakan teori. Dalam kehidupan nyata,
+sering kali peluang diperoleh melalui hasil percobaan atau pengamatan.
+
+</p>
+
+<p>
+
+Peluang yang dihitung berdasarkan data hasil eksperimen disebut
+<strong>peluang empiris</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Peluang Empiris</h3>
+
+<p style="font-size:22px;">
+
+P(A)= Frekuensi Kejadian A / Jumlah Percobaan
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin dilempar sebanyak 200 kali.
+
+</p>
+
+<p>
+
+Hasil gambar muncul sebanyak 112 kali.
+
+</p>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(Gambar)=112/200=0,56
+
+</p>
+
+</div>
+
+</div>
+
+<p>
+
+Perhatikan bahwa hasil empiris belum tentu sama dengan peluang teoritis.
+Semakin banyak percobaan dilakukan, hasil empiris biasanya semakin
+mendekati peluang teoritis.
+
+</p>
+
+<div class="visual">
+
+<h3>Hubungan Teori dan Eksperimen</h3>
+
+<p>
+
+Jumlah Percobaan Sedikit
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Hasil Masih Berfluktuasi
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Jumlah Percobaan Sangat Besar
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Mendekati Peluang Teoritis
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Olimpiade</h3>
+
+<p>
+
+Konsep bahwa frekuensi relatif akan mendekati peluang sebenarnya ketika
+jumlah percobaan semakin besar dikenal sebagai
+<strong>Hukum Bilangan Besar (Law of Large Numbers)</strong>. Teori ini
+menjadi dasar penting dalam statistika dan probabilitas modern.
+
+</p>
+
+</div>
+
+</section><section id="aturan-perkalian">
+
+<h2>13. Aturan Perkalian Peluang</h2>
+
+<p>
+
+Selain peluang gabungan dengan kata <strong>"atau"</strong>, dalam
+probabilitas kita juga sering menjumpai kata
+<strong>"dan"</strong>. Untuk kasus seperti ini digunakan
+<strong>aturan perkalian peluang</strong>.
+
+</p>
+
+<p>
+
+Aturan ini digunakan untuk menghitung peluang dua atau lebih kejadian
+terjadi secara bersamaan.
+
+</p>
+
+<h3>Kasus 1 — Kejadian Independen</h3>
+
+<p>
+
+Dua kejadian dikatakan independen apabila terjadinya salah satu kejadian
+tidak memengaruhi peluang kejadian lainnya.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;">
+
+P(A ∩ B) = P(A) × P(B)
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah koin dan sebuah dadu dilempar bersamaan.
+
+</p>
+
+<p>
+
+A = muncul gambar.
+
+</p>
+
+<p>
+
+B = muncul angka 6.
+
+</p>
+
+<p>
+
+P(A)=1/2
+
+</p>
+
+<p>
+
+P(B)=1/6
+
+</p>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(A ∩ B)=1/2 × 1/6 = 1/12
+
+</p>
+
+</div>
+
+</div>
+
+<h3>Kasus 2 — Kejadian Dependen</h3>
+
+<p>
+
+Jika hasil kejadian pertama memengaruhi peluang kejadian berikutnya,
+digunakan peluang bersyarat.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;">
+
+P(A ∩ B)=P(A) × P(B|A)
+
+</p>
+
+</div>
+
+<p>
+
+Notasi <strong>P(B|A)</strong> dibaca:
+"Peluang B jika A telah terjadi."
+
+</p>
+
+<div class="catatan">
+
+<strong>Intuisi</strong>
+
+<p>
+
+Pada kejadian dependen, peluang kedua berubah karena informasi baru telah
+diketahui. Oleh sebab itu kita tidak bisa lagi langsung mengalikan dua
+peluang biasa.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="tree-diagram">
+
+<h2>14. Diagram Pohon (Tree Diagram)</h2>
+
+<p>
+
+Diagram pohon merupakan alat bantu visual yang sangat berguna untuk
+menyusun seluruh kemungkinan hasil suatu percobaan bertahap.
+
+</p>
+
+<p>
+
+Metode ini banyak digunakan pada soal peluang, kombinatorika, hingga
+olimpiade matematika.
+
+</p>
+
+<div class="visual">
+
+<h3>Contoh Dua Kali Lempar Koin</h3>
+
+<pre>
+
+               Mulai
+
+              /     \
+
+             A       G
+
+           /  \    /  \
+
+          A    G  A    G
+
+        AA   AG  GA   GG
+
+</pre>
+
+</div>
+
+<p>
+
+Dari diagram tersebut diperoleh empat hasil yang mungkin.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Hasil</th>
+
+<th>Keterangan</th>
+
+</tr>
+
+<tr>
+
+<td>AA</td>
+
+<td>Angka, Angka</td>
+
+</tr>
+
+<tr>
+
+<td>AG</td>
+
+<td>Angka, Gambar</td>
+
+</tr>
+
+<tr>
+
+<td>GA</td>
+
+<td>Gambar, Angka</td>
+
+</tr>
+
+<tr>
+
+<td>GG</td>
+
+<td>Gambar, Gambar</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Soal</h3>
+
+<p>
+
+Hitung peluang muncul tepat satu gambar.
+
+</p>
+
+<p>
+
+Kejadian yang memenuhi:
+
+</p>
+
+<p>
+
+AG dan GA
+
+</p>
+
+<p>
+
+Jumlah kejadian = 2
+
+</p>
+
+<p>
+
+Jumlah ruang sampel = 4
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P = 2/4 = 1/2
+
+</p>
+
+</div>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Olimpiade</h3>
+
+<p>
+
+Pada percobaan yang memiliki banyak tahap, diagram pohon sering lebih
+mudah digunakan dibandingkan menuliskan ruang sampel secara lengkap.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="peluang-bersyarat">
+
+<h2>15. Peluang Bersyarat (Conditional Probability)</h2>
+
+<p>
+
+Peluang bersyarat adalah peluang suatu kejadian terjadi
+<strong>dengan syarat</strong> kejadian lain telah diketahui terjadi
+terlebih dahulu.
+
+</p>
+
+<p>
+
+Informasi tambahan ini dapat mengubah ruang sampel sehingga nilai peluang
+ikut berubah.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Peluang Bersyarat</h3>
+
+<p style="font-size:22px;">
+
+P(A|B)
+
+=
+
+P(A ∩ B)
+
+/
+
+P(B)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Arti</th>
+
+</tr>
+
+<tr>
+
+<td>P(A|B)</td>
+
+<td>Peluang A jika B telah terjadi.</td>
+
+</tr>
+
+<tr>
+
+<td>P(A∩B)</td>
+
+<td>Peluang A dan B terjadi bersama.</td>
+
+</tr>
+
+<tr>
+
+<td>P(B)</td>
+
+<td>Peluang kejadian B.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Kartu Remi</h3>
+
+<p>
+
+Sebuah kartu diambil secara acak.
+
+</p>
+
+<p>
+
+Diketahui kartu tersebut adalah kartu merah.
+
+</p>
+
+<p>
+
+Berapa peluang kartu tersebut adalah hati?
+
+</p>
+
+<p>
+
+Jumlah kartu merah = 26
+
+</p>
+
+<p>
+
+Jumlah kartu hati = 13
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+P(Hati | Merah)
+
+=
+
+13/26
+
+=
+
+1/2
+
+</p>
+
+</div>
+
+</div>
+
+<div class="visual">
+
+<h3>Ide Peluang Bersyarat</h3>
+
+<p>
+
+Ruang Sampel Awal
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Diketahui Kejadian B Terjadi
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Ruang Sampel Menjadi Lebih Kecil
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Hitung Peluang Baru
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kesalahan Umum</strong>
+
+<p>
+
+Banyak siswa tetap menggunakan ruang sampel awal saat menghitung peluang
+bersyarat. Padahal setelah syarat diketahui, ruang sampel berubah sehingga
+perhitungannya juga harus disesuaikan.
+
+</p>
+
+</div>
+
+</section><section id="independen">
+
+<h2>16. Kejadian Independen (Independent Events)</h2>
+
+<p>
+
+Dua kejadian dikatakan <strong>independen</strong> apabila terjadinya
+kejadian yang satu <strong>tidak memengaruhi</strong> peluang terjadinya
+kejadian yang lain.
+
+</p>
+
+<p>
+
+Dengan kata lain, mengetahui bahwa kejadian A telah terjadi tidak
+mengubah peluang kejadian B.
+
+</p>
+
+<div class="rumus">
+
+<h3>Syarat Kejadian Independen</h3>
+
+<p style="font-size:22px;">
+
+P(A|B) = P(A)
+
+</p>
+
+<p>
+
+atau
+
+</p>
+
+<p style="font-size:22px;">
+
+P(A∩B)=P(A)×P(B)
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Melempar sebuah koin dan sebuah dadu secara bersamaan.
+
+</p>
+
+<ul>
+
+<li>A = muncul gambar.</li>
+
+<li>B = muncul angka 5.</li>
+
+</ul>
+
+<p>
+
+Hasil koin tidak memengaruhi hasil dadu, sehingga A dan B merupakan
+kejadian independen.
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Seorang siswa melempar dua koin sekaligus.
+
+</p>
+
+<ul>
+
+<li>A = koin pertama muncul angka.</li>
+
+<li>B = koin kedua muncul gambar.</li>
+
+</ul>
+
+<p>
+
+Kedua kejadian tersebut juga independen.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Intuisi</strong>
+
+<p>
+
+Jika suatu informasi baru tidak mengubah peluang kejadian lain, maka kedua
+kejadian tersebut independen.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="saling-lepas">
+
+<h2>17. Kejadian Saling Lepas (Mutually Exclusive Events)</h2>
+
+<p>
+
+Dua kejadian disebut <strong>saling lepas</strong> apabila keduanya
+<strong>tidak mungkin terjadi secara bersamaan</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;">
+
+A∩B = ∅
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, irisan kedua kejadian kosong.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Pada satu kali pelemparan dadu:
+
+</p>
+
+<ul>
+
+<li>A = muncul angka genap.</li>
+
+<li>B = muncul angka ganjil.</li>
+
+</ul>
+
+<p>
+
+Tidak mungkin sebuah angka sekaligus genap dan ganjil, sehingga kedua
+kejadian tersebut saling lepas.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Diagram Venn</h3>
+
+<pre>
+
+     _______      _______
+
+    /       \    /       \
+
+   /    A    \  /    B    \
+
+   \         /  \         /
+
+    \_______/    \_______/
+
+(Tidak Beririsan)
+
+</pre>
+
+</div>
+
+<h3>Perbedaan Independen dan Saling Lepas</h3>
+
+<table>
+
+<tr>
+
+<th>Independen</th>
+
+<th>Saling Lepas</th>
+
+</tr>
+
+<tr>
+
+<td>Bisa terjadi bersamaan.</td>
+
+<td>Tidak bisa terjadi bersamaan.</td>
+
+</tr>
+
+<tr>
+
+<td>P(A∩B)=P(A)×P(B)</td>
+
+<td>P(A∩B)=0</td>
+
+</tr>
+
+<tr>
+
+<td>Peluang tidak berubah.</td>
+
+<td>Salah satu kejadian meniadakan yang lain.</td>
+
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Kesalahan yang Sangat Sering Terjadi</h3>
+
+<p>
+
+Banyak peserta olimpiade mengira bahwa kejadian independen sama dengan
+kejadian saling lepas. Padahal keduanya merupakan konsep yang berbeda.
+Bahkan, jika dua kejadian memiliki peluang bukan nol, maka kejadian saling
+lepas tidak mungkin independen.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="bayes">
+
+<h2>18. Teorema Bayes</h2>
+
+<p>
+
+Teorema Bayes merupakan salah satu konsep terpenting dalam teori peluang.
+Teorema ini digunakan untuk <strong>memperbarui peluang</strong> suatu
+kejadian setelah memperoleh informasi baru.
+
+</p>
+
+<p>
+
+Saat ini Teorema Bayes digunakan pada diagnosis penyakit, filter spam,
+kecerdasan buatan, analisis risiko, hingga machine learning.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus Bayes</h3>
+
+<p style="font-size:22px;">
+
+P(A|B)
+
+=
+
+P(B|A) × P(A)
+
+/
+
+P(B)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>P(A)</td>
+
+<td>Peluang awal (prior probability).</td>
+
+</tr>
+
+<tr>
+
+<td>P(B|A)</td>
+
+<td>Peluang munculnya bukti jika A benar.</td>
+
+</tr>
+
+<tr>
+
+<td>P(B)</td>
+
+<td>Peluang munculnya bukti.</td>
+
+</tr>
+
+<tr>
+
+<td>P(A|B)</td>
+
+<td>Peluang baru setelah mengetahui bukti.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Sederhana</h3>
+
+<p>
+
+Sebuah penyakit hanya diderita oleh 2% penduduk. Sebuah tes memiliki
+akurasi tinggi dan memberikan hasil positif pada sebagian besar penderita.
+Ketika seseorang memperoleh hasil tes positif, Teorema Bayes digunakan
+untuk menghitung peluang sebenarnya bahwa orang tersebut memang menderita
+penyakit tersebut.
+
+</p>
+
+<p>
+
+Contoh lengkap dengan angka akan dipelajari pada tingkat probabilitas yang
+lebih lanjut.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Alur Bayes</h3>
+
+<p>
+
+Peluang Awal
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Muncul Informasi Baru
+
+</p>
+
+<p>
+
+⬇
+
+</p>
+
+<p>
+
+Hitung Peluang Baru dengan Rumus Bayes
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Olimpiade</h3>
+
+<p>
+
+Jangan langsung menghafal rumus Bayes. Pahami bahwa inti dari Teorema
+Bayes adalah mengubah keyakinan awal (prior) menjadi keyakinan baru
+(posterior) setelah memperoleh suatu bukti.
+
+</p>
+
+</div>
+
+</section><section id="analisis-lengkap">
+
+<h2>19. Contoh Analisis Peluang Secara Lengkap</h2>
+
+<p>
+
+Pada bagian ini kita akan menggabungkan seluruh konsep yang telah
+dipelajari, mulai dari ruang sampel, kejadian, peluang klasik,
+komplemen, hingga peluang bersyarat.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh Kasus</h3>
+
+<p>
+
+Sebuah dadu bersisi enam dilempar satu kali.
+
+</p>
+
+<p>
+
+Tentukan:
+
+</p>
+
+<ol>
+
+<li>Peluang muncul bilangan genap.</li>
+
+<li>Peluang muncul bilangan prima.</li>
+
+<li>Peluang muncul bilangan genap atau prima.</li>
+
+<li>Peluang tidak muncul bilangan genap.</li>
+
+</ol>
+
+</div>
+
+<h3>Langkah 1 — Tentukan Ruang Sampel</h3>
+
+<div class="rumus">
+
+<p>
+
+S = {1, 2, 3, 4, 5, 6}
+
+</p>
+
+<p>
+
+n(S) = 6
+
+</p>
+
+</div>
+
+<h3>Langkah 2 — Tentukan Kejadian</h3>
+
+<table>
+
+<tr>
+
+<th>Kejadian</th>
+
+<th>Anggota</th>
+
+</tr>
+
+<tr>
+
+<td>A (Genap)</td>
+
+<td>{2,4,6}</td>
+
+</tr>
+
+<tr>
+
+<td>B (Prima)</td>
+
+<td>{2,3,5}</td>
+
+</tr>
+
+<tr>
+
+<td>A ∩ B</td>
+
+<td>{2}</td>
+
+</tr>
+
+<tr>
+
+<td>A ∪ B</td>
+
+<td>{2,3,4,5,6}</td>
+
+</tr>
+
+</table>
+
+<h3>Langkah 3 — Hitung Peluang</h3>
+
+<div class="rumus">
+
+<p>
+
+P(A)=3/6=1/2
+
+</p>
+
+<p>
+
+P(B)=3/6=1/2
+
+</p>
+
+<p>
+
+P(A∩B)=1/6
+
+</p>
+
+<p>
+
+P(A∪B)
+
+=
+
+3/6+3/6−1/6
+
+=
+
+5/6
+
+</p>
+
+<p>
+
+P(A')
+
+=
+
+1−1/2
+
+=
+
+1/2
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kesimpulan</strong>
+
+<p>
+
+Satu soal sederhana ternyata dapat melibatkan banyak konsep sekaligus.
+Inilah alasan mengapa memahami hubungan antar-konsep jauh lebih penting
+daripada sekadar menghafal rumus.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="kesalahan">
+
+<h2>20. Kesalahan yang Sering Terjadi</h2>
+
+<p>
+
+Berikut beberapa kesalahan yang paling sering dilakukan siswa ketika
+mengerjakan soal peluang.
+
+</p>
+
+<ul>
+
+<li>Tidak menuliskan ruang sampel terlebih dahulu.</li>
+
+<li>Salah menghitung banyak anggota kejadian.</li>
+
+<li>Menggunakan rumus penjumlahan untuk kasus perkalian.</li>
+
+<li>Lupa mengurangi irisan pada aturan penjumlahan.</li>
+
+<li>Menyamakan kejadian independen dengan saling lepas.</li>
+
+<li>Menggunakan peluang awal pada soal peluang bersyarat tanpa
+memperhatikan perubahan ruang sampel.</li>
+
+<li>Menghafal rumus Bayes tanpa memahami maknanya.</li>
+
+</ul>
+
+<div class="olimpiade">
+
+<h3>Tips Pelatih Olimpiade</h3>
+
+<p>
+
+Saat menemukan soal peluang, biasakan menggunakan urutan berpikir berikut:
+
+</p>
+
+<p style="text-align:center;font-weight:bold;">
+
+Eksperimen → Ruang Sampel → Kejadian → Rumus yang Tepat → Hitung →
+Interpretasi
+
+</p>
+
+<p>
+
+Kebiasaan ini akan mengurangi kesalahan dan membuat solusi lebih mudah
+dipahami.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ringkasan">
+
+<h2>21. Ringkasan Bab</h2>
+
+<table>
+
+<tr>
+
+<th>Konsep</th>
+
+<th>Inti Pembahasan</th>
+
+</tr>
+
+<tr>
+
+<td>Eksperimen Acak</td>
+
+<td>Percobaan dengan hasil yang belum dapat dipastikan.</td>
+
+</tr>
+
+<tr>
+
+<td>Ruang Sampel</td>
+
+<td>Himpunan seluruh hasil yang mungkin.</td>
+
+</tr>
+
+<tr>
+
+<td>Kejadian</td>
+
+<td>Himpunan bagian dari ruang sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Peluang Klasik</td>
+
+<td>n(A)/n(S)</td>
+
+</tr>
+
+<tr>
+
+<td>Peluang Empiris</td>
+
+<td>Berdasarkan hasil percobaan.</td>
+
+</tr>
+
+<tr>
+
+<td>Komplemen</td>
+
+<td>P(A') = 1 − P(A)</td>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan</td>
+
+<td>P(A∪B)</td>
+
+</tr>
+
+<tr>
+
+<td>Perkalian</td>
+
+<td>P(A∩B)</td>
+
+</tr>
+
+<tr>
+
+<td>Peluang Bersyarat</td>
+
+<td>P(A|B)</td>
+
+</tr>
+
+<tr>
+
+<td>Bayes</td>
+
+<td>Memperbarui peluang berdasarkan informasi baru.</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Bab ini menjadi fondasi bagi distribusi peluang yang akan dipelajari pada
+bab berikutnya.
+
+</p>
+
+</section>
+
+<section id="glosarium">
+
+<h2>22. Glosarium</h2>
+
+<table>
+
+<tr>
+
+<th>Istilah</th>
+
+<th>Pengertian</th>
+
+</tr>
+
+<tr>
+
+<td>Probability</td>
+
+<td>Ukuran kemungkinan terjadinya suatu kejadian.</td>
+
+</tr>
+
+<tr>
+
+<td>Sample Space</td>
+
+<td>Himpunan seluruh hasil yang mungkin.</td>
+
+</tr>
+
+<tr>
+
+<td>Sample Point</td>
+
+<td>Satu anggota ruang sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Event</td>
+
+<td>Himpunan bagian dari ruang sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Conditional Probability</td>
+
+<td>Peluang dengan syarat suatu kejadian telah terjadi.</td>
+
+</tr>
+
+<tr>
+
+<td>Independent Events</td>
+
+<td>Kejadian yang tidak saling memengaruhi.</td>
+
+</tr>
+
+<tr>
+
+<td>Mutually Exclusive</td>
+
+<td>Kejadian yang tidak dapat terjadi bersamaan.</td>
+
+</tr>
+
+<tr>
+
+<td>Bayes</td>
+
+<td>Metode memperbarui peluang menggunakan informasi baru.</td>
+
+</tr>
+
+</table>
+
+</section><section id="rumus-penting">
+
+<h2>23. Ringkasan Rumus Penting</h2>
+
+<p>
+
+Sebelum melanjutkan ke distribusi peluang pada bab berikutnya, kuasai
+rumus-rumus dasar berikut. Dalam olimpiade, pemahaman konsep tetap lebih
+penting daripada menghafal rumus.
+
+</p>
+
+<div class="rumus">
+
+<h3>1. Peluang Klasik</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A)=n(A)/n(S)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>2. Peluang Komplemen</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A')=1−P(A)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>3. Penjumlahan (Saling Lepas)</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A∪B)=P(A)+P(B)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>4. Penjumlahan (Umum)</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A∪B)=P(A)+P(B)−P(A∩B)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>5. Perkalian (Independen)</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A∩B)=P(A)×P(B)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>6. Peluang Bersyarat</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A|B)=P(A∩B)/P(B)
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>7. Teorema Bayes</h3>
+
+<p style="font-size:24px;text-align:center;">
+
+P(A|B)=
+[P(B|A)×P(A)]/P(B)
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Ingat!</strong>
+
+<p>
+
+Setiap rumus memiliki syarat penggunaan. Langkah pertama sebelum memilih
+rumus adalah mengidentifikasi jenis kejadian yang diberikan pada soal.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="latihan">
+
+<h2>24. Latihan Akhir Bab</h2>
+
+<p>
+
+Kerjakan soal-soal berikut tanpa melihat pembahasan sebelumnya.
+
+</p>
+
+<ol>
+
+<li>Sebuah dadu dilempar satu kali. Hitung peluang muncul angka lebih dari 4.</li>
+
+<li>Dua koin dilempar bersamaan. Hitung peluang muncul tepat satu gambar.</li>
+
+<li>Sebuah kartu diambil dari satu set kartu remi. Hitung peluang memperoleh kartu As.</li>
+
+<li>Dari angka 1 sampai 10 dipilih satu angka secara acak. Hitung peluang memperoleh bilangan prima.</li>
+
+<li>Hitung peluang tidak muncul angka genap saat melempar satu dadu.</li>
+
+<li>Jelaskan perbedaan kejadian independen dan kejadian saling lepas.</li>
+
+<li>Mengapa peluang selalu berada di antara 0 dan 1?</li>
+
+<li>Dalam kondisi apa Teorema Bayes digunakan?</li>
+
+<li>Jelaskan hubungan ruang sampel dengan peluang klasik.</li>
+
+<li>Berikan contoh kejadian yang tidak saling lepas.</li>
+
+</ol>
+
+</section>
+
+<section id="evaluasi">
+
+<h2>25. Evaluasi Olimpiade</h2>
+
+<p>
+
+Soal berikut dirancang untuk melatih kemampuan analisis, bukan hanya
+menggunakan rumus.
+
+</p>
+
+<ol>
+
+<li>
+
+Dua dadu dilempar bersamaan.
+
+Hitung peluang jumlah kedua mata dadu sama dengan 8.
+
+</li>
+
+<li>
+
+Tiga koin dilempar sekaligus.
+
+Hitung peluang muncul paling sedikit dua gambar.
+
+</li>
+
+<li>
+
+Dalam sebuah kotak terdapat 5 bola merah, 4 bola biru, dan 3 bola hijau.
+Satu bola diambil secara acak. Tentukan peluang memperoleh bola yang
+bukan merah.
+
+</li>
+
+<li>
+
+Dua kartu diambil berturut-turut tanpa pengembalian dari satu set kartu
+remi. Hitung peluang kedua kartu tersebut merupakan kartu hati.
+
+</li>
+
+<li>
+
+Suatu tes penyakit memiliki sensitivitas 98% dan spesifisitas 95%.
+Prevalensi penyakit di suatu populasi adalah 2%.
+Gunakan Teorema Bayes untuk menentukan peluang seseorang benar-benar
+menderita penyakit jika hasil tesnya positif.
+
+</li>
+
+</ol>
+
+<div class="olimpiade">
+
+<h3>Tantangan Pelatih Olimpiade</h3>
+
+<p>
+
+Buktikan secara matematis bahwa untuk setiap dua kejadian A dan B berlaku
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+P(A∪B)=P(A)+P(B)−P(A∩B)
+
+</p>
+
+<p>
+
+dengan menggunakan diagram Venn dan prinsip pencacahan.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="navigasi">
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;">
+
+<a href="index.html"
+style="background:#16a34a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Home
+
+</a>
+
+<a href="statiska6.html"
+style="background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+➡ Lanjut ke statiska6.html
+
+</a>
+
+</div>
+
+<p style="margin-top:30px;text-align:center;">
+
+<strong>Bab Selanjutnya:</strong><br>
+
+Variabel Acak, Nilai Harapan, Variansi Variabel Acak, Distribusi Binomial,
+Distribusi Geometrik, Distribusi Poisson, Distribusi Normal, dan Distribusi Uniform.
+
+</p>
+
+</section>
+
+</main>
+
+</body>
+</html>
