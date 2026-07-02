@@ -1,1 +1,3355 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TB 3 - Bilangan Prima</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#2e7d32,#43a047);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header h2{
+font-size:30px;
+}
+
+header p{
+margin-top:10px;
+font-size:18px;
+opacity:.9;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:25px 0;
+border-radius:18px;
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.definition{
+background:#e8f5e9;
+border-left:6px solid #2e7d32;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.theorem{
+background:#fff8dc;
+border-left:6px solid #f9a825;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.example{
+background:#eefaf0;
+border-left:6px solid #43a047;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+.tip{
+background:#fff3e0;
+border-left:6px solid #ef6c00;
+padding:18px;
+margin:20px 0;
+border-radius:12px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#2e7d32;
+color:white;
+}
+
+h2{
+color:#2e7d32;
+margin-bottom:15px;
+}
+
+h3{
+margin-top:25px;
+color:#2e7d32;
+}
+
+p{
+margin:12px 0;
+text-align:justify;
+}
+
+ul,ol{
+margin-left:25px;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+nav a{
+text-decoration:none;
+background:#2e7d32;
+color:white;
+padding:12px 22px;
+border-radius:10px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#1b5e20;
+}
+
+footer{
+margin-top:60px;
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Bab 3</h1>
+
+<h2>Bilangan Prima</h2>
+
+<p>Handbook Teori Bilangan Olimpiade Matematika</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Pendahuluan</h2>
+
+<p>
+
+Bilangan prima merupakan salah satu objek paling fundamental dalam
+matematika. Seluruh bilangan bulat positif yang lebih besar dari satu
+dapat dibangun dari bilangan prima melalui proses perkalian.
+Oleh karena itu, bilangan prima sering disebut sebagai
+<b>"atom dalam dunia bilangan"</b>.
+
+</p>
+
+<p>
+
+Peran bilangan prima tidak hanya terbatas pada teori bilangan.
+Konsep ini digunakan dalam aljabar, kombinatorika, teori grup,
+kriptografi modern, ilmu komputer, hingga keamanan komunikasi digital.
+Banyak sistem enkripsi yang digunakan untuk melindungi transaksi
+perbankan dan komunikasi internet bergantung pada sifat-sifat
+bilangan prima.
+
+</p>
+
+<p>
+
+Dalam Olimpiade Matematika, bilangan prima muncul dalam berbagai bentuk,
+mulai dari pembuktian sederhana hingga masalah yang sangat kompleks.
+Pemahaman yang kuat mengenai sifat-sifat bilangan prima akan
+mempermudah mempelajari faktorisasi prima, kongruensi, fungsi
+aritmetika, dan berbagai teorema klasik pada bab-bab berikutnya.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Jangan hanya menghafal daftar bilangan prima.
+Yang jauh lebih penting adalah memahami <b>mengapa</b> suatu bilangan
+bersifat prima dan bagaimana sifat tersebut dapat dimanfaatkan untuk
+menyelesaikan pembuktian maupun soal-soal Olimpiade.
+
+</p>
+
+<p>
+
+Banyak soal OSN tidak pernah secara langsung bertanya
+"apakah bilangan ini prima?",
+melainkan memanfaatkan sifat-sifat bilangan prima sebagai alat utama
+dalam penyelesaian.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.1 Bilangan Prima</h2>
+
+<p>
+
+Bilangan prima merupakan salah satu konsep paling mendasar dalam teori
+bilangan. Semua bilangan bulat positif yang lebih besar dari satu dapat
+diuraikan menjadi hasil kali bilangan prima. Karena alasan inilah
+bilangan prima sering disebut sebagai <b>penyusun dasar</b> seluruh
+bilangan bulat positif.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi</b>
+
+<p>
+
+Suatu bilangan bulat positif <b>p > 1</b> disebut
+<b>bilangan prima</b> apabila hanya memiliki tepat
+<b>dua pembagi positif</b>, yaitu
+
+</p>
+
+<ul>
+
+<li>1</li>
+
+<li>p</li>
+
+</ul>
+
+<p>
+
+Dengan kata lain, tidak ada bilangan bulat positif lain yang dapat
+membagi p selain 1 dan dirinya sendiri.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Bilangan Prima</h3>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+
+<th>Pembagi Positif</th>
+
+<th>Prima?</th>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>1, 2</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>1, 3</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>1, 5</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>7</td>
+
+<td>1, 7</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>11</td>
+
+<td>1, 11</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>13</td>
+
+<td>1, 13</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Bilangan yang Bukan Prima</h3>
+
+<p>
+
+Tidak semua bilangan lebih besar dari satu merupakan bilangan prima.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+
+<th>Alasan</th>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Memiliki pembagi 1, 2, dan 4.</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>Dapat dibagi oleh 2 dan 3.</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+
+<td>Dapat dibagi oleh 2 dan 4.</td>
+
+</tr>
+
+<tr>
+
+<td>9</td>
+
+<td>Dapat dibagi oleh 3.</td>
+
+</tr>
+
+<tr>
+
+<td>12</td>
+
+<td>Memiliki banyak pembagi selain 1 dan dirinya sendiri.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Mengapa 1 Bukan Bilangan Prima?</h3>
+
+<p>
+
+Pertanyaan ini sangat sering muncul ketika pertama kali mempelajari
+teori bilangan.
+
+</p>
+
+<p>
+
+Bilangan 1 hanya memiliki <b>satu</b> pembagi positif, yaitu dirinya
+sendiri.
+
+Padahal definisi bilangan prima mensyaratkan bahwa suatu bilangan harus
+memiliki <b>tepat dua pembagi positif</b>.
+
+</p>
+
+<p>
+
+Oleh karena itu,
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+1 bukan bilangan prima.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Keputusan bahwa 1 bukan bilangan prima bukanlah sekadar kesepakatan.
+
+Jika 1 dianggap prima, maka Teorema Dasar Aritmetika pada subbab
+berikutnya menjadi tidak unik.
+
+Sebagai contoh,
+
+</p>
+
+<p style="text-align:center">
+
+12 = 2² × 3
+
+</p>
+
+<p>
+
+akan mempunyai tak hingga banyak bentuk,
+
+</p>
+
+<p style="text-align:center">
+
+12 = 1 × 2² × 3
+
+</p>
+
+<p style="text-align:center">
+
+12 = 1² × 2² × 3
+
+</p>
+
+<p style="text-align:center">
+
+12 = 1³ × 2² × 3
+
+</p>
+
+<p>
+
+dan seterusnya.
+
+Karena alasan inilah angka 1 tidak dimasukkan sebagai bilangan prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Bilangan Prima Terkecil</h3>
+
+<div class="theorem">
+
+<p>
+
+Bilangan prima terkecil adalah
+
+</p>
+
+<p style="text-align:center;font-size:24px;">
+
+2.
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Bilangan 2 memiliki tepat dua pembagi positif, yaitu
+
+</p>
+
+<p style="text-align:center">
+
+1 dan 2.
+
+</p>
+
+<p>
+
+Selain itu, tidak ada bilangan bulat positif yang lebih kecil dari 2
+dan lebih besar dari 1.
+
+Oleh sebab itu, 2 merupakan bilangan prima terkecil.
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Keunikan Bilangan 2</h3>
+
+<p>
+
+Bilangan 2 mempunyai sifat yang sangat istimewa.
+
+</p>
+
+<div class="definition">
+
+<p>
+
+Bilangan 2 merupakan <b>satu-satunya bilangan prima yang genap.</b>
+
+</p>
+
+</div>
+
+<p>
+
+Semua bilangan genap lainnya pasti habis dibagi oleh 2 sehingga
+memiliki lebih dari dua pembagi positif dan tidak dapat menjadi
+bilangan prima.
+
+</p>
+
+<div class="example">
+
+<b>Contoh</b>
+
+<ul>
+
+<li>2 ✔ Prima.</li>
+
+<li>4 ✘ Komposit.</li>
+
+<li>6 ✘ Komposit.</li>
+
+<li>8 ✘ Komposit.</li>
+
+<li>10 ✘ Komposit.</li>
+
+</ul>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.2 Bilangan Komposit</h2>
+
+<p>
+
+Setelah memahami bilangan prima, kita akan mempelajari lawannya,
+yaitu <b>bilangan komposit</b>. Hampir seluruh bilangan bulat positif
+yang kita temui sehari-hari merupakan bilangan komposit.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi</b>
+
+<p>
+
+Suatu bilangan bulat positif <b>n > 1</b> disebut
+<b>bilangan komposit</b> apabila memiliki lebih dari dua pembagi
+positif.
+
+</p>
+
+<p>
+
+Dengan kata lain, terdapat bilangan bulat positif selain
+<b>1</b> dan <b>n</b> yang dapat membagi n.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Bilangan Komposit</h3>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+
+<th>Pembagi Positif</th>
+
+<th>Komposit?</th>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>1, 2, 4</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>1, 2, 3, 6</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+
+<td>1, 2, 4, 8</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>9</td>
+
+<td>1, 3, 9</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+<tr>
+
+<td>15</td>
+
+<td>1, 3, 5, 15</td>
+
+<td>✔ Ya</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Hubungan Bilangan Prima dan Komposit</h3>
+
+<div class="theorem">
+
+<p>
+
+Untuk setiap bilangan bulat positif <b>n > 1</b>, tepat salah satu
+pernyataan berikut berlaku.
+
+</p>
+
+<ul>
+
+<li>n adalah bilangan prima.</li>
+
+<li>n adalah bilangan komposit.</li>
+
+</ul>
+
+<p>
+
+Tidak mungkin suatu bilangan lebih besar dari satu menjadi prima
+dan komposit secara bersamaan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Misalkan n > 1.
+
+Jika n hanya memiliki dua pembagi positif,
+yaitu 1 dan n, maka menurut definisi n adalah bilangan prima.
+
+Sebaliknya, apabila terdapat pembagi positif lain selain 1 dan n,
+maka n memiliki lebih dari dua pembagi positif sehingga merupakan
+bilangan komposit.
+
+Karena kedua kondisi tersebut saling bertentangan, maka setiap
+bilangan bulat positif yang lebih besar dari satu hanya dapat berada
+pada salah satu kategori tersebut.
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Diagram Klasifikasi</h3>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+
+<th>Kategori</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>Bukan prima dan bukan komposit</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>Prima</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>Prima</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Komposit</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>Prima</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>Komposit</td>
+
+</tr>
+
+<tr>
+
+<td>7</td>
+
+<td>Prima</td>
+
+</tr>
+
+<tr>
+
+<td>8</td>
+
+<td>Komposit</td>
+
+</tr>
+
+<tr>
+
+<td>9</td>
+
+<td>Komposit</td>
+
+</tr>
+
+<tr>
+
+<td>10</td>
+
+<td>Komposit</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Fakta Menarik</h3>
+
+<div class="example">
+
+<ul>
+
+<li>2 adalah satu-satunya bilangan prima genap.</li>
+
+<li>Semua bilangan genap lebih besar dari 2 pasti komposit.</li>
+
+<li>Tidak semua bilangan ganjil merupakan bilangan prima.</li>
+
+<li>Bilangan prima semakin jarang ditemukan ketika bilangan semakin besar, tetapi jumlahnya tidak pernah habis.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Menganggap bahwa angka 1 adalah bilangan prima.
+
+Padahal angka 1 bukan prima maupun komposit.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menganggap semua bilangan ganjil adalah prima.
+
+Contoh:
+
+</p>
+
+<p style="text-align:center">
+
+9 = 3 × 3
+
+</p>
+
+<p style="text-align:center">
+
+15 = 3 × 5
+
+</p>
+
+<p style="text-align:center">
+
+21 = 3 × 7
+
+</p>
+
+<p>
+
+Ketiganya merupakan bilangan ganjil tetapi bukan bilangan prima.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menganggap jika suatu bilangan tidak habis dibagi 2 atau 3 maka pasti
+prima.
+
+Contohnya,
+
+</p>
+
+<p style="text-align:center">
+
+25 = 5 × 5
+
+</p>
+
+<p>
+
+Bilangan ini tidak habis dibagi 2 maupun 3, tetapi tetap bukan
+bilangan prima.
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Dalam OSN, soal mengenai bilangan prima hampir tidak pernah meminta
+kita hanya menentukan apakah suatu bilangan prima atau komposit.
+Sebaliknya, sifat-sifat kedua jenis bilangan ini digunakan sebagai
+alat untuk membangun pembuktian atau menyelesaikan persoalan yang lebih
+kompleks.
+
+Oleh karena itu, fokuslah memahami definisi dan sifat-sifatnya,
+bukan sekadar menghafal daftar bilangan prima.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.3 Sifat-Sifat Bilangan Prima</h2>
+
+<p>
+
+Bilangan prima memiliki berbagai sifat yang sangat istimewa.
+Sifat-sifat ini menjadi dasar bagi hampir seluruh pembuktian dalam
+teori bilangan. Banyak soal Olimpiade tidak meminta kita mencari
+bilangan prima secara langsung, tetapi memanfaatkan sifat-sifatnya
+untuk membuktikan suatu pernyataan.
+
+</p>
+
+<hr>
+
+<h3>Teorema 1 — Setiap Bilangan Komposit Memiliki Faktor Prima</h3>
+
+<div class="theorem">
+
+<p>
+
+Setiap bilangan bulat komposit yang lebih besar dari satu
+memiliki paling sedikit satu faktor prima.
+
+</p>
+
+</div>
+
+<h3>Pembuktian</h3>
+
+<p>
+
+Misalkan n merupakan bilangan komposit.
+
+Karena n komposit, terdapat bilangan bulat a sehingga
+
+</p>
+
+<p style="text-align:center">
+
+1 < a < n
+
+</p>
+
+<p>
+
+dan
+
+</p>
+
+<p style="text-align:center">
+
+a | n.
+
+</p>
+
+<p>
+
+Jika a sudah merupakan bilangan prima, maka pembuktian selesai.
+
+Jika a masih komposit, maka a memiliki faktor yang lebih kecil.
+
+Proses ini terus berlanjut.
+
+Karena bilangan bulat positif tidak dapat terus mengecil tanpa batas,
+akhirnya proses berhenti pada suatu faktor yang merupakan bilangan
+prima.
+
+Jadi setiap bilangan komposit memiliki sedikitnya satu faktor prima.
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Teorema 2 — Lemma Euclid</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika p adalah bilangan prima dan
+
+</p>
+
+<p style="text-align:center">
+
+p | ab,
+
+</p>
+
+<p>
+
+maka
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+p | a
+
+</p>
+
+<p>
+
+atau
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+p | b.
+
+</p>
+
+</div>
+
+<h3>Mengapa Teorema Ini Penting?</h3>
+
+<p>
+
+Teorema ini merupakan salah satu hasil paling terkenal dalam teori
+bilangan. Hampir seluruh pembuktian mengenai faktorisasi prima,
+kongruensi, dan persamaan Diophantine menggunakan lemma ini.
+
+</p>
+
+<h3>Ide Pembuktian</h3>
+
+<p>
+
+Misalkan p tidak membagi a.
+
+Karena p prima, maka
+
+</p>
+
+<p style="text-align:center">
+
+FPB(p,a)=1.
+
+</p>
+
+<p>
+
+Menurut Teorema Bézout terdapat x dan y sehingga
+
+</p>
+
+<p style="text-align:center">
+
+px+ay=1.
+
+</p>
+
+<p>
+
+Kalikan kedua ruas dengan b.
+
+</p>
+
+<p style="text-align:center">
+
+pbx+aby=b.
+
+</p>
+
+<p>
+
+Karena p membagi pbx dan juga membagi ab,
+maka p membagi ruas kiri.
+
+Akibatnya p juga membagi ruas kanan, yaitu b.
+
+Dengan demikian
+
+</p>
+
+<p style="text-align:center">
+
+p | b.
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Contoh Penggunaan</h3>
+
+<div class="example">
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+5 | (14×15),
+
+</p>
+
+<p>
+
+maka menurut Lemma Euclid,
+
+</p>
+
+<p style="text-align:center">
+
+5 | 14
+
+</p>
+
+<p>
+
+atau
+
+</p>
+
+<p style="text-align:center">
+
+5 | 15.
+
+</p>
+
+<p>
+
+Karena 5 tidak membagi 14,
+maka pasti
+
+</p>
+
+<p style="text-align:center">
+
+5 | 15.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Teorema 3 — Bilangan Prima Tak Hingga Banyaknya</h3>
+
+<div class="theorem">
+
+<p>
+
+Jumlah bilangan prima tidak berhingga.
+
+</p>
+
+</div>
+
+<h3>Pembuktian (Euclid)</h3>
+
+<p>
+
+Andaikan hanya terdapat sejumlah hingga bilangan prima,
+
+</p>
+
+<p style="text-align:center">
+
+p₁,p₂,p₃,...,pₙ.
+
+</p>
+
+<p>
+
+Bentuk bilangan baru
+
+</p>
+
+<p style="text-align:center">
+
+N=p₁p₂p₃...pₙ+1.
+
+</p>
+
+<p>
+
+Perhatikan bahwa ketika N dibagi oleh salah satu bilangan prima dalam
+daftar tersebut, sisanya selalu 1.
+
+Dengan demikian tidak ada satu pun bilangan prima pada daftar yang
+membagi N.
+
+</p>
+
+<p>
+
+Padahal setiap bilangan lebih besar dari satu pasti memiliki faktor
+prima.
+
+Hal ini menghasilkan kontradiksi.
+
+Maka anggapan awal salah.
+
+Jadi jumlah bilangan prima tidak berhingga.
+
+</p>
+
+<p>
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Akibat Penting</h3>
+
+<div class="definition">
+
+<ul>
+
+<li>Tidak ada bilangan prima terbesar.</li>
+
+<li>Selalu ada bilangan prima yang lebih besar dari bilangan apa pun yang diberikan.</li>
+
+<li>Bilangan prima akan terus muncul meskipun semakin jarang.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Ringkasan Sifat Penting</h3>
+
+<table>
+
+<tr>
+
+<th>No.</th>
+
+<th>Sifat</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>Setiap bilangan komposit memiliki faktor prima.</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>Jika p prima dan p|ab maka p|a atau p|b.</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>Jumlah bilangan prima tidak berhingga.</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Bilangan prima menjadi "penyusun dasar" semua bilangan bulat positif.</td>
+
+</tr>
+
+</table>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Jika ada satu teorema yang wajib dihafal beserta pembuktiannya,
+maka itu adalah <b>Lemma Euclid</b>.
+
+Teorema ini digunakan dalam pembuktian
+<b>Teorema Dasar Aritmetika</b>,
+yang akan dipelajari pada subbab berikutnya.
+
+Selain itu, pembuktian klasik bahwa jumlah bilangan prima tak hingga
+adalah salah satu pembuktian paling elegan dalam sejarah matematika.
+Pahami ide kontradiksinya, karena teknik serupa sering muncul pada
+soal-soal Olimpiade.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.4 Teorema Dasar Aritmetika</h2>
+
+<p>
+
+Salah satu teorema paling fundamental dalam teori bilangan adalah
+<b>Teorema Dasar Aritmetika</b> atau
+<i>Fundamental Theorem of Arithmetic</i>.
+Teorema ini menjelaskan bahwa semua bilangan bulat positif dapat
+dibangun secara unik dari bilangan prima.
+
+</p>
+
+<div class="theorem">
+
+<b>Teorema Dasar Aritmetika</b>
+
+<p>
+
+Setiap bilangan bulat positif n > 1 dapat dinyatakan sebagai hasil kali
+bilangan-bilangan prima, dan representasi tersebut <b>unik</b> kecuali
+urutan faktor.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Makna Teorema</h3>
+
+<p>
+
+Teorema ini memiliki dua bagian penting:
+
+</p>
+
+<ul>
+
+<li><b>Eksistensi:</b> setiap bilangan dapat ditulis sebagai hasil kali bilangan prima.</li>
+
+<li><b>Keunikan:</b> cara penulisan tersebut hanya satu (abaikan urutan).</li>
+
+</ul>
+
+<p>
+
+Contohnya:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+60 = 2² × 3 × 5
+
+</p>
+
+<p>
+
+Tidak ada cara lain untuk menulis 60 sebagai hasil kali bilangan prima
+selain bentuk tersebut (selain urutan faktor).
+
+</p>
+
+<hr>
+
+<h3>Pembuktian Eksistensi</h3>
+
+<p>
+
+Kita buktikan bahwa setiap bilangan n > 1 dapat difaktorkan menjadi
+bilangan prima.
+
+</p>
+
+<p>
+
+Jika n adalah bilangan prima, maka selesai.
+
+Jika n komposit, maka n = a × b dengan 1 < a,b < n.
+
+Jika a atau b masih komposit, kita teruskan proses faktorisasi.
+
+</p>
+
+<p>
+
+Karena bilangan bulat positif tidak dapat terus mengecil tanpa batas,
+proses ini pasti berhenti pada bilangan-bilangan yang semuanya prima.
+
+Dengan demikian setiap bilangan dapat ditulis sebagai hasil kali
+bilangan prima.
+
+</p>
+
+<p>
+
+Terbukti eksistensi. □
+
+</p>
+
+<hr>
+
+<h3>Pembuktian Keunikan (Idea Utama)</h3>
+
+<p>
+
+Misalkan terdapat dua cara faktorisasi prima dari n:
+
+</p>
+
+<p style="text-align:center">
+
+n = p₁ p₂ ... pₖ = q₁ q₂ ... qₘ
+
+</p>
+
+<p>
+
+dengan semua pᵢ dan qⱼ adalah bilangan prima.
+
+</p>
+
+<p>
+
+Ambil p₁. Karena p₁ | (q₁ q₂ ... qₘ), maka menurut
+<b>Lemma Euclid</b>, p₁ harus membagi salah satu qⱼ.
+
+Karena qⱼ juga prima, maka p₁ = qⱼ.
+
+</p>
+
+<p>
+
+Kita dapat mencoret keduanya dan mengulangi proses ini.
+
+Akhirnya diperoleh bahwa semua faktor harus sama (hanya berbeda urutan).
+
+</p>
+
+<p>
+
+Dengan demikian faktorisasi prima adalah unik.
+
+Terbukti. □
+
+</p>
+
+<hr>
+
+<h3>Contoh Faktorisasi Prima</h3>
+
+<div class="example">
+
+<table>
+
+<tr>
+<th>Bilangan</th>
+<th>Faktorisasi Prima</th>
+</tr>
+
+<tr>
+<td>12</td>
+<td>2² × 3</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>2 × 3²</td>
+</tr>
+
+<tr>
+<td>45</td>
+<td>3² × 5</td>
+</tr>
+
+<tr>
+<td>84</td>
+<td>2² × 3 × 7</td>
+</tr>
+
+<tr>
+<td>100</td>
+<td>2² × 5²</td>
+</tr>
+
+</table>
+
+</div>
+
+<hr>
+
+<h3>Mengapa Teorema Ini Sangat Penting?</h3>
+
+<div class="definition">
+
+<p>
+
+Teorema Dasar Aritmetika adalah fondasi dari hampir seluruh teori
+bilangan modern.
+
+</p>
+
+<ul>
+
+<li>Menjadi dasar FPB dan KPK dalam bentuk faktorisasi prima.</li>
+
+<li>Digunakan dalam algoritma Euclid dan variasinya.</li>
+
+<li>Menjadi dasar fungsi aritmetika (σ, φ, μ).</li>
+
+<li>Digunakan dalam kongruensi dan modulo.</li>
+
+<li>Menjadi fondasi kriptografi modern seperti RSA.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Menganggap faktorisasi prima tidak unik.
+
+Contoh salah:
+
+</p>
+
+<p style="text-align:center">
+
+12 = 2 × 2 × 3 = 3 × 2 × 2
+
+</p>
+
+<p>
+
+Ini sebenarnya bukan dua faktorisasi berbeda, hanya urutan yang berbeda.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menganggap 1 termasuk dalam faktorisasi prima.
+
+Padahal 1 bukan bilangan prima dan tidak digunakan dalam faktorisasi.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menganggap bilangan besar sulit difaktorkan tanpa metode khusus.
+
+Padahal konsepnya tetap sama: membagi berulang dengan bilangan prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Jika Lemma Euclid adalah “alat”, maka Teorema Dasar Aritmetika adalah
+“peta dunia teori bilangan”.
+
+Hampir semua materi setelah ini — mulai dari modulo, CRT, hingga
+fungsi aritmetika — hanya bekerja karena faktorisasi prima bersifat
+unik.
+
+</p>
+
+<p>
+
+Dalam banyak soal OSN, kamu tidak perlu menghitung faktorisasi secara
+lengkap, cukup memahami struktur primanya saja.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.5 Faktorisasi Prima</h2>
+
+<p>
+
+Setelah memahami Teorema Dasar Aritmetika, kita tahu bahwa setiap
+bilangan bulat positif dapat diuraikan menjadi hasil kali bilangan
+prima. Proses untuk mendapatkan bentuk tersebut disebut
+<b>faktorisasi prima</b>.
+
+</p>
+
+<p>
+
+Dalam konteks Olimpiade, faktorisasi prima bukan hanya soal menulis
+bentuk akhir, tetapi juga memahami struktur bilangan untuk
+menyelesaikan masalah seperti FPB, KPK, dan kongruensi.
+
+</p>
+
+<hr>
+
+<h3>Metode Dasar Faktorisasi</h3>
+
+<div class="definition">
+
+<b>Metode Trial Division (Pembagian Berulang)</b>
+
+<p>
+
+Metode paling dasar untuk melakukan faktorisasi prima adalah dengan
+mencoba membagi bilangan n dengan bilangan prima secara berurutan
+mulai dari yang terkecil.
+
+</p>
+
+</div>
+
+<p>
+
+Langkah-langkahnya:
+
+</p>
+
+<ol>
+
+<li>Coba bagi dengan 2 sebanyak mungkin.</li>
+<li>Lanjut ke 3, 5, 7, 11, dan seterusnya.</li>
+<li>Jika sudah tidak bisa dibagi lagi, lanjutkan ke bilangan prima berikutnya.</li>
+<li>Proses berhenti ketika hasil akhir adalah 1.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh Faktorisasi</h3>
+
+<div class="example">
+
+<p>
+
+Faktorkan 360 ke dalam bentuk prima.
+
+</p>
+
+<p>
+
+Langkah:
+
+</p>
+
+<p style="text-align:center">
+
+360 ÷ 2 = 180
+
+</p>
+
+<p style="text-align:center">
+
+180 ÷ 2 = 90
+
+</p>
+
+<p style="text-align:center">
+
+90 ÷ 2 = 45
+
+</p>
+
+<p style="text-align:center">
+
+45 ÷ 3 = 15
+
+</p>
+
+<p style="text-align:center">
+
+15 ÷ 3 = 5
+
+</p>
+
+<p style="text-align:center">
+
+5 ÷ 5 = 1
+
+</p>
+
+<p>
+
+Sehingga:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+360 = 2³ × 3² × 5
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kenapa Harus Sampai √n?</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika suatu bilangan n memiliki faktor komposit, maka setidaknya salah
+satu faktor tersebut ≤ √n.
+
+</p>
+
+</div>
+
+<h3>Intuisi</h3>
+
+<p>
+
+Misalkan n = a × b dengan a ≤ b.
+
+Jika a > √n, maka b juga harus > √n, sehingga
+
+</p>
+
+<p style="text-align:center">
+
+a × b > √n × √n = n
+
+</p>
+
+<p>
+
+yang merupakan kontradiksi.
+
+</p>
+
+<p>
+
+Jadi, cukup mengecek bilangan hingga √n saja untuk menentukan apakah
+n memiliki faktor.
+
+</p>
+
+<hr>
+
+<h3>Strategi Cepat OSN</h3>
+
+<div class="tip">
+
+<ul>
+
+<li>Selalu mulai dari bilangan prima terkecil.</li>
+<li>Gunakan pembagian berulang (bukan langsung mencari faktor besar).</li>
+<li>Berhenti setelah √n.</li>
+<li>Jika tersisa bilangan > 1, maka itu adalah faktor prima terakhir.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal OSN</h3>
+
+<div class="example">
+
+<p>
+
+Faktorkan 1001.
+
+</p>
+
+<p>
+
+Coba pembagian:
+
+</p>
+
+<p style="text-align:center">
+
+1001 ÷ 7 = 143
+
+</p>
+
+<p>
+
+Lanjut:
+
+</p>
+
+<p style="text-align:center">
+
+143 ÷ 11 = 13
+
+</p>
+
+<p>
+
+Dan 13 adalah bilangan prima.
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+1001 = 7 × 11 × 13
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Langsung mencoba faktor besar tanpa mengecek bilangan kecil terlebih dahulu.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Tidak menyadari bahwa hasil akhir (misalnya 13) sudah pasti prima jika
+tidak bisa dibagi lagi.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menghentikan proses sebelum benar-benar mencapai 1.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Faktorisasi prima bukan hanya teknik menghitung, tetapi cara berpikir.
+
+Dalam soal OSN, sering kali kamu tidak perlu menyelesaikan seluruh
+faktorisasi, cukup menemukan struktur parsialnya saja.
+
+</p>
+
+<p>
+
+Semakin cepat kamu mengenali pola (seperti kelipatan 2, 3, 5, 11),
+semakin cepat kamu bisa menyelesaikan soal.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.6 Uji Bilangan Prima</h2>
+
+<p>
+
+Dalam banyak soal, kita sering dihadapkan pada pertanyaan:
+apakah suatu bilangan merupakan bilangan prima atau bukan?
+
+Meskipun definisinya sederhana, mengecek satu per satu pembagi
+tidak efisien untuk bilangan besar. Oleh karena itu, diperlukan
+metode yang lebih cepat dan sistematis.
+
+</p>
+
+<hr>
+
+<h3>Metode Dasar (Definisi Langsung)</h3>
+
+<div class="definition">
+
+<p>
+
+Suatu bilangan n dikatakan prima jika tidak memiliki pembagi selain
+1 dan dirinya sendiri.
+
+</p>
+
+</div>
+
+<p>
+
+Secara langsung, kita bisa mengecek semua bilangan dari 2 hingga n−1,
+namun metode ini sangat tidak efisien.
+
+</p>
+
+<hr>
+
+<h3>Optimasi Penting: Cukup sampai √n</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika n bukan bilangan prima, maka n memiliki faktor a dan b sehingga
+
+</p>
+
+<p style="text-align:center">
+
+n = a × b, dengan a ≤ b
+
+</p>
+
+<p>
+
+Akibatnya, setidaknya salah satu dari a atau b pasti ≤ √n.
+
+</p>
+
+</div>
+
+<h3>Kesimpulan Penting</h3>
+
+<p style="text-align:center;font-size:22px;">
+
+Untuk mengecek keprimaan n, cukup uji pembagi hingga √n saja.
+
+</p>
+
+<hr>
+
+<h3>Algoritma Uji Bilangan Prima</h3>
+
+<ol>
+
+<li>Jika n ≤ 1 → bukan prima.</li>
+<li>Jika n = 2 atau 3 → prima.</li>
+<li>Jika n habis dibagi 2 → bukan prima.</li>
+<li>Cek pembagi ganjil dari 3 hingga √n.</li>
+<li>Jika tidak ada yang membagi → n adalah prima.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="example">
+
+<p>
+
+Apakah 97 bilangan prima?
+
+</p>
+
+<p>
+
+√97 ≈ 9.8, jadi cukup cek hingga 9.
+
+</p>
+
+<p>
+
+Cek pembagi: 2, 3, 5, 7
+
+</p>
+
+<p>
+
+Tidak ada yang membagi 97.
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+Jadi 97 adalah bilangan prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="example">
+
+<p>
+
+Apakah 221 bilangan prima?
+
+</p>
+
+<p>
+
+√221 ≈ 14.8
+
+</p>
+
+<p>
+
+Cek: 2, 3, 5, 7, 11, 13
+
+</p>
+
+<p>
+
+221 ÷ 13 = 17
+
+</p>
+
+<p>
+
+Jadi:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+221 = 13 × 17
+
+</p>
+
+<p>
+
+Maka 221 bukan bilangan prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Mengira bahwa cukup mengecek sampai n/2.
+
+Padahal cukup sampai √n saja.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Hanya mengecek 2 dan 3 saja.
+
+Ini sering menyebabkan kesalahan pada bilangan seperti 49 atau 121.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Tidak memahami bahwa jika tidak ada faktor sampai √n,
+maka pasti prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Dalam kompetisi, uji keprimaan sering bukan tujuan utama,
+melainkan alat untuk menyelesaikan masalah lebih besar.
+
+Misalnya:
+
+</p>
+
+<ul>
+
+<li>Mencari struktur faktorisasi.</li>
+<li>Membuktikan sifat bilangan.</li>
+<li>Menyederhanakan kongruensi.</li>
+<li>Menyusun argumen kontradiksi.</li>
+</ul>
+
+<p>
+
+Karena itu, jangan hanya menghafal algoritma, tetapi pahami mengapa
+cukup sampai √n.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.7 Sieve of Eratosthenes</h2>
+
+<p>
+
+Jika kita ingin mengetahui semua bilangan prima hingga batas N,
+melakukan uji keprimaan satu per satu akan sangat tidak efisien.
+
+Sebagai gantinya, kita menggunakan algoritma klasik yang ditemukan
+oleh matematikawan Yunani kuno
+Eratosthenes,
+yang dikenal sebagai <b>Sieve of Eratosthenes</b>.
+
+</p>
+
+<p>
+
+Ide utama algoritma ini adalah <b>menyaring (sieve)</b> bilangan
+komposit dengan cara mencoret kelipatan dari setiap bilangan prima.
+
+</p>
+
+<hr>
+
+<h3>Ide Dasar Algoritma</h3>
+
+<div class="definition">
+
+<p>
+
+Kita mulai dari daftar semua bilangan dari 2 hingga N.
+Kemudian:
+
+</p>
+
+<ol>
+
+<li>Ambil bilangan terkecil yang belum dicoret (itu pasti prima).</li>
+<li>Coret semua kelipatan bilangan tersebut.</li>
+<li>Ulangi proses hingga √N.</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h3>Contoh Visual (N = 30)</h3>
+
+<p>
+
+Mulai dari:
+
+</p>
+
+<p style="text-align:center">
+
+2, 3, 4, 5, 6, 7, 8, 9, 10, ..., 30
+
+</p>
+
+<p>
+
+Langkah:
+
+</p>
+
+<ul>
+
+<li>Ambil 2 → coret semua kelipatan 2.</li>
+<li>Ambil 3 → coret semua kelipatan 3.</li>
+<li>Ambil 5 → coret semua kelipatan 5.</li>
+<li>Ambil 7 → cukup sampai √30 ≈ 5.4</li>
+
+</ul>
+
+<p>
+
+Sisa bilangan yang tidak dicoret adalah:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+
+</p>
+
+<p>
+
+Itulah semua bilangan prima ≤ 30.
+
+</p>
+
+<hr>
+
+<h3>Algoritma (Langkah Formal)</h3>
+
+<ol>
+
+<li>Buat array isPrime[1..N] dan isi dengan true.</li>
+<li>Set isPrime[0] dan isPrime[1] = false.</li>
+<li>Untuk i dari 2 sampai √N:</li>
+
+<ul>
+<li>Jika isPrime[i] = true, maka i adalah prima.</li>
+<li>Coret semua kelipatan i mulai dari i×i.</li>
+</ul>
+
+</ol>
+
+<hr>
+
+<h3>Kenapa Mulai dari i × i?</h3>
+
+<div class="theorem">
+
+<p>
+
+Kelipatan i yang lebih kecil dari i×i sudah pasti dicoret oleh
+bilangan prima yang lebih kecil.
+
+</p>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>12 sudah dicoret oleh 2 (2 × 6).</li>
+<li>15 sudah dicoret oleh 3 (3 × 5).</li>
+<li>20 sudah dicoret oleh 2 (2 × 10).</li>
+
+</ul>
+
+<p>
+
+Jadi tidak perlu mengulang proses dari awal.
+
+</p>
+
+<hr>
+
+<h3>Contoh Implementasi (Pseudocode)</h3>
+
+<div class="example">
+
+<pre>
+
+for i = 2 to N:
+    isPrime[i] = true
+
+isPrime[0] = isPrime[1] = false
+
+for i = 2 to sqrt(N):
+    if isPrime[i]:
+        for j = i*i to N step i:
+            isPrime[j] = false
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Kompleksitas</h3>
+
+<div class="definition">
+
+<p>
+
+Kompleksitas Sieve of Eratosthenes adalah:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+O(N log log N)
+
+</p>
+
+<p>
+
+Ini sangat efisien untuk menghasilkan semua bilangan prima hingga
+batas yang besar (misalnya 10⁷ atau 10⁸ dalam kompetisi).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Memulai pencoretan dari 2×i setiap kali.
+Padahal harus dimulai dari i×i.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Tidak membatasi iterasi sampai √N.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Menganggap semua bilangan yang tidak dicoret sebagai komposit.
+
+Padahal justru sebaliknya: yang tidak dicoret adalah bilangan prima.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Sieve of Eratosthenes bukan hanya algoritma, tetapi cara berpikir.
+
+Kita tidak mengecek “apakah bilangan ini prima”, tetapi justru
+mengeliminasi semua bilangan yang pasti komposit.
+
+</p>
+
+<p>
+
+Dalam banyak soal OSN, pola ini sering muncul dalam bentuk lain:
+<b>“hapus yang tidak mungkin”</b> daripada “cari yang benar”.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.8 Linear Sieve (Sieve Euler)</h2>
+
+<p>
+
+Sieve of Eratosthenes sudah sangat efisien untuk mencari semua bilangan
+prima hingga N. Namun, terdapat versi yang lebih lanjut yang dikenal
+sebagai <b>Linear Sieve</b> atau <b>Sieve Euler</b>.
+
+</p>
+
+<p>
+
+Keunggulan utama metode ini adalah setiap bilangan diproses
+<b>tepat satu kali</b>, sehingga kompleksitasnya menjadi sangat efisien
+secara praktis.
+
+</p>
+
+<hr>
+
+<h3>Ide Utama</h3>
+
+<div class="definition">
+
+<p>
+
+Setiap bilangan komposit dapat ditulis sebagai:
+
+</p>
+
+<p style="text-align:center">
+
+n = p × k
+
+</p>
+
+<p>
+
+dengan p adalah <b>prime factor terkecil</b> dari n.
+
+Linear Sieve memanfaatkan fakta ini untuk menandai setiap bilangan
+komposit hanya sekali.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Perbedaan dengan Sieve Eratosthenes</h3>
+
+<table>
+
+<tr>
+
+<th>Metode</th>
+<th>Cara Menandai</th>
+<th>Kompleksitas</th>
+
+</tr>
+
+<tr>
+
+<td>Eratosthenes</td>
+<td>Satu bilangan bisa ditandai berkali-kali</td>
+<td>O(N log log N)</td>
+
+</tr>
+
+<tr>
+
+<td>Linear Sieve</td>
+<td>Setiap bilangan ditandai sekali saja</td>
+<td>O(N)</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Konsep Penting: Smallest Prime Factor (SPF)</h3>
+
+<div class="definition">
+
+<p>
+
+Setiap bilangan n disimpan dengan informasi:
+
+</p>
+
+<p style="text-align:center">
+
+spf[n] = faktor prima terkecil dari n
+
+</p>
+
+<p>
+
+Dengan ini, kita bisa langsung memfaktorkan bilangan dengan cepat.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Algoritma Linear Sieve</h3>
+
+<ol>
+
+<li>Inisialisasi array spf dan daftar prime.</li>
+<li>Untuk i dari 2 sampai N:</li>
+
+<ul>
+
+<li>Jika spf[i] belum diisi → i adalah bilangan prima.</li>
+<li>Tambahkan i ke daftar prime.</li>
+
+<li>Untuk setiap prime p dalam daftar:</li>
+
+<ul>
+
+<li>Jika p × i > N → hentikan loop.</li>
+<li>Tetapkan spf[p × i] = p.</li>
+<li>Jika p = spf[i], hentikan loop.</li>
+
+</ul>
+
+</ul>
+
+</ol>
+
+<hr>
+
+<h3>Contoh Intuisi</h3>
+
+<p>
+
+Misalkan kita memproses i = 12.
+
+</p>
+
+<p>
+
+Karena:
+
+</p>
+
+<p style="text-align:center">
+
+12 = 2² × 3
+
+</p>
+
+<p>
+
+maka bilangan seperti:
+
+</p>
+
+<ul>
+
+<li>2 × 12 = 24</li>
+
+<li>3 × 12 = 36</li>
+
+</ul>
+
+<p>
+
+akan ditandai berdasarkan aturan smallest prime factor.
+
+</p>
+
+<p>
+
+Namun setiap bilangan hanya akan ditandai oleh satu cara saja.
+
+</p>
+
+<hr>
+
+<h3>Kenapa Linear?</h3>
+
+<div class="theorem">
+
+<p>
+
+Setiap bilangan komposit ditandai tepat satu kali,
+yaitu oleh pasangan (p, k) di mana p adalah smallest prime factor.
+
+</p>
+
+<p>
+
+Karena tidak ada pengulangan penandaan, total operasi bersifat linear.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Pseudocode</h3>
+
+<div class="example">
+
+<pre>
+
+for i = 2 to N:
+    if spf[i] == 0:
+        spf[i] = i
+        primes.push(i)
+
+    for p in primes:
+        if p > spf[i] or p * i > N:
+            break
+        spf[p * i] = p
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Aplikasi Penting</h3>
+
+<div class="definition">
+
+<ul>
+
+<li>Faktorisasi cepat dalam O(log n)</li>
+<li>Mencari banyak faktor prima dengan efisien</li>
+<li>Dasar algoritma lanjutan di teori bilangan komputasional</li>
+<li>Digunakan dalam soal OSN Informatika dan Matematika</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Tidak menghentikan loop ketika p > spf[i].
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menganggap Linear Sieve sama dengan Eratosthenes.
+
+Padahal konsepnya berbeda: Eratosthenes menandai kelipatan,
+Linear Sieve membangun bilangan secara konstruktif.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Tidak menyimpan smallest prime factor, sehingga kehilangan manfaat
+utama algoritma.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Linear Sieve sering dianggap “opsional”, padahal dalam kompetisi
+tingkat tinggi, ini sangat berguna untuk mempercepat faktorisasi
+berulang.
+
+</p>
+
+<p>
+
+Kalau Eratosthenes adalah cara “menghapus yang salah”,
+maka Linear Sieve adalah cara “membangun yang benar dari awal”.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.9 Segmented Sieve</h2>
+
+<p>
+
+Pada Sieve of Eratosthenes dan Linear Sieve, kita hanya bisa mencari
+bilangan prima hingga batas N yang relatif “masih bisa ditampung
+di memori”.
+
+Namun bagaimana jika kita ingin mencari bilangan prima pada rentang
+yang sangat besar, misalnya dari L sampai R dengan R bisa mencapai
+10¹²?
+
+</p>
+
+<p>
+
+Untuk kasus seperti ini digunakan teknik yang disebut
+<b>Segmented Sieve</b>.
+
+</p>
+
+<hr>
+
+<h3>Ide Utama</h3>
+
+<div class="definition">
+
+<p>
+
+Alih-alih menyaring semua bilangan hingga R, kita hanya:
+
+</p>
+
+<ul>
+
+<li>Mencari bilangan prima hingga √R terlebih dahulu.</li>
+<li>Menggunakan bilangan tersebut untuk menyaring interval [L, R].</li>
+
+</ul>
+
+</div>
+
+<p>
+
+Dengan cara ini, kita tidak perlu menyimpan semua bilangan sampai R,
+cukup hanya satu “potongan” (segment) pada rentang yang diinginkan.
+
+</p>
+
+<hr>
+
+<h3>Langkah-Langkah Algoritma</h3>
+
+<ol>
+
+<li>Gunakan Sieve of Eratosthenes untuk mencari semua bilangan prima ≤ √R.</li>
+
+<li>Buat array isPrimeSegment untuk semua bilangan dalam [L, R].</li>
+
+<li>Untuk setiap prime p:</li>
+
+<ul>
+
+<li>Cari kelipatan pertama p dalam interval [L, R].</li>
+
+<li>Coret semua kelipatan p dalam rentang tersebut.</li>
+
+</ul>
+
+<li>Bilangan yang tidak dicoret adalah bilangan prima.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh Intuisi</h3>
+
+<p>
+
+Misalkan kita ingin mencari bilangan prima dari 50 sampai 80.
+
+</p>
+
+<p>
+
+Pertama, kita ambil bilangan prima ≤ √80 ≈ 8.9, yaitu:
+
+</p>
+
+<p style="text-align:center">
+
+2, 3, 5, 7
+
+</p>
+
+<p>
+
+Kemudian kita gunakan bilangan ini untuk mencoret kelipatan di
+rentang 50–80.
+
+</p>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>Kelipatan 2: 50, 52, 54, ..., 80</li>
+<li>Kelipatan 3: 51, 54, 57, ..., 78</li>
+<li>Kelipatan 5: 50, 55, 60, ..., 80</li>
+<li>Kelipatan 7: 56, 63, 70, 77</li>
+
+</ul>
+
+<p>
+
+Sisa bilangan yang tidak dicoret adalah bilangan prima di interval tersebut.
+
+</p>
+
+<hr>
+
+<h3>Kenapa Harus sampai √R?</h3>
+
+<div class="theorem">
+
+<p>
+
+Setiap bilangan komposit n memiliki faktor prima ≤ √n.
+
+Karena semua bilangan dalam interval [L, R] pasti memiliki faktor
+prima ≤ √R jika komposit.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Keunggulan Segmented Sieve</h3>
+
+<div class="definition">
+
+<ul>
+
+<li>Menghemat memori secara signifikan.</li>
+<li>Dapat digunakan untuk R sangat besar (hingga 10¹² atau lebih).</li>
+<li>Hanya fokus pada interval yang dibutuhkan.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Pseudocode</h3>
+
+<div class="example">
+
+<pre>
+
+primes = sieve(sqrt(R))
+
+for i in [L, R]:
+    isPrime[i] = true
+
+for p in primes:
+    start = max(p*p, ceil(L/p)*p)
+
+    for j from start to R step p:
+        isPrime[j] = false
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan Umum</h3>
+
+<div class="tip">
+
+<b>Kesalahan 1</b>
+
+<p>
+
+Tidak menyesuaikan awal pencoretan (harus max(p², ceil(L/p)×p)).
+
+</p>
+
+<hr>
+
+<b>Kesalahan 2</b>
+
+<p>
+
+Menggunakan sieve biasa untuk R besar sehingga kehabisan memori.
+
+</p>
+
+<hr>
+
+<b>Kesalahan 3</b>
+
+<p>
+
+Lupa bahwa L bisa lebih kecil dari p², sehingga mulai pencoretan salah.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Segmented Sieve adalah contoh klasik teknik “divide and conquer
+berbasis interval”.
+
+</p>
+
+<p>
+
+Dalam banyak soal OSN, kita tidak diminta mencari semua bilangan
+prima, tetapi hanya pada rentang tertentu yang sangat besar.
+
+</p>
+
+<p>
+
+Kunci utamanya adalah: <b>gunakan informasi kecil (≤ √R) untuk
+menyelesaikan masalah besar.</b>
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3.10 Aplikasi Bilangan Prima</h2>
+
+<p>
+
+Setelah mempelajari definisi, sifat, dan algoritma bilangan prima,
+kita sampai pada bagian terpenting: bagaimana bilangan prima digunakan
+dalam menyelesaikan masalah matematika.
+
+</p>
+
+<p>
+
+Bilangan prima bukan hanya objek teori, tetapi juga alat utama dalam
+hampir seluruh cabang teori bilangan.
+
+</p>
+
+<hr>
+
+<h3>Aplikasi 1 — Faktorisasi Struktur Bilangan</h3>
+
+<div class="definition">
+
+<p>
+
+Setiap bilangan dapat diuraikan menjadi faktor prima yang unik.
+
+Dengan ini, kita dapat menganalisis sifat bilangan melalui pangkat
+prima yang menyusunnya.
+
+</p>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+360 = 2³ × 3² × 5
+
+</p>
+
+<p>
+
+Dari sini kita bisa langsung mengetahui:
+
+</p>
+
+<ul>
+
+<li>Jumlah faktor</li>
+<li>FPB dan KPK dengan bilangan lain</li>
+<li>Sifat kelipatan</li>
+
+</ul>
+
+<hr>
+
+<h3>Aplikasi 2 — FPB dan KPK dalam Bentuk Prima</h3>
+
+<div class="theorem">
+
+<p>
+
+Jika:
+
+</p>
+
+<p style="text-align:center">
+
+a = ∏ pᵢ^αᵢ,  b = ∏ pᵢ^βᵢ
+
+</p>
+
+<p>
+
+maka:
+
+</p>
+
+<p style="text-align:center">
+
+FPB(a,b) = ∏ pᵢ^min(αᵢ,βᵢ)
+
+</p>
+
+<p style="text-align:center">
+
+KPK(a,b) = ∏ pᵢ^max(αᵢ,βᵢ)
+
+</p>
+
+</div>
+
+<p>
+
+Ini adalah dasar semua manipulasi FPB-KPK di OSN.
+
+</p>
+
+<hr>
+
+<h3>Aplikasi 3 — Menentukan Banyak Faktor</h3>
+
+<div class="definition">
+
+<p>
+
+Jika
+
+</p>
+
+<p style="text-align:center">
+
+n = p₁^a × p₂^b × ... × pₖ^c
+
+</p>
+
+<p>
+
+maka jumlah faktor positif n adalah:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+(a+1)(b+1)...(c+1)
+
+</p>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<p style="text-align:center">
+
+360 = 2³ × 3² × 5¹
+
+</p>
+
+<p>
+
+Jumlah faktornya:
+
+</p>
+
+<p style="text-align:center">
+
+(3+1)(2+1)(1+1) = 4 × 3 × 2 = 24
+
+</p>
+
+<hr>
+
+<h3>Aplikasi 4 — Teorema Dasar di Modular Arithmetic</h3>
+
+<div class="definition">
+
+<p>
+
+Banyak sifat dalam modulo bergantung pada struktur bilangan prima,
+terutama ketika bekerja dengan invers modulo dan teorema Fermat.
+
+</p>
+
+</div>
+
+<p>
+
+Jika p adalah bilangan prima, maka struktur modulo p memiliki sifat
+yang sangat kuat dan “rapi”, yang akan dibahas pada Bab 4.
+
+</p>
+
+<hr>
+
+<h3>Aplikasi 5 — Lemma Euclid dalam Pembuktian</h3>
+
+<p>
+
+Jika p adalah bilangan prima dan p | ab, maka p | a atau p | b.
+
+Sifat ini digunakan dalam:
+
+</p>
+
+<ul>
+
+<li>Pembuktian keunikan faktorisasi prima</li>
+<li>Persamaan Diophantine</li>
+<li>Teorema modular</li>
+
+</ul>
+
+<hr>
+
+<h3>Aplikasi 6 — Fondasi Kriptografi</h3>
+
+<div class="definition">
+
+<p>
+
+Bilangan prima menjadi dasar sistem keamanan modern seperti RSA.
+
+Keamanan sistem ini bergantung pada sulitnya memfaktorkan bilangan
+besar menjadi faktor primanya.
+
+</p>
+
+</div>
+
+<p>
+
+Semakin besar bilangan prima yang digunakan, semakin sulit sistem
+tersebut untuk ditembus secara brute force.
+
+</p>
+
+<hr>
+
+<h3>Ringkasan Bab 3</h3>
+
+<div class="theorem">
+
+<p>
+
+Pada bab ini kita telah mempelajari bahwa:
+
+</p>
+
+<ul>
+
+<li>Bilangan prima adalah “atom” dalam teori bilangan.</li>
+<li>Setiap bilangan memiliki faktorisasi prima yang unik.</li>
+<li>Algoritma seperti sieve memungkinkan kita menemukan bilangan prima secara efisien.</li>
+<li>Sifat bilangan prima digunakan di hampir semua topik lanjutan.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Insight Pelatih Olimpiade</h3>
+
+<div class="tip">
+
+<p>
+
+Jika kamu benar-benar memahami Bab 3 ini, maka hampir semua materi
+teori bilangan berikutnya akan terasa lebih mudah.
+
+</p>
+
+<p>
+
+Kesalahan terbesar siswa adalah menganggap bilangan prima hanya sebagai
+“angka yang tidak punya faktor”. Padahal dalam kompetisi, bilangan
+prima adalah <b>alat utama untuk membongkar struktur bilangan lain</b>.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Penutup Bab 3</h3>
+
+<div class="definition">
+
+<p>
+
+Bab selanjutnya akan membahas salah satu konsep paling penting dalam
+teori bilangan:
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+Aritmetika Modulo dan Kongruensi
+
+</p>
+
+<p>
+
+Konsep ini akan menjadi jembatan menuju Teorema Fermat, Euler, CRT,
+dan berbagai teknik lanjutan dalam OSN.
+
+</p>
+
+</div>
+
+<nav>
+
+<a href="tb2.html">⬅ Bab Sebelumnya</a>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="tb4.html">Bab Berikutnya ➜</a>
+
+</nav>
+
+</div>
+
+<footer>
+
+<p><b>Handbook Teori Bilangan Olimpiade Matematika</b></p>
+
+<p>© 2026 • Bab 3: Bilangan Prima</p>
+
+</footer>
+
+</body>
+</html>
