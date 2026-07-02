@@ -1,1 +1,1720 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Matematika - statiska7</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f8fd;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#0f172a,#2563eb);
+color:white;
+padding:55px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.5rem;
+margin-bottom:12px;
+}
+
+nav{
+position:sticky;
+top:0;
+background:white;
+padding:15px;
+border-bottom:1px solid #ddd;
+z-index:999;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-weight:bold;
+color:#1d4ed8;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+section{
+background:white;
+margin-bottom:30px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 14px rgba(0,0,0,.08);
+}
+
+h2{
+color:#1e3a8a;
+margin-bottom:18px;
+}
+
+h3{
+margin-top:20px;
+margin-bottom:12px;
+color:#2563eb;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:18px 0;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+
+.rumus{
+background:#eef4ff;
+padding:18px;
+border-left:6px solid #2563eb;
+margin:18px 0;
+}
+
+.contoh{
+background:#eefcf3;
+padding:18px;
+border-left:6px solid #16a34a;
+margin:18px 0;
+}
+
+.visual{
+background:#fafafa;
+border:2px dashed #bbb;
+padding:20px;
+margin:20px 0;
+text-align:center;
+}
+
+.catatan{
+background:#fff7df;
+border-left:6px solid orange;
+padding:18px;
+margin:20px 0;
+}
+
+.olimpiade{
+background:#f3e8ff;
+border-left:6px solid #7c3aed;
+padding:18px;
+margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Handbook Matematika</h1>
+
+<p>
+
+Bab 7 — Distribusi Sampling & Central Limit Theorem
+
+</p>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#pengantar">Pengantar</a></li>
+
+<li><a href="#sampling">Distribusi Sampling</a></li>
+
+<li><a href="#clt">Central Limit Theorem</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section id="pengantar">
+
+<h2>1. Pendahuluan</h2>
+
+<p>
+
+Bab sebelumnya membahas distribusi probabilitas dari sebuah variabel acak.
+Pada bab ini fokus pembahasan berubah menjadi distribusi dari
+<strong>statistik sampel</strong>, seperti rata-rata sampel dan proporsi
+sampel.
+
+</p>
+
+<p>
+
+Konsep ini merupakan fondasi seluruh inferensi statistika karena hampir
+semua metode estimasi dan pengujian hipotesis berasal dari distribusi
+sampling.
+
+</p>
+
+<div class="visual">
+
+<h3>Alur Konsep</h3>
+
+<p>
+
+Populasi
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Ambil Sampel
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Hitung Statistik Sampel
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Distribusi Sampling
+
+</p>
+
+<p>
+
+⬇</p>
+
+<p>
+
+Inferensi Statistika
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Kesalahan umum adalah menganggap distribusi sampling sama dengan distribusi
+data asli. Padahal keduanya merupakan konsep yang berbeda.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="sampling">
+
+<h2>2. Distribusi Sampling</h2>
+
+<p>
+
+Distribusi sampling adalah distribusi probabilitas dari suatu statistik
+yang diperoleh dari seluruh kemungkinan sampel berukuran tertentu yang
+diambil dari populasi.
+
+</p>
+
+<p>
+
+Statistik yang dimaksud dapat berupa:
+
+</p>
+
+<ul>
+
+<li>Rata-rata sampel (x̄)</li>
+
+<li>Proporsi sampel (p̂)</li>
+
+<li>Variansi sampel</li>
+
+<li>Median sampel</li>
+
+</ul>
+
+<div class="contoh">
+
+<h3>Contoh Sederhana</h3>
+
+<p>
+
+Misalkan populasi terdiri atas tiga angka:
+
+</p>
+
+<p>
+
+{2,4,6}
+
+</p>
+
+<p>
+
+Diambil seluruh kemungkinan sampel berukuran dua.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Sampel</th>
+
+<th>Mean Sampel</th>
+
+</tr>
+
+<tr>
+
+<td>{2,4}</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>{2,6}</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>{4,6}</td>
+
+<td>5</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Kumpulan nilai 3, 4, dan 5 membentuk distribusi sampling dari rata-rata
+sampel.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Intuisi</strong>
+
+<p>
+
+Data asli berasal dari populasi, sedangkan distribusi sampling berasal
+dari statistik hasil pengambilan sampel berulang-ulang.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="mean-sampling">
+
+<h2>3. Distribusi Sampling Rata-Rata</h2>
+
+<p>
+
+Distribusi sampling yang paling sering digunakan adalah distribusi dari
+rata-rata sampel atau <strong>sampling distribution of the mean</strong>.
+
+</p>
+
+<p>
+
+Distribusi ini digunakan hampir di seluruh metode inferensi statistika.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rata-Rata Distribusi Sampling</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+μ<sub>x̄</sub>=μ
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, rata-rata seluruh rata-rata sampel sama dengan rata-rata populasi.
+
+</p>
+
+<div class="rumus">
+
+<h3>Standar Deviasi Distribusi Sampling</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+σ<sub>x̄</sub>
+
+=
+
+σ/√n
+
+</p>
+
+</div>
+
+<p>
+
+Besaran tersebut disebut juga sebagai
+<strong>Standard Error</strong>.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Makna Penting</h3>
+
+<p>
+
+Semakin besar ukuran sampel, semakin kecil standard error sehingga rata-
+rata sampel semakin mendekati rata-rata populasi.
+
+</p>
+
+</div>
+
+</section><section id="standard-error">
+
+<h2>4. Standard Error (Galat Baku)</h2>
+
+<p>
+
+Standard Error (SE) merupakan simpangan baku dari distribusi sampling.
+Besaran ini menunjukkan seberapa jauh rata-rata sampel cenderung
+berfluktuasi terhadap rata-rata populasi apabila proses pengambilan
+sampel dilakukan berulang kali.
+
+</p>
+
+<p>
+
+Perlu dibedakan antara <strong>Standar Deviasi (σ)</strong> dan
+<strong>Standard Error (SE)</strong>.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Standar Deviasi</th>
+
+<th>Standard Error</th>
+
+</tr>
+
+<tr>
+
+<td>Mengukur penyebaran data individu.</td>
+
+<td>Mengukur penyebaran rata-rata sampel.</td>
+
+</tr>
+
+<tr>
+
+<td>Berkaitan dengan populasi atau data.</td>
+
+<td>Berkaitan dengan distribusi sampling.</td>
+
+</tr>
+
+<tr>
+
+<td>Nilainya tetap untuk suatu populasi.</td>
+
+<td>Semakin kecil jika ukuran sampel bertambah.</td>
+
+</tr>
+
+</table>
+
+<div class="rumus">
+
+<h3>Rumus Standard Error</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+SE = σ / √n
+
+</p>
+
+</div>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Suatu populasi memiliki standar deviasi 18 dan diambil sampel sebanyak
+36 data.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+SE = 18 / √36
+
+</p>
+
+<p>
+
+= 18 / 6
+
+</p>
+
+<p>
+
+= 3
+
+</p>
+
+</div>
+
+<p>
+
+Artinya rata-rata sampel umumnya hanya menyimpang sekitar 3 satuan dari
+rata-rata populasi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="clt">
+
+<h2>5. Central Limit Theorem (Teorema Limit Pusat)</h2>
+
+<p>
+
+Central Limit Theorem (CLT) merupakan salah satu teorema paling penting
+dalam statistika modern. Hampir seluruh metode inferensi statistika
+berdiri di atas teorema ini.
+
+</p>
+
+<p>
+
+Teorema ini menyatakan bahwa apabila ukuran sampel cukup besar, maka
+distribusi rata-rata sampel akan mendekati distribusi normal, meskipun
+populasinya tidak berdistribusi normal.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi CLT</h3>
+
+<pre>
+
+Populasi Asli
+
+     Bentuk Bebas
+
+          │
+
+          ▼
+
+Ambil Banyak Sampel
+
+          │
+
+          ▼
+
+Hitung Mean Setiap Sampel
+
+          │
+
+          ▼
+
+Distribusi Mean Sampel
+
+   Mendekati Normal
+
+</pre>
+
+</div>
+
+<div class="catatan">
+
+<strong>Aturan Praktis</strong>
+
+<p>
+
+Dalam banyak kasus, ukuran sampel
+<strong>n ≥ 30</strong>
+sudah dianggap cukup agar pendekatan distribusi normal dapat digunakan.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Mengapa CLT Sangat Penting?</h3>
+
+<p>
+
+Tanpa Central Limit Theorem, kita harus mengetahui bentuk distribusi
+populasi terlebih dahulu sebelum melakukan analisis statistik. Berkat
+CLT, banyak metode tetap dapat digunakan walaupun bentuk distribusi
+populasi tidak diketahui.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="contoh-clt">
+
+<h2>6. Contoh Penerapan Central Limit Theorem</h2>
+
+<div class="contoh">
+
+<h3>Kasus</h3>
+
+<p>
+
+Suatu populasi memiliki rata-rata 70 dan standar deviasi 12.
+Diambil sampel acak sebanyak 36 orang.
+
+</p>
+
+<p>
+
+Tentukan rata-rata distribusi sampling dan standard error.
+
+</p>
+
+<h3>Penyelesaian</h3>
+
+<div class="rumus">
+
+<p>
+
+μ<sub>x̄</sub> = 70
+
+</p>
+
+<p>
+
+SE = 12 / √36
+
+</p>
+
+<p>
+
+= 12 / 6
+
+</p>
+
+<p>
+
+= 2
+
+</p>
+
+</div>
+
+<p>
+
+Artinya distribusi rata-rata sampel berpusat di nilai 70 dengan
+simpangan baku sebesar 2.
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Perbandingan</h3>
+
+<pre>
+
+Distribusi Populasi
+
+██████████████████████
+
+↓
+
+Ambil Sampel Berulang
+
+↓
+
+Mean Tiap Sampel
+
+↓
+
+Kurva Semakin Mendekati Normal
+
+</pre>
+
+</div>
+
+</section>
+
+<section id="ukuran-sampel">
+
+<h2>7. Pengaruh Ukuran Sampel</h2>
+
+<p>
+
+Ukuran sampel memiliki pengaruh besar terhadap kualitas estimasi.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Ukuran Sampel</th>
+
+<th>Dampak</th>
+
+</tr>
+
+<tr>
+
+<td>Kecil</td>
+
+<td>Variasi rata-rata sampel masih besar.</td>
+
+</tr>
+
+<tr>
+
+<td>Sedang</td>
+
+<td>Distribusi mulai stabil.</td>
+
+</tr>
+
+<tr>
+
+<td>Besar</td>
+
+<td>Rata-rata sampel semakin mendekati rata-rata populasi.</td>
+
+</tr>
+
+</table>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+SE ∝ 1 / √n
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, semakin besar nilai n, semakin kecil standard error.
+
+</p>
+
+<div class="catatan">
+
+<strong>Kesimpulan</strong>
+
+<p>
+
+Menambah ukuran sampel akan meningkatkan ketelitian estimasi, tetapi
+peningkatannya tidak bersifat linear karena melibatkan akar kuadrat.
+
+</p>
+
+</div>
+
+</section><section id="sampling-proportion">
+
+<h2>8. Distribusi Sampling Proporsi</h2>
+
+<p>
+
+Selain rata-rata sampel, statistik yang sangat sering digunakan adalah
+<strong>proporsi sampel</strong>. Proporsi sampel biasanya dilambangkan
+dengan <strong>p̂ (dibaca: p-hat)</strong>.
+
+</p>
+
+<p>
+
+Proporsi sampel menyatakan persentase keberhasilan atau karakteristik
+tertentu dalam suatu sampel.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Dari 200 siswa yang dipilih secara acak, terdapat 130 siswa yang
+menyukai matematika.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+p̂
+
+=
+
+130/200
+
+=
+
+0,65
+
+</p>
+
+</div>
+
+<p>
+
+Artinya, proporsi siswa yang menyukai matematika pada sampel adalah
+65%.
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Rata-rata Distribusi Sampling Proporsi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+μ<sub>p̂</sub>=p
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Standard Error Proporsi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+SE
+
+=
+
+√
+
+[p(1-p)/n]
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Interpretasi</strong>
+
+<p>
+
+Semakin besar ukuran sampel, proporsi sampel akan semakin mendekati
+proporsi populasi yang sebenarnya.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="sampling-variance">
+
+<h2>9. Variansi Distribusi Sampling</h2>
+
+<p>
+
+Karena distribusi sampling juga merupakan suatu distribusi probabilitas,
+maka distribusi tersebut memiliki variansi.
+
+</p>
+
+<p>
+
+Untuk distribusi sampling rata-rata berlaku hubungan berikut.
+
+</p>
+
+<div class="rumus">
+
+<h3>Variansi Distribusi Sampling</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Var(x̄)
+
+=
+
+σ²/n
+
+</p>
+
+</div>
+
+<p>
+
+Sedangkan standar deviasinya adalah
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+σ<sub>x̄</sub>
+
+=
+
+σ/√n
+
+</p>
+
+</div>
+
+<div class="visual">
+
+<h3>Hubungan Variansi dan Standard Error</h3>
+
+<pre>
+
+Variansi
+
+      │
+
+      ▼
+
+Akar Kuadrat
+
+      │
+
+      ▼
+
+Standard Error
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan</h3>
+
+<p>
+
+Dalam soal olimpiade maupun statistika lanjutan, sering kali lebih mudah
+menghitung variansi terlebih dahulu, kemudian memperoleh standard error
+dengan mengambil akar kuadratnya.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="finite-population">
+
+<h2>10. Finite Population Correction (FPC)</h2>
+
+<p>
+
+Apabila ukuran sampel merupakan bagian yang cukup besar dari populasi,
+rumus standard error perlu disesuaikan menggunakan
+<strong>Finite Population Correction (FPC)</strong>.
+
+</p>
+
+<p>
+
+Koreksi ini diperlukan karena pengambilan sampel tanpa pengembalian
+mengurangi variasi dibandingkan jika populasi dianggap sangat besar.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus FPC</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+√[(N−n)/(N−1)]
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>N</td>
+
+<td>Ukuran populasi.</td>
+
+</tr>
+
+<tr>
+
+<td>n</td>
+
+<td>Ukuran sampel.</td>
+
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Kapan Digunakan?</strong>
+
+<p>
+
+Secara umum, FPC mulai dipertimbangkan apabila ukuran sampel melebihi
+sekitar 5% dari ukuran populasi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="clt-proof">
+
+<h2>11. Intuisi Mengapa Central Limit Theorem Bekerja</h2>
+
+<p>
+
+Central Limit Theorem bukan sekadar aturan praktis, tetapi merupakan
+hasil matematis yang sangat kuat.
+
+</p>
+
+<p>
+
+Ketika banyak pengamatan independen dijumlahkan atau dirata-ratakan,
+pengaruh variasi acak akan saling menyeimbangkan sehingga distribusi
+hasil akhirnya menjadi semakin mendekati bentuk normal.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+Sampel 1 → Mean
+
+Sampel 2 → Mean
+
+Sampel 3 → Mean
+
+Sampel 4 → Mean
+
+Sampel ...
+
+↓
+
+Distribusi Mean
+
+↓
+
+Semakin Halus
+
+↓
+
+Kurva Normal
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Sudut Pandang Olimpiade</h3>
+
+<p>
+
+CLT menjelaskan mengapa distribusi normal muncul di begitu banyak
+fenomena nyata. Meskipun setiap individu memiliki karakteristik berbeda,
+rata-rata dari kelompok besar cenderung mengikuti distribusi normal.
+
+</p>
+
+</div>
+
+</section><section id="clt-syarat">
+
+<h2>12. Syarat Penggunaan Central Limit Theorem</h2>
+
+<p>
+
+Walaupun Central Limit Theorem sangat kuat, penggunaannya tetap memiliki
+beberapa syarat agar hasil pendekatan distribusi normal dapat dipercaya.
+
+</p>
+
+<h3>Syarat Utama</h3>
+
+<ul>
+
+<li>Sampel dipilih secara acak (random sampling).</li>
+
+<li>Setiap pengamatan saling independen.</li>
+
+<li>Ukuran sampel cukup besar apabila distribusi populasi tidak normal.</li>
+
+<li>Jika populasi sudah normal, ukuran sampel kecil pun dapat digunakan.</li>
+
+</ul>
+
+<table>
+
+<tr>
+<th>Kondisi Populasi</th>
+<th>Ukuran Sampel</th>
+<th>CLT Berlaku?</th>
+</tr>
+
+<tr>
+<td>Normal</td>
+<td>Kecil</td>
+<td>Ya</td>
+</tr>
+
+<tr>
+<td>Normal</td>
+<td>Besar</td>
+<td>Ya</td>
+</tr>
+
+<tr>
+<td>Tidak Normal</td>
+<td>Kecil</td>
+<td>Tidak selalu</td>
+</tr>
+
+<tr>
+<td>Tidak Normal</td>
+<td>Besar (≈30 atau lebih)</td>
+<td>Ya (Pendekatan)</td>
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Catatan Penting</strong>
+
+<p>
+
+Semakin jauh distribusi populasi dari bentuk normal, semakin besar ukuran
+sampel yang diperlukan agar pendekatan CLT menjadi akurat.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="sampling-vs-population">
+
+<h2>13. Populasi vs Sampel vs Distribusi Sampling</h2>
+
+<p>
+
+Banyak siswa tertukar antara tiga konsep ini. Padahal masing-masing
+memiliki peran yang berbeda.
+
+</p>
+
+<table>
+
+<tr>
+<th>Konsep</th>
+<th>Objek</th>
+<th>Contoh</th>
+</tr>
+
+<tr>
+<td>Populasi</td>
+<td>Seluruh anggota.</td>
+<td>Seluruh siswa sekolah.</td>
+</tr>
+
+<tr>
+<td>Sampel</td>
+<td>Sebagian anggota.</td>
+<td>100 siswa yang dipilih.</td>
+</tr>
+
+<tr>
+<td>Distribusi Sampling</td>
+<td>Distribusi statistik dari banyak sampel.</td>
+<td>Distribusi seluruh rata-rata sampel.</td>
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Hubungan Ketiganya</h3>
+
+<pre>
+
+Populasi
+
+      │
+
+Ambil Sampel
+
+      │
+
+Hitung Mean
+
+      │
+
+Ulangi Berkali-kali
+
+      │
+
+Distribusi Sampling
+
+</pre>
+
+</div>
+
+</section>
+
+<section id="contoh-olimpiade">
+
+<h2>14. Contoh Analisis Olimpiade</h2>
+
+<div class="contoh">
+
+<h3>Soal</h3>
+
+<p>
+
+Suatu populasi memiliki rata-rata 80 dan standar deviasi 15.
+Diambil sampel acak sebanyak 25 orang.
+
+Tentukan:
+
+</p>
+
+<ol>
+
+<li>Mean distribusi sampling.</li>
+
+<li>Standard error.</li>
+
+<li>Apakah rata-rata sampel 88 termasuk jauh dari mean?</li>
+
+</ol>
+
+<h3>Penyelesaian</h3>
+
+<div class="rumus">
+
+<p>
+
+μ<sub>x̄</sub>=80
+
+</p>
+
+<p>
+
+SE=15/√25=15/5=3
+
+</p>
+
+</div>
+
+<p>
+
+Hitung Z-score rata-rata sampel:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Z=(88−80)/3
+
+</p>
+
+<p>
+
+=8/3≈2,67
+
+</p>
+
+</div>
+
+<p>
+
+Karena nilai Z lebih dari 2, rata-rata sampel tersebut tergolong cukup
+jauh dari rata-rata populasi dan relatif jarang terjadi apabila populasi
+benar-benar memiliki mean 80.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Pelatih Olimpiade</h3>
+
+<p>
+
+Perhatikan bahwa Z-score pada distribusi sampling menggunakan
+<strong>standard error</strong>, bukan standar deviasi populasi secara
+langsung.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="ringkasan">
+
+<h2>15. Ringkasan Bab</h2>
+
+<table>
+
+<tr>
+<th>Materi</th>
+<th>Inti Konsep</th>
+</tr>
+
+<tr>
+<td>Distribusi Sampling</td>
+<td>Distribusi dari suatu statistik sampel.</td>
+</tr>
+
+<tr>
+<td>Mean Distribusi Sampling</td>
+<td>Sama dengan mean populasi.</td>
+</tr>
+
+<tr>
+<td>Standard Error</td>
+<td>Simpangan baku distribusi sampling.</td>
+</tr>
+
+<tr>
+<td>Central Limit Theorem</td>
+<td>Distribusi mean sampel mendekati normal untuk sampel besar.</td>
+</tr>
+
+<tr>
+<td>Finite Population Correction</td>
+<td>Koreksi jika sampel merupakan bagian besar dari populasi.</td>
+</tr>
+
+<tr>
+<td>Distribusi Proporsi</td>
+<td>Distribusi sampling untuk proporsi sampel.</td>
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Inti Bab</strong>
+
+<p>
+
+Distribusi sampling menjelaskan perilaku statistik sampel, sedangkan
+Central Limit Theorem menjelaskan mengapa distribusi statistik tersebut
+sering dapat diperlakukan sebagai distribusi normal.
+
+</p>
+
+</div>
+
+</section><section id="rumus-penting">
+
+<h2>16. Ringkasan Rumus Penting</h2>
+
+<p>
+
+Berikut adalah rumus-rumus yang wajib dikuasai sebelum mempelajari
+inferensi statistika. Sebagian besar soal estimasi dan pengujian
+hipotesis selalu berawal dari rumus-rumus berikut.
+
+</p>
+
+<div class="rumus">
+
+<h3>Mean Distribusi Sampling</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+μ<sub>x̄</sub> = μ
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Variansi Distribusi Sampling</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Var(x̄)=σ²/n
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Standard Error Mean</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+SE=σ/√n
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Mean Distribusi Proporsi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+μ<sub>p̂</sub>=p
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Standard Error Proporsi</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+SE=√[p(1-p)/n]
+
+</p>
+
+</div>
+
+<div class="rumus">
+
+<h3>Finite Population Correction</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+FPC=√[(N−n)/(N−1)]
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Tips Olimpiade</strong>
+
+<p>
+
+Pahami asal-usul setiap rumus. Menghafal tanpa memahami hubungan antar
+konsep akan menyulitkan ketika menghadapi soal yang dimodifikasi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="latihan">
+
+<h2>17. Latihan Akhir Bab</h2>
+
+<ol>
+
+<li>Jelaskan perbedaan populasi, sampel, dan distribusi sampling.</li>
+
+<li>Mengapa mean distribusi sampling sama dengan mean populasi?</li>
+
+<li>Hitung standard error jika σ = 24 dan n = 64.</li>
+
+<li>Suatu populasi memiliki rata-rata 50 dan standar deviasi 15. Tentukan distribusi sampling rata-rata untuk n = 25.</li>
+
+<li>Apa yang dimaksud dengan Central Limit Theorem?</li>
+
+<li>Mengapa ukuran sampel memengaruhi besar kecilnya standard error?</li>
+
+<li>Hitung standard error proporsi jika p = 0,40 dan n = 100.</li>
+
+<li>Kapan Finite Population Correction digunakan?</li>
+
+<li>Jelaskan hubungan antara CLT dan distribusi normal.</li>
+
+<li>Mengapa CLT menjadi dasar inferensi statistika?</li>
+
+</ol>
+
+<div class="olimpiade">
+
+<h3>Tantangan</h3>
+
+<p>
+
+Buktikan secara matematis bahwa variansi rata-rata sampel adalah
+σ²/n dengan memanfaatkan sifat linearitas variansi untuk peubah acak
+independen.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="evaluasi">
+
+<h2>18. Evaluasi Olimpiade</h2>
+
+<ol>
+
+<li>
+
+Sebuah populasi memiliki rata-rata 72 dan standar deviasi 18.
+Jika diambil sampel berukuran 81, hitung mean distribusi sampling,
+standard error, dan peluang konseptual rata-rata sampel berada sangat
+jauh dari 72.
+
+</li>
+
+<li>
+
+Suatu proporsi populasi sebesar 0,65. Tentukan standard error proporsi
+untuk ukuran sampel 400.
+
+</li>
+
+<li>
+
+Jelaskan mengapa distribusi sampling dapat mendekati normal walaupun
+distribusi populasi sangat miring.
+
+</li>
+
+<li>
+
+Bandingkan pengaruh ukuran sampel 16, 64, dan 256 terhadap standard
+error.
+
+</li>
+
+<li>
+
+Mengapa standard error lebih penting daripada standar deviasi ketika
+melakukan estimasi parameter?
+
+</li>
+
+</ol>
+
+</section>
+
+<section id="penutup">
+
+<h2>19. Penutup Bab</h2>
+
+<p>
+
+Bab ini menjadi jembatan antara teori probabilitas dan inferensi
+statistika. Setelah memahami distribusi sampling dan Central Limit
+Theorem, kita dapat mulai mengestimasi parameter populasi menggunakan
+data sampel dengan dasar matematis yang kuat.
+
+</p>
+
+<div class="visual">
+
+<h3>Peta Konsep Handbook</h3>
+
+<pre>
+
+Populasi
+
+     │
+
+     ▼
+
+Pengambilan Sampel
+
+     │
+
+     ▼
+
+Distribusi Sampling
+
+     │
+
+     ▼
+
+Central Limit Theorem
+
+     │
+
+     ▼
+
+Inferensi Statistika
+
+</pre>
+
+</div>
+
+<div class="catatan">
+
+<strong>Materi Selanjutnya</strong>
+
+<p>
+
+Bab berikutnya membahas <strong>Estimasi Parameter</strong> dan
+<strong>Interval Kepercayaan (Confidence Interval)</strong>, yaitu cara
+menggunakan data sampel untuk memperkirakan parameter populasi secara
+ilmiah.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="navigasi">
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;">
+
+<a href="statiska6.html"
+style="background:#16a34a;color:white;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="index.html"
+style="background:#0f766e;color:white;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Home
+
+</a>
+
+<a href="statiska8.html"
+style="background:#2563eb;color:white;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+➡ Lanjut ke statiska8.html
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
