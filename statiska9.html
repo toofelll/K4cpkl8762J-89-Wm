@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Matematika - statiska9</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#222;
+line-height:1.9;
+}
+
+header{
+background:linear-gradient(135deg,#0f172a,#1d4ed8);
+color:white;
+padding:60px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.6rem;
+margin-bottom:15px;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+section{
+background:white;
+padding:30px;
+margin-bottom:30px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+h2{
+color:#1e3a8a;
+margin-bottom:18px;
+}
+
+h3{
+margin:18px 0 10px;
+color:#2563eb;
+}
+
+.rumus{
+background:#eef4ff;
+padding:18px;
+border-left:6px solid #2563eb;
+margin:20px 0;
+}
+
+.visual{
+background:#fafafa;
+border:2px dashed #bdbdbd;
+padding:20px;
+margin:20px 0;
+}
+
+.catatan{
+background:#fff8dc;
+border-left:6px solid orange;
+padding:18px;
+margin:20px 0;
+}
+
+.olimpiade{
+background:#f3e8ff;
+border-left:6px solid #7c3aed;
+padding:18px;
+margin:20px 0;
+}
+
+.contoh{
+background:#eefcf3;
+border-left:6px solid #16a34a;
+padding:18px;
+margin:20px 0;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:20px 0;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Handbook Matematika</h1>
+
+<p>
+
+Bab 9 — Inferensi Statistika (Pengujian Hipotesis)
+
+</p>
+
+</header>
+
+<main>
+
+<section>
+
+<h2>1. Mengapa Pengujian Hipotesis Dibutuhkan?</h2>
+
+<p>
+
+Pada bab sebelumnya kita telah mempelajari bagaimana mengestimasi suatu
+parameter populasi menggunakan interval kepercayaan. Namun dalam banyak
+kasus kita tidak hanya ingin memperkirakan suatu nilai, melainkan ingin
+<strong>membuat keputusan</strong> terhadap suatu dugaan.
+
+</p>
+
+<p>
+
+Sebagai contoh:
+
+</p>
+
+<ul>
+
+<li>Apakah rata-rata nilai siswa meningkat setelah metode belajar baru?</li>
+
+<li>Apakah sebuah obat benar-benar lebih efektif daripada obat lama?</li>
+
+<li>Apakah mesin produksi masih menghasilkan produk sesuai standar?</li>
+
+<li>Apakah suatu koin benar-benar seimbang?</li>
+
+</ul>
+
+<p>
+
+Pertanyaan-pertanyaan tersebut tidak cukup dijawab dengan estimasi saja.
+Kita memerlukan suatu prosedur ilmiah yang mampu menentukan apakah bukti
+yang diperoleh dari sampel cukup kuat untuk mendukung suatu klaim.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Populasi
+
+      │
+
+Ambil Sampel
+
+      │
+
+Hitung Statistik
+
+      │
+
+Bandingkan Dengan Hipotesis
+
+      │
+
+Terima atau Tolak Hipotesis
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Filosofi</h3>
+
+<p>
+
+Pengujian hipotesis tidak bertujuan membuktikan suatu hipotesis benar,
+melainkan mengevaluasi apakah data memberikan bukti yang cukup kuat untuk
+menolak hipotesis awal.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>2. Hipotesis Nol dan Hipotesis Alternatif</h2>
+
+<p>
+
+Seluruh pengujian hipotesis selalu dimulai dengan menyusun dua hipotesis.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Nama</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>H₀</td>
+
+<td>Hipotesis Nol</td>
+
+<td>Tidak ada perubahan atau tidak ada perbedaan.</td>
+
+</tr>
+
+<tr>
+
+<td>H₁ atau Hₐ</td>
+
+<td>Hipotesis Alternatif</td>
+
+<td>Ada perubahan atau ada perbedaan.</td>
+
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Sebuah sekolah mengklaim rata-rata nilai matematika siswanya adalah 80.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+H₀ : μ = 80
+
+</p>
+
+<p>
+
+H₁ : μ ≠ 80
+
+</p>
+
+</div>
+
+<p>
+
+Kita akan menggunakan data sampel untuk menentukan apakah klaim tersebut
+masih layak dipertahankan.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Mengapa H₀ Selalu Mengandung Tanda Sama Dengan?</strong>
+
+<p>
+
+Karena hipotesis nol menyatakan kondisi awal yang diasumsikan benar
+sampai terdapat bukti statistik yang cukup kuat untuk menolaknya.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>3. Jenis Pengujian Hipotesis</h2>
+
+<p>
+
+Bentuk hipotesis alternatif menentukan jenis pengujian yang digunakan.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Jenis Uji</th>
+
+<th>Hipotesis Alternatif</th>
+
+<th>Daerah Penolakan</th>
+
+</tr>
+
+<tr>
+
+<td>Dua sisi</td>
+
+<td>μ ≠ μ₀</td>
+
+<td>Kedua ekor distribusi.</td>
+
+</tr>
+
+<tr>
+
+<td>Satu sisi kanan</td>
+
+<td>μ > μ₀</td>
+
+<td>Ekor kanan.</td>
+
+</tr>
+
+<tr>
+
+<td>Satu sisi kiri</td>
+
+<td>μ < μ₀</td>
+
+<td>Ekor kiri.</td>
+
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Visualisasi</h3>
+
+<pre>
+
+Dua Sisi
+
+███────────████────────███
+
+
+Sisi Kanan
+
+──────────────██████
+
+
+Sisi Kiri
+
+██████──────────────
+
+</pre>
+
+</div>
+
+<p>
+
+Pemilihan jenis uji harus dilakukan sebelum melihat data agar hasil
+pengujian tidak bersifat bias.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>4. Langkah-Langkah Pengujian Hipotesis</h2>
+
+<p>
+
+Dalam statistika modern, hampir seluruh pengujian hipotesis mengikuti
+urutan prosedur yang sama.
+
+</p>
+
+<ol>
+
+<li>Merumuskan H₀ dan H₁.</li>
+
+<li>Menentukan tingkat signifikansi (α).</li>
+
+<li>Memilih statistik uji yang sesuai.</li>
+
+<li>Menghitung nilai statistik uji.</li>
+
+<li>Menentukan daerah penolakan atau p-value.</li>
+
+<li>Membuat keputusan.</li>
+
+<li>Menafsirkan hasil dalam konteks masalah.</li>
+
+</ol>
+
+<div class="visual">
+
+<pre>
+
+Hipotesis
+
+↓
+
+Taraf Signifikansi
+
+↓
+
+Statistik Uji
+
+↓
+
+Hitung Nilai Uji
+
+↓
+
+Bandingkan
+
+↓
+
+Keputusan
+
+↓
+
+Kesimpulan
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<p>
+
+Kesalahan paling umum dalam olimpiade adalah langsung menghitung statistik
+uji tanpa terlebih dahulu menentukan hipotesis dan jenis uji.
+
+</p>
+
+</div>
+
+</section><section>
+
+<h2>5. Taraf Signifikansi (Significance Level, α)</h2>
+
+<p>
+
+Salah satu konsep terpenting dalam pengujian hipotesis adalah
+<strong>taraf signifikansi</strong> atau <strong>significance level</strong>,
+yang dilambangkan dengan huruf Yunani <strong>α (alpha)</strong>.
+
+</p>
+
+<p>
+
+Taraf signifikansi merupakan batas maksimum peluang melakukan
+<strong>Kesalahan Tipe I</strong>, yaitu menolak hipotesis nol padahal
+hipotesis nol sebenarnya benar.
+
+</p>
+
+<div class="rumus">
+
+<h3>Makna Matematis</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+α = P(Menolak H₀ | H₀ benar)
+
+</p>
+
+</div>
+
+<p>
+
+Dalam praktik statistika, beberapa nilai α yang paling umum digunakan
+adalah:
+
+</p>
+
+<table>
+
+<tr>
+<th>α</th>
+<th>Confidence Level</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>0,10</td>
+<td>90%</td>
+<td>Risiko kesalahan relatif besar.</td>
+</tr>
+
+<tr>
+<td>0,05</td>
+<td>95%</td>
+<td>Standar penelitian ilmiah.</td>
+</tr>
+
+<tr>
+<td>0,01</td>
+<td>99%</td>
+<td>Sangat ketat.</td>
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Hubungan Penting</strong>
+
+<p>
+
+Confidence Level = 1 − α
+
+</p>
+
+<p>
+
+Jika α = 0,05 maka confidence level adalah 95%.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Sudut Pandang Olimpiade</h3>
+
+<p>
+
+Alpha tidak dipilih setelah melihat data. Nilai α harus ditentukan
+sebelum proses analisis dimulai agar keputusan statistik tetap objektif.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>6. Kesalahan Tipe I dan Kesalahan Tipe II</h2>
+
+<p>
+
+Karena keputusan diambil berdasarkan sampel, selalu ada kemungkinan
+terjadi kesalahan.
+
+Dalam statistika terdapat dua jenis kesalahan utama.
+
+</p>
+
+<table>
+
+<tr>
+<th>Keputusan</th>
+<th>Keadaan Sebenarnya</th>
+<th>Jenis Kesalahan</th>
+</tr>
+
+<tr>
+<td>Menolak H₀</td>
+<td>H₀ benar</td>
+<td>Kesalahan Tipe I (α)</td>
+</tr>
+
+<tr>
+<td>Tidak menolak H₀</td>
+<td>H₀ salah</td>
+<td>Kesalahan Tipe II (β)</td>
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Matriks Keputusan</h3>
+
+<pre>
+
+                 Keadaan Sebenarnya
+
+             H₀ Benar      H₀ Salah
+
+Tolak H₀      Tipe I        Benar
+
+Tidak Tolak   Benar         Tipe II
+
+</pre>
+
+</div>
+
+<h3>Kesalahan Tipe I</h3>
+
+<p>
+
+Menolak hipotesis nol padahal sebenarnya benar.
+
+Contohnya, menyatakan suatu obat efektif padahal sebenarnya tidak.
+
+</p>
+
+<h3>Kesalahan Tipe II</h3>
+
+<p>
+
+Gagal menolak hipotesis nol padahal sebenarnya salah.
+
+Contohnya, menyatakan obat tidak efektif padahal sebenarnya efektif.
+
+</p>
+
+<div class="catatan">
+
+<strong>Trade-Off</strong>
+
+<p>
+
+Menurunkan peluang Kesalahan Tipe I biasanya akan meningkatkan peluang
+Kesalahan Tipe II apabila ukuran sampel tidak berubah.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>7. Power of Test (Kekuatan Uji)</h2>
+
+<p>
+
+Selain dua jenis kesalahan di atas, statistika juga mengenal konsep
+<strong>Power of Test</strong>.
+
+Power menunjukkan kemampuan suatu pengujian dalam mendeteksi bahwa
+hipotesis nol memang salah.
+
+</p>
+
+<div class="rumus">
+
+<h3>Rumus</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Power = 1 − β
+
+</p>
+
+</div>
+
+<p>
+
+Semakin besar power, semakin baik kualitas suatu pengujian statistik.
+
+</p>
+
+<table>
+
+<tr>
+<th>Power</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>Kecil</td>
+<td>Sering gagal mendeteksi perbedaan.</td>
+</tr>
+
+<tr>
+<td>Besar</td>
+<td>Mudah mendeteksi perbedaan yang benar-benar ada.</td>
+</tr>
+
+</table>
+
+<h3>Faktor yang Meningkatkan Power</h3>
+
+<ul>
+
+<li>Ukuran sampel lebih besar.</li>
+
+<li>Variasi data lebih kecil.</li>
+
+<li>Efek yang diuji lebih besar.</li>
+
+<li>Metode pengukuran lebih akurat.</li>
+
+</ul>
+
+<div class="olimpiade">
+
+<h3>Pemahaman Mendalam</h3>
+
+<p>
+
+Banyak penelitian gagal bukan karena metode statistiknya salah, tetapi
+karena ukuran sampelnya terlalu kecil sehingga power pengujian menjadi
+rendah. Akibatnya, perbedaan yang sebenarnya ada tidak berhasil
+terdeteksi.
+
+</p>
+
+</div>
+
+</section><section>
+
+<h2>8. Konsep Statistik Uji (Test Statistic)</h2>
+
+<p>
+
+Setelah hipotesis dirumuskan, langkah berikutnya adalah mengubah data
+sampel menjadi sebuah nilai numerik yang disebut
+<strong>statistik uji (test statistic)</strong>.
+
+Statistik uji merupakan ukuran yang menunjukkan seberapa jauh hasil
+sampel menyimpang dari apa yang diprediksi oleh hipotesis nol.
+
+</p>
+
+<div class="visual">
+
+<h3>Ide Dasar</h3>
+
+<pre>
+
+Hipotesis Nol
+
+        │
+
+Data Sampel
+
+        │
+
+Hitung Statistik Uji
+
+        │
+
+Bandingkan dengan Nilai Kritis
+
+        │
+
+Keputusan
+
+</pre>
+
+</div>
+
+<p>
+
+Semakin jauh statistik uji dari nilai yang diharapkan menurut H₀,
+semakin kuat bukti bahwa H₀ mungkin tidak benar.
+
+</p>
+
+<div class="catatan">
+
+<strong>Intuisi</strong>
+
+<p>
+
+Statistik uji mengukur "jarak" antara hasil sampel dengan kondisi yang
+diasumsikan oleh hipotesis nol.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>9. Daerah Penolakan (Critical Region)</h2>
+
+<p>
+
+Daerah penolakan (<strong>critical region</strong>) adalah bagian dari
+distribusi probabilitas yang berisi nilai-nilai statistik uji yang
+dianggap terlalu ekstrem apabila H₀ benar.
+
+</p>
+
+<p>
+
+Apabila statistik uji jatuh ke daerah ini, maka H₀ ditolak.
+
+</p>
+
+<div class="visual">
+
+<h3>Uji Dua Sisi (α = 0,05)</h3>
+
+<pre>
+
+2.5%         95%          2.5%
+
+█████────────────────█████
+
+    -1,96          +1,96
+
+</pre>
+
+</div>
+
+<table>
+
+<tr>
+<th>Letak Statistik Uji</th>
+<th>Keputusan</th>
+</tr>
+
+<tr>
+<td>Di luar batas kritis</td>
+<td>Tolak H₀</td>
+</tr>
+
+<tr>
+<td>Di dalam batas kritis</td>
+<td>Gagal menolak H₀</td>
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Catatan Penting</h3>
+
+<p>
+
+Istilah yang benar adalah <strong>"gagal menolak H₀"</strong>, bukan
+<strong>"menerima H₀"</strong>. Data mungkin saja belum cukup kuat untuk
+menolaknya, tetapi bukan berarti H₀ telah terbukti benar.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>10. Konsep p-value</h2>
+
+<p>
+
+Pendekatan modern dalam pengujian hipotesis lebih sering menggunakan
+<strong>p-value</strong> dibandingkan tabel nilai kritis.
+
+</p>
+
+<p>
+
+p-value adalah peluang memperoleh statistik uji yang sama ekstrem atau
+lebih ekstrem daripada hasil yang diamati, dengan asumsi bahwa H₀ benar.
+
+</p>
+
+<div class="rumus">
+
+<h3>Makna Matematis</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+p-value
+
+=
+
+P(Data ekstrem | H₀ benar)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Perbandingan</th>
+<th>Keputusan</th>
+</tr>
+
+<tr>
+<td>p-value ≤ α</td>
+<td>Tolak H₀</td>
+</tr>
+
+<tr>
+<td>p-value > α</td>
+<td>Gagal menolak H₀</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Misalkan hasil analisis menghasilkan p-value sebesar 0,018.
+
+Jika α = 0,05 maka:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+0,018 &lt; 0,05
+
+</p>
+
+<p>
+
+⇒ Tolak H₀
+
+</p>
+
+</div>
+
+<p>
+
+Artinya data memberikan bukti statistik yang cukup kuat terhadap
+hipotesis alternatif.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kesalahan Umum</strong>
+
+<p>
+
+p-value <strong>bukan</strong> peluang bahwa H₀ benar, dan juga bukan
+peluang bahwa hasil penelitian salah. p-value hanya mengukur seberapa
+tidak biasa data yang diperoleh jika H₀ memang benar.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>11. Hubungan Confidence Interval dan Pengujian Hipotesis</h2>
+
+<p>
+
+Walaupun tampak berbeda, interval kepercayaan dan pengujian hipotesis
+sebenarnya berasal dari teori probabilitas yang sama.
+
+</p>
+
+<p>
+
+Untuk uji dua sisi, hubungan keduanya sangat erat:
+
+</p>
+
+<ul>
+
+<li>Jika nilai hipotesis berada di dalam confidence interval, maka H₀ tidak ditolak.</li>
+
+<li>Jika nilai hipotesis berada di luar confidence interval, maka H₀ ditolak.</li>
+
+</ul>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+Confidence Interval
+
+72 ─────────────── 80
+
+μ₀ = 75 ✔
+
+→ H₀ Tidak Ditolak
+
+
+
+Confidence Interval
+
+72 ─────────────── 80
+
+μ₀ = 84 ✘
+
+→ H₀ Ditolak
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Sudut Pandang Pelatih</h3>
+
+<p>
+
+Memahami hubungan antara confidence interval dan hypothesis testing akan
+mempermudah pembuktian berbagai teorema statistika lanjutan serta
+mengurangi kebutuhan menghafal prosedur yang tampak berbeda.
+
+</p>
+
+</div>
+
+</section><section>
+
+<h2>12. Uji Z (Z-Test)</h2>
+
+<p>
+
+<strong>Uji Z</strong> adalah metode pengujian hipotesis yang digunakan
+untuk menguji parameter populasi ketika distribusi sampling mengikuti
+distribusi normal.
+
+Pada praktiknya, uji Z digunakan apabila <strong>standar deviasi
+populasi (σ) diketahui</strong> atau ukuran sampel sangat besar sehingga
+pendekatan normal dapat diterapkan berdasarkan <strong>Central Limit
+Theorem (CLT)</strong>.
+
+</p>
+
+<div class="rumus">
+
+<h3>Statistik Uji Z</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+Z = (x̄ − μ₀) / (σ / √n)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>x̄</td>
+<td>Rata-rata sampel.</td>
+</tr>
+
+<tr>
+<td>μ₀</td>
+<td>Mean menurut hipotesis nol.</td>
+</tr>
+
+<tr>
+<td>σ</td>
+<td>Standar deviasi populasi.</td>
+</tr>
+
+<tr>
+<td>n</td>
+<td>Ukuran sampel.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Suatu pabrik mengklaim rata-rata berat produk adalah 500 gram.
+Diketahui σ = 20 gram dan diambil sampel sebanyak 100 produk dengan
+rata-rata 495 gram.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Z = (495 − 500) / (20 / √100)
+
+</p>
+
+<p>
+
+= -5 / 2
+
+</p>
+
+<p>
+
+= -2,5
+
+</p>
+
+</div>
+
+<p>
+
+Untuk uji dua sisi dengan α = 0,05, batas kritis adalah ±1,96.
+
+Karena <strong>-2,5 &lt; -1,96</strong>, maka H₀ ditolak.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Interpretasi</strong>
+
+<p>
+
+Nilai Z menunjukkan seberapa banyak standard error jarak rata-rata
+sampel terhadap nilai yang diasumsikan oleh hipotesis nol.
+
+Semakin besar |Z|, semakin kuat bukti untuk menolak H₀.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>13. Uji t (Student's t-Test)</h2>
+
+<p>
+
+Dalam kenyataan, standar deviasi populasi hampir tidak pernah diketahui.
+Karena itu, statistik menggunakan <strong>Uji t</strong> sebagai
+pengganti uji Z.
+
+</p>
+
+<p>
+
+Distribusi t memiliki bentuk mirip distribusi normal, tetapi memiliki
+ekor yang lebih tebal untuk mengakomodasi ketidakpastian akibat
+penggunaan standar deviasi sampel.
+
+</p>
+
+<div class="rumus">
+
+<h3>Statistik Uji t</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+t = (x̄ − μ₀) / (s / √n)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Uji Z</th>
+<th>Uji t</th>
+</tr>
+
+<tr>
+<td>σ diketahui.</td>
+<td>σ tidak diketahui.</td>
+</tr>
+
+<tr>
+<td>Menggunakan distribusi normal.</td>
+<td>Menggunakan distribusi t.</td>
+</tr>
+
+<tr>
+<td>Umumnya untuk sampel besar.</td>
+<td>Sangat umum digunakan dalam penelitian.</td>
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Insight Penting</h3>
+
+<p>
+
+Ketika ukuran sampel semakin besar, distribusi t secara matematis akan
+mendekati distribusi normal. Oleh karena itu, hasil uji Z dan uji t akan
+semakin mirip untuk nilai n yang besar.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>14. Perbandingan Uji Z dan Uji t</h2>
+
+<table>
+
+<tr>
+<th>Aspek</th>
+<th>Uji Z</th>
+<th>Uji t</th>
+</tr>
+
+<tr>
+<td>Standar deviasi populasi</td>
+<td>Diketahui</td>
+<td>Tidak diketahui</td>
+</tr>
+
+<tr>
+<td>Distribusi</td>
+<td>Normal (Z)</td>
+<td>Student's t</td>
+</tr>
+
+<tr>
+<td>Parameter tambahan</td>
+<td>Tidak ada</td>
+<td>Derajat kebebasan (df)</td>
+</tr>
+
+<tr>
+<td>Penggunaan</td>
+<td>Relatif jarang</td>
+<td>Paling sering digunakan</td>
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Alur Memilih Uji</h3>
+
+<pre>
+
+Apakah σ diketahui?
+
+        │
+
+   ┌────┴────┐
+
+  Ya         Tidak
+
+  │            │
+
+Uji Z       Uji t
+
+</pre>
+
+</div>
+
+<div class="catatan">
+
+<strong>Kesimpulan</strong>
+
+<p>
+
+Dalam penelitian nyata, jika tidak ada informasi pasti mengenai standar
+deviasi populasi, maka pilihan yang hampir selalu benar adalah
+menggunakan uji t.
+
+</p>
+
+</div>
+
+</section><section>
+
+<h2>15. Uji Chi-Square (χ² Test)</h2>
+
+<p>
+
+Berbeda dengan Uji Z dan Uji t yang umumnya digunakan untuk menguji
+<strong>parameter berupa rata-rata (mean)</strong>, <strong>Uji
+Chi-Square (χ²)</strong> digunakan untuk data kategorik atau data
+berupa frekuensi.
+
+</p>
+
+<p>
+
+Distribusi Chi-Square dibangun dari jumlah kuadrat peubah acak normal
+standar yang saling independen. Karena berbentuk jumlah kuadrat,
+seluruh nilai distribusi χ² selalu bernilai <strong>positif</strong> dan
+memiliki distribusi yang menceng ke kanan (<em>right-skewed</em>),
+terutama pada derajat kebebasan yang kecil.
+
+</p>
+
+<div class="visual">
+
+<h3>Bentuk Distribusi χ²</h3>
+
+<pre>
+
+Frekuensi
+ ^
+ |
+ |        ████
+ |      ███████
+ |    ██████████
+ |  ███████████
+ |██████████
+ +------------------------------>
+         χ²
+
+(Ekor panjang di sebelah kanan)
+
+</pre>
+
+</div>
+
+<h3>Kegunaan Uji Chi-Square</h3>
+
+<ul>
+
+<li>Uji Goodness of Fit (Kesesuaian Distribusi).</li>
+
+<li>Uji Independensi pada tabel kontingensi.</li>
+
+<li>Uji Homogenitas beberapa populasi.</li>
+
+<li>Menguji variansi populasi (kasus tertentu).</li>
+
+</ul>
+
+<div class="rumus">
+
+<h3>Statistik Uji</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+χ² = Σ (O − E)² / E
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Arti</th>
+</tr>
+
+<tr>
+<td>O</td>
+<td>Observed Frequency (Frekuensi hasil pengamatan).</td>
+</tr>
+
+<tr>
+<td>E</td>
+<td>Expected Frequency (Frekuensi harapan).</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Intuitif</h3>
+
+<p>
+
+Misalkan sebuah dadu diklaim seimbang. Dalam 60 kali pelemparan,
+masing-masing sisi seharusnya muncul sekitar 10 kali.
+
+Apabila hasil pengamatan jauh berbeda dari nilai harapan tersebut,
+statistik χ² akan menjadi besar dan memberikan bukti bahwa dadu mungkin
+tidak seimbang.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Sudut Pandang Olimpiade</h3>
+
+<p>
+
+Semakin besar selisih antara frekuensi pengamatan dan frekuensi harapan,
+semakin besar nilai χ². Nilai χ² yang besar menunjukkan data semakin
+tidak konsisten dengan hipotesis nol.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>16. ANOVA (Analysis of Variance)</h2>
+
+<p>
+
+Bayangkan kita ingin membandingkan rata-rata nilai matematika dari
+<strong>empat kelas</strong> yang menggunakan metode pembelajaran
+berbeda.
+
+Jika hanya ada dua kelas, kita cukup menggunakan Uji t.
+
+Namun ketika jumlah kelompok lebih dari dua, melakukan banyak Uji t
+akan meningkatkan peluang Kesalahan Tipe I.
+
+Untuk mengatasi masalah tersebut digunakan
+<strong>ANOVA (Analysis of Variance)</strong>.
+
+</p>
+
+<p>
+
+Ide utama ANOVA sangat menarik.
+
+Alih-alih langsung membandingkan rata-rata, ANOVA membandingkan
+<strong>variasi antar kelompok</strong> dengan
+<strong>variasi di dalam kelompok</strong>.
+
+</p>
+
+<div class="visual">
+
+<h3>Konsep Dasar ANOVA</h3>
+
+<pre>
+
+Variasi Antar Kelompok
+
+──────────────
+
+Variasi Dalam Kelompok
+
+↓
+
+Bandingkan
+
+↓
+
+Statistik F
+
+</pre>
+
+</div>
+
+<div class="rumus">
+
+<h3>Statistik F</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+F = MS Between / MS Within
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasi statistik F cukup intuitif.
+
+</p>
+
+<ul>
+
+<li>F mendekati 1 → Perbedaan rata-rata kecil.</li>
+
+<li>F jauh lebih besar dari 1 → Perbedaan rata-rata kemungkinan nyata.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Mengapa Disebut Analysis of Variance?</strong>
+
+<p>
+
+Walaupun tujuan akhirnya adalah membandingkan rata-rata, ANOVA
+melakukannya melalui analisis variansi. Inilah alasan metode tersebut
+dinamakan <em>Analysis of Variance</em>.
+
+</p>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Insight Penting</h3>
+
+<p>
+
+ANOVA sebenarnya merupakan generalisasi dari Uji t. Jika jumlah kelompok
+hanya dua, hasil ANOVA dan Uji t akan memberikan kesimpulan yang sama.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>17. Peta Konsep Seluruh Pengujian Hipotesis</h2>
+
+<div class="visual">
+
+<pre>
+
+               DATA
+
+                 │
+
+        Apa yang diuji?
+
+                 │
+
+      ┌──────────┼──────────┐
+
+      │          │          │
+
+     Mean    Proporsi   Frekuensi
+
+      │                      │
+
+  ┌───┴────┐                 │
+
+  │        │                 │
+
+σ diketahui?                 │
+
+  │                          │
+
+ Ya                         Chi-Square
+
+ │
+
+Uji Z
+
+ │
+
+Tidak
+
+ │
+
+Uji t
+
+                 │
+
+Lebih dari dua mean?
+
+                 │
+
+              ANOVA
+
+</pre>
+
+</div>
+
+<div class="catatan">
+
+<strong>Ringkasan Bab</strong>
+
+<ul>
+
+<li>Pengujian hipotesis digunakan untuk mengambil keputusan berdasarkan data sampel.</li>
+
+<li>H₀ dianggap benar sampai terdapat bukti statistik yang cukup kuat untuk menolaknya.</li>
+
+<li>Nilai α mengontrol risiko Kesalahan Tipe I.</li>
+
+<li>p-value mengukur seberapa ekstrem data jika H₀ benar.</li>
+
+<li>Uji Z digunakan ketika σ diketahui.</li>
+
+<li>Uji t digunakan ketika σ tidak diketahui.</li>
+
+<li>Chi-Square digunakan untuk data kategorik dan frekuensi.</li>
+
+<li>ANOVA digunakan untuk membandingkan lebih dari dua rata-rata.</li>
+
+</ul>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Persiapan Bab Selanjutnya</h3>
+
+<p>
+
+Bab berikutnya akan membahas hubungan antar variabel melalui
+<strong>korelasi</strong> dan <strong>regresi</strong>. Di sana fokus
+analisis berubah dari "apakah ada perbedaan?" menjadi
+<strong>"seberapa kuat hubungan antar variabel?"</strong> serta bagaimana
+membangun model matematis untuk melakukan prediksi.
+
+</p>
+
+</div>
+
+</section><section>
+
+<h2>18. Studi Kasus Lengkap Pengujian Hipotesis</h2>
+
+<p>
+
+Pada bagian ini kita akan menggabungkan seluruh konsep yang telah
+dipelajari menjadi satu alur analisis. Tujuannya bukan sekadar
+menghafalkan rumus, tetapi memahami <strong>mengapa setiap langkah
+dilakukan</strong>.
+
+</p>
+
+<div class="contoh">
+
+<h3>Kasus</h3>
+
+<p>
+
+Sebuah lembaga bimbingan belajar mengklaim bahwa rata-rata nilai ujian
+siswanya adalah <strong>75</strong>. Seorang peneliti menduga bahwa
+setelah diterapkan metode belajar baru, rata-rata nilai menjadi lebih
+tinggi.
+
+</p>
+
+<p>
+
+Diambil sampel acak sebanyak <strong>36 siswa</strong> dan diperoleh:
+
+</p>
+
+<ul>
+
+<li>Rata-rata sampel (x̄) = 79</li>
+<li>Standar deviasi sampel (s) = 12</li>
+<li>Taraf signifikansi (α) = 0,05</li>
+</ul>
+
+<h3>Langkah 1 — Menentukan Hipotesis</h3>
+
+<div class="rumus">
+
+<p>
+
+H₀ : μ = 75
+
+</p>
+
+<p>
+
+H₁ : μ > 75
+
+</p>
+
+</div>
+
+<p>
+
+Karena peneliti menduga nilai meningkat, maka digunakan
+<strong>uji satu sisi kanan</strong>.
+
+</p>
+
+<h3>Langkah 2 — Memilih Statistik Uji</h3>
+
+<p>
+
+Standar deviasi populasi tidak diketahui, sehingga digunakan
+<strong>Uji t</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+t = (79 − 75) / (12 / √36)
+
+</p>
+
+<p>
+
+= 4 / 2
+
+</p>
+
+<p>
+
+= 2
+
+</p>
+
+</div>
+
+<h3>Langkah 3 — Membuat Keputusan</h3>
+
+<p>
+
+Misalkan dari tabel distribusi t diperoleh nilai kritis sekitar
+1,69 (uji satu sisi, df = 35).
+
+</p>
+
+<p>
+
+Karena
+
+<strong>2 &gt; 1,69</strong>
+
+maka statistik uji berada di daerah penolakan.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Keputusan:
+
+Tolak H₀
+
+</p>
+
+</div>
+
+<h3>Langkah 4 — Interpretasi</h3>
+
+<p>
+
+Data memberikan bukti statistik yang cukup kuat bahwa rata-rata nilai
+setelah metode pembelajaran baru lebih tinggi daripada 75.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Catatan Penting</strong>
+
+<p>
+
+Perhatikan bahwa keputusan statistik selalu dibuat berdasarkan data
+sampel dan tingkat signifikansi yang telah ditentukan. Kesimpulan tidak
+boleh dibuat hanya karena rata-rata sampel terlihat lebih besar atau
+lebih kecil.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>19. Kesalahan Konsep yang Paling Sering Terjadi</h2>
+
+<table>
+
+<tr>
+<th>Kesalahan</th>
+<th>Konsep yang Benar</th>
+</tr>
+
+<tr>
+<td>"H₀ diterima."</td>
+<td>Gunakan istilah "gagal menolak H₀".</td>
+</tr>
+
+<tr>
+<td>"p-value adalah peluang H₀ benar."</td>
+<td>p-value adalah peluang memperoleh data se-ekstrem ini jika H₀ benar.</td>
+</tr>
+
+<tr>
+<td>"α adalah peluang penelitian salah."</td>
+<td>α adalah peluang melakukan Kesalahan Tipe I.</td>
+</tr>
+
+<tr>
+<td>"Uji t hanya untuk sampel kecil."</td>
+<td>Uji t digunakan saat σ populasi tidak diketahui, baik sampel kecil maupun besar.</td>
+</tr>
+
+<tr>
+<td>"Confidence interval membuktikan parameter berubah."</td>
+<td>Yang berubah adalah interval dari setiap sampel, bukan parameternya.</td>
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Pesan Pelatih Olimpiade</h3>
+
+<p>
+
+Pada tingkat olimpiade dan perguruan tinggi, yang dinilai bukan hanya
+kemampuan menghitung statistik uji, tetapi juga kemampuan menjelaskan
+interpretasi hasil secara ilmiah. Banyak peserta kehilangan poin karena
+keliru menafsirkan p-value, confidence interval, atau makna hipotesis
+nol, meskipun perhitungannya benar.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="navigasi">
+
+<h2>Navigasi Handbook</h2>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;">
+
+<a href="statiska8.html"
+style="background:#16a34a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="index.html"
+style="background:#0f172a;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Home
+
+</a>
+
+<a href="statiska10.html"
+style="background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+➡ Lanjut ke statiska10.html
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
