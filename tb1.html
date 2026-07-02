@@ -1,1 +1,1953 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TB 1 - Dasar-Dasar Bilangan Bulat</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#004aad,#0077ff);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:40px;
+}
+
+header p{
+font-size:18px;
+opacity:.9;
+margin-top:10px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:25px 0;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+h2{
+color:#004aad;
+margin-bottom:15px;
+}
+
+h3{
+margin-top:20px;
+color:#0066dd;
+}
+
+p{
+margin:12px 0;
+text-align:justify;
+}
+
+ul{
+margin-left:25px;
+}
+
+.definition{
+background:#e9f4ff;
+border-left:6px solid #0b70ff;
+padding:18px;
+border-radius:12px;
+margin:18px 0;
+}
+
+.theorem{
+background:#fff6db;
+border-left:6px solid orange;
+padding:18px;
+border-radius:12px;
+margin:18px 0;
+}
+
+.example{
+background:#eefbea;
+border-left:6px solid green;
+padding:18px;
+border-radius:12px;
+margin:18px 0;
+}
+
+.tip{
+background:#ffecec;
+border-left:6px solid red;
+padding:18px;
+border-radius:12px;
+margin:18px 0;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#004aad;
+color:white;
+}
+
+footer{
+margin-top:60px;
+padding:25px;
+text-align:center;
+background:#004aad;
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+nav a{
+text-decoration:none;
+background:#004aad;
+color:white;
+padding:12px 22px;
+border-radius:10px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#00307d;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Bab 1</h1>
+
+<h2>Dasar-Dasar Bilangan Bulat</h2>
+
+<p>Handbook Teori Bilangan Olimpiade Matematika</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Pendahuluan</h2>
+
+<p>
+
+Bilangan bulat merupakan fondasi utama dalam teori bilangan.
+Hampir seluruh materi Olimpiade Matematika berawal dari sifat-sifat
+bilangan bulat. Sebelum mempelajari bilangan prima, kongruensi,
+Diophantine, maupun fungsi aritmetika, kita harus memahami bagaimana
+bilangan bulat bekerja.
+
+</p>
+
+<p>
+
+Pada tingkat Olimpiade, bilangan bulat bukan hanya digunakan untuk
+menghitung, tetapi juga untuk membuktikan suatu pernyataan,
+menemukan pola, serta menyelesaikan persoalan yang tampaknya
+sangat rumit hanya dengan menggunakan sifat-sifat dasar bilangan.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Banyak peserta langsung mencoba rumus.
+Padahal dalam teori bilangan, justru pemahaman definisi
+dan sifat dasar bilangan bulat lebih penting daripada hafalan rumus.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>1. Bilangan Bulat</h2>
+
+<p>
+
+Bilangan bulat adalah himpunan bilangan yang terdiri atas bilangan
+negatif, nol, dan bilangan positif. Dalam teori bilangan, himpunan
+bilangan bulat dilambangkan dengan simbol
+
+<b>ℤ (Z)</b>.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi</b>
+
+<p>
+
+Himpunan bilangan bulat ditulis sebagai
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+ℤ = {..., -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...}
+
+</p>
+
+</div>
+
+<h3>Mengapa menggunakan simbol ℤ?</h3>
+
+<p>
+
+Huruf <b>Z</b> berasal dari kata Jerman
+<b>Zahlen</b> yang berarti <i>bilangan</i>.
+Notasi ini telah digunakan secara internasional
+dalam matematika.
+
+</p>
+
+<h3>Klasifikasi Bilangan Bulat</h3>
+
+<table>
+
+<tr>
+
+<th>Jenis</th>
+
+<th>Contoh</th>
+
+</tr>
+
+<tr>
+
+<td>Bilangan Bulat Negatif</td>
+
+<td>-7, -3, -1</td>
+
+</tr>
+
+<tr>
+
+<td>Nol</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Bilangan Bulat Positif</td>
+
+<td>1,2,3,4,...</td>
+
+</tr>
+
+</table>
+
+<h3>Hubungan dengan Himpunan Bilangan Lain</h3>
+
+<p>
+
+Bilangan bulat merupakan bagian dari sistem bilangan yang lebih besar.
+
+</p>
+
+<p style="text-align:center;font-size:18px;">
+
+ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
+
+</p>
+
+<ul>
+
+<li><b>ℕ</b> : Bilangan Asli</li>
+
+<li><b>ℤ</b> : Bilangan Bulat</li>
+
+<li><b>ℚ</b> : Bilangan Rasional</li>
+
+<li><b>ℝ</b> : Bilangan Real</li>
+
+<li><b>ℂ</b> : Bilangan Kompleks</li>
+
+</ul>
+
+<div class="example">
+
+<b>Contoh 1</b>
+
+<p>
+
+Manakah yang merupakan bilangan bulat?
+
+</p>
+
+<ul>
+
+<li>-13 ✔</li>
+
+<li>0 ✔</li>
+
+<li>42 ✔</li>
+
+<li>3/4 ✘</li>
+
+<li>√2 ✘</li>
+
+<li>π ✘</li>
+
+</ul>
+
+<p>
+
+Bilangan bulat tidak memiliki bagian pecahan maupun desimal.
+
+</p>
+
+</div>
+
+<h3>Representasi pada Garis Bilangan</h3>
+
+<p>
+
+Bilangan bulat dapat disusun pada garis bilangan.
+Semakin ke kanan nilainya semakin besar,
+sedangkan semakin ke kiri nilainya semakin kecil.
+
+</p>
+
+<div class="theorem">
+
+<b>Sifat Urutan Bilangan Bulat</b>
+
+<ul>
+
+<li>Jika a berada di kanan b maka a > b.</li>
+
+<li>Jika a berada di kiri b maka a < b.</li>
+
+<li>Semua bilangan positif lebih besar daripada nol.</li>
+
+<li>Semua bilangan negatif lebih kecil daripada nol.</li>
+
+</ul>
+
+</div>
+
+<h3>Nilai Mutlak</h3>
+
+<p>
+
+Nilai mutlak menyatakan jarak suatu bilangan terhadap nol pada garis
+bilangan.
+
+</p>
+
+<div class="definition">
+
+<p style="text-align:center;font-size:22px;">
+
+|a| =
+{
+a, jika a ≥ 0
+
+−a, jika a < 0
+}
+
+</p>
+
+</div>
+
+<p>
+
+Karena merupakan jarak terhadap nol,
+nilai mutlak selalu bernilai tidak negatif.
+
+</p>
+
+<div class="example">
+
+<b>Contoh 2</b>
+
+<table>
+
+<tr>
+
+<th>Bilangan</th>
+
+<th>Nilai Mutlak</th>
+
+</tr>
+
+<tr>
+
+<td>|5|</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>|−5|</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>|0|</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="tip">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Kesalahan yang paling sering dilakukan peserta adalah menganggap
+
+−|a| = |−a|.
+
+Padahal
+
+|−a| = |a|,
+
+sedangkan
+
+−|a|
+
+selalu bernilai negatif atau nol.
+
+</p>
+
+</div>
+
+<h3>Contoh Soal Olimpiade</h3>
+
+<div class="example">
+
+<p>
+
+Tentukan semua bilangan bulat x yang memenuhi
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+|x| = 8
+
+</p>
+
+<b>Penyelesaian</b>
+
+<p>
+
+Karena nilai mutlak menyatakan jarak terhadap nol,
+maka terdapat dua kemungkinan.
+
+</p>
+
+<ul>
+
+<li>x = 8</li>
+
+<li>x = -8</li>
+
+</ul>
+
+<p>
+
+Jadi himpunan penyelesaiannya adalah
+
+{−8, 8}.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>2. Sifat-Sifat Bilangan Bulat</h2>
+
+<p>
+
+Selain mengetahui apa itu bilangan bulat, seorang peserta Olimpiade
+harus memahami sifat-sifat dasarnya. Hampir seluruh pembuktian dalam
+teori bilangan menggunakan sifat-sifat ini secara langsung maupun
+tidak langsung.
+
+</p>
+
+<div class="definition">
+
+<b>Fakta Penting</b>
+
+<p>
+
+Himpunan bilangan bulat <b>tertutup</b> terhadap operasi penjumlahan,
+pengurangan, dan perkalian. Akan tetapi, bilangan bulat <b>tidak
+tertutup</b> terhadap pembagian.
+
+</p>
+
+</div>
+
+<h3>2.1 Sifat Tertutup (Closure Property)</h3>
+
+<p>
+
+Jika a dan b merupakan bilangan bulat, maka hasil operasi berikut
+masih merupakan bilangan bulat.
+
+</p>
+
+<table>
+
+<tr>
+<th>Operasi</th>
+<th>Hasil</th>
+<th>Tertutup?</th>
+</tr>
+
+<tr>
+<td>a + b</td>
+<td>Bilangan Bulat</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>a − b</td>
+<td>Bilangan Bulat</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>a × b</td>
+<td>Bilangan Bulat</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>a ÷ b</td>
+<td>Tidak selalu bulat</td>
+<td>✘</td>
+</tr>
+
+</table>
+
+<div class="example">
+
+<b>Contoh</b>
+
+<ul>
+
+<li>7 + (−12) = −5 ✔</li>
+
+<li>9 × (−4) = −36 ✔</li>
+
+<li>5 ÷ 2 = 2,5 ✘ bukan bilangan bulat</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>2.2 Sifat Komutatif</h3>
+
+<p>
+
+Urutan penjumlahan maupun perkalian tidak memengaruhi hasil.
+
+</p>
+
+<div class="theorem">
+
+<p style="text-align:center">
+
+a + b = b + a
+
+</p>
+
+<p style="text-align:center">
+
+a × b = b × a
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+15 + (−8) = (−8) + 15 = 7
+
+</p>
+
+<p>
+
+9 × 11 = 11 × 9 = 99
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>2.3 Sifat Asosiatif</h3>
+
+<p>
+
+Cara mengelompokkan operasi tidak mengubah hasil.
+
+</p>
+
+<div class="theorem">
+
+<p style="text-align:center">
+
+(a+b)+c = a+(b+c)
+
+</p>
+
+<p style="text-align:center">
+
+(a×b)×c = a×(b×c)
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+(3+5)+8 = 3+(5+8)
+
+</p>
+
+<p>
+
+Keduanya menghasilkan 16.
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Catatan</b>
+
+<p>
+
+Pengurangan dan pembagian <b>tidak memiliki sifat asosiatif</b>.
+
+</p>
+
+<p>
+
+(10−4)−2 = 4
+
+</p>
+
+<p>
+
+10−(4−2)=8
+
+</p>
+
+<p>
+
+Karena hasilnya berbeda, maka pengurangan bukan operasi asosiatif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>2.4 Sifat Distributif</h3>
+
+<p>
+
+Perkalian dapat didistribusikan terhadap penjumlahan maupun
+pengurangan.
+
+</p>
+
+<div class="theorem">
+
+<p style="text-align:center">
+
+a(b+c)=ab+ac
+
+</p>
+
+<p style="text-align:center">
+
+a(b−c)=ab−ac
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+12(7+3)
+
+</p>
+
+<p>
+
+=12×7+12×3
+
+</p>
+
+<p>
+
+=84+36
+
+</p>
+
+<p>
+
+=120
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>2.5 Unsur Identitas</h3>
+
+<p>
+
+Dalam bilangan bulat terdapat dua unsur identitas.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Operasi</th>
+
+<th>Identitas</th>
+
+</tr>
+
+<tr>
+
+<td>Penjumlahan</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Perkalian</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<div class="theorem">
+
+<p style="text-align:center">
+
+a+0=a
+
+</p>
+
+<p style="text-align:center">
+
+a×1=a
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>2.6 Invers Penjumlahan</h3>
+
+<p>
+
+Setiap bilangan bulat mempunyai lawan bilangan.
+
+</p>
+
+<div class="theorem">
+
+<p style="text-align:center">
+
+a+(-a)=0
+
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+
+18+(-18)=0
+
+</p>
+
+<p>
+
+−25+25=0
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Bilangan bulat <b>tidak memiliki invers perkalian</b> secara umum.
+
+</p>
+
+<p>
+
+Sebagai contoh,
+
+2 tidak memiliki bilangan bulat x sehingga
+
+2x=1.
+
+</p>
+
+<p>
+
+Karena itu himpunan bilangan bulat bukan merupakan medan (field),
+melainkan hanya sebuah gelanggang (ring).
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>3. Sifat Urutan Bilangan Bulat</h2>
+
+<p>
+
+Salah satu keistimewaan bilangan bulat adalah setiap anggotanya dapat
+dibandingkan dengan bilangan bulat lainnya. Konsep urutan ini tampak
+sederhana, tetapi menjadi dasar bagi banyak pembuktian dalam teori
+bilangan, seperti Prinsip Well-Ordering, Induksi Matematika, dan
+Algoritma Euclid.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi</b>
+
+<p>
+
+Untuk dua bilangan bulat <b>a</b> dan <b>b</b>, hanya terdapat tiga
+kemungkinan yang dapat terjadi:
+
+</p>
+
+<ul>
+
+<li>a < b</li>
+
+<li>a = b</li>
+
+<li>a > b</li>
+
+</ul>
+
+<p>
+
+Tidak mungkin dua atau tiga kondisi tersebut benar secara bersamaan.
+
+</p>
+
+</div>
+
+<h3>3.1 Prinsip Trikotomi</h3>
+
+<div class="theorem">
+
+<b>Teorema (Prinsip Trikotomi)</b>
+
+<p>
+
+Untuk setiap pasangan bilangan bulat a dan b, tepat satu dari tiga
+pernyataan berikut bernilai benar.
+
+</p>
+
+<ol>
+
+<li>a < b</li>
+
+<li>a = b</li>
+
+<li>a > b</li>
+
+</ol>
+
+</div>
+
+<div class="example">
+
+<b>Contoh</b>
+
+<p>
+
+Bandingkan bilangan −8 dan −3.
+
+</p>
+
+<p>
+
+Karena −8 terletak lebih kiri pada garis bilangan daripada −3, maka
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+−8 < −3
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>3.2 Sifat Pertidaksamaan</h3>
+
+<p>
+
+Pertidaksamaan pada bilangan bulat memiliki beberapa sifat penting
+yang sering digunakan dalam pembuktian.
+
+</p>
+
+<table>
+
+<tr>
+<th>Sifat</th>
+<th>Bentuk</th>
+</tr>
+
+<tr>
+<td>Transitif</td>
+<td>Jika a < b dan b < c maka a < c</td>
+</tr>
+
+<tr>
+<td>Penjumlahan</td>
+<td>Jika a < b maka a+c < b+c</td>
+</tr>
+
+<tr>
+<td>Perkalian Positif</td>
+<td>Jika c>0 maka ac < bc</td>
+</tr>
+
+<tr>
+<td>Perkalian Negatif</td>
+<td>Jika c<0 maka ac > bc</td>
+</tr>
+
+</table>
+
+<div class="tip">
+
+<b>Perhatian!</b>
+
+<p>
+
+Banyak peserta Olimpiade lupa bahwa ketika kedua ruas dikalikan
+dengan bilangan negatif, arah tanda pertidaksamaan harus dibalik.
+
+</p>
+
+</div>
+
+<div class="example">
+
+<b>Contoh</b>
+
+<p>
+
+Karena
+
+</p>
+
+<p style="text-align:center">
+
+2 < 7
+
+</p>
+
+<p>
+
+maka jika dikalikan dengan −3 diperoleh
+
+</p>
+
+<p style="text-align:center">
+
+−6 > −21
+
+</p>
+
+<p>
+
+Bukan −6 < −21.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>3.3 Bilangan Genap dan Ganjil</h3>
+
+<p>
+
+Konsep ini akan muncul berulang kali dalam soal-soal teori bilangan,
+terutama pada pembuktian dan masalah keterbagian.
+
+</p>
+
+<div class="definition">
+
+<p>
+
+Bilangan bulat <b>genap</b> adalah bilangan yang dapat ditulis sebagai
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+2k
+
+</p>
+
+<p>
+
+untuk suatu bilangan bulat k.
+
+</p>
+
+<p>
+
+Bilangan bulat <b>ganjil</b> adalah bilangan yang dapat ditulis sebagai
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+2k+1
+
+</p>
+
+<p>
+
+untuk suatu bilangan bulat k.
+
+</p>
+
+</div>
+
+<h3>Sifat-Sifat Bilangan Genap dan Ganjil</h3>
+
+<table>
+
+<tr>
+
+<th>Operasi</th>
+
+<th>Hasil</th>
+
+</tr>
+
+<tr>
+
+<td>Genap + Genap</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Genap + Ganjil</td>
+
+<td>Ganjil</td>
+
+</tr>
+
+<tr>
+
+<td>Ganjil + Ganjil</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Genap × Bilangan Apa Pun</td>
+
+<td>Genap</td>
+
+</tr>
+
+<tr>
+
+<td>Ganjil × Ganjil</td>
+
+<td>Ganjil</td>
+
+</tr>
+
+</table>
+
+<div class="example">
+
+<b>Contoh Pembuktian</b>
+
+<p>
+
+Buktikan bahwa jumlah dua bilangan ganjil selalu genap.
+
+</p>
+
+<p>
+
+Misalkan
+
+</p>
+
+<p style="text-align:center">
+
+a = 2m+1
+
+</p>
+
+<p style="text-align:center">
+
+b = 2n+1
+
+</p>
+
+<p>
+
+dengan m dan n bilangan bulat.
+
+</p>
+
+<p>
+
+Maka
+
+</p>
+
+<p style="text-align:center">
+
+a+b=(2m+1)+(2n+1)
+
+</p>
+
+<p style="text-align:center">
+
+=2(m+n+1)
+
+</p>
+
+<p>
+
+Karena hasilnya berbentuk 2k, maka a+b adalah bilangan genap.
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Saat menghadapi soal pembuktian, biasakan menuliskan bilangan genap
+sebagai <b>2k</b> dan bilangan ganjil sebagai <b>2k+1</b>. Teknik ini
+muncul sangat sering dalam OSN, IMO Shortlist, maupun kompetisi
+matematika lainnya.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>4. Prinsip Well-Ordering</h2>
+
+<p>
+
+Prinsip <i>Well-Ordering</i> (Prinsip Pengurutan Baik) merupakan salah
+satu aksioma dasar pada bilangan bulat. Walaupun terdengar sederhana,
+prinsip ini menjadi fondasi bagi banyak teorema penting dalam teori
+bilangan, seperti <b>Algoritma Euclid</b>, <b>Teorema Dasar
+Aritmetika</b>, dan bahkan <b>Prinsip Induksi Matematika</b>.
+
+</p>
+
+<div class="definition">
+
+<b>Definisi (Prinsip Well-Ordering)</b>
+
+<p>
+
+<b>Setiap himpunan bagian tak kosong dari bilangan bulat positif
+memiliki tepat satu elemen terkecil.</b>
+
+</p>
+
+<p>
+
+Dengan kata lain, jika terdapat sekumpulan bilangan bulat positif yang
+tidak kosong, maka selalu ada anggota yang nilainya paling kecil.
+
+</p>
+
+</div>
+
+<h3>Makna Intuitif</h3>
+
+<p>
+
+Bayangkan kita memiliki sekumpulan bilangan positif:
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+{4, 17, 25, 31, 98}
+
+</p>
+
+<p>
+
+Kita dapat langsung melihat bahwa bilangan terkecilnya adalah
+<b>4</b>.
+
+</p>
+
+<p>
+
+Sekarang misalkan himpunannya sangat besar, bahkan memiliki tak hingga
+banyak anggota, misalnya
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+{7, 14, 21, 28, 35, ...}
+
+</p>
+
+<p>
+
+Walaupun anggotanya tak hingga, elemen terkecilnya tetap ada, yaitu
+<b>7</b>.
+
+</p>
+
+<p>
+
+Inilah inti dari Prinsip Well-Ordering.
+
+</p>
+
+<div class="example">
+
+<b>Contoh 1</b>
+
+<p>
+
+Tentukan elemen terkecil dari himpunan berikut.
+
+</p>
+
+<p style="text-align:center">
+
+A = {12, 8, 19, 4, 25}
+
+</p>
+
+<p>
+
+Karena 4 lebih kecil daripada seluruh anggota lainnya, maka
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+min(A)=4
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Mengapa Harus Bilangan Positif?</h3>
+
+<p>
+
+Perhatikan himpunan berikut.
+
+</p>
+
+<p style="text-align:center">
+
+{..., -5, -4, -3, -2, -1}
+
+</p>
+
+<p>
+
+Himpunan tersebut <b>tidak memiliki elemen terkecil</b>. Untuk setiap
+bilangan yang dipilih, selalu ada bilangan lain yang lebih kecil.
+
+</p>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<ul>
+
+<li>lebih kecil dari −3 adalah −4,</li>
+<li>lebih kecil dari −4 adalah −5,</li>
+<li>lebih kecil dari −100 adalah −101,</li>
+
+</ul>
+
+<p>
+
+Proses ini tidak pernah berhenti. Oleh karena itu, Prinsip
+Well-Ordering hanya berlaku pada himpunan bilangan bulat positif.
+
+</p>
+
+<div class="tip">
+
+<b>Kesalahan yang Sering Terjadi</b>
+
+<p>
+
+Sebagian siswa mengira semua himpunan bilangan bulat memiliki elemen
+terkecil. Hal ini tidak benar. Prinsip Well-Ordering hanya berlaku
+untuk himpunan tak kosong yang anggotanya merupakan bilangan bulat
+positif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Aplikasi dalam Pembuktian</h3>
+
+<p>
+
+Salah satu kegunaan utama Prinsip Well-Ordering adalah membuktikan
+keberadaan suatu objek matematika.
+
+</p>
+
+<p>
+
+Misalnya, ketika ingin menunjukkan bahwa suatu himpunan memiliki
+elemen dengan sifat tertentu, kita dapat mempertimbangkan elemen
+terkecil dari himpunan tersebut. Teknik ini sering disebut sebagai
+<b>Proof by Minimal Counterexample</b> (Pembuktian dengan Contoh
+Tandingan Terkecil).
+
+</p>
+
+<div class="example">
+
+<b>Contoh Ide Pembuktian</b>
+
+<p>
+
+Misalkan terdapat himpunan semua bilangan positif yang tidak memenuhi
+suatu pernyataan. Jika himpunan tersebut tidak kosong, maka menurut
+Prinsip Well-Ordering pasti ada elemen terkecil, misalkan n.
+
+</p>
+
+<p>
+
+Kemudian kita menunjukkan bahwa dari n dapat dibangun bilangan yang
+lebih kecil dan juga tidak memenuhi pernyataan tersebut.
+
+</p>
+
+<p>
+
+Hal ini bertentangan dengan fakta bahwa n adalah elemen terkecil.
+Akibatnya, asumsi awal salah sehingga semua bilangan memenuhi
+pernyataan yang ingin dibuktikan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Hubungan dengan Materi Berikutnya</h3>
+
+<p>
+
+Prinsip Well-Ordering memiliki hubungan yang sangat erat dengan
+Prinsip Induksi Matematika. Bahkan secara teori, kedua prinsip ini
+<b>ekuivalen</b>, artinya salah satunya dapat digunakan untuk
+membuktikan yang lainnya.
+
+</p>
+
+<p>
+
+Pada bab berikutnya kita akan mempelajari bagaimana Prinsip Induksi
+Kuat memungkinkan kita membuktikan pernyataan untuk tak hingga banyak
+bilangan hanya dengan dua langkah sederhana.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Pelatih Olimpiade</b>
+
+<p>
+
+Jika dalam suatu soal muncul kalimat seperti <i>"misalkan terdapat
+contoh terkecil..."</i>, hampir dapat dipastikan pembuktiannya
+menggunakan Prinsip Well-Ordering. Biasakan mengenali pola ini karena
+sering muncul pada soal OSN tingkat nasional maupun olimpiade
+internasional.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>5. Prinsip Induksi Kuat (Strong Mathematical Induction)</h2>
+
+<p>
+
+Prinsip Induksi Kuat merupakan salah satu teknik pembuktian yang paling
+sering digunakan dalam teori bilangan. Berbeda dengan induksi biasa,
+pada induksi kuat kita diperbolehkan menggunakan <b>seluruh kasus
+sebelumnya</b> untuk membuktikan kasus berikutnya.
+
+</p>
+
+<p>
+
+Teknik ini sangat berguna ketika suatu pernyataan bergantung pada lebih
+dari satu nilai sebelumnya, misalnya pada pembuktian faktorisasi prima,
+barisan rekursif, atau algoritma dalam teori bilangan.
+
+</p>
+
+<div class="definition">
+
+<b>Prinsip Induksi Kuat</b>
+
+<p>
+
+Misalkan terdapat suatu pernyataan <b>P(n)</b> yang didefinisikan untuk
+setiap bilangan bulat positif n.
+
+Jika memenuhi dua langkah berikut:
+
+</p>
+
+<ol>
+
+<li><b>Basis Induksi</b><br>
+Tunjukkan bahwa P(1) benar (atau nilai awal yang sesuai).</li>
+
+<li><b>Langkah Induksi</b><br>
+Andaikan P(1), P(2), ..., P(k) semuanya benar. Berdasarkan asumsi
+tersebut, buktikan bahwa P(k+1) juga benar.</li>
+
+</ol>
+
+<p>
+
+Maka P(n) benar untuk setiap bilangan bulat positif n.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Mengapa Disebut "Kuat"?</h3>
+
+<p>
+
+Pada induksi biasa, kita hanya mengasumsikan bahwa <b>P(k)</b> benar.
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+P(k) ⇒ P(k+1)
+
+</p>
+
+<p>
+
+Sedangkan pada induksi kuat, kita mengasumsikan bahwa <b>semua
+pernyataan sebelumnya benar</b>.
+
+</p>
+
+<p style="text-align:center;font-size:20px;">
+
+P(1), P(2), ..., P(k) ⇒ P(k+1)
+
+</p>
+
+<p>
+
+Karena informasi yang digunakan lebih banyak, metode ini disebut
+<b>Strong Induction</b>.
+
+</p>
+
+<div class="tip">
+
+<b>Insight Olimpiade</b>
+
+<p>
+
+Walaupun terlihat lebih kuat, secara teori induksi biasa dan induksi
+kuat memiliki kekuatan yang sama (ekuivalen). Namun dalam praktik,
+induksi kuat sering membuat pembuktian jauh lebih sederhana.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Contoh Pembuktian</h3>
+
+<div class="example">
+
+<b>Teorema</b>
+
+<p>
+
+Buktikan bahwa untuk setiap n ≥ 1 berlaku
+
+</p>
+
+<p style="text-align:center;font-size:22px;">
+
+1 + 2 + 3 + ... + n =
+n(n+1)/2
+
+</p>
+
+<hr>
+
+<b>Basis Induksi</b>
+
+<p>
+
+Untuk n = 1,
+
+</p>
+
+<p style="text-align:center">
+
+1 = 1(1+1)/2 = 1
+
+</p>
+
+<p>
+
+Pernyataan benar.
+
+</p>
+
+<hr>
+
+<b>Hipotesis Induksi</b>
+
+<p>
+
+Andaikan rumus benar untuk suatu bilangan k.
+
+</p>
+
+<p style="text-align:center">
+
+1+2+...+k =
+k(k+1)/2
+
+</p>
+
+<hr>
+
+<b>Langkah Induksi</b>
+
+<p>
+
+Sekarang tinjau n = k+1.
+
+</p>
+
+<p>
+
+Jumlahnya menjadi
+
+</p>
+
+<p style="text-align:center">
+
+1+2+...+k+(k+1)
+
+</p>
+
+<p>
+
+Gunakan hipotesis induksi.
+
+</p>
+
+<p style="text-align:center">
+
+=
+k(k+1)/2+(k+1)
+
+</p>
+
+<p style="text-align:center">
+
+=
+(k+1)(k+2)/2
+
+</p>
+
+<p>
+
+Hasil ini sama dengan rumus yang ingin dibuktikan untuk n=k+1.
+
+</p>
+
+<p>
+
+Karena kedua langkah telah dipenuhi, maka rumus berlaku untuk semua
+bilangan bulat positif.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Aplikasi dalam Teori Bilangan</h3>
+
+<p>
+
+Induksi kuat sering digunakan untuk membuktikan berbagai teorema,
+misalnya:
+
+</p>
+
+<ul>
+
+<li>Setiap bilangan bulat lebih dari 1 dapat difaktorkan menjadi
+perkalian bilangan prima.</li>
+
+<li>Kebenaran algoritma rekursif.</li>
+
+<li>Sifat-sifat pembagi dan kelipatan.</li>
+
+<li>Pembuktian rumus-rumus rekursif.</li>
+
+<li>Pembuktian keberadaan representasi suatu bilangan.</li>
+
+</ul>
+
+<div class="example">
+
+<b>Contoh Ide Penggunaan</b>
+
+<p>
+
+Untuk membuktikan bahwa setiap bilangan bulat n > 1 mempunyai
+faktorisasi prima, kita menganggap semua bilangan yang lebih kecil
+daripada n telah memiliki faktorisasi prima.
+
+Jika n bukan prima, maka n dapat ditulis sebagai hasil kali dua
+bilangan yang lebih kecil. Karena kedua bilangan tersebut sudah
+diasumsikan memiliki faktorisasi prima, maka n juga memiliki
+faktorisasi prima.
+
+</p>
+
+<p>
+
+Pembuktian seperti ini hampir mustahil dilakukan hanya dengan induksi
+biasa, tetapi menjadi sangat alami menggunakan induksi kuat.
+
+</p>
+
+</div>
+
+<div class="tip">
+
+<b>Tips Pelatih Olimpiade</b>
+
+<ul>
+
+<li>Selalu tuliskan Basis Induksi terlebih dahulu.</li>
+<li>Nyatakan Hipotesis Induksi dengan jelas.</li>
+<li>Jangan menggunakan pernyataan yang belum dibuktikan.</li>
+<li>Tuliskan alasan setiap langkah aljabar.</li>
+<li>Pastikan kesimpulan menyebutkan bahwa pembuktian selesai.</li>
+</ul>
+
+</div>
+
+</div><div class="card">
+
+<h2>Ringkasan Bab</h2>
+
+<p>
+
+Setelah mempelajari bab ini, diharapkan pembaca telah memahami konsep
+dasar yang akan menjadi fondasi seluruh materi teori bilangan pada
+bab-bab berikutnya.
+
+</p>
+
+<table>
+
+<tr>
+<th>Materi</th>
+<th>Inti Pembahasan</th>
+</tr>
+
+<tr>
+<td>Bilangan Bulat</td>
+<td>Himpunan ℤ terdiri atas bilangan negatif, nol, dan positif.</td>
+</tr>
+
+<tr>
+<td>Sifat Bilangan Bulat</td>
+<td>Tertutup terhadap penjumlahan, pengurangan, dan perkalian, tetapi tidak terhadap pembagian.</td>
+</tr>
+
+<tr>
+<td>Komutatif</td>
+<td>a+b=b+a dan ab=ba.</td>
+</tr>
+
+<tr>
+<td>Asosiatif</td>
+<td>(a+b)+c=a+(b+c) serta (ab)c=a(bc).</td>
+</tr>
+
+<tr>
+<td>Distributif</td>
+<td>a(b+c)=ab+ac.</td>
+</tr>
+
+<tr>
+<td>Identitas</td>
+<td>0 adalah identitas penjumlahan, sedangkan 1 adalah identitas perkalian.</td>
+</tr>
+
+<tr>
+<td>Bilangan Genap</td>
+<td>Dapat ditulis dalam bentuk 2k.</td>
+</tr>
+
+<tr>
+<td>Bilangan Ganjil</td>
+<td>Dapat ditulis dalam bentuk 2k+1.</td>
+</tr>
+
+<tr>
+<td>Well-Ordering</td>
+<td>Setiap himpunan tak kosong dari bilangan bulat positif memiliki elemen terkecil.</td>
+</tr>
+
+<tr>
+<td>Induksi Kuat</td>
+<td>Pembuktian dilakukan menggunakan seluruh kasus sebelumnya.</td>
+</tr>
+
+</table>
+
+<div class="tip">
+
+<b>Catatan Penting</b>
+
+<p>
+
+Bab ini merupakan dasar bagi hampir seluruh materi teori bilangan.
+Apabila masih terdapat konsep yang belum dipahami, sangat disarankan
+untuk mengulang bab ini sebelum melanjutkan ke bab berikutnya, karena
+materi seperti keterbagian, algoritma Euclid, kongruensi, dan
+persamaan Diophantine akan sangat bergantung pada konsep-konsep dasar
+yang telah dipelajari.
+
+</p>
+
+</div>
+
+</div><div class="card">
+
+<h2>Latihan Bab 1</h2>
+
+<p>
+Ujilah pemahamanmu dengan mengerjakan soal-soal berikut tanpa melihat pembahasan.
+</p>
+
+<ol>
+
+<li>Jelaskan mengapa himpunan bilangan bulat tidak tertutup terhadap operasi pembagian.</li>
+
+<li>Tentukan apakah bilangan berikut merupakan bilangan bulat:
+<ul>
+<li>−27</li>
+<li>0</li>
+<li>√16</li>
+<li>3/2</li>
+<li>π</li>
+</ul>
+</li>
+
+<li>Buktikan bahwa jumlah dua bilangan genap selalu merupakan bilangan genap.</li>
+
+<li>Buktikan bahwa hasil kali dua bilangan ganjil selalu merupakan bilangan ganjil.</li>
+
+<li>Tentukan nilai:
+<ul>
+<li>|−18|</li>
+<li>|25|</li>
+<li>|0|</li>
+</ul>
+</li>
+
+<li>Mengapa Prinsip Well-Ordering hanya berlaku pada himpunan bilangan bulat positif?</li>
+
+<li>Jelaskan perbedaan antara induksi biasa dan induksi kuat.</li>
+
+<li>Buktikan dengan induksi bahwa
+1 + 3 + 5 + ... + (2n−1) = n².</li>
+
+</ol>
+
+</div>
+
+<nav>
+
+<a href="index.html">⬅ Kembali ke Home</a>
+
+<a href="tb2.html">Bab 2: Keterbagian ➜</a>
+
+</nav>
+
+</div>
+
+<footer>
+
+<h3>Handbook Teori Bilangan Olimpiade Matematika</h3>
+
+<p>
+Bab 1 — Dasar-Dasar Bilangan Bulat
+</p>
+
+<p>
+© 2026. Disusun sebagai bahan belajar untuk Olimpiade Matematika.
+</p>
+
+</footer>
+
+</body>
+</html>
