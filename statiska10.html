@@ -129,3 +129,3928 @@ Bab 10
 </header>
 
 <main>
+<section id="korelasi">
+
+<h2>1. Korelasi (Correlation)</h2>
+
+<p>
+
+Setelah pada Bab 9 kita mempelajari bagaimana membandingkan suatu
+parameter menggunakan pengujian hipotesis, pada bab ini fokus analisis
+berubah secara signifikan.
+
+Kita tidak lagi bertanya:
+
+<strong>"Apakah terdapat perbedaan?"</strong>
+
+melainkan:
+
+<strong>"Apakah dua variabel saling berhubungan?"</strong>
+
+</p>
+
+<p>
+
+Cabang statistika yang mempelajari kekuatan serta arah hubungan antar
+variabel disebut <strong>analisis korelasi (correlation analysis)</strong>.
+
+Korelasi merupakan salah satu fondasi utama dalam statistika modern,
+machine learning, data science, ekonomi, biologi, psikologi, kedokteran,
+hingga kecerdasan buatan.
+
+</p>
+
+<hr>
+
+<h3>Apa itu Korelasi?</h3>
+
+<p>
+
+Korelasi adalah ukuran statistik yang menyatakan
+<strong>seberapa kuat hubungan</strong> antara dua variabel.
+
+Misalnya:
+
+</p>
+
+<table>
+
+<tr>
+<th>Variabel X</th>
+<th>Variabel Y</th>
+<th>Apakah Berhubungan?</th>
+</tr>
+
+<tr>
+<td>Jam belajar</td>
+<td>Nilai ujian</td>
+<td>Ya</td>
+</tr>
+
+<tr>
+<td>Tinggi badan</td>
+<td>Berat badan</td>
+<td>Ya</td>
+</tr>
+
+<tr>
+<td>Suhu udara</td>
+<td>Penjualan es krim</td>
+<td>Ya</td>
+</tr>
+
+<tr>
+<td>Kecepatan internet</td>
+<td>Waktu download</td>
+<td>Ya (negatif)</td>
+</tr>
+
+</table>
+
+<p>
+
+Perhatikan bahwa korelasi hanya mengukur hubungan.
+
+Ia belum tentu menunjukkan bahwa satu variabel menyebabkan variabel
+lain berubah.
+
+</p>
+
+<div class="catatan">
+
+<strong>Kata Kunci</strong>
+
+<p>
+
+Correlation measures association.
+
+It does NOT necessarily imply causation.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Hubungan Positif</h3>
+
+<p>
+
+Hubungan positif terjadi ketika kedua variabel bergerak ke arah yang sama.
+
+Jika variabel pertama meningkat,
+maka variabel kedua juga cenderung meningkat.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Y
+
+↑
+
+|
+
+|            ●
+
+|         ●
+
+|      ●
+
+|   ●
+
+| ●
+
++------------------------→ X
+
+</pre>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>Jam belajar ↑ → Nilai ↑</li>
+
+<li>Tinggi badan ↑ → Berat badan ↑</li>
+
+<li>Pengalaman kerja ↑ → Pendapatan ↑</li>
+
+</ul>
+
+<hr>
+
+<h3>Hubungan Negatif</h3>
+
+<p>
+
+Hubungan negatif berarti kedua variabel bergerak berlawanan arah.
+
+Ketika satu meningkat,
+yang lain justru menurun.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Y
+
+↑
+
+| ●
+
+|    ●
+
+|       ●
+
+|          ●
+
+|             ●
+
++------------------------→ X
+
+</pre>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>Harga barang ↑ → Permintaan ↓</li>
+
+<li>Kecepatan kendaraan ↑ → Waktu tempuh ↓</li>
+
+<li>Olahraga ↑ → Persentase lemak tubuh ↓</li>
+
+</ul>
+
+<hr>
+
+<h3>Tidak Ada Korelasi</h3>
+
+<p>
+
+Kadang-kadang perubahan suatu variabel sama sekali tidak berkaitan
+dengan variabel lainnya.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Y
+
+↑
+
+| ●      ●
+
+|      ●
+
+|   ●
+
+|        ●
+
+| ●     ●
+
++------------------------→ X
+
+</pre>
+
+</div>
+
+<p>
+
+Contoh:
+
+</p>
+
+<ul>
+
+<li>Nomor sepatu dengan nilai ujian.</li>
+
+<li>Golongan darah dengan tinggi badan.</li>
+
+<li>Warna favorit dengan IPK mahasiswa.</li>
+
+</ul>
+
+<hr>
+
+<h3>Korelasi Linear</h3>
+
+<p>
+
+Sebagian besar metode statistik klasik mengasumsikan hubungan yang
+bersifat <strong>linear</strong>.
+
+Artinya perubahan X menghasilkan perubahan Y yang relatif konstan.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Linear
+
+●
+
+  ●
+
+    ●
+
+      ●
+
+        ●
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Hubungan Non-Linear</h3>
+
+<p>
+
+Dalam kehidupan nyata, banyak hubungan tidak berbentuk garis lurus.
+
+Misalnya hubungan usia dengan kemampuan fisik.
+
+Kemampuan meningkat sampai usia tertentu,
+kemudian mulai menurun.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Y
+
+↑
+
+|
+
+|        ●●
+
+|     ●      ●
+
+|   ●          ●
+
+| ●              ●
+
++----------------------→ X
+
+</pre>
+
+</div>
+
+<p>
+
+Pada kondisi seperti ini,
+koefisien Pearson dapat bernilai kecil meskipun sebenarnya hubungan
+antara variabel sangat kuat.
+
+Inilah sebabnya visualisasi data selalu dilakukan sebelum analisis.
+
+</p>
+
+<hr>
+
+<h3>Arah dan Kekuatan Korelasi</h3>
+
+<table>
+
+<tr>
+
+<th>Nilai r</th>
+
+<th>Interpretasi</th>
+
+</tr>
+
+<tr>
+
+<td>+1</td>
+
+<td>Hubungan positif sempurna.</td>
+
+</tr>
+
+<tr>
+
+<td>0,80 s.d. 0,99</td>
+
+<td>Sangat kuat.</td>
+
+</tr>
+
+<tr>
+
+<td>0,60 s.d. 0,79</td>
+
+<td>Kuat.</td>
+
+</tr>
+
+<tr>
+
+<td>0,40 s.d. 0,59</td>
+
+<td>Sedang.</td>
+
+</tr>
+
+<tr>
+
+<td>0,20 s.d. 0,39</td>
+
+<td>Lemah.</td>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>Tidak ada hubungan linear.</td>
+
+</tr>
+
+<tr>
+
+<td>-0,20 s.d. -0,39</td>
+
+<td>Lemah negatif.</td>
+
+</tr>
+
+<tr>
+
+<td>-0,40 s.d. -0,59</td>
+
+<td>Sedang negatif.</td>
+
+</tr>
+
+<tr>
+
+<td>-0,60 s.d. -0,79</td>
+
+<td>Kuat negatif.</td>
+
+</tr>
+
+<tr>
+
+<td>-0,80 s.d. -1</td>
+
+<td>Sangat kuat negatif.</td>
+
+</tr>
+
+</table>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Nilai korelasi yang mendekati nol tidak selalu berarti "tidak ada
+hubungan".
+
+Yang benar adalah <strong>tidak ada hubungan linear yang kuat</strong>.
+
+Bisa saja hubungan sebenarnya berbentuk kuadrat, eksponensial,
+logaritmik, atau pola non-linear lainnya.
+
+Inilah alasan mengapa seorang analis data profesional hampir selalu
+melihat scatter plot sebelum menghitung koefisien korelasi.
+
+</p>
+
+</div>
+
+</section><section id="pearson-correlation">
+
+<h2>2. Koefisien Korelasi Pearson (Pearson Product Moment Correlation)</h2>
+
+<p>
+
+Metode korelasi yang paling terkenal dalam statistika adalah
+<strong>Koefisien Korelasi Pearson</strong>.
+
+Metode ini diperkenalkan oleh ahli matematika Inggris
+<strong>Karl Pearson</strong> dan hingga saat ini menjadi standar dalam
+analisis hubungan linear dua variabel numerik.
+
+</p>
+
+<p>
+
+Koefisien Pearson mengukur:
+
+</p>
+
+<ul>
+
+<li>Arah hubungan antar variabel.</li>
+
+<li>Kekuatan hubungan linear.</li>
+
+<li>Konsistensi perubahan kedua variabel.</li>
+
+</ul>
+
+<hr>
+
+<h3>Ide Dasar Pearson</h3>
+
+<p>
+
+Misalkan terdapat dua variabel:
+
+</p>
+
+<ul>
+
+<li>X = Jam belajar</li>
+<li>Y = Nilai ujian</li>
+
+</ul>
+
+<p>
+
+Jika siswa yang belajar lebih lama hampir selalu memperoleh nilai lebih
+tinggi, maka hubungan keduanya kuat sehingga nilai korelasinya mendekati
+<strong>+1</strong>.
+
+Sebaliknya apabila kenaikan jam belajar tidak diikuti perubahan nilai
+yang jelas, maka korelasinya akan mendekati <strong>0</strong>.
+
+</p>
+
+<div class="visual">
+
+<h3>Contoh Scatter Plot Pearson Positif</h3>
+
+<pre>
+
+Nilai
+
+100 |                         ●
+ 95 |                     ●
+ 90 |                  ●
+ 85 |               ●
+ 80 |            ●
+ 75 |         ●
+ 70 |      ●
+ 65 |   ●
+ 60 | ●
+    +--------------------------------→ Jam Belajar
+      1  2  3  4  5  6  7  8
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Rumus Pearson</h3>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+r =
+
+Σ[(Xi − X̄)(Yi − Ȳ)]
+
+/
+
+√[ Σ(Xi − X̄)² × Σ(Yi − Ȳ)² ]
+
+</p>
+
+</div>
+
+<p>
+
+Walaupun terlihat panjang, rumus ini sebenarnya terdiri atas tiga ide
+utama.
+
+</p>
+
+<ol>
+
+<li>Mengukur penyimpangan setiap data terhadap rata-ratanya.</li>
+
+<li>Mengukur apakah kedua penyimpangan bergerak searah atau berlawanan.</li>
+
+<li>Menormalkan hasil agar selalu berada pada interval -1 sampai +1.</li>
+
+</ol>
+
+<hr>
+
+<h3>Makna Setiap Komponen</h3>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>Xi</td>
+<td>Nilai variabel X ke-i.</td>
+</tr>
+
+<tr>
+<td>Yi</td>
+<td>Nilai variabel Y ke-i.</td>
+</tr>
+
+<tr>
+<td>X̄</td>
+<td>Rata-rata variabel X.</td>
+</tr>
+
+<tr>
+<td>Ȳ</td>
+<td>Rata-rata variabel Y.</td>
+</tr>
+
+<tr>
+<td>Σ</td>
+<td>Penjumlahan seluruh data.</td>
+</tr>
+
+<tr>
+<td>r</td>
+<td>Koefisien korelasi Pearson.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Mengapa Nilai r Selalu Antara -1 dan +1?</h3>
+
+<p>
+
+Penyebut pada rumus Pearson merupakan hasil normalisasi sehingga nilai
+akhir tidak pernah melebihi 1 ataupun kurang dari -1.
+
+Secara matematis, hal ini berkaitan dengan
+<strong>Ketaksamaan Cauchy–Schwarz</strong>, salah satu teorema penting
+dalam aljabar linear.
+
+</p>
+
+<div class="catatan">
+
+<strong>Sifat Penting</strong>
+
+<ul>
+
+<li>r = +1 → hubungan linear positif sempurna.</li>
+
+<li>r = -1 → hubungan linear negatif sempurna.</li>
+
+<li>r = 0 → tidak ada hubungan linear.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Interpretasi Nilai r</h3>
+
+<table>
+
+<tr>
+<th>Nilai r</th>
+<th>Kekuatan Hubungan</th>
+</tr>
+
+<tr>
+<td>±0,00 – ±0,19</td>
+<td>Sangat lemah.</td>
+</tr>
+
+<tr>
+<td>±0,20 – ±0,39</td>
+<td>Lemah.</td>
+</tr>
+
+<tr>
+<td>±0,40 – ±0,59</td>
+<td>Sedang.</td>
+</tr>
+
+<tr>
+<td>±0,60 – ±0,79</td>
+<td>Kuat.</td>
+</tr>
+
+<tr>
+<td>±0,80 – ±1,00</td>
+<td>Sangat kuat.</td>
+</tr>
+
+</table>
+
+<p>
+
+Perlu diingat bahwa klasifikasi ini hanyalah pedoman umum. Dalam bidang
+fisika, nilai r = 0,95 mungkin dianggap biasa, sedangkan dalam ilmu
+sosial nilai r = 0,45 sering kali sudah dianggap cukup kuat.
+
+</p>
+
+<hr>
+
+<h3>Asumsi Pearson</h3>
+
+<p>
+
+Agar hasil analisis valid, Pearson memiliki beberapa asumsi penting.
+
+</p>
+
+<ul>
+
+<li>Kedua variabel berupa data numerik.</li>
+
+<li>Hubungan bersifat linear.</li>
+
+<li>Observasi saling independen.</li>
+
+<li>Tidak terdapat outlier ekstrem.</li>
+
+<li>Distribusi data mendekati normal (untuk inferensi).</li>
+
+</ul>
+
+<div class="visual">
+
+<h3>Linear vs Non-Linear</h3>
+
+<pre>
+
+Linear ✔
+
+●
+ ●
+  ●
+   ●
+    ●
+
+
+Non-Linear ✘
+
+●
+
+   ●
+
+      ●
+
+         ●●
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Kesalahan yang paling sering dilakukan pemula adalah langsung menghitung
+koefisien Pearson tanpa memeriksa bentuk hubungan pada scatter plot.
+Pearson hanya mengukur <strong>hubungan linear</strong>. Jika pola data
+melengkung, nilai r dapat kecil meskipun hubungan antar variabel sangat
+kuat. Oleh karena itu, visualisasi data selalu menjadi langkah pertama
+dalam analisis korelasi profesional.
+
+</p>
+
+</div>
+
+</section><section id="spearman-correlation">
+
+<h2>3. Koefisien Korelasi Spearman (Spearman Rank Correlation)</h2>
+
+<p>
+
+Tidak semua data memenuhi asumsi Pearson. Dalam penelitian nyata,
+sering dijumpai data yang tidak berdistribusi normal, mengandung
+outlier, atau bahkan hanya berupa <strong>peringkat (ranking)</strong>.
+
+Untuk kondisi seperti ini digunakan
+<strong>Koefisien Korelasi Spearman (Spearman Rank Correlation)</strong>,
+yang diperkenalkan oleh psikolog Inggris
+<strong>Charles Spearman</strong>.
+
+</p>
+
+<hr>
+
+<h3>Mengapa Spearman Dibutuhkan?</h3>
+
+<p>
+
+Bayangkan seorang guru ingin mengetahui hubungan antara:
+
+</p>
+
+<ul>
+
+<li>Peringkat matematika siswa.</li>
+
+<li>Peringkat fisika siswa.</li>
+
+</ul>
+
+<p>
+
+Data tersebut bukan berupa nilai asli, melainkan hanya urutan
+peringkat.
+
+Karena jarak antar peringkat tidak selalu sama, maka Pearson tidak
+lagi cocok digunakan.
+
+</p>
+
+<div class="visual">
+
+<h3>Contoh Data Ranking</h3>
+
+<pre>
+
+Siswa      Ranking MTK     Ranking Fisika
+
+A               1                 2
+
+B               2                 1
+
+C               3                 4
+
+D               4                 3
+
+E               5                 5
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Konsep Dasar Spearman</h3>
+
+<p>
+
+Spearman tidak memperhatikan nilai asli suatu data.
+
+Yang dianalisis hanyalah
+<strong>urutan (rank)</strong> masing-masing objek.
+
+Dengan demikian metode ini jauh lebih tahan terhadap:
+
+</p>
+
+<ul>
+
+<li>Outlier.</li>
+
+<li>Distribusi tidak normal.</li>
+
+<li>Skala ordinal.</li>
+
+<li>Hubungan monoton.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Hubungan Monoton</strong>
+
+<p>
+
+Hubungan monoton berarti ketika satu variabel meningkat,
+variabel lain selalu cenderung meningkat atau selalu cenderung
+menurun.
+
+Hubungan tersebut tidak harus berbentuk garis lurus.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Rumus Spearman</h3>
+
+<div class="rumus">
+
+<h3>Koefisien Spearman</h3>
+
+<p style="font-size:22px;text-align:center;">
+
+ρ = 1 −
+
+6 Σd²
+
+──────────────
+
+n(n²−1)
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Simbol</th>
+
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>ρ</td>
+
+<td>Koefisien Korelasi Spearman.</td>
+
+</tr>
+
+<tr>
+
+<td>d</td>
+
+<td>Selisih ranking masing-masing data.</td>
+
+</tr>
+
+<tr>
+
+<td>n</td>
+
+<td>Jumlah observasi.</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Langkah Menghitung Spearman</h3>
+
+<ol>
+
+<li>Urutkan seluruh data X menjadi ranking.</li>
+
+<li>Urutkan seluruh data Y menjadi ranking.</li>
+
+<li>Hitung selisih ranking (d).</li>
+
+<li>Hitung d².</li>
+
+<li>Jumlahkan seluruh d².</li>
+
+<li>Substitusikan ke rumus Spearman.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh Perhitungan</h3>
+
+<table>
+
+<tr>
+
+<th>Siswa</th>
+
+<th>Rank X</th>
+
+<th>Rank Y</th>
+
+<th>d</th>
+
+<th>d²</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>1</td>
+
+<td>2</td>
+
+<td>-1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>3</td>
+
+<td>3</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>4</td>
+
+<td>5</td>
+
+<td>-1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>E</td>
+
+<td>5</td>
+
+<td>4</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Jumlah seluruh d² adalah:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Σd² = 4
+
+</p>
+
+</div>
+
+<p>
+
+Karena n = 5 maka:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+ρ
+
+=
+
+1
+
+−
+
+6(4)
+
+/
+
+5(25−1)
+
+</p>
+
+<p>
+
+=
+
+1
+
+−
+
+24/120
+
+</p>
+
+<p>
+
+=
+
+0,80
+
+</p>
+
+</div>
+
+<p>
+
+Nilai tersebut menunjukkan hubungan positif yang sangat kuat.
+
+</p>
+
+<hr>
+
+<h3>Pearson vs Spearman</h3>
+
+<table>
+
+<tr>
+
+<th>Aspek</th>
+
+<th>Pearson</th>
+
+<th>Spearman</th>
+
+</tr>
+
+<tr>
+
+<td>Jenis Data</td>
+
+<td>Numerik</td>
+
+<td>Ranking / Ordinal</td>
+
+</tr>
+
+<tr>
+
+<td>Hubungan</td>
+
+<td>Linear</td>
+
+<td>Monoton</td>
+
+</tr>
+
+<tr>
+
+<td>Normalitas</td>
+
+<td>Diperlukan</td>
+
+<td>Tidak wajib</td>
+
+</tr>
+
+<tr>
+
+<td>Sensitif Outlier</td>
+
+<td>Ya</td>
+
+<td>Lebih tahan</td>
+
+</tr>
+
+<tr>
+
+<td>Statistik</td>
+
+<td>Parametrik</td>
+
+<td>Nonparametrik</td>
+
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Kapan Menggunakan Spearman?</h3>
+
+<pre>
+
+Apakah data berupa ranking?
+
+        │
+
+      Ya
+
+        │
+
+Gunakan Spearman
+
+
+Tidak
+
+        │
+
+Apakah hubungan linear
+dan data normal?
+
+        │
+
+      Ya
+
+        │
+
+Gunakan Pearson
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Banyak peserta olimpiade menghafal bahwa Spearman hanya digunakan
+untuk data ranking. Itu benar, tetapi belum lengkap.
+
+Spearman sebenarnya mengukur
+<strong>hubungan monoton</strong>, sehingga sering digunakan ketika
+hubungan antar variabel jelas meningkat atau menurun tetapi tidak
+membentuk garis lurus.
+
+Dalam data science modern, Spearman juga sering digunakan untuk
+mengevaluasi kualitas model prediksi karena lebih robust terhadap
+outlier dibanding Pearson.
+
+</p>
+
+</div>
+
+</section><section id="regresi-linear">
+
+<h2>4. Regresi Linear Sederhana (Simple Linear Regression)</h2>
+
+<p>
+
+Jika korelasi hanya menjawab pertanyaan
+<strong>"Apakah dua variabel saling berhubungan?"</strong>,
+maka <strong>regresi</strong> melangkah lebih jauh dengan menjawab:
+
+</p>
+
+<ul>
+
+<li>Seberapa besar pengaruh variabel X terhadap variabel Y?</li>
+<li>Bagaimana memprediksi nilai Y jika diketahui nilai X?</li>
+<li>Bagaimana membangun model matematis dari data?</li>
+</ul>
+
+<p>
+
+Karena itulah regresi merupakan salah satu metode paling penting dalam
+statistika, ekonomi, machine learning, artificial intelligence,
+keuangan, teknik, hingga ilmu kesehatan.
+
+</p>
+
+<hr>
+
+<h3>Konsep Dasar Regresi</h3>
+
+<p>
+
+Misalkan kita memiliki data mengenai jumlah jam belajar dan nilai ujian
+seorang siswa.
+
+</p>
+
+<table>
+
+<tr>
+<th>Jam Belajar (X)</th>
+<th>Nilai Ujian (Y)</th>
+</tr>
+
+<tr><td>1</td><td>60</td></tr>
+<tr><td>2</td><td>66</td></tr>
+<tr><td>3</td><td>71</td></tr>
+<tr><td>4</td><td>77</td></tr>
+<tr><td>5</td><td>84</td></tr>
+
+</table>
+
+<p>
+
+Secara visual terlihat bahwa semakin lama siswa belajar, semakin tinggi
+nilai ujian yang diperoleh.
+
+Regresi akan mencari sebuah <strong>garis terbaik (best fitting line)</strong>
+yang mewakili hubungan tersebut.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi Garis Regresi</h3>
+
+<pre>
+
+Nilai
+
+90 |                        ●
+85 |                    ●
+80 |                 ●
+75 |              ●
+70 |           ●
+65 |        ●
+60 |     ●
+   +--------------------------------→ Jam Belajar
+
+      ─────────────────────────
+          Garis Regresi
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Persamaan Regresi Linear</h3>
+
+<p>
+
+Model regresi linear sederhana dinyatakan dengan persamaan:
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+Y = a + bX
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>Y</td>
+<td>Variabel terikat (Dependent Variable).</td>
+</tr>
+
+<tr>
+<td>X</td>
+<td>Variabel bebas (Independent Variable).</td>
+</tr>
+
+<tr>
+<td>a</td>
+<td>Intercept (titik potong sumbu Y).</td>
+</tr>
+
+<tr>
+<td>b</td>
+<td>Kemiringan garis (Slope).</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Makna Intercept (a)</h3>
+
+<p>
+
+Intercept adalah nilai prediksi Y ketika nilai X sama dengan nol.
+
+</p>
+
+<div class="contoh">
+
+<p>
+
+Misalkan diperoleh model:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Y = 55 + 6X
+
+</p>
+
+</div>
+
+<p>
+
+Artinya apabila seorang siswa tidak belajar sama sekali (X = 0),
+model memperkirakan nilai awalnya sekitar 55.
+
+</p>
+
+</div>
+
+<p>
+
+Namun perlu diperhatikan bahwa interpretasi intercept hanya masuk akal
+apabila nilai X = 0 memang mungkin terjadi dalam konteks masalah.
+
+</p>
+
+<hr>
+
+<h3>Makna Slope (b)</h3>
+
+<p>
+
+Slope menunjukkan perubahan rata-rata Y untuk setiap kenaikan satu
+satuan pada X.
+
+</p>
+
+<div class="contoh">
+
+<p>
+
+Jika:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Y = 55 + 6X
+
+</p>
+
+</div>
+
+<p>
+
+maka setiap tambahan <strong>1 jam belajar</strong> diperkirakan akan
+meningkatkan nilai ujian sekitar <strong>6 poin</strong>.
+
+</p>
+
+</div>
+
+<div class="catatan">
+
+<strong>Interpretasi Penting</strong>
+
+<p>
+
+Slope menunjukkan hubungan rata-rata berdasarkan model statistik,
+bukan hubungan sebab-akibat mutlak.
+
+Masih mungkin terdapat faktor lain seperti kemampuan dasar, motivasi,
+atau kualitas pengajaran yang memengaruhi hasil belajar.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Prediksi Menggunakan Model Regresi</h3>
+
+<p>
+
+Setelah model diperoleh, kita dapat melakukan prediksi.
+
+</p>
+
+<div class="contoh">
+
+<p>
+
+Misalkan:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Y = 55 + 6X
+
+</p>
+
+</div>
+
+<p>
+
+Jika seorang siswa belajar selama 7 jam, maka prediksi nilainya adalah:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Y = 55 + 6(7)
+
+</p>
+
+<p>
+
+Y = 97
+
+</p>
+
+</div>
+
+<p>
+
+Perlu diingat bahwa angka 97 merupakan hasil prediksi model, bukan
+jaminan nilai sebenarnya.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Residual (Galat)</h3>
+
+<p>
+
+Dalam praktiknya, data hampir tidak pernah tepat berada pada garis
+regresi.
+
+Selisih antara nilai aktual dengan nilai prediksi disebut
+<strong>residual</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+Residual = Y − Ŷ
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Nilai Aktual</th>
+<th>Prediksi</th>
+<th>Residual</th>
+</tr>
+
+<tr>
+<td>82</td>
+<td>80</td>
+<td>+2</td>
+</tr>
+
+<tr>
+<td>74</td>
+<td>76</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>91</td>
+<td>90</td>
+<td>+1</td>
+</tr>
+
+</table>
+
+<p>
+
+Residual positif berarti model meremehkan nilai sebenarnya, sedangkan
+residual negatif berarti model melebih-lebihkan prediksi.
+
+</p>
+
+<div class="visual">
+
+<h3>Residual pada Scatter Plot</h3>
+
+<pre>
+
+Y
+
+↑
+
+●
+
+│\
+│ \
+│  \
+│   ●
+
+│   ↑
+
+│ Residual
+
+└────────────────────────→ X
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Metode Least Squares</h3>
+
+<p>
+
+Bagaimana menentukan garis regresi terbaik?
+
+Jawabannya adalah menggunakan
+<strong>Metode Kuadrat Terkecil (Least Squares Method)</strong>.
+
+Metode ini memilih garis yang menghasilkan jumlah kuadrat residual
+terkecil.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+SSE = Σ(Y − Ŷ)²
+
+</p>
+
+</div>
+
+<p>
+
+Mengapa residual dikuadratkan?
+
+</p>
+
+<ul>
+
+<li>Agar residual positif dan negatif tidak saling menghapus.</li>
+<li>Memberikan penalti lebih besar pada kesalahan yang besar.</li>
+<li>Mempermudah proses optimasi secara matematis.</li>
+</ul>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Regresi linear bukan sekadar mencari garis yang "terlihat paling pas".
+Secara matematis, garis tersebut merupakan solusi dari masalah optimasi
+yang meminimalkan <strong>Sum of Squared Errors (SSE)</strong>. Konsep
+ini menjadi dasar bagi banyak algoritma modern, termasuk regresi
+berganda, regresi logistik, hingga berbagai model machine learning.
+
+</p>
+
+</div>
+
+</section><section id="multiple-linear-regression">
+
+<h2>5. Regresi Linear Berganda (Multiple Linear Regression)</h2>
+
+<p>
+
+Pada regresi linear sederhana kita hanya menggunakan
+<strong>satu variabel bebas (X)</strong> untuk memprediksi satu variabel
+terikat (Y).
+
+Namun pada kenyataannya, suatu fenomena hampir selalu dipengaruhi oleh
+lebih dari satu faktor.
+
+Sebagai contoh, nilai ujian seorang siswa tidak hanya dipengaruhi oleh
+jam belajar, tetapi juga kualitas tidur, tingkat kehadiran, motivasi,
+kondisi kesehatan, serta kemampuan dasar siswa tersebut.
+
+Untuk memodelkan kondisi seperti ini digunakan
+<strong>Regresi Linear Berganda (Multiple Linear Regression)</strong>.
+
+</p>
+
+<hr>
+
+<h3>Persamaan Umum</h3>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+Y = β₀ + β₁X₁ + β₂X₂ + β₃X₃ + ... + βₖXₖ + ε
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>Y</td>
+<td>Variabel yang diprediksi (Dependent Variable).</td>
+</tr>
+
+<tr>
+<td>β₀</td>
+<td>Intercept.</td>
+</tr>
+
+<tr>
+<td>β₁ ... βₖ</td>
+<td>Koefisien regresi setiap variabel.</td>
+</tr>
+
+<tr>
+<td>X₁ ... Xₖ</td>
+<td>Variabel bebas (Predictor).</td>
+</tr>
+
+<tr>
+<td>ε</td>
+<td>Error atau residual model.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Contoh Model</h3>
+
+<p>
+
+Misalkan diperoleh model berikut.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Nilai Ujian
+
+=
+
+25
+
++
+
+4(Jam Belajar)
+
++
+
+2(Kehadiran)
+
++
+
+1,5(Kualitas Tidur)
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasinya adalah:
+
+</p>
+
+<ul>
+
+<li>Setiap tambahan 1 jam belajar meningkatkan nilai sekitar 4 poin.</li>
+
+<li>Setiap kenaikan 1% kehadiran meningkatkan nilai sekitar 2 poin (dengan variabel lain tetap).</li>
+
+<li>Kualitas tidur juga memberikan kontribusi positif terhadap nilai.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Kata Kunci</strong>
+
+<p>
+
+Dalam regresi berganda, setiap koefisien diinterpretasikan
+<strong>dengan asumsi variabel lain tetap konstan</strong>
+(<em>ceteris paribus</em>).
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Koefisien Determinasi (R²)</h3>
+
+<p>
+
+Salah satu ukuran kualitas model regresi adalah
+<strong>Koefisien Determinasi (Coefficient of Determination)</strong>
+yang dilambangkan dengan <strong>R²</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+R² = Variasi yang Dijelaskan Model
+      ───────────────────────────
+          Variasi Total Data
+
+</p>
+
+</div>
+
+<p>
+
+Nilai R² selalu berada pada rentang:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+0 ≤ R² ≤ 1
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>R²</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Model tidak menjelaskan variasi data.</td>
+</tr>
+
+<tr>
+<td>0,50</td>
+<td>50% variasi dijelaskan model.</td>
+</tr>
+
+<tr>
+<td>0,90</td>
+<td>Model menjelaskan 90% variasi data.</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Model sempurna.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Adjusted R²</h3>
+
+<p>
+
+Masalah utama R² adalah nilainya hampir selalu meningkat ketika kita
+menambahkan variabel baru, bahkan jika variabel tersebut sebenarnya
+tidak berguna.
+
+Untuk mengatasi hal tersebut digunakan
+<strong>Adjusted R²</strong>.
+
+</p>
+
+<p>
+
+Adjusted R² memberikan penalti terhadap model yang menggunakan terlalu
+banyak variabel.
+
+Oleh karena itu, pada penelitian profesional dan machine learning,
+Adjusted R² sering dianggap lebih informatif dibandingkan R² biasa.
+
+</p>
+
+<div class="visual">
+
+<h3>Perbandingan</h3>
+
+<pre>
+
+Tambah Variabel
+
+        │
+
+        ▼
+
+R²
+
+█████████████
+
+(selalu naik)
+
+
+Adjusted R²
+
+███████████
+
+(bisa naik atau turun)
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Multikolinearitas</h3>
+
+<p>
+
+Salah satu masalah terbesar dalam regresi berganda adalah
+<strong>multikolinearitas</strong>.
+
+Masalah ini terjadi ketika dua atau lebih variabel bebas memiliki
+hubungan yang sangat kuat satu sama lain.
+
+</p>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<ul>
+
+<li>Tinggi badan (cm).</li>
+
+<li>Tinggi badan (inci).</li>
+
+</ul>
+
+<p>
+
+Kedua variabel tersebut hampir membawa informasi yang sama sehingga
+model menjadi tidak stabil.
+
+</p>
+
+</div>
+
+<p>
+
+Dampak multikolinearitas antara lain:
+
+</p>
+
+<ul>
+
+<li>Koefisien regresi menjadi tidak stabil.</li>
+
+<li>Standard error membesar.</li>
+
+<li>Interpretasi menjadi sulit.</li>
+
+<li>Prediksi dapat berubah drastis jika data sedikit berubah.</li>
+
+</ul>
+
+<hr>
+
+<h3>Variance Inflation Factor (VIF)</h3>
+
+<p>
+
+Salah satu alat paling populer untuk mendeteksi multikolinearitas
+adalah <strong>Variance Inflation Factor (VIF)</strong>.
+
+</p>
+
+<table>
+
+<tr>
+<th>Nilai VIF</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>≈1</td>
+<td>Tidak ada multikolinearitas.</td>
+</tr>
+
+<tr>
+<td>1–5</td>
+<td>Masih dapat diterima.</td>
+</tr>
+
+<tr>
+<td>>5</td>
+<td>Perlu diwaspadai.</td>
+</tr>
+
+<tr>
+<td>>10</td>
+<td>Masalah serius.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Overfitting</h3>
+
+<p>
+
+Model yang terlalu kompleks dapat menyesuaikan diri secara sempurna
+terhadap data pelatihan, tetapi gagal memprediksi data baru.
+
+Fenomena ini disebut <strong>overfitting</strong>.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Training Error
+
+██████
+
+Testing Error
+
+██████████████
+
+(Model terlalu rumit)
+
+</pre>
+
+</div>
+
+<p>
+
+Sebaliknya, model yang terlalu sederhana disebut
+<strong>underfitting</strong> karena tidak mampu menangkap pola utama
+dalam data.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Regresi berganda merupakan pintu masuk menuju dunia
+<strong>machine learning</strong>. Banyak algoritma modern seperti
+Linear Regression, Ridge Regression, LASSO, Elastic Net, hingga beberapa
+metode deep learning berakar pada konsep optimasi regresi berganda.
+Memahami interpretasi koefisien, R², residual, multikolinearitas, dan
+overfitting akan sangat membantu ketika mempelajari analisis data
+lanjutan.
+
+</p>
+
+</div>
+
+</section><section id="analisis-data">
+
+<h2>6. Analisis Data (Data Analysis)</h2>
+
+<p>
+
+Memiliki data yang banyak tidak otomatis menghasilkan informasi yang
+bermanfaat. Dalam dunia statistika, data harus melalui serangkaian proses
+analisis agar dapat diubah menjadi informasi, pengetahuan, hingga dasar
+pengambilan keputusan.
+
+</p>
+
+<p>
+
+Seorang analis data profesional hampir tidak pernah langsung menghitung
+mean, korelasi, atau regresi. Sebelum itu, data harus diperiksa,
+dibersihkan, dan dipahami terlebih dahulu.
+
+</p>
+
+<div class="catatan">
+
+<strong>Prinsip Penting</strong>
+
+<p>
+
+"Garbage In, Garbage Out (GIGO)."
+
+Jika kualitas data buruk, maka hasil analisis juga akan menyesatkan,
+meskipun menggunakan metode statistik yang sangat canggih.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Workflow Analisis Data</h3>
+
+<div class="visual">
+
+<pre>
+
+Mengumpulkan Data
+        │
+        ▼
+Membersihkan Data
+        │
+        ▼
+Eksplorasi Data (EDA)
+        │
+        ▼
+Visualisasi
+        │
+        ▼
+Pemilihan Model
+        │
+        ▼
+Evaluasi Model
+        │
+        ▼
+Interpretasi
+        │
+        ▼
+Pengambilan Keputusan
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>1. Data Collection (Pengumpulan Data)</h3>
+
+<p>
+
+Tahap pertama adalah memperoleh data yang relevan terhadap tujuan
+penelitian.
+
+Sumber data dapat berupa:
+
+</p>
+
+<ul>
+
+<li>Survei.</li>
+<li>Eksperimen.</li>
+<li>Sensor.</li>
+<li>Database perusahaan.</li>
+<li>API.</li>
+<li>Web scraping.</li>
+
+</ul>
+
+<p>
+
+Pada tahap ini, kualitas metode pengambilan sampel sangat menentukan
+validitas hasil analisis.
+
+</p>
+
+<hr>
+
+<h3>2. Data Cleaning</h3>
+
+<p>
+
+Data mentah hampir selalu mengandung berbagai masalah, misalnya:
+
+</p>
+
+<ul>
+
+<li>Data kosong (<em>missing value</em>).</li>
+<li>Duplikasi data.</li>
+<li>Kesalahan penulisan.</li>
+<li>Format tidak konsisten.</li>
+<li>Nilai ekstrem yang tidak masuk akal.</li>
+
+</ul>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<table>
+
+<tr>
+<th>Nama</th>
+<th>Usia</th>
+</tr>
+
+<tr>
+<td>Andi</td>
+<td>18</td>
+</tr>
+
+<tr>
+<td>Budi</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Citra</td>
+<td>Kosong</td>
+</tr>
+
+</table>
+
+<p>
+
+Data di atas harus diperbaiki sebelum dianalisis.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>3. Exploratory Data Analysis (EDA)</h3>
+
+<p>
+
+Exploratory Data Analysis (EDA) bertujuan memahami karakteristik data
+sebelum membangun model statistik.
+
+Beberapa aktivitas pada tahap EDA antara lain:
+
+</p>
+
+<ul>
+
+<li>Menghitung mean, median, modus.</li>
+<li>Menghitung standar deviasi.</li>
+<li>Membuat histogram.</li>
+<li>Membuat box plot.</li>
+<li>Membuat scatter plot.</li>
+<li>Mendeteksi outlier.</li>
+<li>Menghitung korelasi awal.</li>
+
+</ul>
+
+<div class="visual">
+
+<h3>EDA</h3>
+
+<pre>
+
+Data
+
+ │
+
+ ├── Histogram
+
+ ├── Box Plot
+
+ ├── Scatter Plot
+
+ ├── Mean
+
+ ├── Median
+
+ ├── Variansi
+
+ └── Korelasi
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>4. Visualisasi Data</h3>
+
+<p>
+
+Visualisasi merupakan salah satu cara tercepat untuk menemukan pola
+dalam data.
+
+Beberapa grafik yang sering digunakan adalah:
+
+</p>
+
+<table>
+
+<tr>
+<th>Grafik</th>
+<th>Kegunaan</th>
+</tr>
+
+<tr>
+<td>Histogram</td>
+<td>Melihat distribusi.</td>
+</tr>
+
+<tr>
+<td>Scatter Plot</td>
+<td>Melihat hubungan dua variabel.</td>
+</tr>
+
+<tr>
+<td>Box Plot</td>
+<td>Mendeteksi outlier.</td>
+</tr>
+
+<tr>
+<td>Bar Chart</td>
+<td>Membandingkan kategori.</td>
+</tr>
+
+<tr>
+<td>Line Chart</td>
+<td>Data runtun waktu.</td>
+</tr>
+
+</table>
+
+<p>
+
+Visualisasi sering kali mampu menunjukkan pola yang sulit ditemukan
+melalui angka saja.
+
+</p>
+
+<hr>
+
+<h3>5. Pemilihan Model Statistik</h3>
+
+<p>
+
+Setelah data dipahami, analis memilih metode statistik yang sesuai.
+
+</p>
+
+<table>
+
+<tr>
+<th>Tujuan</th>
+<th>Metode</th>
+</tr>
+
+<tr>
+<td>Membandingkan rata-rata</td>
+<td>Uji t / ANOVA.</td>
+</tr>
+
+<tr>
+<td>Menguji hubungan</td>
+<td>Korelasi.</td>
+</tr>
+
+<tr>
+<td>Memprediksi nilai</td>
+<td>Regresi.</td>
+</tr>
+
+<tr>
+<td>Klasifikasi</td>
+<td>Model Machine Learning.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>6. Evaluasi Model</h3>
+
+<p>
+
+Model yang baik bukanlah model yang paling rumit, melainkan model yang
+mampu memberikan prediksi akurat pada data baru.
+
+Beberapa ukuran evaluasi yang sering digunakan antara lain:
+
+</p>
+
+<ul>
+
+<li>R².</li>
+<li>Adjusted R².</li>
+<li>RMSE.</li>
+<li>MAE.</li>
+<li>Residual Analysis.</li>
+
+</ul>
+
+<hr>
+
+<h3>7. Interpretasi Hasil</h3>
+
+<p>
+
+Tahap terakhir adalah mengubah hasil statistik menjadi kesimpulan yang
+mudah dipahami.
+
+Sebagai contoh, daripada hanya mengatakan:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+r = 0,83
+
+</p>
+
+</div>
+
+<p>
+
+lebih baik dijelaskan bahwa:
+
+</p>
+
+<blockquote>
+
+"Terdapat hubungan positif yang sangat kuat antara jam belajar dan nilai
+ujian."
+
+</blockquote>
+
+<p>
+
+Interpretasi yang baik harus sesuai dengan konteks penelitian dan tidak
+melebih-lebihkan hasil analisis.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Banyak peserta fokus mempelajari rumus, tetapi lupa memahami alur
+analisis data secara keseluruhan. Dalam kompetisi maupun dunia kerja,
+kemampuan memilih metode yang tepat, membersihkan data, membaca grafik,
+dan menjelaskan hasil analisis sering kali lebih bernilai daripada
+sekadar mampu menghitung secara manual. Statistika bukan hanya tentang
+angka, melainkan tentang bagaimana data digunakan untuk menghasilkan
+keputusan yang benar.
+
+</p>
+
+</div>
+
+</section><section id="outlier">
+
+<h2>7. Outlier (Pencilan)</h2>
+
+<p>
+
+Dalam praktik analisis data, tidak semua observasi memiliki pola yang
+seragam. Kadang-kadang terdapat satu atau beberapa data yang nilainya
+sangat jauh dibandingkan sebagian besar data lainnya.
+
+Data seperti ini disebut <strong>outlier</strong> atau
+<strong>pencilan</strong>.
+
+</p>
+
+<p>
+
+Outlier bukan berarti selalu merupakan kesalahan. Sebuah outlier bisa
+muncul karena kesalahan pencatatan, kesalahan alat ukur, atau memang
+karena objek tersebut benar-benar memiliki karakteristik yang sangat
+berbeda.
+
+</p>
+
+<hr>
+
+<h3>Contoh Outlier</h3>
+
+<p>
+
+Perhatikan data nilai berikut.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+70, 72, 71, 73, 74, 72, 71, 75, 73, <strong>150</strong>
+
+</p>
+
+</div>
+
+<p>
+
+Hampir seluruh nilai berada pada rentang 70–75, tetapi terdapat satu
+nilai 150 yang sangat jauh dari kelompok lainnya.
+
+Nilai 150 merupakan kandidat kuat sebagai outlier.
+
+</p>
+
+<div class="visual">
+
+<h3>Ilustrasi</h3>
+
+<pre>
+
+70 71 72 73 74 75                     150
+
+● ● ● ● ● ●                          ★
+
+Mayoritas Data                  Outlier
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Penyebab Outlier</h3>
+
+<ul>
+
+<li>Kesalahan memasukkan data (<em>data entry error</em>).</li>
+
+<li>Kesalahan alat ukur.</li>
+
+<li>Kesalahan saat pengambilan sampel.</li>
+
+<li>Fenomena langka tetapi nyata.</li>
+
+<li>Variasi alami populasi.</li>
+
+</ul>
+
+<div class="contoh">
+
+<h3>Contoh</h3>
+
+<p>
+
+Seorang petugas salah mengetik berat badan:
+
+</p>
+
+<table>
+
+<tr>
+<th>Seharusnya</th>
+<th>Tertulis</th>
+</tr>
+
+<tr>
+<td>58 kg</td>
+<td>580 kg</td>
+</tr>
+
+</table>
+
+<p>
+
+Angka 580 kg merupakan outlier akibat kesalahan pencatatan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Dampak Outlier</h3>
+
+<p>
+
+Outlier dapat memberikan pengaruh yang sangat besar terhadap hasil
+analisis statistik.
+
+</p>
+
+<table>
+
+<tr>
+<th>Statistik</th>
+<th>Pengaruh Outlier</th>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>Sangat sensitif.</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>Relatif tahan.</td>
+</tr>
+
+<tr>
+<td>Modus</td>
+<td>Hampir tidak terpengaruh.</td>
+</tr>
+
+<tr>
+<td>Standar Deviasi</td>
+<td>Meningkat tajam.</td>
+</tr>
+
+<tr>
+<td>Regresi</td>
+<td>Dapat mengubah kemiringan garis.</td>
+</tr>
+
+<tr>
+<td>Korelasi Pearson</td>
+<td>Dapat berubah drastis.</td>
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Insight</strong>
+
+<p>
+
+Inilah salah satu alasan mengapa median sering dipilih sebagai ukuran
+pemusatan pada data ekonomi, pendapatan, atau harga rumah yang umumnya
+mengandung banyak outlier.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Deteksi Outlier Menggunakan IQR</h3>
+
+<p>
+
+Metode paling populer dalam statistika deskriptif adalah menggunakan
+<strong>Interquartile Range (IQR)</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+IQR = Q3 − Q1
+
+</p>
+
+</div>
+
+<p>
+
+Selanjutnya dihitung batas bawah dan batas atas.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Lower Fence = Q1 − 1,5(IQR)
+
+</p>
+
+<p>
+
+Upper Fence = Q3 + 1,5(IQR)
+
+</p>
+
+</div>
+
+<p>
+
+Jika suatu data berada di luar kedua batas tersebut, maka data tersebut
+dikategorikan sebagai outlier.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+|----------|======|----------|
+
+   Q1      Median      Q3
+
+<----- IQR ----->
+
+          ★
+
+      Outlier
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Deteksi Menggunakan Z-Score</h3>
+
+<p>
+
+Metode lain yang sering digunakan adalah
+<strong>Standard Score (Z-Score)</strong>.
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Z =
+
+(X − μ)
+
+──────
+
+σ
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>|Z|</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>&lt; 2</td>
+<td>Normal.</td>
+</tr>
+
+<tr>
+<td>2 – 3</td>
+<td>Perlu diperhatikan.</td>
+</tr>
+
+<tr>
+<td>&gt; 3</td>
+<td>Sering dianggap outlier.</td>
+</tr>
+
+</table>
+
+<p>
+
+Pada distribusi normal, data dengan |Z| lebih besar dari 3 sangat jarang
+muncul sehingga layak diperiksa lebih lanjut.
+
+</p>
+
+<hr>
+
+<h3>Haruskah Outlier Dihapus?</h3>
+
+<p>
+
+Jawabannya adalah <strong>tidak selalu</strong>.
+
+</p>
+
+<table>
+
+<tr>
+<th>Kondisi</th>
+<th>Tindakan</th>
+</tr>
+
+<tr>
+<td>Kesalahan input.</td>
+<td>Perbaiki atau hapus.</td>
+</tr>
+
+<tr>
+<td>Kesalahan alat ukur.</td>
+<td>Evaluasi dan koreksi.</td>
+</tr>
+
+<tr>
+<td>Fenomena nyata.</td>
+<td>Jangan dihapus tanpa alasan ilmiah.</td>
+</tr>
+
+<tr>
+<td>Objek penelitian khusus.</td>
+<td>Dapat menjadi informasi penting.</td>
+</tr>
+
+</table>
+
+<div class="contoh">
+
+<h3>Contoh Nyata</h3>
+
+<p>
+
+Jika penelitian membahas tinggi badan siswa SMA, seseorang dengan tinggi
+215 cm mungkin terlihat sebagai outlier. Namun apabila data tersebut
+benar-benar valid, maka menghapusnya justru dapat menghilangkan informasi
+yang berharga mengenai variasi populasi.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Outlier dalam Machine Learning</h3>
+
+<p>
+
+Dalam machine learning, outlier sering menyebabkan model menjadi kurang
+stabil karena beberapa algoritma, seperti Linear Regression dan
+K-Means, sangat sensitif terhadap nilai ekstrem.
+
+Sebaliknya, algoritma seperti Decision Tree atau Random Forest relatif
+lebih tahan terhadap keberadaan outlier.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Kesalahan yang paling sering dilakukan adalah menghapus semua outlier
+secara otomatis. Seorang analis data yang baik harus terlebih dahulu
+menyelidiki penyebab munculnya outlier. Pencilan bisa menjadi kesalahan,
+tetapi juga bisa menjadi penemuan ilmiah yang sangat penting. Oleh
+karena itu, keputusan untuk mempertahankan atau menghapus outlier harus
+berdasarkan alasan statistik dan konteks penelitian, bukan sekadar karena
+nilainya berbeda dari data lainnya.
+
+</p>
+
+</div>
+
+</section><section id="z-score">
+
+<h2>8. Standard Score (Z-Score)</h2>
+
+<p>
+
+Dalam statistika, membandingkan dua nilai mentah (<em>raw data</em>)
+sering kali tidak adil karena masing-masing dapat berasal dari skala
+atau distribusi yang berbeda.
+
+Sebagai contoh:
+
+</p>
+
+<ul>
+
+<li>Nilai Matematika: 85 dari skala 100.</li>
+<li>Nilai TOEFL: 560 dari skala 677.</li>
+<li>Tinggi badan: 175 cm.</li>
+
+</ul>
+
+<p>
+
+Ketiga angka tersebut memiliki satuan dan rentang yang berbeda sehingga
+tidak dapat dibandingkan secara langsung.
+
+Untuk mengatasinya digunakan
+<strong>Standard Score (Z-Score)</strong>, yaitu proses mengubah data
+ke dalam satuan standar yang tidak memiliki satuan (unitless).
+
+</p>
+
+<hr>
+
+<h3>Konsep Dasar</h3>
+
+<p>
+
+Z-Score menyatakan seberapa jauh suatu data berada dari rata-rata
+populasi atau sampel jika diukur menggunakan satuan
+<strong>standar deviasi</strong>.
+
+Dengan kata lain, Z-Score menjawab pertanyaan:
+
+</p>
+
+<blockquote>
+
+"Berapa standar deviasi jarak data ini dari rata-ratanya?"
+
+</blockquote>
+
+<hr>
+
+<h3>Rumus Z-Score</h3>
+
+<div class="rumus">
+
+<p style="font-size:22px;text-align:center;">
+
+Z = (X − μ) / σ
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Simbol</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>X</td>
+<td>Nilai yang diamati.</td>
+</tr>
+
+<tr>
+<td>μ</td>
+<td>Rata-rata populasi.</td>
+</tr>
+
+<tr>
+<td>σ</td>
+<td>Standar deviasi populasi.</td>
+</tr>
+
+<tr>
+<td>Z</td>
+<td>Standard Score.</td>
+</tr>
+
+</table>
+
+<p>
+
+Jika menggunakan data sampel, simbol μ dan σ biasanya diganti dengan
+x̄ dan s.
+
+</p>
+
+<hr>
+
+<h3>Interpretasi Nilai Z</h3>
+
+<table>
+
+<tr>
+<th>Nilai Z</th>
+<th>Makna</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Tepat berada pada rata-rata.</td>
+</tr>
+
+<tr>
+<td>+1</td>
+<td>Satu standar deviasi di atas rata-rata.</td>
+</tr>
+
+<tr>
+<td>+2</td>
+<td>Dua standar deviasi di atas rata-rata.</td>
+</tr>
+
+<tr>
+<td>-1</td>
+<td>Satu standar deviasi di bawah rata-rata.</td>
+</tr>
+
+<tr>
+<td>-2</td>
+<td>Dua standar deviasi di bawah rata-rata.</td>
+</tr>
+
+</table>
+
+<div class="visual">
+
+<h3>Posisi Z-Score pada Distribusi Normal</h3>
+
+<pre>
+
+                μ
+                │
+      __________│__________
+    /            │          \
+---|----|----|----|----|----|----
+
+   -3   -2   -1   0   +1  +2  +3
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Contoh Perhitungan</h3>
+
+<p>
+
+Misalkan nilai ujian seorang siswa adalah <strong>82</strong>.
+
+Diketahui:
+
+</p>
+
+<ul>
+
+<li>Rata-rata kelas = 70</li>
+<li>Standar deviasi = 6</li>
+
+</ul>
+
+<div class="rumus">
+
+<p>
+
+Z = (82 − 70) / 6
+
+</p>
+
+<p>
+
+Z = 2
+
+</p>
+
+</div>
+
+<p>
+
+Artinya nilai siswa tersebut berada
+<strong>2 standar deviasi di atas rata-rata kelas</strong>, yang
+menunjukkan performa jauh lebih baik dibandingkan sebagian besar siswa.
+
+</p>
+
+<hr>
+
+<h3>Mengapa Z-Score Penting?</h3>
+
+<p>
+
+Standardisasi data memiliki banyak manfaat dalam statistika maupun
+machine learning.
+
+</p>
+
+<ul>
+
+<li>Membandingkan data dari skala yang berbeda.</li>
+<li>Mendeteksi outlier.</li>
+<li>Menentukan posisi relatif suatu observasi.</li>
+<li>Menjadi dasar berbagai algoritma machine learning.</li>
+<li>Mempermudah interpretasi distribusi normal.</li>
+
+</ul>
+
+<hr>
+
+<h3>Z-Score dan Distribusi Normal Standar</h3>
+
+<p>
+
+Jika seluruh data diubah menjadi Z-Score, maka distribusinya akan
+berubah menjadi distribusi normal standar dengan karakteristik:
+
+</p>
+
+<table>
+
+<tr>
+<th>Parameter</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Mean</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Standar Deviasi</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<div class="catatan">
+
+<strong>Akibat Standardisasi</strong>
+
+<p>
+
+Nilai asli berubah menjadi nilai relatif terhadap rata-rata, tetapi
+hubungan antar data tetap dipertahankan. Oleh karena itu, standardisasi
+tidak mengubah pola distribusi secara keseluruhan.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Aturan Empiris (Empirical Rule)</h3>
+
+<p>
+
+Pada distribusi normal berlaku aturan 68–95–99,7.
+
+</p>
+
+<table>
+
+<tr>
+<th>Rentang Z</th>
+<th>Persentase Data</th>
+</tr>
+
+<tr>
+<td>-1 ≤ Z ≤ +1</td>
+<td>≈ 68%</td>
+</tr>
+
+<tr>
+<td>-2 ≤ Z ≤ +2</td>
+<td>≈ 95%</td>
+</tr>
+
+<tr>
+<td>-3 ≤ Z ≤ +3</td>
+<td>≈ 99,7%</td>
+</tr>
+
+</table>
+
+<div class="visual">
+
+<pre>
+
+          68%
+
+     |-----------|
+
+      95%
+
+ |-------------------|
+
+        99,7%
+
+|-------------------------|
+
+-3  -2  -1   0   1   2   3
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Z-Score untuk Deteksi Outlier</h3>
+
+<p>
+
+Dalam praktik, data dengan nilai Z yang sangat besar atau sangat kecil
+perlu diperiksa lebih lanjut.
+
+Pedoman yang umum digunakan adalah:
+
+</p>
+
+<table>
+
+<tr>
+<th>|Z|</th>
+<th>Interpretasi</th>
+</tr>
+
+<tr>
+<td>&lt; 2</td>
+<td>Masih wajar.</td>
+</tr>
+
+<tr>
+<td>2 – 3</td>
+<td>Perlu perhatian.</td>
+</tr>
+
+<tr>
+<td>&gt; 3</td>
+<td>Kandidat outlier.</td>
+</tr>
+
+</table>
+
+<p>
+
+Perlu diingat bahwa batas ini hanyalah pedoman umum. Keputusan akhir
+tetap harus mempertimbangkan konteks penelitian.
+
+</p>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Z-Score merupakan salah satu konsep yang paling sering muncul dalam
+statistika lanjut. Selain digunakan untuk standardisasi dan deteksi
+outlier, konsep ini menjadi dasar dalam pengujian hipotesis (Uji Z),
+perhitungan probabilitas pada distribusi normal, analisis kualitas
+produk, hingga berbagai algoritma pembelajaran mesin. Memahami makna
+"jarak terhadap rata-rata dalam satuan standar deviasi" jauh lebih
+penting daripada sekadar menghafalkan rumusnya.
+
+</p>
+
+</div>
+
+</section><section id="studi-kasus-terpadu">
+
+<h2>9. Studi Kasus Terpadu Analisis Data</h2>
+
+<p>
+
+Pada bagian ini kita akan menggabungkan hampir seluruh konsep yang telah
+dipelajari sejak Bab 1 hingga Bab 10 ke dalam satu studi kasus.
+
+Tujuannya bukan sekadar melakukan perhitungan, tetapi memahami
+<strong>alur berpikir seorang analis data profesional</strong> ketika
+menghadapi sebuah dataset.
+
+</p>
+
+<hr>
+
+<h3>Kasus</h3>
+
+<p>
+
+Seorang guru ingin mengetahui apakah jumlah jam belajar siswa dapat
+digunakan untuk memprediksi nilai ujian matematika.
+
+Data yang diperoleh dari 10 siswa adalah sebagai berikut.
+
+</p>
+
+<table>
+
+<tr>
+<th>Siswa</th>
+<th>Jam Belajar (X)</th>
+<th>Nilai Ujian (Y)</th>
+</tr>
+
+<tr><td>A</td><td>1</td><td>58</td></tr>
+<tr><td>B</td><td>2</td><td>64</td></tr>
+<tr><td>C</td><td>3</td><td>68</td></tr>
+<tr><td>D</td><td>4</td><td>74</td></tr>
+<tr><td>E</td><td>5</td><td>77</td></tr>
+<tr><td>F</td><td>6</td><td>81</td></tr>
+<tr><td>G</td><td>7</td><td>86</td></tr>
+<tr><td>H</td><td>8</td><td>91</td></tr>
+<tr><td>I</td><td>9</td><td>94</td></tr>
+<tr><td>J</td><td>10</td><td>97</td></tr>
+
+</table>
+
+<hr>
+
+<h3>Langkah 1 — Eksplorasi Data (EDA)</h3>
+
+<p>
+
+Langkah pertama bukan menghitung rumus, melainkan memahami bentuk data.
+
+Visualisasi menggunakan scatter plot menunjukkan pola berikut.
+
+</p>
+
+<div class="visual">
+
+<pre>
+
+Nilai
+
+100 |                            ●
+ 95 |                         ●
+ 90 |                      ●
+ 85 |                   ●
+ 80 |                ●
+ 75 |             ●
+ 70 |          ●
+ 65 |       ●
+ 60 |    ●
+ 55 | ●
+    +------------------------------------→ Jam Belajar
+
+</pre>
+
+</div>
+
+<p>
+
+Dari grafik terlihat bahwa semakin lama siswa belajar, semakin tinggi
+nilai ujian yang diperoleh. Hubungan tersebut tampak hampir linear.
+
+</p>
+
+<hr>
+
+<h3>Langkah 2 — Analisis Korelasi</h3>
+
+<p>
+
+Karena kedua variabel berupa data numerik dan hubungan terlihat linear,
+maka digunakan <strong>Koefisien Korelasi Pearson</strong>.
+
+Misalkan hasil perhitungan diperoleh:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+r = 0,98
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasi:
+
+</p>
+
+<ul>
+
+<li>Hubungan bersifat positif.</li>
+<li>Hubungan sangat kuat.</li>
+<li>Semakin lama belajar, nilai cenderung semakin tinggi.</li>
+
+</ul>
+
+<div class="catatan">
+
+<strong>Perlu Diingat</strong>
+
+<p>
+
+Korelasi sebesar 0,98 menunjukkan hubungan yang sangat kuat, tetapi
+<strong>tidak secara otomatis membuktikan bahwa jam belajar adalah
+satu-satunya penyebab meningkatnya nilai</strong>. Faktor lain seperti
+motivasi, kualitas pengajaran, atau kemampuan dasar juga dapat
+berpengaruh.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Langkah 3 — Membentuk Model Regresi</h3>
+
+<p>
+
+Selanjutnya dibuat model regresi linear sederhana.
+
+Misalkan diperoleh persamaan:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Ŷ = 54 + 4,3X
+
+</p>
+
+</div>
+
+<p>
+
+Interpretasi model:
+
+</p>
+
+<ul>
+
+<li>Intercept (54) adalah nilai prediksi ketika jam belajar = 0.</li>
+<li>Koefisien 4,3 berarti setiap tambahan 1 jam belajar diperkirakan meningkatkan nilai sekitar 4,3 poin.</li>
+</ul>
+
+<hr>
+
+<h3>Langkah 4 — Melakukan Prediksi</h3>
+
+<p>
+
+Seorang siswa belajar selama 8 jam.
+
+Prediksi nilainya adalah:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Ŷ = 54 + 4,3(8)
+
+</p>
+
+<p>
+
+Ŷ = 88,4
+
+</p>
+
+</div>
+
+<p>
+
+Artinya model memperkirakan nilai siswa tersebut sekitar
+<strong>88,4</strong>.
+
+</p>
+
+<hr>
+
+<h3>Langkah 5 — Analisis Residual</h3>
+
+<p>
+
+Misalkan nilai aktual siswa ternyata adalah 91.
+
+Residual dihitung sebagai:
+
+</p>
+
+<div class="rumus">
+
+<p>
+
+Residual = 91 − 88,4
+
+</p>
+
+<p>
+
+Residual = 2,6
+
+</p>
+
+</div>
+
+<p>
+
+Residual positif menunjukkan bahwa nilai sebenarnya sedikit lebih tinggi
+daripada prediksi model.
+
+Residual yang kecil menandakan model memiliki performa yang baik.
+
+</p>
+
+<hr>
+
+<h3>Langkah 6 — Pemeriksaan Outlier</h3>
+
+<p>
+
+Sebelum mengambil kesimpulan, data diperiksa apakah terdapat outlier.
+
+Metode yang dapat digunakan antara lain:
+
+</p>
+
+<ul>
+
+<li>Box Plot.</li>
+<li>IQR.</li>
+<li>Z-Score.</li>
+
+</ul>
+
+<p>
+
+Misalkan seluruh observasi memiliki |Z| &lt; 2, sehingga tidak terdapat
+indikasi outlier yang signifikan.
+
+</p>
+
+<hr>
+
+<h3>Langkah 7 — Menarik Kesimpulan</h3>
+
+<div class="catatan">
+
+<strong>Kesimpulan Akhir</strong>
+
+<ul>
+
+<li>Hubungan antara jam belajar dan nilai ujian bersifat positif serta sangat kuat.</li>
+<li>Model regresi mampu digunakan untuk melakukan prediksi nilai.</li>
+<li>Tidak ditemukan outlier yang mengganggu analisis.</li>
+<li>Model layak digunakan selama asumsi regresi tetap terpenuhi.</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Workflow Lengkap Analisis</h3>
+
+<div class="visual">
+
+<pre>
+
+DATA MENTAH
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Exploratory Data Analysis (EDA)
+      │
+      ▼
+Scatter Plot
+      │
+      ▼
+Korelasi
+      │
+      ▼
+Regresi
+      │
+      ▼
+Residual Analysis
+      │
+      ▼
+Deteksi Outlier
+      │
+      ▼
+Interpretasi
+      │
+      ▼
+Kesimpulan
+
+</pre>
+
+</div>
+
+<div class="olimpiade">
+
+<h3>Catatan Pelatih Olimpiade</h3>
+
+<p>
+
+Perhatikan bahwa seorang ahli statistika tidak langsung menghitung rumus
+tertentu. Analisis selalu dilakukan secara sistematis: memahami data,
+memvisualisasikan pola, memilih metode yang sesuai, memeriksa asumsi,
+mengevaluasi hasil, lalu menyusun interpretasi yang dapat
+dipertanggungjawabkan. Inilah pola pikir yang membedakan pengguna rumus
+dengan seorang analis data profesional.
+
+</p>
+
+</div>
+
+</section><section id="ringkasan-handbook">
+
+<h2>10. Ringkasan Besar Handbook Statistika</h2>
+
+<p>
+
+Selamat! Sampai pada bagian ini, kamu telah mempelajari seluruh konsep
+dasar statistika mulai dari pengenalan data hingga analisis hubungan
+antar variabel. Bab ini merupakan penutup sekaligus rangkuman dari
+seluruh handbook.
+
+Statistika bukan sekadar kumpulan rumus, tetapi sebuah cara berpikir
+ilmiah untuk mengubah data menjadi informasi yang dapat digunakan dalam
+pengambilan keputusan.
+
+</p>
+
+<hr>
+
+<h3>Peta Konsep Seluruh Handbook</h3>
+
+<div class="visual">
+
+<pre>
+
+                         STATISTIKA
+
+                              │
+
+      ┌───────────────────────┼────────────────────────┐
+
+      │                       │                        │
+
+Statistika Deskriptif   Peluang & Distribusi   Inferensi Statistika
+
+      │                       │                        │
+
+      ▼                       ▼                        ▼
+
+Pengantar Data         Distribusi Normal      Estimasi Parameter
+
+Penyajian Data         Distribusi Binomial    Interval Kepercayaan
+
+Mean                   Distribusi Poisson     Pengujian Hipotesis
+
+Median                 Variabel Acak          Uji Z
+
+Modus                  Nilai Harapan          Uji t
+
+Kuartil                Variansi               Chi-Square
+
+Standar Deviasi        Central Limit          ANOVA
+
+      │
+
+      ▼
+
+Hubungan Antar Variabel
+
+      │
+
+      ▼
+
+Korelasi
+
+Pearson
+
+Spearman
+
+Regresi Linear
+
+Regresi Berganda
+
+Outlier
+
+Z-Score
+
+Analisis Data
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Ringkasan Bab 1–10</h3>
+
+<table>
+
+<tr>
+<th>Bab</th>
+<th>Fokus Pembelajaran</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Memahami data, populasi, sampel, variabel, dan skala pengukuran.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Menyajikan data dalam bentuk tabel dan berbagai diagram.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Mengukur pusat data menggunakan mean, median, modus, kuartil, desil, dan persentil.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Mengukur penyebaran data melalui range, IQR, variansi, dan standar deviasi.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Memahami peluang, ruang sampel, kejadian, peluang bersyarat, dan Teorema Bayes.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Mempelajari variabel acak dan berbagai distribusi probabilitas.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Memahami distribusi sampling dan Central Limit Theorem.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Mengestimasi parameter populasi menggunakan interval kepercayaan.</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Melakukan pengujian hipotesis dengan berbagai metode statistik.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Menganalisis hubungan antar variabel melalui korelasi, regresi, dan analisis data.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Alur Berpikir Seorang Statistisi</h3>
+
+<div class="visual">
+
+<pre>
+
+Pertanyaan Penelitian
+
+        │
+
+        ▼
+
+Pengumpulan Data
+
+        │
+
+        ▼
+
+Pembersihan Data
+
+        │
+
+        ▼
+
+Eksplorasi Data (EDA)
+
+        │
+
+        ▼
+
+Visualisasi
+
+        │
+
+        ▼
+
+Pemilihan Metode Statistik
+
+        │
+
+        ▼
+
+Analisis
+
+        │
+
+        ▼
+
+Interpretasi
+
+        │
+
+        ▼
+
+Kesimpulan
+
+        │
+
+        ▼
+
+Pengambilan Keputusan
+
+</pre>
+
+</div>
+
+<hr>
+
+<h3>Kesalahan yang Harus Dihindari</h3>
+
+<ul>
+
+<li>Menggunakan rumus tanpa memahami asumsi.</li>
+<li>Menyimpulkan sebab-akibat hanya dari korelasi.</li>
+<li>Mengabaikan outlier tanpa pemeriksaan.</li>
+<li>Tidak melakukan visualisasi sebelum analisis.</li>
+<li>Menggunakan sampel yang tidak representatif.</li>
+<li>Menafsirkan p-value secara keliru.</li>
+<li>Menganggap model dengan R² terbesar selalu yang terbaik.</li>
+
+</ul>
+
+<hr>
+
+<h3>Pesan Terakhir dari Pelatih Olimpiade</h3>
+
+<div class="olimpiade">
+
+<p>
+
+Jika tujuanmu hanya lulus ujian, menghafal rumus mungkin sudah cukup.
+
+Namun jika tujuanmu adalah menjadi peneliti, data scientist, analis,
+atau peserta olimpiade, maka yang harus dikuasai adalah
+<strong>cara berpikir statistik</strong>.
+
+Setiap angka memiliki cerita.
+
+Setiap grafik memiliki pola.
+
+Setiap model memiliki asumsi.
+
+Dan setiap kesimpulan harus didukung oleh bukti yang kuat.
+
+Jangan hanya bertanya:
+
+"Apa rumusnya?"
+
+Tetapi biasakan bertanya:
+
+"Mengapa metode ini digunakan?"
+
+"Apa asumsi yang harus dipenuhi?"
+
+"Apakah hasil ini masuk akal?"
+
+Pertanyaan-pertanyaan tersebut adalah ciri seorang ilmuwan dan analis
+data yang baik.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Penutup</h3>
+
+<p>
+
+Dengan selesainya Bab 10, handbook ini telah mencakup fondasi statistika
+deskriptif, peluang, distribusi probabilitas, inferensi statistika,
+hingga analisis hubungan antar variabel. Materi ini menjadi bekal yang
+kuat untuk melanjutkan ke bidang yang lebih lanjut seperti machine
+learning, data mining, econometrics, artificial intelligence, maupun
+riset ilmiah berbasis data.
+
+Teruslah berlatih menggunakan data nyata, karena pemahaman statistika
+akan semakin kuat ketika konsep-konsep yang telah dipelajari diterapkan
+pada kasus di dunia nyata.
+
+</p>
+
+<hr>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:30px;">
+
+<a href="statiska9.html"
+style="background:#16a34a;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+⬅ Bab Sebelumnya
+
+</a>
+
+<a href="index.html"
+style="background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:bold;">
+
+🏠 Kembali ke Halaman Utama
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
