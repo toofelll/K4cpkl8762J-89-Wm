@@ -1,1 +1,2460 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Trigonometri Bab 7</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Segoe UI,Tahoma,sans-serif;
+}
+
+body{
+background:#eef4ff;
+color:#222;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#1a73e8,#0d47a1);
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:45px;
+}
+
+header h2{
+margin-top:15px;
+font-weight:normal;
+}
+
+header p{
+margin-top:25px;
+font-size:18px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+nav{
+background:white;
+padding:25px;
+margin:30px auto;
+max-width:1000px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+nav h2{
+margin-bottom:15px;
+color:#0d47a1;
+}
+
+nav ul{
+padding-left:25px;
+}
+
+nav li{
+margin:8px 0;
+}
+
+nav a{
+text-decoration:none;
+color:#1565c0;
+font-weight:bold;
+}
+
+main{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+section{
+background:white;
+padding:35px;
+margin-bottom:35px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+h2{
+color:#0d47a1;
+margin-bottom:20px;
+}
+
+h3{
+margin-top:25px;
+color:#1565c0;
+}
+
+.box{
+background:#e3f2fd;
+padding:18px;
+border-left:6px solid #1976d2;
+margin:20px 0;
+border-radius:10px;
+}
+
+.rumus{
+background:#263238;
+color:white;
+padding:15px;
+border-radius:10px;
+font-size:20px;
+overflow:auto;
+margin:20px 0;
+}
+
+footer{
+text-align:center;
+padding:40px;
+}
+
+.next{
+display:inline-block;
+padding:15px 35px;
+background:#1565c0;
+color:white;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+transition:.3s;
+}
+
+.next:hover{
+background:#0d47a1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>HANDBOOK TRIGONOMETRI</h1>
+
+<h2>Bab 7</h2>
+
+<h1>Persamaan & Pertidaksamaan Trigonometri</h1>
+
+<p>
+
+Disusun dengan pendekatan pelatihan Olimpiade Matematika.
+Materi pada bab ini tidak hanya berisi rumus,
+tetapi juga menjelaskan alasan di balik setiap metode penyelesaian
+agar pembaca benar-benar memahami konsep.
+
+</p>
+
+</header>
+
+<nav>
+
+<h2>Daftar Isi</h2>
+
+<ul>
+
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+
+<li><a href="#persamaan">7.1 Persamaan Trigonometri</a></li>
+
+<li><a href="#pertidaksamaan">7.2 Pertidaksamaan Trigonometri</a></li>
+
+<li><a href="#homogen">7.3 Persamaan Homogen</a></li>
+
+<li><a href="#substitusi">7.4 Substitusi Trigonometri</a></li>
+
+<li><a href="#weierstrass">7.5 Substitusi Weierstrass</a></li>
+
+<li><a href="#akar">7.6 Akar Persamaan Trigonometri</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section id="pendahuluan">
+
+<h2>Pendahuluan</h2>
+
+<p>
+
+Pada aljabar biasa,
+persamaan seperti
+
+</p>
+
+<div class="rumus">
+
+x²−5x+6=0
+
+</div>
+
+<p>
+
+hanya memiliki beberapa solusi.
+
+Namun berbeda dengan trigonometri.
+
+Dalam trigonometri,
+nilai sinus,
+cosinus,
+dan tangen memiliki sifat periodik.
+
+Artinya,
+nilainya akan terus berulang tanpa batas.
+
+Inilah alasan mengapa satu persamaan trigonometri
+dapat mempunyai tak hingga banyak solusi.
+
+</p>
+
+<div class="box">
+
+<strong>Ide Penting Olimpiade</strong>
+
+<br><br>
+
+Sebelum mulai menghitung,
+selalu tanyakan kepada diri sendiri:
+
+<ul>
+
+<li>Fungsi apa yang digunakan?</li>
+
+<li>Berapa periodenya?</li>
+
+<li>Apakah diminta solusi umum atau interval tertentu?</li>
+
+<li>Bisakah identitas trigonometri menyederhanakan bentuknya?</li>
+
+</ul>
+
+</div>
+
+<h3>Mengapa Persamaan Trigonometri Sulit?</h3>
+
+<p>
+
+Kesulitan utama bukan berasal dari rumus,
+melainkan dari banyaknya identitas yang dapat digunakan.
+
+Sering kali terdapat lebih dari satu cara penyelesaian.
+
+Peserta Olimpiade biasanya memilih metode yang menghasilkan bentuk paling sederhana.
+
+</p>
+
+<div class="rumus">
+
+sin(x)=sin(y)
+
+≠
+
+x=y
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+sin30°
+
+=
+
+sin150°
+
+</div>
+
+<p>
+
+Maka kita harus memahami sifat simetri pada Lingkaran Satuan,
+bukan sekadar menghafal rumus.
+
+</p>
+
+</section><section id="persamaan">
+
+<h2>7.1 Persamaan Trigonometri</h2>
+
+<p>
+
+Persamaan trigonometri adalah persamaan yang memuat satu atau lebih
+fungsi trigonometri sebagai variabel.
+
+Tujuan utama kita adalah mencari semua nilai sudut yang memenuhi
+persamaan tersebut.
+
+Berbeda dengan aljabar, jawaban pada persamaan trigonometri hampir
+selalu berbentuk <b>solusi umum</b> karena fungsi trigonometri bersifat
+periodik.
+
+</p>
+
+<div class="box">
+
+<b>Strategi Olimpiade</b>
+
+<ol>
+
+<li>Sederhanakan persamaan menggunakan identitas trigonometri.</li>
+
+<li>Ubah menjadi bentuk dasar seperti
+sin x=a,
+cos x=a,
+atau tan x=a.</li>
+
+<li>Tentukan sudut acuannya.</li>
+
+<li>Tentukan kuadran yang memenuhi.</li>
+
+<li>Tuliskan solusi umum menggunakan periode fungsi.</li>
+
+</ol>
+
+</div>
+
+<h3>1. Persamaan Dasar Sinus</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+sin x = a
+
+</div>
+
+<p>
+
+maka syaratnya adalah
+
+</p>
+
+<div class="rumus">
+
+-1 ≤ a ≤ 1
+
+</div>
+
+<p>
+
+Apabila nilai a berada di luar interval tersebut,
+maka persamaan tidak memiliki solusi karena nilai sinus
+selalu berada pada interval −1 sampai 1.
+
+</p>
+
+<h3>Solusi Umum Sinus</h3>
+
+<div class="rumus">
+
+x = α + 360°k
+
+</div>
+
+<p align="center">
+
+atau
+
+</p>
+
+<div class="rumus">
+
+x = 180° − α + 360°k
+
+</div>
+
+<p>
+
+dengan
+
+</p>
+
+<div class="rumus">
+
+k ∈ Z
+
+</div>
+
+<h3>Contoh 1</h3>
+
+<div class="rumus">
+
+sin x = 1/2
+
+</div>
+
+<p>
+
+Sudut acuan:
+
+</p>
+
+<div class="rumus">
+
+30°
+
+</div>
+
+<p>
+
+Karena sinus bernilai positif,
+maka berada pada Kuadran I dan II.
+
+</p>
+
+<div class="rumus">
+
+x=30°+360°k
+
+</div>
+
+<div class="rumus">
+
+x=150°+360°k
+
+</div>
+
+<div class="box">
+
+<b>Catatan Olimpiade</b>
+
+Jangan pernah hanya menulis
+
+30°
+
+karena itu hanya satu solusi.
+
+Yang diminta biasanya adalah seluruh solusi.
+
+</div>
+
+<h3>2. Persamaan Dasar Cosinus</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+cos x=a
+
+</div>
+
+<p>
+
+maka solusi umumnya
+
+</p>
+
+<div class="rumus">
+
+x=±α+360°k
+
+</div>
+
+<p>
+
+dengan
+
+</p>
+
+<div class="rumus">
+
+α=arccos(a)
+
+</div>
+
+<h3>Contoh 2</h3>
+
+<div class="rumus">
+
+cos x=-√3/2
+
+</div>
+
+<p>
+
+Sudut acuan
+
+</p>
+
+<div class="rumus">
+
+30°
+
+</div>
+
+<p>
+
+Cosinus negatif pada kuadran II dan III.
+
+</p>
+
+<div class="rumus">
+
+x=150°+360°k
+
+</div>
+
+<div class="rumus">
+
+x=210°+360°k
+
+</div>
+
+<h3>3. Persamaan Dasar Tangen</h3>
+
+<div class="rumus">
+
+tan x=a
+
+</div>
+
+<p>
+
+Karena periode tangen adalah
+
+180°
+
+maka solusi umumnya lebih sederhana.
+
+</p>
+
+<div class="rumus">
+
+x=α+180°k
+
+</div>
+
+<h3>Contoh</h3>
+
+<div class="rumus">
+
+tan x=√3
+
+</div>
+
+<p>
+
+Sudut acuan
+
+</p>
+
+<div class="rumus">
+
+60°
+
+</div>
+
+<p>
+
+Jawaban
+
+</p>
+
+<div class="rumus">
+
+x=60°+180°k
+
+</div>
+
+<h3>Mengapa Solusinya Tak Hingga?</h3>
+
+<p>
+
+Perhatikan grafik fungsi sinus.
+
+Setelah satu putaran penuh sebesar
+
+360°
+
+grafik akan kembali tepat sama.
+
+Artinya jika suatu sudut merupakan solusi,
+maka sudut tersebut ditambah
+
+360°,
+
+720°,
+
+1080°
+
+dan seterusnya
+juga merupakan solusi.
+
+Begitu pula fungsi tangen yang berulang setiap
+
+180°.
+
+</p>
+
+<div class="box">
+
+<b>Intuisi</b>
+
+Bayangkan jarum jam.
+
+Setelah berputar satu putaran penuh,
+arah jarum kembali sama.
+
+Fungsi trigonometri juga memiliki perilaku seperti itu.
+
+Karena itulah solusi umum selalu melibatkan kelipatan periode.
+
+</div>
+
+<h3>Kesalahan yang Sering Terjadi</h3>
+
+<ul>
+
+<li>Melupakan solusi kedua pada fungsi sinus.</li>
+
+<li>Salah menentukan kuadran.</li>
+
+<li>Menggunakan periode 360° untuk tangen.</li>
+
+<li>Lupa menuliskan k ∈ Z.</li>
+
+<li>Langsung memakai kalkulator tanpa menentukan sudut acuan.</li>
+
+</ul>
+
+</section><section>
+
+<h2>Contoh Persamaan Trigonometri Tingkat Menengah</h2>
+
+<p>
+
+Pada bagian ini kita mulai menyelesaikan persamaan yang tidak lagi
+langsung berbentuk dasar. Kuncinya adalah mengubahnya menjadi bentuk
+yang sudah dikenal.
+
+</p>
+
+<h3>Contoh 1</h3>
+
+<div class="rumus">
+
+2sin x - 1 = 0
+
+</div>
+
+<p>
+
+Pindahkan konstanta ke ruas kanan.
+
+</p>
+
+<div class="rumus">
+
+2sin x = 1
+
+</div>
+
+<div class="rumus">
+
+sin x = 1/2
+
+</div>
+
+<p>
+
+Sudut acuan adalah
+
+</p>
+
+<div class="rumus">
+
+30°
+
+</div>
+
+<p>
+
+Karena sinus bernilai positif, maka berada pada Kuadran I dan II.
+
+</p>
+
+<div class="rumus">
+
+x = 30° + 360°k
+
+</div>
+
+<div class="rumus">
+
+x = 150° + 360°k
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="rumus">
+
+3cos x + √3 = 0
+
+</div>
+
+<div class="rumus">
+
+cos x = -√3/3
+
+</div>
+
+<p>
+
+Nilai ini bukan sudut istimewa sehingga dapat ditulis menggunakan
+fungsi invers.
+
+</p>
+
+<div class="rumus">
+
+α = arccos(-√3/3)
+
+</div>
+
+<p>
+
+Maka solusi umum
+
+</p>
+
+<div class="rumus">
+
+x = α + 360°k
+
+</div>
+
+<div class="rumus">
+
+x = 360° - α + 360°k
+
+</div>
+
+<hr>
+
+<h3>Contoh 3</h3>
+
+<div class="rumus">
+
+tan²x = 3
+
+</div>
+
+<p>
+
+Ambil akar kedua ruas.
+
+</p>
+
+<div class="rumus">
+
+tan x = ±√3
+
+</div>
+
+<p>
+
+Kasus pertama
+
+</p>
+
+<div class="rumus">
+
+tan x = √3
+
+</div>
+
+<div class="rumus">
+
+x = 60° + 180°k
+
+</div>
+
+<p>
+
+Kasus kedua
+
+</p>
+
+<div class="rumus">
+
+tan x = -√3
+
+</div>
+
+<div class="rumus">
+
+x = 120° + 180°k
+
+</div>
+
+<div class="box">
+
+<b>Teknik Olimpiade</b>
+
+Persamaan berbentuk kuadrat pada fungsi trigonometri hampir selalu
+dipecah menjadi dua kasus. Jangan hanya mengambil akar positif.
+
+</div>
+
+<h2>Persamaan Trigonometri Menggunakan Identitas</h2>
+
+<p>
+
+Sering kali bentuk soal tidak dapat langsung diselesaikan. Kita perlu
+menggunakan identitas trigonometri terlebih dahulu.
+
+</p>
+
+<h3>Contoh 4</h3>
+
+<div class="rumus">
+
+sin²x + cos²x = 1
+
+</div>
+
+<p>
+
+Identitas ini merupakan identitas paling penting dalam seluruh
+trigonometri.
+
+Banyak soal Olimpiade berawal dari mengubah bentuk rumit menjadi
+identitas ini.
+
+</p>
+
+<h3>Contoh 5</h3>
+
+<div class="rumus">
+
+2sin²x = 1
+
+</div>
+
+<p>
+
+Bagi kedua ruas dengan dua.
+
+</p>
+
+<div class="rumus">
+
+sin²x = 1/2
+
+</div>
+
+<div class="rumus">
+
+sin x = ±√2/2
+
+</div>
+
+<p>
+
+Untuk nilai positif
+
+</p>
+
+<div class="rumus">
+
+x = 45° + 360°k
+
+x = 135° + 360°k
+
+</div>
+
+<p>
+
+Untuk nilai negatif
+
+</p>
+
+<div class="rumus">
+
+x = 225° + 360°k
+
+x = 315° + 360°k
+
+</div>
+
+<div class="box">
+
+<b>Catatan Penting</b>
+
+Saat mengubah
+
+sin²x = a
+
+menjadi
+
+sin x = ±√a
+
+selalu ingat bahwa muncul dua kemungkinan tanda.
+
+Inilah kesalahan yang paling sering terjadi pada peserta lomba.
+
+</div>
+
+<h2>Langkah Berpikir Seorang Peserta Olimpiade</h2>
+
+<ol>
+
+<li>Perhatikan bentuk persamaan.</li>
+
+<li>Cari identitas yang dapat menyederhanakan.</li>
+
+<li>Usahakan menjadi bentuk sin x, cos x, atau tan x.</li>
+
+<li>Tentukan sudut acuan.</li>
+
+<li>Tentukan kuadran.</li>
+
+<li>Tuliskan solusi umum.</li>
+
+<li>Jika interval dibatasi, lakukan penyaringan solusi.</li>
+
+</ol>
+
+</section><section>
+
+<h2>Penyelesaian Persamaan Trigonometri pada Interval Tertentu</h2>
+
+<p>
+
+Dalam banyak soal sekolah maupun Olimpiade, penyelesaian tidak diminta
+untuk seluruh bilangan real, melainkan hanya pada interval tertentu,
+misalnya
+
+</p>
+
+<div class="rumus">
+
+0° ≤ x < 360°
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+0 ≤ x ≤ 2π
+
+</div>
+
+<p>
+
+Pada kasus seperti ini, langkah pertama tetap mencari <b>solusi umum</b>.
+Setelah itu, pilih hanya solusi yang berada pada interval yang diminta.
+
+</p>
+
+<div class="box">
+
+<b>Prinsip Penting</b>
+
+Jangan langsung menebak jawaban dari lingkaran satuan. Selalu tuliskan
+solusi umum terlebih dahulu, kemudian lakukan penyaringan sesuai interval.
+
+</div>
+
+<h3>Contoh 6</h3>
+
+<div class="rumus">
+
+sin x = 1/2
+
+</div>
+
+<p>
+
+Solusi umum:
+
+</p>
+
+<div class="rumus">
+
+x = 30° + 360°k
+
+</div>
+
+<div class="rumus">
+
+x = 150° + 360°k
+
+</div>
+
+<p>
+
+Karena yang diminta hanya pada interval
+
+</p>
+
+<div class="rumus">
+
+0° ≤ x < 360°
+
+</div>
+
+<p>
+
+maka hanya diperoleh
+
+</p>
+
+<div class="rumus">
+
+x = 30°
+
+</div>
+
+<div class="rumus">
+
+x = 150°
+
+</div>
+
+<hr>
+
+<h3>Contoh 7</h3>
+
+<div class="rumus">
+
+tan x = -1
+
+</div>
+
+<p>
+
+Sudut acuan adalah
+
+</p>
+
+<div class="rumus">
+
+45°
+
+</div>
+
+<p>
+
+Karena tangen negatif berada pada Kuadran II dan IV.
+
+</p>
+
+<div class="rumus">
+
+x = 135°
+
+</div>
+
+<div class="rumus">
+
+x = 315°
+
+</div>
+
+<p>
+
+Jika menggunakan solusi umum
+
+</p>
+
+<div class="rumus">
+
+x = 135° + 180°k
+
+</div>
+
+<p>
+
+kemudian disaring pada interval yang diminta, hasilnya tetap sama.
+
+</p>
+
+<h2>Metode Faktorisasi</h2>
+
+<p>
+
+Banyak persamaan trigonometri dapat diselesaikan menggunakan teknik
+faktorisasi sebagaimana pada aljabar.
+
+</p>
+
+<h3>Contoh 8</h3>
+
+<div class="rumus">
+
+sin²x - sinx = 0
+
+</div>
+
+<p>
+
+Faktorkan.
+
+</p>
+
+<div class="rumus">
+
+sinx(sinx-1)=0
+
+</div>
+
+<p>
+
+Kasus pertama
+
+</p>
+
+<div class="rumus">
+
+sinx=0
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+x = 0° + 360°k
+
+</div>
+
+<div class="rumus">
+
+x = 180° + 360°k
+
+</div>
+
+<p>
+
+Kasus kedua
+
+</p>
+
+<div class="rumus">
+
+sinx=1
+
+</div>
+
+<div class="rumus">
+
+x = 90° + 360°k
+
+</div>
+
+<div class="box">
+
+<b>Tips Olimpiade</b>
+
+Jika hasil faktorisasi menghasilkan dua faktor atau lebih,
+selesaikan setiap faktor secara terpisah.
+Jangan pernah mencampurkan penyelesaiannya.
+
+</div>
+
+<h2>Metode Substitusi Sederhana</h2>
+
+<p>
+
+Jika suatu fungsi muncul berulang kali,
+kita dapat menggantinya dengan variabel baru.
+
+</p>
+
+<h3>Contoh 9</h3>
+
+<div class="rumus">
+
+2sin²x-3sinx+1=0
+
+</div>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+t = sinx
+
+</div>
+
+<p>
+
+Maka persamaan berubah menjadi
+
+</p>
+
+<div class="rumus">
+
+2t²-3t+1=0
+
+</div>
+
+<p>
+
+Faktorkan
+
+</p>
+
+<div class="rumus">
+
+(2t-1)(t-1)=0
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+t=1/2
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+t=1
+
+</div>
+
+<p>
+
+Kembalikan ke variabel semula.
+
+</p>
+
+<div class="rumus">
+
+sinx=1/2
+
+</div>
+
+<div class="rumus">
+
+x=30°+360°k
+
+</div>
+
+<div class="rumus">
+
+x=150°+360°k
+
+</div>
+
+<p>
+
+Kemudian
+
+</p>
+
+<div class="rumus">
+
+sinx=1
+
+</div>
+
+<div class="rumus">
+
+x=90°+360°k
+
+</div>
+
+<div class="box">
+
+<b>Insight Olimpiade</b>
+
+Substitusi membuat persoalan trigonometri berubah menjadi persoalan
+aljabar. Setelah mendapatkan nilai variabel pengganti, jangan lupa
+mengembalikannya ke fungsi trigonometri semula.
+
+</div>
+
+</section><section id="pertidaksamaan">
+
+<h2>7.2 Pertidaksamaan Trigonometri</h2>
+
+<p>
+
+Pertidaksamaan trigonometri adalah pertidaksamaan yang melibatkan fungsi
+sinus, cosinus, tangen, atau fungsi trigonometri lainnya.
+
+Berbeda dengan persamaan trigonometri yang mencari nilai tepat,
+pertidaksamaan mencari <b>himpunan semua sudut</b> yang memenuhi syarat.
+
+</p>
+
+<div class="box">
+
+<b>Konsep Utama</b>
+
+Pada persamaan kita mencari <i>titik</i>.
+
+Pada pertidaksamaan kita mencari <i>daerah</i>.
+
+Karena itu, memahami grafik dan lingkaran satuan jauh lebih penting
+daripada sekadar menghafal rumus.
+
+</div>
+
+<h3>Strategi Penyelesaian</h3>
+
+<ol>
+
+<li>Sederhanakan pertidaksamaan.</li>
+
+<li>Tentukan sudut batas (boundary).</li>
+
+<li>Gambar lingkaran satuan atau gunakan grafik fungsi.</li>
+
+<li>Tentukan daerah yang memenuhi.</li>
+
+<li>Tuliskan solusi sesuai interval yang diminta.</li>
+
+</ol>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="rumus">
+
+sin x > 0
+
+</div>
+
+<p>
+
+Pada lingkaran satuan, sinus merupakan koordinat <b>y</b>.
+
+Sinus bernilai positif jika titik berada di atas sumbu-x.
+
+Artinya seluruh sudut pada Kuadran I dan II memenuhi syarat.
+
+</p>
+
+<div class="rumus">
+
+0° &lt; x &lt; 180°
+
+</div>
+
+<p>
+
+Untuk solusi umum:
+
+</p>
+
+<div class="rumus">
+
+0° + 360°k &lt; x &lt; 180° + 360°k
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="rumus">
+
+cos x < 0
+
+</div>
+
+<p>
+
+Cosinus adalah koordinat <b>x</b> pada lingkaran satuan.
+
+Nilainya negatif di sebelah kiri sumbu-y,
+yaitu pada Kuadran II dan III.
+
+</p>
+
+<div class="rumus">
+
+180°k + 90° &lt; x &lt; 270° + 360°k
+
+</div>
+
+<p>
+
+Pada interval
+
+</p>
+
+<div class="rumus">
+
+0° ≤ x &lt; 360°
+
+</div>
+
+<p>
+
+diperoleh
+
+</p>
+
+<div class="rumus">
+
+90° &lt; x &lt; 270°
+
+</div>
+
+<hr>
+
+<h3>Contoh 3</h3>
+
+<div class="rumus">
+
+tan x ≥ 0
+
+</div>
+
+<p>
+
+Tangen bernilai positif pada Kuadran I dan III.
+
+Periode tangen adalah
+
+180°
+
+sehingga daerah penyelesaiannya akan berulang setiap
+
+180°.
+
+</p>
+
+<div class="rumus">
+
+x ∈ [0°,90°)
+
+atau
+
+x ∈ (180°,270°)
+
+</div>
+
+<div class="box">
+
+<b>Catatan</b>
+
+Nilai
+
+90°
+
+dan
+
+270°
+
+tidak termasuk karena fungsi tangen tidak terdefinisi pada sudut
+tersebut.
+
+</div>
+
+<h2>Metode Lingkaran Satuan</h2>
+
+<p>
+
+Lingkaran satuan merupakan alat yang paling kuat untuk menyelesaikan
+pertidaksamaan trigonometri.
+
+Daripada menghafal banyak aturan,
+cukup pahami tanda setiap fungsi pada keempat kuadran.
+
+</p>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+
+<tr>
+
+<th>Kuadran</th>
+
+<th>sin</th>
+
+<th>cos</th>
+
+<th>tan</th>
+
+</tr>
+
+<tr>
+
+<td>I</td>
+
+<td>+</td>
+
+<td>+</td>
+
+<td>+</td>
+
+</tr>
+
+<tr>
+
+<td>II</td>
+
+<td>+</td>
+
+<td>-</td>
+
+<td>-</td>
+
+</tr>
+
+<tr>
+
+<td>III</td>
+
+<td>-</td>
+
+<td>-</td>
+
+<td>+</td>
+
+</tr>
+
+<tr>
+
+<td>IV</td>
+
+<td>-</td>
+
+<td>+</td>
+
+<td>-</td>
+
+</tr>
+
+</table>
+
+<div class="box">
+
+<b>Tips Olimpiade</b>
+
+Banyak peserta menghafal tabel tanda di atas.
+
+Peserta Olimpiade terbaik tidak menghafalnya,
+melainkan memahami bahwa:
+
+<ul>
+
+<li>sin = koordinat y</li>
+
+<li>cos = koordinat x</li>
+
+<li>tan = y/x</li>
+
+</ul>
+
+Dengan memahami asal-usulnya,
+kamu tidak akan mudah lupa.
+
+</div>
+
+</section><section>
+
+<h2>Pertidaksamaan Trigonometri Menggunakan Sudut Acuan</h2>
+
+<p>
+
+Tidak semua pertidaksamaan berbentuk sederhana seperti
+<b>sin x > 0</b> atau <b>cos x < 0</b>.
+Sering kali kita harus menentukan terlebih dahulu <b>sudut acuan</b>,
+kemudian mencari daerah yang memenuhi pada lingkaran satuan.
+
+</p>
+
+<h3>Contoh 4</h3>
+
+<div class="rumus">
+
+sin x ≥ 1/2
+
+</div>
+
+<p>
+
+Sudut acuan diperoleh dari
+
+</p>
+
+<div class="rumus">
+
+sin 30° = 1/2
+
+</div>
+
+<p>
+
+Karena sinus bernilai lebih besar atau sama dengan 1/2,
+maka daerah yang memenuhi adalah seluruh sudut dari
+30° sampai 150°.
+
+</p>
+
+<div class="rumus">
+
+30° ≤ x ≤ 150°
+
+</div>
+
+<p>
+
+Untuk solusi umum
+
+</p>
+
+<div class="rumus">
+
+30° + 360°k ≤ x ≤ 150° + 360°k
+
+</div>
+
+<hr>
+
+<h3>Contoh 5</h3>
+
+<div class="rumus">
+
+cos x < 1/2
+
+</div>
+
+<p>
+
+Nilai batas diperoleh dari
+
+</p>
+
+<div class="rumus">
+
+cos 60° = 1/2
+
+</div>
+
+<p>
+
+Pada lingkaran satuan,
+cosinus lebih kecil dari 1/2 berada di sebelah kiri garis
+x = 1/2.
+
+Daerahnya adalah
+
+</p>
+
+<div class="rumus">
+
+60° < x < 300°
+
+</div>
+
+<hr>
+
+<h3>Contoh 6</h3>
+
+<div class="rumus">
+
+tan x > 1
+
+</div>
+
+<p>
+
+Sudut acuannya adalah
+
+</p>
+
+<div class="rumus">
+
+45°
+
+</div>
+
+<p>
+
+Karena tangen naik secara monoton pada setiap periodenya,
+maka penyelesaian dalam satu periode adalah
+
+</p>
+
+<div class="rumus">
+
+45° < x < 90°
+
+</div>
+
+<p>
+
+Kemudian ditambah periode
+
+180°
+
+</p>
+
+<div class="rumus">
+
+45° + 180°k < x < 90° + 180°k
+
+</div>
+
+<div class="box">
+
+<b>Insight Olimpiade</b>
+
+Untuk fungsi tangen,
+lebih mudah menggunakan sifat grafik yang selalu naik
+daripada menghafal kuadran.
+
+</div>
+
+<h2>Metode Garis Bilangan</h2>
+
+<p>
+
+Apabila pertidaksamaan telah difaktorkan,
+kita dapat menggunakan metode garis bilangan
+seperti pada aljabar.
+
+</p>
+
+<h3>Contoh 7</h3>
+
+<div class="rumus">
+
+sin²x - sinx < 0
+
+</div>
+
+<p>
+
+Faktorkan
+
+</p>
+
+<div class="rumus">
+
+sinx(sinx-1)<0
+
+</div>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+t = sinx
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+t(t-1)<0
+
+</div>
+
+<p>
+
+Dengan metode garis bilangan diperoleh
+
+</p>
+
+<div class="rumus">
+
+0 < t < 1
+
+</div>
+
+<p>
+
+Kembalikan ke bentuk semula
+
+</p>
+
+<div class="rumus">
+
+0 < sinx < 1
+
+</div>
+
+<p>
+
+Artinya sinus bernilai positif tetapi tidak sama dengan nol
+dan tidak sama dengan satu.
+
+Dalam interval
+
+</p>
+
+<div class="rumus">
+
+0° ≤ x < 360°
+
+</div>
+
+<p>
+
+diperoleh
+
+</p>
+
+<div class="rumus">
+
+0° < x < 180°
+
+dan
+
+x ≠ 90°
+
+</div>
+
+<h2>Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Menganggap tanda ">" sama dengan "=".</li>
+
+<li>Lupa mengecualikan titik batas ketika menggunakan tanda "&lt;" atau "&gt;".</li>
+
+<li>Memasukkan sudut yang membuat fungsi tidak terdefinisi, misalnya 90° pada fungsi tangen.</li>
+
+<li>Melupakan bahwa solusi harus berulang sesuai periode fungsi.</li>
+
+<li>Hanya memeriksa satu kuadran.</li>
+
+</ul>
+
+<div class="box">
+
+<b>Tips Pelatih Olimpiade</b>
+
+Saat mengerjakan pertidaksamaan, biasakan bertanya:
+
+<ol>
+
+<li>Di kuadran mana fungsi bernilai positif?</li>
+
+<li>Di kuadran mana fungsi bernilai negatif?</li>
+
+<li>Apakah titik batas ikut diambil?</li>
+
+<li>Berapa periode fungsi tersebut?</li>
+
+</ol>
+
+Empat pertanyaan sederhana ini mampu menghindarkan sebagian besar
+kesalahan dalam soal pertidaksamaan trigonometri.
+
+</div>
+
+</section><section id="homogen">
+
+<h2>7.3 Persamaan Homogen Trigonometri</h2>
+
+<p>
+
+Persamaan homogen trigonometri adalah persamaan yang setiap sukunya
+memiliki <b>derajat trigonometri yang sama</b>. Bentuk ini sangat sering
+muncul pada Olimpiade Matematika karena dapat diselesaikan dengan
+transformasi yang elegan.
+
+</p>
+
+<div class="rumus">
+
+a\sin^2x+b\sin x\cos x+c\cos^2x=0
+
+</div>
+
+<p>
+
+Ketiga suku di atas sama-sama berderajat dua sehingga disebut
+<b>homogen</b>.
+
+</p>
+
+<div class="box">
+
+<b>Mengapa Disebut Homogen?</b>
+
+Pada aljabar, persamaan homogen memiliki semua suku dengan derajat yang
+sama.
+
+Konsep tersebut juga berlaku pada trigonometri.
+
+Contohnya:
+
+<ul>
+
+<li>sin²x → derajat 2</li>
+
+<li>sinx cosx → derajat 2</li>
+
+<li>cos²x → derajat 2</li>
+
+</ul>
+
+Karena semuanya memiliki derajat yang sama, persamaan dapat diubah
+menjadi bentuk yang lebih sederhana dengan membagi seluruh ruas.
+
+</div>
+
+<h2>Ide Dasar Penyelesaian</h2>
+
+<p>
+
+Tujuan utama adalah mengubah persamaan menjadi hanya melibatkan satu
+fungsi trigonometri, biasanya <b>tan x</b>.
+
+Cara yang paling umum adalah membagi kedua ruas dengan
+<b>cos²x</b> atau <b>sin²x</b>.
+
+</p>
+
+<div class="box">
+
+<b>Kapan Dibagi cos²x?</b>
+
+Jika setelah dibagi bentuk persamaan menjadi lebih sederhana,
+gunakan cos²x.
+
+Karena
+
+</div>
+
+<div class="rumus">
+
+\frac{\sin^2x}{\cos^2x}=\tan^2x
+
+</div>
+
+<div class="rumus">
+
+\frac{\sin x\cos x}{\cos^2x}=\tan x
+
+</div>
+
+<div class="rumus">
+
+\frac{\cos^2x}{\cos^2x}=1
+
+</div>
+
+<p>
+
+Sehingga seluruh persamaan berubah menjadi persamaan kuadrat terhadap
+tan x.
+
+</p>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="rumus">
+
+sin²x−3sinxcosx+2cos²x=0
+
+</div>
+
+<p>
+
+Bagi seluruh ruas dengan cos²x.
+
+</p>
+
+<div class="rumus">
+
+tan²x−3tanx+2=0
+
+</div>
+
+<p>
+
+Faktorkan.
+
+</p>
+
+<div class="rumus">
+
+(tanx−1)(tanx−2)=0
+
+</div>
+
+<p>
+
+Kasus pertama
+
+</p>
+
+<div class="rumus">
+
+tanx=1
+
+</div>
+
+<div class="rumus">
+
+x=45°+180°k
+
+</div>
+
+<p>
+
+Kasus kedua
+
+</p>
+
+<div class="rumus">
+
+tanx=2
+
+</div>
+
+<div class="rumus">
+
+x=\arctan(2)+180°k
+
+</div>
+
+<div class="box">
+
+<b>Insight Olimpiade</b>
+
+Perhatikan bahwa persamaan trigonometri yang tampak rumit berubah
+menjadi persamaan kuadrat biasa hanya dengan satu langkah,
+yaitu membagi dengan cos²x.
+
+Inilah alasan mengapa peserta Olimpiade selalu mencari bentuk homogen
+terlebih dahulu.
+
+</div>
+
+<h2>Mengapa Tidak Selalu Dibagi cos²x?</h2>
+
+<p>
+
+Jika diketahui bahwa
+
+</p>
+
+<div class="rumus">
+
+cosx=0
+
+</div>
+
+<p>
+
+maka pembagian dengan cos²x tidak diperbolehkan karena akan terjadi
+pembagian dengan nol.
+
+Pada situasi tertentu kita perlu memeriksa kasus khusus tersebut
+terlebih dahulu.
+
+</p>
+
+<div class="box">
+
+<b>Aturan Penting</b>
+
+Sebelum membagi dengan suatu ekspresi,
+pastikan ekspresi tersebut tidak bernilai nol.
+
+Jika mungkin bernilai nol,
+selesaikan kasus tersebut secara terpisah.
+
+</div>
+
+</section>
+<section>
+
+<h2>Membagi dengan <code>sin²x</code></h2>
+
+<p>
+
+Selain membagi dengan <b>cos²x</b>, kita juga dapat membagi seluruh
+persamaan dengan <b>sin²x</b>. Cara ini dipilih apabila bentuk persamaan
+menjadi lebih sederhana setelah diubah ke dalam fungsi
+<b>cotangen (cot)</b>.
+
+</p>
+
+<div class="rumus">
+
+\frac{\cos^2x}{\sin^2x}=cot^2x
+
+</div>
+
+<div class="rumus">
+
+\frac{\sin x\cos x}{\sin^2x}=cotx
+
+</div>
+
+<div class="rumus">
+
+\frac{\sin^2x}{\sin^2x}=1
+
+</div>
+
+<p>
+
+Dengan demikian persamaan homogen dapat berubah menjadi persamaan
+kuadrat dalam variabel <b>cot x</b>.
+
+</p>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="rumus">
+
+2sin²x+5sinxcosx−3cos²x=0
+
+</div>
+
+<p>
+
+Bagi seluruh ruas dengan sin²x.
+
+</p>
+
+<div class="rumus">
+
+2+5cotx−3cot²x=0
+
+</div>
+
+<p>
+
+Susun ulang menjadi
+
+</p>
+
+<div class="rumus">
+
+3cot²x−5cotx−2=0
+
+</div>
+
+<p>
+
+Faktorkan
+
+</p>
+
+<div class="rumus">
+
+(3cotx+1)(cotx−2)=0
+
+</div>
+
+<p>
+
+Sehingga diperoleh dua kemungkinan.
+
+</p>
+
+<div class="rumus">
+
+cotx=2
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+cotx=-1/3
+
+</div>
+
+<p>
+
+Kemudian ubah kembali ke bentuk tangen jika diperlukan.
+
+</p>
+
+<hr>
+
+<h2>Metode Substitusi</h2>
+
+<p>
+
+Apabila hasil pembagian menghasilkan bentuk kuadrat,
+anggap fungsi trigonometri sebagai sebuah variabel baru.
+
+</p>
+
+<p>
+
+Misalnya
+
+</p>
+
+<div class="rumus">
+
+tanx=t
+
+</div>
+
+<p>
+
+Maka persamaan
+
+</p>
+
+<div class="rumus">
+
+tan²x−7tanx+10=0
+
+</div>
+
+<p>
+
+berubah menjadi
+
+</p>
+
+<div class="rumus">
+
+t²−7t+10=0
+
+</div>
+
+<p>
+
+Faktorkan.
+
+</p>
+
+<div class="rumus">
+
+(t−5)(t−2)=0
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+tanx=5
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+tanx=2
+
+</div>
+
+<p>
+
+Barulah cari solusi sudutnya.
+
+</p>
+
+<div class="box">
+
+<b>Strategi Olimpiade</b>
+
+Begitu persamaan berubah menjadi bentuk aljabar,
+lupakan sementara bahwa itu adalah trigonometri.
+
+Selesaikan seperti persamaan kuadrat biasa,
+baru kemudian kembalikan ke fungsi trigonometri.
+
+</div>
+
+<hr>
+
+<h2>Kesalahan yang Sering Terjadi</h2>
+
+<ul>
+
+<li>Membagi dengan cos²x padahal cosx dapat bernilai nol.</li>
+
+<li>Membagi dengan sin²x padahal sinx dapat bernilai nol.</li>
+
+<li>Lupa mengembalikan variabel substitusi menjadi fungsi trigonometri semula.</li>
+
+<li>Berhenti setelah mendapatkan nilai tanx tanpa mencari nilai sudutnya.</li>
+
+<li>Lupa menuliskan solusi umum dengan periode yang sesuai.</li>
+
+</ul>
+
+<div class="box">
+
+<b>Checklist Sebelum Menyelesaikan Soal Homogen</b>
+
+<ol>
+
+<li>Pastikan semua suku memiliki derajat yang sama.</li>
+
+<li>Pilih apakah akan membagi dengan sin²x atau cos²x.</li>
+
+<li>Periksa kemungkinan pembagian dengan nol.</li>
+
+<li>Gunakan substitusi bila muncul persamaan kuadrat.</li>
+
+<li>Kembalikan hasil ke bentuk sudut.</li>
+
+<li>Tuliskan solusi umum.</li>
+
+</ol>
+
+</div>
+
+<h2>Contoh Olimpiade</h2>
+
+<div class="rumus">
+
+4sin²x−4sinxcosx−3cos²x=0
+
+</div>
+
+<p>
+
+Bagi seluruh ruas dengan cos²x.
+
+</p>
+
+<div class="rumus">
+
+4tan²x−4tanx−3=0
+
+</div>
+
+<p>
+
+Faktorkan.
+
+</p>
+
+<div class="rumus">
+
+(2tanx+1)(2tanx−3)=0
+
+</div>
+
+<p>
+
+Kasus pertama
+
+</p>
+
+<div class="rumus">
+
+tanx=-1/2
+
+</div>
+
+<p>
+
+Kasus kedua
+
+</p>
+
+<div class="rumus">
+
+tanx=3/2
+
+</div>
+
+<p>
+
+Gunakan fungsi invers untuk memperoleh sudut utama, kemudian tambahkan
+periode
+
+</p>
+
+<div class="rumus">
+
+180°k
+
+</div>
+
+<p>
+
+karena fungsi tangen memiliki periode 180°.
+
+</p>
+
+</section>
