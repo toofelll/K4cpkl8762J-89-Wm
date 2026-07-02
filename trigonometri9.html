@@ -1,0 +1,5644 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handbook Trigonometri Bab 9 - Bilangan Kompleks & Koordinat Polar</title>
+
+<meta name="description" content="Handbook Trigonometri Bab 9 membahas Fungsi Trigonometri Invers, Koordinat Polar, Persamaan Polar, Rumus Euler, dan Rumus De Moivre secara mendalam.">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:"Segoe UI",Tahoma,sans-serif;
+}
+
+body{
+background:#eef4ff;
+color:#222;
+line-height:1.8;
+}
+
+header{
+
+background:linear-gradient(135deg,#4527A0,#1A237E);
+color:white;
+padding:80px 20px;
+text-align:center;
+
+}
+
+header h1{
+
+font-size:48px;
+
+}
+
+header h2{
+
+margin-top:15px;
+font-weight:normal;
+
+}
+
+header p{
+
+max-width:900px;
+margin:auto;
+margin-top:25px;
+font-size:18px;
+
+}
+
+nav{
+
+max-width:1100px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+nav h2{
+
+color:#283593;
+margin-bottom:15px;
+
+}
+
+nav ul{
+
+padding-left:25px;
+
+}
+
+nav li{
+
+margin:10px 0;
+
+}
+
+nav a{
+
+color:#3949AB;
+font-weight:bold;
+text-decoration:none;
+
+}
+
+main{
+
+max-width:1100px;
+margin:auto;
+padding:20px;
+
+}
+
+section{
+
+background:white;
+margin-bottom:35px;
+padding:35px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+h2{
+
+color:#283593;
+margin-bottom:20px;
+
+}
+
+h3{
+
+margin-top:25px;
+color:#3949AB;
+
+}
+
+h4{
+
+margin-top:20px;
+color:#5C6BC0;
+
+}
+
+p{
+
+margin:15px 0;
+
+}
+
+.box{
+
+background:#EDE7F6;
+border-left:6px solid #5E35B1;
+padding:18px;
+margin:20px 0;
+border-radius:10px;
+
+}
+
+.warning{
+
+background:#FFF3E0;
+border-left:6px solid orange;
+padding:18px;
+margin:20px 0;
+border-radius:10px;
+
+}
+
+.success{
+
+background:#E8F5E9;
+border-left:6px solid green;
+padding:18px;
+margin:20px 0;
+border-radius:10px;
+
+}
+
+.rumus{
+
+background:#263238;
+color:white;
+padding:18px;
+border-radius:10px;
+margin:20px 0;
+font-size:22px;
+text-align:center;
+overflow:auto;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+margin:20px 0;
+
+}
+
+table th{
+
+background:#3949AB;
+color:white;
+padding:12px;
+
+}
+
+table td{
+
+padding:12px;
+border:1px solid #ccc;
+
+}
+
+pre{
+
+background:#ECEFF1;
+padding:15px;
+border-radius:10px;
+overflow:auto;
+
+}
+
+code{
+
+font-family:Consolas,monospace;
+
+}
+
+footer{
+
+text-align:center;
+padding:50px;
+
+}
+
+.button{
+
+display:inline-block;
+padding:14px 30px;
+margin:8px;
+background:#3949AB;
+color:white;
+text-decoration:none;
+border-radius:10px;
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#1A237E;
+
+}
+
+.quote{
+
+font-style:italic;
+padding:20px;
+background:#F5F5F5;
+border-left:5px solid #5E35B1;
+margin:20px 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>HANDBOOK TRIGONOMETRI</h1>
+
+<h2>Bab 9</h2>
+
+<h1>Bilangan Kompleks & Koordinat Polar</h1>
+
+<p>
+
+Bab ini merupakan puncak dari seluruh pembelajaran trigonometri.
+Semua konsep yang telah dipelajari sebelumnya akan dipadukan dengan
+bilangan kompleks, geometri analitik, serta teori eksponensial sehingga
+membentuk salah satu cabang matematika yang paling indah.
+
+Materi pada bab ini banyak digunakan pada Olimpiade Matematika,
+Fisika, Teknik Elektro, Pemrosesan Sinyal (Signal Processing),
+Grafika Komputer, Robotika, Astronomi, hingga Kecerdasan Buatan.
+
+</p>
+
+</header>
+
+<nav>
+
+<h2>Daftar Isi</h2>
+
+<ul>
+
+<li><a href="#inverse">9.1 Fungsi Trigonometri Invers</a></li>
+
+<li><a href="#polar">9.2 Koordinat Polar</a></li>
+
+<li><a href="#persamaan-polar">9.3 Persamaan Polar</a></li>
+
+<li><a href="#euler">9.4 Rumus Euler</a></li>
+
+<li><a href="#demoivre">9.5 Rumus De Moivre</a></li>
+
+<li><a href="#olimpiade">Strategi Olimpiade</a></li>
+
+<li><a href="#latihan">Latihan Komprehensif</a></li>
+
+<li><a href="#ringkasan">Ringkasan Handbook</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section>
+
+<h2>Mengapa Bab Ini Sangat Penting?</h2>
+
+<p>
+
+Apabila Bab 1 hingga Bab 8 mengajarkan bagaimana menggunakan
+trigonometri, maka Bab 9 mengajarkan bagaimana trigonometri menjadi
+bagian dari struktur matematika modern.
+
+Banyak identitas yang sebelumnya tampak rumit akan menjadi sangat
+sederhana jika ditulis menggunakan bilangan kompleks.
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+cos θ + i sin θ
+
+</div>
+
+<p>
+
+yang terlihat sederhana ternyata mampu menghasilkan:
+
+</p>
+
+<ul>
+
+<li>Rumus Euler</li>
+
+<li>Rumus De Moivre</li>
+
+<li>Akar pangkat-n bilangan kompleks</li>
+
+<li>Transformasi rotasi</li>
+
+<li>Persamaan gelombang</li>
+
+<li>Transformasi Fourier</li>
+
+<li>Analisis sinyal digital</li>
+
+</ul>
+
+<div class="box">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Peserta Olimpiade tingkat nasional umumnya sudah menguasai identitas
+trigonometri dasar.
+
+Perbedaan peserta terbaik biasanya terletak pada kemampuan mereka
+menghubungkan trigonometri dengan bidang matematika lain seperti
+bilangan kompleks, geometri, kombinatorika, dan kalkulus.
+
+Bab ini menjadi jembatan menuju konsep-konsep tersebut.
+
+</div>
+
+</section><section id="inverse">
+
+<h2>9.1 Fungsi Trigonometri Invers</h2>
+
+<p>
+
+Pada bab-bab sebelumnya kita mempelajari fungsi trigonometri yang
+mengubah <b>sudut menjadi bilangan</b>.
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+sin 30° = 1/2
+
+</div>
+
+<p>
+
+Artinya masukan fungsi adalah sudut, sedangkan keluarannya berupa nilai
+fungsi trigonometri.
+
+Namun pada banyak persoalan matematika, kita justru mengetahui nilai
+fungsi trigonometri dan ingin menentukan sudutnya.
+
+Untuk itulah digunakan <b>fungsi trigonometri invers</b>.
+
+</p>
+
+<div class="rumus">
+
+sin⁻¹(x)=arcsin(x)
+
+</div>
+
+<div class="rumus">
+
+cos⁻¹(x)=arccos(x)
+
+</div>
+
+<div class="rumus">
+
+tan⁻¹(x)=arctan(x)
+
+</div>
+
+<div class="warning">
+
+<b>Kesalahan yang Sangat Sering Terjadi</b>
+
+<p>
+
+Notasi <b>sin⁻¹(x)</b> <u>bukan</u> berarti
+
+</p>
+
+<div class="rumus">
+
+1/sin(x)
+
+</div>
+
+<p>
+
+Melainkan berarti <b>fungsi invers sinus</b>, yaitu fungsi yang
+mengembalikan nilai sudut dari suatu nilai sinus.
+
+</p>
+
+</div>
+
+<h3>Mengapa Tidak Semua Fungsi Trigonometri Memiliki Invers?</h3>
+
+<p>
+
+Suatu fungsi hanya memiliki invers apabila setiap nilai output berasal
+dari tepat satu nilai input (fungsi satu-satu).
+
+Masalahnya, fungsi sinus dan cosinus bersifat periodik sehingga satu
+nilai dapat berasal dari banyak sudut.
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+sin30° = sin150° = sin390°
+
+</div>
+
+<p>
+
+Karena terdapat banyak sudut yang menghasilkan nilai yang sama, maka
+fungsi sinus tidak memiliki invers jika domainnya seluruh bilangan real.
+
+Untuk mengatasinya, domain fungsi dibatasi sehingga menjadi fungsi
+satu-satu.
+
+</p>
+
+<h3>Domain dan Range Nilai Utama</h3>
+
+<table>
+
+<tr>
+
+<th>Fungsi</th>
+<th>Domain</th>
+<th>Range (Nilai Utama)</th>
+
+</tr>
+
+<tr>
+
+<td>arcsin(x)</td>
+<td>-1 ≤ x ≤ 1</td>
+<td>-90° ≤ θ ≤ 90°</td>
+
+</tr>
+
+<tr>
+
+<td>arccos(x)</td>
+<td>-1 ≤ x ≤ 1</td>
+<td>0° ≤ θ ≤ 180°</td>
+
+</tr>
+
+<tr>
+
+<td>arctan(x)</td>
+<td>Semua bilangan real</td>
+<td>-90° < θ < 90°</td>
+
+</tr>
+
+</table>
+
+<div class="box">
+
+<b>Mengapa Range arcsin hanya -90° sampai 90°?</b>
+
+<p>
+
+Pada interval tersebut grafik sinus selalu naik dan tidak pernah
+mengulang nilai yang sama.
+
+Akibatnya setiap output hanya memiliki satu input sehingga invers dapat
+didefinisikan dengan baik.
+
+</p>
+
+</div>
+
+<h3>Contoh Dasar</h3>
+
+<div class="rumus">
+
+arcsin(1/2)=30°
+
+</div>
+
+<div class="rumus">
+
+arccos(√2/2)=45°
+
+</div>
+
+<div class="rumus">
+
+arctan(√3)=60°
+
+</div>
+
+<hr>
+
+<h3>Contoh Menengah</h3>
+
+<p>
+
+Tentukan nilai
+
+</p>
+
+<div class="rumus">
+
+arcsin(-√3/2)
+
+</div>
+
+<p>
+
+Karena nilai utama arcsin berada pada interval
+
+</p>
+
+<div class="rumus">
+
+-90° ≤ θ ≤ 90°
+
+</div>
+
+<p>
+
+maka jawabannya adalah
+
+</p>
+
+<div class="rumus">
+
+-60°
+
+</div>
+
+<p>
+
+Bukan 240° ataupun 300°, karena kedua sudut tersebut berada di luar
+range fungsi invers sinus.
+
+</p>
+
+<div class="success">
+
+<b>Strategi Olimpiade</b>
+
+Ketika melihat notasi <b>arcsin</b>, <b>arccos</b>, atau
+<b>arctan</b>, langkah pertama bukan menghitung, tetapi mengingat
+<b>range nilai utama</b>. Lebih dari separuh kesalahan peserta berasal
+dari memilih sudut yang benar secara trigonometri tetapi salah karena
+berada di luar domain hasil fungsi invers.
+
+</div>
+
+<h3>Hubungan Fungsi dan Invers</h3>
+
+<p>
+
+Untuk setiap nilai yang memenuhi domain invers berlaku hubungan berikut.
+
+</p>
+
+<div class="rumus">
+
+sin(arcsin x)=x
+
+</div>
+
+<div class="rumus">
+
+cos(arccos x)=x
+
+</div>
+
+<div class="rumus">
+
+tan(arctan x)=x
+
+</div>
+
+<p>
+
+Sebaliknya,
+
+</p>
+
+<div class="rumus">
+
+arcsin(sin x)=x
+
+</div>
+
+<p>
+
+<b>tidak selalu benar</b>, kecuali x berada pada interval nilai utama
+fungsi arcsin.
+
+</p>
+
+<div class="warning">
+
+<b>Contoh</b>
+
+<div class="rumus">
+
+arcsin(sin150°)
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+sin150°=1/2
+
+</div>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+arcsin(1/2)=30°
+
+</div>
+
+<p>
+
+Hasil akhirnya adalah <b>30°</b>, bukan 150°.
+
+Inilah salah satu jebakan klasik dalam soal Olimpiade.
+
+</p>
+
+</div>
+
+</section><section id="inverse-grafik">
+
+<h2>Grafik Fungsi Trigonometri Invers</h2>
+
+<p>
+
+Cara terbaik memahami fungsi invers adalah dengan melihat hubungan
+grafiknya terhadap fungsi asal. Secara umum, grafik suatu fungsi invers
+merupakan <b>pencerminan terhadap garis</b>
+
+</p>
+
+<div class="rumus">
+
+y = x
+
+</div>
+
+<p>
+
+Hal ini juga berlaku untuk fungsi trigonometri, tetapi hanya setelah
+domain fungsi asal dibatasi agar menjadi satu-satu.
+
+</p>
+
+<div class="box">
+
+<b>Ide Penting</b>
+
+Jika titik
+
+<b>(a,b)</b>
+
+berada pada grafik fungsi
+
+<b>y=f(x)</b>,
+
+maka titik
+
+<b>(b,a)</b>
+
+akan berada pada grafik fungsi inversnya
+
+<b>y=f⁻¹(x)</b>.
+
+</div>
+
+<hr>
+
+<h3>Grafik y = arcsin(x)</h3>
+
+<p>
+
+Grafik fungsi <b>arcsin(x)</b> memiliki karakteristik sebagai berikut.
+
+</p>
+
+<ul>
+
+<li>Domain: −1 ≤ x ≤ 1.</li>
+
+<li>Range: −90° ≤ y ≤ 90°.</li>
+
+<li>Grafik selalu naik (monoton).</li>
+
+<li>Melewati titik (0,0).</li>
+
+<li>Tidak memiliki periode.</li>
+
+</ul>
+
+<div class="rumus">
+
+arcsin(0)=0°
+
+</div>
+
+<div class="rumus">
+
+arcsin(1)=90°
+
+</div>
+
+<div class="rumus">
+
+arcsin(-1)=-90°
+
+</div>
+
+<hr>
+
+<h3>Grafik y = arccos(x)</h3>
+
+<p>
+
+Berbeda dengan arcsin, grafik arccos justru selalu turun.
+
+</p>
+
+<ul>
+
+<li>Domain: −1 ≤ x ≤ 1.</li>
+
+<li>Range: 0° ≤ y ≤ 180°.</li>
+
+<li>Grafik monoton turun.</li>
+
+<li>Tidak memiliki periode.</li>
+
+</ul>
+
+<div class="rumus">
+
+arccos(1)=0°
+
+</div>
+
+<div class="rumus">
+
+arccos(0)=90°
+
+</div>
+
+<div class="rumus">
+
+arccos(-1)=180°
+
+</div>
+
+<hr>
+
+<h3>Grafik y = arctan(x)</h3>
+
+<p>
+
+Grafik arctan mempunyai bentuk huruf S yang landai dan memiliki dua
+asimtot horizontal.
+
+</p>
+
+<div class="rumus">
+
+y = 90°
+
+</div>
+
+<p>
+
+dan
+
+</p>
+
+<div class="rumus">
+
+y = -90°
+
+</div>
+
+<ul>
+
+<li>Domain: semua bilangan real.</li>
+
+<li>Range: −90° < y < 90°.</li>
+
+<li>Melewati titik (0,0).</li>
+
+<li>Selalu naik.</li>
+
+</ul>
+
+<div class="box">
+
+<b>Mengapa Ada Asimtot?</b>
+
+<p>
+
+Ketika nilai x semakin besar, sudut hasil arctan semakin mendekati
+90°, tetapi tidak pernah benar-benar mencapainya.
+
+Demikian pula ketika x menuju negatif tak hingga, hasilnya semakin
+mendekati −90°.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Komposisi Fungsi Invers</h3>
+
+<p>
+
+Komposisi fungsi invers sering muncul pada soal Olimpiade.
+
+Perhatikan contoh berikut.
+
+</p>
+
+<div class="rumus">
+
+cos(arccos(-√3/2))
+
+</div>
+
+<p>
+
+Karena arccos menghasilkan sudut utama yang memiliki cosinus
+−√3/2, maka
+
+</p>
+
+<div class="rumus">
+
+cos(arccos(-√3/2))
+
+=
+
+-√3/2
+
+</div>
+
+<p>
+
+Namun bentuk berikut berbeda.
+
+</p>
+
+<div class="rumus">
+
+arccos(cos210°)
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+cos210°=-√3/2
+
+</div>
+
+<p>
+
+dan hasil arccos harus berada pada interval
+
+</p>
+
+<div class="rumus">
+
+0° ≤ θ ≤ 180°
+
+</div>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+arccos(cos210°)=150°
+
+</div>
+
+<p>
+
+<b>Bukan 210°.</b>
+
+</p>
+
+<div class="warning">
+
+<b>Jebakan Olimpiade</b>
+
+Peserta sering menganggap
+
+<code>f⁻¹(f(x)) = x</code>
+
+selalu benar.
+
+Padahal untuk fungsi trigonometri invers, hasil tersebut hanya berlaku
+jika nilai x berada pada <b>domain yang telah dibatasi</b>.
+
+</div>
+
+<h3>Contoh Soal Tingkat Olimpiade</h3>
+
+<p>
+
+Hitung nilai
+
+</p>
+
+<div class="rumus">
+
+arcsin(3/5)+arccos(3/5)
+
+</div>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+θ=arcsin(3/5)
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+sinθ=3/5
+
+</div>
+
+<p>
+
+Karena θ berada pada kuadran I (nilai utama arcsin), diperoleh
+
+</p>
+
+<div class="rumus">
+
+cosθ=4/5
+
+</div>
+
+<p>
+
+Selanjutnya gunakan identitas
+
+</p>
+
+<div class="rumus">
+
+arcsin(x)+arccos(x)=90°
+
+</div>
+
+<p>
+
+untuk semua
+
+</p>
+
+<div class="rumus">
+
+-1≤x≤1
+
+</div>
+
+<p>
+
+Sehingga hasil akhirnya adalah
+
+</p>
+
+<div class="rumus">
+
+90°
+
+</div>
+
+<div class="success">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Hubungan antara <b>arcsin</b> dan <b>arccos</b> sangat sering digunakan
+untuk menyederhanakan soal. Mengingat identitas ini dapat menghemat
+banyak langkah perhitungan pada kompetisi.
+
+</div>
+
+</section><section id="inverse-identitas">
+
+<h2>Identitas Penting Fungsi Trigonometri Invers</h2>
+
+<p>
+
+Fungsi trigonometri invers memiliki banyak identitas yang sangat berguna
+dalam penyederhanaan bentuk aljabar, kalkulus, hingga Olimpiade
+Matematika. Menghafal tanpa memahami asal-usulnya tidak disarankan.
+Lebih baik pahami mengapa identitas tersebut berlaku.
+
+</p>
+
+<div class="box">
+
+<b>Prinsip Dasar</b>
+
+Jika diketahui salah satu fungsi trigonometri suatu sudut, maka fungsi
+lainnya dapat diperoleh menggunakan identitas Pythagoras.
+
+Inilah alasan sebagian besar identitas fungsi invers dapat dibuktikan
+dengan membuat sebuah segitiga siku-siku.
+
+</div>
+
+<hr>
+
+<h3>Identitas 1</h3>
+
+<div class="rumus">
+
+arcsin(x)+arccos(x)=90°
+
+</div>
+
+<p>
+
+untuk
+
+</p>
+
+<div class="rumus">
+
+-1≤x≤1
+
+</div>
+
+<h4>Pembuktian</h4>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+θ=arcsin(x)
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+sinθ=x
+
+</div>
+
+<p>
+
+Pada segitiga siku-siku berlaku
+
+</p>
+
+<div class="rumus">
+
+θ+(90°-θ)=90°
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+cos(90°-θ)=sinθ=x
+
+</div>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+arccos(x)=90°-θ
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+arcsin(x)+arccos(x)=90°
+
+</div>
+
+<hr>
+
+<h3>Identitas 2</h3>
+
+<div class="rumus">
+
+sin(arccos(x))
+
+=
+
+√(1-x²)
+
+</div>
+
+<p>
+
+untuk
+
+</p>
+
+<div class="rumus">
+
+-1≤x≤1
+
+</div>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+θ=arccos(x)
+
+</div>
+
+<p>
+
+Berarti
+
+</p>
+
+<div class="rumus">
+
+cosθ=x
+
+</div>
+
+<p>
+
+Gunakan identitas
+
+</p>
+
+<div class="rumus">
+
+sin²θ+cos²θ=1
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+sinθ
+
+=
+
+√(1-x²)
+
+</div>
+
+<p>
+
+Karena nilai utama arccos berada pada interval
+
+</p>
+
+<div class="rumus">
+
+0°≤θ≤180°
+
+</div>
+
+<p>
+
+nilai sinus selalu tidak negatif sehingga dipilih akar positif.
+
+</p>
+
+<hr>
+
+<h3>Identitas 3</h3>
+
+<div class="rumus">
+
+cos(arcsin(x))
+
+=
+
+√(1-x²)
+
+</div>
+
+<p>
+
+Pembuktiannya serupa menggunakan identitas Pythagoras.
+
+</p>
+
+<hr>
+
+<h3>Identitas 4</h3>
+
+<div class="rumus">
+
+tan(arcsin(x))
+
+=
+
+x/√(1-x²)
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+tanθ
+
+=
+
+sinθ/cosθ
+
+</div>
+
+<p>
+
+dengan
+
+</p>
+
+<div class="rumus">
+
+sinθ=x
+
+</div>
+
+<p>
+
+dan
+
+</p>
+
+<div class="rumus">
+
+cosθ=√(1-x²)
+
+</div>
+
+<p>
+
+maka langsung diperoleh identitas tersebut.
+
+</p>
+
+<hr>
+
+<h3>Identitas 5</h3>
+
+<div class="rumus">
+
+tan(arccos(x))
+
+=
+
+√(1-x²)/x
+
+</div>
+
+<p>
+
+berlaku untuk
+
+</p>
+
+<div class="rumus">
+
+x≠0
+
+</div>
+
+<hr>
+
+<h3>Contoh Soal Pembuktian</h3>
+
+<p>
+
+Sederhanakan bentuk berikut.
+
+</p>
+
+<div class="rumus">
+
+sin(arccos(4/5))
+
+</div>
+
+<p>
+
+Gunakan Identitas 2.
+
+</p>
+
+<div class="rumus">
+
+=
+
+√(1-(4/5)²)
+
+</div>
+
+<div class="rumus">
+
+=
+
+√(9/25)
+
+</div>
+
+<div class="rumus">
+
+=
+
+3/5
+
+</div>
+
+<hr>
+
+<h3>Contoh Olimpiade</h3>
+
+<p>
+
+Hitung nilai
+
+</p>
+
+<div class="rumus">
+
+cos(arcsin(5/13))
+
++
+
+sin(arccos(12/13))
+
+</div>
+
+<p>
+
+Gunakan identitas secara langsung.
+
+</p>
+
+<div class="rumus">
+
+=
+
+√(1-25/169)
+
++
+
+√(1-144/169)
+
+</div>
+
+<div class="rumus">
+
+=
+
+12/13
+
++
+
+5/13
+
+</div>
+
+<div class="rumus">
+
+=
+
+17/13
+
+</div>
+
+<div class="success">
+
+<b>Strategi Olimpiade</b>
+
+Pada soal kompetisi, hampir tidak pernah diperlukan mencari besar
+sudutnya terlebih dahulu. Ubah langsung menggunakan identitas sehingga
+perhitungan menjadi jauh lebih singkat.
+
+</div>
+
+<div class="warning">
+
+<b>Kesalahan Umum</b>
+
+<ul>
+
+<li>Menggunakan akar positif padahal kuadran menghasilkan nilai negatif.</li>
+
+<li>Lupa memeriksa domain fungsi invers.</li>
+
+<li>Menganggap semua komposisi fungsi invers selalu menghasilkan x.</li>
+
+<li>Tidak menggunakan identitas Pythagoras untuk menyederhanakan bentuk.</li>
+
+</ul>
+
+</div>
+
+</section><section id="polar-dalam">
+
+<h2>9.2 Koordinat Polar (Pembahasan Mendalam)</h2>
+
+<p>
+
+Sistem koordinat Kartesius menggunakan pasangan bilangan
+
+<b>(x,y)</b>
+
+untuk menyatakan posisi suatu titik.
+
+Sementara itu, sistem koordinat polar menggunakan pasangan
+
+<b>(r,θ)</b>
+
+yang terdiri atas:
+
+</p>
+
+<ul>
+
+<li><b>r</b> → jarak titik terhadap pusat (origin).</li>
+
+<li><b>θ</b> → sudut yang dibentuk terhadap sumbu-x positif.</li>
+
+</ul>
+
+<div class="box">
+
+<b>Intuisi Geometri</b>
+
+Bayangkan kamu berdiri tepat di titik pusat sebuah lapangan.
+
+Temanmu berkata:
+
+"Berjalanlah sejauh <b>15 meter</b> ke arah <b>40°</b>."
+
+Informasi tersebut sudah cukup untuk menentukan posisi tanpa
+menyebutkan koordinat (x,y).
+
+Inilah ide dasar koordinat polar.
+
+</div>
+
+<hr>
+
+<h3>Hubungan Polar dan Kartesius</h3>
+
+<p>
+
+Misalkan suatu titik P memiliki koordinat polar
+
+</p>
+
+<div class="rumus">
+
+(r,θ)
+
+</div>
+
+<p>
+
+Maka koordinat Kartesiusnya adalah
+
+</p>
+
+<div class="rumus">
+
+x=r cosθ
+
+</div>
+
+<div class="rumus">
+
+y=r sinθ
+
+</div>
+
+<p>
+
+Sebaliknya,
+
+</p>
+
+<div class="rumus">
+
+r=√(x²+y²)
+
+</div>
+
+<div class="rumus">
+
+θ=atan2(y,x)
+
+</div>
+
+<div class="warning">
+
+<b>Mengapa Menggunakan atan2?</b>
+
+<p>
+
+Pada pemrograman dan komputasi ilmiah, fungsi <b>atan2(y,x)</b>
+lebih disukai daripada <b>arctan(y/x)</b> karena dapat menentukan
+kuadran titik secara otomatis.
+
+Jika hanya memakai arctan(y/x), hasil pada Kuadran II dan III
+sering keliru.
+
+</p>
+
+</div>
+
+<hr>
+
+<h3>Makna Nilai r Negatif</h3>
+
+<p>
+
+Berbeda dengan koordinat Kartesius, pada koordinat polar nilai
+<b>r</b> boleh bernilai negatif.
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+r=-5
+
+</div>
+
+<p>
+
+maka titik tersebut berada sejauh 5 satuan tetapi pada arah yang
+berlawanan dengan sudut θ.
+
+Akibatnya berlaku identitas penting
+
+</p>
+
+<div class="rumus">
+
+(r,θ)
+
+=
+
+(-r,θ+180°)
+
+</div>
+
+<p>
+
+Artinya satu titik dapat memiliki banyak representasi polar.
+
+</p>
+
+<hr>
+
+<h3>Representasi Tak Hingga</h3>
+
+<p>
+
+Titik polar tidak mempunyai representasi yang unik.
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+(4,30°)
+
+</div>
+
+<p>
+
+sama dengan
+
+</p>
+
+<div class="rumus">
+
+(4,390°)
+
+</div>
+
+<p>
+
+karena
+
+</p>
+
+<div class="rumus">
+
+390°=30°+360°
+
+</div>
+
+<p>
+
+Selain itu juga sama dengan
+
+</p>
+
+<div class="rumus">
+
+(-4,210°)
+
+</div>
+
+<p>
+
+karena arah diputar 180° dan panjang dibuat negatif.
+
+</p>
+
+<div class="box">
+
+<b>Insight Olimpiade</b>
+
+Saat diminta membandingkan dua koordinat polar, jangan langsung melihat
+angka-angkanya.
+
+Periksa apakah salah satunya dapat diperoleh dari yang lain dengan:
+
+<ul>
+
+<li>menambah atau mengurangi 360°;</li>
+
+<li>mengubah tanda r sekaligus menambah 180° pada sudut.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Konversi Lengkap</h3>
+
+<p>
+
+Ubah titik berikut ke koordinat Kartesius.
+
+</p>
+
+<div class="rumus">
+
+(r,θ)
+
+=
+
+(12,150°)
+
+</div>
+
+<p>
+
+Gunakan rumus dasar.
+
+</p>
+
+<div class="rumus">
+
+x=12 cos150°
+
+</div>
+
+<div class="rumus">
+
+x=12(-√3/2)
+
+</div>
+
+<div class="rumus">
+
+x=-6√3
+
+</div>
+
+<div class="rumus">
+
+y=12 sin150°
+
+</div>
+
+<div class="rumus">
+
+y=12(1/2)
+
+</div>
+
+<div class="rumus">
+
+y=6
+
+</div>
+
+<p>
+
+Jadi koordinat Kartesiusnya adalah
+
+</p>
+
+<div class="rumus">
+
+(-6√3,6)
+
+</div>
+
+<hr>
+
+<h3>Konversi Kartesius ke Polar</h3>
+
+<p>
+
+Diketahui titik
+
+</p>
+
+<div class="rumus">
+
+(-8,8)
+
+</div>
+
+<p>
+
+Hitung terlebih dahulu panjang vektor.
+
+</p>
+
+<div class="rumus">
+
+r
+
+=
+
+√((-8)²+8²)
+
+</div>
+
+<div class="rumus">
+
+=
+
+√128
+
+</div>
+
+<div class="rumus">
+
+=
+
+8√2
+
+</div>
+
+<p>
+
+Karena titik berada pada Kuadran II, sudut acuannya adalah
+
+</p>
+
+<div class="rumus">
+
+45°
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+θ=135°
+
+</div>
+
+<p>
+
+Sehingga koordinat polar adalah
+
+</p>
+
+<div class="rumus">
+
+(8√2,135°)
+
+</div>
+
+<div class="success">
+
+<b>Strategi Cepat</b>
+
+Untuk titik-titik dengan koordinat istimewa seperti
+(±1,±1), (±1,±√3), (±3,±4), atau (±5,±12),
+usahakan mengenali sudut dan panjang vektornya tanpa kalkulator.
+Kemampuan ini sangat berguna dalam Olimpiade maupun ujian berbatas waktu.
+
+</div>
+
+</section><section id="polar-geometri">
+
+<h2>Interpretasi Geometri Koordinat Polar</h2>
+
+<p>
+
+Salah satu kelebihan sistem koordinat polar adalah kemampuannya
+merepresentasikan bentuk-bentuk geometri secara jauh lebih sederhana
+dibandingkan koordinat Kartesius.
+
+Sebagai contoh, sebuah lingkaran yang berpusat di titik asal cukup
+ditulis menggunakan satu persamaan yang sangat sederhana.
+
+</p>
+
+<div class="rumus">
+
+r = a
+
+</div>
+
+<p>
+
+Artinya semua titik yang berjarak <b>a</b> dari pusat membentuk sebuah
+lingkaran berjari-jari <b>a</b>.
+
+</p>
+
+<hr>
+
+<h3>Garis Lurus</h3>
+
+<p>
+
+Jika sudut dibuat tetap sedangkan nilai <b>r</b> berubah-ubah, maka
+titik akan bergerak sepanjang satu garis lurus yang melalui pusat.
+
+</p>
+
+<div class="rumus">
+
+θ = konstan
+
+</div>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+θ = 60°
+
+</div>
+
+<p>
+
+menghasilkan garis yang membentuk sudut 60° terhadap sumbu-x positif.
+
+</p>
+
+<div class="box">
+
+<b>Visualisasi</b>
+
+<pre>
+          y
+
+          |
+
+         *
+
+       *
+
+     *
+
+   *
+
+ *______________ x
+
+      60°
+</pre>
+
+Semua titik pada garis tersebut memiliki nilai θ yang sama.
+
+</div>
+
+<hr>
+
+<h3>Lingkaran yang Tidak Berpusat di Origin</h3>
+
+<p>
+
+Tidak semua lingkaran dalam koordinat polar berbentuk
+
+</p>
+
+<div class="rumus">
+
+r = a
+
+</div>
+
+<p>
+
+Sebagai contoh,
+
+</p>
+
+<div class="rumus">
+
+r = 2a cosθ
+
+</div>
+
+<p>
+
+jika dikonversi ke koordinat Kartesius akan menjadi
+
+</p>
+
+<div class="rumus">
+
+x² + y² = 2ax
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+(x-a)² + y² = a²
+
+</div>
+
+<p>
+
+yang merupakan lingkaran berpusat di
+
+</p>
+
+<div class="rumus">
+
+(a,0)
+
+</div>
+
+<p>
+
+dengan jari-jari
+
+</p>
+
+<div class="rumus">
+
+a
+
+</div>
+
+<hr>
+
+<h3>Mengapa Persamaan Polar Lebih Sederhana?</h3>
+
+<p>
+
+Pada koordinat Kartesius, banyak kurva membutuhkan persamaan kuadrat,
+bahkan orde yang lebih tinggi.
+
+Dalam koordinat polar, kurva yang sama sering kali hanya membutuhkan
+persamaan sederhana yang langsung menunjukkan bentuk geometrinya.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Bentuk Geometri</th>
+
+<th>Kartesius</th>
+
+<th>Polar</th>
+
+</tr>
+
+<tr>
+
+<td>Lingkaran pusat origin</td>
+
+<td>x²+y²=a²</td>
+
+<td>r=a</td>
+
+</tr>
+
+<tr>
+
+<td>Garis melalui origin</td>
+
+<td>y=mx</td>
+
+<td>θ=konstan</td>
+
+</tr>
+
+<tr>
+
+<td>Lingkaran bergeser</td>
+
+<td>(x-a)²+y²=a²</td>
+
+<td>r=2acosθ</td>
+
+</tr>
+
+</table>
+
+<div class="success">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Peserta Olimpiade sering memperoleh keuntungan besar dengan memilih
+sistem koordinat yang tepat.
+
+Jika soal memiliki banyak simetri terhadap titik pusat atau melibatkan
+rotasi, koordinat polar hampir selalu lebih efisien daripada koordinat
+Kartesius.
+
+</div>
+
+<hr>
+
+<h2>Kurva-Kurva Polar Terkenal</h2>
+
+<h3>1. Cardioid</h3>
+
+<div class="rumus">
+
+r = a(1 + cosθ)
+
+</div>
+
+<p>
+
+Kurva ini menyerupai bentuk hati sehingga dinamakan
+<b>cardioid</b> (berasal dari kata Yunani <i>kardia</i>, yang berarti
+jantung).
+
+Cardioid banyak muncul pada akustik, pantulan cahaya, dan desain antena.
+
+</p>
+
+<hr>
+
+<h3>2. Rose Curve</h3>
+
+<div class="rumus">
+
+r = a cos(nθ)
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+r = a sin(nθ)
+
+</div>
+
+<p>
+
+Jumlah kelopak memenuhi aturan berikut.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Nilai n</th>
+
+<th>Jumlah Kelopak</th>
+
+</tr>
+
+<tr>
+
+<td>n ganjil</td>
+
+<td>n kelopak</td>
+
+</tr>
+
+<tr>
+
+<td>n genap</td>
+
+<td>2n kelopak</td>
+
+</tr>
+
+</table>
+
+<div class="box">
+
+<b>Contoh</b>
+
+<ul>
+
+<li>n = 3 → 3 kelopak.</li>
+
+<li>n = 4 → 8 kelopak.</li>
+
+<li>n = 5 → 5 kelopak.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>3. Spiral Archimedes</h3>
+
+<div class="rumus">
+
+r = aθ
+
+</div>
+
+<p>
+
+Semakin besar sudut θ, semakin jauh titik bergerak dari pusat.
+Jarak antar lilitan spiral selalu tetap.
+
+Kurva ini digunakan dalam desain spiral, gramofon, dan lintasan robot.
+
+</p>
+
+<hr>
+
+<h3>4. Lemniscate</h3>
+
+<div class="rumus">
+
+r² = a² cos2θ
+
+</div>
+
+<p>
+
+Kurva ini membentuk simbol angka delapan (∞) dan sering muncul dalam
+geometri analitik serta teori bilangan kompleks.
+
+</p>
+
+<div class="warning">
+
+<b>Catatan Olimpiade</b>
+
+Tidak semua soal meminta menggambar kurva secara lengkap.
+Sering kali cukup mengenali bentuk persamaan sehingga kamu dapat
+langsung mengetahui jenis grafiknya tanpa melakukan plotting titik satu
+per satu.
+
+</div>
+
+</section><section id="polar-grafik">
+
+<h2>Menggambar Grafik Persamaan Polar</h2>
+
+<p>
+
+Pada tingkat Olimpiade, peserta sering diminta menentukan bentuk grafik
+persamaan polar tanpa menggunakan perangkat lunak. Oleh karena itu,
+kemampuan menganalisis persamaan jauh lebih penting daripada sekadar
+menggambar.
+
+</p>
+
+<div class="box">
+
+<b>Strategi Umum</b>
+
+Sebelum membuat tabel nilai, lakukan analisis berikut.
+
+<ol>
+
+<li>Periksa domain nilai θ.</li>
+<li>Cari nilai maksimum dan minimum r.</li>
+<li>Periksa apakah r dapat bernilai negatif.</li>
+<li>Cari simetri grafik.</li>
+<li>Hitung beberapa titik penting.</li>
+<li>Hubungkan titik secara halus.</li>
+
+</ol>
+
+</div>
+
+<hr>
+
+<h3>Analisis Simetri</h3>
+
+<p>
+
+Simetri merupakan alat paling ampuh untuk menghemat waktu menggambar.
+
+</p>
+
+<h4>1. Simetri terhadap Sumbu-x</h4>
+
+<p>
+
+Jika persamaan tetap sama setelah θ diganti menjadi −θ,
+maka grafik simetris terhadap sumbu-x.
+
+</p>
+
+<div class="rumus">
+
+f(r,-θ)=f(r,θ)
+
+</div>
+
+<hr>
+
+<h4>2. Simetri terhadap Sumbu-y</h4>
+
+<p>
+
+Jika persamaan tetap sama setelah θ diganti menjadi
+
+</p>
+
+<div class="rumus">
+
+180°-θ
+
+</div>
+
+<p>
+
+maka grafik simetris terhadap sumbu-y.
+
+</p>
+
+<hr>
+
+<h4>3. Simetri terhadap Titik Asal</h4>
+
+<p>
+
+Jika persamaan tidak berubah setelah
+
+</p>
+
+<div class="rumus">
+
+θ → θ+180°
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+r → -r
+
+</div>
+
+<p>
+
+maka grafik memiliki simetri pusat.
+
+</p>
+
+<div class="success">
+
+<b>Insight Olimpiade</b>
+
+Jika suatu grafik memiliki empat simetri, cukup gambar seperempatnya
+saja, kemudian cerminkan hasilnya. Teknik ini dapat menghemat lebih dari
+70% waktu saat kompetisi.
+
+</div>
+
+<hr>
+
+<h3>Contoh Analisis Cardioid</h3>
+
+<div class="rumus">
+
+r = 4(1+cosθ)
+
+</div>
+
+<p>
+
+Langkah pertama adalah mencari beberapa titik penting.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>θ</th>
+<th>cos θ</th>
+<th>r</th>
+
+</tr>
+
+<tr>
+
+<td>0°</td>
+<td>1</td>
+<td>8</td>
+
+</tr>
+
+<tr>
+
+<td>90°</td>
+<td>0</td>
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+<td>-1</td>
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>270°</td>
+<td>0</td>
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>360°</td>
+<td>1</td>
+<td>8</td>
+
+</tr>
+
+</table>
+
+<p>
+
+Dari tabel terlihat bahwa grafik memiliki satu titik runcing (cusp)
+ketika
+
+</p>
+
+<div class="rumus">
+
+θ = 180°
+
+</div>
+
+<p>
+
+dan mencapai jarak maksimum ketika
+
+</p>
+
+<div class="rumus">
+
+θ = 0°
+
+</div>
+
+<hr>
+
+<h3>Contoh Analisis Rose Curve</h3>
+
+<div class="rumus">
+
+r = 5 sin(3θ)
+
+</div>
+
+<p>
+
+Karena nilai
+
+<b>n = 3</b>
+
+ganjil, maka grafik memiliki
+
+</p>
+
+<div class="rumus">
+
+3 kelopak
+
+</div>
+
+<p>
+
+Panjang maksimum setiap kelopak adalah
+
+</p>
+
+<div class="rumus">
+
+5 satuan
+
+</div>
+
+<p>
+
+Kelopak pertama muncul ketika
+
+</p>
+
+<div class="rumus">
+
+3θ = 90°
+
+</div>
+
+<div class="rumus">
+
+θ = 30°
+
+</div>
+
+<p>
+
+Kelopak berikutnya diperoleh dengan menambahkan
+
+</p>
+
+<div class="rumus">
+
+120°
+
+</div>
+
+<p>
+
+karena
+
+</p>
+
+<div class="rumus">
+
+360° / 3 = 120°
+
+</div>
+
+<hr>
+
+<h3>Contoh Analisis Spiral</h3>
+
+<div class="rumus">
+
+r = 2θ
+
+</div>
+
+<p>
+
+Tidak seperti lingkaran atau cardioid, spiral tidak pernah menutup
+kembali.
+
+Semakin besar θ, titik akan terus menjauh dari pusat sehingga terbentuk
+lintasan spiral yang terus membesar.
+
+</p>
+
+<div class="warning">
+
+<b>Perhatikan Satuan Sudut</b>
+
+Dalam banyak buku tingkat universitas maupun Olimpiade internasional,
+nilai θ pada spiral hampir selalu menggunakan <b>radian</b>, bukan
+derajat. Kesalahan satuan akan menghasilkan grafik yang sangat berbeda.
+
+</div>
+
+<hr>
+
+<h2>Transformasi Persamaan Polar</h2>
+
+<p>
+
+Persamaan polar juga dapat mengalami transformasi seperti halnya grafik
+fungsi pada koordinat Kartesius.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Transformasi</th>
+<th>Dampak</th>
+
+</tr>
+
+<tr>
+
+<td>r → 2r</td>
+<td>Grafik membesar dua kali lipat.</td>
+
+</tr>
+
+<tr>
+
+<td>θ → θ+30°</td>
+<td>Grafik berotasi 30°.</td>
+
+</tr>
+
+<tr>
+
+<td>r → -r</td>
+<td>Grafik diputar 180°.</td>
+
+</tr>
+
+<tr>
+
+<td>θ → -θ</td>
+<td>Pencerminan terhadap sumbu-x.</td>
+
+</tr>
+
+</table>
+
+<div class="box">
+
+<b>Kesimpulan Subbab</b>
+
+Menggambar grafik polar bukanlah menghafal bentuk kurva, melainkan
+menganalisis sifat-sifat persamaannya. Dengan memahami simetri,
+jangkauan nilai r, dan titik-titik penting, sebagian besar grafik dapat
+digambar secara cepat bahkan tanpa kalkulator.
+
+</div>
+
+</section><section id="kompleks">
+
+<h2>Bilangan Kompleks dalam Bentuk Polar</h2>
+
+<p>
+
+Bilangan kompleks merupakan perluasan dari bilangan real dengan
+menambahkan satu satuan imajiner
+
+</p>
+
+<div class="rumus">
+
+i² = -1
+
+</div>
+
+<p>
+
+Secara umum bilangan kompleks ditulis sebagai
+
+</p>
+
+<div class="rumus">
+
+z = a + bi
+
+</div>
+
+<p>
+
+dengan:
+
+</p>
+
+<ul>
+
+<li><b>a</b> = bagian real (Real Part)</li>
+<li><b>b</b> = bagian imajiner (Imaginary Part)</li>
+<li><b>i</b> = √(-1)</li>
+</ul>
+
+<div class="box">
+
+<b>Interpretasi Geometri</b>
+
+Bilangan kompleks dapat dipandang sebagai titik atau vektor pada
+<b>bidang kompleks (Argand Plane)</b>.
+
+<ul>
+
+<li>Sumbu horizontal menyatakan bagian real.</li>
+<li>Sumbu vertikal menyatakan bagian imajiner.</li>
+</ul>
+
+Dengan demikian, bilangan kompleks dan vektor mempunyai hubungan yang
+sangat erat.
+
+</div>
+
+<hr>
+
+<h3>Bidang Argand</h3>
+
+<pre>
+
+          Im(z)
+
+            ↑
+
+      ● z(a,b)
+
+            |
+
+            |
+
+------------O--------------→ Re(z)
+
+</pre>
+
+<p>
+
+Titik
+
+</p>
+
+<div class="rumus">
+
+a + bi
+
+</div>
+
+<p>
+
+mempunyai koordinat
+
+</p>
+
+<div class="rumus">
+
+(a,b)
+
+</div>
+
+<p>
+
+persis seperti koordinat Kartesius.
+
+</p>
+
+<hr>
+
+<h3>Modulus Bilangan Kompleks</h3>
+
+<p>
+
+Panjang vektor dari titik asal menuju bilangan kompleks disebut
+<b>modulus</b>.
+
+Dilambangkan dengan
+
+</p>
+
+<div class="rumus">
+
+|z|
+
+</div>
+
+<p>
+
+dan dihitung menggunakan Teorema Pythagoras.
+
+</p>
+
+<div class="rumus">
+
+|z|
+
+=
+
+√(a²+b²)
+
+</div>
+
+<h4>Contoh</h4>
+
+<div class="rumus">
+
+z = 3 + 4i
+
+</div>
+
+<div class="rumus">
+
+|z|
+
+=
+
+√(3²+4²)
+
+=
+
+5
+
+</div>
+
+<p>
+
+Artinya panjang vektor tersebut adalah 5 satuan.
+
+</p>
+
+<hr>
+
+<h3>Argumen Bilangan Kompleks</h3>
+
+<p>
+
+Selain panjang, sebuah vektor juga memiliki arah.
+
+Sudut yang dibentuk terhadap sumbu real positif disebut
+<b>argumen</b>.
+
+</p>
+
+<div class="rumus">
+
+arg(z)=θ
+
+</div>
+
+<p>
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+z=a+bi
+
+</div>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+θ = atan2(b,a)
+
+</div>
+
+<div class="warning">
+
+<b>Jangan Gunakan arctan(b/a) Secara Langsung</b>
+
+Fungsi arctan tidak mampu membedakan Kuadran II dan III.
+
+Karena itu pada komputasi modern digunakan fungsi
+
+<b>atan2(y,x)</b>
+
+yang otomatis menentukan kuadran yang benar.
+
+</div>
+
+<hr>
+
+<h3>Mengubah Bentuk Kartesius ke Bentuk Polar</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+z = 6 + 6√3 i
+
+</div>
+
+<p>
+
+Hitung modulusnya.
+
+</p>
+
+<div class="rumus">
+
+r
+
+=
+
+√(6²+(6√3)²)
+
+</div>
+
+<div class="rumus">
+
+=
+
+√(36+108)
+
+</div>
+
+<div class="rumus">
+
+=
+
+12
+
+</div>
+
+<p>
+
+Selanjutnya tentukan argumen.
+
+</p>
+
+<div class="rumus">
+
+tanθ
+
+=
+
+6√3 / 6
+
+=
+
+√3
+
+</div>
+
+<div class="rumus">
+
+θ = 60°
+
+</div>
+
+<p>
+
+Sehingga bentuk polar adalah
+
+</p>
+
+<div class="rumus">
+
+12(cos60°+isin60°)
+
+</div>
+
+<hr>
+
+<h3>Bentuk Eksponensial</h3>
+
+<p>
+
+Menggunakan Rumus Euler,
+
+</p>
+
+<div class="rumus">
+
+cosθ+i sinθ=e^{iθ}
+
+</div>
+
+<p>
+
+maka bentuk polar dapat ditulis lebih ringkas menjadi
+
+</p>
+
+<div class="rumus">
+
+z=re^{iθ}
+
+</div>
+
+<p>
+
+Inilah bentuk yang paling sering digunakan dalam matematika tingkat
+universitas, fisika teoritis, teknik elektro, dan Olimpiade.
+
+</p>
+
+<div class="success">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Jika suatu soal melibatkan pangkat besar bilangan kompleks, segera ubah
+ke bentuk polar atau eksponensial. Operasi yang tampak sangat rumit pada
+bentuk Kartesius biasanya berubah menjadi sangat sederhana setelah
+ditulis sebagai
+
+<b>re<sup>iθ</sup></b>.
+
+</div>
+
+</section><section id="operasi-kompleks">
+
+<h2>Operasi Bilangan Kompleks dalam Bentuk Polar</h2>
+
+<p>
+
+Setelah sebuah bilangan kompleks diubah ke bentuk polar, operasi
+perkalian, pembagian, perpangkatan, dan penarikan akar menjadi jauh
+lebih mudah dibandingkan menggunakan bentuk Kartesius.
+
+Inilah alasan mengapa bentuk polar sangat penting dalam matematika
+lanjutan dan Olimpiade.
+
+</p>
+
+<div class="box">
+
+<b>Ide Dasar</b>
+
+Pada bentuk Kartesius:
+
+<div class="rumus">
+
+z=a+bi
+
+</div>
+
+perkalian melibatkan banyak ekspansi aljabar.
+
+Sedangkan pada bentuk polar:
+
+<div class="rumus">
+
+z=r(\cos\theta+i\sin\theta)
+
+</div>
+
+perkalian cukup mengalikan modulus dan menjumlahkan sudut.
+
+</div>
+
+<hr>
+
+<h3>1. Perkalian Bilangan Kompleks</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+z₁=r₁(\cos\alpha+i\sin\alpha)
+
+</div>
+
+<div class="rumus">
+
+z₂=r₂(\cos\beta+i\sin\beta)
+
+</div>
+
+<p>
+
+Maka hasil perkalian diberikan oleh
+
+</p>
+
+<div class="rumus">
+
+z₁z₂
+
+=
+
+r₁r₂
+
+\left(
+
+\cos(\alpha+\beta)
+
++
+
+i\sin(\alpha+\beta)
+
+\right)
+
+</div>
+
+<div class="success">
+
+<b>Makna Geometris</b>
+
+Mengalikan dua bilangan kompleks berarti:
+
+<ul>
+
+<li>Modulus dikalikan.</li>
+<li>Sudut dijumlahkan.</li>
+</ul>
+
+Dengan kata lain, perkalian bilangan kompleks dapat dipandang sebagai
+kombinasi dari <b>perbesaran</b> dan <b>rotasi</b>.
+
+</div>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<div class="rumus">
+
+z₁=3(\cos20°+i\sin20°)
+
+</div>
+
+<div class="rumus">
+
+z₂=5(\cos40°+i\sin40°)
+
+</div>
+
+<p>
+
+Hitung hasil perkalian.
+
+</p>
+
+<div class="rumus">
+
+r=3\times5=15
+
+</div>
+
+<div class="rumus">
+
+\theta=20°+40°=60°
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+15(\cos60°+i\sin60°)
+
+</div>
+
+<hr>
+
+<h3>2. Pembagian Bilangan Kompleks</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+z₁=r₁(\cos\alpha+i\sin\alpha)
+
+</div>
+
+<div class="rumus">
+
+z₂=r₂(\cos\beta+i\sin\beta)
+
+</div>
+
+<p>
+
+maka
+
+</p>
+
+<div class="rumus">
+
+\frac{z₁}{z₂}
+
+=
+
+\frac{r₁}{r₂}
+
+\left(
+
+\cos(\alpha-\beta)
+
++
+
+i\sin(\alpha-\beta)
+
+\right)
+
+</div>
+
+<div class="box">
+
+<b>Ingat Pola</b>
+
+<ul>
+
+<li>Perkalian → sudut dijumlahkan.</li>
+<li>Pembagian → sudut dikurangkan.</li>
+</ul>
+
+Ini merupakan pola yang sangat sering muncul dalam soal Olimpiade.
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<div class="rumus">
+
+z₁=12(\cos80°+i\sin80°)
+
+</div>
+
+<div class="rumus">
+
+z₂=4(\cos35°+i\sin35°)
+
+</div>
+
+<p>
+
+Hitung hasil pembagian.
+
+</p>
+
+<div class="rumus">
+
+r=12/4=3
+
+</div>
+
+<div class="rumus">
+
+\theta=80°-35°=45°
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+3(\cos45°+i\sin45°)
+
+</div>
+
+<hr>
+
+<h3>3. Konjugat Bilangan Kompleks</h3>
+
+<p>
+
+Jika
+
+</p>
+
+<div class="rumus">
+
+z=a+bi
+
+</div>
+
+<p>
+
+maka konjugatnya adalah
+
+</p>
+
+<div class="rumus">
+
+\overline{z}=a-bi
+
+</div>
+
+<p>
+
+Dalam bentuk polar,
+
+</p>
+
+<div class="rumus">
+
+r(\cos\theta+i\sin\theta)
+
+</div>
+
+<p>
+
+berubah menjadi
+
+</p>
+
+<div class="rumus">
+
+r(\cos\theta-i\sin\theta)
+
+</div>
+
+<p>
+
+atau
+
+</p>
+
+<div class="rumus">
+
+r(\cos(-\theta)+i\sin(-\theta))
+
+</div>
+
+<p>
+
+Artinya konjugat sama dengan pencerminan terhadap sumbu real.
+
+</p>
+
+<hr>
+
+<h3>4. Sifat Penting Konjugat</h3>
+
+<div class="rumus">
+
+z\overline{z}=|z|^2
+
+</div>
+
+<h4>Contoh</h4>
+
+<div class="rumus">
+
+z=5+12i
+
+</div>
+
+<div class="rumus">
+
+\overline{z}=5-12i
+
+</div>
+
+<div class="rumus">
+
+z\overline{z}
+
+=(5+12i)(5-12i)
+
+=25+144
+
+=169
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+|z|=13
+
+</div>
+
+<p>
+
+maka benar bahwa
+
+</p>
+
+<div class="rumus">
+
+|z|^2=169
+
+</div>
+
+<div class="warning">
+
+<b>Kesalahan yang Sering Terjadi</b>
+
+<ul>
+
+<li>Menjumlahkan modulus saat mengalikan bilangan kompleks.</li>
+<li>Lupa bahwa sudut pembagian harus dikurangkan.</li>
+<li>Keliru menuliskan konjugat sebagai <code>-a+bi</code>.</li>
+<li>Tidak menyederhanakan hasil ke bentuk polar paling sederhana.</li>
+</ul>
+
+</div>
+
+<div class="success">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Jika sebuah soal memuat banyak operasi perkalian dan pembagian bilangan
+kompleks, ubahlah semuanya ke bentuk polar terlebih dahulu. Teknik ini
+dapat memangkas perhitungan yang panjang menjadi hanya beberapa langkah
+aritmetika sederhana.
+
+</div>
+
+</section><section id="euler-proof">
+
+<h2>9.4 Rumus Euler (Pembahasan Mendalam & Pembuktian)</h2>
+
+<p>
+
+Rumus Euler sering disebut sebagai <b>permata matematika</b> karena
+menghubungkan lima cabang matematika sekaligus, yaitu eksponensial,
+trigonometri, analisis, geometri, dan bilangan kompleks.
+
+Di tingkat Olimpiade maupun universitas, Rumus Euler merupakan alat yang
+sangat kuat untuk menyederhanakan identitas trigonometri dan operasi
+bilangan kompleks.
+
+</p>
+
+<div class="rumus">
+
+e<sup>iθ</sup>
+
+=
+
+cosθ+i sinθ
+
+</div>
+
+<div class="box">
+
+<b>Mengapa Rumus Ini Sangat Penting?</b>
+
+Tanpa Rumus Euler, banyak identitas trigonometri membutuhkan pembuktian
+yang panjang.
+
+Dengan Rumus Euler, identitas yang sama sering kali dapat dibuktikan
+hanya dalam beberapa baris.
+
+</div>
+
+<hr>
+
+<h3>Asal Rumus Euler</h3>
+
+<p>
+
+Rumus Euler berasal dari deret Taylor.
+
+Misalkan diketahui tiga deret berikut.
+
+</p>
+
+<div class="rumus">
+
+e<sup>x</sup>
+
+=
+
+1+x+
+
+x²/2!+
+
+x³/3!+
+
+x⁴/4!+...
+
+</div>
+
+<div class="rumus">
+
+cosx
+
+=
+
+1-
+
+x²/2!+
+
+x⁴/4!-
+
+x⁶/6!+...
+
+</div>
+
+<div class="rumus">
+
+sinx
+
+=
+
+x-
+
+x³/3!+
+
+x⁵/5!-
+
+x⁷/7!+...
+
+</div>
+
+<p>
+
+Sekarang ganti
+
+</p>
+
+<div class="rumus">
+
+x=iθ
+
+</div>
+
+<p>
+
+ke dalam deret eksponensial.
+
+</p>
+
+<div class="rumus">
+
+e<sup>iθ</sup>
+
+=
+
+1+iθ+
+
+(iθ)²/2!+
+
+(iθ)³/3!+...
+
+</div>
+
+<p>
+
+Gunakan sifat
+
+</p>
+
+<div class="rumus">
+
+i²=-1
+
+</div>
+
+<div class="rumus">
+
+i³=-i
+
+</div>
+
+<div class="rumus">
+
+i⁴=1
+
+</div>
+
+<p>
+
+Kelompokkan suku real dan suku imajiner.
+
+Akhirnya diperoleh
+
+</p>
+
+<div class="rumus">
+
+e<sup>iθ</sup>
+
+=
+
+cosθ
+
++
+
+i sinθ
+
+</div>
+
+<div class="success">
+
+<b>Insight Matematis</b>
+
+Rumus Euler bukanlah rumus yang "ditemukan secara ajaib", melainkan
+konsekuensi langsung dari deret Taylor dan sifat bilangan kompleks.
+
+</div>
+
+<hr>
+
+<h3>Interpretasi Geometri</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+z=e<sup>iθ</sup>
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+cos²θ+sin²θ=1
+
+</div>
+
+<p>
+
+maka modulusnya adalah
+
+</p>
+
+<div class="rumus">
+
+|z|
+
+=
+
+√(cos²θ+sin²θ)
+
+=
+
+1
+
+</div>
+
+<p>
+
+Artinya semua bilangan
+
+</p>
+
+<div class="rumus">
+
+e<sup>iθ</sup>
+
+</div>
+
+<p>
+
+berada tepat pada <b>lingkaran satuan</b>.
+
+Ketika θ bertambah, titik hanya berputar mengelilingi lingkaran tanpa
+mengubah panjang vektornya.
+
+</p>
+
+<hr>
+
+<h3>Rotasi Bidang Kompleks</h3>
+
+<p>
+
+Misalkan terdapat suatu bilangan kompleks
+
+</p>
+
+<div class="rumus">
+
+z
+
+=
+
+re<sup>iα</sup>
+
+</div>
+
+<p>
+
+Kalikan dengan
+
+</p>
+
+<div class="rumus">
+
+e<sup>iβ</sup>
+
+</div>
+
+<p>
+
+Hasilnya
+
+</p>
+
+<div class="rumus">
+
+ze<sup>iβ</sup>
+
+=
+
+re<sup>i(α+β)</sup>
+
+</div>
+
+<p>
+
+Artinya:
+
+</p>
+
+<ul>
+
+<li>Modulus tetap.</li>
+<li>Sudut bertambah sebesar β.</li>
+<li>Tidak terjadi perubahan panjang.</li>
+<li>Hanya terjadi rotasi.</li>
+</ul>
+
+<div class="box">
+
+<b>Aplikasi Nyata</b>
+
+Konsep ini digunakan dalam:
+
+<ul>
+
+<li>Robotika.</li>
+<li>Grafika Komputer.</li>
+<li>Animasi 2D dan 3D.</li>
+<li>Pengolahan Citra Digital.</li>
+<li>Radar.</li>
+<li>Satelit.</li>
+<li>Transformasi Fourier.</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Identitas Euler Terkenal</h3>
+
+<p>
+
+Ambil
+
+</p>
+
+<div class="rumus">
+
+θ=π
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+e<sup>iπ</sup>
+
+=
+
+cosπ+i sinπ
+
+</div>
+
+<div class="rumus">
+
+=-1
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+e<sup>iπ</sup>+1=0
+
+</div>
+
+<p>
+
+Persamaan ini menghubungkan lima konstanta matematika yang paling
+terkenal.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Konstanta</th>
+<th>Makna</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+<td>Identitas penjumlahan</td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+<td>Identitas perkalian</td>
+
+</tr>
+
+<tr>
+
+<td>e</td>
+<td>Basis logaritma natural</td>
+
+</tr>
+
+<tr>
+
+<td>π</td>
+<td>Konstanta lingkaran</td>
+
+</tr>
+
+<tr>
+
+<td>i</td>
+<td>Satuan imajiner</td>
+
+</tr>
+
+</table>
+
+<div class="warning">
+
+<b>Catatan Olimpiade</b>
+
+Pada banyak soal tingkat lanjut, bentuk
+
+<code>cosθ+i sinθ</code>
+
+hampir selalu lebih mudah dikerjakan jika langsung diubah menjadi
+
+<code>e<sup>iθ</sup></code>.
+
+Sebaliknya, setelah perhitungan selesai, ubah kembali ke bentuk
+trigonometri bila diminta jawaban dalam bentuk sinus dan cosinus.
+
+</div>
+
+</section><section id="demoivre-lanjut">
+
+<h2>9.5 Rumus De Moivre (Pembuktian & Aplikasi Olimpiade)</h2>
+
+<p>
+
+Rumus <b>De Moivre</b> merupakan perluasan langsung dari Rumus Euler.
+Rumus ini memungkinkan kita menghitung pangkat bilangan kompleks tanpa
+melakukan perkalian berulang yang panjang.
+
+Dalam Olimpiade Matematika, Rumus De Moivre sering digunakan untuk
+menyelesaikan soal yang melibatkan perpangkatan besar, akar kompleks,
+identitas trigonometri, hingga pembuktian rumus.
+
+</p>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^n
+
+=
+
+\cos(n\theta)
+
++
+
+i\sin(n\theta)
+
+</div>
+
+<p>
+
+Jika bilangan kompleks memiliki modulus <b>r</b>, maka bentuk lengkapnya
+adalah
+
+</p>
+
+<div class="rumus">
+
+[r(\cos\theta+i\sin\theta)]^n
+
+=
+
+r^n
+
+(\cos n\theta+i\sin n\theta)
+
+</div>
+
+<hr>
+
+<h3>Pembuktian Menggunakan Rumus Euler</h3>
+
+<p>
+
+Misalkan
+
+</p>
+
+<div class="rumus">
+
+\cos\theta+i\sin\theta=e^{i\theta}
+
+</div>
+
+<p>
+
+Maka
+
+</p>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^n
+
+=
+
+(e^{i\theta})^n
+
+</div>
+
+<p>
+
+Gunakan sifat eksponen
+
+</p>
+
+<div class="rumus">
+
+(a^m)^n=a^{mn}
+
+</div>
+
+<p>
+
+Sehingga
+
+</p>
+
+<div class="rumus">
+
+(e^{i\theta})^n
+
+=
+
+e^{in\theta}
+
+</div>
+
+<p>
+
+Kembali gunakan Rumus Euler.
+
+</p>
+
+<div class="rumus">
+
+e^{in\theta}
+
+=
+
+\cos(n\theta)
+
++
+
+i\sin(n\theta)
+
+</div>
+
+<p>
+
+Terbukti bahwa
+
+</p>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^n
+
+=
+
+\cos(n\theta)
+
++
+
+i\sin(n\theta)
+
+</div>
+
+<div class="success">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Dengan pembuktian ini, kita tidak perlu lagi menghafal Rumus De Moivre
+sebagai rumus terpisah. Ia hanyalah konsekuensi langsung dari Rumus
+Euler.
+
+</div>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Hitung
+
+</p>
+
+<div class="rumus">
+
+(\cos30^\circ+i\sin30^\circ)^6
+
+</div>
+
+<p>
+
+Gunakan Rumus De Moivre.
+
+</p>
+
+<div class="rumus">
+
+=
+
+\cos180^\circ
+
++
+
+i\sin180^\circ
+
+</div>
+
+<div class="rumus">
+
+=-1
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Hitung
+
+</p>
+
+<div class="rumus">
+
+(\cos45^\circ+i\sin45^\circ)^8
+
+</div>
+
+<div class="rumus">
+
+=
+
+\cos360^\circ
+
++
+
+i\sin360^\circ
+
+</div>
+
+<div class="rumus">
+
+=1
+
+</div>
+
+<hr>
+
+<h3>Mengembangkan Rumus Sudut Rangkap</h3>
+
+<p>
+
+Rumus De Moivre juga dapat digunakan untuk menurunkan berbagai identitas
+trigonometri.
+
+Sebagai contoh, ambil
+
+</p>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^2
+
+</div>
+
+<p>
+
+Lakukan ekspansi aljabar.
+
+</p>
+
+<div class="rumus">
+
+\cos^2\theta
+
+-\sin^2\theta
+
++
+
+2i\sin\theta\cos\theta
+
+</div>
+
+<p>
+
+Bandingkan dengan
+
+</p>
+
+<div class="rumus">
+
+\cos2\theta+i\sin2\theta
+
+</div>
+
+<p>
+
+Maka diperoleh identitas terkenal
+
+</p>
+
+<div class="rumus">
+
+\cos2\theta
+
+=
+
+\cos^2\theta-\sin^2\theta
+
+</div>
+
+<div class="rumus">
+
+\sin2\theta
+
+=
+
+2\sin\theta\cos\theta
+
+</div>
+
+<div class="box">
+
+<b>Makna Penting</b>
+
+Banyak rumus sudut rangkap sebenarnya dapat diturunkan hanya dengan
+mengembangkan Rumus De Moivre. Inilah sebabnya rumus ini sangat
+berpengaruh dalam teori trigonometri.
+
+</div>
+
+<hr>
+
+<h3>Pangkat Tinggi Tanpa Perkalian Berulang</h3>
+
+<p>
+
+Misalkan ingin menghitung
+
+</p>
+
+<div class="rumus">
+
+(\cos12^\circ+i\sin12^\circ)^{30}
+
+</div>
+
+<p>
+
+Tanpa Rumus De Moivre, kita harus mengalikan bentuk kompleks tersebut
+sebanyak 29 kali.
+
+Dengan Rumus De Moivre cukup diperoleh
+
+</p>
+
+<div class="rumus">
+
+\cos360^\circ+i\sin360^\circ
+
+</div>
+
+<div class="rumus">
+
+=1
+
+</div>
+
+<p>
+
+Perhitungan yang semula sangat panjang berubah menjadi hanya beberapa
+langkah.
+
+</p>
+
+<div class="warning">
+
+<b>Kesalahan Umum</b>
+
+<ul>
+
+<li>Lupa memangkatkan modulus menjadi <code>rⁿ</code>.</li>
+<li>Hanya mengalikan sudut tetapi tidak memangkatkan panjang vektor.</li>
+<li>Menggunakan derajat dan radian secara bersamaan dalam satu
+perhitungan.</li>
+<li>Salah menentukan nilai sinus atau cosinus sudut hasil.</li>
+</ul>
+
+</div>
+
+<div class="success">
+
+<b>Ringkasan Subbab</b>
+
+Rumus De Moivre memberikan hubungan yang sangat elegan antara
+perpangkatan bilangan kompleks dan perkalian sudut. Rumus ini menjadi
+fondasi untuk mempelajari akar bilangan kompleks, transformasi rotasi,
+analisis Fourier, hingga teori persamaan polinomial.
+
+</div>
+
+</section><section id="akar-kompleks">
+
+<h2>9.6 Akar Pangkat-n Bilangan Kompleks</h2>
+
+<p>
+
+Salah satu aplikasi paling penting dari Rumus De Moivre adalah mencari
+<b>akar pangkat-n</b> suatu bilangan kompleks. Jika pada bilangan real
+persamaan
+
+</p>
+
+<div class="rumus">
+
+x² = 9
+
+</div>
+
+<p>
+
+memiliki dua akar, maka pada bilangan kompleks setiap persamaan
+
+</p>
+
+<div class="rumus">
+
+zⁿ = w
+
+</div>
+
+<p>
+
+selalu memiliki tepat <b>n akar kompleks yang berbeda</b>. Akar-akar ini
+tersusun sangat teratur dan membentuk pola geometri yang indah.
+
+</p>
+
+<hr>
+
+<h3>Rumus Umum</h3>
+
+<p>
+
+Misalkan diketahui bilangan kompleks dalam bentuk polar
+
+</p>
+
+<div class="rumus">
+
+z = r(\cos\theta+i\sin\theta)
+
+</div>
+
+<p>
+
+Akar pangkat-<b>n</b> dari z diberikan oleh
+
+</p>
+
+<div class="rumus">
+
+w_k=\sqrt[n]{r}
+\left(
+\cos\frac{\theta+360^\circ k}{n}
++i\sin\frac{\theta+360^\circ k}{n}
+\right)
+
+</div>
+
+<p>
+
+dengan
+
+</p>
+
+<div class="rumus">
+
+k=0,1,2,\ldots,n-1
+
+</div>
+
+<div class="box">
+
+<b>Mengapa Ditambah 360°k?</b>
+
+Karena sudut dalam koordinat polar tidak unik.
+
+Sudut
+
+<b>θ</b>,
+
+<b>θ+360°</b>,
+
+<b>θ+720°</b>
+
+dan seterusnya menyatakan titik yang sama.
+
+Agar seluruh akar ditemukan, semua kemungkinan sudut harus
+dipertimbangkan.
+
+</div>
+
+<hr>
+
+<h3>Contoh 1</h3>
+
+<p>
+
+Tentukan seluruh akar dari
+
+</p>
+
+<div class="rumus">
+
+z²=1
+
+</div>
+
+<p>
+
+Tuliskan terlebih dahulu
+
+</p>
+
+<div class="rumus">
+
+1=\cos0^\circ+i\sin0^\circ
+
+</div>
+
+<p>
+
+Karena n=2, maka
+
+</p>
+
+<div class="rumus">
+
+\theta_k=\frac{0^\circ+360^\circ k}{2}
+
+</div>
+
+<p>
+
+Untuk k=0 diperoleh
+
+</p>
+
+<div class="rumus">
+
+0^\circ
+
+</div>
+
+<p>
+
+Untuk k=1 diperoleh
+
+</p>
+
+<div class="rumus">
+
+180^\circ
+
+</div>
+
+<p>
+
+Sehingga kedua akar adalah
+
+</p>
+
+<div class="rumus">
+
+1,\quad -1
+
+</div>
+
+<hr>
+
+<h3>Contoh 2</h3>
+
+<p>
+
+Carilah seluruh akar kubik dari
+
+</p>
+
+<div class="rumus">
+
+1
+
+</div>
+
+<p>
+
+Gunakan
+
+</p>
+
+<div class="rumus">
+
+n=3
+
+</div>
+
+<p>
+
+Sudut-sudutnya adalah
+
+</p>
+
+<div class="rumus">
+
+0^\circ,\;
+120^\circ,\;
+240^\circ
+
+</div>
+
+<p>
+
+Maka ketiga akar adalah
+
+</p>
+
+<div class="rumus">
+
+1
+
+</div>
+
+<div class="rumus">
+
+-\frac12+\frac{\sqrt3}{2}i
+
+</div>
+
+<div class="rumus">
+
+-\frac12-\frac{\sqrt3}{2}i
+
+</div>
+
+<div class="success">
+
+<b>Fakta Menarik</b>
+
+Ketiga akar kubik dari satu selalu membentuk
+<b>segitiga sama sisi</b> pada lingkaran satuan.
+
+Hal ini merupakan contoh hubungan indah antara aljabar dan geometri.
+
+</div>
+
+<hr>
+
+<h3>Visualisasi Geometri</h3>
+
+<pre>
+
+                ●
+
+          w₁
+
+             /\
+            /  \
+           /    \
+
+●---------O---------●
+
+w₂                  w₀
+
+</pre>
+
+<p>
+
+Untuk akar pangkat tiga, semua akar memiliki modulus yang sama dan
+dipisahkan oleh sudut
+
+</p>
+
+<div class="rumus">
+
+360^\circ/3=120^\circ
+
+</div>
+
+<hr>
+
+<h3>Sifat Umum</h3>
+
+<table>
+
+<tr>
+
+<th>Nilai n</th>
+<th>Banyak Akar</th>
+<th>Sudut Antar Akar</th>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+<td>2</td>
+<td>180°</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+<td>3</td>
+<td>120°</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+<td>4</td>
+<td>90°</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+<td>5</td>
+<td>72°</td>
+
+</tr>
+
+<tr>
+
+<td>n</td>
+<td>n</td>
+<td>360°/n</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Contoh Olimpiade</h3>
+
+<p>
+
+Tentukan seluruh solusi kompleks dari
+
+</p>
+
+<div class="rumus">
+
+z⁴=16
+
+</div>
+
+<p>
+
+Karena
+
+</p>
+
+<div class="rumus">
+
+16=16(\cos0^\circ+i\sin0^\circ)
+
+</div>
+
+<p>
+
+Modulus setiap akar adalah
+
+</p>
+
+<div class="rumus">
+
+\sqrt[4]{16}=2
+
+</div>
+
+<p>
+
+Sudut-sudutnya
+
+</p>
+
+<div class="rumus">
+
+0^\circ,\;
+90^\circ,\;
+180^\circ,\;
+270^\circ
+
+</div>
+
+<p>
+
+Sehingga keempat solusi adalah
+
+</p>
+
+<div class="rumus">
+
+2,\;2i,\;-2,\;-2i
+
+</div>
+
+<div class="warning">
+
+<b>Kesalahan yang Sering Terjadi</b>
+
+<ul>
+
+<li>Hanya mencari satu akar utama.</li>
+<li>Lupa bahwa harus ada tepat <b>n</b> akar.</li>
+<li>Tidak menambahkan sudut <code>360°k</code>.</li>
+<li>Keliru menghitung akar modulus.</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<b>Insight Pelatih Olimpiade</b>
+
+Jika sebuah soal meminta semua solusi kompleks dari persamaan
+<b>zⁿ=a</b>, jangan pernah mencoba memfaktorkan secara langsung.
+Ubahlah ke bentuk polar, gunakan Rumus De Moivre, lalu sebarkan akar
+secara merata pada lingkaran kompleks. Pendekatan ini hampir selalu
+menjadi metode tercepat dan paling elegan.
+
+</div>
+
+</section><section id="olimpiade">
+
+<h2>9.7 Strategi Olimpiade Bilangan Kompleks & Trigonometri</h2>
+
+<p>
+
+Pada tingkat sekolah, sebagian besar soal meminta melakukan
+<b>perhitungan</b>. Namun pada tingkat Olimpiade, fokus soal berubah
+menjadi <b>analisis pola</b>, <b>pemilihan metode</b>, dan
+<b>pembuktian</b>. Oleh karena itu, memahami konsep jauh lebih penting
+daripada menghafal rumus.
+
+</p>
+
+<div class="box">
+
+<b>Mindset Pelatih Olimpiade</b>
+
+Sebelum menulis satu baris perhitungan, tanyakan pada diri sendiri:
+
+<ol>
+
+<li>Apakah bentuk Kartesius lebih cocok?</li>
+<li>Apakah bentuk polar lebih sederhana?</li>
+<li>Apakah Rumus Euler dapat digunakan?</li>
+<li>Apakah De Moivre akan mempersingkat solusi?</li>
+<li>Apakah ada simetri yang bisa dimanfaatkan?</li>
+</ol>
+
+Sering kali, pemilihan metode yang tepat akan memangkas lebih dari
+setengah langkah penyelesaian.
+
+</div>
+
+<hr>
+
+<h3>Strategi 1 — Kenali Bentuk Soal</h3>
+
+<table>
+
+<tr>
+<th>Jika Soal Memuat...</th>
+<th>Metode yang Disarankan</th>
+</tr>
+
+<tr>
+<td>Pangkat bilangan kompleks sangat besar</td>
+<td>Rumus De Moivre</td>
+</tr>
+
+<tr>
+<td>Akar pangkat-n bilangan kompleks</td>
+<td>Bentuk Polar</td>
+</tr>
+
+<tr>
+<td>Rotasi pada bidang</td>
+<td>Rumus Euler</td>
+</tr>
+
+<tr>
+<td>Kurva berbentuk bunga, spiral, atau hati</td>
+<td>Koordinat Polar</td>
+</tr>
+
+<tr>
+<td>Identitas trigonometri rumit</td>
+<td>Euler + Eksponensial Kompleks</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Strategi 2 — Jangan Langsung Menghitung</h3>
+
+<p>
+
+Banyak peserta kehilangan waktu karena langsung melakukan operasi
+aljabar panjang. Biasakan mencari pola terlebih dahulu.
+
+</p>
+
+<p>
+
+Contoh:
+
+</p>
+
+<div class="rumus">
+
+(\cos15^\circ+i\sin15^\circ)^{24}
+
+</div>
+
+<p>
+
+Alih-alih mengembangkan pangkat tersebut, cukup gunakan De Moivre:
+
+</p>
+
+<div class="rumus">
+
+=\cos360^\circ+i\sin360^\circ=1
+
+</div>
+
+<p>
+
+Solusi selesai hanya dalam beberapa langkah.
+
+</p>
+
+<hr>
+
+<h3>Strategi 3 — Manfaatkan Simetri</h3>
+
+<p>
+
+Akar-akar bilangan kompleks selalu tersebar merata pada sebuah
+lingkaran. Jika diketahui satu akar, akar lainnya sering dapat
+ditentukan hanya dengan memutar sudut sebesar
+
+</p>
+
+<div class="rumus">
+
+360^\circ/n
+
+</div>
+
+<p>
+
+tanpa perlu menghitung ulang.
+
+</p>
+
+<div class="success">
+
+<b>Contoh</b>
+
+Jika diketahui salah satu akar pangkat lima berada pada sudut 18°,
+maka akar lainnya berada pada:
+
+<ul>
+
+<li>90°</li>
+<li>162°</li>
+<li>234°</li>
+<li>306°</li>
+</ul>
+
+karena selisih setiap akar adalah 72°.
+
+</div>
+
+<hr>
+
+<h3>Strategi 4 — Hafalkan Rumus Inti</h3>
+
+<p>
+
+Daripada menghafal puluhan rumus, cukup kuasai beberapa rumus dasar
+berikut. Sebagian besar rumus lain dapat diturunkan darinya.
+
+</p>
+
+<div class="rumus">
+
+\sin^2\theta+\cos^2\theta=1
+
+</div>
+
+<div class="rumus">
+
+e^{i\theta}=\cos\theta+i\sin\theta
+
+</div>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^n=
+\cos(n\theta)+i\sin(n\theta)
+
+</div>
+
+<div class="rumus">
+
+z=r(\cos\theta+i\sin\theta)
+
+</div>
+
+<div class="rumus">
+
+|z|=\sqrt{a^2+b^2}
+
+</div>
+
+<hr>
+
+<h3>Strategi 5 — Perhatikan Domain</h3>
+
+<p>
+
+Pada soal fungsi invers, banyak peserta memilih sudut yang salah karena
+mengabaikan domain hasil fungsi invers.
+
+</p>
+
+<div class="warning">
+
+<b>Ingat!</b>
+
+<ul>
+
+<li>arcsin → −90° sampai 90°</li>
+<li>arccos → 0° sampai 180°</li>
+<li>arctan → −90° sampai 90° (tidak termasuk ujung)</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Strategi 6 — Biasakan Membuktikan Rumus</h3>
+
+<p>
+
+Di tingkat Olimpiade, kemampuan membuktikan rumus sama pentingnya dengan
+menggunakannya.
+
+Sebagai latihan, cobalah membuktikan kembali:
+
+</p>
+
+<ul>
+
+<li>Rumus Sudut Rangkap.</li>
+<li>Rumus Sudut Tiga Kali.</li>
+<li>Identitas Euler.</li>
+<li>Rumus De Moivre.</li>
+<li>Aturan Sinus.</li>
+<li>Aturan Cosinus.</li>
+</ul>
+
+<div class="box">
+
+<b>Pesan Pelatih</b>
+
+Peserta terbaik bukanlah yang menghafal rumus paling banyak, tetapi yang
+memahami hubungan antar rumus. Ketika satu rumus terlupa saat lomba,
+mereka mampu menurunkannya kembali dari konsep dasar.
+
+</div>
+
+</section><section id="latihan">
+
+<h2>9.8 Latihan Komprehensif Tingkat Olimpiade</h2>
+
+<p>
+
+Bagian ini dirancang menyerupai sesi latihan pada pemusatan latihan
+Olimpiade. Soal-soal disusun bertingkat, mulai dari pemanasan hingga
+tantangan yang membutuhkan kreativitas dan penguasaan konsep.
+
+</p>
+
+<div class="success">
+
+<b>Petunjuk</b>
+
+Jangan langsung melihat pembahasan. Kerjakan setiap soal secara mandiri,
+kemudian cocokkan langkah penyelesaiannya.
+
+</div>
+
+<hr>
+
+<h3>Level 1 — Pemanasan</h3>
+
+<ol>
+
+<li>Tentukan nilai <code>arcsin(√3/2)</code>.</li>
+
+<li>Tentukan nilai <code>arccos(-1/2)</code>.</li>
+
+<li>Ubahlah titik polar <code>(8,30°)</code> ke koordinat Kartesius.</li>
+
+<li>Ubahlah titik <code>(-6,6√3)</code> ke koordinat polar.</li>
+
+<li>Hitung modulus dan argumen dari <code>5+5i</code>.</li>
+
+</ol>
+
+<hr>
+
+<h3>Pembahasan Singkat</h3>
+
+<div class="rumus">
+
+arcsin(√3/2)=60°
+
+</div>
+
+<div class="rumus">
+
+arccos(-1/2)=120°
+
+</div>
+
+<div class="rumus">
+
+(8,30°)
+
+→
+
+(4√3,4)
+
+</div>
+
+<div class="rumus">
+
+(-6,6√3)
+
+→
+
+(12,120°)
+
+</div>
+
+<div class="rumus">
+
+|5+5i|
+
+=
+
+5√2
+
+</div>
+
+<div class="rumus">
+
+arg(5+5i)=45°
+
+</div>
+
+<hr>
+
+<h3>Level 2 — Menengah</h3>
+
+<ol start="6">
+
+<li>
+Hitung
+
+<code>(cos45°+isin45°)<sup>12</sup></code>.
+
+</li>
+
+<li>
+
+Hitung
+
+<code>(cos20°+isin20°)<sup>18</sup></code>.
+
+</li>
+
+<li>
+
+Carilah seluruh akar dari
+
+<code>z³=8</code>.
+
+</li>
+
+<li>
+
+Carilah seluruh akar dari
+
+<code>z⁶=64</code>.
+
+</li>
+
+<li>
+
+Buktikan bahwa
+
+<code>|z₁z₂|=|z₁||z₂|</code>.
+
+</li>
+
+</ol>
+
+<div class="box">
+
+<b>Petunjuk</b>
+
+Gunakan Rumus De Moivre untuk nomor 6–9.
+
+Nomor 10 cukup menggunakan bentuk polar.
+
+</div>
+
+<hr>
+
+<h3>Level 3 — Sulit</h3>
+
+<ol start="11">
+
+<li>
+
+Buktikan
+
+<code>
+
+(cosθ+isinθ)(cosφ+isinφ)
+
+=
+
+cos(θ+φ)+isin(θ+φ)
+
+</code>
+
+</li>
+
+<li>
+
+Buktikan identitas Euler menggunakan Deret Taylor.
+
+</li>
+
+<li>
+
+Buktikan Rumus De Moivre dari Rumus Euler.
+
+</li>
+
+<li>
+
+Tentukan seluruh akar kompleks dari
+
+<code>z⁸=256</code>.
+
+</li>
+
+<li>
+
+Buktikan bahwa akar-akar pangkat-n dari satu selalu membentuk
+poligon beraturan.
+
+</li>
+
+</ol>
+
+<hr>
+
+<h3>Level 4 — Olimpiade Nasional</h3>
+
+<ol start="16">
+
+<li>
+
+Misalkan
+
+<code>
+
+z=
+
+cos15°
+
++
+
+isin15°
+
+</code>
+
+Hitung
+
+<code>
+
+z²⁴
+
+</code>
+
+tanpa ekspansi.
+
+</li>
+
+<li>
+
+Buktikan bahwa
+
+<code>
+
+|z+\overline z|
+
+≤
+
+2|z|
+
+</code>
+
+</li>
+
+<li>
+
+Jika
+
+<code>
+
+z⁵=32
+
+</code>
+
+tentukan hasil kali seluruh akar kompleksnya.
+
+</li>
+
+<li>
+
+Buktikan bahwa seluruh akar pangkat empat dari satu membentuk
+sebuah persegi.
+
+</li>
+
+<li>
+
+Tentukan seluruh solusi kompleks dari
+
+<code>
+
+z⁴+16=0
+
+</code>
+
+menggunakan bentuk polar.
+
+</li>
+
+</ol>
+
+<hr>
+
+<h3>Level 5 — Challenge Internasional</h3>
+
+<p>
+
+Soal-soal berikut menyerupai gaya seleksi
+IMO Shortlist, Balkan MO, atau pelatihan tingkat lanjut.
+
+</p>
+
+<ol start="21">
+
+<li>
+
+Misalkan
+
+<code>
+
+z=e^{iθ}
+
+</code>
+
+Buktikan bahwa
+
+<code>
+
+z+\frac1z
+
+=
+
+2cosθ
+
+</code>
+
+</li>
+
+<li>
+
+Buktikan bahwa
+
+<code>
+
+z-\frac1z
+
+=
+
+2isinθ
+
+</code>
+
+</li>
+
+<li>
+
+Gunakan dua identitas di atas untuk menurunkan kembali rumus sudut
+rangkap.
+
+</li>
+
+<li>
+
+Buktikan bahwa
+
+<code>
+
+|e^{iθ}|=1
+
+</code>
+
+untuk semua θ real.
+
+</li>
+
+<li>
+
+Tentukan semua bilangan kompleks yang memenuhi
+
+<code>
+
+z⁶=-64
+
+</code>
+
+</li>
+
+</ol>
+
+<div class="warning">
+
+<b>Tantangan Terbuka</b>
+
+Apabila kamu mampu menyelesaikan seluruh soal pada bagian ini tanpa
+melihat pembahasan, maka pemahamanmu terhadap materi Bab 9 sudah berada
+di atas rata-rata siswa SMA dan sangat siap untuk menghadapi soal
+kompetisi matematika tingkat lanjut.
+
+</div>
+
+</section><section id="ringkasan-bab9">
+
+<h2>9.9 Ringkasan Bab 9</h2>
+
+<p>
+
+Bab ini merupakan puncak dari pembelajaran trigonometri. Hampir seluruh
+materi sebelumnya—fungsi trigonometri, identitas, sudut, dan koordinat—
+bertemu dalam konsep bilangan kompleks dan koordinat polar. Pemahaman
+yang baik terhadap bab ini akan sangat membantu saat mempelajari
+kalkulus, persamaan diferensial, transformasi Fourier, fisika, teknik,
+hingga matematika Olimpiade.
+
+</p>
+
+<hr>
+
+<h3>Peta Konsep</h3>
+
+<pre>
+
+Sudut
+   │
+   ▼
+Lingkaran Satuan
+   │
+   ▼
+Fungsi Trigonometri
+   │
+   ▼
+Identitas Trigonometri
+   │
+   ▼
+Koordinat Polar
+   │
+   ▼
+Bilangan Kompleks
+   │
+   ▼
+Rumus Euler
+   │
+   ▼
+Rumus De Moivre
+   │
+   ▼
+Akar Pangkat-n Bilangan Kompleks
+   │
+   ▼
+Aplikasi Olimpiade & Matematika Lanjut
+
+</pre>
+
+<hr>
+
+<h3>Rumus-Rumus yang Wajib Dikuasai</h3>
+
+<div class="rumus">
+
+x = r\cos\theta
+
+</div>
+
+<div class="rumus">
+
+y = r\sin\theta
+
+</div>
+
+<div class="rumus">
+
+r = \sqrt{x^2+y^2}
+
+</div>
+
+<div class="rumus">
+
+|z|=\sqrt{a^2+b^2}
+
+</div>
+
+<div class="rumus">
+
+z=r(\cos\theta+i\sin\theta)
+
+</div>
+
+<div class="rumus">
+
+e^{i\theta}
+
+=
+
+\cos\theta+i\sin\theta
+
+</div>
+
+<div class="rumus">
+
+(\cos\theta+i\sin\theta)^n
+
+=
+
+\cos(n\theta)+i\sin(n\theta)
+
+</div>
+
+<div class="rumus">
+
+w_k
+
+=
+
+\sqrt[n]{r}
+
+\left(
+
+\cos\frac{\theta+360^\circ k}{n}
+
++
+
+i\sin\frac{\theta+360^\circ k}{n}
+
+\right)
+
+</div>
+
+<hr>
+
+<h3>Kesalahan yang Paling Sering Terjadi</h3>
+
+<ul>
+
+<li>Tidak memperhatikan domain fungsi trigonometri invers.</li>
+
+<li>Salah menentukan kuadran saat mencari argumen bilangan kompleks.</li>
+
+<li>Lupa bahwa koordinat polar tidak memiliki representasi tunggal.</li>
+
+<li>Menggunakan derajat dan radian secara bersamaan dalam satu perhitungan.</li>
+
+<li>Melupakan faktor <code>r^n</code> pada Rumus De Moivre.</li>
+
+<li>Hanya mencari satu akar saat soal meminta seluruh akar kompleks.</li>
+
+<li>Lupa bahwa akar-akar kompleks tersebar merata pada lingkaran.</li>
+
+</ul>
+
+<hr>
+
+<h3>Tips Menghadapi Olimpiade</h3>
+
+<div class="success">
+
+<ul>
+
+<li>Pahami konsep, jangan hanya menghafal rumus.</li>
+
+<li>Biasakan mengubah bentuk Kartesius ↔ Polar.</li>
+
+<li>Kuasai Rumus Euler dan De Moivre karena keduanya sering menjadi jalan pintas.</li>
+
+<li>Latih visualisasi geometri pada bidang kompleks.</li>
+
+<li>Periksa kembali domain, kuadran, dan satuan sudut sebelum menghitung.</li>
+
+<li>Kerjakan soal pembuktian, bukan hanya soal hitung.</li>
+
+<li>Biasakan mencari pola simetri sebelum melakukan operasi panjang.</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h3>Apa Selanjutnya?</h3>
+
+<p>
+
+Dengan selesainya Bab 9, seluruh materi inti trigonometri telah
+dipelajari. Langkah berikutnya adalah mengintegrasikan trigonometri
+dengan cabang matematika lain seperti:
+
+</p>
+
+<ul>
+
+<li>Kalkulus Diferensial dan Integral.</li>
+
+<li>Persamaan Diferensial.</li>
+
+<li>Aljabar Linear.</li>
+
+<li>Analisis Kompleks.</li>
+
+<li>Transformasi Fourier.</li>
+
+<li>Fisika Gelombang dan Listrik.</li>
+
+<li>Geometri Analitik Lanjut.</li>
+
+<li>Teori Bilangan dan Olimpiade Matematika.</li>
+
+</ul>
+
+<div class="box">
+
+<b>Pesan Penutup</b>
+
+Trigonometri bukan sekadar kumpulan rumus sinus, cosinus, dan tangen.
+Trigonometri adalah bahasa untuk memahami rotasi, gelombang, simetri,
+dan struktur geometri. Ketika dipadukan dengan bilangan kompleks,
+trigonometri menjadi salah satu alat paling kuat dalam matematika modern.
+
+Teruslah berlatih, biasakan membuktikan setiap rumus, dan jangan takut
+menghadapi soal yang tampak sulit. Sebagian besar soal Olimpiade dapat
+dipecahkan dengan konsep dasar yang dipahami secara mendalam.
+
+</div>
+
+<hr>
+
+<div class="navigation">
+    <a class="nav-btn prev" href="trigonometri8.html">⬅ Bab Sebelumnya</a>
+    <a class="nav-btn home" href="index.html">🏠 Daftar Isi</a>
+</div>
+</section>
+</body>
+</html>
